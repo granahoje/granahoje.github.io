@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grana Hoje - Web App Oficial | Ganhe Dinheiro Online</title>
-    <meta name="description" content="Grana Hoje é o web app oficial para você ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Comece a lucrar agora!">
+    <meta name="description" content="Grana Hoje é the web app oficial para você ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Comece a lucrar agora!">
     <meta name="keywords" content="ganhar dinheiro, renda extra, grana hoje, trabalhar online, pesquisas remuneradas, ganhar dinheiro assistindo videos, pix, dinheiro facil">
     <meta name="author" content="Grana Hoje">
     
@@ -203,6 +203,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
+            cursor: pointer;
         }
         
         .task-item:hover {
@@ -310,8 +311,8 @@
             border: 1px solid var(--glass-border);
             box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
-        
-        .modal-title { 
+
+        .modal-title {
             color: #fff; 
             font-size: 1.6rem; 
             font-weight: 800; 
@@ -399,35 +400,45 @@
     <main>
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
+            <!-- Visitar Site (Novo) -->
+            <div class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')">
+                <div class="task-icon">🌐</div>
+                <div class="task-details">
+                    <div class="task-name">Visitar Site <span class="badge-hot">NOVO</span></div>
+                    <div class="task-reward">+ R$ 1,00 no saldo</div>
+                </div>
+                <div class="task-arrow">❯</div>
+            </div>
+
             <!-- Signo da Sorte -->
-            <a href="https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html" target="_blank" class="task-item" onclick="addBalance(0.50)">
+            <div class="task-item" onclick="startTask(0.50, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')">
                 <div class="task-icon">🔮</div>
                 <div class="task-details">
-                    <div class="task-name">Signo da Sorte <span class="badge-hot">NOVO</span></div>
+                    <div class="task-name">Signo da Sorte</div>
                     <div class="task-reward">+ R$ 0,50 no saldo</div>
                 </div>
                 <div class="task-arrow">❯</div>
-            </a>
+            </div>
 
             <!-- Responder Pesquisa -->
-            <a href="https://financadescomplicado.blogspot.com/?m=1" target="_blank" class="task-item" onclick="addBalance(1.50)">
+            <div class="task-item" onclick="startTask(1.50, 'https://financadescomplicado.blogspot.com/?m=1')">
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">Responder Pesquisa</div>
                     <div class="task-reward">+ R$ 1,50 no saldo</div>
                 </div>
                 <div class="task-arrow">❯</div>
-            </a>
+            </div>
 
             <!-- Simulador de Prêmios -->
-            <a href="https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html" target="_blank" class="task-item" onclick="addBalance(2.00)">
+            <div class="task-item" onclick="startTask(2.00, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')">
                 <div class="task-icon">💎</div>
                 <div class="task-details">
                     <div class="task-name">Simulador de Prêmios</div>
                     <div class="task-reward">+ R$ 2,00 no saldo</div>
                 </div>
                 <div class="task-arrow">❯</div>
-            </a>
+            </div>
         </div>
 
         <div class="visitor-counter">
@@ -456,12 +467,13 @@
         <div class="modal-content">
             <h3 id="modal-title" class="modal-title"></h3>
             <p id="modal-text" class="modal-text"></p>
-            <button class="btn-close" onclick="closeModal()">FECHAR</button>
+            <button id="modal-btn" class="btn-close" onclick="closeModal()">FECHAR</button>
         </div>
     </div>
 
     <script>
         let balance = 0;
+        let timerInterval;
 
         function addBalance(amount) {
             balance += amount;
@@ -469,13 +481,40 @@
             localStorage.setItem('userBalance', balance);
         }
 
+        function startTask(amount, url) {
+            window.open(url, '_blank');
+            
+            let seconds = 30;
+            showModal('Tarefa em Andamento', `Aguarde ${seconds} segundos navegando no site para receber sua recompensa...`);
+            
+            const modalBtn = document.getElementById('modal-btn');
+            modalBtn.style.display = 'none';
+            
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                seconds--;
+                document.getElementById('modal-text').innerText = `Aguarde ${seconds} segundos navegando no site para receber sua recompensa...`;
+                
+                if (seconds <= 0) {
+                    clearInterval(timerInterval);
+                    addBalance(amount);
+                    document.getElementById('modal-title').innerText = 'Tarefa Concluída!';
+                    document.getElementById('modal-text').innerText = `Parabéns! R$ ${amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} foram adicionados ao seu saldo.`;
+                    modalBtn.style.display = 'block';
+                }
+            }, 1000);
+        }
+
         function showModal(title, text) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-text').innerText = text;
+            document.getElementById('modal-btn').style.display = 'block';
             document.getElementById('modal').style.display = 'flex';
         }
 
         function closeModal() {
+            if (timerInterval) clearInterval(timerInterval);
             document.getElementById('modal').style.display = 'none';
         }
 
@@ -494,7 +533,11 @@
 
         window.onclick = function(event) {
             if (event.target == document.getElementById('modal')) {
-                closeModal();
+                // Only allow closing if timer is not running or finished
+                const modalBtn = document.getElementById('modal-btn');
+                if (modalBtn.style.display !== 'none') {
+                    closeModal();
+                }
             }
         }
     </script>
