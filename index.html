@@ -400,7 +400,7 @@
     <main>
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
-            <!-- Visitar Site (Novo) -->
+            <!-- Visitar Site -->
             <div class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')">
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
@@ -533,7 +533,6 @@
 
         window.onclick = function(event) {
             if (event.target == document.getElementById('modal')) {
-                // Only allow closing if timer is not running or finished
                 const modalBtn = document.getElementById('modal-btn');
                 if (modalBtn.style.display !== 'none') {
                     closeModal();
