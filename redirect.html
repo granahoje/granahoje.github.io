@@ -7,10 +7,10 @@
     <meta http-equiv="refresh" content="0; url=/pt-br/">
     <script>
         // Detectar idioma do navegador e redirecionar
-        const userLanguage = navigator.language || navigator.userLanguage;
+        const userLanguage = (navigator.language || navigator.userLanguage).toLowerCase();
         let redirectPath = '/pt-br/'; // Padrão
 
-        if (userLanguage.startsWith('pt-PT') || userLanguage === 'pt') {
+        if (userLanguage.startsWith('pt-pt')) {
             redirectPath = '/pt-pt/';
         } else if (userLanguage.startsWith('es')) {
             redirectPath = '/es/';
@@ -18,6 +18,18 @@
             redirectPath = '/en/';
         } else if (userLanguage.startsWith('fr')) {
             redirectPath = '/fr/';
+        } else if (userLanguage.startsWith('zh')) {
+            redirectPath = '/zh/';
+        } else if (userLanguage.startsWith('hi')) {
+            redirectPath = '/hi/';
+        } else if (userLanguage.startsWith('ar')) {
+            redirectPath = '/ar/';
+        } else if (userLanguage.startsWith('bn')) {
+            redirectPath = '/bn/';
+        } else if (userLanguage.startsWith('ru')) {
+            redirectPath = '/ru/';
+        } else if (userLanguage.startsWith('ja')) {
+            redirectPath = '/ja/';
         } else if (userLanguage.startsWith('pt')) {
             redirectPath = '/pt-br/';
         }
