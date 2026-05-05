@@ -1,0 +1,5 @@
+# GitHub Pages Configuration
+include: [".htaccess"]
+markdown: kramdown
+plugins:
+  - jekyll-redirect-from
