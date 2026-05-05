@@ -24,6 +24,27 @@
     </url>
 
     <url>
+        <loc>https://jessicagilrs100-blip.github.io/about.html</loc>
+        <lastmod>2026-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://jessicagilrs100-blip.github.io/contact.html</loc>
+        <lastmod>2026-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://jessicagilrs100-blip.github.io/disclaimer.html</loc>
+        <lastmod>2026-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>https://jessicagilrs100-blip.github.io/pt-pt/</loc>
         <lastmod>2026-05-05</lastmod>
         <changefreq>daily</changefreq>
