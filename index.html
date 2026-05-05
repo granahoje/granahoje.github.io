@@ -67,7 +67,7 @@
     <meta name="google-site-verification" content="wHaz7csQ6KDW7HvO66uIFV1Gm0pCkuDEhz35S12sIvE" />
     
     
-    <!-- Schema.org Markup -->
+    <!-- Schema.org Markup - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,13 +75,63 @@
       "@id": "https://jessicagilrs100-blip.github.io",
       "name": "Grana Hoje",
       "url": "https://jessicagilrs100-blip.github.io",
-      "description": "Plataforma para ganhar dinheiro online realizando tarefas simples, assistindo vídeos e respondendo pesquisas",
-      "logo": "https://jessicagilrs100-blip.github.io/favicon.ico",
+      "logo": "https://jessicagilrs100-blip.github.io/logo.png",
+      "description": "Plataforma de ganho de dinheiro online através de tarefas simples, pesquisas e vídeos",
+      "sameAs": [
+        "https://www.facebook.com/granahoje",
+        "https://www.twitter.com/granahoje",
+        "https://www.instagram.com/granahoje"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "email": "support@granahoje.com"
+        "email": "support@granahoje.com",
+        "availableLanguage": ["pt-BR", "pt-PT", "es", "en", "fr", "zh", "hi", "ar", "bn", "ru", "ja"]
       }
+    }
+    </script>
+
+    <!-- Schema.org Markup - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Grana Hoje",
+      "url": "https://jessicagilrs100-blip.github.io",
+      "description": "Web app oficial para ganhar dinheiro online realizando tarefas simples",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://jessicagilrs100-blip.github.io/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema.org Markup - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grana Hoje - Web App Oficial para Ganhar Dinheiro Online",
+      "description": "Descubra como ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas no Grana Hoje",
+      "image": "https://jessicagilrs100-blip.github.io/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Grana Hoje"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Grana Hoje",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jessicagilrs100-blip.github.io/logo.png"
+        }
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2026-05-05"
     }
     </script>
     <!-- AdSense -->
@@ -501,9 +551,9 @@
     <div class="glow glow-1"></div>
     <div class="glow glow-2"></div>
 
-    <header>
+    <header role="banner">
         <h1>GRANA HOJE</h1>
-        <select class="language-selector" id="languageSelector" onchange="changeLanguage(this.value)">
+        <select class="language-selector" id="languageSelector" onchange="changeLanguage(this.value)" aria-label="Seletor de idioma">
             <option value="pt-br">🇧🇷 Português (BR)</option>
             <option value="pt-pt">🇵🇹 Português (PT)</option>
             <option value="es">🇪🇸 Español</option>
@@ -512,71 +562,71 @@
         </select>
     </header>
 
-    <div class="balance-card">
+    <section class="balance-card" role="region" aria-label="Informações de saldo">
         <div class="balance-info">
             <p id="balanceLabel">Saldo Disponível</p>
             <div class="balance-amount">R$ <span id="balance">0,00</span></div>
         </div>
         <button class="withdraw-btn" id="withdrawBtn" onclick="showModal('withdrawTitle', 'withdrawMessage')">SACAR AGORA</button>
-    </div>
+    </section>
 
-    <div class="ad-container">
+    <aside class="ad-container" role="complementary" aria-label="Espaço publicitário">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <main>
+    <main role="main">
         <h2 class="section-title" id="tasksTitle">✨ Missões Lucrativas</h2>
-        <div class="task-list">
+        <section class="task-list" role="region" aria-label="Lista de tarefas disponíveis">
             <!-- Visitar Site -->
-            <div class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')">
-                <div class="task-icon">🌐</div>
+            <article class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')" role="button" tabindex="0" aria-label="Tarefa: Visitar Site">
+                <div class="task-icon" aria-hidden="true">🌐</div>
                 <div class="task-details">
                     <div class="task-name"><span id="visitSiteName">Visitar Site</span> <span class="badge-hot" id="newBadge">NOVO</span></div>
                     <div class="task-reward" id="visitSiteReward">+ R$ 1,00 no saldo</div>
                 </div>
-                <div class="task-arrow">❯</div>
-            </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
 
             <!-- Signo da Sorte -->
-            <div class="task-item" onclick="startTask(0.50, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')">
-                <div class="task-icon">🔮</div>
+            <article class="task-item" onclick="startTask(0.50, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')" role="button" tabindex="0" aria-label="Tarefa: Signo da Sorte">
+                <div class="task-icon" aria-hidden="true">🔮</div>
                 <div class="task-details">
                     <div class="task-name" id="zodSignName">Signo da Sorte</div>
                     <div class="task-reward" id="zodSignReward">+ R$ 0,50 no saldo</div>
                 </div>
-                <div class="task-arrow">❯</div>
-            </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
 
             <!-- Responder Pesquisa -->
-            <div class="task-item" onclick="startTask(1.50, 'https://financadescomplicado.blogspot.com/?m=1')">
-                <div class="task-icon">📊</div>
+            <article class="task-item" onclick="startTask(1.50, 'https://financadescomplicado.blogspot.com/?m=1')" role="button" tabindex="0" aria-label="Tarefa: Responder Pesquisa">
+                <div class="task-icon" aria-hidden="true">📊</div>
                 <div class="task-details">
                     <div class="task-name" id="surveyName">Responder Pesquisa</div>
                     <div class="task-reward" id="surveyReward">+ R$ 1,50 no saldo</div>
                 </div>
-                <div class="task-arrow">❯</div>
-            </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
 
             <!-- Simulador de Prêmios -->
-            <div class="task-item" onclick="startTask(2.00, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')">
-                <div class="task-icon">💎</div>
+            <article class="task-item" onclick="startTask(2.00, 'https://jessicagilrs100-blip.github.io/cosmicai.github.io/index.html')" role="button" tabindex="0" aria-label="Tarefa: Simulador de Prêmios">
+                <div class="task-icon" aria-hidden="true">💎</div>
                 <div class="task-details">
                     <div class="task-name" id="simulatorName">Simulador de Prêmios</div>
                     <div class="task-reward" id="simulatorReward">+ R$ 2,00 no saldo</div>
                 </div>
-                <div class="task-arrow">❯</div>
-            </div>
-        </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
+        </section>
 
-        <div class="visitor-counter">
+        <div class="visitor-counter" role="status" aria-live="polite" aria-label="Contador de usuários online">
             <span class="badge-live"></span>
             <span id="visitor-count">1.432</span> <span id="counterSuffix">usuários online agora</span>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 40px 20px 120px; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--glass-border); margin-top: 40px;">
-        <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+    <footer role="contentinfo" style="text-align: center; padding: 40px 20px 120px; font-size: 0.8rem; color: var(--text-light); border-top: 1px solid var(--glass-border); margin-top: 40px;">
+        <nav aria-label="Menu de rodapé" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
             <a href="/about.html" style="color: var(--text-light); text-decoration: none;">Quem Somos</a>
             <a href="/blog.html" style="color: var(--text-light); text-decoration: none;">Blog</a>
             <a href="/faq.html" style="color: var(--text-light); text-decoration: none;">FAQ</a>
@@ -584,34 +634,34 @@
             <a href="/privacy-policy.html" style="color: var(--text-light); text-decoration: none;">Política de Privacidade</a>
             <a href="/terms-of-service.html" style="color: var(--text-light); text-decoration: none;">Termos de Serviço</a>
             <a href="/disclaimer.html" style="color: var(--text-light); text-decoration: none;">Isenção de Responsabilidade</a>
-        </div>
+        </nav>
         <p>&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
         <p style="margin-top: 10px; font-size: 0.7rem; opacity: 0.7;">O Grana Hoje é uma plataforma independente e não possui vínculo oficial com as marcas mencionadas nas tarefas.</p>
     </footer>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item active">
-            <div class="nav-icon">🏠</div>
+    <nav class="bottom-nav" role="navigation" aria-label="Menu de navegação principal">
+        <a href="#" class="nav-item active" role="tab" aria-selected="true">
+            <div class="nav-icon" aria-hidden="true">🏠</div>
             <span id="navHome">Home</span>
         </a>
-        <a href="#" class="nav-item" onclick="showModal('myAccountTitle', 'myAccountMessage')">
-            <div class="nav-icon">👤</div>
+        <a href="#" class="nav-item" role="tab" aria-selected="false" onclick="showModal('myAccountTitle', 'myAccountMessage')">
+            <div class="nav-icon" aria-hidden="true">👤</div>
             <span id="navProfile">Perfil</span>
         </a>
-        <a href="#" class="nav-item" onclick="showModal('supportTitle', 'supportMessage')">
-            <div class="nav-icon">💬</div>
+        <a href="#" class="nav-item" role="tab" aria-selected="false" onclick="showModal('supportTitle', 'supportMessage')">
+            <div class="nav-icon" aria-hidden="true">💬</div>
             <span id="navHelp">Ajuda</span>
         </a>
     </nav>
 
     <!-- Modal -->
-    <div id="modal" class="modal">
+    <dialog id="modal" class="modal" role="dialog" aria-labelledby="modal-title">
         <div class="modal-content">
             <h3 id="modal-title" class="modal-title"></h3>
             <p id="modal-text" class="modal-text"></p>
             <button id="modal-btn" class="btn-close" onclick="closeModal()">FECHAR</button>
         </div>
-    </div>
+    </dialog>
 
     <script>
         // Translations object
