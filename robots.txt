@@ -9,6 +9,12 @@ Allow: /pt-pt/
 Allow: /es/
 Allow: /en/
 Allow: /fr/
+Allow: /zh/
+Allow: /hi/
+Allow: /ar/
+Allow: /bn/
+Allow: /ru/
+Allow: /ja/
 
 # Desabilitar acesso a diretórios específicos (se houver)
 Disallow: /admin/
