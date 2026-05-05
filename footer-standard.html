@@ -1,0 +1,114 @@
+<footer class="standard-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/about.html">Sobre Nós</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="/contact.html">Contato</a></li>
+                    <li><a href="/privacy-policy.html">Política de Privacidade</a></li>
+                    <li><a href="/terms-of-service.html">Termos de Serviço</a></li>
+                    <li><a href="/disclaimer.html">Isenção de Responsabilidade</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>Email: <a href="mailto:support@granahoje.com">support@granahoje.com</a></p>
+                <p>Suporte: <a href="mailto:privacy@granahoje.com">privacy@granahoje.com</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
+            <p>Desenvolvido com ❤️ para sua independência financeira</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .standard-footer {
+        background: var(--glass);
+        border-top: 1px solid var(--glass-border);
+        padding: 50px 20px 30px;
+        margin-top: 50px;
+        color: var(--text);
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-section li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-section a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .footer-section a:hover {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+    
+    .footer-section p {
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid var(--glass-border);
+        padding-top: 20px;
+        color: var(--text-light);
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom p {
+        margin: 5px 0;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .standard-footer {
+            padding: 30px 20px;
+        }
+    }
+</style>

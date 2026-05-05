@@ -1,0 +1,37 @@
+# Redirects para Grana Hoje
+# Garantir URLs canônicas e melhorar SEO
+
+# Redirecionar www para non-www
+https://www.jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
+
+# Redirecionar HTTP para HTTPS
+http://jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
+http://www.jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
+
+# Redirecionar URLs antigas (se houver)
+/blog-articles.html /artigo-ganhar-dinheiro-online.html 301
+
+# Redirecionar raiz para página padrão
+/ /pt-br/ 302
+
+# Redirecionar URLs sem extensão para HTML
+/blog /blog.html 301
+/about /about.html 301
+/contact /contact.html 301
+/faq /faq.html 301
+/privacy-policy /privacy-policy.html 301
+/terms-of-service /terms-of-service.html 301
+/disclaimer /disclaimer.html 301
+
+# Redirecionar páginas de idioma
+/pt /pt-br/ 301
+/pt-pt /pt-pt/ 301
+/es /es/ 301
+/en /en/ 301
+/fr /fr/ 301
+/zh /zh/ 301
+/hi /hi/ 301
+/ar /ar/ 301
+/bn /bn/ 301
+/ru /ru/ 301
+/ja /ja/ 301
