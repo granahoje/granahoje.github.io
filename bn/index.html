@@ -498,7 +498,7 @@
     <div class="balance-card">
         <div class="balance-info">
             <p id="balanceLabel">Saldo Disponível</p>
-            <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+            <div class="balance-amount"><span id="currencySymbol">R$</span> <span id="balance">0,00</span></div>
         </div>
         <button class="withdraw-btn" id="withdrawBtn" onclick="showModal('withdrawTitle', 'withdrawMessage')">SACAR AGORA</button>
     </div>
@@ -956,6 +956,7 @@
             if (!t) return;
 
             document.getElementById('balanceLabel').innerText = t.balanceLabel;
+            document.getElementById('currencySymbol').innerText = t.currencySymbol;
             document.getElementById('withdrawBtn').innerText = t.withdrawBtn;
             document.getElementById('tasksTitle').innerText = t.tasksTitle;
             document.getElementById('visitSiteName').innerText = t.visitSiteName;
