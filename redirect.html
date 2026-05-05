@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grana Hoje - Redirecionando...</title>
+    <meta http-equiv="refresh" content="0; url=/pt-br/">
+    <script>
+        // Detectar idioma do navegador e redirecionar
+        const userLanguage = navigator.language || navigator.userLanguage;
+        let redirectPath = '/pt-br/'; // Padrão
+
+        if (userLanguage.startsWith('pt-PT') || userLanguage === 'pt') {
+            redirectPath = '/pt-pt/';
+        } else if (userLanguage.startsWith('es')) {
+            redirectPath = '/es/';
+        } else if (userLanguage.startsWith('en')) {
+            redirectPath = '/en/';
+        } else if (userLanguage.startsWith('fr')) {
+            redirectPath = '/fr/';
+        } else if (userLanguage.startsWith('pt')) {
+            redirectPath = '/pt-br/';
+        }
+
+        // Redirecionar
+        window.location.href = redirectPath;
+    </script>
+</head>
+<body>
+    <p>Redirecionando para seu idioma preferido...</p>
+    <p><a href="/pt-br/">Clique aqui se não for redirecionado automaticamente</a></p>
+</body>
+</html>

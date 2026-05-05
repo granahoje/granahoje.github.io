@@ -1,0 +1,49 @@
+# Robots.txt - Grana Hoje Multilingual
+# Otimizado para SEO e indexação de múltiplos idiomas
+
+# Permitir todos os bots
+User-agent: *
+Allow: /
+Allow: /pt-br/
+Allow: /pt-pt/
+Allow: /es/
+Allow: /en/
+Allow: /fr/
+
+# Desabilitar acesso a diretórios específicos (se houver)
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://jessicagilrs100-blip.github.io/sitemap.xml
+
+# Crawl-delay para respeitar recursos do servidor
+Crawl-delay: 1
+
+# Tempo máximo de requisição
+Request-rate: 30/60
+
+# Especificar site preferido (com www ou sem)
+# Preferir versão sem www
+Prefer-non-www: true
+
+# Permitir Google AdSense crawling
+User-agent: Googlebot-Image
+Allow: /
+
+# Permitir Bing
+User-agent: Bingbot
+Allow: /
+
+# Permitir Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# Permitir Twitter
+User-agent: Twitterbot
+Allow: /
+
+# Permitir LinkedIn
+User-agent: LinkedInBot
+Allow: /
