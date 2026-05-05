@@ -1026,6 +1026,7 @@
             currentLanguage = lang;
             localStorage.setItem('language', lang);
             updatePageLanguage();
+            window.location.href = window.location.origin + "/" + lang + "/";
         }
 
         function updatePageLanguage() {
@@ -1085,6 +1086,7 @@
             currentLanguage = savedLanguage;
             document.getElementById('languageSelector').value = savedLanguage;
             updatePageLanguage();
+            window.location.href = window.location.origin + "/" + lang + "/";
         });
 
         document.addEventListener('click', (e) => {

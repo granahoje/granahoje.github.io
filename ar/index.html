@@ -948,7 +948,7 @@
             localStorage.setItem('preferredLanguage', lang);
             updatePageLanguage();
             // Redirect to language subdirectory
-            window.location.href = `/${lang}/`;
+            window.location.href = window.location.origin + "/" + lang + "/";
         }
 
         function updatePageLanguage() {
