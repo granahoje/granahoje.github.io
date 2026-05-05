@@ -24,15 +24,8 @@ Disallow: /node_modules/
 # Sitemap
 Sitemap: https://jessicagilrs100-blip.github.io/sitemap.xml
 
-# Crawl-delay para respeitar recursos do servidor
-Crawl-delay: 1
-
-# Tempo máximo de requisição
-Request-rate: 30/60
-
-# Especificar site preferido (com www ou sem)
-# Preferir versão sem www
-Prefer-non-www: true
+# Crawl-delay removido para acelerar indexação do Google
+# Prefer-non-www e Request-rate removidos (não são padrão do robots.txt)
 
 # Permitir Google AdSense crawling
 User-agent: Googlebot-Image
