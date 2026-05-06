@@ -1,270 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    
-    <!-- Idiomas: pt-br, pt-pt, es, en, fr, zh, hi, ar, bn, ru, ja -->
-    
-    <url>
-        <loc>https://granahoje.github.io/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://granahoje.github.io/blog.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://granahoje.github.io/</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-    <url>
-        <loc>https://granahoje.github.io/faq.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+  <url>
+    <loc>https://granahoje.github.io/blog.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-    <url>
-        <loc>https://granahoje.github.io/about.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+  <url>
+    <loc>https://granahoje.github.io/faq.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-    <url>
-        <loc>https://granahoje.github.io/contact.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
+  <url>
+    <loc>https://granahoje.github.io/about.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
-    <url>
-        <loc>https://granahoje.github.io/disclaimer.html</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/pt-pt/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/es/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/en/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/fr/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/zh/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/hi/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/ar/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/bn/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/ru/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/ja/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
-
-    <url>
-        <loc>https://granahoje.github.io/pt-br/</loc>
-        <lastmod>2026-05-06</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/"/>
-        <xhtml:link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/"/>
-        <xhtml:link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/"/>
-        <xhtml:link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/"/>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/"/>
-    </url>
+  <url>
+    <loc>https://granahoje.github.io/contact.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 
 </urlset>
