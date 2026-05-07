@@ -1,18 +1,19 @@
 // Cookie Consent Banner - LGPD/GDPR Compliant
 // Este script implementa um banner de consentimento de cookies que bloqueia scripts de rastreamento até o aceite
-// Versão 2.0 - Melhorada para máxima conformidade com AdSense
+// Versão 2.1 - Corrigido para persistir tanto aceitação quanto rejeição
 
 (function() {
     'use strict';
 
     const CONSENT_KEY = 'grana-hoje-cookie-consent';
-    const CONSENT_VERSION = '2.0';
+    const CONSENT_VERSION = '2.1';
     const CONSENT_TIMESTAMP = 'grana-hoje-consent-timestamp';
 
-    // Verificar se o usuário já consentiu
+    // Verificar se o usuário já fez uma escolha (aceitar ou rejeitar)
     function hasConsent() {
         const consent = localStorage.getItem(CONSENT_KEY);
-        return consent === 'accepted';
+        // O banner deve ficar oculto se houver QUALQUER escolha salva
+        return consent === 'accepted' || consent === 'rejected';
     }
 
     // Verificar se o consentimento expirou (renovar a cada 30 dias)
@@ -39,6 +40,7 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
             }
         } else {
+            // Se rejeitado, salvamos 'rejected' para que o banner não apareça novamente
             localStorage.setItem(CONSENT_KEY, 'rejected');
             localStorage.setItem(CONSENT_TIMESTAMP, Date.now().toString());
             updateGoogleConsent(false);
@@ -61,6 +63,9 @@
 
     // Criar e exibir o banner
     function createBanner() {
+        // Evitar duplicatas
+        if (document.getElementById('cookie-consent-banner')) return;
+
         const banner = document.createElement('div');
         banner.id = 'cookie-consent-banner';
         banner.setAttribute('role', 'dialog');
@@ -183,11 +188,12 @@
                 createBanner();
             }
         } else {
-            // Usuário já consentiu, atualizar consentimento do Google
-            updateGoogleConsent(true);
+            // Usuário já fez uma escolha
+            const consent = localStorage.getItem(CONSENT_KEY);
+            updateGoogleConsent(consent === 'accepted');
             
-            // Recarregar anúncios se AdSense estiver carregado
-            if (window.adsbygoogle) {
+            // Recarregar anúncios se AdSense estiver carregado e aceito
+            if (consent === 'accepted' && window.adsbygoogle) {
                 (adsbygoogle = window.adsbygoogle || []).push({});
             }
         }
