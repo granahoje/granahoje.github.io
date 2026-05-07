@@ -6,7 +6,7 @@
 google.com, pub-4896859041377751, DIRECT, f08c47fec0942fa0
 
 # Google AdManager (se aplicável)
-google.com, ca-pub-4896859041377751, RESELLER, f08c47fec0942fa0
+google.com, pub-4896859041377751, RESELLER, f08c47fec0942fa0
 
 # OpenX (se usar)
 openx.com, 537149888, RESELLER, 6a698e2ec38604c6
