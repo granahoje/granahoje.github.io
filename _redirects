@@ -2,11 +2,11 @@
 # Garantir URLs canônicas e melhorar SEO
 
 # Redirecionar www para non-www
-https://www.jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
+https://www.granahoje.github.io/* https://granahoje.github.io/:splat 301
 
 # Redirecionar HTTP para HTTPS
-http://jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
-http://www.jessicagilrs100-blip.github.io/* https://jessicagilrs100-blip.github.io/:splat 301
+http://granahoje.github.io/* https://granahoje.github.io/:splat 301
+http://www.granahoje.github.io/* https://granahoje.github.io/:splat 301
 
 # Redirecionar URLs antigas (se houver)
 /blog-articles.html /artigo-ganhar-dinheiro-online.html 301
