@@ -125,20 +125,23 @@
             <p style="font-size: 0.8rem; color: var(--text-light);">&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
         </div>
     
-<!-- Botão Voltar ao Menu Inicial -->
-<div style="text-align: center; margin: 30px 0; padding: 0 20px;">
-    <a href="/" style="display: inline-block; background: linear-gradient(135deg, #00d1b2, #7c3aed); color: white; padding: 18px 32px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); transition: all 0.3s ease; border: none; cursor: pointer; animation: pulse 2s infinite;">
-        Voltar ao menu inicial e ganhe 20 reais agora
+
+
+</footer>
+
+<!-- Botão Estratégico de Retorno -->
+<div class="floating-cta" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 400px;">
+    <a href="/" style="display: block; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 20px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid #fff; animation: bounce 2s infinite;">
+        💰 VOLTAR E RESGATAR R$ 20,00 AGORA! 💰
     </a>
 </div>
 <style>
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); }
-    50% { transform: scale(1.05); box-shadow: 0 15px 35px rgba(124, 58, 237, 0.5); }
-    100% { transform: scale(1); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3); }
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+    40% {transform: translateX(-50%) translateY(-10px);}
+    60% {transform: translateX(-50%) translateY(-5px);}
 }
 </style>
 
-</footer>
 </body>
 </html>
