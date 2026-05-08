@@ -36,8 +36,12 @@
             updateGoogleConsent(true);
             
             // Recarregar anúncios
-            if (window.adsbygoogle) {
-                (adsbygoogle = window.adsbygoogle || []).push({});
+            try {
+                if (window.adsbygoogle) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            } catch (e) {
+                console.error("Erro ao carregar anúncios após consentimento:", e);
             }
         } else {
             // Se rejeitado, salvamos 'rejected' para que o banner não apareça novamente
@@ -193,8 +197,12 @@
             updateGoogleConsent(consent === 'accepted');
             
             // Recarregar anúncios se AdSense estiver carregado e aceito
-            if (consent === 'accepted' && window.adsbygoogle) {
-                (adsbygoogle = window.adsbygoogle || []).push({});
+            try {
+                if (consent === 'accepted' && window.adsbygoogle) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            } catch (e) {
+                console.error("Erro ao carregar anúncios pré-existentes:", e);
             }
         }
     }
