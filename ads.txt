@@ -1,4 +1,2 @@
 # ads.txt file for Grana Hoje
-# Autorização de vendedores de anúncios - Monetag e Adsterra
 
-# Adicione abaixo as linhas fornecidas pela Monetag e Adsterra
