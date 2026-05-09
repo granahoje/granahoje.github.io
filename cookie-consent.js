@@ -37,8 +37,7 @@
             
             // Recarregar anúncios
             try {
-                if (window.adsbygoogle) {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                );
                 }
             } catch (e) {
                 console.error("Erro ao carregar anúncios após consentimento:", e);
@@ -198,8 +197,7 @@
             
             // Recarregar anúncios se AdSense estiver carregado e aceito
             try {
-                if (consent === 'accepted' && window.adsbygoogle) {
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                );
                 }
             } catch (e) {
                 console.error("Erro ao carregar anúncios pré-existentes:", e);

@@ -88,7 +88,7 @@ template = """<!DOCTYPE html>
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jessicagilrs100-blip.github.io/{filename}">
     <script src="/cookie-consent.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -128,13 +128,8 @@ template = """<!DOCTYPE html>
         </article>
         
         <div class="ad-box">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4896859041377751"
-                 data-ad-slot="auto"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
+            
+            
         </div>
 
         <div class="content-section">
@@ -142,13 +137,8 @@ template = """<!DOCTYPE html>
         </div>
 
         <div class="ad-box">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-4896859041377751"
-                 data-ad-slot="auto"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
+            
+            
         </div>
     </div>
 
