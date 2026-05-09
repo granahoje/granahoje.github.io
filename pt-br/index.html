@@ -510,49 +510,18 @@
     
 
     <main>
-        <h2 class="section-title" id="tasksTitle">✨ Missões Lucrativas</h2>
-        <div class="task-list">
-            <!-- Visitar Site -->
+        <h2 class="section-title" id="tasksTitle">
+            <div class="task-item" onclick="startTask(1.50, 'https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={unique_user_id}&secure_hash={secure_hash}&username={user_name}&email={user_email}&subid_1=&subid_2')">
+                <div class="task-icon">📊</div>
+
+            <div class="task-item" onclick="startTask(2.00, 'https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={unique_user_id}&secure_hash={secure_hash}&username={user_name}&email={user_email}&subid_1=&subid_2')">
+                <div class="task-icon">💎</div>
+
             <div class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')">
                 <div class="task-icon">🌐</div>
-                <div class="task-details">
-                    <div class="task-name"><span id="visitSiteName">Visitar Site</span> <span class="badge-hot" id="newBadge">NOVO</span></div>
-                    <div class="task-reward" id="visitSiteReward">+ R$ 1,00 no saldo</div>
-                </div>
-                <div class="task-arrow">❯</div>
-            </div>
 
-            <!-- Signo da Sorte -->
             <div class="task-item" onclick="startTask(0.50, 'https://granahoje.github.io/cosmicai.github.io/')">
                 <div class="task-icon">🔮</div>
-                <div class="task-details">
-                    <div class="task-name" id="zodSignName">Signo da Sorte</div>
-                    <div class="task-reward" id="zodSignReward">+ R$ 0,50 no saldo</div>
-                </div>
-                <div class="task-arrow">❯</div>
-            </div>
-
-            <!-- Responder Pesquisa -->
-            <div class="task-item" onclick="startTask(1.50, 'https://financadescomplicado.blogspot.com/?m=1')">
-                <div class="task-icon">📊</div>
-                <div class="task-details">
-                    <div class="task-name" id="surveyName">Responder Pesquisa</div>
-                    <div class="task-reward" id="surveyReward">+ R$ 1,50 no saldo</div>
-                </div>
-                <div class="task-arrow">❯</div>
-            </div>
-
-            <!-- Simulador de Prêmios -->
-            <div class="task-item" onclick="startTask(2.00, 'https://granahoje.github.io/cosmicai.github.io/')">
-                <div class="task-icon">💎</div>
-                <div class="task-details">
-                    <div class="task-name" id="simulatorName">Simulador de Prêmios</div>
-                    <div class="task-reward" id="simulatorReward">+ R$ 2,00 no saldo</div>
-                </div>
-                <div class="task-arrow">❯</div>
-            </div>
-        </div>
-
         <div class="visitor-counter">
             <span class="badge-live"></span>
             <span id="visitor-count">1.432</span> <span id="counterSuffix">usuários online agora</span>
@@ -614,9 +583,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ R$ 0.40 no saldo",
-                        "surveyName": "Responder Pesquisa",
+                        "surveyName": "CPX: Responder Pesquisa",
                         "surveyReward": "+ R$ 1.10 no saldo",
-                        "simulatorName": "Simulador de Prêmios",
+                        "simulatorName": "CPX: Simulador de Prêmios",
                         "simulatorReward": "+ R$ 1.50 no saldo",
                         "counterSuffix": "usuários online agora",
                         "taskInProgress": "Tarefa em Andamento",
@@ -646,9 +615,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ € 0.07 no saldo",
-                        "surveyName": "Responder Inquérito",
+                        "surveyName": "CPX: Responder Inquérito",
                         "surveyReward": "+ € 0.20 no saldo",
-                        "simulatorName": "Simulador de Prémios",
+                        "simulatorName": "CPX: Simulador de Prémios",
                         "simulatorReward": "+ € 0.27 no saldo",
                         "counterSuffix": "utilizadores online agora",
                         "taskInProgress": "Tarefa em Curso",
@@ -678,9 +647,9 @@
                         "newBadge": "NUEVO",
                         "zodSignName": "Signo de la Suerte",
                         "zodSignReward": "+ € 0.07 en el saldo",
-                        "surveyName": "Responder Encuesta",
+                        "surveyName": "CPX: Responder Encuesta",
                         "surveyReward": "+ € 0.20 en el saldo",
-                        "simulatorName": "Simulador de Premios",
+                        "simulatorName": "CPX: Simulador de Premios",
                         "simulatorReward": "+ € 0.27 en el saldo",
                         "counterSuffix": "usuarios en línea ahora",
                         "taskInProgress": "Tarea en Progreso",
@@ -710,9 +679,9 @@
                         "newBadge": "NEW",
                         "zodSignName": "Lucky Sign",
                         "zodSignReward": "+ $ 0.08 to balance",
-                        "surveyName": "Answer Survey",
+                        "surveyName": "CPX: Answer Survey",
                         "surveyReward": "+ $ 0.22 to balance",
-                        "simulatorName": "Prize Simulator",
+                        "simulatorName": "CPX: Prize Simulator",
                         "simulatorReward": "+ $ 0.30 to balance",
                         "counterSuffix": "users online now",
                         "taskInProgress": "Task in Progress",
@@ -742,9 +711,9 @@
                         "newBadge": "NOUVEAU",
                         "zodSignName": "Signe de la Chance",
                         "zodSignReward": "+ € 0.07 au solde",
-                        "surveyName": "Répondre à un Sondage",
+                        "surveyName": "CPX: Répondre à un Sondage",
                         "surveyReward": "+ € 0.20 au solde",
-                        "simulatorName": "Simulateur de Prix",
+                        "simulatorName": "CPX: Simulateur de Prix",
                         "simulatorReward": "+ € 0.27 au solde",
                         "counterSuffix": "utilisateurs en ligne maintenant",
                         "taskInProgress": "Tâche en Cours",
@@ -774,9 +743,9 @@
                         "newBadge": "新",
                         "zodSignName": "幸运星座",
                         "zodSignReward": "余额 + ¥ 0.58",
-                        "surveyName": "回答调查",
+                        "surveyName": "CPX: 回答调查",
                         "surveyReward": "余额 + ¥ 1.59",
-                        "simulatorName": "奖品模拟器",
+                        "simulatorName": "CPX: 奖品模拟器",
                         "simulatorReward": "余额 + ¥ 2.17",
                         "counterSuffix": "位用户在线",
                         "taskInProgress": "任务进行中",
@@ -806,9 +775,9 @@
                         "newBadge": "नया",
                         "zodSignName": "भाग्यशाली राशि",
                         "zodSignReward": "शेष राशि में + 6.60 ₹",
-                        "surveyName": "सर्वेक्षण का उत्तर दें",
+                        "surveyName": "CPX: सर्वेक्षण का उत्तर दें",
                         "surveyReward": "शेष राशि में + 18.15 ₹",
-                        "simulatorName": "पुरस्कार सिम्युलेटर",
+                        "simulatorName": "CPX: पुरस्कार सिम्युलेटर",
                         "simulatorReward": "शेष राशि में + 24.75 ₹",
                         "counterSuffix": "उपयोगकर्ता अभी ऑनलाइन हैं",
                         "taskInProgress": "कार्य प्रगति पर है",
@@ -838,9 +807,9 @@
                         "newBadge": "جديد",
                         "zodSignName": "برج الحظ",
                         "zodSignReward": "+ 0.30 ر.س في الرصيد",
-                        "surveyName": "الإجابة على الاستطلاع",
+                        "surveyName": "CPX: الإجابة على الاستطلاع",
                         "surveyReward": "+ 0.83 ر.س في الرصيد",
-                        "simulatorName": "محاكي الجوائز",
+                        "simulatorName": "CPX: محاكي الجوائز",
                         "simulatorReward": "+ 1.12 ر.س في الرصيد",
                         "counterSuffix": "مستخدم متصل الآن",
                         "taskInProgress": "المهمة قيد التنفيذ",
@@ -870,9 +839,9 @@
                         "newBadge": "নতুন",
                         "zodSignName": "ভাগ্যের রাশি",
                         "zodSignReward": "ব্যালেন্সে + 8.80 ৳",
-                        "surveyName": "জরিপের উত্তর দিন",
+                        "surveyName": "CPX: জরিপের উত্তর দিন",
                         "surveyReward": "ব্যালেন্সে + 24.20 ৳",
-                        "simulatorName": "পুরস্কার সিমুলেটর",
+                        "simulatorName": "CPX: পুরস্কার সিমুলেটর",
                         "simulatorReward": "ব্যালেন্সে + 33.00 ৳",
                         "counterSuffix": "জন ব্যবহারকারী এখন অনলাইনে আছেন",
                         "taskInProgress": "কাজ চলছে",
@@ -902,9 +871,9 @@
                         "newBadge": "НОВОЕ",
                         "zodSignName": "Знак удачи",
                         "zodSignReward": "+ ₽ 7.40 к балансу",
-                        "surveyName": "Ответить на опрос",
+                        "surveyName": "CPX: Ответить на опрос",
                         "surveyReward": "+ ₽ 20.35 к балансу",
-                        "simulatorName": "Симулятор призов",
+                        "simulatorName": "CPX: Симулятор призов",
                         "simulatorReward": "+ ₽ 27.75 к балансу",
                         "counterSuffix": "пользователей онлайн сейчас",
                         "taskInProgress": "Задание выполняется",
@@ -934,9 +903,9 @@
                         "newBadge": "新規",
                         "zodSignName": "幸運の星座",
                         "zodSignReward": "残高 + ¥ 12.00",
-                        "surveyName": "アンケートに回答",
+                        "surveyName": "CPX: アンケートに回答",
                         "surveyReward": "残高 + ¥ 33.00",
-                        "simulatorName": "賞品シミュレーター",
+                        "simulatorName": "CPX: 賞品シミュレーター",
                         "simulatorReward": "残高 + ¥ 45.00",
                         "counterSuffix": "人のユーザーがオンラインです",
                         "taskInProgress": "タスク進行中",

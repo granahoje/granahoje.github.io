@@ -591,9 +591,25 @@
     
 
     <main role="main">
-        <h2 class="section-title" id="tasksTitle">✨ Missões Lucrativas</h2>
-        <section class="task-list" role="region" aria-label="Lista de tarefas disponíveis">
-            <!-- Visitar Site -->
+        <h2 class="section-title" id="tasksTitle">
+            <article class="task-item" onclick="startTask(1.50, 'https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={unique_user_id}&secure_hash={secure_hash}&username={user_name}&email={user_email}&subid_1=&subid_2')" role="button" tabindex="0" aria-label="Tarefa: Responder Pesquisa">
+                <div class="task-icon" aria-hidden="true">📊</div>
+                <div class="task-details">
+                    <div class="task-name" id="surveyName">Responder Pesquisa</div>
+                    <div class="task-reward" id="surveyReward">+ R$ 1,50 no saldo</div>
+                </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
+
+            <article class="task-item" onclick="startTask(2.00, 'https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={unique_user_id}&secure_hash={secure_hash}&username={user_name}&email={user_email}&subid_1=&subid_2')" role="button" tabindex="0" aria-label="Tarefa: Simulador de Prêmios">
+                <div class="task-icon" aria-hidden="true">💎</div>
+                <div class="task-details">
+                    <div class="task-name" id="simulatorName">Simulador de Prêmios</div>
+                    <div class="task-reward" id="simulatorReward">+ R$ 2,00 no saldo</div>
+                </div>
+                <div class="task-arrow" aria-hidden="true">❯</div>
+            </article>
+
             <article class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')" role="button" tabindex="0" aria-label="Tarefa: Visitar Site">
                 <div class="task-icon" aria-hidden="true">🌐</div>
                 <div class="task-details">
@@ -603,7 +619,6 @@
                 <div class="task-arrow" aria-hidden="true">❯</div>
             </article>
 
-            <!-- Signo da Sorte -->
             <article class="task-item" onclick="startTask(0.50, 'https://granahoje.github.io/cosmicai.github.io/')" role="button" tabindex="0" aria-label="Tarefa: Signo da Sorte">
                 <div class="task-icon" aria-hidden="true">🔮</div>
                 <div class="task-details">
@@ -612,28 +627,6 @@
                 </div>
                 <div class="task-arrow" aria-hidden="true">❯</div>
             </article>
-
-            <!-- Responder Pesquisa -->
-            <article class="task-item" onclick="startTask(1.50, 'https://financadescomplicado.blogspot.com/?m=1')" role="button" tabindex="0" aria-label="Tarefa: Responder Pesquisa">
-                <div class="task-icon" aria-hidden="true">📊</div>
-                <div class="task-details">
-                    <div class="task-name" id="surveyName">Responder Pesquisa</div>
-                    <div class="task-reward" id="surveyReward">+ R$ 1,50 no saldo</div>
-                </div>
-                <div class="task-arrow" aria-hidden="true">❯</div>
-            </article>
-
-            <!-- Simulador de Prêmios -->
-            <article class="task-item" onclick="startTask(2.00, 'https://granahoje.github.io/cosmicai.github.io/')" role="button" tabindex="0" aria-label="Tarefa: Simulador de Prêmios">
-                <div class="task-icon" aria-hidden="true">💎</div>
-                <div class="task-details">
-                    <div class="task-name" id="simulatorName">Simulador de Prêmios</div>
-                    <div class="task-reward" id="simulatorReward">+ R$ 2,00 no saldo</div>
-                </div>
-                <div class="task-arrow" aria-hidden="true">❯</div>
-            </article>
-        </section>
-
         <div class="visitor-counter" role="status" aria-live="polite" aria-label="Contador de usuários online">
             <span class="badge-live" aria-hidden="true"></span>
             <span id="visitor-count">1.432</span> <span id="counterSuffix">usuários online agora</span>
@@ -678,9 +671,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ R$ 0.40 no saldo",
-                        "surveyName": "Responder Pesquisa",
+                        "surveyName": "CPX: Responder Pesquisa",
                         "surveyReward": "+ R$ 1.10 no saldo",
-                        "simulatorName": "Simulador de Prêmios",
+                        "simulatorName": "CPX: Simulador de Prêmios",
                         "simulatorReward": "+ R$ 1.50 no saldo",
                         "counterSuffix": "usuários online agora",
                         "taskInProgress": "Tarefa em Andamento",
@@ -710,9 +703,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ € 0.07 no saldo",
-                        "surveyName": "Responder Inquérito",
+                        "surveyName": "CPX: Responder Inquérito",
                         "surveyReward": "+ € 0.20 no saldo",
-                        "simulatorName": "Simulador de Prémios",
+                        "simulatorName": "CPX: Simulador de Prémios",
                         "simulatorReward": "+ € 0.27 no saldo",
                         "counterSuffix": "utilizadores online agora",
                         "taskInProgress": "Tarefa em Curso",
@@ -742,9 +735,9 @@
                         "newBadge": "NUEVO",
                         "zodSignName": "Signo de la Suerte",
                         "zodSignReward": "+ € 0.07 en el saldo",
-                        "surveyName": "Responder Encuesta",
+                        "surveyName": "CPX: Responder Encuesta",
                         "surveyReward": "+ € 0.20 en el saldo",
-                        "simulatorName": "Simulador de Premios",
+                        "simulatorName": "CPX: Simulador de Premios",
                         "simulatorReward": "+ € 0.27 en el saldo",
                         "counterSuffix": "usuarios en línea ahora",
                         "taskInProgress": "Tarea en Progreso",
@@ -774,9 +767,9 @@
                         "newBadge": "NEW",
                         "zodSignName": "Lucky Sign",
                         "zodSignReward": "+ € 0.07 in balance",
-                        "surveyName": "Answer Survey",
+                        "surveyName": "CPX: Answer Survey",
                         "surveyReward": "+ € 0.20 in balance",
-                        "simulatorName": "Prize Simulator",
+                        "simulatorName": "CPX: Prize Simulator",
                         "simulatorReward": "+ € 0.27 in balance",
                         "counterSuffix": "users online now",
                         "taskInProgress": "Task in Progress",
@@ -806,9 +799,9 @@
                         "newBadge": "NOUVEAU",
                         "zodSignName": "Signe de la Chance",
                         "zodSignReward": "+ € 0.07 dans le solde",
-                        "surveyName": "Répondre à l'Enquête",
+                        "surveyName": "CPX: Répondre à l'Enquête",
                         "surveyReward": "+ € 0.20 dans le solde",
-                        "simulatorName": "Simulateur de Prix",
+                        "simulatorName": "CPX: Simulateur de Prix",
                         "simulatorReward": "+ € 0.27 dans le solde",
                         "counterSuffix": "utilisateurs en ligne maintenant",
                         "taskInProgress": "Tâche en Cours",
@@ -838,9 +831,9 @@
                         "newBadge": "新",
                         "zodSignName": "幸运星座",
                         "zodSignReward": "+ € 0.07 到余额",
-                        "surveyName": "回答调查",
+                        "surveyName": "CPX: 回答调查",
                         "surveyReward": "+ € 0.20 到余额",
-                        "simulatorName": "奖品模拟器",
+                        "simulatorName": "CPX: 奖品模拟器",
                         "simulatorReward": "+ € 0.27 到余额",
                         "counterSuffix": "现在在线用户",
                         "taskInProgress": "任务进行中",
@@ -870,9 +863,9 @@
                         "newBadge": "नया",
                         "zodSignName": "भाग्य का संकेत",
                         "zodSignReward": "+ € 0.07 शेष में",
-                        "surveyName": "सर्वेक्षण का उत्तर दें",
+                        "surveyName": "CPX: सर्वेक्षण का उत्तर दें",
                         "surveyReward": "+ € 0.20 शेष में",
-                        "simulatorName": "पुरस्कार सिम्युलेटर",
+                        "simulatorName": "CPX: पुरस्कार सिम्युलेटर",
                         "simulatorReward": "+ € 0.27 शेष में",
                         "counterSuffix": "अब ऑनलाइन उपयोगकर्ता",
                         "taskInProgress": "कार्य प्रगति में है",
@@ -902,9 +895,9 @@
                         "newBadge": "جديد",
                         "zodSignName": "علامة الحظ",
                         "zodSignReward": "+ € 0.07 في الرصيد",
-                        "surveyName": "الإجابة على الاستطلاع",
+                        "surveyName": "CPX: الإجابة على الاستطلاع",
                         "surveyReward": "+ € 0.20 في الرصيد",
-                        "simulatorName": "محاكي الجوائز",
+                        "simulatorName": "CPX: محاكي الجوائز",
                         "simulatorReward": "+ € 0.27 في الرصيد",
                         "counterSuffix": "المستخدمون متصلون الآن",
                         "taskInProgress": "المهمة قيد التقدم",
@@ -934,9 +927,9 @@
                         "newBadge": "নতুন",
                         "zodSignName": "ভাগ্যের চিহ্ন",
                         "zodSignReward": "+ € 0.07 ব্যালেন্সে",
-                        "surveyName": "সমীক্ষার উত্তর দিন",
+                        "surveyName": "CPX: সমীক্ষার উত্তর দিন",
                         "surveyReward": "+ € 0.20 ব্যালেন্সে",
-                        "simulatorName": "পুরস্কার সিমুলেটর",
+                        "simulatorName": "CPX: পুরস্কার সিমুলেটর",
                         "simulatorReward": "+ € 0.27 ব্যালেন্সে",
                         "counterSuffix": "এখন অনলাইন ব্যবহারকারী",
                         "taskInProgress": "কাজ চলছে",
@@ -966,9 +959,9 @@
                         "newBadge": "НОВОЕ",
                         "zodSignName": "Знак удачи",
                         "zodSignReward": "+ € 0.07 на баланс",
-                        "surveyName": "Ответить на опрос",
+                        "surveyName": "CPX: Ответить на опрос",
                         "surveyReward": "+ € 0.20 на баланс",
-                        "simulatorName": "Симулятор призов",
+                        "simulatorName": "CPX: Симулятор призов",
                         "simulatorReward": "+ € 0.27 на баланс",
                         "counterSuffix": "пользователей онлайн сейчас",
                         "taskInProgress": "Задача выполняется",
@@ -998,9 +991,9 @@
                         "newBadge": "新",
                         "zodSignName": "幸運の兆し",
                         "zodSignReward": "+ € 0.07 残高に",
-                        "surveyName": "アンケートに回答",
+                        "surveyName": "CPX: アンケートに回答",
                         "surveyReward": "+ € 0.20 残高に",
-                        "simulatorName": "賞品シミュレーター",
+                        "simulatorName": "CPX: 賞品シミュレーター",
                         "simulatorReward": "+ € 0.27 残高に",
                         "counterSuffix": "現在オンラインのユーザー",
                         "taskInProgress": "タスク進行中",
