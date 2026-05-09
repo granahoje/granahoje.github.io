@@ -174,6 +174,14 @@ template = """<!DOCTYPE html>
             <p style="font-size: 0.8rem; color: var(--text-light);">&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Monetag Integration -->
+    <script src="https://quge5.com/88/tag.min.js" data-zone="237206" async data-cfasync="false"></script>
+
+    <!-- CPX Research Integration -->
+    <div style="margin: 20px; text-align: center;">
+        <iframe width="100%" frameBorder="0" height="2000px" src="https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={{unique_user_id}}&secure_hash={{secure_hash}}&username={{user_name}}&email={{user_email}}&subid_1=&subid_2"></iframe>
+    </div>
 </body>
 </html>
 """
