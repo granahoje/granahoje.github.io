@@ -41,7 +41,55 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: var(--bg); 
             color: var(--text); 
-            line-height: 1.6;
+            line-height: 1.8; /* Melhorado */
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            body { font-size: 17px; }
+        }
+        .author-bio {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--bg);
+        }
+        .author-info h4 { color: var(--primary); margin-bottom: 5px; }
+        .author-info p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+        
+        .floating-cta-container {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .floating-cta-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
         
         header {
@@ -412,12 +460,44 @@
 </footer>
 
 
-<!-- Botão Estratégico de Retorno -->
-<div class="floating-cta-container" style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; z-index: 9999; pointer-events: none;">
-    <a href="/" style="pointer-events: auto; display: inline-block; width: 90%; max-width: 380px; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 10px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid #fff; animation: bounce 2s infinite; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-        💰 VOLTAR E RESGATAR R$ 20,00 AGORA! 💰
-    </a>
-</div>
+    <!-- Bio do Autor (E-E-A-T) -->
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+        <!-- Funil de Retenção -->
+        <div style="background: linear-gradient(135deg, var(--card-bg), var(--bg)); border: 1px solid var(--primary); border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 40px;">
+            <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">🚀 Quer Dicas Exclusivas de 2026?</h3>
+            <p style="color: var(--text-light); margin-bottom: 25px;">Entre para nossa lista VIP e receba em primeira mão os novos apps que estão pagando via PIX antes de todo mundo.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <input type="email" placeholder="Seu melhor e-mail" style="padding: 15px 20px; border-radius: 12px; border: 1px solid var(--glass-border); background: var(--bg); color: #fff; min-width: 280px;">
+                <button style="padding: 15px 30px; border-radius: 12px; border: none; background: var(--primary); color: var(--bg); font-weight: 800; cursor: pointer; transition: transform 0.2s;">QUERO PARTICIPAR →</button>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 20px;">Ou entre no nosso <a href="#" style="color: var(--primary); font-weight: 700;">Grupo do Telegram</a></p>
+        </div>
+
+        <div class="author-bio">
+            <div class="author-avatar">RS</div>
+            <div class="author-info">
+                <h4>Ricardo Santos</h4>
+                <p>Especialista em marketing digital e monetização online com mais de 8 anos de experiência. Ricardo dedica-se a testar e validar formas reais de renda extra para a comunidade Grana Hoje.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Estratégico de Retorno -->
+    <div class="floating-cta-container">
+        <a href="/" style="pointer-events: auto; display: inline-block; width: 90%; max-width: 380px; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 10px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid #fff; animation: bounce 2s infinite; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            💰 VOLTAR E RESGATAR R$ 20,00 AGORA! 💰
+        </a>
+    </div>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const cta = document.querySelector('.floating-cta-container');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 40) {
+                cta.classList.add('visible');
+            }
+        });
+    </script>
 <style>
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {transform: translateY(0);}

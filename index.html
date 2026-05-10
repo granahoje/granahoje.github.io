@@ -198,8 +198,15 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            line-height: 1.6;
+            line-height: 1.8; /* Melhorado para legibilidade */
             overflow-x: hidden;
+            font-size: 16px; /* Base sólida */
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px; /* Aumentado para mobile conforme sugerido */
+            }
         }
 
         /* Background Glows */
