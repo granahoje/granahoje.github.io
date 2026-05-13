@@ -1,0 +1,5 @@
+# Adsterra Ads.txt for Grana Hoje
+# Adsterra Network
+profitablecpmratenetwork.com, 29387236, DIRECT, f08c47fec0942fa0
+# Google AdSense (Placeholder - Substituir pelo seu ID se tiver AdSense)
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
