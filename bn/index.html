@@ -466,9 +466,85 @@
             }
         }
 
+    
+        /* Melhorias Dinâmicas */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .task-item { position: relative; overflow: hidden; }
+        .task-item::after {
+            content: 'RECOMPENSA DISPONÍVEL';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: var(--accent);
+            color: #000;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 30px;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .withdraw-btn { animation: pulse 2s infinite; }
+        .task-reward { color: var(--primary); font-weight: 700; }
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ff4b2b;
+            border-radius: 50%;
+            margin-right: 5px;
+            box-shadow: 0 0 10px #ff4b2b;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
     </style>
 
-    <script src="https://pl29387236.profitablecpmratenetwork.com/5f/e8/01/5fe801f371dcdefd22e9b1fe08603d69.js"></script>
+    <script src="https://pl29387236.profitablecpmratenetwork.com/5f/e8/01/5fe801f371dcdefd22e9b1fe08603d69.js">
+        // Notificações de Ganhos em Tempo Real
+        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
+        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
+        
+        function showNotification() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--glass);
+                backdrop-filter: blur(10px);
+                padding: 12px 20px;
+                border-radius: 50px;
+                border: 1px solid var(--primary);
+                color: white;
+                font-size: 0.8rem;
+                z-index: 1000;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                transition: all 0.5s ease;
+                opacity: 0;
+            `;
+            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
+            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
+            setTimeout(() => { toast.remove(); }, 4500);
+        }
+        
+        setInterval(showNotification, 8000);
+
+    </script>
 </head>
 <body>
     <div class="glow glow-1"></div>
@@ -512,10 +588,10 @@
             <div class="task-item" onclick="startTask(2.00, 'https://granahoje.github.io/blog.html')">
                 <div class="task-icon">💎</div>
 
-            <div class="task-item" onclick="startTask(1.00, 'https://rendafacilbrasill.blogspot.com/?m=1')">
+            <div class="task-item" onclick="startTask(1.00, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
                 <div class="task-icon">🌐</div>
 
-            <div class="task-item" onclick="startTask(0.50, 'https://granahoje.github.io/cosmicai.github.io/')">
+            <div class="task-item" onclick="startTask(0.50, '/artigos/jogos-que-pagam-pix.html')">
                 <div class="task-icon">🔮</div>
         </section>
 
@@ -1017,6 +1093,43 @@
                 }
             }
         }
+    
+        // Notificações de Ganhos em Tempo Real
+        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
+        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
+        
+        function showNotification() {
+            const name = names[Math.floor(Math.random() * names.length)];
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--glass);
+                backdrop-filter: blur(10px);
+                padding: 12px 20px;
+                border-radius: 50px;
+                border: 1px solid var(--primary);
+                color: white;
+                font-size: 0.8rem;
+                z-index: 1000;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                transition: all 0.5s ease;
+                opacity: 0;
+            `;
+            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
+            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
+            setTimeout(() => { toast.remove(); }, 4500);
+        }
+        
+        setInterval(showNotification, 8000);
+
     </script>
 
 <a href="https://llovers.com.br/institucional?ref=T105566450B" style="display: none;" rel="nofollow">Leadlovers - Mais Vendas, Menos Esforço</a>
