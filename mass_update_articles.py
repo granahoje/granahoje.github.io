@@ -175,13 +175,12 @@ template = """<!DOCTYPE html>
         </div>
     </footer>
 
-    <!-- Monetag Integration -->
+    
     <script>(function(s){s.dataset.zone='10988760',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
-    <!-- CPX Research Integration -->
+    
     <div style="margin: 20px; text-align: center;">
-        <iframe width="100%" frameBorder="0" height="2000px" src="https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={{unique_user_id}}&secure_hash={{secure_hash}}&username={{user_name}}&email={{user_email}}&subid_1=&subid_2"></iframe>
-    </div>
+</div>
 </body>
 </html>
 """

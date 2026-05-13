@@ -1,24 +1,16 @@
 #!/usr/bin/env python3
 """
-Script para integrar CPX Research e Monetag em todas as páginas HTML do site.
-Insere o iframe do CPX Research e o script Monetag antes do fechamento da tag </body>.
+Script para integrar somente o Adsterra autorizado em todas as páginas HTML do site.
+Insere o script Adsterra antes do fechamento da tag </head>.
 """
 
 import os
 import re
 from pathlib import Path
 
-# Configurações
-CPX_IFRAME = '''
-<!-- CPX Research Integration -->
-<div style="margin: 20px; text-align: center;">
-    <iframe width="100%" frameBorder="0" height="2000px" src="https://offers.cpx-research.com/index.php?app_id=32967&ext_user_id={unique_user_id}&secure_hash={secure_hash}&username={user_name}&email={user_email}&subid_1=&subid_2"></iframe>
-</div>
-'''
-
-MONETAG_SCRIPT = '''
-<!-- Monetag Integration -->
-<script>(function(s){s.dataset.zone='10988760',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+# Configuração única de monetização autorizada
+ADSTERRA_SCRIPT = '''
+<script src="https://pl29387236.profitablecpmratenetwork.com/5f/e8/01/5fe801f371dcdefd22e9b1fe08603d69.js"></script>
 '''
 
 def should_process_file(file_path):
@@ -35,10 +27,10 @@ def should_process_file(file_path):
 
 def has_monetization(content):
     """Verifica se o arquivo já possui integração de monetização."""
-    return 'cpx-research.com' in content or 'quge5.com' in content
+    return 'profitablecpmratenetwork.com' in content
 
 def integrate_monetization(file_path):
-    """Integra CPX Research e Monetag em um arquivo HTML."""
+    """Integra somente o Adsterra autorizado em um arquivo HTML."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -48,14 +40,13 @@ def integrate_monetization(file_path):
             print(f"⏭️  SKIP (já integrado): {file_path}")
             return False
         
-        # Verificar se tem </body>
-        if '</body>' not in content:
-            print(f"⚠️  SKIP (sem </body>): {file_path}")
+        # Verificar se tem </head>
+        if '</head>' not in content:
+            print(f"⚠️  SKIP (sem </head>): {file_path}")
             return False
         
-        # Inserir antes de </body>
-        insertion = MONETAG_SCRIPT + CPX_IFRAME
-        new_content = content.replace('</body>', insertion + '</body>')
+        # Inserir antes de </head>
+        new_content = content.replace('</head>', ADSTERRA_SCRIPT + '</head>', 1)
         
         # Salvar arquivo
         with open(file_path, 'w', encoding='utf-8') as f:
