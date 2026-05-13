@@ -10,9 +10,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- SEO Meta Tags -->
-    <title>Grana Hoje - Web App Oficial | Ganhe Dinheiro Online</title>
-    <meta name="description" content="Grana Hoje é o web app oficial para você ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Comece a lucrar agora!">
-    <meta name="keywords" content="ganhar dinheiro, renda extra, grana hoje, trabalhar online, pesquisas remuneradas, ganhar dinheiro assistindo videos, pix, dinheiro facil">
+    <title>Grana Hoje - Application Web Officielle | Gagner de l'Argent en Ligne</title>
+    <meta name="description" content="Grana Hoje est l'application web officielle pour gagner de l'argent en effectuant des tâches simples, en regardant des vidéos et en répondant à des sondages.">
+    <meta name="keywords" content="gagner de l'argent, revenus passifs, grana hoje, travail en ligne, sondages rémunérés, argent facile">
     <meta name="author" content="Grana Hoje">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="fr">
@@ -38,8 +38,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://granahoje.github.io/fr/">
-    <meta property="og:title" content="Grana Hoje - Web App Oficial | Ganhe Dinheiro Online">
-    <meta property="og:description" content="Ganhe dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Rápido, fácil e via PIX!">
+    <meta property="og:title" content="Grana Hoje - Application Web Officielle | Gagner de l'Argent en Ligne">
+    <meta property="og:description" content="Gagnez de l'argent en effectuant des tâches simples, en regardant des vidéos et en répondant à des sondages. Rapide et facile !">
     <meta property="og:image" content="https://granahoje.github.io/og-image.png">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:locale:alternate" content="pt_PT">
@@ -568,10 +568,10 @@
 
     <section class="balance-card" role="region" aria-label="Informações de saldo">
         <div class="balance-info">
-            <p id="balanceLabel">Saldo Disponível</p>
+            <p id="balanceLabel">Solde Disponible</p>
             <div class="balance-amount" id="balanceAmount">R$ 0,00</div>
         </div>
-        <button class="withdraw-btn" id="withdrawBtn" onclick="showModal('withdrawTitle', 'withdrawMessage')">SACAR AGORA</button>
+        <button class="withdraw-btn" id="withdrawBtn" onclick="showModal('withdrawTitle', 'withdrawMessage')">RETIRER MAINTENANT</button>
     </section>
 
     <!-- Mensagem de Credibilidade -->
@@ -588,7 +588,7 @@
                 <div class="task-icon" aria-hidden="true">📊</div>
                 <div class="task-details">
                     <div class="task-name" id="surveyName">Responder Pesquisa</div>
-                    <div class="task-reward" id="surveyReward">+ R$ 1,50 no saldo</div>
+                    <div class="task-reward" id="surveyReward">+ 1,50 € sur le solde</div>
                 </div>
                 <div class="task-arrow" aria-hidden="true">❯</div>
             </article>
@@ -606,7 +606,7 @@
                 <div class="task-icon" aria-hidden="true">🌐</div>
                 <div class="task-details">
                     <div class="task-name"><span id="visitSiteName">Visitar Site</span> <span class="badge-hot" id="newBadge">NOVO</span></div>
-                    <div class="task-reward" id="visitSiteReward">+ R$ 1,00 no saldo</div>
+                    <div class="task-reward" id="visitSiteReward">+ 1,00 € sur le solde</div>
                 </div>
                 <div class="task-arrow" aria-hidden="true">❯</div>
             </article>
@@ -614,21 +614,21 @@
             <article class="task-item" onclick="startTask(0.50, 'https://granahoje.github.io/cosmicai.github.io/')" role="button" tabindex="0" aria-label="Tarefa: Signo da Sorte">
                 <div class="task-icon" aria-hidden="true">🔮</div>
                 <div class="task-details">
-                    <div class="task-name" id="zodSignName">Signo da Sorte</div>
-                    <div class="task-reward" id="zodSignReward">+ R$ 0,50 no saldo</div>
+                    <div class="task-name" id="zodSignName">Signe de Chance</div>
+                    <div class="task-reward" id="zodSignReward">+ 0,50 € sur le solde</div>
                 </div>
                 <div class="task-arrow" aria-hidden="true">❯</div>
             </article>
         <div class="visitor-counter" role="status" aria-live="polite" aria-label="Contador de usuários online">
             <span class="badge-live" aria-hidden="true"></span>
-            <span id="visitor-count">1.432</span> <span id="counterSuffix">usuários online agora</span>
+            <span id="visitor-count">1.432</span> <span id="counterSuffix">utilisateurs en ligne maintenant</span>
         </div>
     </main>
 
     <nav class="bottom-nav" role="navigation" aria-label="Menu de navegação principal">
         <a href="#" class="nav-item active" role="tab" aria-selected="true">
             <div class="nav-icon" aria-hidden="true">🏠</div>
-            <span id="navHome">Home</span>
+            <span id="navHome">Accueil</span>
         </a>
         <a href="#" class="nav-item" role="tab" aria-selected="false" onclick="showModal('myAccountTitle', 'myAccountMessage')">
             <div class="nav-icon" aria-hidden="true">👤</div>
@@ -636,7 +636,7 @@
         </a>
         <a href="#" class="nav-item" role="tab" aria-selected="false" onclick="showModal('supportTitle', 'supportMessage')">
             <div class="nav-icon" aria-hidden="true">💬</div>
-            <span id="navHelp">Ajuda</span>
+            <span id="navHelp">Aide</span>
         </a>
     </nav>
 
@@ -653,21 +653,21 @@
         // Translations object
         const translations = {
             "pt-br": {
-                        "balanceLabel": "Saldo Disponível",
-                        "withdrawBtn": "SACAR AGORA",
+                        "balanceLabel": "Solde Disponible",
+                        "withdrawBtn": "RETIRER MAINTENANT",
                         "withdrawTitle": "Solicitar Saque",
                         "withdrawMessage": "O valor mínimo para saque via PIX é de {min_withdraw}. Continue realizando tarefas para liberar seu pagamento!",
                         "tasksTitle": "✨ Missões Lucrativas",
                         "visitSiteName": "Visitar Site",
                         "visitSiteReward": "+ R$ 0.75 no saldo",
                         "newBadge": "NOVO",
-                        "zodSignName": "Signo da Sorte",
+                        "zodSignName": "Signe de Chance",
                         "zodSignReward": "+ R$ 0.40 no saldo",
 
                         "surveyReward": "+ R$ 1.10 no saldo",
 
                         "simulatorReward": "+ R$ 1.50 no saldo",
-                        "counterSuffix": "usuários online agora",
+                        "counterSuffix": "utilisateurs en ligne maintenant",
                         "taskInProgress": "Tarefa em Andamento",
                         "taskInProgressMessage": "Aguarde {seconds} segundos navegando no site para receber sua recompensa...",
                         "taskCompleted": "Tarefa Concluída!",
@@ -679,13 +679,13 @@
                         "closeBtn": "FECHAR",
                         "navHome": "Início",
                         "navProfile": "Perfil",
-                        "navHelp": "Ajuda",
+                        "navHelp": "Aide",
                         "min_withdraw": "R$ 15.00",
                         "currencySymbol": "R$",
                         "currencyRate": 1.0
             },
             "pt-pt": {
-                        "balanceLabel": "Saldo Disponível",
+                        "balanceLabel": "Solde Disponible",
                         "withdrawBtn": "LEVANTAR AGORA",
                         "withdrawTitle": "Solicitar Levantamento",
                         "withdrawMessage": "O valor mínimo para levantamento é de {min_withdraw}. Continue a realizar tarefas para libertar o seu pagamento!",
@@ -693,7 +693,7 @@
                         "visitSiteName": "Visitar Site",
                         "visitSiteReward": "+ € 0.14 no saldo",
                         "newBadge": "NOVO",
-                        "zodSignName": "Signo da Sorte",
+                        "zodSignName": "Signe de Chance",
                         "zodSignReward": "+ € 0.07 no saldo",
 
                         "surveyReward": "+ € 0.20 no saldo",
@@ -711,7 +711,7 @@
                         "closeBtn": "FECHAR",
                         "navHome": "Início",
                         "navProfile": "Perfil",
-                        "navHelp": "Ajuda",
+                        "navHelp": "Aide",
                         "min_withdraw": "€ 2.70",
                         "currencySymbol": "€",
                         "currencyRate": 0.18
@@ -773,7 +773,7 @@
                         "supportTitle": "VIP Support",
                         "supportMessage": "Talk to our support team: support@granahoje.com",
                         "closeBtn": "CLOSE",
-                        "navHome": "Home",
+                        "navHome": "Accueil",
                         "navProfile": "Profile",
                         "navHelp": "Help",
                         "min_withdraw": "€ 2.70",
