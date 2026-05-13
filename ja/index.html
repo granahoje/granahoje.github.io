@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
 
     <!-- Meta Tags Essenciais -->
     <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     <meta name="theme-color" content="#0f172a">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+
     <!-- SEO Meta Tags -->
     <title>Grana Hoje - Web App Oficial | Ganhe Dinheiro Online</title>
     <meta name="description" content="Grana Hoje é o web app oficial para você ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Comece a lucrar agora!">
@@ -18,12 +17,10 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="pt-br">
     <meta name="revisit-after" content="7 days">
-    
+
     <!-- Canonical Tag -->
     <link rel="canonical" href="https://granahoje.github.io/ja/">
-    
-    
-    
+
     <!-- hreflang Tags - Multilingual -->
     <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/pt-br/">
     <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/">
@@ -37,7 +34,7 @@
     <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/">
     <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/">
     <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://granahoje.github.io/ja/">
@@ -49,32 +46,30 @@
     <meta property="og:locale:alternate" content="es_ES">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:locale:alternate" content="fr_FR">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Grana Hoje - Web App Oficial | Ganhe Dinheiro Online">
     <meta name="twitter:description" content="Ganhe dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas. Rápido, fácil e via PIX!">
     <meta name="twitter:image" content="https://granahoje.github.io/og-image.png">
-    
+
     <!-- Sitemap e Verificação -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <meta name="google-site-verification" content="wHaz7csQ6KDW7HvO66uIFV1Gm0pCkuDEhz35S12sIvE" />
-    
-    <!-- AdSense -->
-    
+
     <!-- Google Fonts - Otimizado para Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/favicon.ico">
-    
+
     <!-- Preload Critical Resources -->
     <link rel="preload" as="style" href="/styles.css">
     <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" type="font/woff2" crossorigin>
-    
+
     <style>
         :root {
             --primary: #00d1b2;
@@ -88,14 +83,14 @@
             --glass: rgba(30, 41, 59, 0.7);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
-        
+
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
             -webkit-tap-highlight-color: transparent; 
         }
-        
+
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: var(--bg); 
@@ -120,7 +115,7 @@
         }
         .glow-1 { top: -100px; right: -100px; }
         .glow-2 { bottom: -100px; left: -100px; background: var(--secondary); }
-        
+
         header {
             background: var(--glass);
             backdrop-filter: blur(12px);
@@ -135,7 +130,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         header h1 { 
             font-size: 1.5rem; 
             font-weight: 800; 
@@ -162,7 +157,7 @@
             background: rgba(255, 255, 255, 0.2);
             border-color: var(--primary);
         }
-        
+
         .balance-card {
             background: linear-gradient(135deg, var(--card-bg), #0f172a);
             margin: 20px;
@@ -184,7 +179,7 @@
             background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
             pointer-events: none;
         }
-        
+
         .balance-info p { 
             color: var(--text-light); 
             font-size: 0.8rem; 
@@ -193,14 +188,14 @@
             letter-spacing: 0.1em;
             margin-bottom: 8px;
         }
-        
+
         .balance-amount { 
             color: #fff; 
             font-size: 2.5rem; 
             font-weight: 800; 
             text-shadow: 0 0 20px rgba(0, 209, 178, 0.3);
         }
-        
+
         .withdraw-btn {
             background: var(--primary);
             color: #0f172a;
@@ -215,13 +210,13 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .withdraw-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(0, 209, 178, 0.4);
             filter: brightness(1.1);
         }
-        
+
         .ad-container {
             background: var(--glass);
             margin: 10px 20px;
@@ -236,7 +231,7 @@
             color: var(--text-light);
             border: 1px solid var(--glass-border);
         }
-        
+
         main { 
             padding: 0 20px 120px; 
             flex: 1; 
@@ -244,7 +239,7 @@
             margin: 0 auto;
             width: 100%;
         }
-        
+
         .section-title { 
             margin: 30px 0 20px; 
             font-size: 1.2rem; 
@@ -254,12 +249,12 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .task-list { 
             display: grid; 
             gap: 16px; 
         }
-        
+
         .task-item {
             background: var(--glass);
             padding: 20px;
@@ -273,13 +268,13 @@
             backdrop-filter: blur(10px);
             cursor: pointer;
         }
-        
+
         .task-item:hover {
             transform: translateX(8px);
             background: rgba(255, 255, 255, 0.05);
             border-color: var(--primary);
         }
-        
+
         .task-icon {
             width: 60px;
             height: 60px;
@@ -294,22 +289,22 @@
             transition: all 0.3s;
             flex-shrink: 0;
         }
-        
+
         .task-item:hover .task-icon {
             background: var(--primary);
             color: #0f172a;
             transform: rotate(-5deg) scale(1.1);
         }
-        
+
         .task-details { flex: 1; }
-        
+
         .task-name { 
             font-weight: 700; 
             font-size: 1.1rem; 
             margin-bottom: 4px; 
             color: #fff;
         }
-        
+
         .task-reward { 
             color: var(--primary); 
             font-weight: 800; 
@@ -318,13 +313,13 @@
             align-items: center;
             gap: 6px;
         }
-        
+
         .task-arrow { 
             color: var(--text-light); 
             font-size: 1.2rem; 
             opacity: 0.5;
         }
-        
+
         .bottom-nav {
             position: fixed;
             bottom: 20px;
@@ -340,7 +335,7 @@
             z-index: 100;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        
+
         .nav-item {
             display: flex;
             flex-direction: column;
@@ -352,14 +347,14 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-        
+
         .nav-item.active { color: var(--primary); }
-        
+
         .nav-icon { 
             font-size: 1.4rem; 
             margin-bottom: 4px; 
         }
-        
+
         .modal {
             display: none;
             position: fixed;
@@ -370,7 +365,7 @@
             padding: 20px;
             backdrop-filter: blur(12px);
         }
-        
+
         .modal-content {
             background: var(--card-bg);
             padding: 40px;
@@ -394,13 +389,13 @@
             font-weight: 800; 
             margin-bottom: 16px; 
         }
-        
+
         .modal-text { 
             line-height: 1.6; 
             color: var(--text-light); 
             margin-bottom: 30px; 
         }
-        
+
         .btn-close {
             background: var(--primary);
             color: #0f172a;
@@ -470,12 +465,8 @@
                 width: 100%;
             }
         }
-    
-        
 
     </style>
-
-
 
 </head>
 <body>
@@ -499,7 +490,6 @@
             🔒 <span id="credibilityText">Nossos patrocinadores garantem seus pagamentos. Ao navegar e interagir, você ajuda a manter nossa comunidade ativa e lucrativa!</span>
         </p>
     </div>
-
 
     <div class="balance-card">
         <div class="balance-info">
@@ -572,9 +562,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ R$ 0.40 no saldo",
-                        
+
                         "surveyReward": "+ R$ 1.10 no saldo",
-                        
+
                         "simulatorReward": "+ R$ 1.50 no saldo",
                         "counterSuffix": "usuários online agora",
                         "taskInProgress": "Tarefa em Andamento",
@@ -604,9 +594,9 @@
                         "newBadge": "NOVO",
                         "zodSignName": "Signo da Sorte",
                         "zodSignReward": "+ € 0.07 no saldo",
-                        
+
                         "surveyReward": "+ € 0.20 no saldo",
-                        
+
                         "simulatorReward": "+ € 0.27 no saldo",
                         "counterSuffix": "utilizadores online agora",
                         "taskInProgress": "Tarefa em Curso",
@@ -636,9 +626,9 @@
                         "newBadge": "NUEVO",
                         "zodSignName": "Signo de la Suerte",
                         "zodSignReward": "+ € 0.07 en el saldo",
-                        
+
                         "surveyReward": "+ € 0.20 en el saldo",
-                        
+
                         "simulatorReward": "+ € 0.27 en el saldo",
                         "counterSuffix": "usuarios en línea ahora",
                         "taskInProgress": "Tarea en Progreso",
@@ -668,9 +658,9 @@
                         "newBadge": "NEW",
                         "zodSignName": "Lucky Sign",
                         "zodSignReward": "+ $ 0.08 to balance",
-                        
+
                         "surveyReward": "+ $ 0.22 to balance",
-                        
+
                         "simulatorReward": "+ $ 0.30 to balance",
                         "counterSuffix": "users online now",
                         "taskInProgress": "Task in Progress",
@@ -700,9 +690,9 @@
                         "newBadge": "NOUVEAU",
                         "zodSignName": "Signe de la Chance",
                         "zodSignReward": "+ € 0.07 au solde",
-                        
+
                         "surveyReward": "+ € 0.20 au solde",
-                        
+
                         "simulatorReward": "+ € 0.27 au solde",
                         "counterSuffix": "utilisateurs en ligne maintenant",
                         "taskInProgress": "Tâche en Cours",
@@ -732,9 +722,9 @@
                         "newBadge": "新",
                         "zodSignName": "幸运星座",
                         "zodSignReward": "余额 + ¥ 0.58",
-                        
+
                         "surveyReward": "余额 + ¥ 1.59",
-                        
+
                         "simulatorReward": "余额 + ¥ 2.17",
                         "counterSuffix": "位用户在线",
                         "taskInProgress": "任务进行中",
@@ -764,9 +754,9 @@
                         "newBadge": "नया",
                         "zodSignName": "भाग्यशाली राशि",
                         "zodSignReward": "शेष राशि में + 6.60 ₹",
-                        
+
                         "surveyReward": "शेष राशि में + 18.15 ₹",
-                        
+
                         "simulatorReward": "शेष राशि में + 24.75 ₹",
                         "counterSuffix": "उपयोगकर्ता अभी ऑनलाइन हैं",
                         "taskInProgress": "कार्य प्रगति पर है",
@@ -796,9 +786,9 @@
                         "newBadge": "جديد",
                         "zodSignName": "برج الحظ",
                         "zodSignReward": "+ 0.30 ر.س في الرصيد",
-                        
+
                         "surveyReward": "+ 0.83 ر.س في الرصيد",
-                        
+
                         "simulatorReward": "+ 1.12 ر.س في الرصيد",
                         "counterSuffix": "مستخدم متصل الآن",
                         "taskInProgress": "المهمة قيد التنفيذ",
@@ -828,9 +818,9 @@
                         "newBadge": "নতুন",
                         "zodSignName": "ভাগ্যের রাশি",
                         "zodSignReward": "ব্যালেন্সে + 8.80 ৳",
-                        
+
                         "surveyReward": "ব্যালেন্সে + 24.20 ৳",
-                        
+
                         "simulatorReward": "ব্যালেন্সে + 33.00 ৳",
                         "counterSuffix": "জন ব্যবহারকারী এখন অনলাইনে আছেন",
                         "taskInProgress": "কাজ চলছে",
@@ -860,9 +850,9 @@
                         "newBadge": "НОВОЕ",
                         "zodSignName": "Знак удачи",
                         "zodSignReward": "+ ₽ 7.40 к балансу",
-                        
+
                         "surveyReward": "+ ₽ 20.35 к балансу",
-                        
+
                         "simulatorReward": "+ ₽ 27.75 к балансу",
                         "counterSuffix": "пользователей онлайн сейчас",
                         "taskInProgress": "Задание выполняется",
@@ -892,9 +882,9 @@
                         "newBadge": "新規",
                         "zodSignName": "幸運の星座",
                         "zodSignReward": "残高 + ¥ 12.00",
-                        
+
                         "surveyReward": "残高 + ¥ 33.00",
-                        
+
                         "simulatorReward": "残高 + ¥ 45.00",
                         "counterSuffix": "人のユーザーがオンラインです",
                         "taskInProgress": "タスク進行中",
@@ -959,20 +949,20 @@
 
         function startTask(amount, url) {
             window.open(url, '_blank');
-            
+
             let seconds = 30;
             const t = translations[currentLanguage];
             showModalCustom(t.taskInProgress, t.taskInProgressMessage.replace('{seconds}', seconds));
-            
+
             const modalBtn = document.getElementById('modal-btn');
             modalBtn.style.display = 'none';
-            
+
             if (timerInterval) clearInterval(timerInterval);
-            
+
             timerInterval = setInterval(() => {
                 seconds--;
                 document.getElementById('modal-text').innerText = t.taskInProgressMessage.replace('{seconds}', seconds);
-                
+
                 if (seconds <= 0) {
                     clearInterval(timerInterval);
                     addBalance(amount);
@@ -1011,7 +1001,7 @@
                 balance = parseFloat(savedBalance);
                 document.getElementById('balance').innerText = balance.toLocaleString(currentLanguage.replace('-', '_'), { minimumFractionDigits: 2 });
             }
-            
+
             setInterval(() => {
                 const count = Math.floor(Math.random() * (1500 - 1400 + 1)) + 1400;
                 document.getElementById('visitor-count').innerText = count.toLocaleString(currentLanguage.replace('-', '_'));
@@ -1028,12 +1018,7 @@
         }
     </script>
 
-
-
 <a href="https://llovers.com.br/institucional?ref=T105566450B" style="display: none;" rel="nofollow">Leadlovers - Mais Vendas, Menos Esforço</a>
-
-
-
 
 </div>
 </body>
