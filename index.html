@@ -222,41 +222,7 @@
     </style>
     <link rel="canonical" href="https://granahoje.github.io/">
     <meta name="robots" content="index, follow">
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
         
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                }
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                }
-                }
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
 
     </script>
 </head>
@@ -360,54 +326,60 @@
 
     
 
+    
+
+
     <script>
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            const toast = document.createElement('div');
+        (function() {
+            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
+            const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
             
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(30, 41, 59, 0.9);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid #00d1b2;
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                opacity: 0;
-                transition: all 0.5s ease;
-            `;
-            
-            toast.innerHTML = `🔔 <strong>${name}</strong> ${action}`;
-            document.body.appendChild(toast);
+            function showNotification() {
+                const name = names[Math.floor(Math.random() * names.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                const toast = document.createElement('div');
+                
+                toast.style.cssText = `
+                    position: fixed;
+                    bottom: 100px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(15, 23, 42, 0.95);
+                    padding: 12px 20px;
+                    border-radius: 50px;
+                    border: 1px solid #00d1b2;
+                    color: white;
+                    font-size: 0.85rem;
+                    z-index: 9999;
+                    opacity: 0;
+                    transition: all 0.5s ease;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                    white-space: nowrap;
+                `;
+                
+                toast.innerHTML = `🔔 <strong>${name}</strong> ${action}`;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.style.opacity = '1';
+                    toast.style.bottom = '120px';
+                }, 100);
+                
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.bottom = '100px';
+                }, 4000);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 4500);
+            }
             
             setTimeout(() => {
-                toast.style.opacity = '1';
-                toast.style.bottom = '120px';
-            }, 100);
-            
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.bottom = '100px';
-            }, 4000);
-            
-            setTimeout(() => {
-                toast.remove();
-            }, 4500);
-        }
-        
-        // Iniciar notificações após 3 segundos e repetir a cada 8 segundos
-        setTimeout(() => {
-            showNotification();
-            setInterval(showNotification, 8000);
-        }, 3000);
+                showNotification();
+                setInterval(showNotification, 8000);
+            }, 3000);
+        })();
     </script>
 
 </body>
