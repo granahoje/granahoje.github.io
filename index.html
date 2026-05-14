@@ -219,6 +219,28 @@
             100% { opacity: 1; }
         }
 
+    
+        .withdraw-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #00d1b2 0%, #00a892 100%);
+            border: none;
+            border-radius: 12px;
+            color: #0f172a;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
+        }
+        .withdraw-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0, 209, 178, 0.2);
+        }
+
     </style>
     <link rel="canonical" href="https://granahoje.github.io/">
     <meta name="robots" content="index, follow">
@@ -240,7 +262,7 @@
     <div class="balance-card">
         <p>Saldo Disponível</p>
         <div class="balance-amount">R$ <span id="balance">0,00</span></div>
-        <button class="withdraw-btn" onclick="showModal('Solicitar Saque', 'O valor mínimo para saque é de R$ 100,00. Continue completando tarefas para liberar seu pagamento!')">SACAR AGORA</button>
+        <button class="withdraw-btn" onclick="handleWithdraw()">SACAR AGORA</button>
     </div>
 
     <main>
@@ -334,6 +356,22 @@
             const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
             const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
             
+            
+        function handleWithdraw() {
+            const btn = document.querySelector('.withdraw-btn');
+            const originalText = btn.innerText;
+            btn.innerText = 'PROCESSANDO...';
+            btn.style.opacity = '0.7';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Saldo insuficiente para saque. Continue completando as missões para atingir o mínimo de R$ 50,00!');
+                btn.innerText = originalText;
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 1500);
+        }
+
             function showNotification() {
                 const name = names[Math.floor(Math.random() * names.length)];
                 const action = actions[Math.floor(Math.random() * actions.length)];
