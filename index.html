@@ -37,7 +37,7 @@
 
         header {
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            }
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid var(--glass-border);
@@ -74,14 +74,14 @@
             border-radius: 28px;
             border: 1px solid var(--glass-border);
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            }
         }
         
         .balance-amount { 
             font-size: 2.5rem; 
             font-weight: 800; 
             margin: 10px 0;
-            text-shadow: 0 0 20px rgba(0, 209, 178, 0.3);
+            }
         }
         
         .withdraw-btn {
@@ -93,7 +93,7 @@
             font-weight: 800;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
+            }
         }
 
         .withdraw-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
@@ -112,8 +112,8 @@
             align-items: center;
             cursor: pointer;
             border: 1px solid var(--glass-border);
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
+            }
+            }
         }
         
         .task-item:hover { transform: translateX(8px); border-color: var(--primary); background: rgba(255,255,255,0.05); }
@@ -141,7 +141,7 @@
             background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
             justify-content: center; align-items: center;
-            backdrop-filter: blur(10px);
+            }
         }
         
         .modal-content {
@@ -199,9 +199,9 @@
             font-weight: 800;
             padding: 2px 30px;
             transform: rotate(45deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
         }
-        .withdraw-btn { animation: pulse 2s infinite; }
+        .withdraw-btn { } }
         .task-reward { color: var(--primary); font-weight: 700; }
         .live-indicator {
             display: inline-block;
@@ -210,8 +210,8 @@
             background: #ff4b2b;
             border-radius: 50%;
             margin-right: 5px;
-            box-shadow: 0 0 10px #ff4b2b;
-            animation: blink 1s infinite;
+            }
+            }
         }
         @keyframes blink {
             0% { opacity: 1; }
@@ -237,15 +237,15 @@
                 left: 50%;
                 transform: translateX(-50%);
                 background: var(--glass);
-                backdrop-filter: blur(10px);
+                }
                 padding: 12px 20px;
                 border-radius: 50px;
                 border: 1px solid var(--primary);
                 color: white;
                 font-size: 0.8rem;
                 z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
+                }
+                }
                 opacity: 0;
             `;
             toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
@@ -358,94 +358,6 @@
         <a href="#" class="nav-item" onclick="showModal('Suporte VIP', 'Fale com nossa equipe: support@granahoje.com')"><div>💬</div><span>Ajuda</span></a>
     </nav>
 
-    <script>
-        let balance = 0;
-        let timerInterval;
-
-        function addBalance(amount) {
-            balance += amount;
-            document.getElementById('balance').innerText = balance.toFixed(2).replace('.', ',');
-            localStorage.setItem('userBalance', balance);
-        }
-
-        function startTask(amount, url) {
-            window.open(url, '_blank');
-            let seconds = 30;
-            showModal('Tarefa em Andamento', 'Aguarde ' + seconds + ' segundos navegando no site para receber sua recompensa...');
-            document.getElementById('modal-btn').style.display = 'none';
-            
-            if (timerInterval) clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                seconds--;
-                document.getElementById('modal-text').innerText = 'Aguarde ' + seconds + ' segundos navegando no site para receber sua recompensa...';
-                if (seconds <= 0) {
-                    clearInterval(timerInterval);
-                    addBalance(amount);
-                    document.getElementById('modal-title').innerText = 'Tarefa Concluída!';
-                    document.getElementById('modal-text').innerText = 'Parabéns! R$ ' + amount.toFixed(2).replace('.', ',') + ' foram adicionados ao seu saldo.';
-                    document.getElementById('modal-btn').style.display = 'block';
-                }
-            }, 1000);
-        }
-
-        function showModal(title, text) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-text').innerText = text;
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        window.onload = () => {
-            const savedBalance = localStorage.getItem('userBalance');
-            if (savedBalance) {
-                balance = parseFloat(savedBalance);
-                document.getElementById('balance').innerText = balance.toFixed(2).replace('.', ',');
-            }
-            setInterval(() => {
-                const count = Math.floor(Math.random() * (1500 - 1400 + 1)) + 1400;
-                document.getElementById('visitor-count').innerText = count;
-            }, 4000);
-        };
     
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                backdrop-filter: blur(10px);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
-
-    </script>
 </body>
 </html>

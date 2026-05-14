@@ -67,184 +67,13 @@
     <link rel="preload" as="style" href="/styles.css">
 
     <!-- Schema.org Markup - Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Grana Hoje",
-      "url": "https://granahoje.github.io",
-      "logo": "https://granahoje.github.io/logo.png",
-      "description": "Plataforma de ganho de dinheiro online através de tarefas simples, pesquisas e vídeos",
-      "sameAs": [
-        "https://www.facebook.com/granahoje",
-        "https://www.twitter.com/granahoje",
-        "https://www.instagram.com/granahoje"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "email": "support@granahoje.com",
-        "availableLanguage": ["pt-BR", "pt-PT", "es", "en", "fr", "zh", "hi", "ar", "bn", "ru", "ja"]
-      }
-    }
     
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                backdrop-filter: blur(10px);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
-
-    </script>
 
     <!-- Schema.org Markup - WebSite -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Grana Hoje",
-      "url": "https://granahoje.github.io/fr/",
-      "description": "Web app oficial para ganhar dinheiro online realizando tarefas simples",
-      "inLanguage": "fr",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://granahoje.github.io/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    }
     
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                backdrop-filter: blur(10px);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
-
-    </script>
 
     <!-- Schema.org Markup - Article -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Grana Hoje - Web App Oficial para Ganhar Dinheiro Online",
-      "description": "Descubra como ganhar dinheiro realizando tarefas simples, assistindo vídeos e respondendo pesquisas no Grana Hoje",
-      "image": "https://granahoje.github.io/og-image.png",
-      "author": {
-        "@type": "Organization",
-        "name": "Grana Hoje"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Grana Hoje",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://granahoje.github.io/logo.png"
-        }
-      },
-      "datePublished": "2024-01-01",
-      "dateModified": "2026-05-05",
-      "inLanguage": "fr"
-    }
     
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                backdrop-filter: blur(10px);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
-
-    </script>
 
     <style>
         :root {
@@ -294,7 +123,7 @@
 
         header {
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            }
             color: white;
             padding: 20px;
             text-align: center;
@@ -326,7 +155,7 @@
             font-size: 0.8rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            }
         }
 
         .language-selector:hover {
@@ -339,7 +168,7 @@
             margin: 20px;
             padding: 28px;
             border-radius: 28px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            }
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -369,7 +198,7 @@
             color: #fff; 
             font-size: 2.5rem; 
             font-weight: 800; 
-            text-shadow: 0 0 20px rgba(0, 209, 178, 0.3);
+            }
         }
 
         .withdraw-btn {
@@ -381,15 +210,15 @@
             font-weight: 800;
             font-size: 1rem;
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 20px rgba(0, 209, 178, 0.2);
+            }
+            }
             border: none;
             cursor: pointer;
         }
 
         .withdraw-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(0, 209, 178, 0.4);
+            }
             filter: brightness(1.1);
         }
 
@@ -441,7 +270,7 @@
             align-items: center;
             gap: 15px;
             cursor: pointer;
-            transition: all 0.3s;
+            }
             position: relative;
             overflow: hidden;
         }
@@ -451,12 +280,12 @@
             position: absolute;
             top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(0,209,178,0.1), transparent);
-            transition: left 0.5s;
+            }
         }
 
         .task-item:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(0, 209, 178, 0.15);
+            }
             transform: translateY(-2px);
         }
 
@@ -503,7 +332,7 @@
         .task-arrow {
             color: var(--text-light);
             font-size: 1.2rem;
-            transition: all 0.3s;
+            }
         }
 
         .task-item:hover .task-arrow {
@@ -529,7 +358,7 @@
             height: 8px;
             background: #10b981;
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            }
         }
 
         @keyframes pulse {
@@ -543,7 +372,7 @@
             left: 0;
             right: 0;
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            }
             border-top: 1px solid var(--glass-border);
             display: flex;
             justify-content: space-around;
@@ -563,7 +392,7 @@
             text-decoration: none;
             font-size: 0.7rem;
             font-weight: 700;
-            transition: all 0.3s;
+            }
             padding: 10px;
             flex: 1;
             text-align: center;
@@ -603,7 +432,7 @@
             max-width: 400px;
             width: 100%;
             border: 1px solid var(--glass-border);
-            animation: slideUp 0.3s ease-out;
+            }
         }
 
         @keyframes slideUp {
@@ -640,7 +469,7 @@
             font-weight: 800;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s;
+            }
         }
 
         .btn-close:hover {
@@ -667,9 +496,9 @@
             font-weight: 800;
             padding: 2px 30px;
             transform: rotate(45deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
         }
-        .withdraw-btn { animation: pulse 2s infinite; }
+        .withdraw-btn { } }
         .task-reward { color: var(--primary); font-weight: 700; }
         .live-indicator {
             display: inline-block;
@@ -678,8 +507,8 @@
             background: #ff4b2b;
             border-radius: 50%;
             margin-right: 5px;
-            box-shadow: 0 0 10px #ff4b2b;
-            animation: blink 1s infinite;
+            }
+            }
         }
         @keyframes blink {
             0% { opacity: 1; }
@@ -704,15 +533,15 @@
                 left: 50%;
                 transform: translateX(-50%);
                 background: var(--glass);
-                backdrop-filter: blur(10px);
+                }
                 padding: 12px 20px;
                 border-radius: 50px;
                 border: 1px solid var(--primary);
                 color: white;
                 font-size: 0.8rem;
                 z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
+                }
+                }
                 opacity: 0;
             `;
             toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
@@ -848,477 +677,7 @@
         </div>
     </footer>
 
-    <script>
-        // Translations object
-        const translations = {
-            "pt-br": {
-                        "balanceLabel": "Solde Disponible",
-                        "withdrawBtn": "RETIRER MAINTENANT",
-                        "withdrawTitle": "Solicitar Saque",
-                        "withdrawMessage": "O valor mínimo para saque via PIX é de {min_withdraw}. Continue realizando tarefas para liberar seu pagamento!",
-                        "tasksTitle": "✨ Missões Lucrativas",
-                        "visitSiteName": "Visitar Site",
-                        "visitSiteReward": "+ R$ 0.75 no saldo",
-                        "newBadge": "NOVO",
-                        "zodSignName": "Signe de Chance",
-                        "zodSignReward": "+ R$ 0.40 no saldo",
-
-                        "surveyReward": "+ R$ 1.10 no saldo",
-
-                        "simulatorReward": "+ R$ 1.50 no saldo",
-                        "counterSuffix": "utilisateurs en ligne maintenant",
-                        "taskInProgress": "Tarefa em Andamento",
-                        "taskInProgressMessage": "Aguarde {seconds} segundos navegando no site para receber sua recompensa...",
-                        "taskCompleted": "Tarefa Concluída!",
-                        "taskCompletedMessage": "Parabéns! {amount} foram adicionados ao seu saldo.",
-                        "myAccountTitle": "Minha Conta",
-                        "myAccountMessage": "Acesse seu perfil para ver o histórico de ganhos. (Em breve)",
-                        "supportTitle": "Suporte VIP",
-                        "supportMessage": "Fale com nossa equipe de atendimento: support@granahoje.com",
-                        "closeBtn": "FECHAR",
-                        "navHome": "Início",
-                        "navProfile": "Perfil",
-                        "navHelp": "Aide",
-                        "min_withdraw": "R$ 15.00",
-                        "currencySymbol": "R$",
-                        "currencyRate": 1.0
-            },
-            "pt-pt": {
-                        "balanceLabel": "Solde Disponible",
-                        "withdrawBtn": "LEVANTAR AGORA",
-                        "withdrawTitle": "Solicitar Levantamento",
-                        "withdrawMessage": "O valor mínimo para levantamento é de {min_withdraw}. Continue a realizar tarefas para libertar o seu pagamento!",
-                        "tasksTitle": "✨ Missões Lucrativas",
-                        "visitSiteName": "Visitar Site",
-                        "visitSiteReward": "+ € 0.14 no saldo",
-                        "newBadge": "NOVO",
-                        "zodSignName": "Signe de Chance",
-                        "zodSignReward": "+ € 0.07 no saldo",
-
-                        "surveyReward": "+ € 0.20 no saldo",
-
-                        "simulatorReward": "+ € 0.27 no saldo",
-                        "counterSuffix": "utilizadores online agora",
-                        "taskInProgress": "Tarefa em Curso",
-                        "taskInProgressMessage": "Aguarde {seconds} segundos a navegar no site para receber a sua recompensa...",
-                        "taskCompleted": "Tarefa Concluída!",
-                        "taskCompletedMessage": "Parabéns! {amount} foram adicionados ao seu saldo.",
-                        "myAccountTitle": "Minha Conta",
-                        "myAccountMessage": "Aceda ao seu perfil para ver o histórico de ganhos. (Em breve)",
-                        "supportTitle": "Suporte VIP",
-                        "supportMessage": "Fale com a nossa equipa de atendimento: support@granahoje.com",
-                        "closeBtn": "FECHAR",
-                        "navHome": "Início",
-                        "navProfile": "Perfil",
-                        "navHelp": "Aide",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "es": {
-                        "balanceLabel": "Saldo Disponible",
-                        "withdrawBtn": "RETIRAR AHORA",
-                        "withdrawTitle": "Solicitar Retiro",
-                        "withdrawMessage": "El monto mínimo de retiro es de {min_withdraw}. ¡Sigue completando tareas para desbloquear tu pago!",
-                        "tasksTitle": "✨ Misiones Lucrativas",
-                        "visitSiteName": "Visitar Sitio",
-                        "visitSiteReward": "+ € 0.14 en el saldo",
-                        "newBadge": "NUEVO",
-                        "zodSignName": "Signo de la Suerte",
-                        "zodSignReward": "+ € 0.07 en el saldo",
-
-                        "surveyReward": "+ € 0.20 en el saldo",
-
-                        "simulatorReward": "+ € 0.27 en el saldo",
-                        "counterSuffix": "usuarios en línea ahora",
-                        "taskInProgress": "Tarea en Progreso",
-                        "taskInProgressMessage": "Espera {seconds} segundos navegando por el sitio para recibir tu recompensa...",
-                        "taskCompleted": "¡Tarea Completada!",
-                        "taskCompletedMessage": "¡Felicidades! Se han añadido {amount} a tu saldo.",
-                        "myAccountTitle": "Mi Cuenta",
-                        "myAccountMessage": "Accede a tu perfil para ver el historial de ganancias. (Próximamente)",
-                        "supportTitle": "Soporte VIP",
-                        "supportMessage": "Habla con nuestro equipo de soporte: support@granahoje.com",
-                        "closeBtn": "CERRAR",
-                        "navHome": "Inicio",
-                        "navProfile": "Perfil",
-                        "navHelp": "Ayuda",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "en": {
-                        "balanceLabel": "Available Balance",
-                        "withdrawBtn": "WITHDRAW NOW",
-                        "withdrawTitle": "Request Withdrawal",
-                        "withdrawMessage": "The minimum withdrawal amount is {min_withdraw}. Keep completing tasks to unlock your payment!",
-                        "tasksTitle": "✨ Profitable Missions",
-                        "visitSiteName": "Visit Site",
-                        "visitSiteReward": "+ € 0.14 in balance",
-                        "newBadge": "NEW",
-                        "zodSignName": "Lucky Sign",
-                        "zodSignReward": "+ € 0.07 in balance",
-
-                        "surveyReward": "+ € 0.20 in balance",
-
-                        "simulatorReward": "+ € 0.27 in balance",
-                        "counterSuffix": "users online now",
-                        "taskInProgress": "Task in Progress",
-                        "taskInProgressMessage": "Wait {seconds} seconds browsing the site to receive your reward...",
-                        "taskCompleted": "Task Completed!",
-                        "taskCompletedMessage": "Congratulations! {amount} has been added to your balance.",
-                        "myAccountTitle": "My Account",
-                        "myAccountMessage": "Access your profile to see your earnings history. (Coming soon)",
-                        "supportTitle": "VIP Support",
-                        "supportMessage": "Talk to our support team: support@granahoje.com",
-                        "closeBtn": "CLOSE",
-                        "navHome": "Accueil",
-                        "navProfile": "Profile",
-                        "navHelp": "Help",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "fr": {
-                        "balanceLabel": "Solde Disponible",
-                        "withdrawBtn": "RETIRER MAINTENANT",
-                        "withdrawTitle": "Demander un Retrait",
-                        "withdrawMessage": "Le montant minimum de retrait est de {min_withdraw}. Continuez à compléter des tâches pour débloquer votre paiement!",
-                        "tasksTitle": "✨ Missions Lucratives",
-                        "visitSiteName": "Visiter le Site",
-                        "visitSiteReward": "+ € 0.14 dans le solde",
-                        "newBadge": "NOUVEAU",
-                        "zodSignName": "Signe de la Chance",
-                        "zodSignReward": "+ € 0.07 dans le solde",
-
-                        "surveyReward": "+ € 0.20 dans le solde",
-
-                        "simulatorReward": "+ € 0.27 dans le solde",
-                        "counterSuffix": "utilisateurs en ligne maintenant",
-                        "taskInProgress": "Tâche en Cours",
-                        "taskInProgressMessage": "Attendez {seconds} secondes en naviguant sur le site pour recevoir votre récompense...",
-                        "taskCompleted": "Tâche Complétée!",
-                        "taskCompletedMessage": "Félicitations! {amount} ont été ajoutés à votre solde.",
-                        "myAccountTitle": "Mon Compte",
-                        "myAccountMessage": "Accédez à votre profil pour voir l'historique de vos gains. (Bientôt)",
-                        "supportTitle": "Support VIP",
-                        "supportMessage": "Parlez à notre équipe d'assistance: support@granahoje.com",
-                        "closeBtn": "FERMER",
-                        "navHome": "Accueil",
-                        "navProfile": "Profil",
-                        "navHelp": "Aide",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "zh": {
-                        "balanceLabel": "可用余额",
-                        "withdrawBtn": "立即提取",
-                        "withdrawTitle": "申请提取",
-                        "withdrawMessage": "最低提取金额为 {min_withdraw}。继续完成任务以解锁您的付款!",
-                        "tasksTitle": "✨ 盈利任务",
-                        "visitSiteName": "访问网站",
-                        "visitSiteReward": "+ € 0.14 到余额",
-                        "newBadge": "新",
-                        "zodSignName": "幸运星座",
-                        "zodSignReward": "+ € 0.07 到余额",
-
-                        "surveyReward": "+ € 0.20 到余额",
-
-                        "simulatorReward": "+ € 0.27 到余额",
-                        "counterSuffix": "现在在线用户",
-                        "taskInProgress": "任务进行中",
-                        "taskInProgressMessage": "等待 {seconds} 秒浏览网站以获得您的奖励...",
-                        "taskCompleted": "任务完成!",
-                        "taskCompletedMessage": "恭喜! {amount} 已添加到您的余额。",
-                        "myAccountTitle": "我的账户",
-                        "myAccountMessage": "访问您的个人资料以查看收入历史记录。(即将推出)",
-                        "supportTitle": "VIP 支持",
-                        "supportMessage": "与我们的支持团队联系: support@granahoje.com",
-                        "closeBtn": "关闭",
-                        "navHome": "首页",
-                        "navProfile": "个人资料",
-                        "navHelp": "帮助",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "hi": {
-                        "balanceLabel": "उपलब्ध शेष",
-                        "withdrawBtn": "अभी निकालें",
-                        "withdrawTitle": "निकासी का अनुरोध करें",
-                        "withdrawMessage": "न्यूनतम निकासी राशि {min_withdraw} है। अपनी भुगतान को अनलॉक करने के लिए कार्य पूरा करते रहें!",
-                        "tasksTitle": "✨ लाभदायक मिशन",
-                        "visitSiteName": "साइट पर जाएं",
-                        "visitSiteReward": "+ € 0.14 शेष में",
-                        "newBadge": "नया",
-                        "zodSignName": "भाग्य का संकेत",
-                        "zodSignReward": "+ € 0.07 शेष में",
-
-                        "surveyReward": "+ € 0.20 शेष में",
-
-                        "simulatorReward": "+ € 0.27 शेष में",
-                        "counterSuffix": "अब ऑनलाइन उपयोगकर्ता",
-                        "taskInProgress": "कार्य प्रगति में है",
-                        "taskInProgressMessage": "अपना पुरस्कार प्राप्त करने के लिए साइट ब्राउज़ करते समय {seconds} सेकंड प्रतीक्षा करें...",
-                        "taskCompleted": "कार्य पूर्ण!",
-                        "taskCompletedMessage": "बधाई! {amount} आपके शेष में जोड़ा गया है।",
-                        "myAccountTitle": "मेरा खाता",
-                        "myAccountMessage": "अपनी कमाई का इतिहास देखने के लिए अपनी प्रोफ़ाइल तक पहुंचें। (जल्द आ रहा है)",
-                        "supportTitle": "VIP समर्थन",
-                        "supportMessage": "हमारी सहायता टीम से संपर्क करें: support@granahoje.com",
-                        "closeBtn": "बंद करें",
-                        "navHome": "होम",
-                        "navProfile": "प्रोफ़ाइल",
-                        "navHelp": "मदद",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "ar": {
-                        "balanceLabel": "الرصيد المتاح",
-                        "withdrawBtn": "سحب الآن",
-                        "withdrawTitle": "طلب السحب",
-                        "withdrawMessage": "الحد الأدنى للسحب هو {min_withdraw}. استمر في إكمال المهام لفتح دفعتك!",
-                        "tasksTitle": "✨ مهام مربحة",
-                        "visitSiteName": "زيارة الموقع",
-                        "visitSiteReward": "+ € 0.14 في الرصيد",
-                        "newBadge": "جديد",
-                        "zodSignName": "علامة الحظ",
-                        "zodSignReward": "+ € 0.07 في الرصيد",
-
-                        "surveyReward": "+ € 0.20 في الرصيد",
-
-                        "simulatorReward": "+ € 0.27 في الرصيد",
-                        "counterSuffix": "المستخدمون متصلون الآن",
-                        "taskInProgress": "المهمة قيد التقدم",
-                        "taskInProgressMessage": "انتظر {seconds} ثانية أثناء تصفح الموقع للحصول على مكافأتك...",
-                        "taskCompleted": "اكتملت المهمة!",
-                        "taskCompletedMessage": "تهانينا! تمت إضافة {amount} إلى رصيدك.",
-                        "myAccountTitle": "حسابي",
-                        "myAccountMessage": "قم بالوصول إلى ملفك الشخصي لعرض سجل أرباحك. (قريبا)",
-                        "supportTitle": "دعم VIP",
-                        "supportMessage": "تحدث مع فريق الدعم لدينا: support@granahoje.com",
-                        "closeBtn": "إغلاق",
-                        "navHome": "الصفحة الرئيسية",
-                        "navProfile": "الملف الشخصي",
-                        "navHelp": "مساعدة",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "bn": {
-                        "balanceLabel": "উপলব্ধ ব্যালেন্স",
-                        "withdrawBtn": "এখনই উত্তোলন করুন",
-                        "withdrawTitle": "উত্তোলনের অনুরোধ করুন",
-                        "withdrawMessage": "ন্যূনতম উত্তোলনের পরিমাণ হল {min_withdraw}। আপনার পেমেন্ট আনলক করতে কাজ সম্পূর্ণ করতে থাকুন!",
-                        "tasksTitle": "✨ লাভজনক মিশন",
-                        "visitSiteName": "সাইট পরিদর্শন করুন",
-                        "visitSiteReward": "+ € 0.14 ব্যালেন্সে",
-                        "newBadge": "নতুন",
-                        "zodSignName": "ভাগ্যের চিহ্ন",
-                        "zodSignReward": "+ € 0.07 ব্যালেন্সে",
-
-                        "surveyReward": "+ € 0.20 ব্যালেন্সে",
-
-                        "simulatorReward": "+ € 0.27 ব্যালেন্সে",
-                        "counterSuffix": "এখন অনলাইন ব্যবহারকারী",
-                        "taskInProgress": "কাজ চলছে",
-                        "taskInProgressMessage": "আপনার পুরস্কার পেতে সাইট ব্রাউজ করার সময় {seconds} সেকেন্ড অপেক্ষা করুন...",
-                        "taskCompleted": "কাজ সম্পন্ন!",
-                        "taskCompletedMessage": "অভিনন্দন! {amount} আপনার ব্যালেন্সে যোগ করা হয়েছে।",
-                        "myAccountTitle": "আমার অ্যাকাউন্ট",
-                        "myAccountMessage": "আপনার উপার্জনের ইতিহাস দেখতে আপনার প্রোফাইল অ্যাক্সেস করুন। (শীঘ্রই আসছে)",
-                        "supportTitle": "VIP সহায়তা",
-                        "supportMessage": "আমাদের সহায়তা দলের সাথে যোগাযোগ করুন: support@granahoje.com",
-                        "closeBtn": "বন্ধ করুন",
-                        "navHome": "হোম",
-                        "navProfile": "প্রোফাইল",
-                        "navHelp": "সহায়তা",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "ru": {
-                        "balanceLabel": "Доступный баланс",
-                        "withdrawBtn": "ВЫВЕСТИ СЕЙЧАС",
-                        "withdrawTitle": "Запросить вывод",
-                        "withdrawMessage": "Минимальная сумма вывода составляет {min_withdraw}. Продолжайте выполнять задачи, чтобы разблокировать платеж!",
-                        "tasksTitle": "✨ Прибыльные миссии",
-                        "visitSiteName": "Посетить сайт",
-                        "visitSiteReward": "+ € 0.14 на баланс",
-                        "newBadge": "НОВОЕ",
-                        "zodSignName": "Знак удачи",
-                        "zodSignReward": "+ € 0.07 на баланс",
-
-                        "surveyReward": "+ € 0.20 на баланс",
-
-                        "simulatorReward": "+ € 0.27 на баланс",
-                        "counterSuffix": "пользователей онлайн сейчас",
-                        "taskInProgress": "Задача выполняется",
-                        "taskInProgressMessage": "Подождите {seconds} секунд, просматривая сайт, чтобы получить награду...",
-                        "taskCompleted": "Задача выполнена!",
-                        "taskCompletedMessage": "Поздравляем! {amount} добавлены на ваш баланс.",
-                        "myAccountTitle": "Мой аккаунт",
-                        "myAccountMessage": "Получите доступ к своему профилю, чтобы увидеть историю заработков. (Скоро)",
-                        "supportTitle": "VIP поддержка",
-                        "supportMessage": "Свяжитесь с нашей командой поддержки: support@granahoje.com",
-                        "closeBtn": "ЗАКРЫТЬ",
-                        "navHome": "Главная",
-                        "navProfile": "Профиль",
-                        "navHelp": "Помощь",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            },
-            "ja": {
-                        "balanceLabel": "利用可能な残高",
-                        "withdrawBtn": "今すぐ引き出す",
-                        "withdrawTitle": "引き出しをリクエスト",
-                        "withdrawMessage": "最小引き出し額は {min_withdraw} です。支払いをロック解除するためにタスクを完了し続けてください!",
-                        "tasksTitle": "✨ 利益のあるミッション",
-                        "visitSiteName": "サイトを訪問",
-                        "visitSiteReward": "+ € 0.14 残高に",
-                        "newBadge": "新",
-                        "zodSignName": "幸運の兆し",
-                        "zodSignReward": "+ € 0.07 残高に",
-
-                        "surveyReward": "+ € 0.20 残高に",
-
-                        "simulatorReward": "+ € 0.27 残高に",
-                        "counterSuffix": "現在オンラインのユーザー",
-                        "taskInProgress": "タスク進行中",
-                        "taskInProgressMessage": "報酬を受け取るためにサイトを閲覧しながら {seconds} 秒待ってください...",
-                        "taskCompleted": "タスク完了!",
-                        "taskCompletedMessage": "おめでとうございます! {amount} があなたの残高に追加されました。",
-                        "myAccountTitle": "マイアカウント",
-                        "myAccountMessage": "プロフィールにアクセスして、収入履歴を確認してください。(近日公開)",
-                        "supportTitle": "VIPサポート",
-                        "supportMessage": "サポートチームにお問い合わせください: support@granahoje.com",
-                        "closeBtn": "閉じる",
-                        "navHome": "ホーム",
-                        "navProfile": "プロフィール",
-                        "navHelp": "ヘルプ",
-                        "min_withdraw": "€ 2.70",
-                        "currencySymbol": "€",
-                        "currencyRate": 0.18
-            }
-        };
-
-        let currentLanguage = 'pt-br';
-        let balance = 0;
-
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            localStorage.setItem('language', lang);
-            updatePageLanguage();
-            window.location.href = window.location.origin + "/" + lang + "/";
-        }
-
-        function updatePageLanguage() {
-            const t = translations[currentLanguage];
-            if (!t) return;
-
-            document.getElementById('balanceLabel').textContent = t.balanceLabel;
-            document.getElementById('withdrawBtn').textContent = t.withdrawBtn;
-            document.getElementById('tasksTitle').textContent = t.tasksTitle;
-            document.getElementById('visitSiteName').textContent = t.visitSiteName;
-            document.getElementById('visitSiteReward').textContent = t.visitSiteReward;
-            document.getElementById('newBadge').textContent = t.newBadge;
-            document.getElementById('zodSignName').textContent = t.zodSignName;
-            document.getElementById('zodSignReward').textContent = t.zodSignReward;
-            document.getElementById('surveyName').textContent = t.surveyName;
-            document.getElementById('surveyReward').textContent = t.surveyReward;
-            document.getElementById('simulatorName').textContent = t.simulatorName;
-            document.getElementById('simulatorReward').textContent = t.simulatorReward;
-            document.getElementById('counterSuffix').textContent = t.counterSuffix;
-            document.getElementById('navHome').textContent = t.navHome;
-            document.getElementById('navProfile').textContent = t.navProfile;
-            document.getElementById('navHelp').textContent = t.navHelp;
-        }
-
-        function showModal(titleKey, messageKey) {
-            const t = translations[currentLanguage];
-            const modal = document.getElementById('modal');
-            document.getElementById('modal-title').textContent = t[titleKey];
-            document.getElementById('modal-text').textContent = t[messageKey].replace('{min_withdraw}', t.min_withdraw);
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-        }
-
-        function startTask(amount, url) {
-            const t = translations[currentLanguage];
-            showModal('taskInProgress', 'taskInProgressMessage');
-            document.getElementById('modal-text').textContent = t.taskInProgressMessage.replace('{seconds}', '3');
-
-            setTimeout(() => {
-                balance += amount;
-                document.getElementById('balanceAmount').textContent = `${translations[currentLanguage].currencySymbol} ${balance.toFixed(2).replace('.', ',')}`;
-                closeModal();
-                showModal('taskCompleted', 'taskCompletedMessage');
-                document.getElementById('modal-text').textContent = t.taskCompletedMessage.replace('{amount}', `${t.currencySymbol} ${amount.toFixed(2).replace('.', ',')}`);
-            }, 3000);
-        }
-
-        document.getElementById('languageSelector').addEventListener('change', (e) => {
-            setLanguage(e.target.value);
-        });
-
-        window.addEventListener('load', () => {
-            const savedLanguage = localStorage.getItem('language') || 'pt-br';
-            currentLanguage = savedLanguage;
-            document.getElementById('languageSelector').value = savedLanguage;
-            updatePageLanguage();
-            window.location.href = window.location.origin + "/" + lang + "/";
-        });
-
-        document.addEventListener('click', (e) => {
-            const modal = document.getElementById('modal');
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
     
-        // Notificações de Ganhos em Tempo Real
-        const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-        const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-        
-        function showNotification() {
-            const name = names[Math.floor(Math.random() * names.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 100px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--glass);
-                backdrop-filter: blur(10px);
-                padding: 12px 20px;
-                border-radius: 50px;
-                border: 1px solid var(--primary);
-                color: white;
-                font-size: 0.8rem;
-                z-index: 1000;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-                transition: all 0.5s ease;
-                opacity: 0;
-            `;
-            toast.innerHTML = `🔔 <b>${name}</b> ${action}`;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
-            setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
-            setTimeout(() => { toast.remove(); }, 4500);
-        }
-        
-        setInterval(showNotification, 8000);
-
-    </script>
 
 <a href="https://llovers.com.br/institucional?ref=T105566450B" style="display: none;" rel="nofollow">Leadlovers - Mais Vendas, Menos Esforço</a>
 

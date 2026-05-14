@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
 
     <!-- Chart.js para gráficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 
     <style>
         :root {
@@ -62,7 +62,7 @@
 
         header {
             background: var(--glass);
-            backdrop-filter: blur(12px);
+            }
             padding: 30px 20px;
             text-align: center;
             border-bottom: 1px solid var(--glass-border);
@@ -126,7 +126,7 @@
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 30px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
             position: relative;
             overflow: hidden;
         }
@@ -144,7 +144,7 @@
         .kpi-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 209, 178, 0.2);
+            }
         }
 
         .kpi-label {
@@ -192,12 +192,12 @@
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 30px;
-            transition: all 0.3s;
+            }
         }
 
         .chart-container:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0, 209, 178, 0.1);
+            }
         }
 
         .chart-title {
@@ -626,107 +626,11 @@
 
 </footer>
 
-    <script>
-        // Chart.js Configuration
-        const chartConfig = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#f8fafc',
-                        font: { family: "'Plus Jakarta Sans', sans-serif", weight: '600' }
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    ticks: { color: '#94a3b8' },
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' }
-                },
-                x: {
-                    ticks: { color: '#94a3b8' },
-                    grid: { color: 'rgba(255, 255, 255, 0.05)' }
-                }
-            }
-        };
-
-        // Traffic Chart
-        const trafficCtx = document.getElementById('trafficChart').getContext('2d');
-        new Chart(trafficCtx, {
-            type: 'line',
-            data: {
-                labels: ['1', '5', '10', '15', '20', '25', '30'],
-                datasets: [{
-                    label: 'Visitantes Únicos',
-                    data: [320, 480, 620, 850, 1200, 1680, 2450],
-                    borderColor: '#00d1b2',
-                    backgroundColor: 'rgba(0, 209, 178, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                    pointBackgroundColor: '#00d1b2',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2,
-                    pointRadius: 6
-                }]
-            },
-            options: { ...chartConfig }
-        });
-
-        // Country Chart
-        const countryCtx = document.getElementById('countryChart').getContext('2d');
-        new Chart(countryCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Brasil', 'Portugal', 'Espanha', 'México', 'Outros'],
-                datasets: [{
-                    data: [45, 20, 15, 12, 8],
-                    backgroundColor: ['#00d1b2', '#7c3aed', '#f59e0b', '#10b981', '#ef4444'],
-                    borderColor: '#0f172a',
-                    borderWidth: 2
-                }]
-            },
-            options: { ...chartConfig }
-        });
-
-        // Device Chart
-        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
-        new Chart(deviceCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Mobile', 'Desktop', 'Tablet'],
-                datasets: [{
-                    label: 'Visitantes (%)',
-                    data: [68, 25, 7],
-                    backgroundColor: ['#00d1b2', '#7c3aed', '#f59e0b'],
-                    borderRadius: 10,
-                    borderSkipped: false
-                }]
-            },
-            options: { ...chartConfig }
-        });
-
-        // Source Chart
-        const sourceCtx = document.getElementById('sourceChart').getContext('2d');
-        new Chart(sourceCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Busca Orgânica', 'Direto', 'Social Media', 'Referência', 'Outros'],
-                datasets: [{
-                    data: [52, 22, 15, 8, 3],
-                    backgroundColor: ['#00d1b2', '#7c3aed', '#f59e0b', '#10b981', '#ef4444'],
-                    borderColor: '#0f172a',
-                    borderWidth: 2
-                }]
-            },
-            options: { ...chartConfig }
-        });
-    </script>
+    
 
 <!-- Botão Estratégico de Retorno -->
 <div class="floating-cta-container" style="position: fixed; bottom: 20px; left: 0; width: 100%; display: flex; justify-content: center; align-items: center; z-index: 9999; pointer-events: none;">
-    <a href="/" style="pointer-events: auto; display: inline-block; width: 90%; max-width: 380px; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 10px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid #fff; animation: bounce 2s infinite; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+    <a href="/" style="pointer-events: auto; display: inline-block; width: 90%; max-width: 380px; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 10px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1rem; } border: 2px solid #fff; } white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
         💰 VOLTAR E RESGATAR R$ 20,00 AGORA! 💰
     </a>
 </div>
