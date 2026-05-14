@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#0f172a">
-    <title>Grana Hoje: Guia Completo de Renda Extra e Apps que Pagam (2026)</title>
-    <meta name="description" content="Descubra como ganhar dinheiro online de forma segura e real em 2026. Analisamos apps, sites e estratégias testadas para você aumentar sua renda extra com confiança.">
-    
+    <title>Grana Hoje: Полное руководство по дополнительному доходу и платящим приложениям (2026)</title>
+    <meta name="description" content="Узнайте, как зарабатывать деньги онлайн безопасно и реально в 2026 году. Мы анализируем приложения, сайты и проверенные стратегии для увеличения вашего дохода.">
+    <meta name="keywords" content="заработок онлайн, дополнительный доход, приложения которые платят, удалённая работа, личные финансы 2026">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://granahoje.github.io/ru/">
     
     <style>
         :root {
@@ -37,7 +40,6 @@
 
         header {
             background: var(--glass);
-            }
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid var(--glass-border);
@@ -74,14 +76,12 @@
             border-radius: 28px;
             border: 1px solid var(--glass-border);
             text-align: center;
-            }
         }
         
         .balance-amount { 
             font-size: 2.5rem; 
             font-weight: 800; 
             margin: 10px 0;
-            }
         }
         
         .withdraw-btn {
@@ -93,10 +93,14 @@
             font-weight: 800;
             border: none;
             cursor: pointer;
-            }
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
         }
 
         .withdraw-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+        .withdraw-btn:active { transform: scale(0.98); }
         
         main { padding: 0 20px 120px; max-width: 500px; margin: 0 auto; width: 100%; }
         
@@ -112,11 +116,20 @@
             align-items: center;
             cursor: pointer;
             border: 1px solid var(--glass-border);
-            }
-            }
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
         
         .task-item:hover { transform: translateX(8px); border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .task-item.completing { animation: pulse 0.5s ease; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); border-color: var(--primary); box-shadow: 0 0 20px rgba(0,209,178,0.4); }
+            100% { transform: scale(1); }
+        }
         
         .task-icon {
             width: 50px;
@@ -128,11 +141,13 @@
             justify-content: center;
             font-size: 1.5rem;
             margin-right: 15px;
+            flex-shrink: 0;
         }
         
         .task-details { flex: 1; }
         .task-name { font-weight: 700; color: #fff; }
         .task-reward { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
+        .task-status { font-size: 0.75rem; color: var(--text-light); margin-top: 3px; }
 
         .modal {
             display: none;
@@ -141,7 +156,6 @@
             background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
             justify-content: center; align-items: center;
-            }
         }
         
         .modal-content {
@@ -180,200 +194,100 @@
         
         .nav-item { text-decoration: none; color: var(--text-light); font-size: 0.7rem; text-align: center; }
         .nav-item.active { color: var(--primary); }
-    
-        /* Melhorias Dinâmicas */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .task-item { position: relative; overflow: hidden; }
-        .task-item::after {
-            content: 'RECOMPENSA DISPONÍVEL';
-            position: absolute;
-            top: 10px;
-            right: -30px;
-            background: var(--accent);
-            color: #000;
-            font-size: 0.6rem;
+
+        .balance-gain {
+            position: fixed;
+            font-size: 1.2rem;
             font-weight: 800;
-            padding: 2px 30px;
-            transform: rotate(45deg);
-            }
+            color: var(--primary);
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.8s ease;
         }
-        .withdraw-btn { } }
-        .task-reward { color: var(--primary); font-weight: 700; }
-        .live-indicator {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #ff4b2b;
-            border-radius: 50%;
-            margin-right: 5px;
-            }
-            }
-        }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
-    
-        .withdraw-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #00d1b2 0%, #00a892 100%);
-            border: none;
-            border-radius: 12px;
-            color: #0f172a;
-            font-weight: 800;
-            font-size: 1.1rem;
-            cursor: pointer;
-            margin-top: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 209, 178, 0.3);
-        }
-        .withdraw-btn:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 8px rgba(0, 209, 178, 0.2);
-        }
-
-    
-        .mission-card:hover div {
-            transform: translateY(-3px);
-            border-color: #00d1b2 !important;
-            background: rgba(30, 41, 59, 0.9) !important;
-        }
-
     </style>
-    <link rel="canonical" href="https://granahoje.github.io/">
-    <meta name="robots" content="index, follow">
-        
-
-    </script>
 </head>
 <body>
     <header>
         <h1>GRANA HOJE</h1>
-        <select class="language-selector" onchange="window.location.href='/'+this.value+'/'">
-            <option value="pt-br" selected>🇧🇷 PT-BR</option>
+        <select class="language-selector" onchange="changeLanguage(this.value)">
+            <option value="">🌐 Language</option>
+            <option value="pt-br">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
             <option value="es">🇪🇸 ES</option>
             <option value="fr">🇫🇷 FR</option>
+            <option value="ar">🇸🇦 AR</option>
+            <option value="zh">🇨🇳 ZH</option>
+            <option value="ru" selected>🇷🇺 RU</option>
+            <option value="hi">🇮🇳 HI</option>
+            <option value="ja">🇯🇵 JA</option>
         </select>
     </header>
 
     <div class="balance-card">
-        <p>Saldo Disponível</p>
+        <p>Доступный баланс</p>
         <div class="balance-amount">R$ <span id="balance">0,00</span></div>
-        <button class="withdraw-btn" onclick="handleWithdraw()">SACAR AGORA</button>
+        <button class="withdraw-btn" onclick="handleWithdraw()">ВЫВЕСТИ СЕЙЧАС</button>
     </div>
 
     <main>
-        <!-- Mensagem de Credibilidade -->
         <div style="margin-bottom: 20px; padding: 12px; background: rgba(0, 209, 178, 0.1); border: 1px solid rgba(0, 209, 178, 0.2); border-radius: 15px; text-align: center;">
             <p style="font-size: 0.75rem; color: var(--primary); font-weight: 600; margin: 0;">
-                🔒 Nossos patrocinadores garantem seus pagamentos. Ao navegar e interagir, você ajuda a manter nossa comunidade ativa e lucrativa!
+                🔒 Наши спонсоры гарантируют ваши выплаты. Просматривая и взаимодействуя, вы помогаете поддерживать наше сообщество активным и прибыльным!
             </p>
         </div>
 
-        
-        
-        <h2 class="section-title">✨ Missões Lucrativas</h2>
+        <h2 class="section-title">✨ Прибыльные миссии</h2>
         <div class="task-list">
-            <a href="/blog.html" class="task-item" style="text-decoration: none;">
+
+            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">Nosso Blog Oficial</div>
-                    <div class="task-reward">Dicas e Estratégias de Renda Extra</div>
+                    <div class="task-name">Наш официальный блог</div>
+                    <div class="task-reward">Советы и стратегии дополнительного дохода</div>
+                    <div class="task-status">Нажмите для доступа</div>
                 </div>
-            </a>
+            </div>
 
-            <a href="/artigos/ganhar-dinheiro-pesquisas-remuneradas.html" class="task-item" style="text-decoration: none;">
+            <div class="task-item" onclick="startTask(this, 1.5, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
                 <div class="task-icon">📊</div>
                 <div class="task-details">
-                    <div class="task-name">Responder Pesquisa VIP</div>
-                    <div class="task-reward">+ R$ 1,50 no saldo</div>
+                    <div class="task-name">Ответить на VIP-опрос</div>
+                    <div class="task-reward">+ R$ 1,50 на баланс</div>
+                    <div class="task-status">Доступно</div>
                 </div>
-            </a>
+            </div>
 
-            <a href="/artigos/7-apps-pagam-pix-instantaneo.html" class="task-item" style="text-decoration: none;">
+            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/7-apps-pagam-pix-instantaneo.html')">
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
-                    <div class="task-name">Visitar Site Parceiro</div>
-                    <div class="task-reward">+ R$ 1,00 no saldo</div>
-                </div>
-            </a>
-
-            <a href="/artigos/yoga-cadeira-alivio-dor-ciatica.html" class="task-item" style="text-decoration: none;">
-                <div class="task-icon">🔮</div>
-                <div class="task-details">
-                    <div class="task-name">Signo da Sorte</div>
-                    <div class="task-reward">+ R$ 0,50 no saldo</div>
-                </div>
-            </a>
-        </div>
-
-            </div>
-
-            <div class="task-item" onclick="startTask(1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
-                <div class="task-icon">📊</div>
-                <div class="task-details">
-                    <div class="task-name">Responder Pesquisa VIP</div>
-                    <div class="task-reward">+ R$ 1,50 no saldo</div>
+                    <div class="task-name">Посетить сайт партнёра</div>
+                    <div class="task-reward">+ R$ 1,00 на баланс</div>
+                    <div class="task-status">Доступно</div>
                 </div>
             </div>
 
-            <div class="task-item" onclick="startTask(1.00, '/artigos/7-apps-pagam-pix-instantaneo.html')">
-                <div class="task-icon">🌐</div>
+            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/melhores-apps-pagam-dinheiro.html')">
+                <div class="task-icon">📱</div>
                 <div class="task-details">
-                    <div class="task-name">Visitar Site Parceiro</div>
-                    <div class="task-reward">+ R$ 1,00 no saldo</div>
+                    <div class="task-name">Лучшие приложения 2026</div>
+                    <div class="task-reward">+ R$ 1,00 на баланс</div>
+                    <div class="task-status">Доступно</div>
                 </div>
             </div>
 
-            <div class="task-item" onclick="startTask(0.50, '/artigos/yoga-cadeira-alivio-dor-ciatica.html')">
-                <div class="task-icon">🔮</div>
+            <div class="task-item" onclick="startTask(this, 0.75, '/artigos/jogos-que-pagam-pix.html')">
+                <div class="task-icon">🎮</div>
                 <div class="task-details">
-                    <div class="task-name">Signo da Sorte</div>
-                    <div class="task-reward">+ R$ 0,50 no saldo</div>
-                </div>
-            </div>
-        </div>
-
-            </div>
-
-            <!-- Tarefas -->
-            <div class="task-item" onclick="startTask(1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
-                <div class="task-icon">📊</div>
-                <div class="task-details">
-                    <div class="task-name">Responder Pesquisa VIP</div>
-                    <div class="task-reward">+ R$ 1,50 no saldo</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(1.00, '/artigos/melhores-apps-pagam-dinheiro.html')">
-                <div class="task-icon">🌐</div>
-                <div class="task-details">
-                    <div class="task-name">Visitar Site Parceiro</div>
-                    <div class="task-reward">+ R$ 1,00 no saldo</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(0.50, '/artigos/jogos-que-pagam-pix.html')">
-                <div class="task-icon">🔮</div>
-                <div class="task-details">
-                    <div class="task-name">Signo da Sorte</div>
-                    <div class="task-reward">+ R$ 0,50 no saldo</div>
+                    <div class="task-name">Игры, которые платят PIX</div>
+                    <div class="task-reward">+ R$ 0,75 на баланс</div>
+                    <div class="task-status">Доступно</div>
                 </div>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-light);">
-            <span id="visitor-count">1.432</span> usuários online agora
+            <span id="visitor-count">1.432</span> пользователей онлайн сейчас
         </div>
     </main>
 
@@ -381,125 +295,150 @@
         <div class="modal-content">
             <h2 id="modal-title" style="color: #fff; margin-bottom: 15px;"></h2>
             <p id="modal-text" style="color: var(--text-light); line-height: 1.6;"></p>
-            <button id="modal-btn" class="btn-close" onclick="closeModal()">Fechar</button>
+            <button class="btn-close" onclick="closeModal()">OK</button>
         </div>
     </div>
 
-    
     <footer style="background: var(--card-bg); padding: 40px 20px; margin-top: 50px; border-top: 1px solid var(--glass-border); text-align: center;">
         <div style="max-width: 1200px; margin: 0 auto;">
             <div style="margin-bottom: 20px;">
                 <h3 style="color: var(--primary); margin-bottom: 10px;">GRANA HOJE</h3>
-                <p style="color: var(--text-light); font-size: 0.8rem;">Sua fonte confiável de renda extra e oportunidades digitais em 2026.</p>
+                <p style="color: var(--text-light); font-size: 0.8rem;">Ваш надёжный источник дополнительного дохода и цифровых возможностей в 2026 году.</p>
             </div>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-                <a href="/privacy-policy.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Privacidade</a>
-                <a href="/terms-of-service.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Termos de Uso</a>
-                <a href="/disclaimer.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Aviso Legal</a>
-                <a href="/contact.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Contato</a>
+                <a href="/privacy-policy.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Конфиденциальность</a>
+                <a href="/terms-of-service.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Условия использования</a>
+                <a href="/disclaimer.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Отказ от ответственности</a>
+                <a href="/contact.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Контакт</a>
             </div>
-            <p style="color: var(--text-light); font-size: 0.7rem;">&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
+            <p style="color: var(--text-light); font-size: 0.7rem;">&copy; 2026 Grana Hoje. Все права защищены.</p>
         </div>
     </footer>
 
     <nav class="bottom-nav">
-        <a href="/" class="nav-item active"><div>🏠</div><span>Home</span></a>
-        <a href="/blog.html" class="nav-item"><div>📝</div><span>Blog</span></a>
-        <a href="#" class="nav-item" onclick="showModal('Suporte VIP', 'Fale com nossa equipe: support@granahoje.com')"><div>💬</div><span>Ajuda</span></a>
+        <a href="/ru/" class="nav-item active"><div>🏠</div><span>Главная</span></a>
+        <a href="/blog.html" class="nav-item"><div>📝</div><span>Блог</span></a>
+        <a href="#" class="nav-item" onclick="showModal('VIP Поддержка', 'Свяжитесь с нашей командой: support@granahoje.com')"><div>💬</div><span>Помощь</span></a>
     </nav>
 
-    
-
-    
-
-
     <script>
-        (function() {
-            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-            const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
-            
-            
+        // Sistema de saldo
+        let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
+        let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
-        function startTask(reward, url) {
-            // Feedback visual de processamento
-            const balanceElement = document.getElementById('balance');
-            let currentBalance = parseFloat(balanceElement.innerText.replace(',', '.'));
-            
-            // Simular ganho
-            currentBalance += reward;
-            balanceElement.innerText = currentBalance.toFixed(2).replace('.', ',');
-            
-            // Redirecionar para o artigo após um pequeno delay
-            setTimeout(() => {
+        function updateBalanceDisplay() {
+            document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+        }
+        
+        function startTask(element, reward, url) {
+            if (reward === 0) {
                 window.location.href = url;
-            }, 300);
+                return;
+            }
+            
+            const today = new Date().toDateString();
+            const taskKey = today + '_' + url;
+            
+            element.classList.add('completing');
+            currentBalance += reward;
+            localStorage.setItem('granaBalance', currentBalance.toFixed(2));
+            
+            if (!completedTasks.includes(taskKey)) {
+                completedTasks.push(taskKey);
+                localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            }
+            
+            showGainAnimation(reward, element);
+            updateBalanceDisplay();
+            
+            const statusEl = element.querySelector('.task-status');
+            if (statusEl) {
+                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.style.color = 'var(--primary)';
+            }
+            
+            setTimeout(() => { window.location.href = url; }, 800);
+        }
+        
+        function showGainAnimation(reward, element) {
+            const rect = element.getBoundingClientRect();
+            const gain = document.createElement('div');
+            gain.className = 'balance-gain';
+            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.style.left = (rect.left + rect.width / 2) + 'px';
+            gain.style.top = (rect.top + window.scrollY) + 'px';
+            document.body.appendChild(gain);
+            setTimeout(() => { gain.style.opacity = '1'; gain.style.transform = 'translateY(-40px)'; }, 50);
+            setTimeout(() => { gain.style.opacity = '0'; }, 700);
+            setTimeout(() => { gain.remove(); }, 1000);
         }
 
-        
+        function showModal(title, text) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-text').innerText = text;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
         function handleWithdraw() {
+            const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'PROCESSANDO...';
+            btn.innerText = 'ОБРАБОТКА...';
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
-                alert('Atenção: Você ainda não atingiu o limite mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!');
+                if (balance < 50) {
+                    const remaining = (50 - balance).toFixed(2).replace('.', ',');
+                    showModal('Недостаточно средств', 'Вам нужно ещё R$ {remaining}, чтобы достичь минимума R$ 50,00 для вывода. Продолжайте выполнять ежедневные миссии!'.replace('{remaining}', remaining));
+                } else {
+                    showModal('Вывод запрошен!', 'Ваш запрос на вывод R$ {amount} отправлен! Оплата будет обработана в течение 24 часов через PIX.'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';
                 btn.disabled = false;
             }, 1500);
         }
-, 1500);
+
+        function changeLanguage(lang) {
+            if (!lang) return;
+            if (lang === 'pt-br') {
+                window.location.href = '/pt-br/';
+            } else {
+                window.location.href = '/' + lang + '/';
+            }
         }
 
+        updateBalanceDisplay();
+        
+        (function() {
+            const base = 1432;
+            const variation = Math.floor(Math.random() * 200);
+            document.getElementById('visitor-count').textContent = (base + variation).toLocaleString();
+        })();
+
+        (function() {
+            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia'];
+            const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00', 'recebeu via PIX agora'];
+            
             function showNotification() {
                 const name = names[Math.floor(Math.random() * names.length)];
                 const action = actions[Math.floor(Math.random() * actions.length)];
                 const toast = document.createElement('div');
-                
-                toast.style.cssText = `
-                    position: fixed;
-                    bottom: 100px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: rgba(15, 23, 42, 0.95);
-                    padding: 12px 20px;
-                    border-radius: 50px;
-                    border: 1px solid #00d1b2;
-                    color: white;
-                    font-size: 0.85rem;
-                    z-index: 9999;
-                    opacity: 0;
-                    transition: all 0.5s ease;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                    white-space: nowrap;
-                `;
-                
-                toast.innerHTML = `🔔 <strong>${name}</strong> ${action}`;
+                toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.95);padding:12px 20px;border-radius:50px;border:1px solid #00d1b2;color:white;font-size:0.85rem;z-index:9999;opacity:0;transition:all 0.5s ease;box-shadow:0 4px 15px rgba(0,0,0,0.3);white-space:nowrap;font-family:sans-serif;';
+                toast.innerHTML = '🔔 <strong>' + name + '</strong> ' + action;
                 document.body.appendChild(toast);
-                
-                setTimeout(() => {
-                    toast.style.opacity = '1';
-                    toast.style.bottom = '120px';
-                }, 100);
-                
-                setTimeout(() => {
-                    toast.style.opacity = '0';
-                    toast.style.bottom = '100px';
-                }, 4000);
-                
-                setTimeout(() => {
-                    toast.remove();
-                }, 4500);
+                setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
+                setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
+                setTimeout(() => { toast.remove(); }, 4500);
             }
             
-            setTimeout(() => {
-                showNotification();
-                setInterval(showNotification, 8000);
-            }, 3000);
+            setTimeout(() => { showNotification(); setInterval(showNotification, 8000); }, 3000);
         })();
     </script>
-
 </body>
 </html>

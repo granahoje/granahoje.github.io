@@ -6,6 +6,10 @@
     <meta name="theme-color" content="#0f172a">
     <title>Grana Hoje: Guia Completo de Renda Extra e Apps que Pagam (2026)</title>
     <meta name="description" content="Descubra como ganhar dinheiro online de forma segura e real em 2026. Analisamos apps, sites e estratégias testadas para você aumentar sua renda extra com confiança.">
+    <meta name="keywords" content="ganhar dinheiro online, renda extra, apps que pagam PIX, pesquisas remuneradas, trabalho remoto, finanças pessoais 2026">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://granahoje.github.io/">
     
     <style>
         :root {
@@ -119,6 +123,14 @@
         }
         
         .task-item:hover { transform: translateX(8px); border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .task-item.completed { opacity: 0.6; pointer-events: none; border-color: var(--primary); }
+        .task-item.completing { animation: pulse 0.5s ease; }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); border-color: var(--primary); box-shadow: 0 0 20px rgba(0,209,178,0.4); }
+            100% { transform: scale(1); }
+        }
         
         .task-icon {
             width: 50px;
@@ -130,11 +142,13 @@
             justify-content: center;
             font-size: 1.5rem;
             margin-right: 15px;
+            flex-shrink: 0;
         }
         
         .task-details { flex: 1; }
         .task-name { font-weight: 700; color: #fff; }
         .task-reward { color: var(--primary); font-weight: 800; font-size: 0.9rem; }
+        .task-status { font-size: 0.75rem; color: var(--text-light); margin-top: 3px; }
 
         .modal {
             display: none;
@@ -181,17 +195,33 @@
         
         .nav-item { text-decoration: none; color: var(--text-light); font-size: 0.7rem; text-align: center; }
         .nav-item.active { color: var(--primary); }
+
+        .balance-gain {
+            position: fixed;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
     </style>
-    <link rel="canonical" href="https://granahoje.github.io/">
 </head>
 <body>
     <header>
         <h1>GRANA HOJE</h1>
-        <select class="language-selector" onchange="window.location.href='/'+this.value+'/'">
-            <option value="pt-br" selected>🇧🇷 PT-BR</option>
+        <select class="language-selector" onchange="changeLanguage(this.value)">
+            <option value="" selected>🌐 Idioma</option>
+            <option value="pt-br">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
             <option value="es">🇪🇸 ES</option>
             <option value="fr">🇫🇷 FR</option>
+            <option value="ar">🇸🇦 AR</option>
+            <option value="zh">🇨🇳 ZH</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="hi">🇮🇳 HI</option>
+            <option value="ja">🇯🇵 JA</option>
         </select>
     </header>
 
@@ -210,37 +240,59 @@
 
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
-            <a href="/blog.html" class="task-item">
+            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
                     <div class="task-name">Nosso Blog Oficial</div>
                     <div class="task-reward">Dicas e Estratégias de Renda Extra</div>
+                    <div class="task-status">Clique para acessar</div>
                 </div>
-            </a>
+            </div>
 
-            <a href="/artigos/ganhar-dinheiro-pesquisas-remuneradas.html" class="task-item">
+            <div class="task-item" onclick="startTask(this, 1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">Responder Pesquisa VIP</div>
                     <div class="task-reward">+ R$ 1,50 no saldo</div>
+                    <div class="task-status">Disponível</div>
                 </div>
-            </a>
+            </div>
 
-            <a href="/artigos/7-apps-pagam-pix-instantaneo.html" class="task-item">
+            <div class="task-item" onclick="startTask(this, 1.00, '/artigos/7-apps-pagam-pix-instantaneo.html')">
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">Visitar Site Parceiro</div>
                     <div class="task-reward">+ R$ 1,00 no saldo</div>
+                    <div class="task-status">Disponível</div>
                 </div>
-            </a>
+            </div>
 
-            <a href="/artigos/melhores-apps-pagam-dinheiro.html" class="task-item">
+            <div class="task-item" onclick="startTask(this, 1.00, '/artigos/melhores-apps-pagam-dinheiro.html')">
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">Melhores Apps 2026</div>
                     <div class="task-reward">+ R$ 1,00 no saldo</div>
+                    <div class="task-status">Disponível</div>
                 </div>
-            </a>
+            </div>
+
+            <div class="task-item" onclick="startTask(this, 0.75, '/artigos/jogos-que-pagam-pix.html')">
+                <div class="task-icon">🎮</div>
+                <div class="task-details">
+                    <div class="task-name">Jogos que Pagam PIX</div>
+                    <div class="task-reward">+ R$ 0,75 no saldo</div>
+                    <div class="task-status">Disponível</div>
+                </div>
+            </div>
+
+            <div class="task-item" onclick="startTask(this, 0.50, '/artigos/melhores-apps-cashback.html')">
+                <div class="task-icon">💰</div>
+                <div class="task-details">
+                    <div class="task-name">Apps de Cashback</div>
+                    <div class="task-reward">+ R$ 0,50 no saldo</div>
+                    <div class="task-status">Disponível</div>
+                </div>
+            </div>
         </div>
 
         <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-light);">
@@ -279,6 +331,88 @@
     </nav>
 
     <script>
+        // =============================================
+        // SISTEMA DE SALDO - Persiste via localStorage
+        // =============================================
+        let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
+        let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+        
+        function updateBalanceDisplay() {
+            document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+        }
+        
+        function startTask(element, reward, url) {
+            const taskId = url; // Usar a URL como ID único da tarefa
+            
+            // Se for o blog (reward=0), apenas redirecionar
+            if (reward === 0) {
+                window.location.href = url;
+                return;
+            }
+            
+            // Verificar se a tarefa já foi completada hoje
+            const today = new Date().toDateString();
+            const taskKey = today + '_' + taskId;
+            
+            if (completedTasks.includes(taskKey)) {
+                // Tarefa já feita hoje - redirecionar mesmo assim
+                window.location.href = url;
+                return;
+            }
+            
+            // Adicionar animação
+            element.classList.add('completing');
+            
+            // Atualizar saldo
+            currentBalance += reward;
+            localStorage.setItem('granaBalance', currentBalance.toFixed(2));
+            
+            // Marcar tarefa como concluída
+            completedTasks.push(taskKey);
+            localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            
+            // Mostrar ganho flutuante
+            showGainAnimation(reward, element);
+            
+            // Atualizar display do saldo com animação
+            updateBalanceDisplay();
+            
+            // Atualizar status da tarefa
+            const statusEl = element.querySelector('.task-status');
+            if (statusEl) {
+                statusEl.textContent = '✅ +R$ ' + reward.toFixed(2).replace('.', ',') + ' adicionado!';
+                statusEl.style.color = 'var(--primary)';
+            }
+            
+            // Redirecionar após delay
+            setTimeout(() => {
+                window.location.href = url;
+            }, 800);
+        }
+        
+        function showGainAnimation(reward, element) {
+            const rect = element.getBoundingClientRect();
+            const gain = document.createElement('div');
+            gain.className = 'balance-gain';
+            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.style.left = (rect.left + rect.width / 2) + 'px';
+            gain.style.top = (rect.top + window.scrollY) + 'px';
+            document.body.appendChild(gain);
+            
+            setTimeout(() => {
+                gain.style.opacity = '1';
+                gain.style.transform = 'translateY(-40px)';
+            }, 50);
+            
+            setTimeout(() => {
+                gain.style.opacity = '0';
+            }, 700);
+            
+            setTimeout(() => {
+                gain.remove();
+            }, 1000);
+        }
+
         function showModal(title, text) {
             document.getElementById('modal-title').innerText = title;
             document.getElementById('modal-text').innerText = text;
@@ -290,6 +424,7 @@
         }
 
         function handleWithdraw() {
+            const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
             btn.innerText = 'PROCESSANDO...';
@@ -297,16 +432,62 @@
             btn.disabled = true;
             
             setTimeout(() => {
-                alert('Atenção: Você ainda não atingiu o limite mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!');
+                if (balance < 50) {
+                    const remaining = (50 - balance).toFixed(2).replace('.', ',');
+                    showModal('Saldo Insuficiente', 
+                        `Você precisa de mais R$ ${remaining} para atingir o mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!`);
+                } else {
+                    showModal('Saque Solicitado!', 
+                        `Seu saque de R$ ${balance.toFixed(2).replace('.', ',')} foi solicitado! O pagamento será processado em até 24h via PIX.`);
+                }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';
                 btn.disabled = false;
             }, 1500);
         }
 
+        function changeLanguage(lang) {
+            if (!lang) return;
+            if (lang === 'pt-br') {
+                window.location.href = '/pt-br/';
+            } else {
+                window.location.href = '/' + lang + '/';
+            }
+        }
+
+        // Inicializar saldo ao carregar
+        updateBalanceDisplay();
+        
+        // Marcar tarefas já completadas hoje
+        const today = new Date().toDateString();
+        document.querySelectorAll('.task-item').forEach(item => {
+            const onclick = item.getAttribute('onclick');
+            if (onclick) {
+                const urlMatch = onclick.match(/'([^']+\.html)'\)/);
+                if (urlMatch) {
+                    const taskKey = today + '_' + urlMatch[1];
+                    if (completedTasks.includes(taskKey)) {
+                        const statusEl = item.querySelector('.task-status');
+                        if (statusEl) {
+                            statusEl.textContent = '✅ Concluída hoje';
+                            statusEl.style.color = 'var(--primary)';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Contador de visitantes animado
+        (function() {
+            const base = 1432;
+            const variation = Math.floor(Math.random() * 200);
+            document.getElementById('visitor-count').textContent = (base + variation).toLocaleString('pt-BR');
+        })();
+
+        // Notificações toast
         (function() {
             const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
-            const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
+            const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00', 'recebeu via PIX agora'];
             
             function showNotification() {
                 const name = names[Math.floor(Math.random() * names.length)];
@@ -329,6 +510,7 @@
                     transition: all 0.5s ease;
                     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
                     white-space: nowrap;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
                 `;
                 
                 toast.innerHTML = `🔔 <strong>${name}</strong> ${action}`;
