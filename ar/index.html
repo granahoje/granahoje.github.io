@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>الرصيد المتاح</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">﷼</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">سحب الآن</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ مهام مربحة</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">مدونتنا الرسمية</div>
-                    <div class="task-reward">نصائح واستراتيجيات الدخل الإضافي</div>
-                    <div class="task-status">انقر للوصول</div>
+                    <div class="task-name">اقرأ مدونتنا</div>
+                    <div class="task-reward">مكافأة القراءة اليومية</div>
+                    <div class="task-status">انقر لقراءة</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">الإجابة على استطلاع VIP</div>
-                    <div class="task-reward">+ R$ 1.50 في الرصيد</div>
+                    <div class="task-reward">+ ﷼ 1.50 في الرصيد</div>
                     <div class="task-status">متاح</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">زيارة الموقع الشريك</div>
-                    <div class="task-reward">+ R$ 1.00 في الرصيد</div>
+                    <div class="task-reward">+ ﷼ 1.00 في الرصيد</div>
                     <div class="task-status">متاح</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">أفضل التطبيقات 2026</div>
-                    <div class="task-reward">+ R$ 1.00 في الرصيد</div>
+                    <div class="task-reward">+ ﷼ 1.00 في الرصيد</div>
                     <div class="task-status">متاح</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">ألعاب تدفع PIX</div>
-                    <div class="task-reward">+ R$ 0.75 في الرصيد</div>
+                    <div class="task-reward">+ ﷼ 0.75 في الرصيد</div>
                     <div class="task-status">متاح</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '﷼';
+        const CURRENCY_NAME = 'SAR';
+        const MESSAGES = {
+            withdrawLow: 'تحتاج إلى ﷼ {remaining} أكثر للوصول إلى الحد الأدنى ﷼ 50.00 للسحب. استمر في إكمال المهام اليومية!',
+            withdrawOk: 'تم طلب سحبك بقيمة ﷼ {amount}! سيتم معالجة الدفع خلال 24 ساعة عبر PIX.',
+            processing: 'جاري المعالجة...',
+            insufficient: 'رصيد غير كافٍ',
+            withdrawalRequested: 'تم طلب السحب!',
+            completedToday: '✅ مكتملة اليوم',
+            added: '✅ +﷼ {amount} مضاف!',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'جاري المعالجة...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('رصيد غير كافٍ', 'تحتاج إلى R$ {remaining} أكثر للوصول إلى الحد الأدنى R$ 50.00 للسحب. استمر في إكمال المهام اليومية!'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('تم طلب السحب!', 'تم طلب سحبك بقيمة R$ {amount}! سيتم معالجة الدفع خلال 24 ساعة عبر PIX.'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';

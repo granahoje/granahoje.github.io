@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>可用余额</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">¥</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">立即提现</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ 赚钱任务</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">我们的官方博客</div>
-                    <div class="task-reward">额外收入技巧与策略</div>
-                    <div class="task-status">点击访问</div>
+                    <div class="task-name">阅读我们的博客</div>
+                    <div class="task-reward">每日阅读奖励</div>
+                    <div class="task-status">点击阅读</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">回答VIP调查</div>
-                    <div class="task-reward">+ R$ 1.50 余额</div>
+                    <div class="task-reward">+ ¥ 1.50 余额</div>
                     <div class="task-status">可用</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">访问合作伙伴网站</div>
-                    <div class="task-reward">+ R$ 1.00 余额</div>
+                    <div class="task-reward">+ ¥ 1.00 余额</div>
                     <div class="task-status">可用</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">2026最佳应用</div>
-                    <div class="task-reward">+ R$ 1.00 余额</div>
+                    <div class="task-reward">+ ¥ 1.00 余额</div>
                     <div class="task-status">可用</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">支付PIX的游戏</div>
-                    <div class="task-reward">+ R$ 0.75 余额</div>
+                    <div class="task-reward">+ ¥ 0.75 余额</div>
                     <div class="task-status">可用</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '¥';
+        const CURRENCY_NAME = 'CNY';
+        const MESSAGES = {
+            withdrawLow: '您还需要 ¥ {remaining} 才能达到 ¥ 50.00 的最低提现金额。继续完成每日任务！',
+            withdrawOk: '您的 ¥ {amount} 提现请求已提交！付款将在24小时内通过PIX处理。',
+            processing: '处理中...',
+            insufficient: '余额不足',
+            withdrawalRequested: '提现已申请！',
+            completedToday: '✅ 今日已完成',
+            added: '✅ +¥ {amount} 已添加！',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = '处理中...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('余额不足', '您还需要 R$ {remaining} 才能达到 R$ 50.00 的最低提现金额。继续完成每日任务！'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('提现已申请！', '您的 R$ {amount} 提现请求已提交！付款将在24小时内通过PIX处理。'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';

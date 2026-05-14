@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>उपलब्ध शेष</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">₹</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">अभी निकालें</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ लाभदायक मिशन</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">हमारा आधिकारिक ब्लॉग</div>
-                    <div class="task-reward">अतिरिक्त आय के टिप्स और रणनीतियां</div>
-                    <div class="task-status">एक्सेस के लिए क्लिक करें</div>
+                    <div class="task-name">हमारा ब्लॉग पढ़ें</div>
+                    <div class="task-reward">दैनिक पढ़ने का बोनस</div>
+                    <div class="task-status">पढ़ने के लिए क्लिक करें</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">VIP सर्वेक्षण का उत्तर दें</div>
-                    <div class="task-reward">+ R$ 1.50 शेष में</div>
+                    <div class="task-reward">+ ₹ 1.50 शेष में</div>
                     <div class="task-status">उपलब्ध</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">पार्टनर साइट विजिट करें</div>
-                    <div class="task-reward">+ R$ 1.00 शेष में</div>
+                    <div class="task-reward">+ ₹ 1.00 शेष में</div>
                     <div class="task-status">उपलब्ध</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">2026 के बेस्ट ऐप्स</div>
-                    <div class="task-reward">+ R$ 1.00 शेष में</div>
+                    <div class="task-reward">+ ₹ 1.00 शेष में</div>
                     <div class="task-status">उपलब्ध</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">PIX देने वाले गेम्स</div>
-                    <div class="task-reward">+ R$ 0.75 शेष में</div>
+                    <div class="task-reward">+ ₹ 0.75 शेष में</div>
                     <div class="task-status">उपलब्ध</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '₹';
+        const CURRENCY_NAME = 'INR';
+        const MESSAGES = {
+            withdrawLow: 'निकासी के लिए न्यूनतम ₹ 50.00 तक पहुंचने के लिए आपको ₹ {remaining} और चाहिए। दैनिक मिशन पूरे करते रहें!',
+            withdrawOk: 'आपकी ₹ {amount} की निकासी का अनुरोध किया गया है! भुगतान 24 घंटे के भीतर PIX के माध्यम से संसाधित किया जाएगा।',
+            processing: 'प्रोसेसिंग...',
+            insufficient: 'अपर्याप्त शेष',
+            withdrawalRequested: 'निकासी अनुरोधित!',
+            completedToday: '✅ आज पूर्ण',
+            added: '✅ +₹ {amount} जोड़ा गया!',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'प्रोसेसिंग...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('अपर्याप्त शेष', 'निकासी के लिए न्यूनतम R$ 50.00 तक पहुंचने के लिए आपको R$ {remaining} और चाहिए। दैनिक मिशन पूरे करते रहें!'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('निकासी अनुरोधित!', 'आपकी R$ {amount} की निकासी का अनुरोध किया गया है! भुगतान 24 घंटे के भीतर PIX के माध्यम से संसाधित किया जाएगा।'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';

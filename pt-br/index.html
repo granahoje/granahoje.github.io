@@ -123,7 +123,6 @@
         }
         
         .task-item:hover { transform: translateX(8px); border-color: var(--primary); background: rgba(255,255,255,0.05); }
-        .task-item.completed { opacity: 0.6; pointer-events: none; border-color: var(--primary); }
         .task-item.completing { animation: pulse 0.5s ease; }
         
         @keyframes pulse {
@@ -212,8 +211,8 @@
     <header>
         <h1>GRANA HOJE</h1>
         <select class="language-selector" onchange="changeLanguage(this.value)">
-            <option value="" selected>🌐 Idioma</option>
-            <option value="pt-br">🇧🇷 PT-BR</option>
+            <option value="">🌐 Idioma</option>
+            <option value="pt-br" selected>🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
             <option value="es">🇪🇸 ES</option>
             <option value="fr">🇫🇷 FR</option>
@@ -227,7 +226,7 @@
 
     <div class="balance-card">
         <p>Saldo Disponível</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">R$</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">SACAR AGORA</button>
     </div>
 
@@ -240,16 +239,17 @@
 
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">Nosso Blog Oficial</div>
-                    <div class="task-reward">Dicas e Estratégias de Renda Extra</div>
-                    <div class="task-status">Clique para acessar</div>
+                    <div class="task-name">Leia Nosso Blog</div>
+                    <div class="task-reward">Bônus de Leitura Diária</div>
+                    <div class="task-status">Clique para ler</div>
                 </div>
             </div>
 
-            <div class="task-item" onclick="startTask(this, 1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
+            <div class="task-item" onclick="startTask(this, 1.5, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">Responder Pesquisa VIP</div>
@@ -258,7 +258,7 @@
                 </div>
             </div>
 
-            <div class="task-item" onclick="startTask(this, 1.00, '/artigos/7-apps-pagam-pix-instantaneo.html')">
+            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/7-apps-pagam-pix-instantaneo.html')">
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">Visitar Site Parceiro</div>
@@ -267,7 +267,7 @@
                 </div>
             </div>
 
-            <div class="task-item" onclick="startTask(this, 1.00, '/artigos/melhores-apps-pagam-dinheiro.html')">
+            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/melhores-apps-pagam-dinheiro.html')">
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">Melhores Apps 2026</div>
@@ -284,15 +284,6 @@
                     <div class="task-status">Disponível</div>
                 </div>
             </div>
-
-            <div class="task-item" onclick="startTask(this, 0.50, '/artigos/melhores-apps-cashback.html')">
-                <div class="task-icon">💰</div>
-                <div class="task-details">
-                    <div class="task-name">Apps de Cashback</div>
-                    <div class="task-reward">+ R$ 0,50 no saldo</div>
-                    <div class="task-status">Disponível</div>
-                </div>
-            </div>
         </div>
 
         <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-light);">
@@ -304,7 +295,7 @@
         <div class="modal-content">
             <h2 id="modal-title" style="color: #fff; margin-bottom: 15px;"></h2>
             <p id="modal-text" style="color: var(--text-light); line-height: 1.6;"></p>
-            <button class="btn-close" onclick="closeModal()">Fechar</button>
+            <button class="btn-close" onclick="closeModal()">OK</button>
         </div>
     </div>
 
@@ -325,92 +316,74 @@
     </footer>
 
     <nav class="bottom-nav">
-        <a href="/" class="nav-item active"><div>🏠</div><span>Home</span></a>
+        <a href="/pt-br/" class="nav-item active"><div>🏠</div><span>Home</span></a>
         <a href="/blog.html" class="nav-item"><div>📝</div><span>Blog</span></a>
         <a href="#" class="nav-item" onclick="showModal('Suporte VIP', 'Fale com nossa equipe: support@granahoje.com')"><div>💬</div><span>Ajuda</span></a>
     </nav>
 
     <script>
-        // =============================================
-        // SISTEMA DE SALDO - Persiste via localStorage
-        // =============================================
+        const CURRENCY = 'R$';
+        const CURRENCY_NAME = 'BRL';
+        const MESSAGES = {
+            withdrawLow: 'Você precisa de mais R$ {remaining} para atingir o mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!',
+            withdrawOk: 'Seu saque de R$ {amount} foi solicitado! O pagamento será processado em até 24h via PIX.',
+            processing: 'PROCESSANDO...',
+            insufficient: 'Saldo Insuficiente',
+            withdrawalRequested: 'Saque Solicitado!',
+            completedToday: '✅ Concluída hoje',
+            added: '✅ +R$ {amount} adicionado!',
+        };
+
+        // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            const taskId = url; // Usar a URL como ID único da tarefa
-            
-            // Se for o blog (reward=0), apenas redirecionar
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
             
-            // Verificar se a tarefa já foi completada hoje
             const today = new Date().toDateString();
-            const taskKey = today + '_' + taskId;
+            const taskKey = today + '_' + url;
             
-            if (completedTasks.includes(taskKey)) {
-                // Tarefa já feita hoje - redirecionar mesmo assim
-                window.location.href = url;
-                return;
-            }
-            
-            // Adicionar animação
             element.classList.add('completing');
-            
-            // Atualizar saldo
             currentBalance += reward;
             localStorage.setItem('granaBalance', currentBalance.toFixed(2));
             
-            // Marcar tarefa como concluída
-            completedTasks.push(taskKey);
-            localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            if (!completedTasks.includes(taskKey)) {
+                completedTasks.push(taskKey);
+                localStorage.setItem('completedTasks', JSON.stringify(completedTasks));
+            }
             
-            // Mostrar ganho flutuante
             showGainAnimation(reward, element);
-            
-            // Atualizar display do saldo com animação
             updateBalanceDisplay();
             
-            // Atualizar status da tarefa
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '✅ +R$ ' + reward.toFixed(2).replace('.', ',') + ' adicionado!';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
-            // Redirecionar após delay
-            setTimeout(() => {
-                window.location.href = url;
-            }, 800);
+            setTimeout(() => { window.location.href = url; }, 800);
         }
         
         function showGainAnimation(reward, element) {
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
-            
-            setTimeout(() => {
-                gain.style.opacity = '1';
-                gain.style.transform = 'translateY(-40px)';
-            }, 50);
-            
-            setTimeout(() => {
-                gain.style.opacity = '0';
-            }, 700);
-            
-            setTimeout(() => {
-                gain.remove();
-            }, 1000);
+            setTimeout(() => { gain.style.opacity = '1'; gain.style.transform = 'translateY(-40px)'; }, 50);
+            setTimeout(() => { gain.style.opacity = '0'; }, 700);
+            setTimeout(() => { gain.remove(); }, 1000);
         }
 
         function showModal(title, text) {
@@ -427,18 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'PROCESSANDO...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('Saldo Insuficiente', 
-                        `Você precisa de mais R$ ${remaining} para atingir o mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!`);
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('Saque Solicitado!', 
-                        `Seu saque de R$ ${balance.toFixed(2).replace('.', ',')} foi solicitado! O pagamento será processado em até 24h via PIX.`);
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';
@@ -455,86 +428,31 @@
             }
         }
 
-        // Inicializar saldo ao carregar
         updateBalanceDisplay();
         
-        // Marcar tarefas já completadas hoje
-        const today = new Date().toDateString();
-        document.querySelectorAll('.task-item').forEach(item => {
-            const onclick = item.getAttribute('onclick');
-            if (onclick) {
-                const urlMatch = onclick.match(/'([^']+\.html)'\)/);
-                if (urlMatch) {
-                    const taskKey = today + '_' + urlMatch[1];
-                    if (completedTasks.includes(taskKey)) {
-                        const statusEl = item.querySelector('.task-status');
-                        if (statusEl) {
-                            statusEl.textContent = '✅ Concluída hoje';
-                            statusEl.style.color = 'var(--primary)';
-                        }
-                    }
-                }
-            }
-        });
-
-        // Contador de visitantes animado
         (function() {
             const base = 1432;
             const variation = Math.floor(Math.random() * 200);
-            document.getElementById('visitor-count').textContent = (base + variation).toLocaleString('pt-BR');
+            document.getElementById('visitor-count').textContent = (base + variation).toLocaleString();
         })();
 
-        // Notificações toast
         (function() {
-            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia', 'Ricardo', 'Beatriz'];
+            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Lucas', 'Carla', 'Marcos', 'Julia'];
             const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00', 'recebeu via PIX agora'];
             
             function showNotification() {
                 const name = names[Math.floor(Math.random() * names.length)];
                 const action = actions[Math.floor(Math.random() * actions.length)];
                 const toast = document.createElement('div');
-                
-                toast.style.cssText = `
-                    position: fixed;
-                    bottom: 100px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: rgba(15, 23, 42, 0.95);
-                    padding: 12px 20px;
-                    border-radius: 50px;
-                    border: 1px solid #00d1b2;
-                    color: white;
-                    font-size: 0.85rem;
-                    z-index: 9999;
-                    opacity: 0;
-                    transition: all 0.5s ease;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                    white-space: nowrap;
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                `;
-                
-                toast.innerHTML = `🔔 <strong>${name}</strong> ${action}`;
+                toast.style.cssText = 'position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(15,23,42,0.95);padding:12px 20px;border-radius:50px;border:1px solid #00d1b2;color:white;font-size:0.85rem;z-index:9999;opacity:0;transition:all 0.5s ease;box-shadow:0 4px 15px rgba(0,0,0,0.3);white-space:nowrap;font-family:sans-serif;';
+                toast.innerHTML = '🔔 <strong>' + name + '</strong> ' + action;
                 document.body.appendChild(toast);
-                
-                setTimeout(() => {
-                    toast.style.opacity = '1';
-                    toast.style.bottom = '120px';
-                }, 100);
-                
-                setTimeout(() => {
-                    toast.style.opacity = '0';
-                    toast.style.bottom = '100px';
-                }, 4000);
-                
-                setTimeout(() => {
-                    toast.remove();
-                }, 4500);
+                setTimeout(() => { toast.style.opacity = '1'; toast.style.bottom = '120px'; }, 100);
+                setTimeout(() => { toast.style.opacity = '0'; toast.style.bottom = '100px'; }, 4000);
+                setTimeout(() => { toast.remove(); }, 4500);
             }
             
-            setTimeout(() => {
-                showNotification();
-                setInterval(showNotification, 8000);
-            }, 3000);
+            setTimeout(() => { showNotification(); setInterval(showNotification, 8000); }, 3000);
         })();
     </script>
 </body>

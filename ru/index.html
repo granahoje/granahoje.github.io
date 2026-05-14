@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>Доступный баланс</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">₽</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">ВЫВЕСТИ СЕЙЧАС</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ Прибыльные миссии</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">Наш официальный блог</div>
-                    <div class="task-reward">Советы и стратегии дополнительного дохода</div>
-                    <div class="task-status">Нажмите для доступа</div>
+                    <div class="task-name">Читайте наш блог</div>
+                    <div class="task-reward">Ежедневный бонус чтения</div>
+                    <div class="task-status">Нажмите для чтения</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">Ответить на VIP-опрос</div>
-                    <div class="task-reward">+ R$ 1,50 на баланс</div>
+                    <div class="task-reward">+ ₽ 1,50 на баланс</div>
                     <div class="task-status">Доступно</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">Посетить сайт партнёра</div>
-                    <div class="task-reward">+ R$ 1,00 на баланс</div>
+                    <div class="task-reward">+ ₽ 1,00 на баланс</div>
                     <div class="task-status">Доступно</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">Лучшие приложения 2026</div>
-                    <div class="task-reward">+ R$ 1,00 на баланс</div>
+                    <div class="task-reward">+ ₽ 1,00 на баланс</div>
                     <div class="task-status">Доступно</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">Игры, которые платят PIX</div>
-                    <div class="task-reward">+ R$ 0,75 на баланс</div>
+                    <div class="task-reward">+ ₽ 0,75 на баланс</div>
                     <div class="task-status">Доступно</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '₽';
+        const CURRENCY_NAME = 'RUB';
+        const MESSAGES = {
+            withdrawLow: 'Вам нужно ещё ₽ {remaining}, чтобы достичь минимума ₽ 50,00 для вывода. Продолжайте выполнять ежедневные миссии!',
+            withdrawOk: 'Ваш запрос на вывод ₽ {amount} отправлен! Оплата будет обработана в течение 24 часов через PIX.',
+            processing: 'ОБРАБОТКА...',
+            insufficient: 'Недостаточно средств',
+            withdrawalRequested: 'Вывод запрошен!',
+            completedToday: '✅ Выполнено сегодня',
+            added: '✅ +₽ {amount} добавлено!',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'ОБРАБОТКА...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('Недостаточно средств', 'Вам нужно ещё R$ {remaining}, чтобы достичь минимума R$ 50,00 для вывода. Продолжайте выполнять ежедневные миссии!'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('Вывод запрошен!', 'Ваш запрос на вывод R$ {amount} отправлен! Оплата будет обработана в течение 24 часов через PIX.'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';

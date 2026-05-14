@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>উপলব্ধ ব্যালেন্স</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">৳</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">এখনই উত্তোলন করুন</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ লাভজনক মিশন</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">আমাদের অফিসিয়াল ব্লগ</div>
-                    <div class="task-reward">অতিরিক্ত আয়ের টিপস ও কৌশল</div>
-                    <div class="task-status">অ্যাক্সেস করতে ক্লিক করুন</div>
+                    <div class="task-name">আমাদের ব্লগ পড়ুন</div>
+                    <div class="task-reward">দৈনিক পড়ার বোনাস</div>
+                    <div class="task-status">পড়তে ক্লিক করুন</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">VIP সার্ভে উত্তর দিন</div>
-                    <div class="task-reward">+ R$ 1.50 ব্যালেন্সে</div>
+                    <div class="task-reward">+ ৳ 1.50 ব্যালেন্সে</div>
                     <div class="task-status">উপলব্ধ</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">পার্টনার সাইট ভিজিট করুন</div>
-                    <div class="task-reward">+ R$ 1.00 ব্যালেন্সে</div>
+                    <div class="task-reward">+ ৳ 1.00 ব্যালেন্সে</div>
                     <div class="task-status">উপলব্ধ</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">2026 সেরা অ্যাপস</div>
-                    <div class="task-reward">+ R$ 1.00 ব্যালেন্সে</div>
+                    <div class="task-reward">+ ৳ 1.00 ব্যালেন্সে</div>
                     <div class="task-status">উপলব্ধ</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">PIX দেয় এমন গেম</div>
-                    <div class="task-reward">+ R$ 0.75 ব্যালেন্সে</div>
+                    <div class="task-reward">+ ৳ 0.75 ব্যালেন্সে</div>
                     <div class="task-status">উপলব্ধ</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '৳';
+        const CURRENCY_NAME = 'BDT';
+        const MESSAGES = {
+            withdrawLow: 'উত্তোলনের জন্য ন্যূনতম ৳ 50.00 পৌঁছাতে আপনার আরও ৳ {remaining} দরকার। দৈনিক মিশন চালিয়ে যান!',
+            withdrawOk: 'আপনার ৳ {amount} উত্তোলনের অনুরোধ করা হয়েছে! পেমেন্ট 24 ঘণ্টার মধ্যে PIX এর মাধ্যমে প্রক্রিয়া করা হবে।',
+            processing: 'প্রক্রিয়াকরণ...',
+            insufficient: 'অপর্যাপ্ত ব্যালেন্স',
+            withdrawalRequested: 'উত্তোলন অনুরোধ করা হয়েছে!',
+            completedToday: '✅ আজ সম্পন্ন',
+            added: '✅ +৳ {amount} যোগ করা হয়েছে!',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'প্রক্রিয়াকরণ...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('অপর্যাপ্ত ব্যালেন্স', 'উত্তোলনের জন্য ন্যূনতম R$ 50.00 পৌঁছাতে আপনার আরও R$ {remaining} দরকার। দৈনিক মিশন চালিয়ে যান!'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('উত্তোলন অনুরোধ করা হয়েছে!', 'আপনার R$ {amount} উত্তোলনের অনুরোধ করা হয়েছে! পেমেন্ট 24 ঘণ্টার মধ্যে PIX এর মাধ্যমে প্রক্রিয়া করা হবে।'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';

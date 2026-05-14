@@ -226,7 +226,7 @@
 
     <div class="balance-card">
         <p>利用可能残高</p>
-        <div class="balance-amount">R$ <span id="balance">0,00</span></div>
+        <div class="balance-amount"><span id="currency">¥</span> <span id="balance">0,00</span></div>
         <button class="withdraw-btn" onclick="handleWithdraw()">今すぐ引き出す</button>
     </div>
 
@@ -240,12 +240,12 @@
         <h2 class="section-title">✨ 稼げるミッション</h2>
         <div class="task-list">
 
-            <div class="task-item" onclick="startTask(this, 0, '/blog.html')">
+            <div class="task-item" onclick="startTask(this, 0.25, '/blog.html')">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
-                    <div class="task-name">公式ブログ</div>
-                    <div class="task-reward">副収入のヒントと戦略</div>
-                    <div class="task-status">クリックしてアクセス</div>
+                    <div class="task-name">ブログを読む</div>
+                    <div class="task-reward">毎日の読書ボーナス</div>
+                    <div class="task-status">クリックして読む</div>
                 </div>
             </div>
 
@@ -253,7 +253,7 @@
                 <div class="task-icon">📊</div>
                 <div class="task-details">
                     <div class="task-name">VIPアンケートに回答</div>
-                    <div class="task-reward">+ R$ 1.50 残高に</div>
+                    <div class="task-reward">+ ¥ 1.50 残高に</div>
                     <div class="task-status">利用可能</div>
                 </div>
             </div>
@@ -262,7 +262,7 @@
                 <div class="task-icon">🌐</div>
                 <div class="task-details">
                     <div class="task-name">パートナーサイトを訪問</div>
-                    <div class="task-reward">+ R$ 1.00 残高に</div>
+                    <div class="task-reward">+ ¥ 1.00 残高に</div>
                     <div class="task-status">利用可能</div>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="task-icon">📱</div>
                 <div class="task-details">
                     <div class="task-name">2026年おすすめアプリ</div>
-                    <div class="task-reward">+ R$ 1.00 残高に</div>
+                    <div class="task-reward">+ ¥ 1.00 残高に</div>
                     <div class="task-status">利用可能</div>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                 <div class="task-icon">🎮</div>
                 <div class="task-details">
                     <div class="task-name">PIXを支払うゲーム</div>
-                    <div class="task-reward">+ R$ 0.75 残高に</div>
+                    <div class="task-reward">+ ¥ 0.75 残高に</div>
                     <div class="task-status">利用可能</div>
                 </div>
             </div>
@@ -322,16 +322,29 @@
     </nav>
 
     <script>
+        const CURRENCY = '¥';
+        const CURRENCY_NAME = 'JPY';
+        const MESSAGES = {
+            withdrawLow: '引き出しの最低額 ¥ 50.00 に達するには、さらに ¥ {remaining} が必要です。毎日のミッションを続けてください！',
+            withdrawOk: '¥ {amount} の引き出しリクエストが送信されました！支払いは24時間以内にPIXで処理されます。',
+            processing: '処理中...',
+            insufficient: '残高不足',
+            withdrawalRequested: '引き出しリクエスト完了！',
+            completedToday: '✅ 今日完了',
+            added: '✅ +¥ {amount} 追加！',
+        };
+
         // Sistema de saldo
         let currentBalance = parseFloat(localStorage.getItem('granaBalance') || '0');
         let completedTasks = JSON.parse(localStorage.getItem('completedTasks') || '[]');
         
         function updateBalanceDisplay() {
             document.getElementById('balance').innerText = currentBalance.toFixed(2).replace('.', ',');
+            document.getElementById('currency').innerText = CURRENCY;
         }
         
         function startTask(element, reward, url) {
-            if (reward === 0) {
+            if (reward === 0.25) {
                 window.location.href = url;
                 return;
             }
@@ -353,7 +366,7 @@
             
             const statusEl = element.querySelector('.task-status');
             if (statusEl) {
-                statusEl.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',') + ' ✅';
+                statusEl.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',') + ' ✅';
                 statusEl.style.color = 'var(--primary)';
             }
             
@@ -364,7 +377,7 @@
             const rect = element.getBoundingClientRect();
             const gain = document.createElement('div');
             gain.className = 'balance-gain';
-            gain.textContent = '+R$ ' + reward.toFixed(2).replace('.', ',');
+            gain.textContent = '+' + CURRENCY + ' ' + reward.toFixed(2).replace('.', ',');
             gain.style.left = (rect.left + rect.width / 2) + 'px';
             gain.style.top = (rect.top + window.scrollY) + 'px';
             document.body.appendChild(gain);
@@ -387,16 +400,18 @@
             const balance = currentBalance;
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
-            btn.innerText = '処理中...';
+            btn.innerText = MESSAGES.processing;
             btn.style.opacity = '0.7';
             btn.disabled = true;
             
             setTimeout(() => {
                 if (balance < 50) {
                     const remaining = (50 - balance).toFixed(2).replace('.', ',');
-                    showModal('残高不足', '引き出しの最低額 R$ 50.00 に達するには、さらに R$ {remaining} が必要です。毎日のミッションを続けてください！'.replace('{remaining}', remaining));
+                    const msg = MESSAGES.withdrawLow.replace('{remaining}', remaining);
+                    showModal(MESSAGES.insufficient, msg);
                 } else {
-                    showModal('引き出しリクエスト完了！', 'R$ {amount} の引き出しリクエストが送信されました！支払いは24時間以内にPIXで処理されます。'.replace('{amount}', balance.toFixed(2).replace('.', ',')));
+                    const msg = MESSAGES.withdrawOk.replace('{amount}', balance.toFixed(2).replace('.', ','));
+                    showModal(MESSAGES.withdrawalRequested, msg);
                 }
                 btn.innerText = originalText;
                 btn.style.opacity = '1';
