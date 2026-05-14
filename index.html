@@ -9,7 +9,7 @@
     <meta name="keywords" content="ganhar dinheiro online, renda extra, apps que pagam PIX, pesquisas remuneradas, trabalho remoto, finanças pessoais 2026">
     <meta name="author" content="Grana Hoje">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/">
+    <link rel="canonical" href="https://granahoje.github.io/pt-br/">
     
     <style>
         :root {
@@ -205,6 +205,69 @@
             opacity: 0;
             transition: all 0.8s ease;
         }
+    
+        .progress-container {
+            background: rgba(0, 209, 178, 0.1);
+            border: 1px solid rgba(0, 209, 178, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .progress-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), #00d1b2);
+            border-radius: 10px;
+            transition: width 0.6s ease;
+            box-shadow: 0 0 10px rgba(0, 209, 178, 0.5);
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .progress-milestone {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .milestone-badge {
+            background: rgba(0, 209, 178, 0.2);
+            border: 1px solid var(--primary);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .milestone-badge.unlocked {
+            background: var(--primary);
+            color: #0f172a;
+        }
+
     </style>
 </head>
 <body>
@@ -454,6 +517,37 @@
             
             setTimeout(() => { showNotification(); setInterval(showNotification, 8000); }, 3000);
         })();
-    </script>
+    
+
+
+        // ====== BARRA DE PROGRESSO ======
+        function updateProgressBar() {
+            const balance = parseFloat(localStorage.getItem('granaBalance') || '0');
+            const maxAmount = 50;
+            const percentage = Math.min((balance / maxAmount) * 100, 100);
+            
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressAmount').innerText = balance.toFixed(2).replace('.', ',');
+            document.getElementById('progressPercent').innerText = Math.round(percentage) + '%';
+            
+            // Desbloquear milestones
+            if (balance >= 10) {
+                document.getElementById('milestone10').classList.add('unlocked');
+            }
+            if (balance >= 25) {
+                document.getElementById('milestone25').classList.add('unlocked');
+            }
+            if (balance >= 50) {
+                document.getElementById('milestone50').classList.add('unlocked');
+            }
+        }
+        
+        // Atualizar barra ao carregar
+        updateProgressBar();
+        
+        // Atualizar barra a cada 500ms para refletir mudanças
+        setInterval(updateProgressBar, 500);
+
+        </script>
 </body>
 </html>
