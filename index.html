@@ -281,14 +281,42 @@
         </div>
 
         
+        
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
-            <div class="task-item" onclick="window.location.href='/blog.html'">
+            <a href="/blog.html" class="task-item" style="text-decoration: none;">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
                     <div class="task-name">Nosso Blog Oficial</div>
                     <div class="task-reward">Dicas e Estratégias de Renda Extra</div>
                 </div>
+            </a>
+
+            <a href="/artigos/ganhar-dinheiro-pesquisas-remuneradas.html" class="task-item" style="text-decoration: none;">
+                <div class="task-icon">📊</div>
+                <div class="task-details">
+                    <div class="task-name">Responder Pesquisa VIP</div>
+                    <div class="task-reward">+ R$ 1,50 no saldo</div>
+                </div>
+            </a>
+
+            <a href="/artigos/7-apps-pagam-pix-instantaneo.html" class="task-item" style="text-decoration: none;">
+                <div class="task-icon">🌐</div>
+                <div class="task-details">
+                    <div class="task-name">Visitar Site Parceiro</div>
+                    <div class="task-reward">+ R$ 1,00 no saldo</div>
+                </div>
+            </a>
+
+            <a href="/artigos/yoga-cadeira-alivio-dor-ciatica.html" class="task-item" style="text-decoration: none;">
+                <div class="task-icon">🔮</div>
+                <div class="task-details">
+                    <div class="task-name">Signo da Sorte</div>
+                    <div class="task-reward">+ R$ 0,50 no saldo</div>
+                </div>
+            </a>
+        </div>
+
             </div>
 
             <div class="task-item" onclick="startTask(1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
@@ -407,6 +435,7 @@
             }, 300);
         }
 
+        
         function handleWithdraw() {
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
@@ -415,11 +444,13 @@
             btn.disabled = true;
             
             setTimeout(() => {
-                alert('Saldo insuficiente para saque. Continue completando as missões para atingir o mínimo de R$ 50,00!');
+                alert('Atenção: Você ainda não atingiu o limite mínimo de R$ 50,00 para saque. Continue realizando as missões diárias para liberar seu pagamento via PIX!');
                 btn.innerText = originalText;
                 btn.style.opacity = '1';
                 btn.disabled = false;
             }, 1500);
+        }
+, 1500);
         }
 
             function showNotification() {
