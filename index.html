@@ -280,15 +280,42 @@
             </p>
         </div>
 
+        
         <h2 class="section-title">✨ Missões Lucrativas</h2>
         <div class="task-list">
-            <!-- Botão do Blog -->
             <div class="task-item" onclick="window.location.href='/blog.html'">
                 <div class="task-icon">📝</div>
                 <div class="task-details">
                     <div class="task-name">Nosso Blog Oficial</div>
                     <div class="task-reward">Dicas e Estratégias de Renda Extra</div>
                 </div>
+            </div>
+
+            <div class="task-item" onclick="startTask(1.50, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
+                <div class="task-icon">📊</div>
+                <div class="task-details">
+                    <div class="task-name">Responder Pesquisa VIP</div>
+                    <div class="task-reward">+ R$ 1,50 no saldo</div>
+                </div>
+            </div>
+
+            <div class="task-item" onclick="startTask(1.00, '/artigos/7-apps-pagam-pix-instantaneo.html')">
+                <div class="task-icon">🌐</div>
+                <div class="task-details">
+                    <div class="task-name">Visitar Site Parceiro</div>
+                    <div class="task-reward">+ R$ 1,00 no saldo</div>
+                </div>
+            </div>
+
+            <div class="task-item" onclick="startTask(0.50, '/artigos/yoga-cadeira-alivio-dor-ciatica.html')">
+                <div class="task-icon">🔮</div>
+                <div class="task-details">
+                    <div class="task-name">Signo da Sorte</div>
+                    <div class="task-reward">+ R$ 0,50 no saldo</div>
+                </div>
+            </div>
+        </div>
+
             </div>
 
             <!-- Tarefas -->
@@ -364,6 +391,22 @@
             const actions = ['acabou de sacar R$ 150,00', 'completou a Pesquisa VIP', 'ganhou R$ 50,00 no Signo', 'recebeu via PIX agora'];
             
             
+        
+        function startTask(reward, url) {
+            // Feedback visual de processamento
+            const balanceElement = document.getElementById('balance');
+            let currentBalance = parseFloat(balanceElement.innerText.replace(',', '.'));
+            
+            // Simular ganho
+            currentBalance += reward;
+            balanceElement.innerText = currentBalance.toFixed(2).replace('.', ',');
+            
+            // Redirecionar para o artigo após um pequeno delay
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300);
+        }
+
         function handleWithdraw() {
             const btn = document.querySelector('.withdraw-btn');
             const originalText = btn.innerText;
