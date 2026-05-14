@@ -37,7 +37,20 @@
 
 </head>
 <body>
-    <header><h1>GRANA HOJE - BLOG</h1></header>
+    <header><h1>GRANA HOJE - BLOG</h1>
+    <select class="language-selector" onchange="changeLanguage(this.value)" style="background: rgba(255, 255, 255, 0.1); border: 1px solid var(--glass-border); color: var(--text); padding: 8px 12px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; margin-top: 10px;">
+        <option value="">🌐 Idioma</option>
+        <option value="pt-br">🇧🇷 PT-BR</option>
+        <option value="en">🇺🇸 EN</option>
+        <option value="es">🇪🇸 ES</option>
+        <option value="fr">🇫🇷 FR</option>
+        <option value="ar">🇸🇦 AR</option>
+        <option value="zh">🇨🇳 ZH</option>
+        <option value="ru">🇷🇺 RU</option>
+        <option value="hi">🇮🇳 HI</option>
+        <option value="ja" selected>🇯🇵 JA</option>
+    </select>
+</header>
 
     <!-- Mensagem de Credibilidade -->
     <div style="margin: 15px 20px; padding: 12px; background: rgba(0, 209, 178, 0.1); border: 1px solid rgba(0, 209, 178, 0.2); border-radius: 15px; text-align: center;">
@@ -128,5 +141,18 @@
     </footer>
 
 </div>
+
+    <script>
+        function changeLanguage(lang) {
+            if (!lang) return;
+            const currentPath = window.location.pathname;
+            const filename = currentPath.split('/').pop();
+            if (lang === 'pt-br') {
+                window.location.href = '/artigos/' + filename;
+            } else {
+                window.location.href = '/' + lang + '/artigos/' + filename;
+            }
+        }
+    </script>
 </body>
 </html>

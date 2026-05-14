@@ -237,5 +237,18 @@
         });
     </script>
 
+
+    <script>
+        function changeLanguage(lang) {
+            if (!lang) return;
+            const currentPath = window.location.pathname;
+            const filename = currentPath.split('/').pop();
+            if (lang === 'pt-br') {
+                window.location.href = '/artigos/' + filename;
+            } else {
+                window.location.href = '/' + lang + '/artigos/' + filename;
+            }
+        }
+    </script>
 </body>
 </html>
