@@ -187,28 +187,80 @@
         </div>
     </footer>
 
-    <script>
-        // ====== CRONÔMETRO DE VALIDAÇÃO ======
-        // Usuário precisa ficar 30 segundos no artigo para validar a recompensa
+
+
+
+    <style>
+        .timer-widget {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 209, 178, 0.95);
+            color: #0f172a;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0, 209, 178, 0.4);
+            display: none;
+            animation: slideIn 0.5s ease;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
         
+        .timer-widget.active {
+            display: block;
+        }
+        
+        .timer-widget.completed {
+            background: linear-gradient(135deg, #00d1b2, #00b89c);
+            animation: pulse 0.6s ease;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .timer-time {
+            font-size: 1.2rem;
+            margin-left: 8px;
+        }
+    </style>
+
+    <div class="timer-widget" id="timerWidget"></div>
+
+    <script>
+        // ====== CRONÔMETRO VISUAL APRIMORADO ======
         let timeSpentOnPage = 0;
         let timerInterval = null;
         let hasEarnedReward = false;
+        const TIMER_WIDGET = document.getElementById('timerWidget');
+        const TARGET_TIME = 30;
+        
+        function updateTimerDisplay() {
+            const remaining = Math.max(0, TARGET_TIME - timeSpentOnPage);
+            
+            if (remaining > 0) {
+                TIMER_WIDGET.innerHTML = `⏱️ Validando leitura: <span class="timer-time">${remaining}s</span>`;
+                TIMER_WIDGET.classList.add('active');
+                TIMER_WIDGET.classList.remove('completed');
+            }
+        }
         
         function startTimer() {
             timerInterval = setInterval(() => {
                 timeSpentOnPage++;
-                
-                // Mostrar progresso a cada 10 segundos
-                if (timeSpentOnPage % 10 === 0 && timeSpentOnPage <= 30) {
-                    const remaining = 30 - timeSpentOnPage;
-                    if (remaining > 0) {
-                        showTimerNotification(`Leia por mais ${remaining}s para ganhar a recompensa! ⏱️`);
-                    }
-                }
+                updateTimerDisplay();
                 
                 // Após 30 segundos, validar e ganhar recompensa
-                if (timeSpentOnPage >= 30 && !hasEarnedReward) {
+                if (timeSpentOnPage >= TARGET_TIME && !hasEarnedReward) {
                     hasEarnedReward = true;
                     clearInterval(timerInterval);
                     
@@ -217,7 +269,17 @@
                     currentBalance += 0.25; // Bônus de leitura
                     localStorage.setItem('granaBalance', currentBalance.toFixed(2));
                     
-                    showTimerNotification('🎉 Recompensa de leitura desbloqueada! +R$ 0,25');
+                    // Mostrar status de conclusão
+                    TIMER_WIDGET.innerHTML = '✅ Tarefa Concluída! +R$ 0,25';
+                    TIMER_WIDGET.classList.add('completed');
+                    
+                    // Mostrar notificação flutuante
+                    showCompletionNotification();
+                    
+                    // Manter visível por 3 segundos e depois desaparecer
+                    setTimeout(() => {
+                        TIMER_WIDGET.classList.remove('active', 'completed');
+                    }, 3000);
                     
                     // Atualizar saldo se estiver na página de index
                     if (typeof updateBalanceDisplay === 'function') {
@@ -227,34 +289,37 @@
             }, 1000);
         }
         
-        function showTimerNotification(message) {
+        function showCompletionNotification() {
             const toast = document.createElement('div');
             toast.style.cssText = `
                 position: fixed;
-                top: 80px;
+                top: 100px;
                 left: 50%;
                 transform: translateX(-50%);
-                background: rgba(0, 209, 178, 0.95);
-                padding: 12px 20px;
+                background: linear-gradient(135deg, #00d1b2, #00b89c);
+                padding: 20px 30px;
                 border-radius: 50px;
-                color: white;
-                font-size: 0.85rem;
+                color: #0f172a;
+                font-size: 1rem;
                 z-index: 9998;
                 opacity: 0;
                 transition: all 0.5s ease;
-                box-shadow: 0 4px 15px rgba(0, 209, 178, 0.4);
+                box-shadow: 0 8px 30px rgba(0, 209, 178, 0.5);
                 font-family: 'Plus Jakarta Sans', sans-serif;
-                font-weight: 600;
+                font-weight: 800;
+                text-align: center;
             `;
-            toast.innerHTML = message;
+            toast.innerHTML = '🎉 Você ganhou R$ 0,25 por ler este artigo!<br><small>Saldo atualizado</small>';
             document.body.appendChild(toast);
             
             setTimeout(() => {
                 toast.style.opacity = '1';
+                toast.style.top = '80px';
             }, 100);
             
             setTimeout(() => {
                 toast.style.opacity = '0';
+                toast.style.top = '50px';
             }, 3500);
             
             setTimeout(() => {
