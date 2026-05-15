@@ -1,20 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#0f172a">
-    <title>Grana Hoje: Guía Completa de Ingresos Extra y Apps que Pagan (2026)</title>
-    <meta name="description" content="Descubre cómo ganar dinero en línea de forma segura y real en 2026. Analizamos apps, sitios web y estrategias probadas para aumentar tus ingresos extra con confianza.">
-    <meta name="keywords" content="ganar dinero online, ingresos extra, apps que pagan, trabajo remoto, finanzas personales 2026">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/es/">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) - Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" name="viewport"/>
+<meta content="#0f172a" name="theme-color"/>
+<title>Grana Hoje: Guía Completa de Ingresos Extra y Apps que Pagan (2026)</title>
+<meta content="Descubre cómo ganar dinero en línea de forma segura y real en 2026. Analizamos apps, sitios web y estrategias probadas para aumentar tus ingresos extra con confianza." name="description"/>
+<meta content="ganar dinero online, ingresos extra, apps que pagan, trabajo remoto, finanzas personales 2026" name="keywords"/>
+<meta content="Grana Hoje" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://granahoje.github.io/es/" rel="canonical"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<!-- Google tag (gtag.js) - Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -22,120 +22,107 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>GRANA HOJE</h1>
-        <select class="language-selector" onchange="changeLanguage(this.value)">
-            <option value="">🌐 Language</option>
-            <option value="pt-br">🇧🇷 PT-BR</option>
-            <option value="en">🇺🇸 EN</option>
-            <option value="es" selected>🇪🇸 ES</option>
-            <option value="fr">🇫🇷 FR</option>
-            <option value="ar">🇸🇦 AR</option>
-            <option value="zh">🇨🇳 ZH</option>
-            <option value="ru">🇷🇺 RU</option>
-            <option value="hi">🇮🇳 HI</option>
-            <option value="ja">🇯🇵 JA</option>
-        </select>
-    </header>
-
-    <div class="balance-card">
-        <p>Saldo Disponible</p>
-        <div class="balance-amount"><span id="currency">€</span> <span id="balance">0,00</span></div>
-        <button class="withdraw-btn" onclick="handleWithdraw()">RETIRAR AHORA</button>
-    </div>
-
-    <main>
-        <div style="margin-bottom: 20px; padding: 12px; background: rgba(0, 209, 178, 0.1); border: 1px solid rgba(0, 209, 178, 0.2); border-radius: 15px; text-align: center;">
-            <p style="font-size: 0.75rem; color: var(--primary); font-weight: 600; margin: 0;">
+<header>
+<h1>GRANA HOJE</h1>
+<select class="language-selector" onchange="changeLanguage(this.value)">
+<option value="">🌐 Language</option>
+<option value="pt-br">🇧🇷 PT-BR</option>
+<option value="en">🇺🇸 EN</option>
+<option selected="selected" value="es">🇪🇸 ES</option>
+<option value="fr">🇫🇷 FR</option>
+<option value="ar">🇸🇦 AR</option>
+<option value="zh">🇨🇳 ZH</option>
+<option value="ru">🇷🇺 RU</option>
+<option value="hi">🇮🇳 HI</option>
+<option value="ja">🇯🇵 JA</option>
+</select>
+</header>
+<div class="balance-card">
+<p>Saldo Disponible</p>
+<div class="balance-amount"><span id="currency">€</span> <span id="balance">0,00</span></div>
+<button class="withdraw-btn" onclick="handleWithdraw()">RETIRAR AHORA</button>
+</div>
+<main>
+<div style="margin-bottom: 20px; padding: 12px; background: rgba(0, 209, 178, 0.1); border: 1px solid rgba(0, 209, 178, 0.2); border-radius: 15px; text-align: center;">
+<p style="font-size: 0.75rem; color: var(--primary); font-weight: 600; margin: 0;">
                 🔒 Nuestros patrocinadores garantizan tus pagos. Al navegar e interactuar, ayudas a mantener nuestra comunidad activa y rentable!
             </p>
+</div>
+<h2 class="section-title">✨ Misiones Lucrativas</h2>
+<div class="task-list">
+<div class="task-item" onclick="startTask(this, 0.50, '/es/blog.html')">
+<div class="task-icon">📝</div>
+<div class="task-details">
+<div class="task-name">Leer Nuestro Blog</div>
+<div class="task-reward">Bono de Lectura Diaria</div>
+<div class="task-status">Haz clic para leer</div>
+</div>
+</div>
+<div class="task-item" onclick="startTask(this, 1.5, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
+<div class="task-icon">📊</div>
+<div class="task-details">
+<div class="task-name">Responder Encuesta VIP</div>
+<div class="task-reward">+ € 1,50 en saldo</div>
+<div class="task-status">Disponible</div>
+</div>
+</div>
+<div class="task-item" onclick="startTask(this, 1.0, '/artigos/7-apps-pagam-pix-instantaneo.html')">
+<div class="task-icon">🌐</div>
+<div class="task-details">
+<div class="task-name">Visitar Sitio Asociado</div>
+<div class="task-reward">+ € 1,00 en saldo</div>
+<div class="task-status">Disponible</div>
+</div>
+</div>
+<div class="task-item" onclick="startTask(this, 1.0, '/artigos/melhores-apps-pagam-dinheiro.html')">
+<div class="task-icon">📱</div>
+<div class="task-details">
+<div class="task-name">Mejores Apps 2026</div>
+<div class="task-reward">+ € 1,00 en saldo</div>
+<div class="task-status">Disponible</div>
+</div>
+</div>
+<div class="task-item" onclick="startTask(this, 0.75, '/artigos/jogos-que-pagam-pix.html')">
+<div class="task-icon">🎮</div>
+<div class="task-details">
+<div class="task-name">Juegos que Pagan PIX</div>
+<div class="task-reward">+ € 0,75 en saldo</div>
+<div class="task-status">Disponible</div>
+</div>
+</div>
+</div>
+<div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-light);">
+<span id="visitor-count">1.432</span> usuarios en línea ahora
         </div>
-
-        <h2 class="section-title">✨ Misiones Lucrativas</h2>
-        <div class="task-list">
-
-            <div class="task-item" onclick="startTask(this, 0.50, '/es/blog.html')">
-                <div class="task-icon">📝</div>
-                <div class="task-details">
-                    <div class="task-name">Leer Nuestro Blog</div>
-                    <div class="task-reward">Bono de Lectura Diaria</div>
-                    <div class="task-status">Haz clic para leer</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(this, 1.5, '/artigos/ganhar-dinheiro-pesquisas-remuneradas.html')">
-                <div class="task-icon">📊</div>
-                <div class="task-details">
-                    <div class="task-name">Responder Encuesta VIP</div>
-                    <div class="task-reward">+ € 1,50 en saldo</div>
-                    <div class="task-status">Disponible</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/7-apps-pagam-pix-instantaneo.html')">
-                <div class="task-icon">🌐</div>
-                <div class="task-details">
-                    <div class="task-name">Visitar Sitio Asociado</div>
-                    <div class="task-reward">+ € 1,00 en saldo</div>
-                    <div class="task-status">Disponible</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(this, 1.0, '/artigos/melhores-apps-pagam-dinheiro.html')">
-                <div class="task-icon">📱</div>
-                <div class="task-details">
-                    <div class="task-name">Mejores Apps 2026</div>
-                    <div class="task-reward">+ € 1,00 en saldo</div>
-                    <div class="task-status">Disponible</div>
-                </div>
-            </div>
-
-            <div class="task-item" onclick="startTask(this, 0.75, '/artigos/jogos-que-pagam-pix.html')">
-                <div class="task-icon">🎮</div>
-                <div class="task-details">
-                    <div class="task-name">Juegos que Pagan PIX</div>
-                    <div class="task-reward">+ € 0,75 en saldo</div>
-                    <div class="task-status">Disponible</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-light);">
-            <span id="visitor-count">1.432</span> usuarios en línea ahora
-        </div>
-    </main>
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <h2 id="modal-title" style="color: #fff; margin-bottom: 15px;"></h2>
-            <p id="modal-text" style="color: var(--text-light); line-height: 1.6;"></p>
-            <button class="btn-close" onclick="closeModal()">OK</button>
-        </div>
-    </div>
-
-    <footer style="background: var(--card-bg); padding: 40px 20px; margin-top: 50px; border-top: 1px solid var(--glass-border); text-align: center;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <div style="margin-bottom: 20px;">
-                <h3 style="color: var(--primary); margin-bottom: 10px;">GRANA HOJE</h3>
-                <p style="color: var(--text-light); font-size: 0.8rem;">Tu fuente confiable de ingresos extra y oportunidades digitales en 2026.</p>
-            </div>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
-                <a href="/privacy-policy.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Privacidad</a>
-                <a href="/terms-of-service.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Términos de Uso</a>
-                <a href="/disclaimer.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Aviso Legal</a>
-                <a href="/contact.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Contacto</a>
-            </div>
-            <p style="color: var(--text-light); font-size: 0.7rem;">&copy; 2026 Grana Hoje. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <nav class="bottom-nav">
-        <a href="/es/" class="nav-item active"><div>🏠</div><span>Inicio</span></a>
-        <a href="/es/blog.html" class="nav-item"><div>📝</div><span>Blog</span></a>
-        <a href="#" class="nav-item" onclick="showModal('Soporte VIP', 'Contacta a nuestro equipo: support@granahoje.com')"><div>💬</div><span>Ayuda</span></a>
-    </nav>
-
-    <script>
+</main>
+<div class="modal" id="modal">
+<div class="modal-content">
+<h2 id="modal-title" style="color: #fff; margin-bottom: 15px;"></h2>
+<p id="modal-text" style="color: var(--text-light); line-height: 1.6;"></p>
+<button class="btn-close" onclick="closeModal()">OK</button>
+</div>
+</div>
+<footer style="background: var(--card-bg); padding: 40px 20px; margin-top: 50px; border-top: 1px solid var(--glass-border); text-align: center;">
+<div style="max-width: 1200px; margin: 0 auto;">
+<div style="margin-bottom: 20px;">
+<h3 style="color: var(--primary); margin-bottom: 10px;">GRANA HOJE</h3>
+<p style="color: var(--text-light); font-size: 0.8rem;">Tu fuente confiable de ingresos extra y oportunidades digitales en 2026.</p>
+</div>
+<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+<a href="/privacy-policy.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Privacidad</a>
+<a href="/terms-of-service.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Términos de Uso</a>
+<a href="/disclaimer.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Aviso Legal</a>
+<a href="/contact.html" style="color: var(--text-light); text-decoration: none; font-size: 0.75rem;">Contacto</a>
+</div>
+<p style="color: var(--text-light); font-size: 0.7rem;">© 2026 Grana Hoje. Todos los derechos reservados.</p>
+</div>
+</footer>
+<nav class="bottom-nav">
+<a class="nav-item active" href="/es/"><div>🏠</div><span>Inicio</span></a>
+<a class="nav-item" href="/es/blog.html"><div>📝</div><span>Blog</span></a>
+<a class="nav-item" href="#" onclick="showModal('Soporte VIP', 'Contacta a nuestro equipo: support@granahoje.com')"><div>💬</div><span>Ayuda</span></a>
+</nav>
+<script>
         const CURRENCY = '€';
         const CURRENCY_NAME = 'EUR';
         const MESSAGES = {
