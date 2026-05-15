@@ -620,75 +620,46 @@
     <h1 class="logo">GRANA<span>HOJE</span></h1>
 </header>
 
-<div class="language-modal">
+<div class="language-selector">
 
-  <div class="language-title">
-    🌐 Idioma
-  </div>
+    <button class="language-btn" onclick="toggleLanguages()">
+        🌐 <span id="selectedLanguage">PT-BR</span>
+    </button>
 
-  <label class="language-item">
-    <div class="language-left">🇧🇷 PT-BR</div>
-    <input type="radio" name="lang" checked>
-  </label>
+    <div class="language-dropdown" id="languageDropdown">
 
-  <label class="language-item">
-    <div class="language-left">🇵🇹 PT-PT</div>
-    <input type="radio" name="lang">
-  </label>
-<label class="language-item">
-    <div class="language-left">🇵🇹 PT-PT</div>
-    <input type="radio" name="lang">
-</label>
+        <div onclick="selectLanguage('PT-BR')">🇧🇷 PT-BR</div>
+        <div onclick="selectLanguage('PT-PT')">🇵🇹 PT-PT</div>
+        <div onclick="selectLanguage('EN')">🇺🇸 EN</div>
+        <div onclick="selectLanguage('ES')">🇪🇸 ES</div>
+        <div onclick="selectLanguage('FR')">🇫🇷 FR</div>
+        <div onclick="selectLanguage('AR')">🇸🇦 AR</div>
+        <div onclick="selectLanguage('ZH')">🇨🇳 ZH</div>
+        <div onclick="selectLanguage('RU')">🇷🇺 RU</div>
+        <div onclick="selectLanguage('HI')">🇮🇳 HI</div>
+        <div onclick="selectLanguage('JA')">🇯🇵 JA</div>
+        <div onclick="selectLanguage('BN')">🇧🇩 BN</div>
 
-<label class="language-item">
-    <div class="language-left">🇺🇸 EN</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇪🇸 ES</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇫🇷 FR</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇸🇦 AR</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇨🇳 ZH</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇷🇺 RU</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇮🇳 HI</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇯🇵 JA</div>
-    <input type="radio" name="lang">
-</label>
-
-<label class="language-item">
-    <div class="language-left">🇧🇩 BN</div>
-    <input type="radio" name="lang">
-</label>
+    </div>
 
 </div>
 
 <section class="balance-card" role="region" aria-label="Informações de saldo">
-</div>
+
+    <div class="balance-info">
+        <p id="balanceLabel">Saldo Disponível</p>
+        <div class="balance-amount">
+            R$ <span id="balance">0,00</span>
+        </div>
+    </div>
+
+    <button class="withdraw-btn" id="withdrawBtn"
+        onclick="showModal('withdrawTitle', 'withdrawMessage')">
+        SACAR AGORA
+    </button>
+
+</section>
+
     <section class="balance-card" role="region" aria-label="Informações de saldo">
         <div class="balance-info">
             <p id="balanceLabel">Saldo Disponível</p>
