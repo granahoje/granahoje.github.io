@@ -199,6 +199,20 @@
 <body>
     <header>
         <h1>GRANA HOJE - BLOG</h1>
+        <select class="language-selector" onchange="changeLanguage(this.value)" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #f8fafc; padding: 8px 12px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; margin-top: 10px;">
+            <option value="">🌐 Idioma</option>
+            <option selected="selected" value="pt-br">🇧🇷 PT-BR</option>
+            <option value="pt-pt">🇵🇹 PT-PT</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="ar">🇸🇦 AR</option>
+            <option value="zh">🇨🇳 ZH</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="hi">🇮🇳 HI</option>
+            <option value="ja">🇯🇵 JA</option>
+            <option value="bn">🇧🇩 BN</option>
+        </select>
     </header>
     
     <nav>
@@ -390,5 +404,15 @@
 
 
 <a href="https://llovers.com.br/institucional?ref=T105566450B" style="display: none;" rel="nofollow">Leadlovers - Mais Vendas, Menos Esforço</a>
+<script>
+    function changeLanguage(lang) {
+        if (!lang) return;
+        if (lang === 'pt-br') {
+            window.location.href = '/blog.html';
+        } else {
+            window.location.href = '/' + lang + '/blog.html';
+        }
+    }
+</script>
 </body>
 </html>
