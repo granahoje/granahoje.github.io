@@ -191,6 +191,10 @@
             box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
         }
 
+        .btn-calculate:active {
+            transform: translateY(0);
+        }
+
         .btn-reset {
             background: rgba(255,255,255,0.1);
             color: var(--text);
@@ -330,6 +334,34 @@
             color: var(--muted);
             line-height: 1.6;
         }
+
+        /* Exemplo pré-preenchido */
+        .example-button {
+            background: rgba(34, 211, 189, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .example-button:hover {
+            background: rgba(34, 211, 189, 0.3);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: var(--primary);
+            margin-top: 10px;
+        }
+
+        .loading.show {
+            display: block;
+        }
     </style>
 
     <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-juros-compostos.html" />
@@ -391,7 +423,10 @@
                             <button type="button" class="btn-calculate" onclick="calculateCompound()">Calcular</button>
                             <button type="reset" class="btn-reset">Limpar</button>
                         </div>
+                        <button type="button" class="example-button" onclick="loadExample()">📌 Carregar Exemplo</button>
                     </form>
+
+                    <div class="loading" id="compoundLoading">Calculando...</div>
 
                     <div class="result-box" id="compoundResult">
                         <div class="result-item">
@@ -446,6 +481,8 @@
                         </div>
                     </form>
 
+                    <div class="loading" id="investmentLoading">Calculando...</div>
+
                     <div class="result-box" id="investmentResult">
                         <div class="result-item">
                             <span class="result-label">Total Investido:</span>
@@ -467,6 +504,7 @@
                 </div>
             </div>
 
+            <!-- Espaço de Anúncios -->
             <div class="ad-space">
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
@@ -510,13 +548,6 @@
                 </ul>
             </div>
 
-            <div class="ad-space">
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-
             <div class="disclaimer">
                 <strong>⚠️ Aviso Importante:</strong> Esta calculadora é uma ferramenta educacional para fins informativos. Os resultados são estimativas baseadas nos valores inseridos e não constituem aconselhamento financeiro. As taxas de juros reais podem variar dependendo do produto de investimento. Consulte um profissional financeiro antes de tomar decisões de investimento.
             </div>
@@ -542,6 +573,14 @@
             }).format(value);
         }
 
+        function loadExample() {
+            document.getElementById('principal').value = '1000';
+            document.getElementById('rate').value = '10';
+            document.getElementById('time').value = '5';
+            document.getElementById('compounds').value = '12';
+            calculateCompound();
+        }
+
         function calculateCompound() {
             const principal = parseFloat(document.getElementById('principal').value);
             const rate = parseFloat(document.getElementById('rate').value) / 100;
@@ -553,16 +592,24 @@
                 return;
             }
 
-            const amount = principal * Math.pow(1 + rate / compounds, compounds * time);
-            const interest = amount - principal;
-            const percent = ((interest / principal) * 100).toFixed(2);
+            // Mostrar loading
+            document.getElementById('compoundLoading').classList.add('show');
+            document.getElementById('compoundResult').classList.remove('show');
 
-            document.getElementById('resultPrincipal').textContent = formatCurrency(principal);
-            document.getElementById('resultInterest').textContent = formatCurrency(interest);
-            document.getElementById('resultFinal').textContent = formatCurrency(amount);
-            document.getElementById('resultPercent').textContent = percent + '%';
+            // Simular processamento
+            setTimeout(() => {
+                const amount = principal * Math.pow(1 + rate / compounds, compounds * time);
+                const interest = amount - principal;
+                const percent = ((interest / principal) * 100).toFixed(2);
 
-            document.getElementById('compoundResult').classList.add('show');
+                document.getElementById('resultPrincipal').textContent = formatCurrency(principal);
+                document.getElementById('resultInterest').textContent = formatCurrency(interest);
+                document.getElementById('resultFinal').textContent = formatCurrency(amount);
+                document.getElementById('resultPercent').textContent = percent + '%';
+
+                document.getElementById('compoundLoading').classList.remove('show');
+                document.getElementById('compoundResult').classList.add('show');
+            }, 300);
         }
 
         function calculateInvestment() {
@@ -576,18 +623,26 @@
                 return;
             }
 
-            const futureValue = initial * Math.pow(1 + rate, months) + 
-                                monthly * (Math.pow(1 + rate, months) - 1) / rate;
-            const invested = initial + (monthly * months);
-            const interest = futureValue - invested;
-            const percent = ((interest / invested) * 100).toFixed(2);
+            // Mostrar loading
+            document.getElementById('investmentLoading').classList.add('show');
+            document.getElementById('investmentResult').classList.remove('show');
 
-            document.getElementById('resultInvested').textContent = formatCurrency(invested);
-            document.getElementById('resultInvestInterest').textContent = formatCurrency(interest);
-            document.getElementById('resultInvestFinal').textContent = formatCurrency(futureValue);
-            document.getElementById('resultInvestPercent').textContent = percent + '%';
+            // Simular processamento
+            setTimeout(() => {
+                const futureValue = initial * Math.pow(1 + rate, months) + 
+                                    monthly * (Math.pow(1 + rate, months) - 1) / rate;
+                const invested = initial + (monthly * months);
+                const interest = futureValue - invested;
+                const percent = ((interest / invested) * 100).toFixed(2);
 
-            document.getElementById('investmentResult').classList.add('show');
+                document.getElementById('resultInvested').textContent = formatCurrency(invested);
+                document.getElementById('resultInvestInterest').textContent = formatCurrency(interest);
+                document.getElementById('resultInvestFinal').textContent = formatCurrency(futureValue);
+                document.getElementById('resultInvestPercent').textContent = percent + '%';
+
+                document.getElementById('investmentLoading').classList.remove('show');
+                document.getElementById('investmentResult').classList.add('show');
+            }, 300);
         }
 
         // Permitir Enter para calcular
