@@ -1,5 +1,2 @@
-# Adsterra Ads.txt for Grana Hoje
-# Adsterra Network
-profitablecpmratenetwork.com, 29387236, DIRECT, f08c47fec0942fa0
-# Google AdSense
 google.com, pub-4896859041377751, DIRECT, f08c47fec0942fa0
+profitablecpmratenetwork.com, 29387236, DIRECT, f08c47fec0942fa0
