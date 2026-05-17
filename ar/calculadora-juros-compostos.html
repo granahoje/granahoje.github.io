@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-706NN8PEE7');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09111f">
+    <title>حاسبة الفائدة المركبة - غرانا هوجي</title>
+    <meta name="description" content="حاسبة الفائدة المركبة المجانية. احسب عوائد استثمارك مع الفائدة المركبة. أداة تعليمية للتخطيط المالي.">
+    <meta name="keywords" content="حاسبة الفائدة المركبة, الفائدة المركبة, الاستثمارات, التعليم المالي, التخطيط المالي">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="ar">
+    
+    <link rel="canonical" href="https://granahoje.github.io/ar/calculadora-juros-compostos.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #09111f;
+            --bg-soft: #0f1b2d;
+            --card: rgba(15, 27, 45, 0.82);
+            --text: #f8fafc;
+            --muted: #a8b3c7;
+            --primary: #22d3bd;
+            --radius-lg: 30px;
+            --success: #10b981;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        .container { 
+            width: min(100%, 900px); 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-decoration: none; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--text), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .calculator-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .input-hint {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .btn-calculate {
+            background: var(--primary);
+            color: var(--bg);
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
+        }
+
+        .btn-reset {
+            background: rgba(255,255,255,0.1);
+            color: var(--text);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-reset:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .result-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .result-box.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .result-value {
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .info-section {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+
+        .info-section h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            color: var(--muted);
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .info-section ul {
+            margin-left: 20px;
+            color: var(--muted);
+        }
+
+        .info-section li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .ad-space {
+            background: rgba(255,255,255,0.03);
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 30px 0;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .disclaimer {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+    </style>
+
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-juros-compostos.html" />
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-juros-compostos.html" />
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-juros-compostos.html" />
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-juros-compostos.html" />
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-juros-compostos.html" />
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-juros-compostos.html" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/ar/" class="logo">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/ar/blog.html">المدونة</a>
+                <a href="/ar/about.html">حول</a>
+                <a href="/ar/contact.html">اتصل بنا</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="page-title">حاسبة الفائدة المركبة</h1>
+            <p class="page-subtitle">اكتشف قوة الفائدة المركبة في تخطيطك المالي</p>
+
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h2>📊 الفائدة المركبة</h2>
+                    <form id="compoundForm">
+                        <div class="form-group">
+                            <label for="principal">رأس المال الأولي ($)</label>
+                            <input type="number" id="principal" placeholder="1000" min="0" step="0.01" required>
+                            <div class="input-hint">المبلغ الذي ستستثمره</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rate">معدل الفائدة (% سنويًا)</label>
+                            <input type="number" id="rate" placeholder="10" min="0" step="0.01" required>
+                            <div class="input-hint">النسبة المئوية السنوية</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">الفترة (سنوات)</label>
+                            <input type="number" id="time" placeholder="5" min="0" step="0.5" required>
+                            <div class="input-hint">عدد السنوات التي ستستثمرها</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="compounds">التراكم (مرات في السنة)</label>
+                            <select id="compounds" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem;">
+                                <option value="1">سنويًا</option>
+                                <option value="2">نصف سنوي</option>
+                                <option value="4">ربع سنوي</option>
+                                <option value="12" selected>شهريًا</option>
+                                <option value="365">يوميًا</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-calculate" onclick="calculateCompound()">احسب</button>
+                            <button type="reset" class="btn-reset">مسح</button>
+                        </div>
+                    </form>
+
+                    <div class="result-box" id="compoundResult">
+                        <div class="result-item">
+                            <span class="result-label">رأس المال الأولي:</span>
+                            <span class="result-value" id="resultPrincipal">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">الفائدة المكتسبة:</span>
+                            <span class="result-value" id="resultInterest">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">المبلغ النهائي:</span>
+                            <span class="result-value" id="resultFinal">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">العائد:</span>
+                            <span class="result-value" id="resultPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-card">
+                    <h2>💰 الاستثمار الشهري</h2>
+                    <form id="investmentForm">
+                        <div class="form-group">
+                            <label for="monthlyInvestment">المساهمة الشهرية ($)</label>
+                            <input type="number" id="monthlyInvestment" placeholder="500" min="0" step="0.01" required>
+                            <div class="input-hint">كم تستثمر شهريًا</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investRate">معدل الفائدة (% سنويًا)</label>
+                            <input type="number" id="investRate" placeholder="10" min="0" step="0.01" required>
+                            <div class="input-hint">النسبة المئوية السنوية</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investTime">الفترة (شهور)</label>
+                            <input type="number" id="investTime" placeholder="60" min="0" step="1" required>
+                            <div class="input-hint">عدد الشهور التي ستستثمرها</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="initialInvest">رأس المال الأولي ($)</label>
+                            <input type="number" id="initialInvest" placeholder="0" min="0" step="0.01">
+                            <div class="input-hint">اختياري: المبلغ الابتدائي</div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="button" class="btn-calculate" onclick="calculateInvestment()">احسب</button>
+                            <button type="reset" class="btn-reset">مسح</button>
+                        </div>
+                    </form>
+
+                    <div class="result-box" id="investmentResult">
+                        <div class="result-item">
+                            <span class="result-label">إجمالي الاستثمار:</span>
+                            <span class="result-value" id="resultInvested">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">الفائدة المكتسبة:</span>
+                            <span class="result-value" id="resultInvestInterest">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">المبلغ النهائي:</span>
+                            <span class="result-value" id="resultInvestFinal">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">العائد:</span>
+                            <span class="result-value" id="resultInvestPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ad-space">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="info-section">
+                <h3>ما هي الفائدة المركبة؟</h3>
+                <p>الفائدة المركبة هي الفائدة التي تتراكم ليس فقط على رأس المال الأولي ولكن أيضًا على الفائدة المتراكمة من الفترات السابقة. إنها "الفائدة على الفائدة" الشهيرة التي تجعل أموالك تنمو بشكل أُسّي.</p>
+                <p><strong>الصيغة:</strong> A = P × (1 + r/n)^(nt)</p>
+                <ul>
+                    <li><strong>A:</strong> المبلغ النهائي</li>
+                    <li><strong>P:</strong> رأس المال (الأولي)</li>
+                    <li><strong>r:</strong> معدل الفائدة السنوي (ككسر عشري)</li>
+                    <li><strong>n:</strong> عدد فترات التراكم في السنة</li>
+                    <li><strong>t:</strong> الزمن بالسنوات</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>لماذا الفائدة المركبة مهمة؟</h3>
+                <p>الفائدة المركبة هي أساس نمو الاستثمار على المدى الطويل. كلما طالت فترة استثمارك، زاد تأثير الفائدة المركبة.</p>
+                <ul>
+                    <li><strong>النمو الأُسّي:</strong> أموالك تنمو بشكل أسرع مع مرور الوقت</li>
+                    <li><strong>تأثير كرة الثلج:</strong> الفائدة تكسب فائدة، مما يخلق دورة من النمو</li>
+                    <li><strong>التخطيط المالي:</strong> ضروري للتقاعد، تعليم الأطفال، والأهداف طويلة الأجل</li>
+                    <li><strong>قوة الزمن:</strong> كلما بدأت الاستثمار مبكرًا، كانت نتائجك أفضل</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h3>نصائح لتعظيم استثماراتك</h3>
+                <ul>
+                    <li><strong>ابدأ مبكرًا:</strong> الوقت هو أعظم حليف لك في الفائدة المركبة</li>
+                    <li><strong>استثمر بانتظام:</strong> المساهمات الشهرية المستمرة تحدث فرقًا كبيرًا</li>
+                    <li><strong>ابحث عن معدلات أفضل:</strong> قارن خيارات الاستثمار للعثور على أفضل العوائد</li>
+                    <li><strong>أعد استثمار الأرباح:</strong> دع الفائدة تعمل لصالحك</li>
+                    <li><strong>نوّع استثماراتك:</strong> لا تضع كل بيضك في سلة واحدة</li>
+                    <li><strong>كن صبورًا:</strong> الاستثمارات طويلة الأجل تميل لأن تكون أكثر ربحية</li>
+                </ul>
+            </div>
+
+            <div class="ad-space">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <div class="disclaimer">
+                <strong>⚠️ إشعار مهم:</strong> هذه الحاسبة هي أداة تعليمية لأغراض إعلامية فقط. النتائج تقديرية بناءً على القيم المدخلة ولا تشكل نصيحة مالية. قد تختلف معدلات الفائدة الفعلية حسب منتج الاستثمار. استشر محترفًا ماليًا قبل اتخاذ قرارات الاستثمار.
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/ar/about.html">معلومات عنا</a>
+                <a href="/ar/blog.html">المدونة</a>
+                <a href="/ar/contact.html">اتصل بنا</a>
+                <a href="/ar/privacy-policy.html">الخصوصية</a>
+                <a href="/ar/terms-of-service.html">الشروط</a>
+            </div>
+            <p>© 2026 Grana Hoje. محتوى تعليمي عن المال.</p>
+        </footer>
+    </div>
+
+    <script>
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            }).format(value);
+        }
+
+        function calculateCompound() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value) / 100;
+            const time = parseFloat(document.getElementById('time').value);
+            const compounds = parseInt(document.getElementById('compounds').value);
+
+            if (!principal || !rate || !time) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const amount = principal * Math.pow(1 + rate / compounds, compounds * time);
+            const interest = amount - principal;
+            const percent = ((interest / principal) * 100).toFixed(2);
+
+            document.getElementById('resultPrincipal').textContent = formatCurrency(principal);
+            document.getElementById('resultInterest').textContent = formatCurrency(interest);
+            document.getElementById('resultFinal').textContent = formatCurrency(amount);
+            document.getElementById('resultPercent').textContent = percent + '%';
+
+            document.getElementById('compoundResult').classList.add('show');
+        }
+
+        function calculateInvestment() {
+            const monthly = parseFloat(document.getElementById('monthlyInvestment').value);
+            const rate = parseFloat(document.getElementById('investRate').value) / 100 / 12;
+            const months = parseInt(document.getElementById('investTime').value);
+            const initial = parseFloat(document.getElementById('initialInvest').value) || 0;
+
+            if (!monthly || !months) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const futureValue = initial * Math.pow(1 + rate, months) + 
+                                monthly * (Math.pow(1 + rate, months) - 1) / rate;
+            const invested = initial + (monthly * months);
+            const interest = futureValue - invested;
+            const percent = ((interest / invested) * 100).toFixed(2);
+
+            document.getElementById('resultInvested').textContent = formatCurrency(invested);
+            document.getElementById('resultInvestInterest').textContent = formatCurrency(interest);
+            document.getElementById('resultInvestFinal').textContent = formatCurrency(futureValue);
+            document.getElementById('resultInvestPercent').textContent = percent + '%';
+
+            document.getElementById('investmentResult').classList.add('show');
+        }
+
+        // Allow Enter to calculate
+        document.getElementById('compoundForm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                calculateCompound();
+            }
+        });
+
+        document.getElementById('investmentForm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                calculateInvestment();
+            }
+        });
+    </script>
+</body>
+</html>

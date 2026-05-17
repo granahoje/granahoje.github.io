@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-706NN8PEE7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09111f">
+    <title>চক্রবৃদ্ধি সুদ ক্যালকুলেটর - Grana Hoje</title>
+    <meta name="description" content="বিনামূল্যে চক্রবৃদ্ধি সুদ ক্যালকুলেটর। আপনার বিনিয়োগ রিটার্ন গণনা করুন।">
+    <meta name="keywords" content="চক্রবৃদ্ধি সুদ, বিনিয়োগ, আর্থিক শিক্ষা">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://granahoje.github.io/bn/calculadora-juros-compostos.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09111f;
+            --card: rgba(15, 27, 45, 0.82);
+            --text: #f8fafc;
+            --muted: #a8b3c7;
+            --primary: #22d3bd;
+            --success: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        .container { width: min(100%, 900px); margin: 0 auto; padding: 20px; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .page-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; background: linear-gradient(to right, var(--text), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 40px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
+        .calculator-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .calculator-card h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text); font-weight: 600; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus { outline: none; border-color: var(--primary); background: rgba(255,255,255,0.08); }
+        button { padding: 12px 20px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-family: inherit; }
+        .btn-calculate { background: var(--primary); color: var(--bg); flex: 1; }
+        .btn-calculate:hover { transform: translateY(-2px); }
+        .result-box { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 20px; border-radius: 15px; margin-top: 20px; display: none; }
+        .result-box.show { display: block; }
+        .result-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .result-value { color: var(--success); font-weight: 700; }
+        footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/bn/" class="logo">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/bn/blog.html">ব্লগ</a>
+                <a href="/bn/about.html">সম্পর্কে</a>
+                <a href="/bn/contact.html">যোগাযোগ</a>
+            </nav>
+        </header>
+        <main>
+            <h1 class="page-title">চক্রবৃদ্ধি সুদ ক্যালকুলেটর</h1>
+            <p class="page-subtitle">আপনার আর্থিক পরিকল্পনায় চক্রবৃদ্ধি সুদের শক্তি আবিষ্কার করুন</p>
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h2>📊 চক্রবৃদ্ধি সুদ</h2>
+                    <form id="compoundForm">
+                        <div class="form-group">
+                            <label for="principal">প্রাথমিক মূলধন ($)</label>
+                            <input type="number" id="principal" placeholder="1000" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rate">সুদের হার (% বার্ষিক)</label>
+                            <input type="number" id="rate" placeholder="10" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">সময়কাল (বছর)</label>
+                            <input type="number" id="time" placeholder="5" min="0" step="0.5" required>
+                        </div>
+                        <button type="button" class="btn-calculate" onclick="calculateCompound()">গণনা করুন</button>
+                    </form>
+                    <div class="result-box" id="compoundResult">
+                        <div class="result-item">
+                            <span>প্রাথমিক মূলধন:</span>
+                            <span class="result-value" id="resultPrincipal">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span>অর্জিত সুদ:</span>
+                            <span class="result-value" id="resultInterest">$ 0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span>চূড়ান্ত পরিমাণ:</span>
+                            <span class="result-value" id="resultFinal">$ 0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Grana Hoje. অর্থ সম্পর্কে শিক্ষামূলক সামগ্রী।</p>
+        </footer>
+    </div>
+    <script>
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+        }
+        function calculateCompound() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value) / 100;
+            const time = parseFloat(document.getElementById('time').value);
+            if (!principal || !rate || !time) { alert('অনুগ্রহ করে সমস্ত ক্ষেত্র পূরণ করুন'); return; }
+            const amount = principal * Math.pow(1 + rate, time);
+            const interest = amount - principal;
+            document.getElementById('resultPrincipal').textContent = formatCurrency(principal);
+            document.getElementById('resultInterest').textContent = formatCurrency(interest);
+            document.getElementById('resultFinal').textContent = formatCurrency(amount);
+            document.getElementById('compoundResult').classList.add('show');
+        }
+    </script>
+</body>
+</html>
