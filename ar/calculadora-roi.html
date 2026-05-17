@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-706NN8PEE7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09111f">
+    <title>Calculadora de ROI (Retorno sobre Investimento) - Grana Hoje</title>
+    <meta name="description" content="Calcule o ROI de seus investimentos ou negócios de forma simples. Descubra a rentabilidade real de suas aplicações.">
+    <meta name="keywords" content="ROI, retorno sobre investimento, calculadora ROI, rentabilidade, lucros, investimentos">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://granahoje.github.io/calculadora-roi.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #09111f;
+            --bg-soft: #0f1b2d;
+            --card: rgba(15, 27, 45, 0.82);
+            --text: #f8fafc;
+            --muted: #a8b3c7;
+            --primary: #22d3bd;
+            --success: #10b981;
+            --error: #ef4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        .container { width: min(100%, 900px); margin: 0 auto; padding: 20px; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .page-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; background: linear-gradient(to right, var(--text), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 40px; }
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
+        .calculator-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .calculator-card h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--text); font-weight: 600; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem; }
+        button { width: 100%; padding: 12px 20px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+        .btn-calculate { background: var(--primary); color: var(--bg); }
+        .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); }
+        .result-box { background: rgba(34, 211, 189, 0.1); border: 1px solid rgba(34, 211, 189, 0.3); padding: 20px; border-radius: 15px; margin-top: 20px; display: none; }
+        .result-box.show { display: block; }
+        .result-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .result-value { font-weight: 700; }
+        footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="logo">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/ar/blog.html">Blog</a>
+                <a href="/ar/about.html">Sobre</a>
+                <a href="/ar/contact.html">Contato</a>
+            </nav>
+        </header>
+        <main>
+            <h1 class="page-title">Calculadora de ROI</h1>
+            <p class="page-subtitle">Meça a eficiência do seu investimento com facilidade</p>
+            <div class="calculator-grid">
+                <div class="calculator-card">
+                    <h2>📊 Rentabilidade</h2>
+                    <form id="roiForm">
+                        <div class="form-group">
+                            <label for="invested">Valor Investido (R$)</label>
+                            <input type="number" id="invested" placeholder="1000" min="0.01" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="returned">Valor Retornado (R$)</label>
+                            <input type="number" id="returned" placeholder="1500" min="0" step="0.01" required>
+                        </div>
+                        <button type="button" class="btn-calculate" onclick="calculateROI()">Calcular ROI</button>
+                    </form>
+                    <div class="result-box" id="roiResult">
+                        <div class="result-item">
+                            <span>Lucro/Prejuízo:</span>
+                            <span class="result-value" id="resProfit">R$ 0,00</span>
+                        </div>
+                        <div class="result-item" style="border-bottom: 2px solid var(--primary);">
+                            <span style="font-weight: 800;">ROI Final:</span>
+                            <span class="result-value" id="resROI" style="font-size: 1.2rem;">0,00%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
+                    <h2 style="font-size: 1.2rem;">O que é ROI?</h2>
+                    <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">ROI significa **Return on Investment** (Retorno sobre o Investimento). É uma métrica usada para saber quanto você ganhou ou perdeu em relação ao valor investido.</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">Fórmula: `(Ganho - Custo) / Custo * 100`</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Grana Hoje. Analise seus ganhos.</p>
+        </footer>
+    </div>
+    <script>
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+        }
+        function calculateROI() {
+            const invested = parseFloat(document.getElementById('invested').value) || 0;
+            const returned = parseFloat(document.getElementById('returned').value) || 0;
+
+            if (invested <= 0) { alert('Insira um valor investido válido'); return; }
+
+            const profit = returned - invested;
+            const roi = (profit / invested) * 100;
+
+            document.getElementById('resProfit').textContent = formatCurrency(profit);
+            document.getElementById('resProfit').style.color = profit >= 0 ? 'var(--success)' : 'var(--error)';
+            document.getElementById('resROI').textContent = roi.toFixed(2) + '%';
+            document.getElementById('resROI').style.color = roi >= 0 ? 'var(--success)' : 'var(--error)';
+            document.getElementById('roiResult').classList.add('show');
+        }
+    </script>
+</body>
+</html>
