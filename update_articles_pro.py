@@ -86,7 +86,7 @@ template = """<!DOCTYPE html>
     <meta name="keywords" content="{keywords}">
     <meta name="author" content="Grana Hoje">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://jessicagilrs100-blip.github.io/{filename}">
+    <link rel="canonical" href="https://granahoje.github.io/{filename}">
     <script src="/cookie-consent.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
