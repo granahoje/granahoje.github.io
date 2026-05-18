@@ -81,15 +81,17 @@
         nav a { color: var(--text); text-decoration: none; font-weight: 700; transition: color 0.2s; }
         nav a:hover { color: var(--primary); }
 
-        /* Hero Section - Melhorada */
+        /* Hero Section - Melhorada com Imagem */
         .hero {
-            padding: 80px 0;
-            text-align: center;
+            padding: 60px 0;
             background: linear-gradient(135deg, rgba(34, 211, 189, 0.05) 0%, rgba(16, 185, 129, 0.03) 100%);
             border-radius: 20px;
             margin-bottom: 60px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
 
         .hero::before {
@@ -107,6 +109,24 @@
         .hero-content {
             position: relative;
             z-index: 1;
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(34, 211, 189, 0.15);
         }
 
         .hero h1 { 
@@ -124,15 +144,13 @@
             font-size: 1.3rem; 
             color: var(--muted); 
             margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 100%;
         }
 
         .hero-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -450,11 +468,32 @@
             font-size: 0.85rem;
         }
 
+        /* Destaque para Calculadora de Juros Compostos */
+        .calculator-card:first-child {
+            border: 2px solid var(--primary);
+            background: linear-gradient(135deg, rgba(34, 211, 189, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+            box-shadow: 0 0 30px rgba(34, 211, 189, 0.2);
+        }
+
+        .calculator-card:first-child .calculator-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #09111f;
+            font-weight: 900;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                gap: 30px;
+                padding: 40px 0;
+            }
+            .hero-content {
+                text-align: center;
+            }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1.1rem; }
-            .hero-buttons { flex-direction: column; }
+            .hero-buttons { justify-content: center; flex-direction: column; }
             .btn { width: 100%; text-align: center; }
             .calculators-grid { grid-template-columns: 1fr; }
             .calculators-section { padding: 30px 20px; }
@@ -488,7 +527,7 @@
         </header>
 
         <main>
-            <!-- Hero Section -->
+            <!-- Hero Section com Imagem -->
             <section class="hero">
                 <div class="hero-content">
                     <h1>Transforme Sua Vida Financeira</h1>
@@ -497,6 +536,9 @@
                         <a href="#calculadoras" class="btn">Explorar Ferramentas</a>
                         <a href="/blog.html" class="btn btn-secondary">Ler Artigos</a>
                     </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/hero-image.webp" alt="Crescimento financeiro e investimentos" loading="lazy" width="500" height="400">
                 </div>
             </section>
 
