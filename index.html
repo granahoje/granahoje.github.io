@@ -60,6 +60,8 @@
             padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             margin-bottom: 40px;
+            position: relative;
+            z-index: 100;
         }
 
         .logo { 
@@ -81,468 +83,188 @@
         nav a { color: var(--text); text-decoration: none; font-weight: 700; transition: color 0.2s; }
         nav a:hover { color: var(--primary); }
 
-        /* Hero Section - Melhorada com Imagem */
-        .hero {
-            padding: 60px 0;
-            background: linear-gradient(135deg, rgba(34, 211, 189, 0.05) 0%, rgba(16, 185, 129, 0.03) 100%);
-            border-radius: 20px;
-            margin-bottom: 60px;
+        /* Buscador no Cabeçalho */
+        .search-container {
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 40px;
+            max-width: 300px;
+            width: 100%;
+            margin: 0 20px;
         }
 
-        .hero::before {
-            content: '';
+        .search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text);
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 15px rgba(34, 211, 189, 0.2);
+        }
+
+        .search-icon {
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(34, 211, 189, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
             pointer-events: none;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            text-align: left;
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: radial-gradient(circle at top right, rgba(34, 211, 189, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent 40%);
+            border-radius: 30px;
+            margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
         }
 
-        .hero-image {
-            flex: 1;
-            position: relative;
-            z-index: 1;
-            max-width: 100%;
-            height: auto;
-        }
-
+        .hero-content { flex: 1.2; }
+        .hero-image { flex: 0.8; }
         .hero-image img {
             width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(34, 211, 189, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
         }
 
         .hero h1 { 
-            font-size: 3.5rem; 
+            font-size: 4rem; 
             font-weight: 900; 
-            margin-bottom: 20px; 
+            margin-bottom: 25px; 
             line-height: 1.1;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero p { 
-            font-size: 1.3rem; 
+            font-size: 1.4rem; 
             color: var(--muted); 
             margin-bottom: 40px;
-            max-width: 100%;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-
+        .hero-buttons { display: flex; gap: 20px; }
         .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: var(--primary);
-            color: #09111f;
-            text-decoration: none;
-            font-weight: 800;
-            border-radius: 12px;
-            transition: all 0.3s;
-            border: 2px solid var(--primary);
-        }
-
-        .btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 12px 30px rgba(34, 211, 189, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(34, 211, 189, 0.1);
-        }
-
-        /* Seção de Estatísticas - Barra Compacta */
-        .stats-section {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 60px;
-            padding: 20px 30px;
-            background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%);
+            padding: 18px 40px;
             border-radius: 15px;
-            border: 1px solid rgba(34, 211, 189, 0.12);
-            flex-wrap: wrap;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--primary); color: var(--bg); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(34, 211, 189, 0.3); }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: rgba(34, 211, 189, 0.1); }
+
+        /* Stats Bar - Atualizada para ser escalável */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            background: var(--bg-soft);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 80px;
         }
 
-        .stat-card {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-align: left;
-            flex: 1;
-            min-width: 150px;
-        }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 900; color: var(--primary); display: block; }
+        .stat-label { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        .stat-card::before {
-            content: '';
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(34, 211, 189, 0.15);
-            flex-shrink: 0;
-        }
-
-        .stat-number {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 2px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--muted);
-            font-size: 0.8rem;
-            line-height: 1.2;
-        }
-
-        /* Seção de Calculadoras - Melhorada */
-        .calculators-section {
-            margin: 80px 0;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.04) 100%);
-            border-radius: 25px;
-            border: 1px solid rgba(34, 211, 189, 0.15);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            color: var(--primary);
-            text-align: center;
-        }
-
-        .section-subtitle {
-            color: var(--muted);
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-            text-align: center;
-        }
+        /* Calculadoras */
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
+        .section-header p { color: var(--muted); font-size: 1.2rem; }
 
         .calculators-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        /* Centraliza o último card ímpar na última linha */
-        .calculators-grid a:last-child:nth-child(3n - 2) {
-            grid-column: 2;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
 
-        .calculator-card {
+        .calc-card {
             background: var(--card);
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .calculator-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s;
-        }
-
-        .calculator-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(34, 211, 189, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            transition: all 0.4s;
-        }
-
-        .calculator-card:hover {
+        .calc-card:hover {
+            transform: translateY(-10px);
             border-color: var(--primary);
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(34, 211, 189, 0.25);
+            background: rgba(34, 211, 189, 0.05);
         }
 
-        .calculator-card:hover::before {
-            transform: scaleX(1);
-        }
+        .calc-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+        .calc-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
+        .calc-card p { color: var(--muted); margin-bottom: 25px; }
+        .calc-link { font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
 
-        .calculator-card:hover::after {
-            top: -20%;
-            right: -20%;
-        }
-
-        .calculator-content {
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .calculator-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .calculator-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--text);
-            font-weight: 800;
-        }
-
-        .calculator-card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
-
-        .calculator-badge {
-            display: inline-block;
-            background: rgba(34, 211, 189, 0.15);
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .calculator-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 800;
-            transition: all 0.2s;
-            width: fit-content;
-        }
-
-        .calculator-link:hover {
-            gap: 12px;
-            transform: translateX(2px);
-        }
-
-        /* Seção de Artigos */
-        .articles-section {
-            margin: 80px 0;
-        }
-
-        .articles-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 50px;
-            text-align: center;
-            color: var(--text);
-        }
-
-        .articles {
+        /* Artigos */
+        .articles-section { margin-top: 100px; }
+        .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
-
         .article-card {
-            background: var(--card);
+            background: var(--bg-soft);
             padding: 30px;
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid transparent;
+            transition: 0.3s;
         }
+        .article-card:hover { border-color: var(--primary); }
+        .article-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .article-card p { color: var(--muted); font-size: 0.95rem; }
 
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--primary));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s;
-        }
-
-        .article-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(34, 211, 189, 0.2);
-        }
-
-        .article-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .article-card h3 { 
-            font-size: 1.3rem; 
-            margin-bottom: 12px;
-            font-weight: 800;
-            color: var(--text);
-        }
-
-        .article-card p { 
-            color: var(--muted); 
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Espaço de Anúncios */
-        .ad-space {
-            background: rgba(255,255,255,0.03);
-            border: 1px dashed rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin: 50px 0;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Footer */
         footer {
-            margin-top: 80px;
-            padding: 50px 0;
+            margin-top: 100px;
+            padding: 60px 0;
             border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
         }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
+        .footer-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+        .footer-links a:hover { color: var(--primary); }
 
-        .footer-links { 
-            display: flex; 
-            justify-content: center; 
-            gap: 25px; 
-            margin-bottom: 30px; 
-            flex-wrap: wrap;
-        }
-
-        .footer-links a { 
-            color: var(--muted); 
-            text-decoration: none; 
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover { 
-            color: var(--primary); 
-        }
-
-        .footer-copyright {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-        }
-
-        /* Destaque para Calculadora de Juros Compostos */
-        .calculator-card:first-child {
-            border: 2px solid var(--primary);
-            background: linear-gradient(135deg, rgba(34, 211, 189, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
-            box-shadow: 0 0 30px rgba(34, 211, 189, 0.2);
-        }
-
-        .calculator-card:first-child .calculator-badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #09111f;
-            font-weight: 900;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                gap: 30px;
-                padding: 40px 0;
-            }
-            .hero-content {
-                text-align: center;
-            }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .hero-buttons { justify-content: center; flex-direction: column; }
-            .btn { width: 100%; text-align: center; }
-            .calculators-grid { grid-template-columns: 1fr; }
-            .calculators-grid a:last-child:nth-child(3n - 2) { grid-column: 1; }
-            .calculators-section { padding: 30px 20px; }
-            .section-title { font-size: 2rem; }
-            .stats-section { flex-direction: column; gap: 15px; padding: 15px 20px; }
-            .stat-card { min-width: 100%; }
-            nav { gap: 15px; }
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .hero h1 { font-size: 3rem; }
+            .hero-buttons { justify-content: center; }
+            header { flex-direction: column; gap: 20px; }
+            .search-container { max-width: 100%; margin: 0; }
         }
     </style>
-    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/index.html" />
-    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/index.html" />
-    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/index.html" />
-    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/index.html" />
-    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/index.html" />
-    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/index.html" />
-    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/index.html" />
-    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/index.html" />
-    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/index.html" />
-    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/index.html" />
-    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/index.html" />
-    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/index.html" />
 </head>
 <body>
     <div class="container">
         <header>
             <a href="/" class="logo">GRANA HOJE</a>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Buscar ferramentas ou artigos..." id="searchInput">
+            </div>
+
             <nav>
                 <a href="/blog.html">Blog</a>
                 <a href="/about.html">Sobre</a>
@@ -551,138 +273,102 @@
         </header>
 
         <main>
-            <!-- Hero Section com Imagem -->
             <section class="hero">
                 <div class="hero-content">
-                    <h1>Transforme Sua Vida Financeira</h1>
-                    <p>Educação financeira prática, ferramentas gratuitas e estratégias comprovadas para você alcançar a independência financeira.</p>
+                    <h1>Sua Jornada para a Liberdade Financeira</h1>
+                    <p>Ferramentas inteligentes, guias práticos e estratégias reais para você dominar seu dinheiro em 2026.</p>
                     <div class="hero-buttons">
-                        <a href="#calculadoras" class="btn">Explorar Ferramentas</a>
-                        <a href="/blog.html" class="btn btn-secondary">Ler Artigos</a>
+                        <a href="#ferramentas" class="btn btn-primary">Explorar Ferramentas</a>
+                        <a href="/blog.html" class="btn btn-outline">Ler o Blog</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/hero-image.webp" alt="Crescimento financeiro e investimentos" loading="lazy" width="500" height="400">
+                    <img src="/hero-image.webp" alt="Grana Hoje - Educação Financeira">
                 </div>
             </section>
 
-            <!-- Estatísticas -->
-            <section class="stats-section">
-                <div class="stat-card">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Calculadoras Gratuitas</div>
+            <section class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value">Gratuito</span>
+                    <span class="stat-label">Acesso Vitalício</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Sem Publicidade Invasiva</div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Sem Anúncios Invasivos</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">Educativo</div>
-                    <div class="stat-label">Conteúdo de Qualidade</div>
+                <div class="stat-item">
+                    <span class="stat-value">Expert</span>
+                    <span class="stat-label">Conteúdo Curado</span>
                 </div>
             </section>
 
-            <!-- Seção de Calculadoras -->
-            <section class="calculators-section" id="calculadoras">
-                <h2 class="section-title">🧮 Ferramentas Financeiras Gratuitas</h2>
-                <p class="section-subtitle">Use nossas calculadoras para planejar melhor suas finanças e tomar decisões mais inteligentes</p>
-                
+            <section id="ferramentas">
+                <div class="section-header">
+                    <h2>🧮 Ferramentas Gratuitas</h2>
+                    <p>Tome decisões baseadas em dados com nossas calculadoras financeiras.</p>
+                </div>
+
                 <div class="calculators-grid">
-                    <a href="/calculadora-juros-compostos.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Educacional</div>
-                            <div class="calculator-icon">📊</div>
-                            <h3>Juros Compostos</h3>
-                            <p>Simule o crescimento exponencial do seu dinheiro com juros sobre juros. Entenda o poder do tempo no investimento.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/calculadora-juros-compostos.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>Juros Compostos</h3>
+                        <p>Simule o crescimento do seu patrimônio ao longo do tempo com o poder dos juros sobre juros.</p>
+                        <span class="calc-link">Calcular Agora →</span>
                     </a>
 
-                    <a href="/calculadora-salario-liquido.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Trabalhista</div>
-                            <div class="calculator-icon">💰</div>
-                            <h3>Salário Líquido</h3>
-                            <p>Calcule seu salário real após todos os descontos legais. Saiba exatamente quanto você realmente ganha.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/calculadora-salario-liquido.html" class="calc-card">
+                        <span class="calc-icon">💰</span>
+                        <h3>Salário Líquido</h3>
+                        <p>Descubra quanto você realmente recebe após todos os descontos de INSS e IRRF.</p>
+                        <span class="calc-link">Calcular Agora →</span>
                     </a>
 
-                    <a href="/calculadora-investimento-mensal.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Investimento</div>
-                            <div class="calculator-icon">📈</div>
-                            <h3>Aporte Mensal</h3>
-                            <p>Veja quanto você pode acumular investindo todos os meses. Planeje sua meta de independência financeira.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/calculadora-investimento-mensal.html" class="calc-card">
+                        <span class="calc-icon">📈</span>
+                        <h3>Aporte Mensal</h3>
+                        <p>Planeje quanto você precisa investir mensalmente para atingir sua meta financeira.</p>
+                        <span class="calc-link">Calcular Agora →</span>
                     </a>
 
-                    <a href="/calculadora-reserva-emergencia.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Segurança</div>
-                            <div class="calculator-icon">🛡️</div>
-                            <h3>Reserva de Emergência</h3>
-                            <p>Saiba quanto poupar para ter segurança financeira total. Proteja-se contra imprevistos.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/calculadora-reserva-emergencia.html" class="calc-card">
+                        <span class="calc-icon">🛡️</span>
+                        <h3>Reserva de Emergência</h3>
+                        <p>Saiba exatamente quanto você precisa ter guardado para sua segurança total.</p>
+                        <span class="calc-link">Calcular Agora →</span>
                     </a>
 
-                    <a href="/calculadora-roi.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Negócios</div>
-                            <div class="calculator-icon">💹</div>
-                            <h3>Calculadora de ROI</h3>
-                            <p>Meça a rentabilidade real de seus investimentos ou negócios. Tome decisões baseadas em dados.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/calculadora-roi.html" class="calc-card">
+                        <span class="calc-icon">💹</span>
+                        <h3>Calculadora de ROI</h3>
+                        <p>Meça o retorno sobre o investimento de seus projetos ou aplicações financeiras.</p>
+                        <span class="calc-link">Calcular Agora →</span>
                     </a>
 
-                    <a href="/conversor-moedas.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Câmbio</div>
-                            <div class="calculator-icon">💱</div>
-                            <h3>Conversor de Moedas</h3>
-                            <p>Cotações em tempo real para as principais moedas do mundo. Converta valores instantaneamente.</p>
-                            <span class="calculator-link">Converter →</span>
-                        </div>
-                    </a>
-
-                    <a href="/calculadora-desconto.html" class="calculator-card">
-                        <div class="calculator-content">
-                            <div class="calculator-badge">Economia</div>
-                            <div class="calculator-icon">🏷️</div>
-                            <h3>Calculadora de Desconto</h3>
-                            <p>Saiba quanto você economiza em promoções e ofertas. Identifique as melhores oportunidades de compra.</p>
-                            <span class="calculator-link">Calcular →</span>
-                        </div>
+                    <a href="/conversor-moedas.html" class="calc-card">
+                        <span class="calc-icon">💱</span>
+                        <h3>Conversor de Moedas</h3>
+                        <p>Cotações em tempo real para as principais moedas do mundo com conversão instantânea.</p>
+                        <span class="calc-link">Converter Agora →</span>
                     </a>
                 </div>
             </section>
 
-            <!-- Espaço de Anúncios -->
-            <div class="ad-space">
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4896859041377751" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-
-            <!-- Seção de Artigos -->
             <section class="articles-section">
-                <h2 class="articles-title">📚 Artigos em Destaque</h2>
-                <div class="articles">
+                <div class="section-header">
+                    <h2>📚 Destaques do Blog</h2>
+                </div>
+                <div class="articles-grid">
                     <a href="/artigos/melhores-apps-pagam-dinheiro.html" class="article-card">
                         <h3>Melhores Apps de Finanças em 2026</h3>
-                        <p>Analisamos as ferramentas que ajudam você a controlar seus gastos e investir melhor. Descubra os apps mais eficientes.</p>
+                        <p>Analisamos as ferramentas que ajudam você a controlar seus gastos e investir melhor.</p>
                     </a>
                     <a href="/artigos/ia-renda-extra-2026.html" class="article-card">
-                        <h3>O Impacto da IA nas Finanças Pessoais</h3>
-                        <p>Como a inteligência artificial está mudando a forma como gerenciamos nossas finanças. Prepare-se para o futuro.</p>
+                        <h3>O Impacto da IA nas Finanças</h3>
+                        <p>Como a inteligência artificial está mudando a forma como gerenciamos nossas finanças.</p>
                     </a>
                     <a href="/artigos/dropshipping-nacional-2026.html" class="article-card">
-                        <h3>Empreendedorismo e Planejamento</h3>
-                        <p>Guia completo para quem deseja iniciar um negócio próprio com segurança financeira. Comece do jeito certo.</p>
+                        <h3>Empreendedorismo Digital</h3>
+                        <p>Guia completo para quem deseja iniciar um negócio próprio com segurança financeira.</p>
                     </a>
                 </div>
             </section>
@@ -694,12 +380,22 @@
                 <a href="/blog.html">Blog</a>
                 <a href="/contact.html">Contato</a>
                 <a href="/privacy-policy.html">Privacidade</a>
-                <a href="/terms-of-service.html">Termos</a> | <a href="/stats.html">Estatísticas</a>
+                <a href="/terms-of-service.html">Termos</a>
             </div>
-            <div class="footer-copyright">
-                © 2026 Grana Hoje. Conteúdo educativo sobre finanças pessoais.
-            </div>
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
         </footer>
     </div>
+
+    <script>
+        // Lógica simples de busca (redireciona para o blog com parâmetro de busca)
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value.trim();
+                if (query) {
+                    window.location.href = '/blog.html?q=' + encodeURIComponent(query);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

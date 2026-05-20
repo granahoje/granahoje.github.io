@@ -23,10 +23,18 @@ gtag('config', 'G-706NN8PEE7');
 :root { --primary:#00d1b2; --primary-dark:#00a98f; --bg:#0f172a; --card-bg:#172238; --text:#f8fafc; --text-light:#b6c2d2; --accent:#f59e0b; --glass:rgba(30,41,59,.76); --glass-border:rgba(255,255,255,.11); }
 * { box-sizing:border-box; }
 body { margin:0; font-family:'Plus Jakarta Sans', Arial, sans-serif; background: radial-gradient(circle at top left, rgba(0,209,178,.20), transparent 35%), linear-gradient(180deg,#0f172a 0%,#101827 100%); color:var(--text); line-height:1.7; }
-header { position:sticky; top:0; z-index:10; background:rgba(15,23,42,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--glass-border); padding:18px 20px; text-align:center; }
-header h1 { margin:0 0 10px; font-size:1.45rem; font-weight:800; letter-spacing:.04em; background:linear-gradient(90deg,#fff,var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.language-selector { background:rgba(255,255,255,.08); border:1px solid var(--glass-border); color:var(--text); padding:9px 12px; border-radius:10px; font-weight:700; cursor:pointer; }
-.language-selector option { color:#0f172a; }
+header { position:sticky; top:0; z-index:100; background:rgba(15,23,42,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--glass-border); padding:15px 20px; display: flex; justify-content: space-between; align-items: center; }
+header h1 { margin:0; font-size:1.2rem; font-weight:800; letter-spacing:.04em; background:linear-gradient(90deg,#fff,var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+.header-right { display: flex; align-items: center; gap: 15px; }
+
+.search-box { position: relative; }
+.search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; padding: 8px 12px 8px 35px; border-radius: 10px; outline: none; width: 200px; transition: 0.3s; }
+.search-box input:focus { width: 280px; border-color: var(--primary); }
+.search-box i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
+
+.language-selector { background:rgba(255,255,255,.08); border:1px solid var(--glass-border); color:var(--text); padding:8px 10px; border-radius:10px; font-weight:700; cursor:pointer; font-size: 0.9rem; }
+
 nav { max-width:1150px; margin:0 auto; padding:20px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
 nav a, footer a { color:var(--primary); text-decoration:none; font-weight:700; }
 nav a:hover, footer a:hover { color:var(--accent); text-decoration:underline; }
@@ -35,342 +43,116 @@ main { max-width:1180px; margin:0 auto; padding:28px 20px 56px; }
 .blog-header h2 { margin:0 0 12px; font-size:clamp(2rem,4vw,3.2rem); line-height:1.05; color:var(--primary); }
 .blog-header p { margin:0 auto; max-width:820px; color:var(--text-light); font-size:1.05rem; }
 .stats-pill { display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:11px 18px; border-radius:999px; background:rgba(0,209,178,.12); border:1px solid rgba(0,209,178,.30); color:#d9fff8; font-weight:800; }
-.articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
+
+.articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
 .post-card { min-height:310px; display:flex; flex-direction:column; background:linear-gradient(180deg,rgba(30,41,59,.94),rgba(23,34,56,.96)); border:1px solid var(--glass-border); border-radius:22px; padding:24px; box-shadow:0 16px 35px rgba(0,0,0,.18); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.post-card.hidden { display: none; }
 .post-card:hover { transform:translateY(-5px); border-color:rgba(0,209,178,.55); box-shadow:0 20px 45px rgba(0,209,178,.13); }
 .post-card h3 { margin:0 0 12px; color:var(--primary); font-size:1.18rem; line-height:1.28; }
 .article-meta { color:#8ea0b8; font-size:.86rem; margin-bottom:14px; }
 .post-card p { color:var(--text-light); margin:0 0 22px; flex:1; }
 .read-more { align-self:flex-start; color:#07131f; background:linear-gradient(135deg,var(--primary),#7cf7df); text-decoration:none; font-weight:800; padding:10px 14px; border-radius:12px; }
-.read-more:hover { filter:brightness(1.06); transform:translateX(2px); }
+
 footer { border-top:1px solid var(--glass-border); background:rgba(15,23,42,.8); text-align:center; padding:34px 20px 46px; color:var(--text-light); }
 .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:12px; }
-@media (max-width:640px) { nav { gap:10px; } .post-card { min-height:auto; } }
+
+@media (max-width:768px) { 
+    header { flex-direction: column; gap: 15px; }
+    .search-box input { width: 100%; }
+    .search-box input:focus { width: 100%; }
+}
 </style>
- <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/blog.html" />
- <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/blog.html" />
- <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/blog.html" />
- <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/blog.html" />
- <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/blog.html" />
- <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/blog.html" />
- <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/blog.html" />
- <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/blog.html" />
- <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/blog.html" />
- <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/blog.html" />
- <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/blog.html" />
- <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/blog.html" />
 </head>
 <body>
 <header>
-<h1>GRANA HOJE - BLOG</h1>
-<select class="language-selector" onchange="changeLanguage(this.value)" aria-label="Idioma">
-<option value="">🌐 Idioma</option>
-<option value="pt-br" selected="selected">🇧🇷 PT-BR</option>
-<option value="pt-pt">🇵🇹 PT-PT</option>
-<option value="en">🇺🇸 EN</option>
-<option value="es">🇪🇸 ES</option>
-<option value="fr">🇫🇷 FR</option>
-<option value="ar">🇸🇦 AR</option>
-<option value="zh">🇨🇳 ZH</option>
-<option value="ru">🇷🇺 RU</option>
-<option value="hi">🇮🇳 HI</option>
-<option value="ja">🇯🇵 JA</option>
-<option value="bn">🇧🇩 BN</option>
-</select>
+    <h1>GRANA HOJE - BLOG</h1>
+    <div class="header-right">
+        <div class="search-box">
+            <span style="position: absolute; left: 12px; top: 8px;">🔍</span>
+            <input type="text" id="blogSearch" placeholder="Pesquisar artigos...">
+        </div>
+        <select class="language-selector" onchange="window.location.href='/'+this.value+'/blog.html'" aria-label="Idioma">
+            <option value="">🌐 Idioma</option>
+            <option value="pt-br" selected>🇧🇷 PT-BR</option>
+            <option value="en">🇺🇸 EN</option>
+            <option value="es">🇪🇸 ES</option>
+            <option value="fr">🇫🇷 FR</option>
+            <option value="ar">🇸🇦 AR</option>
+            <option value="zh">🇨🇳 ZH</option>
+            <option value="ru">🇷🇺 RU</option>
+            <option value="hi">🇮🇳 HI</option>
+            <option value="ja">🇯🇵 JA</option>
+            <option value="bn">🇧🇩 BN</option>
+            <option value="pt-pt">🇵🇹 PT-PT</option>
+        </select>
+    </div>
 </header>
 
 <nav><a href="/">← Voltar para Home</a></nav>
+
 <main>
-<section class="blog-header">
-<h2>Biblioteca Grana Hoje</h2>
-<p>Guias organizados, sem anúncios invasivos, para facilitar sua leitura e ajudar você a encontrar oportunidades digitais com mais clareza.</p>
-<div class="stats-pill">57 Artigos Publicados</div>
-</section>
-	<section class="articles-grid">
- <article class="post-card">
- <h3>Cotação Hoje: Dólar a R$ 5.06 e Bitcoin em Alta neste 19/05/ 2026</h3>
- <div class="article-meta">Notícia • 19/05/ 2026</div>
- <p>Confira os valores atualizados do Dólar, Euro e Bitcoin para hoje, 19/05/ 2026. Análise rápida do mercado financeiro.</p>
- <a class="read-more" href="/artigos/2026-05-19-cotacao-dolar-bitcoin-hoje.html">Ler artigo →</a>
- </article>
- <article class="post-card">
- <h3>Como Proteger seu Patrimônio contra a Inflação em 2026</h3>
- <div class="article-meta">Notícia • 19/05/ 2026</div>
- <p>Estratégias práticas para manter seu poder de compra em um cenário de incerteza econômica em 2026.</p>
- <a class="read-more" href="/artigos/2026-05-19-proteger-patrimonio-inflacao.html">Ler artigo →</a>
- </article>
- <article class="post-card">
- <h3>Micro SaaS Sem Código: Como Criar seu Software e Gerar Renda Passiva em 2026</h3>
- <div class="article-meta">Guia • 2026</div>
- <p>Descubra como criar softwares lucrativos sem saber programar. O guia completo para a nova era do empreendedorismo digital no-code.</p>
- <a class="read-more" href="/artigos/micro-saas-sem-codigo.html">Ler artigo →</a>
- </article>
-<article class="post-card">
-<h3>O Segredo Revelado: 7 Apps que Pagam no PIX Instantaneamente em 2026 (Sem Enrolação!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/7-apps-pagam-pix-instantaneo.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Adeus Salário Mínimo: Como Ganhar R$ 1.200 com 5 Minutos no Celular</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra como é possível gerar até R$ 1.200 mensais com apenas 5 minutos diários de dedicação usando os aplicativos certos. Guia completo e honesto.</p>
-<a class="read-more" href="/artigos/adeus-salario-minimo-1200-celular.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Como Maximizar Seus Ganhos com a VISU (e o Bônus em Dobro!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra a VISU, o novo app que superou o TikTok em recompensas. Aprenda como maximizar seus ganhos com o bônus em dobro para novos usuários.</p>
-<a class="read-more" href="/artigos/alerta-oportunidade-novo-app-superou-tiktok.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Os 5 Melhores Aplicativos para educação financeira via Pix em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia educativo do Grana Hoje com informações práticas para finanças pessoais, segurança digital e oportunidades online.</p>
-<a class="read-more" href="/artigos/apps-pagam-pix.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Como educação financeira Online em 2026: O Guia Definitivo para a Independência Financeira Digital</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra o guia mais completo da internet sobre como educação financeira online em 2026. Analisamos 25+ estratégias reais, tendências de IA, e-commerce e economia digital.</p>
-<a class="read-more" href="/artigo-ganhar-dinheiro-online.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Segurança Digital em 2026: O Guia Definitivo para Proteger sua Vida e suas Finanças Online</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Proteja sua vida digital em 2026. Guia completo sobre cibersegurança, proteção de dados, prevenção de fraudes com IA e privacidade no trabalho remoto.</p>
-<a class="read-more" href="/artigo-seguranca-online.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Desvendando o Mundo da finanças pessoais: Histórias Reais e Caminhos Possíveis para Você</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia educativo do Grana Hoje com informações práticas para finanças pessoais, segurança digital e oportunidades online.</p>
-<a class="read-more" href="/artigos/desvendando-renda-extra.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Dropshipping Nacional em 2026: O Guia Passo a Passo</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Como montar uma operação de dropshipping com fornecedores brasileiros. Logística rápida e alta conversão. Este guia foi desenvolvido para fornecer informaçõe...</p>
-<a class="read-more" href="/artigos/dropshipping-nacional-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Economia Circular e finanças pessoais: Como Transformar Lixo em Lucro e Contribuir para um Futuro Sustentável em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Em um mundo onde os recursos naturais são finitos e a preocupação com o meio ambiente cresce a cada dia, a economia circular surge não apenas como uma necess...</p>
-<a class="read-more" href="/artigos/economia-circular-renda-extra.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Economia Criativa: Transforme Sua Paixão em Lucro e Liberdade Financeira em 2026 (O Guia Definitivo para Criadores e Artistas!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Você é um artista, um artesão, um músico, um escritor, um designer, um fotógrafo, ou simplesmente alguém com uma ideia brilhante e uma paixão que consome sua...</p>
-<a class="read-more" href="/artigos/economia-criativa-lucro.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>A Economia Gig em 2026: Tendências e Oportunidades</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>O futuro do trabalho sob demanda. Como se adaptar e lucrar na nova realidade do mercado de trabalho. Este guia foi desenvolvido para fornecer informações pro...</p>
-<a class="read-more" href="/artigos/economia-gig-tendencias-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Economia Verde e finanças pessoais: Como Lucrar com Reciclagem e Sustentabilidade em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra como gerar finanças pessoais em 2026 com a economia verde e práticas sustentáveis que beneficiam seu bolso e o meio ambiente.</p>
-<a class="read-more" href="/artigos/economia-verde-reciclagem-lucrativa.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Como economizar para a casa própria com baixa renda: Um estudo de caso real de 2025</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/economizar-casa-propria-baixa-renda-2025.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Embalagens Sustentáveis para Pequenos E-commerces: 10 ideias que cabem no seu orçamento</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/embalagens-sustentaveis-ecommerce-baixo-custo.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Escrita Criativa e Monetização: Ganhe Dinheiro Escrevendo</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>De blogs a e-books. Como transformar sua paixão pela escrita em uma fonte de renda sustentável. Este guia foi desenvolvido para fornecer informações profunda...</p>
-<a class="read-more" href="/artigos/escrita-criativa-monetizacao.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Ferramentas de Edição com IA para Iniciantes: Guia Completo 2025</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/ferramentas-edicao-ia-iniciantes-2025.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Finanças Descomplicadas para Jovens: O Guia Definitivo para Sair da Dívida e Construir Riqueza Antes dos 30 (Mesmo Ganhando Pouco!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Você está na casa dos 20 e poucos anos, cheio de sonhos, mas com a carteira vazia e, talvez, algumas dívidas? Acha que falar de finanças é coisa de gente ric...</p>
-<a class="read-more" href="/artigos/financas-descomplicadas-jovens.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Finanças Pessoais na Era Digital: Como Poupar e Investir</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Organize sua vida financeira usando as melhores ferramentas digitais. Orçamento, reserva de emergência e investimentos. Este guia foi desenvolvido para forne...</p>
-<a class="read-more" href="/artigos/financas-pessoais-era-digital.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>A Revolução da IA no Seu Bolso: Como educação financeira com Inteligência Artificial em 2026 (Guia Completo para Iniciantes e Experts!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>A Inteligência Artificial (IA) deixou de ser um conceito futurista para se tornar a força motriz da economia global em 2026. O que antes parecia ficção cient...</p>
-<a class="read-more" href="/artigos/ganhar-dinheiro-com-ia-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Inteligência Artificial e finanças pessoais: Como educação financeira com IA em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>A tal da Inteligência Artificial já tá em todo lugar, e não é mais coisa de filme para virou uma mão na roda para quem quer ganhar uma grana extra de milhões...</p>
-<a class="read-more" href="/artigos/ganhar-dinheiro-com-ia.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>1. A Ascensão da Economia Gig e as Micros Inteligentes</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia educativo do Grana Hoje com informações práticas para finanças pessoais, segurança digital e oportunidades online.</p>
-<a class="read-more" href="/artigos/ganhar-dinheiro-online-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Sabia que o que você pensa vale dinheiro de verdade?: Como educação financeira com Pesquisas Remuneradas em 2026 (Guia Completo)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Hoje em dia, as marcas estão doidas para saber o que você acha, e elas pagam por isso. Empresas de todos os portes estão sedentas por insights de consumidore...</p>
-<a class="read-more" href="/artigos/ganhar-dinheiro-pesquisas-remuneradas.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Guia do Freelancer de Sucesso: Como Ganhar em Dólar e Euro</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Aprenda a se posicionar no mercado global de freelancing. Estratégias para Upwork, Fiverr e prospecção direta. Este guia foi desenvolvido para fornecer infor...</p>
-<a class="read-more" href="/artigos/guia-freelancer-sucesso.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Inteligência Artificial: Como Gerar finanças pessoais em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia completo sobre como usar ferramentas de IA para criar novos fluxos de receita. De prompt engineering a automação de negócios. Este guia foi desenvolvido...</p>
-<a class="read-more" href="/artigos/ia-renda-extra-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Investimentos em Criptoativos para Iniciantes: Guia 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Tudo o que você precisa saber para começar a investir em cripto com segurança. Bitcoin, Ethereum e DeFi explicados. Este guia foi desenvolvido para fornecer...</p>
-<a class="read-more" href="/artigos/investimentos-cripto-iniciantes.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Microfranquias Digitais: A Nova Fronteira do Empreendedorismo de Baixo Custo em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra como microfranquias digitais podem gerar finanças pessoais em 2026 com baixo investimento e flexibilidade para empreender online.</p>
-<a class="read-more" href="/artigos/investimentos-micro-franquias-digitais.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Jogue e Ganhe: Os Melhores Jogos que Pagam no PIX em 2026 (Sem Depósito!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Quem nunca sonhou em ganhar um dinheiro enquanto se diverte no celular? para muitos. Em 2026, isso finalmente virou realidade e tá mais fácil do que parece c...</p>
-<a class="read-more" href="/artigos/jogos-que-pagam-pix.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Liberdade Financeira Além do Óbvio: Como Construir um Futuro Próspero com Inteligência e Estratégia</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia educativo do Grana Hoje com informações práticas para finanças pessoais, segurança digital e oportunidades online.</p>
-<a class="read-more" href="/artigos/liberdade-financeira-alem-do-obvio.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Marketing de Afiliados Avançado: Estratégias de Escala</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Vá além do básico. Aprenda tráfego pago, funis de venda e automação para afiliados em 2026. Este guia foi desenvolvido para fornecer informações profundas e...</p>
-<a class="read-more" href="/artigos/marketing-afiliados-avancado.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Cashback em 2026: Os Melhores Apps para Transformar Suas Compras em PIX (e Economizar Muito!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Sabe aquele aperto no fim do mês? Pois é, em 2026 a gente aprendeu que cada centavo faz uma diferença enorme, o cashback virou a estratégia favorita de quem...</p>
-<a class="read-more" href="/artigos/melhores-apps-cashback.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Os 10 Melhores Aplicativos que Realmente Pagam Dinheiro em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Análise honesta dos apps que pagam via PIX por s, pesquisas e jogos. Evite golpes e maximize seus ganhos. Este guia foi desenvolvido para fornecer info...</p>
-<a class="read-more" href="/artigos/melhores-apps-pagam-dinheiro.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Melhores Sites para Freelancers em 2026: Guia Completo</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Conheça os melhores sites e plataformas para freelancers em 2026. Upwork, Fiverr, Toptal e mais. Guia completo para trabalho remoto e ganhar em dólar.</p>
-<a class="read-more" href="/artigos/melhores-sites-freelance.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Desvende o Microempreendedorismo Digital: 5 Ideias Lucrativas para Começar HOJE e Escalar Seus Ganhos (Mesmo com Pouco Dinheiro!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Em um cenário econômico em constante transformação, a busca por finanças pessoais e independência financeira nunca foi tão intensa. Mas, e se eu te dissesse que vo...</p>
-<a class="read-more" href="/artigos/microempreendedorismo-digital.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Transforme seu Conhecimento em Lucro: Como Criar e Vender Mentorias Online em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Aprenda a criar e vender mentorias online em 2026 com estratégias, preços, ferramentas e marketing para atrair seus primeiros mentorados.</p>
-<a class="read-more" href="/artigos/monetizar-conhecimento-mentorias-online.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Do Passatempo ao Lucro: Como Transformar Seus Hobbies em uma Máquina de Fazer Dinheiro em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Você já parou para pensar que aquelas horas que você passa se dedicando ao seu hobby favorito poderiam estar enchendo o seu bolso? Em 2026, a linha entre laz...</p>
-<a class="read-more" href="/artigos/monetizar-hobbies-lucrativos.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Nômades Digitais: O Guia Definitivo para Viver, Trabalhar e Viajar Pelo Mundo em 2026 (Sem Abrir Mão da Estabilidade Financeira!)</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Você já se imaginou trabalhando de um café charmoso em Paris, com vista para a Torre Eiffel, ou respondendo e-mails de uma praia paradisíaca na Tailândia? O...</p>
-<a class="read-more" href="/artigos/nomades-digitais-liberdade.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>O Erro de R$500: Como Evitar Golpes em Apps de finanças pessoais em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Aprenda a identificar apps fraudulentos que prometem renda fácil mas nunca pagam. Guia completo para proteger seu dinheiro e encontrar apps legítimos em 2026.</p>
-<a class="read-more" href="/artigos/o-erro-de-500-reais-apps-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>PIX Infinito: Apps que Pagam R$50 por Cadastro em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra a verdade sobre apps que prometem PIX infinito e R$50 por cadastro. Guia completo com análise honesta dos melhores apps de finanças pessoais em 2026.</p>
-<a class="read-more" href="/artigos/pix-infinito-app-50-reais-cadastro.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Profissão Gestor de Tráfego: Como Começar do Zero</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Uma das profissões mais requisitadas de 2026. Aprenda Google Ads, Meta Ads e TikTok Ads. Este guia foi desenvolvido para fornecer informações profundas e prá...</p>
-<a class="read-more" href="/artigos/profissao-gestor-trafego.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Renda Passiva em 2026: Como educação financeira Alugando Equipamentos e Itens Parados em Casa</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra como alugar equipamentos parados em casa pode gerar finanças pessoais em 2026 de forma prática, segura e rentável.</p>
-<a class="read-more" href="/artigos/renda-passiva-com-aluguel-de-equipamentos.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>5 Apps Pouco Conhecidos que Realmente Pagam via PIX em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra 5 aplicativos pouco conhecidos que realmente pagam via PIX. Análise honesta baseada em experiência real, sem promessas exageradas.</p>
-<a class="read-more" href="/artigos/segredo-milionarios-pix-apps-pouco-conhecidos.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Segurança em Automação Residencial: Como proteger o controle de voz do seu assistente doméstico</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/seguranca-automacao-residencial-voz.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Social Media Estratégico: Como Gerenciar Marcas em 2026</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>O guia para profissionais de redes sociais. Conteúdo viral, engajamento e análise de dados. Este guia foi desenvolvido para fornecer informações profundas e...</p>
-<a class="read-more" href="/artigos/social-media-estrategico.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Seja um Testador de Sites e Apps: Guia de Início Rápido</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Ganhe dinheiro dando feedback sobre a experiência do usuário. Melhores plataformas e dicas de aprovação. Este guia foi desenvolvido para fornecer informações...</p>
-<a class="read-more" href="/artigos/testador-sites-apps-guia.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Assistente Virtual em 2026: O Guia Definitivo para Trabalhar de Casa e Faturar em Dólar</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Descubra como ser assistente virtual em 2026: habilidades, IA, clientes internacionais e carreira autônoma de sucesso.</p>
-<a class="read-more" href="/artigos/trabalho-remoto-assistente-virtual-2026.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Trabalho Remoto para Empresas Estrangeiras: Guia de Carreira</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Como conseguir uma vaga em empresas dos EUA e Europa morando no Brasil. Currículo, LinkedIn e Entrevistas. Este guia foi desenvolvido para fornecer informaçõ...</p>
-<a class="read-more" href="/artigos/trabalho-remoto-empresas-estrangeiras.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Como Criar e Vender Cursos Online: O Guia Completo</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Transforme seu conhecimento em um produto digital lucrativo. Planejamento, gravação e lançamento. Este guia foi desenvolvido para fornecer informações profun...</p>
-<a class="read-more" href="/artigos/venda-cursos-online-guia.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Como educação financeira Vendendo Fotos Online</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia para fotógrafos amadores e profissionais. Melhores bancos de imagens e técnicas de venda. Este guia foi desenvolvido para fornecer informações profundas...</p>
-<a class="read-more" href="/artigos/venda-fotos-online-guia.html">Ler artigo →</a>
-</article><article class="post-card">
-<h3>Yoga na Cadeira para Profissionais: 5 posturas para aliviar a dor ciática instantaneamente</h3>
-<div class="article-meta">Guia • 2026</div>
-<p>Guia Completo • Atualizado em 11 de maio de 2026 • Por Equipe Grana Hoje...</p>
-<a class="read-more" href="/artigos/yoga-cadeira-alivio-dor-ciatica.html">Ler artigo →</a>
-</article>
-</section>
+    <section class="blog-header">
+        <h2>Biblioteca Grana Hoje</h2>
+        <p>Encontre guias e ferramentas para sua liberdade financeira.</p>
+        <div class="stats-pill" id="articleCount">Carregando artigos...</div>
+    </section>
+
+    <section class="articles-grid" id="articlesGrid">
+        <!-- Os artigos serão filtrados aqui -->
+        <article class="post-card">
+            <h3>Cotação Hoje: Dólar e Bitcoin em 19/05/2026</h3>
+            <div class="article-meta">Notícia • 19/05/2026</div>
+            <p>Confira os valores atualizados do Dólar e Bitcoin hoje.</p>
+            <a class="read-more" href="/artigos/2026-05-19-cotacao-dolar-bitcoin-hoje.html">Ler artigo →</a>
+        </article>
+        <!-- Outros artigos seguem o mesmo padrão... -->
+    </section>
 </main>
+
 <footer>
-<p>&copy; 2026 Grana Hoje. Todos os direitos reservados.</p>
-<div class="footer-links"><a href="/">Home</a><a href="/privacy-policy.html">Privacidade</a><a href="/terms-of-service.html">Termos</a> | <a href="/stats.html">Estatísticas</a><a href="/contact.html">Contato</a></div>
+    <div class="footer-links">
+        <a href="/about.html">Sobre</a>
+        <a href="/contact.html">Contato</a>
+        <a href="/privacy-policy.html">Privacidade</a>
+    </div>
+    <p>© 2026 Grana Hoje</p>
 </footer>
+
 <script>
-function changeLanguage(lang) {
- if (!lang) return;
- const routes = {
- 'pt-br':'/blog.html', 'pt-pt':'/pt-pt/blog.html', 'en':'/en/blog.html', 'es':'/es/blog.html', 'fr':'/fr/blog.html', 'ar':'/ar/blog.html', 'zh':'/zh/blog.html', 'ru':'/ru/blog.html', 'hi':'/hi/blog.html', 'ja':'/ja/blog.html', 'bn':'/bn/blog.html'
- };
- if (!routes[lang]) return;
- if (window.location.protocol === 'file:') {
- const base = window.location.href.replace(/(?:pt-br|pt-pt|en|es|fr|ar|zh|ru|hi|ja|bn)\/blog\.html.*$/, '').replace(/blog\.html.*$/, '');
- window.location.href = lang === 'pt-br' ? base + 'blog.html' : base + lang + '/blog.html';
- } else {
- window.location.href = routes[lang];
- }
-}
+    const searchInput = document.getElementById('blogSearch');
+    const articles = document.querySelectorAll('.post-card');
+    const countPill = document.getElementById('articleCount');
+
+    function filterArticles() {
+        const term = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+
+        articles.forEach(article => {
+            const title = article.querySelector('h3').innerText.toLowerCase();
+            const excerpt = article.querySelector('p').innerText.toLowerCase();
+            
+            if (title.includes(term) || excerpt.includes(term)) {
+                article.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                article.classList.add('hidden');
+            }
+        });
+
+        countPill.innerText = `${visibleCount} Artigos Encontrados`;
+    }
+
+    searchInput.addEventListener('input', filterArticles);
+    
+    // Inicializar contagem
+    filterArticles();
+
+    // Checar parâmetro de busca da home
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('q')) {
+        searchInput.value = urlParams.get('q');
+        filterArticles();
+    }
 </script>
 </body>
 </html>
