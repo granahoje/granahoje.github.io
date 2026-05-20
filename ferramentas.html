@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ferramentas e Calculadoras Financeiras - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .tool-card h3 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .tool-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .tool-link {
+            color: var(--primary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <h1 class="page-title">Ferramentas Financeiras</h1>
+            <p class="page-subtitle">Calculadoras gratuitas para ajudar você a dominar suas finanças em 2026.</p>
+        </header>
+
+        <div class="tools-grid">
+            <a href="/calculadora-salario-liquido.html" class="tool-card">
+                <div class="tool-icon">💰</div>
+                <h3>Salário Líquido</h3>
+                <p>Calcule seu salário após descontos de INSS, IRRF e outros benefícios.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-juros-compostos.html" class="tool-card">
+                <div class="tool-icon">📈</div>
+                <h3>Juros Compostos</h3>
+                <p>Simule o crescimento do seu patrimônio ao longo do tempo com aportes mensais.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-reserva-emergencia.html" class="tool-card">
+                <div class="tool-icon">🛡️</div>
+                <h3>Reserva de Emergência</h3>
+                <p>Saiba quanto você precisa poupar para ter segurança em momentos imprevistos.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-financiamento.html" class="tool-card">
+                <div class="tool-icon">🏠</div>
+                <h3>Financiamento</h3>
+                <p>Simule parcelas de imóveis ou veículos usando a Tabela Price ou SAC.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-cdb-poupanca.html" class="tool-card">
+                <div class="tool-icon">⚖️</div>
+                <h3>CDB vs Poupança</h3>
+                <p>Compare qual investimento rende mais considerando impostos e taxas atuais.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-desconto.html" class="tool-card">
+                <div class="tool-icon">🏷️</div>
+                <h3>Calculadora de Desconto</h3>
+                <p>Descubra o preço final e quanto você economiza em promoções e ofertas.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-dividend-yield.html" class="tool-card">
+                <div class="tool-icon">💎</div>
+                <h3>Dividend Yield</h3>
+                <p>Calcule a rentabilidade de ações e fundos imobiliários com base nos proventos.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-ponto-equilibrio.html" class="tool-card">
+                <div class="tool-icon">🎯</div>
+                <h3>Ponto de Equilíbrio</h3>
+                <p>Para empreendedores: saiba quanto vender para cobrir todos os seus custos.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+
+            <a href="/calculadora-roi.html" class="tool-card">
+                <div class="tool-icon">📊</div>
+                <h3>ROI (Retorno sobre Investimento)</h3>
+                <p>Avalie o lucro ou prejuízo de qualquer investimento ou projeto financeiro.</p>
+                <span class="tool-link">Acessar Calculadora →</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+</body>
+</html>
