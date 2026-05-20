@@ -23,42 +23,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --bg: #09111f;
-            --bg-soft: #0f1b2d;
-            --card: rgba(15, 27, 45, 0.82);
-            --text: #f8fafc;
-            --muted: #a8b3c7;
-            --primary: #22d3bd;
-            --success: #10b981;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-        .container { width: min(100%, 900px); margin: 0 auto; padding: 20px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .page-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; background: linear-gradient(to right, var(--text), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .page-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 40px; }
-        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
-        .calculator-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .calculator-card h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--text); font-weight: 600; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem; }
-        button { width: 100%; padding: 12px 20px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .btn-calculate { background: var(--primary); color: var(--bg); }
-        .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); }
-        .result-box { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 20px; border-radius: 15px; margin-top: 20px; display: none; }
-        .result-box.show { display: block; }
-        .result-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .result-value { color: var(--success); font-weight: 700; }
-        footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); }
-    </style>
+<link rel="stylesheet" href="../css/ferramentas.css">
 </head>
 <body>
 <div class="container">
@@ -70,10 +35,13 @@
 <a href="/contact.html">Contato</a>
 </nav>
 </header>
-<main>
-<h1 class="page-title">Calculadora de Desconto</h1>
-<p class="page-subtitle">Calcule o preço final de produtos em promoção</p>
-<div class="calculator-grid">
+<main class="container">
+<header class="page-header"><header class="page-header">
+    <h1 class="page-title">Calculadora de Desconto</h1>
+    <p class="page-subtitle">Calcule o preço final de produtos em promoção</p>
+</header>
+<div class="calculator-container">
+    <div class="calculator-grid">
 <div class="calculator-card">
 <h2>🏷️ Desconto</h2>
 <form id="discountForm">

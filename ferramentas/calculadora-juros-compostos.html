@@ -24,343 +24,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<style>
-        :root {
-            --bg: #09111f;
-            --bg-soft: #0f1b2d;
-            --card: rgba(15, 27, 45, 0.82);
-            --text: #f8fafc;
-            --muted: #a8b3c7;
-            --primary: #22d3bd;
-            --radius-lg: 30px;
-            --success: #10b981;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            line-height: 1.6;
-        }
-
-        .container { 
-            width: min(100%, 900px); 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 40px;
-        }
-
-        .logo { 
-            font-size: 1.5rem; 
-            font-weight: 800; 
-            color: var(--primary); 
-            text-decoration: none; 
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .page-title {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, var(--text), var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .page-subtitle {
-            color: var(--muted);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .calculator-card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .calculator-card h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            color: var(--text);
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .input-hint {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-top: 4px;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        button {
-            flex: 1;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-
-        .btn-calculate {
-            background: var(--primary);
-            color: var(--bg);
-        }
-
-        .btn-calculate:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
-        }
-
-        .btn-calculate:active {
-            transform: translateY(0);
-        }
-
-        .btn-reset {
-            background: rgba(255,255,255,0.1);
-            color: var(--text);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .btn-reset:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        .result-box {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .result-box.show {
-            display: block;
-            animation: slideIn 0.3s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-label {
-            color: var(--muted);
-            font-weight: 600;
-        }
-
-        .result-value {
-            color: var(--success);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .info-section {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 30px;
-        }
-
-        .info-section h3 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-        }
-
-        .info-section p {
-            color: var(--muted);
-            margin-bottom: 12px;
-            line-height: 1.8;
-        }
-
-        .info-section ul {
-            margin-left: 20px;
-            color: var(--muted);
-        }
-
-        .info-section li {
-            margin-bottom: 10px;
-            line-height: 1.8;
-        }
-
-        .ad-space {
-            background: rgba(255,255,255,0.03);
-            border: 1px dashed rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin: 30px 0;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .disclaimer {
-            background: rgba(255, 193, 7, 0.1);
-            border: 1px solid rgba(255, 193, 7, 0.3);
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-size: 0.85rem;
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        /* Exemplo pré-preenchido */
-        .example-button {
-            background: rgba(34, 211, 189, 0.2);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: all 0.2s;
-        }
-
-        .example-button:hover {
-            background: rgba(34, 211, 189, 0.3);
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            color: var(--primary);
-            margin-top: 10px;
-        }
-
-        .loading.show {
-            display: block;
-        }
-    </style>
+<link rel="stylesheet" href="../css/ferramentas.css">
 <link href="https://granahoje.github.io/calculadora-juros-compostos.html" hreflang="pt-br" rel="alternate"/>
 <link href="https://granahoje.github.io/en/calculadora-juros-compostos.html" hreflang="en" rel="alternate"/>
 <link href="https://granahoje.github.io/es/calculadora-juros-compostos.html" hreflang="es" rel="alternate"/>
@@ -378,10 +42,13 @@
 <a href="/contact.html">Contato</a>
 </nav>
 </header>
-<main>
-<h1 class="page-title">Calculadora de Juros Compostos</h1>
-<p class="page-subtitle">Descubra o poder dos juros compostos no seu planejamento financeiro</p>
-<div class="calculator-grid">
+<main class="container">
+<header class="page-header"><header class="page-header">
+    <h1 class="page-title">Calculadora de Juros Compostos</h1>
+    <p class="page-subtitle">Descubra o poder dos juros compostos no seu planejamento financeiro</p>
+</header>
+<div class="calculator-container">
+    <div class="calculator-grid">
 <div class="calculator-card">
 <h2>📊 Juros Compostos</h2>
 <form id="compoundForm">
@@ -485,14 +152,16 @@
 </div>
 </div>
 </div>
-<!-- Espaço de Anúncios -->
+</div>
+    </div>
+    <!-- Espaço de Anúncios -->
 <div class="ad-space">
 <ins class="adsbygoogle" data-ad-client="ca-pub-4896859041377751" data-ad-format="auto" data-ad-slot="0000000000" data-full-width-responsive="true" style="display:block"></ins>
 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
 </div>
-<div class="info-section">
+<div class="info-card">
 <h3>O que são Juros Compostos?</h3>
 <p>Juros compostos são aqueles que incidem não apenas sobre o capital inicial, mas também sobre os juros acumulados nos períodos anteriores. É o famoso "juro sobre juro" que faz seu dinheiro crescer exponencialmente.</p>
 <p><strong>Fórmula:</strong> A = P × (1 + r/n)^(nt)</p>
@@ -504,7 +173,7 @@
 <li><strong>t:</strong> Tempo em anos</li>
 </ul>
 </div>
-<div class="info-section">
+<div class="info-card">
 <h3>Por que os Juros Compostos são Importantes?</h3>
 <p>Os juros compostos são a base do crescimento de investimentos a longo prazo. Quanto maior o tempo de investimento, mais significativo é o efeito dos juros compostos.</p>
 <ul>
@@ -514,7 +183,7 @@
 <li><strong>Poder do Tempo:</strong> Quanto mais cedo você começa a investir, maiores serão os resultados</li>
 </ul>
 </div>
-<div class="info-section">
+<div class="info-card">
 <h3>Dicas para Maximizar seus Investimentos</h3>
 <ul>
 <li><strong>Comece Cedo:</strong> O tempo é seu maior aliado nos juros compostos</li>
