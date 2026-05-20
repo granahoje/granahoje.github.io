@@ -1,165 +1,145 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Reserva de Emergência - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-reserva-emergencia.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">ブログ</a>
+                <a href="/about.html">について</a>
+                <a href="/contact.html">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                戻る o ブログ
+            </a>
+            <h1 class="page-title">Calculadora de Reserva de Emergência</h1>
+            <p class="page-subtitle">Saiba exatamente quanto poupar para sua segurança.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="emergencyForm">
+                    
+<div class="form-group">
+<label for="expenses">Gastos Mensais Totais (R$)</label>
+<input id="expenses" min="0" placeholder="2500" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="months">Meses de Cobertura</label>
+<select id="months">
+<option value="3">3 Meses (Mínimo)</option>
+<option selected="" value="6">6 Meses (Recomendado)</option>
+<option value="12">12 Meses (Segurança Máxima)</option>
+</select>
+</div>
+<button class="btn-calculate" onclick="calculateEmergency()" type="button">Calcular Reserva</button>
+
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">推奨パートナー</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> 市場で最高のオプションの1つです. 当社の専門家によってテストおよび承認されています.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">今すぐアクセス →</a>
+            </div>
+        </div>
+
+        <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 もっと学びたいですか?</p>
+            <a href="/artigos/guia-sobrevivencia-financeira-automacao.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">完全な記事を読む →</a>
+        </div>
+
+
+        <section class="info-content">
+            <div class="info-card">
+        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
+        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
+        
+        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
+        
+        <h4>A Importância do Planejamento</h4>
+        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
+        
+        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
+        
+        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
+        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. ツール como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
+        
+        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
+        
+        <h4>Construindo um Legado</h4>
+        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
+        
+        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
+        
+        <h4>Conclusão e Próximos Passos</h4>
+        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
+        
+        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. すべての人のための金融教育.</p>
+        </div>
+    </footer>
+
     <script>
+        
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Calculadora de Reserva de Emergência - Grana Hoje</title>
-    <meta name="description" content="Descubra quanto você precisa poupar para sua reserva de emergência. Planeje sua segurança financeira com nossa calculadora.">
-    <meta name="keywords" content="reserva de emergência, segurança financeira, poupança, planejamento financeiro, finanças pessoais">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/calculadora-reserva-emergencia.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #09111f;
-            --bg-soft: #0f1b2d;
-            --card: rgba(15, 27, 45, 0.82);
-            --text: #f8fafc;
-            --muted: #a8b3c7;
-            --primary: #22d3bd;
-            --success: #10b981;
-            --warning: #f59e0b;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-        .container { width: min(100%, 900px); margin: 0 auto; padding: 20px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .page-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; background: linear-gradient(to right, var(--text), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .page-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 40px; }
-        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
-        .calculator-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .calculator-card h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--text); font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem; }
-        button { width: 100%; padding: 12px 20px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .btn-calculate { background: var(--primary); color: var(--bg); }
-        .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); }
-        .result-box { background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 20px; border-radius: 15px; margin-top: 20px; display: none; }
-        .result-box.show { display: block; }
-        .result-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .result-value { color: var(--warning); font-weight: 700; }
-        footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/ja/blog.html">Blog</a>
-                <a href="/ja/about.html">Sobre</a>
-                <a href="/ja/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Calculadora de Reserva de Emergência</h1>
-            <p class="page-subtitle">Saiba quanto você precisa para ter tranquilidade financeira</p>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>🛡️ Planejamento</h2>
-                    <form id="emergencyForm">
-                        <div class="form-group">
-                            <label for="expenses">Gastos Mensais Totais (R$)</label>
-                            <input type="number" id="expenses" placeholder="2500" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="months">Meses de Cobertura</label>
-                            <select id="months">
-                                <option value="3">3 Meses (Mínimo)</option>
-                                <option value="6" selected>6 Meses (Recomendado)</option>
-                                <option value="12">12 Meses (Segurança Máxima)</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="calculateEmergency()">Calcular Reserva</button>
-                    </form>
-                    <div class="result-box" id="emergencyResult">
-                        <div class="result-item">
-                            <span>Gasto Mensal:</span>
-                            <span class="result-value" id="resExpenses">R$ 0,00</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Tempo de Cobertura:</span>
-                            <span class="result-value" id="resMonths">0 Meses</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--warning);">
-                            <span style="font-weight: 800;">Total da Reserva:</span>
-                            <span class="result-value" id="totalReserve" style="font-size: 1.2rem;">R$ 0,00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="calculator-card" style="background: rgba(245, 158, 11, 0.05);">
-                    <h2 style="font-size: 1.2rem; color: var(--warning);">Dica de Especialista</h2>
-                    <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">A reserva de emergência deve ser seu primeiro passo nos investimentos. Ela funciona como um seguro contra imprevistos, evitando que você precise contrair dívidas caras.</p>
-                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 15px;">Ela deve estar em um lugar de **alta liquidez** (acesso rápido) e **baixo risco** (preservação do capital).</p>
-                    <p style="font-size: 0.85rem; color: var(--muted);">Exemplos ideais: Tesouro SELIC, CDBs de liquidez diária de grandes bancos (mínimo 100% do CDI) ou contas remuneradas com garantia do FGC.</p>
-                </div>
-            </div>
-
-            <section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: var(--warning); margin-bottom: 20px;">Por que a Reserva de Emergência é Fundamental?</h2>
-                <p style="margin-bottom: 15px;">Ter uma reserva de emergência é a diferença entre um imprevisto ser apenas um problema passageiro ou se tornar uma catástrofe financeira. Sem ela, qualquer gasto inesperado — como um conserto no carro, uma despesa médica ou a perda do emprego — pode forçar você a usar o cheque especial ou o rotativo do cartão de crédito, que possuem os juros mais altos do mercado.</p>
-                
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Quanto devo poupar?</h3>
-                <p style="margin-bottom: 15px;">O valor ideal depende da sua estabilidade profissional e do seu estilo de vida:</p>
-                <ul style="margin-left: 20px; margin-bottom: 15px; color: var(--muted);">
-                    <li style="margin-bottom: 8px;"><strong>Funcionários Públicos:</strong> 3 a 6 meses de gastos mensais, devido à maior estabilidade.</li>
-                    <li style="margin-bottom: 8px;"><strong>Trabalhadores CLT:</strong> 6 a 9 meses de gastos mensais, para cobrir o tempo de recolocação.</li>
-                    <li><strong>Autônomos e Freelancers:</strong> 12 meses de gastos mensais, devido à alta volatilidade da renda.</li>
-                </ul>
-
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Onde NÃO colocar sua reserva</h3>
-                <p style="margin-bottom: 15px;">Nunca coloque sua reserva de emergência em ativos de renda variável (ações, criptomoedas) ou em investimentos com prazo de carência longo (LCI/LCA que prendem o dinheiro por meses). O objetivo aqui não é a rentabilidade máxima, mas sim a <strong>disponibilidade imediata</strong> e a <strong>segurança</strong>.</p>
-
-                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h4 style="margin-bottom: 10px;">FAQ - Perguntas Comuns</h4>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li style="margin-bottom: 15px;"><strong>Posso usar a poupança?</strong> Embora seja segura e líquida, a poupança rende muito pouco. CDBs de liquidez diária são igualmente seguros e rendem significativamente mais.</li>
-                        <li style="margin-bottom: 15px;"><strong>Quando devo usar a reserva?</strong> Apenas para necessidades reais e urgentes. Viagens, festas ou compras de consumo não são emergências.</li>
-                        <li><strong>Já posso investir em ações se não tenho reserva?</strong> Não recomendamos. Construa pelo menos 3 meses de reserva antes de se aventurar na renda variável.</li>
-                    </ul>
-                </div>
-            </section>
-            </div>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Proteja seu futuro.</p>
-        </footer>
-    </div>
-    <script>
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
-        }
-        function calculateEmergency() {
-            const expenses = parseFloat(document.getElementById('expenses').value) || 0;
-            const months = parseInt(document.getElementById('months').value) || 0;
-
-            if (expenses <= 0) { alert('Insira seus gastos mensais'); return; }
-
-            const total = expenses * months;
-
-            document.getElementById('resExpenses').textContent = formatCurrency(expenses);
-            document.getElementById('resMonths').textContent = months + ' Meses';
-            document.getElementById('totalReserve').textContent = formatCurrency(total);
-            document.getElementById('emergencyResult').classList.add('show');
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
         }
     </script>
 </body>

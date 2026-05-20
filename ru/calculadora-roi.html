@@ -1,160 +1,141 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de ROI (Retorno sobre Investimento) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-roi.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Блог</a>
+                <a href="/about.html">О нас</a>
+                <a href="/contact.html">Контакт</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Вернуться к o Блог
+            </a>
+            <h1 class="page-title">Calculadora de ROI (Retorno sobre Investimento)</h1>
+            <p class="page-subtitle">Meça a lucratividade de seus projetos e negócios.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="roiForm">
+                    
+<div class="form-group">
+<label for="invested">Valor Investido (R$)</label>
+<input id="invested" min="0.01" placeholder="1000" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="returned">Valor Retornado (R$)</label>
+<input id="returned" min="0" placeholder="1500" required="" step="0.01" type="number"/>
+</div>
+<button class="btn-calculate" onclick="calculateROI()" type="button">Calcular ROI</button>
+
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Рекомендуемый партнер</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> является одним из лучших вариантов на рынке. Протестировано и одобрено нашими экспертами.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Доступ сейчас →</a>
+            </div>
+        </div>
+
+        <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Хотите узнать больше?</p>
+            <a href="/artigos/venda-digital-assets-ia.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Прочитать полную статью →</a>
+        </div>
+
+
+        <section class="info-content">
+            <div class="info-card">
+        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
+        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
+        
+        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
+        
+        <h4>A Importância do Planejamento</h4>
+        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
+        
+        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
+        
+        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
+        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Инструменты como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
+        
+        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
+        
+        <h4>Construindo um Legado</h4>
+        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
+        
+        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
+        
+        <h4>Conclusão e Próximos Passos</h4>
+        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
+        
+        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Финансовое образование для всех.</p>
+        </div>
+    </footer>
+
     <script>
+        
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Calculadora de ROI (Retorno sobre Investimento) - Grana Hoje</title>
-    <meta name="description" content="Calcule o ROI de seus investimentos ou negócios de forma simples. Descubra a rentabilidade real de suas aplicações.">
-    <meta name="keywords" content="ROI, retorno sobre investimento, calculadora ROI, rentabilidade, lucros, investimentos">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/calculadora-roi.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #09111f;
-            --bg-soft: #0f1b2d;
-            --card: rgba(15, 27, 45, 0.82);
-            --text: #f8fafc;
-            --muted: #a8b3c7;
-            --primary: #22d3bd;
-            --success: #10b981;
-            --error: #ef4444;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-        .container { width: min(100%, 900px); margin: 0 auto; padding: 20px; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .page-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 10px; background: linear-gradient(to right, var(--text), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .page-subtitle { color: var(--muted); font-size: 1.1rem; margin-bottom: 40px; }
-        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; }
-        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
-        .calculator-card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .calculator-card h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; color: var(--text); font-weight: 600; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem; }
-        button { width: 100%; padding: 12px 20px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
-        .btn-calculate { background: var(--primary); color: var(--bg); }
-        .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); }
-        .result-box { background: rgba(34, 211, 189, 0.1); border: 1px solid rgba(34, 211, 189, 0.3); padding: 20px; border-radius: 15px; margin-top: 20px; display: none; }
-        .result-box.show { display: block; }
-        .result-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .result-value { font-weight: 700; }
-        footer { margin-top: 60px; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--muted); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/ru/blog.html">Blog</a>
-                <a href="/ru/about.html">Sobre</a>
-                <a href="/ru/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Calculadora de ROI</h1>
-            <p class="page-subtitle">Meça a eficiência do seu investimento com facilidade</p>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>📊 Rentabilidade</h2>
-                    <form id="roiForm">
-                        <div class="form-group">
-                            <label for="invested">Valor Investido (R$)</label>
-                            <input type="number" id="invested" placeholder="1000" min="0.01" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="returned">Valor Retornado (R$)</label>
-                            <input type="number" id="returned" placeholder="1500" min="0" step="0.01" required>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="calculateROI()">Calcular ROI</button>
-                    </form>
-                    <div class="result-box" id="roiResult">
-                        <div class="result-item">
-                            <span>Lucro/Prejuízo:</span>
-                            <span class="result-value" id="resProfit">R$ 0,00</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--primary);">
-                            <span style="font-weight: 800;">ROI Final:</span>
-                            <span class="result-value" id="resROI" style="font-size: 1.2rem;">0,00%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
-                    <h2 style="font-size: 1.2rem;">O que é ROI?</h2>
-                    <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">ROI significa **Return on Investment** (Retorno sobre o Investimento). É a métrica mais importante para qualquer investidor ou dono de negócio, pois indica a eficiência financeira de uma aplicação.</p>
-                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Fórmula Básica: <code>(Ganho - Custo) / Custo * 100</code></p>
-                    <p style="font-size: 0.85rem; color: var(--muted);">Um ROI positivo indica lucro, enquanto um ROI negativo indica que você está perdendo dinheiro no investimento analisado.</p>
-                </div>
-            </div>
-
-            <section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Como Interpretar e Melhorar o seu ROI</h2>
-                <p style="margin-bottom: 15px;">Calcular o ROI é apenas o primeiro passo. O verdadeiro valor está em entender o que esse número significa para a sua estratégia financeira. Um ROI de 20% pode ser excelente para um investimento de baixo risco, mas pode ser considerado baixo para uma operação comercial de alto risco.</p>
-                
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Aplicações Práticas do ROI</h3>
-                <p style="margin-bottom: 15px;">Você pode usar esta calculadora para diversas finalidades:</p>
-                <ul style="margin-left: 20px; margin-bottom: 15px; color: var(--muted);">
-                    <li style="margin-bottom: 8px;"><strong>Marketing Digital:</strong> Avaliar se o valor gasto em anúncios trouxe o retorno em vendas esperado.</li>
-                    <li style="margin-bottom: 8px;"><strong>Mercado Imobiliário:</strong> Calcular o lucro na revenda de um imóvel após reformas.</li>
-                    <li style="margin-bottom: 8px;"><strong>Ações e Cripto:</strong> Saber a porcentagem exata de ganho sobre o capital inicialmente aportado.</li>
-                    <li><strong>Educação:</strong> Avaliar se um curso ou treinamento se pagou através de um aumento salarial.</li>
-                </ul>
-
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Limitações do ROI</h3>
-                <p style="margin-bottom: 15px;">É importante notar que o ROI simples não considera o <strong>fator tempo</strong>. Ganhar 50% em um mês é muito diferente de ganhar 50% em cinco anos. Para uma análise mais profunda, investidores costumam usar o ROI anualizado ou a Taxa Interna de Retorno (TIR).</p>
-
-                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h4 style="margin-bottom: 10px;">FAQ sobre Retorno de Investimento</h4>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li style="margin-bottom: 15px;"><strong>O que é um "bom" ROI?</strong> Depende do setor. No mercado de ações, um ROI anual acima de 10% é considerado bom. Em negócios próprios, busca-se frequentemente ROIs mais elevados.</li>
-                        <li style="margin-bottom: 15px;"><strong>Como o ROI ajuda na tomada de decisão?</strong> Ele permite comparar diferentes oportunidades de investimento e escolher aquela que utiliza seu capital de forma mais eficiente.</li>
-                        <li><strong>O ROI considera impostos?</strong> O ROI bruto não. Para uma análise real, você deve usar o valor retornado líquido de impostos e taxas.</li>
-                    </ul>
-                </div>
-            </section>
-            </div>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Analise seus ganhos.</p>
-        </footer>
-    </div>
-    <script>
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
-        }
-        function calculateROI() {
-            const invested = parseFloat(document.getElementById('invested').value) || 0;
-            const returned = parseFloat(document.getElementById('returned').value) || 0;
-
-            if (invested <= 0) { alert('Insira um valor investido válido'); return; }
-
-            const profit = returned - invested;
-            const roi = (profit / invested) * 100;
-
-            document.getElementById('resProfit').textContent = formatCurrency(profit);
-            document.getElementById('resProfit').style.color = profit >= 0 ? 'var(--success)' : 'var(--error)';
-            document.getElementById('resROI').textContent = roi.toFixed(2) + '%';
-            document.getElementById('resROI').style.color = roi >= 0 ? 'var(--success)' : 'var(--error)';
-            document.getElementById('roiResult').classList.add('show');
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
         }
     </script>
 </body>

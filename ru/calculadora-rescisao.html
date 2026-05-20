@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Rescisão Trabalhista (CLT) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-rescisao.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Блог</a>
+                <a href="/about.html">О нас</a>
+                <a href="/contact.html">Контакт</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Вернуться к o Блог
+            </a>
+            <h1 class="page-title">Calculadora de Rescisão Trabalhista (CLT)</h1>
+            <p class="page-subtitle">Simule seus direitos e valores a receber na saída do emprego.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="rescisaoForm">
+                    
+                <div class="form-group">
+                    <label for="salario">Salário Bruto (R$)</label>
+                    <input id="salario" placeholder="3000" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="meses">Meses Trabalhados (no ano)</label>
+                    <input id="meses" placeholder="6" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateRescisao()" type="button">Calcular Rescisão</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Рекомендуемый партнер</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> является одним из лучших вариантов на рынке. Протестировано и одобрено нашими экспертами.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Доступ сейчас →</a>
+            </div>
+        </div>
+
+        <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Хотите узнать больше?</p>
+            <a href="/artigos/trabalho-remoto-empresas-estrangeiras.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Прочитать полную статью →</a>
+        </div>
+
+
+        <section class="info-content">
+            <div class="info-card">
+        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
+        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
+        
+        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
+        
+        <h4>A Importância do Planejamento</h4>
+        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
+        
+        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
+        
+        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
+        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Инструменты como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
+        
+        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
+        
+        <h4>Construindo um Legado</h4>
+        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
+        
+        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
+        
+        <h4>Conclusão e Próximos Passos</h4>
+        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
+        
+        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Финансовое образование для всех.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateRescisao() {
+        const s = parseFloat(document.getElementById('salario').value);
+        const m = parseFloat(document.getElementById('meses').value);
+        if (!s || !m) return alert('Preencha os campos');
+        const decimo = (s / 12) * m;
+        const ferias = (s / 12) * m * 1.33;
+        const total = s + decimo + ferias;
+        document.getElementById('resultValue').textContent = 'R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('rescisaoResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
