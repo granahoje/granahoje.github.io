@@ -35,6 +35,10 @@ def generate_sitemap():
         'calculadora-inflacao.html',
         'calculadora-ganho-capital.html',
         'calculadora-rebalanceamento.html',
+        'calculadora-previdencia-privada.html',
+        'calculadora-taxa-real.html',
+        'calculadora-valor-futuro.html',
+        'calculadora-valor-presente.html',
     ]
     
     # Coletar todos os artigos
