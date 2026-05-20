@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Dividend Yield | Grana Hoje</title>
-    <link href="/css/style.css" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculadora de Dividend Yield | Grana Hoje</title>
+<link href="/css/style.css" rel="stylesheet"/>
+<style>
         .calc-container { max-width: 600px; margin: 60px auto; padding: 40px; background: #0f1b2d; border-radius: 25px; border: 1px solid rgba(34, 211, 189, 0.2); }
         .input-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; color: #a8b3c7; font-weight: 600; }
@@ -17,36 +18,66 @@
     </style>
 </head>
 <body>
-    <header style="background: rgba(15,23,42,.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.11); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
-        <a href="/" style="text-decoration: none; font-size: 1.2rem; font-weight: 800; color: #22d3bd;">GRANA HOJE</a>
-        <nav style="display: flex; gap: 20px;">
-            <a href="/blog.html" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a>
-            <a href="/about.html" style="color: #fff; text-decoration: none; font-weight: 700;">Sobre</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <div class="calc-container">
-            <h1 style="text-align: center; margin-bottom: 30px; color: #22d3bd;">Calculadora de Dividend Yield</h1>
-            <div class="input-group">
-                <label>Dividendo Pago por Ação (R$)</label>
-                <input type="number" id="dividendo" step="0.01" placeholder="Ex: 0.50">
-            </div>
-            <div class="input-group">
-                <label>Preço Atual da Ação (R$)</label>
-                <input type="number" id="preco" step="0.01" placeholder="Ex: 10.00">
-            </div>
-            <button class="btn-calc" onclick="calcular()">Calcular DY</button>
-
-            <div class="result-box" id="resultBox">
-                <p style="color: #a8b3c7;">O Dividend Yield é de:</p>
-                <span class="result-value" id="dyValue">0,00%</span>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: #a8b3c7;">Isso significa que para cada R$ 100 investidos, você recebeu R$ <span id="retornoCem">0,00</span> em dividendos.</p>
-            </div>
-        </div>
-    </main>
-
-    <script>
+<header style="background: rgba(15,23,42,.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.11); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
+<a href="/" style="text-decoration: none; font-size: 1.2rem; font-weight: 800; color: #22d3bd;">GRANA HOJE</a>
+<nav style="display: flex; gap: 20px;">
+<a href="/blog.html" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a>
+<a href="/about.html" style="color: #fff; text-decoration: none; font-weight: 700;">Sobre</a>
+</nav>
+</header>
+<main class="container">
+<div class="calc-container">
+<h1 style="text-align: center; margin-bottom: 30px; color: #22d3bd;">Calculadora de Dividend Yield</h1>
+<div class="input-group">
+<label>Dividendo Pago por Ação (R$)</label>
+<input id="dividendo" placeholder="Ex: 0.50" step="0.01" type="number"/>
+</div>
+<div class="input-group">
+<label>Preço Atual da Ação (R$)</label>
+<input id="preco" placeholder="Ex: 10.00" step="0.01" type="number"/>
+</div>
+<button class="btn-calc" onclick="calcular()">Calcular DY</button>
+<div class="result-box" id="resultBox">
+<p style="color: #a8b3c7;">O Dividend Yield é de:</p>
+<span class="result-value" id="dyValue">0,00%</span>
+<p style="margin-top: 10px; font-size: 0.9rem; color: #a8b3c7;">Isso significa que para cada R$ 100 investidos, você recebeu R$ <span id="retornoCem">0,00</span> em dividendos.</p>
+</div>
+</div>
+<div class="premium-affiliate-cta" style="
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(to bottom, rgba(34, 211, 189, 0.1), rgba(15, 27, 45, 0.95));
+            border: 2px solid #22d3bd;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(34, 211, 189, 0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+        ">
+<div style="text-align: center;">
+<div style="display: inline-block; padding: 12px 24px; background: rgba(34, 211, 189, 0.2); border-radius: 999px; margin-bottom: 20px; border: 1px solid rgba(34, 211, 189, 0.3);">
+<span style="color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Oferta Especial</span>
+</div>
+<h3 style="margin: 0 0 15px; color: #fff; font-size: 1.6rem; font-weight: 900;">Nexo Cripto</h3>
+<p style="color: #b6c2d2; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Aproveite as melhores condições e comece sua jornada financeira com segurança e confiança.
+                </p>
+<a href="https://apretailer.com.br/click/6a0bab802bfa81394d4c4542/184515/358980/subaccount" rel="nofollow" style="
+                    display: inline-block;
+                    padding: 18px 45px;
+                    background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
+                    color: #09111f;
+                    text-decoration: none;
+                    border-radius: 12px;
+                    font-weight: 900;
+                    font-size: 1.1rem;
+                    transition: all 0.3s;
+                    box-shadow: 0 15px 35px rgba(34, 211, 189, 0.4);
+                    border: none;
+                    cursor: pointer;
+                " target="_blank">
+                    ✨ Conhecer Nexo Cripto
+                </a>
+</div>
+</div></main>
+<script>
         function calcular() {
             const d = parseFloat(document.getElementById('dividendo').value);
             const p = parseFloat(document.getElementById('preco').value);

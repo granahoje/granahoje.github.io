@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Juros Simples | Grana Hoje</title>
-    <link href="/css/style.css" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculadora de Juros Simples | Grana Hoje</title>
+<link href="/css/style.css" rel="stylesheet"/>
+<style>
         .calc-container { max-width: 600px; margin: 60px auto; padding: 40px; background: #0f1b2d; border-radius: 25px; border: 1px solid rgba(34, 211, 189, 0.2); }
         .input-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; color: #a8b3c7; font-weight: 600; }
@@ -17,40 +18,71 @@
     </style>
 </head>
 <body>
-    <header style="background: rgba(15,23,42,.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.11); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
-        <a href="/" style="text-decoration: none; font-size: 1.2rem; font-weight: 800; color: #22d3bd;">GRANA HOJE</a>
-        <nav style="display: flex; gap: 20px;">
-            <a href="/blog.html" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a>
-            <a href="/about.html" style="color: #fff; text-decoration: none; font-weight: 700;">Sobre</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <div class="calc-container">
-            <h1 style="text-align: center; margin-bottom: 30px; color: #22d3bd;">Calculadora de Juros Simples</h1>
-            <div class="input-group">
-                <label>Capital Inicial (R$)</label>
-                <input type="number" id="capital" placeholder="Ex: 1000">
-            </div>
-            <div class="input-group">
-                <label>Taxa de Juros (%)</label>
-                <input type="number" id="taxa" placeholder="Ex: 1">
-            </div>
-            <div class="input-group">
-                <label>Período (Meses)</label>
-                <input type="number" id="tempo" placeholder="Ex: 12">
-            </div>
-            <button class="btn-calc" onclick="calcular()">Calcular Montante</button>
-
-            <div class="result-box" id="resultBox">
-                <p style="color: #a8b3c7;">O valor total ao final do período será:</p>
-                <span class="result-value" id="totalValue">R$ 0,00</span>
-                <p id="jurosValue" style="margin-top: 10px; font-size: 0.9rem; color: #22d3bd;"></p>
-            </div>
-        </div>
-    </main>
-
-    <script>
+<header style="background: rgba(15,23,42,.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.11); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
+<a href="/" style="text-decoration: none; font-size: 1.2rem; font-weight: 800; color: #22d3bd;">GRANA HOJE</a>
+<nav style="display: flex; gap: 20px;">
+<a href="/blog.html" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a>
+<a href="/about.html" style="color: #fff; text-decoration: none; font-weight: 700;">Sobre</a>
+</nav>
+</header>
+<main class="container">
+<div class="calc-container">
+<h1 style="text-align: center; margin-bottom: 30px; color: #22d3bd;">Calculadora de Juros Simples</h1>
+<div class="input-group">
+<label>Capital Inicial (R$)</label>
+<input id="capital" placeholder="Ex: 1000" type="number"/>
+</div>
+<div class="input-group">
+<label>Taxa de Juros (%)</label>
+<input id="taxa" placeholder="Ex: 1" type="number"/>
+</div>
+<div class="input-group">
+<label>Período (Meses)</label>
+<input id="tempo" placeholder="Ex: 12" type="number"/>
+</div>
+<button class="btn-calc" onclick="calcular()">Calcular Montante</button>
+<div class="result-box" id="resultBox">
+<p style="color: #a8b3c7;">O valor total ao final do período será:</p>
+<span class="result-value" id="totalValue">R$ 0,00</span>
+<p id="jurosValue" style="margin-top: 10px; font-size: 0.9rem; color: #22d3bd;"></p>
+</div>
+</div>
+<div class="premium-affiliate-cta" style="
+            margin: 40px 0;
+            padding: 35px;
+            background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-left: 5px solid #22d3bd;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        ">
+<div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+<div style="flex-grow: 1;">
+<h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+<p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;">
+<strong style="color: #fff;">SuperSim Empréstimo</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.
+                </p>
+<a href="https://apretailer.com.br/click/6a0bab802bfa8139047c0492/177702/358980/subaccount" rel="nofollow" style="
+                    display: inline-block;
+                    padding: 12px 30px;
+                    background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
+                    color: #09111f;
+                    text-decoration: none;
+                    border-radius: 10px;
+                    font-weight: 900;
+                    font-size: 0.95rem;
+                    transition: all 0.3s;
+                    box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
+                    border: none;
+                    cursor: pointer;
+                " target="_blank">
+                    Acessar Agora →
+                </a>
+</div>
+</div></main>
+<script>
         function calcular() {
             const c = parseFloat(document.getElementById('capital').value);
             const i = parseFloat(document.getElementById('taxa').value) / 100;
