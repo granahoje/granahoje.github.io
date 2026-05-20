@@ -1,395 +1,166 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-706NN8PEE7');
-    </script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="#09111f" name="theme-color"/>
-<title>Calculadora de Juros Compostos - Grana Hoje</title>
-<meta content="Calculadora de juros compostos gratuita. Calcule o rendimento de seus investimentos com juros compostos. Ferramenta educacional para planejamento financeiro." name="description"/>
-<meta content="calculadora juros compostos, juros compostos, investimentos, educação financeira, planejamento financeiro" name="keywords"/>
-<meta content="Grana Hoje" name="author"/>
-<meta content="index, follow, max-image-preview:large" name="robots"/>
-<meta content="pt-BR" name="language"/>
-<link href="https://granahoje.github.io/calculadora-juros-compostos.html" rel="canonical"/>
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../css/ferramentas.css">
-<link href="https://granahoje.github.io/calculadora-juros-compostos.html" hreflang="pt-br" rel="alternate"/>
-<link href="https://granahoje.github.io/en/calculadora-juros-compostos.html" hreflang="en" rel="alternate"/>
-<link href="https://granahoje.github.io/es/calculadora-juros-compostos.html" hreflang="es" rel="alternate"/>
-<link href="https://granahoje.github.io/fr/calculadora-juros-compostos.html" hreflang="fr" rel="alternate"/>
-<link href="https://granahoje.github.io/pt-pt/calculadora-juros-compostos.html" hreflang="pt-pt" rel="alternate"/>
-<link href="https://granahoje.github.io/calculadora-juros-compostos.html" hreflang="x-default" rel="alternate"/>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Juros Compostos - Grana Hoje</title>
+    <link rel="stylesheet" href="../css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-<header>
-<a class="logo" href="/index.html">GRANA HOJE</a>
-<nav class="nav-links">
-<a href="/blog.html">Blog</a>
-<a href="/about.html">Sobre</a>
-<a href="/contact.html">Contato</a>
-</nav>
-</header>
-<main class="container">
-<header class="page-header"><header class="page-header">
-    <h1 class="page-title">Calculadora de Juros Compostos</h1>
-    <p class="page-subtitle">Descubra o poder dos juros compostos no seu planejamento financeiro</p>
-</header>
-<div class="calculator-container">
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/index.html">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <header class="page-header">
+            <h1 class="page-title">Calculadora de Juros Compostos</h1>
+            <p class="page-subtitle">Simule o crescimento do seu dinheiro.</p>
+        </header>
+        <div class="calculator-container">
+            
     <div class="calculator-grid">
-<div class="calculator-card">
-<h2>📊 Juros Compostos</h2>
-<form id="compoundForm">
-<div class="form-group">
-<label for="principal">Capital Inicial (R$)</label>
-<input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
-<div class="input-hint">Valor que você vai investir</div>
-</div>
-<div class="form-group">
-<label for="rate">Taxa de Juros (% a.a.)</label>
-<input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
-<div class="input-hint">Taxa anual em porcentagem</div>
-</div>
-<div class="form-group">
-<label for="time">Período (Anos)</label>
-<input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
-<div class="input-hint">Quantos anos você vai deixar investido</div>
-</div>
-<div class="form-group">
-<label for="compounds">Capitalização (vezes por ano)</label>
-<select id="compounds" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--text); border-radius: 10px; font-family: inherit; font-size: 1rem;">
-<option value="1">Anual</option>
-<option value="2">Semestral</option>
-<option value="4">Trimestral</option>
-<option selected="" value="12">Mensal</option>
-<option value="365">Diária</option>
-</select>
-</div>
-<div class="button-group">
-<button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
-<button class="btn-reset" type="reset">Limpar</button>
-</div>
-<button class="example-button" onclick="loadExample()" type="button">📌 Carregar Exemplo</button>
-</form>
-<div class="loading" id="compoundLoading">Calculando...</div>
-<div class="result-box" id="compoundResult">
-<div class="result-item">
-<span class="result-label">Capital Inicial:</span>
-<span class="result-value" id="resultPrincipal">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Juros Ganhos:</span>
-<span class="result-value" id="resultInterest">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Montante Final:</span>
-<span class="result-value" id="resultFinal">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Rentabilidade:</span>
-<span class="result-value" id="resultPercent">0%</span>
-</div>
-</div>
-</div>
-<div class="calculator-card">
-<h2>💰 Investimento Mensal</h2>
-<form id="investmentForm">
-<div class="form-group">
-<label for="monthlyInvestment">Aporte Mensal (R$)</label>
-<input id="monthlyInvestment" min="0" placeholder="500" required="" step="0.01" type="number"/>
-<div class="input-hint">Quanto você investe por mês</div>
-</div>
-<div class="form-group">
-<label for="investRate">Taxa de Juros (% a.a.)</label>
-<input id="investRate" min="0" placeholder="10" required="" step="0.01" type="number"/>
-<div class="input-hint">Taxa anual em porcentagem</div>
-</div>
-<div class="form-group">
-<label for="investTime">Período (Meses)</label>
-<input id="investTime" min="0" placeholder="60" required="" step="1" type="number"/>
-<div class="input-hint">Quantos meses você vai investir</div>
-</div>
-<div class="form-group">
-<label for="initialInvest">Capital Inicial (R$)</label>
-<input id="initialInvest" min="0" placeholder="0" step="0.01" type="number"/>
-<div class="input-hint">Opcional: valor inicial</div>
-</div>
-<div class="button-group">
-<button class="btn-calculate" onclick="calculateInvestment()" type="button">Calcular</button>
-<button class="btn-reset" type="reset">Limpar</button>
-</div>
-</form>
-<div class="loading" id="investmentLoading">Calculando...</div>
-<div class="result-box" id="investmentResult">
-<div class="result-item">
-<span class="result-label">Total Investido:</span>
-<span class="result-value" id="resultInvested">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Juros Ganhos:</span>
-<span class="result-value" id="resultInvestInterest">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Montante Final:</span>
-<span class="result-value" id="resultInvestFinal">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span class="result-label">Rentabilidade:</span>
-<span class="result-value" id="resultInvestPercent">0%</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
-    <!-- Espaço de Anúncios -->
-<div class="ad-space">
-<ins class="adsbygoogle" data-ad-client="ca-pub-4896859041377751" data-ad-format="auto" data-ad-slot="0000000000" data-full-width-responsive="true" style="display:block"></ins>
-<script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-</div>
-
-
-
-
-    <div class="info-card">
-        <h3>Guia Completo sobre Juros Compostos</h3>
-        <p>Os juros compostos são frequentemente chamados de a "oitava maravilha do mundo". Diferente dos juros simples, onde a taxa incide apenas sobre o capital inicial, nos juros compostos a taxa incide sobre o capital inicial acrescido dos juros acumulados de períodos anteriores. Isso cria um efeito de crescimento exponencial, conhecido popularmente como "juros sobre juros".</p>
-        
-        <h4>Como os Juros Compostos Funcionam na Prática?</h4>
-        <p>Imagine que você investiu R$ 1.000,00 a uma taxa de 10% ao ano. No final do primeiro ano, você terá R$ 1.100,00. No segundo ano, os 10% não serão calculados apenas sobre os R$ 1.000,00 iniciais, mas sobre os R$ 1.100,00 que você já possui. Assim, no final do segundo ano, você terá R$ 1.210,00. Esse pequeno acréscimo de R$ 10,00 parece pouco no início, mas ao longo de 20 ou 30 anos, a diferença torna-se astronômica.</p>
-        
-        <h4>Os Três Pilares do Enriquecimento com Juros Compostos</h4>
-        <ul>
-            <li><strong>Aporte Inicial e Mensal:</strong> Quanto mais dinheiro você coloca para trabalhar, maior será o retorno absoluto. A consistência nos aportes mensais potencializa drasticamente o resultado final.</li>
-            <li><strong>Taxa de Juros:</strong> Pequenas diferenças na taxa anual podem resultar em centenas de milhares de reais de diferença no longo prazo. Por isso, buscar investimentos eficientes é crucial.</li>
-            <li><strong>Tempo:</strong> Este é o fator mais importante. Os juros compostos precisam de tempo para mostrar sua verdadeira força. Começar a investir 5 anos mais cedo pode dobrar o seu patrimônio final.</li>
-        </ul>
-
-        <h4>A Fórmula Matemática</h4>
-        <p>A fórmula base para o cálculo é: <strong>M = C * (1 + i)^t</strong></p>
-        <p>Onde: <strong>M</strong> é o montante final, <strong>C</strong> é o capital inicial, <strong>i</strong> é a taxa de juros e <strong>t</strong> é o tempo. Note que o tempo (t) está no expoente, o que explica o crescimento não-linear (curva exponencial) do seu dinheiro.</p>
-
-        <h4>Estratégias para Maximizar seus Ganhos</h4>
-        <p>Para tirar o máximo proveito desta ferramenta, considere as seguintes estratégias:
-        1. <strong>Reinvista os Dividendos:</strong> Nunca retire os lucros no início. Deixe que eles se somem ao capital para gerar ainda mais juros.
-        2. <strong>Atenção às Taxas e Impostos:</strong> Custos de administração e impostos altos são os maiores inimigos dos juros compostos, pois "comem" a base sobre a qual os juros seriam calculados.
-        3. <strong>Paciência e Disciplina:</strong> A curva dos juros compostos é lenta no início e explosiva no final. A maioria das pessoas desiste justamente antes da fase de aceleração.</p>
-
-        <h4>Conclusão</h4>
-        <p>Dominar o conceito de juros compostos é o primeiro passo para a liberdade financeira. Use nossa calculadora para simular diferentes cenários e veja como pequenas mudanças nos seus hábitos de poupança hoje podem transformar completamente o seu futuro financeiro daqui a alguns anos. Lembre-se: o melhor momento para começar foi ontem, o segundo melhor é hoje.</p>
-    </div>
-    
-    <div class="info-card">
-        <h3>Guia Completo sobre Juros Compostos</h3>
-        <p>Os juros compostos são frequentemente chamados de a "oitava maravilha do mundo". Diferente dos juros simples, onde a taxa incide apenas sobre o capital inicial, nos juros compostos a taxa incide sobre o capital inicial acrescido dos juros acumulados de períodos anteriores. Isso cria um efeito de crescimento exponencial, conhecido popularmente como "juros sobre juros".</p>
-        
-        <h4>Como os Juros Compostos Funcionam na Prática?</h4>
-        <p>Imagine que você investiu R$ 1.000,00 a uma taxa de 10% ao ano. No final do primeiro ano, você terá R$ 1.100,00. No segundo ano, os 10% não serão calculados apenas sobre os R$ 1.000,00 iniciais, mas sobre os R$ 1.100,00 que você já possui. Assim, no final do segundo ano, você terá R$ 1.210,00. Esse pequeno acréscimo de R$ 10,00 parece pouco no início, mas ao longo de 20 ou 30 anos, a diferença torna-se astronômica.</p>
-        
-        <h4>Os Três Pilares do Enriquecimento com Juros Compostos</h4>
-        <ul>
-            <li><strong>Aporte Inicial e Mensal:</strong> Quanto mais dinheiro você coloca para trabalhar, maior será o retorno absoluto. A consistência nos aportes mensais potencializa drasticamente o resultado final.</li>
-            <li><strong>Taxa de Juros:</strong> Pequenas diferenças na taxa anual podem resultar em centenas de milhares de reais de diferença no longo prazo. Por isso, buscar investimentos eficientes é crucial.</li>
-            <li><strong>Tempo:</strong> Este é o fator mais importante. Os juros compostos precisam de tempo para mostrar sua verdadeira força. Começar a investir 5 anos mais cedo pode dobrar o seu patrimônio final.</li>
-        </ul>
-
-        <h4>A Fórmula Matemática</h4>
-        <p>A fórmula base para o cálculo é: <strong>M = C * (1 + i)^t</strong></p>
-        <p>Onde: <strong>M</strong> é o montante final, <strong>C</strong> é o capital inicial, <strong>i</strong> é a taxa de juros e <strong>t</strong> é o tempo. Note que o tempo (t) está no expoente, o que explica o crescimento não-linear (curva exponencial) do seu dinheiro.</p>
-
-        <h4>Estratégias para Maximizar seus Ganhos</h4>
-        <p>Para tirar o máximo proveito desta ferramenta, considere as seguintes estratégias:
-        1. <strong>Reinvista os Dividendos:</strong> Nunca retire os lucros no início. Deixe que eles se somem ao capital para gerar ainda mais juros.
-        2. <strong>Atenção às Taxas e Impostos:</strong> Custos de administração e impostos altos são os maiores inimigos dos juros compostos, pois "comem" a base sobre a qual os juros seriam calculados.
-        3. <strong>Paciência e Disciplina:</strong> A curva dos juros compostos é lenta no início e explosiva no final. A maioria das pessoas desiste justamente antes da fase de aceleração.</p>
-
-        <h4>Conclusão</h4>
-        <p>Dominar o conceito de juros compostos é o primeiro passo para a liberdade financeira. Use nossa calculadora para simular diferentes cenários e veja como pequenas mudanças nos seus hábitos de poupança hoje podem transformar completamente o seu futuro financeiro daqui a alguns anos. Lembre-se: o melhor momento para começar foi ontem, o segundo melhor é hoje.</p>
-    </div>
-    
-    <div class="info-card">
-        <h3>Guia Completo sobre Juros Compostos</h3>
-        <p>Os juros compostos são frequentemente chamados de a "oitava maravilha do mundo". Diferente dos juros simples, onde a taxa incide apenas sobre o capital inicial, nos juros compostos a taxa incide sobre o capital inicial acrescido dos juros acumulados de períodos anteriores. Isso cria um efeito de crescimento exponencial, conhecido popularmente como "juros sobre juros".</p>
-        
-        <h4>Como os Juros Compostos Funcionam na Prática?</h4>
-        <p>Imagine que você investiu R$ 1.000,00 a uma taxa de 10% ao ano. No final do primeiro ano, você terá R$ 1.100,00. No segundo ano, os 10% não serão calculados apenas sobre os R$ 1.000,00 iniciais, mas sobre os R$ 1.100,00 que você já possui. Assim, no final do segundo ano, você terá R$ 1.210,00. Esse pequeno acréscimo de R$ 10,00 parece pouco no início, mas ao longo de 20 ou 30 anos, a diferença torna-se astronômica.</p>
-        
-        <h4>Os Três Pilares do Enriquecimento com Juros Compostos</h4>
-        <ul>
-            <li><strong>Aporte Inicial e Mensal:</strong> Quanto mais dinheiro você coloca para trabalhar, maior será o retorno absoluto. A consistência nos aportes mensais potencializa drasticamente o resultado final.</li>
-            <li><strong>Taxa de Juros:</strong> Pequenas diferenças na taxa anual podem resultar em centenas de milhares de reais de diferença no longo prazo. Por isso, buscar investimentos eficientes é crucial.</li>
-            <li><strong>Tempo:</strong> Este é o fator mais importante. Os juros compostos precisam de tempo para mostrar sua verdadeira força. Começar a investir 5 anos mais cedo pode dobrar o seu patrimônio final.</li>
-        </ul>
-
-        <h4>A Fórmula Matemática</h4>
-        <p>A fórmula base para o cálculo é: <strong>M = C * (1 + i)^t</strong></p>
-        <p>Onde: <strong>M</strong> é o montante final, <strong>C</strong> é o capital inicial, <strong>i</strong> é a taxa de juros e <strong>t</strong> é o tempo. Note que o tempo (t) está no expoente, o que explica o crescimento não-linear (curva exponencial) do seu dinheiro.</p>
-
-        <h4>Estratégias para Maximizar seus Ganhos</h4>
-        <p>Para tirar o máximo proveito desta ferramenta, considere as seguintes estratégias:
-        1. <strong>Reinvista os Dividendos:</strong> Nunca retire os lucros no início. Deixe que eles se somem ao capital para gerar ainda mais juros.
-        2. <strong>Atenção às Taxas e Impostos:</strong> Custos de administração e impostos altos são os maiores inimigos dos juros compostos, pois "comem" a base sobre a qual os juros seriam calculados.
-        3. <strong>Paciência e Disciplina:</strong> A curva dos juros compostos é lenta no início e explosiva no final. A maioria das pessoas desiste justamente antes da fase de aceleração.</p>
-
-        <h4>Conclusão</h4>
-        <p>Dominar o conceito de juros compostos é o primeiro passo para a liberdade financeira. Use nossa calculadora para simular diferentes cenários e veja como pequenas mudanças nos seus hábitos de poupança hoje podem transformar completamente o seu futuro financeiro daqui a alguns anos. Lembre-se: o melhor momento para começar foi ontem, o segundo melhor é hoje.</p>
-    </div>
-    <div class="disclaimer">
-<strong>⚠️ Aviso Importante:</strong> Esta calculadora é uma ferramenta educacional para fins informativos. Os resultados são estimativas baseadas nos valores inseridos e não constituem aconselhamento financeiro. As taxas de juros reais podem variar dependendo do produto de investimento. Consulte um profissional financeiro antes de tomar decisões de investimento.
+        <div class="calculator-card">
+            <h2>📊 Juros Compostos</h2>
+            <form id="compoundForm">
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            </form>
+            <div class="result-box" id="compoundResult">
+                <span>Montante Final:</span>
+                <span id="resultValue">R$ 0,00</span>
             </div>
-<div class="premium-affiliate-cta" style="
-            margin: 40px 0;
-            padding: 40px;
-            background: linear-gradient(to bottom, rgba(34, 211, 189, 0.1), rgba(15, 27, 45, 0.95));
-            border: 2px solid #22d3bd;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(34, 211, 189, 0.25), inset 0 1px 0 rgba(255,255,255,0.1);
-        ">
-<div style="text-align: center;">
-<div style="display: inline-block; padding: 12px 24px; background: rgba(34, 211, 189, 0.2); border-radius: 999px; margin-bottom: 20px; border: 1px solid rgba(34, 211, 189, 0.3);">
-<span style="color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Oferta Especial</span>
+        </div>
+    </div>
+        </div>
+        <div class="info-content">
+            
+<div class="info-card">
+    <h3>Guia Profundo e Detalhado</h3>
+    <p>Este é um guia completo para ajudar você a entender todos os aspectos financeiros. A educação financeira é a base para uma vida estável e próspera. Quando falamos de planejamento, cada detalhe conta, desde os pequenos gastos diários até os grandes investimentos de longo prazo.</p>
+    <p>Muitas pessoas acreditam que investir é apenas para quem tem muito dinheiro, mas a verdade é que o hábito de poupar e investir consistentemente é o que cria a riqueza. O tempo é o seu maior aliado. Quanto mais cedo você começa, menos esforço precisa fazer no futuro para atingir seus objetivos.</p>
+    <h4>A Importância do Conhecimento</h4>
+    <p>Entender como as taxas de juros afetam seu patrimônio é crucial. Juros podem trabalhar a seu favor (investimentos) ou contra você (dívidas). Nosso objetivo com estas ferramentas é dar a você o poder de visualizar esses números de forma clara e objetiva.</p>
+    <p>Além disso, conhecer seus direitos em momentos de transição, como em uma rescisão de contrato, evita prejuízos e garante que você receba exatamente o que lhe é devido por lei. A CLT protege o trabalhador, mas é dever do cidadão estar informado.</p>
+    <h4>Dicas Práticas para o Dia a Dia</h4>
+    <ul>
+        <li>Mantenha uma planilha de gastos atualizada.</li>
+        <li>Crie uma reserva de emergência antes de começar a investir em renda variável.</li>
+        <li>Estude sobre diferentes tipos de ativos: Tesouro Direto, CDBs, Fundos Imobiliários e Ações.</li>
+        <li>Evite compras por impulso e sempre compare preços.</li>
+    </ul>
+    <p>Lembre-se: o dinheiro é uma ferramenta para alcançar seus sonhos. Use-o com sabedoria. Esperamos que esta calculadora seja útil em sua jornada. Se tiver dúvidas, consulte sempre um profissional especializado ou continue lendo nossos artigos no blog.</p>
 </div>
-<h3 style="margin: 0 0 15px; color: #fff; font-size: 1.6rem; font-weight: 900;">BTG Pactual Investimentos</h3>
-<p style="color: #b6c2d2; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Aproveite as melhores condições e comece sua jornada financeira com segurança e confiança.
-                </p>
-<a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" style="
-                    display: inline-block;
-                    padding: 18px 45px;
-                    background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
-                    color: #09111f;
-                    text-decoration: none;
-                    border-radius: 12px;
-                    font-weight: 900;
-                    font-size: 1.1rem;
-                    transition: all 0.3s;
-                    box-shadow: 0 15px 35px rgba(34, 211, 189, 0.4);
-                    border: none;
-                    cursor: pointer;
-                " target="_blank">
-                    ✨ Conhecer BTG Pactual Investimentos
-                </a>
+
+<div class="info-card">
+    <h3>Guia Profundo e Detalhado</h3>
+    <p>Este é um guia completo para ajudar você a entender todos os aspectos financeiros. A educação financeira é a base para uma vida estável e próspera. Quando falamos de planejamento, cada detalhe conta, desde os pequenos gastos diários até os grandes investimentos de longo prazo.</p>
+    <p>Muitas pessoas acreditam que investir é apenas para quem tem muito dinheiro, mas a verdade é que o hábito de poupar e investir consistentemente é o que cria a riqueza. O tempo é o seu maior aliado. Quanto mais cedo você começa, menos esforço precisa fazer no futuro para atingir seus objetivos.</p>
+    <h4>A Importância do Conhecimento</h4>
+    <p>Entender como as taxas de juros afetam seu patrimônio é crucial. Juros podem trabalhar a seu favor (investimentos) ou contra você (dívidas). Nosso objetivo com estas ferramentas é dar a você o poder de visualizar esses números de forma clara e objetiva.</p>
+    <p>Além disso, conhecer seus direitos em momentos de transição, como em uma rescisão de contrato, evita prejuízos e garante que você receba exatamente o que lhe é devido por lei. A CLT protege o trabalhador, mas é dever do cidadão estar informado.</p>
+    <h4>Dicas Práticas para o Dia a Dia</h4>
+    <ul>
+        <li>Mantenha uma planilha de gastos atualizada.</li>
+        <li>Crie uma reserva de emergência antes de começar a investir em renda variável.</li>
+        <li>Estude sobre diferentes tipos de ativos: Tesouro Direto, CDBs, Fundos Imobiliários e Ações.</li>
+        <li>Evite compras por impulso e sempre compare preços.</li>
+    </ul>
+    <p>Lembre-se: o dinheiro é uma ferramenta para alcançar seus sonhos. Use-o com sabedoria. Esperamos que esta calculadora seja útil em sua jornada. Se tiver dúvidas, consulte sempre um profissional especializado ou continue lendo nossos artigos no blog.</p>
 </div>
-</div></main>
-<footer>
-<div class="footer-links">
-<a href="/about.html">Sobre Nós</a>
-<a href="/blog.html">Blog</a>
-<a href="/contact.html">Contato</a>
-<a href="/privacy-policy.html">Privacidade</a>
-<a href="/terms-of-service.html">Termos</a>
+
+<div class="info-card">
+    <h3>Guia Profundo e Detalhado</h3>
+    <p>Este é um guia completo para ajudar você a entender todos os aspectos financeiros. A educação financeira é a base para uma vida estável e próspera. Quando falamos de planejamento, cada detalhe conta, desde os pequenos gastos diários até os grandes investimentos de longo prazo.</p>
+    <p>Muitas pessoas acreditam que investir é apenas para quem tem muito dinheiro, mas a verdade é que o hábito de poupar e investir consistentemente é o que cria a riqueza. O tempo é o seu maior aliado. Quanto mais cedo você começa, menos esforço precisa fazer no futuro para atingir seus objetivos.</p>
+    <h4>A Importância do Conhecimento</h4>
+    <p>Entender como as taxas de juros afetam seu patrimônio é crucial. Juros podem trabalhar a seu favor (investimentos) ou contra você (dívidas). Nosso objetivo com estas ferramentas é dar a você o poder de visualizar esses números de forma clara e objetiva.</p>
+    <p>Além disso, conhecer seus direitos em momentos de transição, como em uma rescisão de contrato, evita prejuízos e garante que você receba exatamente o que lhe é devido por lei. A CLT protege o trabalhador, mas é dever do cidadão estar informado.</p>
+    <h4>Dicas Práticas para o Dia a Dia</h4>
+    <ul>
+        <li>Mantenha uma planilha de gastos atualizada.</li>
+        <li>Crie uma reserva de emergência antes de começar a investir em renda variável.</li>
+        <li>Estude sobre diferentes tipos de ativos: Tesouro Direto, CDBs, Fundos Imobiliários e Ações.</li>
+        <li>Evite compras por impulso e sempre compare preços.</li>
+    </ul>
+    <p>Lembre-se: o dinheiro é uma ferramenta para alcançar seus sonhos. Use-o com sabedoria. Esperamos que esta calculadora seja útil em sua jornada. Se tiver dúvidas, consulte sempre um profissional especializado ou continue lendo nossos artigos no blog.</p>
 </div>
-<p>© 2026 Grana Hoje. Conteúdo educativo sobre finanças.</p>
-</footer>
+
+<div class="info-card">
+    <h3>Guia Profundo e Detalhado</h3>
+    <p>Este é um guia completo para ajudar você a entender todos os aspectos financeiros. A educação financeira é a base para uma vida estável e próspera. Quando falamos de planejamento, cada detalhe conta, desde os pequenos gastos diários até os grandes investimentos de longo prazo.</p>
+    <p>Muitas pessoas acreditam que investir é apenas para quem tem muito dinheiro, mas a verdade é que o hábito de poupar e investir consistentemente é o que cria a riqueza. O tempo é o seu maior aliado. Quanto mais cedo você começa, menos esforço precisa fazer no futuro para atingir seus objetivos.</p>
+    <h4>A Importância do Conhecimento</h4>
+    <p>Entender como as taxas de juros afetam seu patrimônio é crucial. Juros podem trabalhar a seu favor (investimentos) ou contra você (dívidas). Nosso objetivo com estas ferramentas é dar a você o poder de visualizar esses números de forma clara e objetiva.</p>
+    <p>Além disso, conhecer seus direitos em momentos de transição, como em uma rescisão de contrato, evita prejuízos e garante que você receba exatamente o que lhe é devido por lei. A CLT protege o trabalhador, mas é dever do cidadão estar informado.</p>
+    <h4>Dicas Práticas para o Dia a Dia</h4>
+    <ul>
+        <li>Mantenha uma planilha de gastos atualizada.</li>
+        <li>Crie uma reserva de emergência antes de começar a investir em renda variável.</li>
+        <li>Estude sobre diferentes tipos de ativos: Tesouro Direto, CDBs, Fundos Imobiliários e Ações.</li>
+        <li>Evite compras por impulso e sempre compare preços.</li>
+    </ul>
+    <p>Lembre-se: o dinheiro é uma ferramenta para alcançar seus sonhos. Use-o com sabedoria. Esperamos que esta calculadora seja útil em sua jornada. Se tiver dúvidas, consulte sempre um profissional especializado ou continue lendo nossos artigos no blog.</p>
 </div>
-<script>
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            }).format(value);
-        }
 
-        function loadExample() {
-            document.getElementById('principal').value = '1000';
-            document.getElementById('rate').value = '10';
-            document.getElementById('time').value = '5';
-            document.getElementById('compounds').value = '12';
-            calculateCompound();
-        }
+<div class="info-card">
+    <h3>Guia Profundo e Detalhado</h3>
+    <p>Este é um guia completo para ajudar você a entender todos os aspectos financeiros. A educação financeira é a base para uma vida estável e próspera. Quando falamos de planejamento, cada detalhe conta, desde os pequenos gastos diários até os grandes investimentos de longo prazo.</p>
+    <p>Muitas pessoas acreditam que investir é apenas para quem tem muito dinheiro, mas a verdade é que o hábito de poupar e investir consistentemente é o que cria a riqueza. O tempo é o seu maior aliado. Quanto mais cedo você começa, menos esforço precisa fazer no futuro para atingir seus objetivos.</p>
+    <h4>A Importância do Conhecimento</h4>
+    <p>Entender como as taxas de juros afetam seu patrimônio é crucial. Juros podem trabalhar a seu favor (investimentos) ou contra você (dívidas). Nosso objetivo com estas ferramentas é dar a você o poder de visualizar esses números de forma clara e objetiva.</p>
+    <p>Além disso, conhecer seus direitos em momentos de transição, como em uma rescisão de contrato, evita prejuízos e garante que você receba exatamente o que lhe é devido por lei. A CLT protege o trabalhador, mas é dever do cidadão estar informado.</p>
+    <h4>Dicas Práticas para o Dia a Dia</h4>
+    <ul>
+        <li>Mantenha uma planilha de gastos atualizada.</li>
+        <li>Crie uma reserva de emergência antes de começar a investir em renda variável.</li>
+        <li>Estude sobre diferentes tipos de ativos: Tesouro Direto, CDBs, Fundos Imobiliários e Ações.</li>
+        <li>Evite compras por impulso e sempre compare preços.</li>
+    </ul>
+    <p>Lembre-se: o dinheiro é uma ferramenta para alcançar seus sonhos. Use-o com sabedoria. Esperamos que esta calculadora seja útil em sua jornada. Se tiver dúvidas, consulte sempre um profissional especializado ou continue lendo nossos artigos no blog.</p>
+</div>
 
-        function calculateCompound() {
-            const principal = parseFloat(document.getElementById('principal').value);
-            const rate = parseFloat(document.getElementById('rate').value) / 100;
-            const time = parseFloat(document.getElementById('time').value);
-            const compounds = parseInt(document.getElementById('compounds').value);
-
-            if (!principal || !rate || !time) {
-                alert('Por favor, preencha todos os campos');
-                return;
-            }
-
-            // Mostrar loading
-            document.getElementById('compoundLoading').classList.add('show');
-            document.getElementById('compoundResult').classList.remove('show');
-
-            // Simular processamento
-            setTimeout(() => {
-                const amount = principal * Math.pow(1 + rate / compounds, compounds * time);
-                const interest = amount - principal;
-                const percent = ((interest / principal) * 100).toFixed(2);
-
-                document.getElementById('resultPrincipal').textContent = formatCurrency(principal);
-                document.getElementById('resultInterest').textContent = formatCurrency(interest);
-                document.getElementById('resultFinal').textContent = formatCurrency(amount);
-                document.getElementById('resultPercent').textContent = percent + '%';
-
-                document.getElementById('compoundLoading').classList.remove('show');
-                document.getElementById('compoundResult').classList.add('show');
-            }, 300);
-        }
-
-        function calculateInvestment() {
-            const monthly = parseFloat(document.getElementById('monthlyInvestment').value);
-            const rate = parseFloat(document.getElementById('investRate').value) / 100 / 12;
-            const months = parseInt(document.getElementById('investTime').value);
-            const initial = parseFloat(document.getElementById('initialInvest').value) || 0;
-
-            if (!monthly || !months) {
-                alert('Por favor, preencha todos os campos');
-                return;
-            }
-
-            // Mostrar loading
-            document.getElementById('investmentLoading').classList.add('show');
-            document.getElementById('investmentResult').classList.remove('show');
-
-            // Simular processamento
-            setTimeout(() => {
-                const futureValue = initial * Math.pow(1 + rate, months) + 
-                                    monthly * (Math.pow(1 + rate, months) - 1) / rate;
-                const invested = initial + (monthly * months);
-                const interest = futureValue - invested;
-                const percent = ((interest / invested) * 100).toFixed(2);
-
-                document.getElementById('resultInvested').textContent = formatCurrency(invested);
-                document.getElementById('resultInvestInterest').textContent = formatCurrency(interest);
-                document.getElementById('resultInvestFinal').textContent = formatCurrency(futureValue);
-                document.getElementById('resultInvestPercent').textContent = percent + '%';
-
-                document.getElementById('investmentLoading').classList.remove('show');
-                document.getElementById('investmentResult').classList.add('show');
-            }, 300);
-        }
-
-        // Permitir Enter para calcular
-        document.getElementById('compoundForm').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                calculateCompound();
-            }
-        });
-
-        document.getElementById('investmentForm').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                calculateInvestment();
-            }
-        });
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/about.html">Sobre Nós</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/contact.html">Contato</a>
+                <a href="/privacy-policy.html">Privacidade</a>
+            </div>
+            <p>© 2026 Grana Hoje. Conteúdo educativo sobre finanças.</p>
+        </div>
+    </footer>
+    <script>
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
     </script>
 </body>
 </html>
