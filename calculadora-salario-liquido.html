@@ -1,61 +1,38 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-706NN8PEE7');
-    </script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="#09111f" name="theme-color"/>
-<title>Calculadora de Salário Líquido 2026 - Grana Hoje</title>
-<meta content="Calcule seu salário líquido com precisão. Descubra quanto você realmente ganha após descontos de INSS e IR." name="description"/>
-<meta content="calculadora salário líquido, INSS, imposto de renda, salário bruto" name="keywords"/>
-<meta content="Grana Hoje" name="author"/>
-<meta content="index, follow" name="robots"/>
-<link href="https://granahoje.github.io/calculadora-salario-liquido.html" rel="canonical"/>
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/css/ferramentas.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Salário Líquido 2026 - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-<header>
-<a class="logo" href="/">GRANA HOJE</a>
-<nav class="nav-links">
-<a href="/blog.html">Blog</a>
-<a href="/about.html">Sobre</a>
-<a href="/contact.html">Contato</a>
-</nav>
-</header>
-<main class="container">
-<header class="page-header"><header class="page-header">
-    <h1 class="page-title">Calculadora de Salário Líquido 2026</h1>
-    <p class="page-subtitle">Calcule seu salário após descontos de INSS e IRRF.</p>
-</header>
-<!-- Seção Informativa -->
-<section style="background: rgba(34, 211, 189, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 40px; border: 1px solid rgba(34, 211, 189, 0.1);">
-<h2 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">O que é Salário Líquido?</h2>
-<p style="color: var(--muted); margin-bottom: 15px;">O salário líquido é o valor que você realmente recebe na sua conta bancária após todos os descontos obrigatórios. Diferente do salário bruto, que é o valor acordado no contrato, o salário líquido leva em consideração:</p>
-<ul style="color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
-<li><strong>INSS (Instituto Nacional do Seguro Social):</strong> Contribuição obrigatória para a previdência social, atualmente em 8% para a maioria dos trabalhadores.</li>
-<li><strong>Imposto de Renda (IR):</strong> Imposto federal progressivo que varia conforme sua faixa salarial e número de dependentes.</li>
-<li><strong>Dependentes:</strong> Você pode abater R$ 189,59 por dependente, reduzindo o imposto de renda.</li>
-</ul>
-<p style="color: var(--muted);"><strong>Exemplo:</strong> Se você ganha R$ 3.000 de salário bruto, após INSS (8%) e IR, seu salário líquido será menor. Use nossa calculadora para descobrir o valor exato!</p>
-</section>
-<div class="calculator-container">
-    <div class="calculator-grid">
-<div class="calculator-card">
-<h2>💰 Salário Líquido</h2>
-<form id="salaryForm">
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Salário Líquido 2026</h1>
+            <p class="page-subtitle">Calcule seu salário após descontos de INSS e IRRF.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="salaryForm">
+                    
 <div class="form-group">
 <label for="grossSalary">Salário Bruto (R$)</label>
 <input id="grossSalary" min="0" placeholder="3000" required="" step="0.01" type="number"/>
@@ -75,103 +52,70 @@
 </select>
 </div>
 <button class="btn-calculate" onclick="calculateSalary()" type="button">Calcular</button>
-</form>
-<div class="result-box" id="salaryResult">
-<div class="result-item">
-<span>Salário Bruto:</span>
-<span class="result-value" id="resultGross">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span>INSS (8%):</span>
-<span class="result-warning" id="resultINSS">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span>Imposto de Renda:</span>
-<span class="result-warning" id="resultIR">R$ 0,00</span>
-</div>
-<div class="result-item" style="border-bottom: 2px solid var(--primary); padding-top: 15px;">
-<span style="font-weight: 800;">Salário Líquido:</span>
-<span class="result-value" id="resultNet" style="font-size: 1.2rem;">R$ 0,00</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Seção de Dicas -->
-<section style="background: rgba(16, 185, 129, 0.05); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid rgba(16, 185, 129, 0.1);">
-<h2 style="color: var(--success); margin-bottom: 15px; font-size: 1.5rem;">💡 Dicas para Aumentar seu Salário Líquido</h2>
-<ul style="color: var(--muted); margin-left: 20px;">
-<li><strong>Declare Dependentes:</strong> Se você tem filhos ou dependentes, certifique-se de declará-los para reduzir o IR.</li>
-<li><strong>Contribuição ao INSS:</strong> Quanto maior sua contribuição, maior sua futura aposentadoria.</li>
-<li><strong>Deduções Permitidas:</strong> Algumas despesas como educação e saúde podem ser deduzidas na declaração de IR.</li>
-<li><strong>Negocie seu Salário:</strong> Quanto maior o salário bruto, maior será o líquido (mesmo com percentuais maiores de imposto).</li>
-</ul>
-</section>
-<!-- Aviso Legal -->
-<section style="background: rgba(245, 158, 11, 0.05); padding: 20px; border-radius: 15px; margin-top: 30px; border: 1px solid rgba(245, 158, 11, 0.2); border-left: 4px solid var(--warning);">
-<p style="color: var(--muted); font-size: 0.9rem;"><strong>⚠️ Aviso Importante:</strong> Esta calculadora é uma ferramenta educacional para fins informativos. Os cálculos são baseados nas alíquotas atuais de INSS e IR, mas podem variar conforme mudanças na legislação. Para informações precisas sobre seus descontos, consulte seu contracheque ou um contador.</p>
-</section>
-<div class="premium-affiliate-cta" style="
-            margin: 40px 0;
-            padding: 30px;
-            background: rgba(34, 211, 189, 0.05);
-            border: 2px dashed rgba(34, 211, 189, 0.3);
-            border-radius: 15px;
-            text-align: center;
-        ">
-<p style="margin: 0 0 20px; color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                ✅ Verificado e Recomendado
-            </p>
-<h4 style="margin: 0 0 15px; color: #fff; font-size: 1.4rem; font-weight: 900;">SuperSim Empréstimo</h4>
-<p style="margin: 0 0 25px; color: #b6c2d2; font-size: 1rem;">
-                Confira esta oportunidade especial que nossos leitores aprovam.
-            </p>
-<a href="https://apretailer.com.br/click/6a0bab802bfa8139047c0492/177702/358980/subaccount" rel="nofollow" style="
-                display: inline-block;
-                padding: 14px 40px;
-                background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
-                color: #09111f;
-                text-decoration: none;
-                border-radius: 10px;
-                font-weight: 900;
-                font-size: 1rem;
-                transition: all 0.3s;
-                box-shadow: 0 10px 25px rgba(34, 211, 189, 0.3);
-                border: none;
-                cursor: pointer;
-            " target="_blank">
-                Começar Agora
-            </a>
-</div></main>
-<footer>
-<p>© 2026 Grana Hoje. Ferramenta educacional de finanças pessoais.</p>
-</footer>
-</div>
-<script>
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
-        }
-        function calculateIR(grossSalary, dependents) {
-            const inssDeduction = grossSalary * 0.08;
-            const taxableIncome = grossSalary - inssDeduction - (dependents * 189.59);
-            let ir = 0;
-            if (taxableIncome > 4664) ir = (taxableIncome - 4664) * 0.27 + 705.86;
-            else if (taxableIncome > 3751.05) ir = (taxableIncome - 3751.05) * 0.15 + 280.94;
-            else if (taxableIncome > 2826.65) ir = (taxableIncome - 2826.65) * 0.075 + 142.80;
-            else if (taxableIncome > 1903.98) ir = (taxableIncome - 1903.98) * 0.075;
-            return Math.max(0, ir);
-        }
-        function calculateSalary() {
-            const grossSalary = parseFloat(document.getElementById('grossSalary').value);
-            const dependents = parseInt(document.getElementById('dependents').value) || 0;
-            if (!grossSalary) { alert('Por favor, insira o salário bruto'); return; }
-            const inss = grossSalary * 0.08;
-            const ir = calculateIR(grossSalary, dependents);
-            const netSalary = grossSalary - inss - ir;
-            document.getElementById('resultGross').textContent = formatCurrency(grossSalary);
-            document.getElementById('resultINSS').textContent = formatCurrency(inss);
-            document.getElementById('resultIR').textContent = formatCurrency(ir);
-            document.getElementById('resultNet').textContent = formatCurrency(netSalary);
-            document.getElementById('salaryResult').classList.add('show');
+
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-content">
+            <div class="info-card">
+        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
+        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
+        
+        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
+        
+        <h4>A Importância do Planejamento</h4>
+        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
+        
+        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
+        
+        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
+        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Ferramentas como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
+        
+        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
+        
+        <h4>Construindo um Legado</h4>
+        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
+        
+        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
+        
+        <h4>Conclusão e Próximos Passos</h4>
+        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
+        
+        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-706NN8PEE7');
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
         }
     </script>
 </body>

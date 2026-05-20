@@ -1,82 +1,84 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Comparador de Investimentos: CDB vs Poupança - Grana Hoje</title>
-<link rel="stylesheet" href="/css/ferramentas.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Comparador de Investimentos: CDB vs Poupança - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<header style="background:rgba(9,17,31,0.8); backdrop-filter:blur(15px); border-bottom:1px solid rgba(255,255,255,0.05); padding:15px 0; position:sticky; top:0; z-index:100;">
-<div style="width:min(100%, 1200px); margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center;">
-<a href="/" style="color:var(--primary); text-decoration:none; font-weight:800; font-size:1.3rem;">GRANA HOJE</a>
-<a href="/blog.html" style="color:#fff; text-decoration:none; font-weight:700;">Blog</a>
-</div>
-</header>
-<main class="container">
-<div class="calc-card">
-<div class="header">
-<span style="font-size:3.5rem; display:block; margin-bottom:15px;">🏦</span>
-<h1>Comparador de Investimentos: CDB vs Poupança</h1>
-<p>Descubra qual investimento rende mais para o seu dinheiro hoje.</p>
-</div>
-<div class="input-group">
-<label>Valor a Investir (R$)</label>
-<input id="valor" placeholder="1000" type="number"/>
-</div>
-<div class="input-group">
-<label>Taxa do CDB (% do CDI)</label>
-<input id="cdi_perc" placeholder="100" type="number"/>
-</div>
-<div class="input-group">
-<label>Prazo (Meses)</label>
-<input id="meses" placeholder="12" type="number"/>
-</div>
-<button class="btn-calc" onclick="calcular()">Calcular Agora</button>
-<div class="result-box" id="resultBox">
-<p class="result-title">Resultado Estimado:</p>
-<span class="result-value" id="resultValue">---</span>
-<p id="resultDetail" style="margin-top:15px; color:var(--primary); font-weight:700;"></p>
-</div>
-<div class="explanation">
-<h2>Como funciona esta ferramenta?</h2>
-<p>Esta calculadora utiliza a taxa SELIC/CDI atual para projetar o rendimento de um CDB pós-fixado, descontando o Imposto de Renda regressivo e comparando com o rendimento fixo da poupança (0,5% ao mês + TR).</p>
-</div>
-</div>
-<div class="premium-affiliate-cta" style="
-            margin: 40px 0;
-            padding: 30px;
-            background: rgba(34, 211, 189, 0.05);
-            border: 2px dashed rgba(34, 211, 189, 0.3);
-            border-radius: 15px;
-            text-align: center;
-        ">
-<p style="margin: 0 0 20px; color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                ✅ Verificado e Recomendado
-            </p>
-<h4 style="margin: 0 0 15px; color: #fff; font-size: 1.4rem; font-weight: 900;">Remessa Online</h4>
-<p style="margin: 0 0 25px; color: #b6c2d2; font-size: 1rem;">
-                Confira esta oportunidade especial que nossos leitores aprovam.
-            </p>
-<a href="https://apretailer.com.br/click/6a0bab802bfa817b9272f8a2/187944/358980/subaccount" rel="nofollow" style="
-                display: inline-block;
-                padding: 14px 40px;
-                background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
-                color: #09111f;
-                text-decoration: none;
-                border-radius: 10px;
-                font-weight: 900;
-                font-size: 1rem;
-                transition: all 0.3s;
-                box-shadow: 0 10px 25px rgba(34, 211, 189, 0.3);
-                border: none;
-                cursor: pointer;
-            " target="_blank">
-                Começar Agora
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
             </a>
-</div></main>
-<script>
+            <h1 class="page-title">Calculadora</h1>
+            <p class="page-subtitle">Ferramenta financeira gratuita.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="calcForm">
+                    
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-content">
+            <div class="info-card">
+        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
+        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
+        
+        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
+        
+        <h4>A Importância do Planejamento</h4>
+        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
+        
+        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
+        
+        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
+        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Ferramentas como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
+        
+        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
+        
+        <h4>Construindo um Legado</h4>
+        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
+        
+        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
+        
+        <h4>Conclusão e Próximos Passos</h4>
+        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
+        
+        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
         function calcular() {
             
             const v = parseFloat(document.getElementById('valor').value);
@@ -98,6 +100,20 @@
             document.getElementById('resultDetail').innerText = diff > 0 ? `O CDB rende R$ ${diff.toFixed(2)} a mais que a poupança.` : `Neste caso, a poupança é competitiva.`;
         
             document.getElementById('resultBox').style.display = 'block';
+        }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
         }
     </script>
 </body>
