@@ -252,9 +252,13 @@
 
         .calculators-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
             margin-bottom: 30px;
+        }
+        /* Centraliza o último card ímpar na última linha */
+        .calculators-grid a:last-child:nth-child(3n - 2) {
+            grid-column: 2;
         }
 
         .calculator-card {
@@ -514,6 +518,7 @@
             .hero-buttons { justify-content: center; flex-direction: column; }
             .btn { width: 100%; text-align: center; }
             .calculators-grid { grid-template-columns: 1fr; }
+            .calculators-grid a:last-child:nth-child(3n - 2) { grid-column: 1; }
             .calculators-section { padding: 30px 20px; }
             .section-title { font-size: 2rem; }
             .stats-section { flex-direction: column; gap: 15px; padding: 15px 20px; }

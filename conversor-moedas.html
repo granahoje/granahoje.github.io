@@ -75,6 +75,7 @@
         <main>
             <h1 class="page-title">Conversor de Moedas</h1>
             <p class="page-subtitle">Converta entre moedas com cotações em tempo real</p>
+            <p id="rateStatus" style="color: var(--muted); font-size: 0.85rem; margin-bottom: 20px;">⏳ Carregando cotações...</p>
             <div class="calculator-grid">
                 <div class="calculator-card">
                     <h2>💱 Conversor</h2>
@@ -128,15 +129,41 @@
         </footer>
     </div>
     <script>
-        const exchangeRates = {
+        // Taxas de fallback (atualizadas manualmente)
+        const fallbackRates = {
             'BRL': 1,
-            'USD': 0.20,
-            'EUR': 0.19,
-            'GBP': 0.16,
-            'JPY': 30.50,
-            'AUD': 0.31
+            'USD': 0.1818,
+            'EUR': 0.1667,
+            'GBP': 0.1429,
+            'JPY': 27.78,
+            'AUD': 0.2857
         };
-        
+        let exchangeRates = { ...fallbackRates };
+        let ratesLoaded = false;
+
+        // Tenta buscar cotações em tempo real via API gratuita
+        async function loadRates() {
+            try {
+                const res = await fetch('https://api.exchangerate-api.com/v4/latest/BRL');
+                if (res.ok) {
+                    const data = await res.json();
+                    exchangeRates = {
+                        'BRL': 1,
+                        'USD': data.rates.USD,
+                        'EUR': data.rates.EUR,
+                        'GBP': data.rates.GBP,
+                        'JPY': data.rates.JPY,
+                        'AUD': data.rates.AUD
+                    };
+                    ratesLoaded = true;
+                    document.getElementById('rateStatus').textContent = '✅ Cotações atualizadas em tempo real';
+                }
+            } catch(e) {
+                document.getElementById('rateStatus').textContent = '⚠️ Usando cotações de referência (sem conexão)';
+            }
+        }
+        loadRates();
+
         function convertCurrency() {
             const amount = parseFloat(document.getElementById('amount').value);
             const fromCurrency = document.getElementById('fromCurrency').value;
