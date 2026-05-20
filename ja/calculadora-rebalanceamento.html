@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>リバランス計算機 - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-rebalanceamento.html'" aria-label="言語" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 言語</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">ブログ</a>
+                <a href="/about.html">会社概要</a>
+                <a href="/contact.html">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                ブログに戻る
+            </a>
+            <h1 class="page-title">リバランス計算機</h1>
+            <p class="page-subtitle">リバランス計算のための完全なツール。</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">初期資本 (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">利率 (% 年率)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">期間 (年)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">計算する</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">推定結果</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">推奨パートナー</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> は市場で最良の選択肢の一つです。弊社の専門家によってテスト・承認されています。</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">今すぐアクセス →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 金融自由についてもっと学びたいですか？</p>
+            <a href="/ja/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">記事全文を読む →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>リバランス計算機：バランスの取れた金融ポートフォリオの鍵</h3>
+
+  <p>投資ポートフォリオを自身の金融目標に沿って維持することは、安全性と持続可能な成長を求める方にとって不可欠です。<strong>リバランス計算機</strong>は、投資家がポートフォリオを実用的かつ効率的に調整し、資産配分が常に初期戦略と一致するようにするための必須ツールとして登場しました。本記事では、このツールの重要性、正しい使い方、そして金融自由の達成における基本的な役割について探ります。</p>
+
+  <h4>リバランス計算機の使い方</h4>
+  <p>リバランス計算機は、ポートフォリオ調整のプロセスを簡素化し、望ましい配分に戻るためにどの資産を買うか売るかを正確に知ることを可能にします。操作は直感的です：</p>
+  <ul>
+    <li><strong>現在の価値を入力：</strong>ポートフォリオを構成する各資産の現在の価値を入力します。</li>
+    <li><strong>理想の配分を設定：</strong>債券、株式、不動産投資信託など、各資産クラスの望ましい割合を指定します。</li>
+    <li><strong>リバランスを計算：</strong>ツールは、ポートフォリオを計画通りのバランスに戻すために調整すべき数量と価値を示します。</li>
+  </ul>
+  <p>さらに、多くの計算機はグラフやレポートを提供し、必要な変更を視覚的に分かりやすくし、プロセスをより明確かつ客観的にします。</p>
+
+  <h4>なぜリバランスが金融自由に重要なのか</h4>
+  <p>ポートフォリオの定期的なリバランスは、リスク管理と市場機会の活用に不可欠です。時間の経過とともに、特定の資産の価値上昇がポートフォリオのバランスを崩し、望ましくないリスクへの露出を増やしたり、リターンの可能性を減少させたりします。</p>
+  <p>計画した配分を維持することで、あなたは：</p>
+  <ul>
+    <li><strong>リスクを最小化：</strong>単一の資産やセクターへの過度な集中を避けます。</li>
+    <li><strong>規律を促進：</strong>価値が上がった資産を売り、過小評価されている資産を購入することで市場の変動を活用します。</li>
+    <li><strong>利益を最大化：</strong>ポートフォリオを金融目標とリスクプロファイルに沿わせ、金融自由への道を加速させます。</li>
+  </ul>
+
+  <h4>リバランス計算機の実践的な使用例</h4>
+  <p>例えば、初期ポートフォリオが株式50%、債券30%、不動産投資信託20%であったとします。6ヶ月後、株式が値上がりして全体の60%を占め、債券は25%、不動産投資信託は15%になりました。計算機を使うことで、元の配分に戻すために株式をどれだけ売り、債券と不動産投資信託にどれだけ投資すべきかがわかります。</p>
+  <p>別の例として、毎月の積立投資があります。定期的に投資する場合、計算機は過小評価されている資産に資金を振り向け、頻繁な売買なしにバランスを保つのに役立ちます。</p>
+
+  <h4>リバランス計算機使用時のよくある誤り</h4>
+  <p>シンプルながら、いくつかの誤りがリバランスの結果を損なう可能性があります：</p>
+  <ul>
+    <li><strong>取引コストを無視：</strong>資産の売買にはコストがかかり、利益を損なわないよう考慮が必要です。</li>
+    <li><strong>頻繁すぎるリバランス：</strong>頻繁な調整は費用を増やし、顕著な利益をもたらさない場合があります。</li>
+    <li><strong>望ましい配分の更新を怠る：</strong>リスクプロファイルや目標の変化はリバランス戦略に反映させるべきです。</li>
+    <li><strong>所得税を考慮しない：</strong>利益確定は課税対象となり、純リターンに影響します。</li>
+  </ul>
+
+  <h4>2026年に効率的にリバランス計算機を使うためのヒント</h4>
+  <p>金融市場が常に変化する中、2026年に向けて戦略を適応させることが重要です：</p>
+  <ul>
+    <li><strong>リバランスの固定期間を設定：</strong>半年ごとまたは年ごとに、規律とコストのバランスを取ります。</li>
+    <li><strong>経済動向を追う：</strong>マクロ経済や市場見通しに応じて配分を調整します。</li>
+    <li><strong>統合ツールを活用：</strong>証券会社やプラットフォームと連携する計算機を利用し、データ更新を容易にします。</li>
+    <li><strong>グローバル分散を考慮：</strong>地域リスクを軽減するために国際資産を含めます。</li>
+    <li><strong>目標を定期的に見直す：</strong>短期、中期、長期の目標がリバランス戦略に影響します。</li>
+  </ul>
+
+  <h4>結論：金融成功のための規律と長期的視野</h4>
+  <p><strong>リバランス計算機</strong>の利用は、投資をコントロールし、安全に金融自由へ進むために不可欠な実践です。単なるツール以上に、それは規律、計画、根拠に基づく意思決定の能力を表し、リスクを最小化し市場の機会を活用します。</p>
+  <p>成功は良い資産を選ぶだけでなく、バランスを保ち、人生や市場の変化に応じて戦略を調整することにかかっています。この計算機の使い方を意識的に学び、リバランスを定期的な習慣にしましょう。あなたの金融の未来が感謝するでしょう。</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. すべての人のための金融教育。</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

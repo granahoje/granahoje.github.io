@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>再平衡计算器 - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-rebalanceamento.html'" aria-label="语言" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 语言</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">博客</a>
+                <a href="/about.html">关于</a>
+                <a href="/contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                返回博客
+            </a>
+            <h1 class="page-title">再平衡计算器</h1>
+            <p class="page-subtitle">完整的再平衡计算工具。</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">初始资本 (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">利率 (% 年利率)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">期限 (年)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">计算</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">预计结果</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">推荐合作伙伴</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual 投资</strong> 是市场上最佳选择之一。经过我们专家的测试和认可。</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">立即访问 →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 想了解更多关于财务自由？</p>
+            <a href="/zh/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">阅读全文 →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>再平衡计算器：实现财务投资组合平衡的关键</h3>
+
+  <p>保持投资组合与您的财务目标一致，对于追求安全和可持续增长的人来说至关重要。<strong>再平衡计算器</strong>作为一款必备工具，帮助投资者以简便高效的方式调整投资组合，确保资产配置始终与初始策略保持一致。本文将探讨该工具的重要性、正确使用方法及其在实现财务自由中的核心作用。</p>
+
+  <h4>如何使用再平衡计算器</h4>
+  <p>再平衡计算器旨在简化投资组合调整过程，让您准确知道应买入或卖出哪些资产以恢复理想配置。其操作直观：</p>
+  <ul>
+    <li><strong>输入当前数值：</strong>填写构成您投资组合的各资产当前价值。</li>
+    <li><strong>设定理想配置：</strong>指定每类资产（如固定收益、股票、房地产基金等）的目标百分比。</li>
+    <li><strong>计算再平衡：</strong>工具将显示需调整的数量和金额，以使您的组合恢复到计划的平衡状态。</li>
+  </ul>
+  <p>此外，许多计算器还提供图表和报告，帮助您更清晰直观地了解所需调整。</p>
+
+  <h4>为何再平衡对财务自由至关重要</h4>
+  <p>定期再平衡投资组合对于风险控制和抓住市场机会至关重要。随着时间推移，某些资产升值可能导致组合失衡，增加不必要的风险暴露或降低回报潜力。</p>
+  <p>通过保持计划中的资产配置，您可以：</p>
+  <ul>
+    <li><strong>降低风险：</strong>避免过度集中于单一资产或行业。</li>
+    <li><strong>培养纪律：</strong>促使卖出升值资产，买入低配资产，利用市场波动获利。</li>
+    <li><strong>提升收益：</strong>保持投资组合与财务目标和风险偏好一致，加速实现财务自由的进程。</li>
+  </ul>
+
+  <h4>再平衡计算器的实际应用示例</h4>
+  <p>假设您的初始投资组合为50%股票、30%固定收益和20%房地产基金。六个月后，股票升值至60%，固定收益降至25%，房地产基金降至15%。使用计算器，您将知道需要卖出多少股票，买入多少固定收益和房地产基金，以恢复原始配置。</p>
+  <p>另一个例子是定期投入资金。若您定期投资，计算器可帮助您将资金分配到低配资产，保持组合平衡，无需频繁卖出。</p>
+
+  <h4>使用再平衡计算器时常见错误</h4>
+  <p>尽管简单，但一些错误可能影响再平衡效果：</p>
+  <ul>
+    <li><strong>忽视交易成本：</strong>买卖资产会产生费用，需考虑以免侵蚀收益。</li>
+    <li><strong>过于频繁再平衡：</strong>频繁调整增加成本，且可能无显著收益。</li>
+    <li><strong>未更新目标配置：</strong>风险偏好或目标变化应反映在再平衡策略中。</li>
+    <li><strong>忽略所得税影响：</strong>实现收益可能产生税负，影响净回报。</li>
+  </ul>
+
+  <h4>2026年高效使用再平衡计算器的建议</h4>
+  <p>随着金融市场不断变化，2026年应调整策略：</p>
+  <ul>
+    <li><strong>设定固定再平衡周期：</strong>半年或一年一次，平衡纪律与成本。</li>
+    <li><strong>关注经济趋势：</strong>根据宏观经济和市场前景调整配置。</li>
+    <li><strong>利用集成工具：</strong>使用可连接券商和平台的计算器，便于数据更新。</li>
+    <li><strong>考虑全球多元化：</strong>纳入国际资产，增强对本地风险的防护。</li>
+    <li><strong>定期审视目标：</strong>短、中、长期目标影响再平衡策略。</li>
+  </ul>
+
+  <h4>结论：纪律与长远视角助力财务成功</h4>
+  <p><strong>再平衡计算器</strong>是希望掌控投资、稳步迈向财务自由者的必备工具。它不仅是一款工具，更代表了纪律、规划和基于理性决策的能力，帮助您降低风险，抓住市场机遇。</p>
+  <p>请记住：财务成功不仅在于选择优质资产，更在于保持平衡并随生活和市场变化调整策略。花时间学习如何理智使用此计算器，将再平衡变成常规习惯，您的财务未来将因此受益。</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje。为所有人提供财务教育。</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
