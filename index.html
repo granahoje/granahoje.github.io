@@ -39,29 +39,37 @@
             --secondary: #10b981;
             --accent: #f59e0b;
             --radius-lg: 30px;
-            --success: #10b981;
-            --warning: #f59e0b;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text);
             background: var(--bg);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container { width: min(100%, 1200px); margin: 0 auto; padding: 20px; }
+        .container { 
+            width: min(100%, 1200px); 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
 
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
             margin-bottom: 40px;
-            position: relative;
+            position: sticky;
+            top: 0;
             z-index: 100;
+            background: rgba(9, 17, 31, 0.8);
+            backdrop-filter: blur(15px);
         }
 
         .logo { 
@@ -79,11 +87,22 @@
             font-size: 1.8rem;
         }
 
-        nav { display: flex; gap: 30px; align-items: center; }
-        nav a { color: var(--text); text-decoration: none; font-weight: 700; transition: color 0.2s; }
+        nav { 
+            display: flex; 
+            gap: 30px; 
+            align-items: center; 
+        }
+        
+        nav a { 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: color 0.2s; 
+        }
+        
         nav a:hover { color: var(--primary); }
 
-        /* Buscador no Cabeçalho */
+        /* Search */
         .search-container {
             position: relative;
             max-width: 300px;
@@ -121,25 +140,12 @@
         /* Hero Section */
         .hero {
             padding: 80px 0;
-            background: radial-gradient(circle at top right, rgba(34, 211, 189, 0.1), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.05), transparent 40%);
-            border-radius: 30px;
-            margin-bottom: 60px;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .hero-content { flex: 1.2; }
-        .hero-image { flex: 0.8; }
-        .hero-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            margin-bottom: 80px;
         }
 
         .hero h1 { 
-            font-size: 4rem; 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
             font-weight: 900; 
             margin-bottom: 25px; 
             line-height: 1.1;
@@ -149,109 +155,251 @@
         }
 
         .hero p { 
-            font-size: 1.4rem; 
+            font-size: 1.3rem; 
             color: var(--muted); 
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero-buttons { display: flex; gap: 20px; }
+        .hero-buttons { 
+            display: flex; 
+            gap: 20px; 
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .btn {
-            padding: 18px 40px;
+            padding: 16px 40px;
             border-radius: 15px;
             font-weight: 800;
             text-decoration: none;
             transition: all 0.3s;
             cursor: pointer;
+            border: none;
+            font-size: 1rem;
         }
-        .btn-primary { background: var(--primary); color: var(--bg); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(34, 211, 189, 0.3); }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: rgba(34, 211, 189, 0.1); }
 
-        /* Stats Bar - Atualizada para ser escalável */
+        .btn-primary { 
+            background: var(--primary); 
+            color: var(--bg); 
+        }
+
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(34, 211, 189, 0.3); 
+        }
+
+        .btn-outline { 
+            border: 2px solid var(--primary); 
+            color: var(--primary); 
+            background: transparent;
+        }
+
+        .btn-outline:hover { 
+            background: rgba(34, 211, 189, 0.1); 
+        }
+
+        /* Stats Bar */
         .stats-bar {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             background: var(--bg-soft);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 40px;
+            border-radius: 25px;
             border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 80px;
+            margin-bottom: 100px;
+            text-align: center;
         }
 
-        .stat-item { text-align: center; }
-        .stat-value { font-size: 2rem; font-weight: 900; color: var(--primary); display: block; }
-        .stat-label { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-item { }
+        .stat-value { 
+            font-size: 2.5rem; 
+            font-weight: 900; 
+            color: var(--primary); 
+            display: block;
+            margin-bottom: 10px;
+        }
+        .stat-label { 
+            color: var(--muted); 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
 
-        /* Calculadoras */
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
-        .section-header p { color: var(--muted); font-size: 1.2rem; }
+        /* Section Headers */
+        .section-header { 
+            text-align: center; 
+            margin-bottom: 60px; 
+        }
 
+        .section-header h2 { 
+            font-size: clamp(2rem, 4vw, 3.5rem); 
+            font-weight: 900; 
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p { 
+            color: var(--muted); 
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Calculadoras Grid */
         .calculators-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-bottom: 100px;
         }
 
         .calc-card {
-            background: var(--card);
+            background: var(--bg-soft);
             padding: 40px;
             border-radius: 25px;
             border: 1px solid rgba(255,255,255,0.05);
             text-decoration: none;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
         }
 
         .calc-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-12px);
             border-color: var(--primary);
             background: rgba(34, 211, 189, 0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .calc-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
-        .calc-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary); }
-        .calc-card p { color: var(--muted); margin-bottom: 25px; }
-        .calc-link { font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .calc-icon { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            display: block; 
+        }
 
-        /* Artigos */
-        .articles-section { margin-top: 100px; }
+        .calc-card h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 15px; 
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .calc-card p { 
+            color: var(--muted); 
+            margin-bottom: 25px; 
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .calc-link { 
+            font-weight: 800; 
+            color: var(--primary); 
+            display: inline-flex;
+            align-items: center; 
+            gap: 8px;
+            transition: 0.2s;
+        }
+
+        .calc-card:hover .calc-link {
+            gap: 12px;
+        }
+
+        /* Articles Section */
+        .articles-section { 
+            margin-bottom: 100px;
+        }
+
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
+
         .article-card {
             background: var(--bg-soft);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 35px;
+            border-radius: 25px;
             text-decoration: none;
             color: inherit;
-            border: 1px solid transparent;
-            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
         }
-        .article-card:hover { border-color: var(--primary); }
-        .article-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .article-card p { color: var(--muted); font-size: 0.95rem; }
 
+        .article-card:hover { 
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .article-card h3 { 
+            margin-bottom: 15px; 
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .article-card p { 
+            color: var(--muted); 
+            font-size: 0.95rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        /* Footer */
         footer {
             margin-top: 100px;
             padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.05);
             text-align: center;
         }
-        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; }
-        .footer-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+
+        .footer-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a { 
+            color: var(--muted); 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
         .footer-links a:hover { color: var(--primary); }
 
+        footer p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
         @media (max-width: 992px) {
-            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
-            .hero h1 { font-size: 3rem; }
-            .hero-buttons { justify-content: center; }
             header { flex-direction: column; gap: 20px; }
             .search-container { max-width: 100%; margin: 0; }
+            nav { justify-content: center; }
+            .hero-buttons { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .calculators-grid { grid-template-columns: 1fr; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -273,20 +421,17 @@
         </header>
 
         <main>
+            <!-- Hero Section -->
             <section class="hero">
-                <div class="hero-content">
-                    <h1>Sua Jornada para a Liberdade Financeira</h1>
-                    <p>Ferramentas inteligentes, guias práticos e estratégias reais para você dominar seu dinheiro em 2026.</p>
-                    <div class="hero-buttons">
-                        <a href="#ferramentas" class="btn btn-primary">Explorar Ferramentas</a>
-                        <a href="/blog.html" class="btn btn-outline">Ler o Blog</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="/hero-image.webp" alt="Grana Hoje - Educação Financeira">
+                <h1>Sua Jornada para a Liberdade Financeira</h1>
+                <p>Ferramentas inteligentes, guias práticos e estratégias reais para você dominar seu dinheiro em 2026.</p>
+                <div class="hero-buttons">
+                    <a href="#ferramentas" class="btn btn-primary">Explorar Ferramentas</a>
+                    <a href="/blog.html" class="btn btn-outline">Ler o Blog</a>
                 </div>
             </section>
 
+            <!-- Stats Bar -->
             <section class="stats-bar">
                 <div class="stat-item">
                     <span class="stat-value">Gratuito</span>
@@ -302,6 +447,7 @@
                 </div>
             </section>
 
+            <!-- Ferramentas -->
             <section id="ferramentas">
                 <div class="section-header">
                     <h2>🧮 Ferramentas Gratuitas</h2>
@@ -329,33 +475,18 @@
                         <p>Planeje quanto você precisa investir mensalmente para atingir sua meta financeira.</p>
                         <span class="calc-link">Calcular Agora →</span>
                     </a>
+                </div>
 
-                    <a href="/calculadora-reserva-emergencia.html" class="calc-card">
-                        <span class="calc-icon">🛡️</span>
-                        <h3>Reserva de Emergência</h3>
-                        <p>Saiba exatamente quanto você precisa ter guardado para sua segurança total.</p>
-                        <span class="calc-link">Calcular Agora →</span>
-                    </a>
-
-                    <a href="/calculadora-roi.html" class="calc-card">
-                        <span class="calc-icon">💹</span>
-                        <h3>Calculadora de ROI</h3>
-                        <p>Meça o retorno sobre o investimento de seus projetos ou aplicações financeiras.</p>
-                        <span class="calc-link">Calcular Agora →</span>
-                    </a>
-
-                    <a href="/conversor-moedas.html" class="calc-card">
-                        <span class="calc-icon">💱</span>
-                        <h3>Conversor de Moedas</h3>
-                        <p>Cotações em tempo real para as principais moedas do mundo com conversão instantânea.</p>
-                        <span class="calc-link">Converter Agora →</span>
-                    </a>
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="/blog.html" class="btn btn-outline">Ver Todas as Ferramentas →</a>
                 </div>
             </section>
 
+            <!-- Artigos -->
             <section class="articles-section">
                 <div class="section-header">
                     <h2>📚 Destaques do Blog</h2>
+                    <p>Artigos selecionados para sua educação financeira.</p>
                 </div>
                 <div class="articles-grid">
                     <a href="/artigos/melhores-apps-pagam-dinheiro.html" class="article-card">
@@ -370,6 +501,10 @@
                         <h3>Empreendedorismo Digital</h3>
                         <p>Guia completo para quem deseja iniciar um negócio próprio com segurança financeira.</p>
                     </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="/blog.html" class="btn btn-outline">Explorar Todos os Artigos →</a>
                 </div>
             </section>
         </main>
