@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Juros Compostos (Poder do Tempo) - Grana Hoje</title>
+    <link rel="stylesheet" href="../css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/index.html">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <header class="page-header">
+            <h1 class="page-title">Calculadora de Juros Compostos (Poder do Tempo)</h1>
+            <p class="page-subtitle">Visualize o crescimento exponencial do seu patrimônio.</p>
+        </header>
+        <div class="calculator-container">
+            
+    <div class="calculator-grid">
+        <div class="calculator-card">
+            <h2>📊 Juros Compostos</h2>
+            <form id="compoundForm">
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            </form>
+            <div class="result-box" id="compoundResult">
+                <span>Montante Final:</span>
+                <span id="resultValue">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="info-content"><div class="info-card"><h3>Guia Completo: Calculadora de Juros Compostos (Poder do Tempo)</h3><p>A Calculadora de Juros Compostos (Poder do Tempo) é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
+Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
+Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
+1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
+2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
+3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Juros Compostos (Poder do Tempo) é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
+Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
+Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
+1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
+2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
+3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Juros Compostos (Poder do Tempo) é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
+Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
+Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
+1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
+2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
+3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Juros Compostos (Poder do Tempo) é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
+Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
+Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
+1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
+2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
+3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p></p></div></div>
+
+<div class="info-card">
+    <ul>
+    </ul>
+</div>
+
+<div class="info-card">
+    <ul>
+    </ul>
+</div>
+
+<div class="info-card">
+    <ul>
+    </ul>
+</div>
+
+<div class="info-card">
+    <ul>
+    </ul>
+</div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/about.html">Sobre Nós</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/contact.html">Contato</a>
+                <a href="/privacy-policy.html">Privacidade</a>
+            </div>
+            <p>© 2026 Grana Hoje. Conteúdo educativo sobre finanças.</p>
+        </div>
+    </footer>
+    <script>
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
