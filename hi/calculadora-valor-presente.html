@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>वर्तमान मूल्य कैलकुलेटर - ग्राना होजे</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-valor-presente.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 भाषा</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">ब्लॉग</a>
+                <a href="/about.html">हमारे बारे में</a>
+                <a href="/contact.html">संपर्क करें</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                ब्लॉग पर वापस जाएं
+            </a>
+            <h1 class="page-title">वर्तमान मूल्य कैलकुलेटर</h1>
+            <p class="page-subtitle">वर्तमान मूल्य कैलकुलेटर के लिए पूर्ण उपकरण।</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">प्रारंभिक पूंजी (₹)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">ब्याज दर (% वार्षिक)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">अवधि (साल)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">गणना करें</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">अनुमानित परिणाम</span>
+                    <span class="result-value" id="resultValue">₹ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">अनुशंसित साझेदार</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> बाजार के सर्वश्रेष्ठ विकल्पों में से एक है। हमारे विशेषज्ञों द्वारा परीक्षण और अनुमोदित।</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">अब एक्सेस करें →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 क्या आप वित्तीय स्वतंत्रता के बारे में और जानना चाहते हैं?</p>
+            <a href="/hi/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">पूरा लेख पढ़ें →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>वर्तमान मूल्य कैलकुलेटर: स्मार्ट वित्तीय निर्णयों के लिए आपका आवश्यक मार्गदर्शक</h3>
+  <p>एक ऐसी दुनिया में जहाँ व्यक्तिगत वित्त और निवेश अधिक सटीकता और योजना की मांग करते हैं, समय के साथ पैसे के मूल्य को समझना अत्यंत महत्वपूर्ण है। <strong>वर्तमान मूल्य कैलकुलेटर</strong> उन लोगों के लिए एक अनिवार्य उपकरण के रूप में उभरता है जो सूचित और रणनीतिक वित्तीय निर्णय लेना चाहते हैं। चाहे निवेश का मूल्यांकन करना हो, सेवानिवृत्ति की योजना बनानी हो या वित्तपोषण पर बातचीत करनी हो, यह कैलकुलेटर भविष्य के मूल्यों को वर्तमान राशियों में अनुवादित करने में मदद करता है, जिससे ब्याज और अवधि के वास्तविक प्रभाव को समझना आसान हो जाता है।</p>
+
+  <h4>वर्तमान मूल्य कैलकुलेटर का उपयोग कैसे करें</h4>
+  <p>वर्तमान मूल्य कैलकुलेटर का उपयोग सरल है, लेकिन इसमें शामिल चर पर ध्यान देना आवश्यक है। आपको जो मुख्य डेटा दर्ज करना चाहिए वे हैं:</p>
+  <ul>
+    <li><strong>भविष्य मूल्य (VF):</strong> वह राशि जो आप भविष्य में प्राप्त या भुगतान करने की उम्मीद करते हैं।</li>
+    <li><strong>ब्याज दर (i):</strong> प्रति अवधि लागू छूट दर, जो बाजार ब्याज, मुद्रास्फीति या अवसर लागत का प्रतिनिधित्व कर सकती है।</li>
+    <li><strong>अवधि (n):</strong> वह अवधि (महीने, वर्ष) जब तक भविष्य मूल्य प्राप्त या भुगतान किया जाएगा।</li>
+  </ul>
+  <p>इन डेटा को दर्ज करने के बाद, कैलकुलेटर वर्तमान मूल्य का सूत्र लागू करता है:</p>
+  <p><em>VP = VF / (1 + i)^n</em></p>
+  <p>जहाँ <em>VP</em> वर्तमान मूल्य है, जो दर्शाता है कि छूट दर को ध्यान में रखते हुए भविष्य का मूल्य आज कितना है। यह जानकारी वित्तीय विकल्पों की तुलना करने और अधिक जागरूक निर्णय लेने के लिए आवश्यक है।</p>
+
+  <h4>आपकी वित्तीय स्वतंत्रता के लिए वर्तमान मूल्य कैलकुलेटर क्यों महत्वपूर्ण है</h4>
+  <p>पैसे के वर्तमान मूल्य को समझना वित्तीय स्वतंत्रता प्राप्त करने के लिए आधारभूत है। इसका कारण है:</p>
+  <ul>
+    <li><strong>अधिक बुद्धिमान निर्णय लेना:</strong> यह जानकर कि भविष्य का मूल्य आज वास्तव में कितना है, आप वित्तीय जाल से बच सकते हैं जैसे बाजार से कम रिटर्न स्वीकार करना या महंगी ऋण लेना।</li>
+    <li><strong>निवेश की योजना बनाना:</strong> आप यह मूल्यांकन कर सकते हैं कि कोई निवेश लाभकारी है या नहीं, अपेक्षित रिटर्न और उसे प्राप्त करने के लिए आवश्यक समय को ध्यान में रखते हुए।</li>
+    <li><strong>समय के साथ पैसे की लागत नियंत्रित करना:</strong> किस्तों पर खरीदारी या वित्तपोषण करते समय, ब्याज के प्रभाव को समझना और बेहतर शर्तों पर बातचीत करना संभव होता है।</li>
+  </ul>
+  <p>इस प्रकार, कैलकुलेटर एक मजबूत संपत्ति निर्माण में मदद करता है, जो रिटर्न, जोखिम और अवधि के बीच संतुलन बनाने वाले विकल्पों का मार्गदर्शन करता है — जो वित्तीय स्वतंत्रता के लिए आवश्यक कारक हैं।</p>
+
+  <h4>वर्तमान मूल्य कैलकुलेटर के व्यावहारिक उपयोग के उदाहरण</h4>
+  <p>मान लीजिए कि आपको 3 वर्षों में ₹10,000 प्राप्त होंगे, और वार्षिक ब्याज दर 8% है। इस राशि का वर्तमान मूल्य क्या होगा?</p>
+  <p>सूत्र लागू करते हुए:</p>
+  <p>VP = 10,000 / (1 + 0.08)^3 = 10,000 / 1.2597 ≈ ₹7,937.00</p>
+  <p>इसका मतलब है कि पैसे की लागत को ध्यान में रखते हुए, ₹7,937 आज ₹10,000 के बराबर हैं जो 3 वर्षों में प्राप्त होंगे। इसलिए, यदि आपके पास यह विकल्प है कि आप यह राशि अभी प्राप्त करें या भविष्य में, यह कैलकुलेटर बेहतर विकल्प चुनने में मदद करता है।</p>
+  <p>एक अन्य उदाहरण: यदि आप ₹50,000 के वित्तपोषण का विश्लेषण कर रहे हैं जिसकी किस्तें 5 वर्षों में देय हैं, तो आप वर्तमान मूल्य की गणना कर सकते हैं कि आप वास्तव में आज कितना भुगतान कर रहे हैं, जिससे बातचीत और योजना बनाना आसान हो जाता है।</p>
+
+  <h4>वर्तमान मूल्य कैलकुलेटर का उपयोग करते समय सामान्य गलतियाँ और उनसे बचाव</h4>
+  <p>हालांकि उपकरण सरल है, कुछ गलतियाँ विश्लेषण को प्रभावित कर सकती हैं:</p>
+  <ul>
+    <li><strong>नाममात्र और वास्तविक दरों में भ्रम:</strong> मुद्रास्फीति को ध्यान में न रखने वाली दरें परिणामों को विकृत कर सकती हैं। हमेशा यह निर्धारित करें कि दर नाममात्र है या वास्तविक।</li>
+    <li><strong>दर अवधि का समायोजन न करना:</strong> यदि दर वार्षिक है लेकिन अवधि महीने में है, तो सही रूपांतरण करें ताकि संगति बनी रहे।</li>
+    <li><strong>अतिरिक्त लागतों की अनदेखी:</strong> कर, प्रशासनिक शुल्क और अन्य खर्च वास्तविक मूल्य को प्रभावित कर सकते हैं और इन्हें ध्यान में रखना चाहिए।</li>
+    <li><strong>समय के प्रभाव को कम आंकना:</strong> लंबी अवधि ब्याज के चक्रवृद्धि प्रभाव को बढ़ाता है, इसलिए सूत्र का सही उपयोग आवश्यक है।</li>
+  </ul>
+  <p>इन गलतियों से बचना गणनाओं की विश्वसनीयता बढ़ाता है और अधिक सटीक वित्तीय निर्णयों में मदद करता है।</p>
+
+  <h4>2026 में वर्तमान मूल्य कैलकुलेटर का उपयोग करने के सुझाव</h4>
+  <p>वैश्विक अर्थव्यवस्था में निरंतर बदलाव और नई वित्तीय तकनीकों के उभरने के साथ, 2026 के लिए कुछ महत्वपूर्ण सुझाव हैं:</p>
+  <ul>
+    <li><strong>ब्याज दरों को अपडेट करें:</strong> आर्थिक स्थिति और केंद्रीय बैंक के निर्णयों को ध्यान में रखते हुए ऐसी दरों का उपयोग करें जो वास्तविकता को दर्शाती हों।</li>
+    <li><strong>अपेक्षित मुद्रास्फीति पर विचार करें:</strong> संभावित उतार-चढ़ाव के साथ, वास्तविक दरों के लिए समायोजन योजना में अप्रत्याशितताओं से बचाता है।</li>
+    <li><strong>कई परिदृश्यों के लिए कैलकुलेटर का उपयोग करें:</strong> विभिन्न दरों और अवधियों का सिमुलेशन करें ताकि जोखिम और अवसरों को समझा जा सके।</li>
+    <li><strong>अन्य वित्तीय उपकरणों के साथ एकीकृत करें:</strong> वर्तमान मूल्य को नकदी प्रवाह, बजट और निवेश विश्लेषण के साथ मिलाकर पूर्ण दृष्टिकोण प्राप्त करें।</li>
+    <li><strong>वित्तीय शिक्षा में निवेश करें:</strong> वर्तमान मूल्य जैसे अवधारणाओं को गहराई से समझना उपकरण के उपयोग को बढ़ाता है और निर्णय लेने में सुधार करता है।</li>
+  </ul>
+
+  <h4>निष्कर्ष: आपके वित्तीय सफलता के लिए अनुशासन और दीर्घकालिक दृष्टिकोण</h4>
+  <p><strong>वर्तमान मूल्य कैलकुलेटर</strong> केवल एक गणना उपकरण नहीं है — यह उन लोगों के लिए एक रणनीतिक साथी है जो सचेत और स्थायी तरीके से धन संचय करना चाहते हैं। इस उपकरण का उपयोग करके, आप वास्तविक परिणामों पर केंद्रित वित्तीय मानसिकता विकसित करते हैं और ऐसे आवेगी निर्णयों से बचते हैं जो आपके भविष्य को प्रभावित कर सकते हैं।</p>
+  <p>सफलता का रहस्य है अनुशासन: नियमित गणना करना, अपनी योजनाओं की समीक्षा करना और दीर्घकालिक लक्ष्य पर ध्यान केंद्रित रखना। इस प्रकार, पैसे का मूल्य केवल एक संख्या नहीं रह जाता, बल्कि वित्तीय स्वतंत्रता की ओर एक सुरक्षित मार्गदर्शक बन जाता है। 2026 और उसके बाद, इस उपकरण का बुद्धिमानी से उपयोग करें और अपने संपत्ति को सुरक्षित रूप से बढ़ते देखें।</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. सभी के लिए वित्तीय शिक्षा।</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
