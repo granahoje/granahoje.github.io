@@ -42,7 +42,7 @@ def generate_sitemap():
     ]
     
     # Coletar todos os artigos
-    articles_dir = Path('/home/ubuntu/granahoje.github.io/artigos')
+    articles_dir = Path('./artigos')
     articles = []
     if articles_dir.exists():
         articles = [f.name for f in articles_dir.glob('*.html')]
@@ -78,7 +78,7 @@ def generate_sitemap():
     xml_content += '</urlset>\n'
     
     # Salvar sitemap
-    with open('/home/ubuntu/granahoje.github.io/sitemap.xml', 'w', encoding='utf-8') as f:
+    with open('./sitemap.xml', 'w', encoding='utf-8') as f:
         f.write(xml_content)
     
     print(f"✅ Sitemap gerado com sucesso!")
