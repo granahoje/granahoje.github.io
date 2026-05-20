@@ -28,6 +28,9 @@ def generate_sitemap():
         'disclaimer.html',
         'faq.html',
         'calculadora-juros-compostos.html',
+        'calculadora-tesouro-direto.html',
+        'calculadora-preco-medio.html',
+        'calculadora-independencia-financeira.html',
     ]
     
     # Coletar todos os artigos

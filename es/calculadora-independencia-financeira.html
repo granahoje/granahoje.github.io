@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Independência Financeira - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-independencia-financeira.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Independência Financeira</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de independência financeira.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Calculadora de Independencia Financiera: Su Guía para la Libertad Económica</h3>
+  <p>Alcanzar la independencia financiera es el sueño de muchos brasileños que desean más seguridad, libertad y calidad de vida. Sin embargo, saber exactamente cuándo y cómo llegar allí puede ser un desafío sin las herramientas adecuadas. Es en este escenario donde la <strong>Calculadora de Independencia Financiera</strong> se destaca, ayudándote a planificar tu futuro financiero con precisión y confianza.</p>
+
+  <h4>Cómo usar la Calculadora de Independencia Financiera</h4>
+  <p>Utilizar la calculadora es simple e intuitivo, incluso para quienes no poseen conocimientos avanzados en finanzas. Básicamente, requiere que ingreses información importante, como tus ingresos mensuales, gastos fijos, patrimonio actual y tasa de retorno de tus inversiones. A partir de estos datos, la herramienta calcula el monto necesario para que puedas vivir solo de los rendimientos, sin depender del trabajo activo.</p>
+  <p>Pasos básicos para usar la calculadora:</p>
+  <ul>
+    <li><strong>Informa tus ingresos mensuales actuales:</strong> Para entender tu estilo de vida.</li>
+    <li><strong>Lista tus gastos mensuales:</strong> Incluye gastos fijos y variables para estimar tu costo real de vida.</li>
+    <li><strong>Agrega tu patrimonio acumulado:</strong> Dinero en bancos, inversiones, inmuebles y otros activos.</li>
+    <li><strong>Define la tasa de retorno esperada:</strong> Basada en el perfil de tus inversiones, como renta fija, acciones o fondos inmobiliarios.</li>
+    <li><strong>Establece la tasa de retiro segura:</strong> Generalmente entre 3% y 4%, que determina cuánto puedes retirar anualmente sin comprometer el patrimonio.</li>
+  </ul>
+  <p>Después de completar estos datos, la calculadora mostrará una estimación de cuántos años te tomará alcanzar la independencia financiera, además del valor que deberás acumular.</p>
+
+  <h4>Por qué la Calculadora es Esencial para Tu Independencia Financiera</h4>
+  <p>Planificar el futuro financiero sin un parámetro claro puede llevar a decisiones equivocadas o retrasos en alcanzar los objetivos. La calculadora funciona como un mapa, permitiéndote visualizar el camino a seguir y ajustar tus estrategias según sea necesario. Proporciona:</p>
+  <ul>
+    <li><strong>Claridad:</strong> Saber exactamente cuánto necesitas acumular elimina incertidumbres.</li>
+    <li><strong>Motivación:</strong> Ver el progreso a lo largo del tiempo mantiene el enfoque en el objetivo.</li>
+    <li><strong>Control:</strong> Permite ajustes en aportes e inversiones para optimizar resultados.</li>
+    <li><strong>Prevención:</strong> Ayuda a evitar gastos excesivos que retrasen la independencia.</li>
+  </ul>
+  <p>En resumen, la herramienta transforma sueños en metas concretas, facilitando la toma de decisiones financieras inteligentes y sostenibles.</p>
+
+  <h4>Ejemplos Prácticos de Uso de la Calculadora</h4>
+  <p>Consideremos dos perfiles diferentes para entender cómo la calculadora puede ayudar:</p>
+  <ul>
+    <li><strong>João, 30 años</strong>: Gana R$ 6.000 por mes, tiene gastos de R$ 3.500 y posee R$ 50.000 invertidos con un retorno medio anual del 7%. Al usar la calculadora, João descubre que, manteniendo aportes regulares, puede alcanzar la independencia financiera en cerca de 15 años, acumulando un patrimonio cercano a R$ 1,2 millones.</li>
+    <li><strong>Maria, 45 años</strong>: Gana R$ 10.000 por mes, gastos de R$ 5.000 y patrimonio actual de R$ 300.000. Con una tasa de retorno del 6%, Maria ve que, reduciendo algunos gastos y aumentando aportes, puede retirarse financieramente en 10 años.</li>
+  </ul>
+  <p>Estos ejemplos muestran cómo la herramienta ayuda a trazar metas realistas y personalizadas, considerando la situación individual de cada persona.</p>
+
+  <h4>Errores Comunes a Evitar al Utilizar la Calculadora</h4>
+  <p>A pesar de la facilidad, algunos errores pueden comprometer la precisión de la calculadora:</p>
+  <ul>
+    <li><strong>Sobreestimar rendimientos:</strong> Contar con retornos muy altos puede generar expectativas irreales.</li>
+    <li><strong>Subestimar gastos futuros:</strong> No considerar inflación, salud y otros gastos que aumentan con el tiempo.</li>
+    <li><strong>Ignorar imprevistos:</strong> La falta de reserva de emergencia puede impactar negativamente el plan.</li>
+    <li><strong>No revisar la planificación:</strong> La vida cambia y la calculadora debe actualizarse periódicamente.</li>
+    <li><strong>Dependencia exclusiva de la herramienta:</strong> Consultar profesionales y estudiar finanzas complementa el uso de la calculadora.</li>
+  </ul>
+  <p>Evitar estos errores aumenta la confianza en los resultados y la efectividad de la planificación.</p>
+
+  <h4>Consejos para 2026: Optimizando el Uso de la Calculadora y Tu Planificación</h4>
+  <p>Con la economía brasileña en constante cambio, es importante adaptar tu estrategia para alcanzar la independencia financiera hasta 2026 o más allá. Revisa algunas recomendaciones:</p>
+  <ul>
+    <li><strong>Actualiza tu información regularmente:</strong> Realiza revisiones trimestrales para ajustar aportes y expectativas.</li>
+    <li><strong>Invierte en educación financiera:</strong> Conoce nuevas opciones de inversión y diversifica tu cartera.</li>
+    <li><strong>Considera la inflación real:</strong> Ajusta tus gastos y metas para mantener el poder adquisitivo.</li>
+    <li><strong>Usa la tecnología a tu favor:</strong> Aplicaciones y alertas ayudan a mantener la disciplina.</li>
+    <li><strong>Establece metas intermedias:</strong> Pequeños objetivos aumentan la motivación y facilitan el seguimiento.</li>
+  </ul>
+
+  <h4>Conclusión: La Disciplina y el Pensamiento a Largo Plazo Son Tus Mejores Aliados</h4>
+  <p>La Calculadora de Independencia Financiera es una herramienta poderosa, pero su verdadero valor está en la forma en que la utilizas. La disciplina para mantener aportes regulares, controlar gastos y revisar tu planificación es fundamental para transformar números en realidad. Además, adoptar una visión a largo plazo evita decisiones impulsivas y mantiene el enfoque en tus objetivos.</p>
+  <p>Con paciencia, consistencia y el uso estratégico de la calculadora, estarás en el camino correcto para conquistar la libertad financiera que tanto deseas. ¡Comienza hoy mismo a planificar tu futuro con inteligencia y confianza!</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

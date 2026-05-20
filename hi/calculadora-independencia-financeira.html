@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Independência Financeira - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-independencia-financeira.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Independência Financeira</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de independência financeira.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>वित्तीय स्वतंत्रता कैलकुलेटर: आपकी आर्थिक स्वतंत्रता के लिए मार्गदर्शक</h3>
+  <p>वित्तीय स्वतंत्रता प्राप्त करना कई ब्राज़ीलियाई लोगों का सपना है जो अधिक सुरक्षा, स्वतंत्रता और जीवन की गुणवत्ता चाहते हैं। हालांकि, यह जानना कि कब और कैसे वहां पहुंचा जाए, सही उपकरणों के बिना एक चुनौती हो सकती है। इसी संदर्भ में <strong>वित्तीय स्वतंत्रता कैलकुलेटर</strong> महत्वपूर्ण हो जाता है, जो आपको अपने वित्तीय भविष्य की योजना सटीकता और आत्मविश्वास के साथ बनाने में मदद करता है।</p>
+
+  <h4>वित्तीय स्वतंत्रता कैलकुलेटर का उपयोग कैसे करें</h4>
+  <p>कैलकुलेटर का उपयोग सरल और सहज है, यहां तक कि उन लोगों के लिए भी जिनके पास वित्तीय ज्ञान अधिक नहीं है। मूल रूप से, यह आपसे महत्वपूर्ण जानकारी मांगता है, जैसे आपकी मासिक आय, स्थिर खर्च, वर्तमान संपत्ति और आपके निवेशों की वापसी दर। इन आंकड़ों के आधार पर, यह उपकरण वह राशि गणना करता है जो आपको केवल आय से जीने के लिए चाहिए, बिना सक्रिय काम पर निर्भर हुए।</p>
+  <p>कैलकुलेटर का उपयोग करने के लिए बुनियादी कदम:</p>
+  <ul>
+    <li><strong>अपनी वर्तमान मासिक आय बताएं:</strong> अपने जीवन स्तर को समझने के लिए।</li>
+    <li><strong>अपने मासिक खर्चों की सूची बनाएं:</strong> स्थिर और परिवर्तनीय खर्च शामिल करें ताकि आपके वास्तविक जीवन लागत का अनुमान लगाया जा सके।</li>
+    <li><strong>अपनी संचित संपत्ति जोड़ें:</strong> बैंक में पैसा, निवेश, अचल संपत्ति और अन्य संपत्ति।</li>
+    <li><strong>अपेक्षित वापसी दर निर्धारित करें:</strong> आपके निवेश प्रोफ़ाइल के आधार पर, जैसे फिक्स्ड इनकम, स्टॉक्स या रियल एस्टेट फंड।</li>
+    <li><strong>सुरक्षित निकासी दर स्थापित करें:</strong> आमतौर पर 3% से 4% के बीच, जो यह निर्धारित करता है कि आप बिना संपत्ति को नुकसान पहुंचाए वार्षिक कितना निकाल सकते हैं।</li>
+  </ul>
+  <p>इन आंकड़ों को भरने के बाद, कैलकुलेटर यह अनुमान दिखाएगा कि आपको वित्तीय स्वतंत्रता प्राप्त करने में कितने साल लगेंगे और आपको कितनी राशि जमा करनी होगी।</p>
+
+  <h4>आपकी वित्तीय स्वतंत्रता के लिए कैलकुलेटर क्यों आवश्यक है</h4>
+  <p>स्पष्ट मानदंड के बिना वित्तीय भविष्य की योजना बनाना गलत निर्णय या लक्ष्यों की प्राप्ति में देरी कर सकता है। कैलकुलेटर एक नक्शे की तरह काम करता है, जिससे आप आगे का रास्ता देख सकते हैं और आवश्यकतानुसार अपनी रणनीतियों को समायोजित कर सकते हैं। यह प्रदान करता है:</p>
+  <ul>
+    <li><strong>स्पष्टता:</strong> यह जानना कि आपको कितनी राशि जमा करनी है, अनिश्चितताओं को समाप्त करता है।</li>
+    <li><strong>प्रेरणा:</strong> समय के साथ प्रगति देखना लक्ष्य पर ध्यान बनाए रखता है।</li>
+    <li><strong>नियंत्रण:</strong> निवेश और योगदान में समायोजन करने की अनुमति देता है ताकि परिणाम बेहतर हों।</li>
+    <li><strong>रोकथाम:</strong> अत्यधिक खर्च को रोकने में मदद करता है जो स्वतंत्रता में देरी कर सकता है।</li>
+  </ul>
+  <p>संक्षेप में, यह उपकरण सपनों को ठोस लक्ष्यों में बदलता है, जिससे बुद्धिमान और स्थायी वित्तीय निर्णय लेना आसान हो जाता है।</p>
+
+  <h4>कैलकुलेटर के व्यावहारिक उपयोग के उदाहरण</h4>
+  <p>आइए दो अलग-अलग प्रोफाइल पर विचार करें ताकि समझा जा सके कि कैलकुलेटर कैसे मदद करता है:</p>
+  <ul>
+    <li><strong>जुआओ, 30 वर्ष</strong>: मासिक आय R$ 6,000 है, खर्च R$ 3,500 और निवेश में R$ 50,000 हैं जिनकी औसत वार्षिक वापसी 7% है। कैलकुलेटर का उपयोग करने पर, जुआओ पता चलता है कि नियमित योगदान बनाए रखते हुए, वह लगभग 15 वर्षों में वित्तीय स्वतंत्रता प्राप्त कर सकता है, लगभग R$ 1.2 मिलियन की संपत्ति जमा कर।</li>
+    <li><strong>मारिया, 45 वर्ष</strong>: मासिक आय R$ 10,000 है, खर्च R$ 5,000 और वर्तमान संपत्ति R$ 300,000 है। 6% की वापसी दर के साथ, मारिया देखती है कि कुछ खर्च कम करके और योगदान बढ़ाकर वह 10 वर्षों में वित्तीय रूप से सेवानिवृत्त हो सकती है।</li>
+  </ul>
+  <p>ये उदाहरण दिखाते हैं कि उपकरण कैसे व्यक्तिगत स्थिति को ध्यान में रखते हुए यथार्थवादी और व्यक्तिगत लक्ष्य निर्धारित करने में मदद करता है।</p>
+
+  <h4>कैलकुलेटर का उपयोग करते समय सामान्य गलतियों से बचें</h4>
+  <p>सरलता के बावजूद, कुछ गलतियां कैलकुलेटर की सटीकता को प्रभावित कर सकती हैं:</p>
+  <ul>
+    <li><strong>आय का अधिक अनुमान लगाना:</strong> बहुत अधिक वापसी की उम्मीद करना अवास्तविक अपेक्षाएं पैदा कर सकता है।</li>
+    <li><strong>भविष्य के खर्चों का कम आकलन:</strong> महंगाई, स्वास्थ्य और अन्य बढ़ते खर्चों को नजरअंदाज करना।</li>
+    <li><strong>अनपेक्षित घटनाओं को नजरअंदाज करना:</strong> आपातकालीन निधि की कमी योजना को नकारात्मक रूप से प्रभावित कर सकती है।</li>
+    <li><strong>योजना की समीक्षा न करना:</strong> जीवन बदलता रहता है और कैलकुलेटर को समय-समय पर अपडेट करना चाहिए।</li>
+    <li><strong>केवल उपकरण पर निर्भर रहना:</strong> पेशेवर सलाह लेना और वित्तीय शिक्षा लेना कैलकुलेटर के उपयोग को पूरा करता है।</li>
+  </ul>
+  <p>इन गलतियों से बचना परिणामों पर भरोसा और योजना की प्रभावशीलता बढ़ाता है।</p>
+
+  <h4>2026 के लिए सुझाव: कैलकुलेटर और आपकी योजना का अनुकूलन</h4>
+  <p>ब्राज़ील की अर्थव्यवस्था में निरंतर बदलाव के साथ, 2026 या उससे आगे वित्तीय स्वतंत्रता प्राप्त करने के लिए अपनी रणनीति को अनुकूलित करना महत्वपूर्ण है। कुछ सुझाव देखें:</p>
+  <ul>
+    <li><strong>अपनी जानकारी नियमित रूप से अपडेट करें:</strong> योगदान और अपेक्षाओं को समायोजित करने के लिए त्रैमासिक समीक्षा करें।</li>
+    <li><strong>वित्तीय शिक्षा में निवेश करें:</strong> निवेश के नए विकल्प जानें और अपने पोर्टफोलियो को विविध बनाएं।</li>
+    <li><strong>वास्तविक महंगाई पर विचार करें:</strong> अपनी खर्च और लक्ष्यों को समायोजित करें ताकि क्रय शक्ति बनी रहे।</li>
+    <li><strong>प्रौद्योगिकी का उपयोग करें:</strong> ऐप्स और अलर्ट से अनुशासन बनाए रखें।</li>
+    <li><strong>मध्यवर्ती लक्ष्य निर्धारित करें:</strong> छोटे लक्ष्य प्रेरणा बढ़ाते हैं और निगरानी को आसान बनाते हैं।</li>
+  </ul>
+
+  <h4>निष्कर्ष: अनुशासन और दीर्घकालिक सोच आपके सबसे बड़े साथी हैं</h4>
+  <p>वित्तीय स्वतंत्रता कैलकुलेटर एक शक्तिशाली उपकरण है, लेकिन इसका असली मूल्य इस बात में है कि आप इसे कैसे उपयोग करते हैं। नियमित योगदान बनाए रखने, खर्चों को नियंत्रित करने और अपनी योजना की समीक्षा करने का अनुशासन संख्याओं को वास्तविकता में बदलने के लिए आवश्यक है। इसके अलावा, दीर्घकालिक दृष्टिकोण अपनाने से आवेगपूर्ण निर्णयों से बचा जा सकता है और आपके लक्ष्यों पर ध्यान बना रहता है।</p>
+  <p>धैर्य, निरंतरता और कैलकुलेटर के रणनीतिक उपयोग के साथ, आप उस वित्तीय स्वतंत्रता की ओर सही रास्ते पर होंगे जिसकी आप बहुत इच्छा रखते हैं। आज ही अपने भविष्य की बुद्धिमानी और आत्मविश्वास के साथ योजना बनाना शुरू करें!</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

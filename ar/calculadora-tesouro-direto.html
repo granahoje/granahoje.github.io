@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Simulador de Tesouro Direto - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-tesouro-direto.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Simulador de Tesouro Direto</h1>
+            <p class="page-subtitle">Ferramenta completa para simulador de tesouro direto.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>محاكي الخزانة المباشرة: دليلك العملي للاستثمار بأمان</h3>
+
+  <p>يُعد الاستثمار في الخزانة المباشرة من أكثر الطرق أمانًا ويسرًا لبناء الثروة في البرازيل. ومع ذلك، لتعظيم النتائج واتخاذ قرارات مالية واعية، من الضروري استخدام أدوات تسهل تخطيط الاستثمارات. <strong>محاكي الخزانة المباشرة</strong> هو بالضبط ذلك: أداة لا غنى عنها تساعد المستثمرين على توقع عوائدهم، وفهم المدد والرسوم، وتعديل استراتيجياتهم وفقًا للأهداف الشخصية. في هذا المقال، ستكتشف كيفية استخدام هذه الأداة بشكل فعال ولماذا هي ضرورية لمن يسعى إلى الحرية المالية.</p>
+
+  <h4>كيفية استخدام محاكي الخزانة المباشرة</h4>
+  <p>عادةً ما يتوفر محاكي الخزانة المباشرة على الموقع الرسمي للخزانة الوطنية وفي العديد من المنصات المالية. لاستخدامه، اتبع الخطوات الأساسية التالية:</p>
+  <ul>
+    <li><strong>اختر السند المطلوب:</strong> تقدم الخزانة المباشرة أنواعًا مختلفة من السندات، مثل Tesouro Selic، Tesouro IPCA+ وTesouro Prefixado.</li>
+    <li><strong>حدد المبلغ المراد استثماره:</strong> عيّن المبلغ الذي تنوي استثماره مبدئيًا وما إذا كنت ترغب في الاستثمار شهريًا.</li>
+    <li><strong>حدد مدة الاسترداد:</strong> اختر التاريخ الذي تنوي فيه استرداد المال، مع مراعاة أهدافك المالية.</li>
+    <li><strong>حلل النتائج:</strong> سيعرض المحاكي توقعات العائد الصافي بعد خصم الرسوم والضرائب، بالإضافة إلى القيمة النهائية المتوقعة.</li>
+    <li><strong>قم بالتعديلات:</strong> جرب مبالغ ومدد وسندات مختلفة لفهم كيف تؤثر كل متغير على استثمارك.</li>
+  </ul>
+  <p>هذه المحاكاة لا تضمن عائدًا مستقبليًا، لكنها توفر أساسًا واقعيًا للتخطيط واتخاذ القرار.</p>
+
+  <h4>لماذا المحاكي ضروري للحرية المالية</h4>
+  <p>الحرية المالية تعني التحكم في أموالك والقدرة على العيش دون الاعتماد فقط على مصدر دخل نشط. يُعد محاكي الخزانة المباشرة أداة استراتيجية لتحقيق هذا الهدف، لأنه:</p>
+  <ul>
+    <li><strong>يعزز التخطيط:</strong> يسمح برؤية تأثير الاستثمارات على المدى الطويل، مما يشجع على الانضباط وتحديد أهداف واضحة.</li>
+    <li><strong>يسهل فهم التكلفة والفائدة:</strong> يساعد في مقارنة السندات والمدة المختلفة، متجنبًا المفاجآت المتعلقة بالرسوم والضرائب.</li>
+    <li><strong>يشجع على التعليم المالي:</strong> عند استخدام المحاكي، يتعلم المستثمر عن الفوائد المركبة، التضخم والمخاطر.</li>
+    <li><strong>يقلل القلق:</strong> من خلال وجود توقع ملموس، يشعر المستثمر بأمان أكبر للاستمرار في المسار، حتى في أوقات التقلب.</li>
+  </ul>
+  <p>لذا، المحاكي ليس مجرد أداة تقنية، بل هو شريك في بناء حياة مالية أكثر استقرارًا واستقلالية.</p>
+
+  <h4>أمثلة عملية لاستخدام المحاكي</h4>
+  <p>تخيل أنك ترغب في استثمار 5,000 ريال برازيلي في Tesouro IPCA+ مع استحقاق في عام 2035، بهدف حماية أصولك من التضخم وضمان تقاعد هادئ. باستخدام المحاكي، يمكنك إدخال هذا المبلغ والمدة، وستحصل على توقع لمقدار ما ستجمعه في النهاية، مع الأخذ في الاعتبار العائد التاريخي والضرائب.</p>
+  <p>مثال آخر: إذا كنت تنوي استثمار 500 ريال شهريًا في Tesouro Selic لتكوين صندوق طوارئ خلال عامين، سيُظهر المحاكي النمو المتوقع، مما يساعد على التأكد من أن هذا المبلغ الشهري كافٍ لتحقيق الهدف.</p>
+  <p>تسمح هذه المحاكاة بتكييف الخطة المالية، سواء بزيادة المساهمات، اختيار سندات مختلفة أو تمديد المدد، لضمان تحقيق أهدافك بأمان أكبر.</p>
+
+  <h4>أخطاء شائعة عند استخدام المحاكي وكيفية تجنبها</h4>
+  <p>على الرغم من بساطة الأداة، يرتكب بعض المستثمرين أخطاء قد تؤثر على فعالية المحاكاة:</p>
+  <ul>
+    <li><strong>تجاهل الرسوم والضرائب:</strong> تأكد دائمًا من أن المحاكي يأخذ في الاعتبار رسوم الحفظ وضريبة الدخل، لأن هذه التكاليف تؤثر مباشرة على العائد الصافي.</li>
+    <li><strong>استخدام مدد غير مناسبة:</strong> الاستثمار في سندات ذات استحقاق بعيد جدًا لأهداف قصيرة الأجل قد يؤدي إلى الحاجة للبيع المبكر مع احتمال خسارة العائد.</li>
+    <li><strong>عدم تحديث السيناريوهات:</strong> تتغير الظروف الاقتصادية؛ لذلك من المهم إعادة المحاكاة دوريًا وتعديل الخطة وفقًا للمؤشرات والأهداف الشخصية.</li>
+    <li><strong>تجاهل التنويع:</strong> الاعتماد على سند واحد دون تقييم خيارات أخرى قد يزيد المخاطر ويحد من الأرباح.</li>
+  </ul>
+  <p>لتجنب هذه الأخطاء، ابقَ مطلعًا، استخدم المحاكيات الرسمية وكمل تحليلاتك بمساعدة خبراء ماليين.</p>
+
+  <h4>نصائح للاستفادة من المحاكي في 2026</h4>
+  <p>مع تغير المشهد الاقتصادي المستمر، يمكن أن تساعد بعض النصائح في تحقيق أقصى استفادة من محاكي الخزانة المباشرة في 2026:</p>
+  <ul>
+    <li><strong>تابع تحديثات الخزانة الوطنية:</strong> كن على اطلاع على التغييرات في الرسوم وأنواع السندات الجديدة التي قد تظهر.</li>
+    <li><strong>ضع في اعتبارك سيناريوهات التضخم:</strong> استخدم محاكاة تشمل توقعات التضخم لحماية قدرتك الشرائية.</li>
+    <li><strong>خطط لمساهمات دورية:</strong> قم بمحاكاة استثمارات منتظمة لتعزيز تأثير الفوائد المركبة.</li>
+    <li><strong>ادمج الخزانة المباشرة مع أنواع أخرى:</strong> قم بمحاكاة متكاملة لمحفظة متنوعة ومتوازنة.</li>
+    <li><strong>استخدم التطبيقات والمنصات الرقمية:</strong> استغل الموارد التي تسمح بمحاكاة سريعة ومحدثة، مما يسهل متابعة تخطيطك.</li>
+  </ul>
+  <p>باتباع هذه التوجيهات، ستكون مستعدًا لاتخاذ قرارات أكثر دقة وتحقيق أهدافك المالية بطمأنينة.</p>
+
+  <h4>الخلاصة: الانضباط والرؤية طويلة الأمد هما المفتاح</h4>
+  <p>يُعد محاكي الخزانة المباشرة أداة قوية، لكن قيمته الحقيقية تظهر عند دمجه مع الانضباط والتخطيط طويل الأمد. الاستثمار بتركيز وصبر ومعرفة يزيد من احتمالية النجاح المالي وتحقيق الأحلام، من تقاعد مريح إلى الاستقلال المالي.</p>
+  <p>لذا، استخدم المحاكي كدليل دائم، راجع أهدافك، عدل استراتيجياتك واحتفظ بالالتزام بمستقبلك المالي. الحرية المالية رحلة — ومحاكي الخزانة المباشرة يمكن أن يكون أفضل خريطة للوصول إليها.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
