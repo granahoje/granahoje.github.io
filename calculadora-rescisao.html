@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Calculadora de Juros Compostos (Poder do Tempo) - Grana Hoje</title>
-    <link rel="stylesheet" href="../css/ferramentas.css">
+    <title>Calculadora de Rescisão Trabalhista (CLT) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container header-inner">
-            <a class="logo" href="/index.html">GRANA HOJE</a>
+            <a class="logo" href="/">GRANA HOJE</a>
             <nav class="nav-links">
                 <a href="/blog.html">Blog</a>
                 <a href="/about.html">Sobre</a>
@@ -20,37 +20,33 @@
     </header>
     <main class="container">
         <header class="page-header">
-            <h1 class="page-title">Calculadora de Juros Compostos (Poder do Tempo)</h1>
-            <p class="page-subtitle">Visualize o crescimento exponencial do seu patrimônio.</p>
+            <h1 class="page-title">Calculadora de Rescisão Trabalhista (CLT)</h1>
+            <p class="page-subtitle">Simule seus direitos e valores a receber na saída do emprego.</p>
         </header>
         <div class="calculator-container">
             
     <div class="calculator-grid">
         <div class="calculator-card">
-            <h2>📊 Juros Compostos</h2>
-            <form id="compoundForm">
+            <h2>📄 Cálculo de Rescisão</h2>
+            <form id="rescisaoForm">
                 <div class="form-group">
-                    <label for="principal">Capital Inicial (R$)</label>
-                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                    <label for="salario">Salário Bruto (R$)</label>
+                    <input id="salario" placeholder="3000" type="number"/>
                 </div>
                 <div class="form-group">
-                    <label for="rate">Taxa de Juros (% a.a.)</label>
-                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                    <label for="meses">Meses Trabalhados (no ano)</label>
+                    <input id="meses" placeholder="6" type="number"/>
                 </div>
-                <div class="form-group">
-                    <label for="time">Período (Anos)</label>
-                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
-                </div>
-                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+                <button class="btn-calculate" onclick="calculateRescisao()" type="button">Calcular Rescisão</button>
             </form>
-            <div class="result-box" id="compoundResult">
-                <span>Montante Final:</span>
+            <div class="result-box" id="rescisaoResult">
+                <span>Total Aproximado:</span>
                 <span id="resultValue">R$ 0,00</span>
             </div>
         </div>
     </div>
         </div>
-        <div class="info-content"><div class="info-card"><h3>Guia Detalhado: Calculadora de Juros Compostos (Poder do Tempo)</h3><p>Albert Einstein supostamente chamou os juros compostos de a 'oitava maravilha do mundo'. No Grana Hoje, acreditamos que entender esse conceito é a chave mestra para a construção de riqueza a longo prazo. Esta calculadora permite que você visualize como pequenos aportes constantes se transformam em montantes significativos ao longo dos anos.</p><h4>O Que São Juros Compostos?</h4><p>Diferente dos juros simples, que incidem apenas sobre o valor inicial, os juros compostos incidem sobre o capital inicial e também sobre os juros acumulados de períodos anteriores. É o famoso 'juros sobre juros'. No início, o crescimento parece lento, mas com o passar do tempo, a curva se torna exponencial.</p><h4>O Fator Tempo</h4><p>O tempo é o ingrediente mais importante na fórmula dos juros compostos. Começar a investir aos 20 anos com pouco dinheiro pode ser muito mais vantajoso do que começar aos 40 com muito dinheiro. Nossa calculadora demonstra claramente como cada ano adicional de investimento potencializa o resultado final.</p><h4>Aportes Mensais e Consistência</h4><p>Embora o capital inicial seja importante, a consistência dos aportes mensais é o que sustenta o crescimento. Mesmo que você comece com R$ 100,00, manter esse hábito todos os meses cria uma disciplina financeira que, aliada aos juros, garante uma aposentadoria muito mais tranquila.</p><h4>Inflação: O Inimigo Silencioso</h4><p>Ao fazer suas simulações, lembre-se de considerar a taxa de juros real (taxa nominal menos a inflação). Se um investimento rende 10% ao ano, mas a inflação é de 6%, seu ganho real de poder de compra é de aproximadamente 4%. Use valores conservadores em suas projeções.</p><h4>Estratégias para Maximizar os Ganhos</h4><p>Para aproveitar ao máximo os juros compostos, foque em reduzir taxas de administração e impostos. Em investimentos de longo prazo, uma taxa de 2% ao ano pode 'comer' quase metade do seu lucro potencial ao longo de 30 anos. Prefira investimentos de baixo custo como ETFs ou Tesouro Direto.</p>
+        <div class="info-content"><div class="info-card"><h3>Guia Detalhado: Calculadora de Rescisão Trabalhista (CLT)</h3><p>O fim de um ciclo profissional é um momento de transição que exige cuidado e planejamento financeiro. A Calculadora de Rescisão do Grana Hoje foi projetada para ajudar o trabalhador brasileiro a entender seus direitos e ter uma estimativa realista dos valores que deve receber, seja em caso de pedido de demissão ou dispensa sem justa causa.</p><h4>Tipos de Demissão e Seus Direitos</h4><p>Os valores mudam drasticamente dependendo da modalidade. Na dispensa sem justa causa, você tem direito ao aviso prévio, saldo de salário, férias proporcionais com 1/3, 13º proporcional, saque do FGTS e multa de 40%. Já no pedido de demissão, você perde o direito ao saque do FGTS, à multa de 40% e ao seguro-desemprego.</p><h4>O Aviso Prévio</h4><p>O aviso prévio pode ser trabalhado ou indenizado. Desde 2011, existe o aviso prévio proporcional, que adiciona 3 dias para cada ano trabalhado na empresa, limitado a 90 dias totais. Entender como isso impacta seu cálculo final é essencial para não ser lesado.</p><h4>Férias e 13º Salário</h4><p>Muitos trabalhadores esquecem de calcular os proporcionais. Se você trabalhou 6 meses e 15 dias desde suas últimas férias, você tem direito a 7/12 de férias proporcionais. O mesmo raciocínio se aplica ao 13º salário. Nossa calculadora faz esse rateio de forma automática e precisa.</p><h4>A Multa do FGTS</h4><p>A multa de 40% sobre o saldo do FGTS é um direito exclusivo da dispensa sem justa causa. É importante ressaltar que a base de cálculo é o total depositado pela empresa durante todo o contrato, mesmo que você já tenha sacado parte do valor anteriormente (como para compra de imóvel).</p><h4>Planejamento Pós-Demissão</h4><p>Receber a rescisão não significa que o dinheiro deve ser gasto imediatamente. Use esse montante para quitar dívidas de juros altos ou para reforçar sua reserva de emergência enquanto busca uma nova oportunidade. O seguro-desemprego deve ser visto como um suporte temporário, não como renda permanente.</p>
     <p>A educação financeira é um processo contínuo de aprendizado e adaptação. No Grana Hoje, nosso objetivo é fornecer não apenas as ferramentas, mas o conhecimento necessário para que você tome as rédeas da sua vida financeira. Entender conceitos como inflação, taxa Selic, diversificação de ativos e gestão de riscos é fundamental para qualquer pessoa que deseja prosperar no Brasil de 2026.</p>
     <p>Muitas vezes, o maior obstáculo para a liberdade financeira não é a falta de dinheiro, mas a falta de organização. Pequenos gastos diários, quando somados ao longo de um mês, podem representar uma parcela significativa da sua renda que poderia estar sendo investida. O hábito de anotar cada despesa e revisar seu orçamento semanalmente pode transformar sua realidade em poucos meses.</p>
     <p>Além disso, é importante estar atento às mudanças no mercado de trabalho e nas novas formas de geração de renda extra. A economia digital abriu portas para o empreendedorismo, freelancing e investimentos em ativos globais que antes eram inacessíveis para o pequeno investidor. Estar atualizado e disposto a aprender novas habilidades é o melhor investimento que você pode fazer em si mesmo.</p>
@@ -69,37 +65,33 @@
     </header>
     <main class="container">
         <header class="page-header">
-            <h1 class="page-title">Calculadora de Juros Compostos (Poder do Tempo)</h1>
-            <p class="page-subtitle">Visualize o crescimento exponencial do seu patrimônio.</p>
+            <h1 class="page-title">Calculadora de Rescisão Trabalhista (CLT)</h1>
+            <p class="page-subtitle">Simule seus direitos e valores a receber na saída do emprego.</p>
         </header>
         <div class="calculator-container">
             
     <div class="calculator-grid">
         <div class="calculator-card">
-            <h2>📊 Juros Compostos</h2>
-            <form id="compoundForm">
+            <h2>📄 Cálculo de Rescisão</h2>
+            <form id="rescisaoForm">
                 <div class="form-group">
-                    <label for="principal">Capital Inicial (R$)</label>
-                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                    <label for="salario">Salário Bruto (R$)</label>
+                    <input id="salario" placeholder="3000" type="number"/>
                 </div>
                 <div class="form-group">
-                    <label for="rate">Taxa de Juros (% a.a.)</label>
-                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                    <label for="meses">Meses Trabalhados (no ano)</label>
+                    <input id="meses" placeholder="6" type="number"/>
                 </div>
-                <div class="form-group">
-                    <label for="time">Período (Anos)</label>
-                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
-                </div>
-                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+                <button class="btn-calculate" onclick="calculateRescisao()" type="button">Calcular Rescisão</button>
             </form>
-            <div class="result-box" id="compoundResult">
-                <span>Montante Final:</span>
+            <div class="result-box" id="rescisaoResult">
+                <span>Total Aproximado:</span>
                 <span id="resultValue">R$ 0,00</span>
             </div>
         </div>
     </div>
         </div>
-        <div class="info-content"><div class="info-card"><h3>Guia Detalhado: Calculadora de Juros Compostos (Poder do Tempo)</h3><p>Albert Einstein supostamente chamou os juros compostos de a 'oitava maravilha do mundo'. No Grana Hoje, acreditamos que entender esse conceito é a chave mestra para a construção de riqueza a longo prazo. Esta calculadora permite que você visualize como pequenos aportes constantes se transformam em montantes significativos ao longo dos anos.</p><h4>O Que São Juros Compostos?</h4><p>Diferente dos juros simples, que incidem apenas sobre o valor inicial, os juros compostos incidem sobre o capital inicial e também sobre os juros acumulados de períodos anteriores. É o famoso 'juros sobre juros'. No início, o crescimento parece lento, mas com o passar do tempo, a curva se torna exponencial.</p><h4>O Fator Tempo</h4><p>O tempo é o ingrediente mais importante na fórmula dos juros compostos. Começar a investir aos 20 anos com pouco dinheiro pode ser muito mais vantajoso do que começar aos 40 com muito dinheiro. Nossa calculadora demonstra claramente como cada ano adicional de investimento potencializa o resultado final.</p><h4>Aportes Mensais e Consistência</h4><p>Embora o capital inicial seja importante, a consistência dos aportes mensais é o que sustenta o crescimento. Mesmo que você comece com R$ 100,00, manter esse hábito todos os meses cria uma disciplina financeira que, aliada aos juros, garante uma aposentadoria muito mais tranquila.</p><h4>Inflação: O Inimigo Silencioso</h4><p>Ao fazer suas simulações, lembre-se de considerar a taxa de juros real (taxa nominal menos a inflação). Se um investimento rende 10% ao ano, mas a inflação é de 6%, seu ganho real de poder de compra é de aproximadamente 4%. Use valores conservadores em suas projeções.</p><h4>Estratégias para Maximizar os Ganhos</h4><p>Para aproveitar ao máximo os juros compostos, foque em reduzir taxas de administração e impostos. Em investimentos de longo prazo, uma taxa de 2% ao ano pode 'comer' quase metade do seu lucro potencial ao longo de 30 anos. Prefira investimentos de baixo custo como ETFs ou Tesouro Direto.</p>
+        <div class="info-content"><div class="info-card"><h3>Guia Detalhado: Calculadora de Rescisão Trabalhista (CLT)</h3><p>O fim de um ciclo profissional é um momento de transição que exige cuidado e planejamento financeiro. A Calculadora de Rescisão do Grana Hoje foi projetada para ajudar o trabalhador brasileiro a entender seus direitos e ter uma estimativa realista dos valores que deve receber, seja em caso de pedido de demissão ou dispensa sem justa causa.</p><h4>Tipos de Demissão e Seus Direitos</h4><p>Os valores mudam drasticamente dependendo da modalidade. Na dispensa sem justa causa, você tem direito ao aviso prévio, saldo de salário, férias proporcionais com 1/3, 13º proporcional, saque do FGTS e multa de 40%. Já no pedido de demissão, você perde o direito ao saque do FGTS, à multa de 40% e ao seguro-desemprego.</p><h4>O Aviso Prévio</h4><p>O aviso prévio pode ser trabalhado ou indenizado. Desde 2011, existe o aviso prévio proporcional, que adiciona 3 dias para cada ano trabalhado na empresa, limitado a 90 dias totais. Entender como isso impacta seu cálculo final é essencial para não ser lesado.</p><h4>Férias e 13º Salário</h4><p>Muitos trabalhadores esquecem de calcular os proporcionais. Se você trabalhou 6 meses e 15 dias desde suas últimas férias, você tem direito a 7/12 de férias proporcionais. O mesmo raciocínio se aplica ao 13º salário. Nossa calculadora faz esse rateio de forma automática e precisa.</p><h4>A Multa do FGTS</h4><p>A multa de 40% sobre o saldo do FGTS é um direito exclusivo da dispensa sem justa causa. É importante ressaltar que a base de cálculo é o total depositado pela empresa durante todo o contrato, mesmo que você já tenha sacado parte do valor anteriormente (como para compra de imóvel).</p><h4>Planejamento Pós-Demissão</h4><p>Receber a rescisão não significa que o dinheiro deve ser gasto imediatamente. Use esse montante para quitar dívidas de juros altos ou para reforçar sua reserva de emergência enquanto busca uma nova oportunidade. O seguro-desemprego deve ser visto como um suporte temporário, não como renda permanente.</p>
     <p>A educação financeira é um processo contínuo de aprendizado e adaptação. No Grana Hoje, nosso objetivo é fornecer não apenas as ferramentas, mas o conhecimento necessário para que você tome as rédeas da sua vida financeira. Entender conceitos como inflação, taxa Selic, diversificação de ativos e gestão de riscos é fundamental para qualquer pessoa que deseja prosperar no Brasil de 2026.</p>
     <p>Muitas vezes, o maior obstáculo para a liberdade financeira não é a falta de dinheiro, mas a falta de organização. Pequenos gastos diários, quando somados ao longo de um mês, podem representar uma parcela significativa da sua renda que poderia estar sendo investida. O hábito de anotar cada despesa e revisar seu orçamento semanalmente pode transformar sua realidade em poucos meses.</p>
     <p>Além disso, é importante estar atento às mudanças no mercado de trabalho e nas novas formas de geração de renda extra. A economia digital abriu portas para o empreendedorismo, freelancing e investimentos em ativos globais que antes eram inacessíveis para o pequeno investidor. Estar atualizado e disposto a aprender novas habilidades é o melhor investimento que você pode fazer em si mesmo.</p>
@@ -151,14 +143,15 @@
     </footer>
     <script>
         
-    function calculateCompound() {
-        const p = parseFloat(document.getElementById('principal').value);
-        const r = parseFloat(document.getElementById('rate').value) / 100;
-        const t = parseFloat(document.getElementById('time').value);
-        if (!p || !r || !t) return alert('Preencha os campos');
-        const amount = p * Math.pow(1 + r, t);
-        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-        document.getElementById('compoundResult').style.display = 'block';
+    function calculateRescisao() {
+        const s = parseFloat(document.getElementById('salario').value);
+        const m = parseFloat(document.getElementById('meses').value);
+        if (!s || !m) return alert('Preencha os campos');
+        const decimo = (s / 12) * m;
+        const ferias = (s / 12) * m * 1.33;
+        const total = s + decimo + ferias;
+        document.getElementById('resultValue').textContent = 'R$ ' + total.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('rescisaoResult').style.display = 'block';
     }
     </script>
 </body>

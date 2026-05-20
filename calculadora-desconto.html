@@ -13,22 +13,22 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#09111f" name="theme-color"/>
-<title>Calculadora de Investimento Mensal e Aporte - Grana Hoje</title>
-<meta content="Calcule quanto você pode acumular com investimentos mensais recorrentes. Simule seu futuro financeiro com nossa calculadora gratuita." name="description"/>
-<meta content="investimento mensal, aportes recorrentes, calculadora financeira, poupança, acumular patrimônio" name="keywords"/>
+<title>Calculadora de Descontos e Economia - Grana Hoje</title>
+<meta content="Calcule descontos em produtos de forma rápida. Saiba quanto você vai economizar e o preço final a pagar." name="description"/>
+<meta content="calculadora de desconto, economizar, preço final, promoção, porcentagem" name="keywords"/>
 <meta content="Grana Hoje" name="author"/>
 <meta content="index, follow" name="robots"/>
-<link href="https://granahoje.github.io/calculadora-investimento-mensal.html" rel="canonical"/>
+<link href="https://granahoje.github.io/calculadora-desconto.html" rel="canonical"/>
 <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../css/ferramentas.css">
+<link rel="stylesheet" href="/css/ferramentas.css">
 </head>
 <body>
 <div class="container">
 <header>
-<a class="logo" href="/index.html">GRANA HOJE</a>
+<a class="logo" href="/">GRANA HOJE</a>
 <nav class="nav-links">
 <a href="/blog.html">Blog</a>
 <a href="/about.html">Sobre</a>
@@ -37,116 +37,98 @@
 </header>
 <main class="container">
 <header class="page-header"><header class="page-header">
-    <h1 class="page-title">Calculadora de Investimento Mensal e Aporte</h1>
-    <p class="page-subtitle">Planeje quanto investir mensalmente para atingir metas.</p>
+    <h1 class="page-title">Calculadora de Descontos e Economia</h1>
+    <p class="page-subtitle">Calcule economias reais e preços finais com precisão.</p>
 </header>
 <div class="calculator-container">
     <div class="calculator-grid">
 <div class="calculator-card">
-<h2>📈 Simulação</h2>
-<form id="investForm">
+<h2>🏷️ Desconto</h2>
+<form id="discountForm">
 <div class="form-group">
-<label for="initial">Investimento Inicial (R$)</label>
-<input id="initial" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+<label for="price">Preço Original (R$)</label>
+<input id="price" min="0" placeholder="100" required="" step="0.01" type="number"/>
 </div>
 <div class="form-group">
-<label for="monthly">Aporte Mensal (R$)</label>
-<input id="monthly" min="0" placeholder="200" required="" step="0.01" type="number"/>
+<label for="discount">Desconto (%)</label>
+<input id="discount" max="100" min="0" placeholder="10" required="" step="0.1" type="number"/>
 </div>
-<div class="form-group">
-<label for="rate">Taxa de Juros Mensal (%)</label>
-<input id="rate" min="0" placeholder="1" required="" step="0.01" type="number"/>
-</div>
-<div class="form-group">
-<label for="months">Tempo (Meses)</label>
-<input id="months" min="1" placeholder="60" required="" step="1" type="number"/>
-</div>
-<button class="btn-calculate" onclick="calculateInvest()" type="button">Calcular Patrimônio</button>
+<button class="btn-calculate" onclick="calculateDiscount()" type="button">Calcular Preço Final</button>
 </form>
-<div class="result-box" id="investResult">
+<div class="result-box" id="discountResult">
 <div class="result-item">
-<span>Total Investido:</span>
-<span class="result-value" id="totalInvested">R$ 0,00</span>
-</div>
-<div class="result-item">
-<span>Juros Acumulados:</span>
-<span class="result-value" id="totalInterest">R$ 0,00</span>
+<span>Economia:</span>
+<span class="result-value" id="resSavings">R$ 0,00</span>
 </div>
 <div class="result-item" style="border-bottom: 2px solid var(--primary);">
-<span style="font-weight: 800;">Patrimônio Final:</span>
-<span class="result-value" id="finalBalance" style="font-size: 1.2rem;">R$ 0,00</span>
+<span style="font-weight: 800;">Preço a Pagar:</span>
+<span class="result-value" id="resFinalPrice" style="font-size: 1.2rem;">R$ 0,00</span>
 </div>
 </div>
 </div>
 <div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
-<h2 style="font-size: 1.2rem;">Por que investir mensalmente?</h2>
-<p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">O segredo da riqueza não é quanto você ganha, mas quanto você guarda e investe com consistência. O aporte mensal é a base da construção de patrimônio para o investidor comum.</p>
-<ul style="font-size: 0.85rem; color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
-<li>Cria o hábito da disciplina financeira, transformando a economia em uma prioridade.</li>
-<li>Aproveita o custo médio (DCA), reduzindo o impacto da volatilidade do mercado.</li>
-<li>Potencializa o efeito "bola de neve" dos juros compostos ao longo das décadas.</li>
-<li>Permite começar com valores baixos, democratizando o acesso aos investimentos.</li>
-</ul>
-<h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 10px;">Como funciona a simulação?</h3>
-<p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Nossa calculadora utiliza a fórmula de juros compostos aplicada a séries de pagamentos (anuidade). Ela considera que cada aporte mensal rende juros a partir do momento em que é depositado.</p>
-<p style="font-size: 0.85rem; color: var(--muted);">Matematicamente: <code>M = P * (1 + i)^n + PMT * [((1 + i)^n - 1) / i]</code>, onde PMT é o seu aporte mensal.</p><blockquote style="margin: 35px 0; padding: 20px 30px; border-left: 5px solid #00d1b2; background: rgba(0, 209, 178, 0.05); font-style: normal; border-radius: 0 15px 15px 0;"><p style="margin-bottom: 15px; color: #f8fafc; font-weight: 600;">Nota do Editor:</p><div class="premium-affiliate-cta" style="
+<h2 style="font-size: 1.2rem;">Dica de Economia</h2>
+<p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">Antes de comprar algo só porque está com desconto, pergunte-se: "Eu realmente preciso disso agora ou estou sendo seduzido pelo preço?"</p>
+<p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 15px;">O marketing de promoções é desenhado para criar um senso de urgência. Use nossa calculadora para ver o valor real da economia e decidir com a razão, não com a emoção.</p>
+<p style="font-size: 0.85rem; color: var(--muted);">Lembre-se: O maior desconto de todos é 100% quando você decide não comprar o que não é essencial.</p><blockquote style="margin: 35px 0; padding: 20px 30px; border-left: 5px solid #00d1b2; background: rgba(0, 209, 178, 0.05); font-style: normal; border-radius: 0 15px 15px 0;"><p style="margin-bottom: 15px; color: #f8fafc; font-weight: 600;">Nota do Editor:</p><div class="premium-affiliate-cta" style="
             margin: 40px 0;
-            padding: 40px;
-            background: linear-gradient(to bottom, rgba(34, 211, 189, 0.1), rgba(15, 27, 45, 0.95));
-            border: 2px solid #22d3bd;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(34, 211, 189, 0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+            padding: 35px;
+            background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-left: 5px solid #22d3bd;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 30px;
         ">
-<div style="text-align: center;">
-<div style="display: inline-block; padding: 12px 24px; background: rgba(34, 211, 189, 0.2); border-radius: 999px; margin-bottom: 20px; border: 1px solid rgba(34, 211, 189, 0.3);">
-<span style="color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Oferta Especial</span>
-</div>
-<h3 style="margin: 0 0 15px; color: #fff; font-size: 1.6rem; font-weight: 900;">Velotax Imposto de Renda</h3>
-<p style="color: #b6c2d2; font-size: 1.05rem; line-height: 1.7; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Aproveite as melhores condições e comece sua jornada financeira com segurança e confiança.
+<div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+<div style="flex-grow: 1;">
+<h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+<p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;">
+<strong style="color: #fff;">Acordo Certo</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.
                 </p>
-<a href="https://apretailer.com.br/click/6a0bab802bfa817b783708b2/188130/358980/subaccount" rel="nofollow" style="
+<a href="https://apretailer.com.br/click/6a0bab802bfa81398f1142c2/182268/358980/subaccount" rel="nofollow" style="
                     display: inline-block;
-                    padding: 18px 45px;
+                    padding: 12px 30px;
                     background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
                     color: #09111f;
                     text-decoration: none;
-                    border-radius: 12px;
+                    border-radius: 10px;
                     font-weight: 900;
-                    font-size: 1.1rem;
+                    font-size: 0.95rem;
                     transition: all 0.3s;
-                    box-shadow: 0 15px 35px rgba(34, 211, 189, 0.4);
+                    box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
                     border: none;
                     cursor: pointer;
                 " target="_blank">
-                    ✨ Conhecer Velotax Imposto de Renda
+                    Acessar Agora →
                 </a>
 </div>
-</div><p style="color: #b6c2d2;">Muitos leitores nos perguntam sobre as melhores opções para este perfil. Atualmente, o <strong>Velotax Imposto de Renda</strong> oferece as condições mais competitivas do mercado.</p><a href="https://apretailer.com.br/click/6a0bab802bfa817b783708b2/188130/358980/subaccount" rel="nofollow" style="color: #00d1b2; font-weight: 700; text-decoration: underline;" target="_blank">Clique aqui para conferir a oferta oficial</a></blockquote>
+</div><p style="color: #b6c2d2;">Muitos leitores nos perguntam sobre as melhores opções para este perfil. Atualmente, o <strong>Crypto.com</strong> oferece as condições mais competitivas do mercado.</p><a href="https://apretailer.com.br/click/6a0bab802bfa817bc8530a72/187745/358980/subaccount" rel="nofollow" style="color: #00d1b2; font-weight: 700; text-decoration: underline;" target="_blank">Clique aqui para conferir a oferta oficial</a></blockquote>
 </div>
 </div>
-<section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);"><div class="info-card"><h3>Guia Completo: Calculadora de Investimento Mensal e Aporte</h3><p>A Calculadora de Investimento Mensal e Aporte é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+<section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);"><div class="info-card"><h3>Guia Completo: Calculadora de Descontos e Economia</h3><p>A Calculadora de Descontos e Economia é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
 Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
 Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
 Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
 1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
 2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
 3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
-4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Investimento Mensal e Aporte é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Descontos e Economia é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
 Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
 Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
 Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
 1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
 2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
 3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
-4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Investimento Mensal e Aporte é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Descontos e Economia é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
 Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
 Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
 Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
 1. **Automatize seus Aportes:** Não espere sobrar dinheiro no fim do mês. Pague-se primeiro.
 2. **Diversifique:** Nunca coloque todos os seus ovos na mesma cesta. Use os dados desta ferramenta para equilibrar sua carteira.
 3. **Reinvista os Ganhos:** O segredo dos grandes investidores é o reinvestimento de dividendos e juros.
-4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Investimento Mensal e Aporte é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
+4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p>A Calculadora de Descontos e Economia é uma ferramenta indispensável para quem busca clareza e controle sobre sua vida financeira. Em um mundo onde as decisões econômicas impactam diretamente nossa qualidade de vida a longo prazo, ter acesso a dados precisos e simulações realistas é o primeiro passo para a liberdade financeira. Este guia completo foi desenvolvido para não apenas ensinar você a usar nossa calculadora, mas também para fornecer uma base sólida sobre os conceitos por trás dela.</p><h4>Por que a Educação Financeira é Vital?
 Educação financeira não se trata apenas de economizar dinheiro, mas de entender como o dinheiro funciona no mundo. Como você o ganha, como o gerencia e como o investe para que ele trabalhe para você. Muitas pessoas passam a vida inteira trabalhando por dinheiro, sem nunca aprender a fazer o dinheiro trabalhar por elas. O uso de ferramentas como esta permite que você visualize cenários futuros, identifique gargalos no seu orçamento e tome decisões baseadas em lógica, não em emoção.</h4><h4>Como Utilizar esta Ferramenta Corretamente
 Para obter os melhores resultados, é fundamental inserir dados o mais próximos possível da realidade. Se você está simulando um investimento, considere as taxas de administração e os impostos. Se está calculando uma dívida, não esqueça dos juros moratórios e multas. Nossa interface foi desenhada para ser intuitiva: basta preencher os campos solicitados e clicar em calcular. O resultado aparecerá instantaneamente, permitindo que você faça múltiplas simulações em segundos.</h4><h4>O Impacto do Longo Prazo
 Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sustentável é construída tijolo por tijolo, mês após mês. Ao observar os resultados desta calculadora, preste atenção especial ao efeito do tempo. Pequenas variações nas taxas ou nos aportes mensais podem resultar em diferenças de milhares de reais ao longo de décadas. Este é o poder da consistência e da paciência, virtudes raras no mercado financeiro atual, mas extremamente recompensadoras.</h4><h4>Dicas Avançadas para Maximizar seus Resultados
@@ -156,32 +138,24 @@ Um dos maiores erros dos investidores iniciantes é o imediatismo. A riqueza sus
 4. **Mantenha-se Informado:** O cenário econômico muda constantemente. Volte sempre ao Grana Hoje para atualizar suas simulações.</h4><p>Esperamos que esta ferramenta seja um divisor de águas na sua jornada financeira. Lembre-se que o conhecimento é o único ativo que ninguém pode tirar de você. Continue estudando, praticando e utilizando nossas calculadoras para garantir um futuro próspero para você e sua família. A liberdade financeira está ao seu alcance, e nós estamos aqui para fornecer o mapa e as ferramentas necessárias para essa viagem.</p><p></p></div></section>
 </main></div>
 <footer>
-<p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+<p>© 2026 Grana Hoje. Economize com inteligência.</p>
 </footer>
 <script>
         function formatCurrency(value) {
             return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
         }
-        function calculateInvest() {
-            const initial = parseFloat(document.getElementById('initial').value) || 0;
-            const monthly = parseFloat(document.getElementById('monthly').value) || 0;
-            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-            const months = parseInt(document.getElementById('months').value) || 0;
+        function calculateDiscount() {
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const discount = parseFloat(document.getElementById('discount').value) || 0;
 
-            if (months <= 0) { alert('Insira um tempo válido'); return; }
+            if (price <= 0) { alert('Insira um preço válido'); return; }
 
-            let balance = initial;
-            let invested = initial;
+            const savings = price * (discount / 100);
+            const finalPrice = price - savings;
 
-            for (let i = 0; i < months; i++) {
-                balance = balance * (1 + rate) + monthly;
-                invested += monthly;
-            }
-
-            document.getElementById('totalInvested').textContent = formatCurrency(invested);
-            document.getElementById('totalInterest').textContent = formatCurrency(balance - invested);
-            document.getElementById('finalBalance').textContent = formatCurrency(balance);
-            document.getElementById('investResult').classList.add('show');
+            document.getElementById('resSavings').textContent = formatCurrency(savings);
+            document.getElementById('resFinalPrice').textContent = formatCurrency(finalPrice);
+            document.getElementById('discountResult').classList.add('show');
         }
     </script>
 </body>
