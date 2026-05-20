@@ -1,6 +1,6 @@
 import urllib.request, json, base64
 
-token = "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"
+token = "TOKEN_REMOVIDO"
 repo = "granahoje/granahoje.github.io"
 
 sha1 = "d03c93ae30e1a0155d50cd772bb2cc474e100cc8"

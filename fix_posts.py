@@ -1,6 +1,6 @@
 import urllib.request, json, base64
 
-token = "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"
+token = "TOKEN_REMOVIDO"
 repo = "granahoje/granahoje.github.io"
 
 def get_sha(path):
