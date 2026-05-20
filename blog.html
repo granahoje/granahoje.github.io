@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://granahoje.github.io/blog.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -20,102 +20,353 @@ gtag('js', new Date());
 gtag('config', 'G-706NN8PEE7');
 </script>
 <style>
-:root { --primary:#00d1b2; --primary-dark:#00a98f; --bg:#0f172a; --card-bg:#172238; --text:#f8fafc; --text-light:#b6c2d2; --accent:#f59e0b; --glass:rgba(30,41,59,.76); --glass-border:rgba(255,255,255,.11); }
-* { box-sizing:border-box; }
-body { margin:0; font-family:'Plus Jakarta Sans', Arial, sans-serif; background: radial-gradient(circle at top left, rgba(0,209,178,.20), transparent 35%), linear-gradient(180deg,#0f172a 0%,#101827 100%); color:var(--text); line-height:1.7; }
-header { position:sticky; top:0; z-index:100; background:rgba(15,23,42,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--glass-border); padding:15px 20px; display: flex; justify-content: space-between; align-items: center; }
-header h1 { margin:0; font-size:1.2rem; font-weight:800; letter-spacing:.04em; background:linear-gradient(90deg,#fff,var(--primary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+:root { 
+    --primary:#22d3bd; 
+    --primary-dark:#00a98f; 
+    --bg:#09111f; 
+    --bg-soft:#0f1b2d;
+    --card-bg:rgba(15, 27, 45, 0.95); 
+    --text:#f8fafc; 
+    --text-light:#a8b3c7; 
+    --accent:#f59e0b; 
+    --glass-border:rgba(255,255,255,.08); 
+}
 
-.header-right { display: flex; align-items: center; gap: 15px; }
+* { box-sizing:border-box; margin:0; padding:0; }
 
-.search-box { position: relative; }
-.search-box input { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; padding: 8px 12px 8px 35px; border-radius: 10px; outline: none; width: 200px; transition: 0.3s; }
-.search-box input:focus { width: 280px; border-color: var(--primary); }
-.search-box i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
+body { 
+    font-family:'Plus Jakarta Sans', sans-serif; 
+    background: var(--bg);
+    color:var(--text); 
+    line-height:1.6; 
+    overflow-x: hidden;
+}
 
-.language-selector { background:rgba(255,255,255,.08); border:1px solid var(--glass-border); color:var(--text); padding:8px 10px; border-radius:10px; font-weight:700; cursor:pointer; font-size: 0.9rem; }
+.container {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-nav { max-width:1150px; margin:0 auto; padding:20px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
-nav a, footer a { color:var(--primary); text-decoration:none; font-weight:700; }
-nav a:hover, footer a:hover { color:var(--accent); text-decoration:underline; }
-main { max-width:1180px; margin:0 auto; padding:28px 20px 56px; }
-.blog-header { text-align:center; margin:18px auto 34px; }
-.blog-header h2 { margin:0 0 12px; font-size:clamp(2rem,4vw,3.2rem); line-height:1.05; color:var(--primary); }
-.blog-header p { margin:0 auto; max-width:820px; color:var(--text-light); font-size:1.05rem; }
-.stats-pill { display:inline-flex; align-items:center; gap:10px; margin-top:22px; padding:11px 18px; border-radius:999px; background:rgba(0,209,178,.12); border:1px solid rgba(0,209,178,.30); color:#d9fff8; font-weight:800; }
+header { 
+    background: rgba(9, 17, 31, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-.articles-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
-.post-card { min-height:310px; display:flex; flex-direction:column; background:linear-gradient(180deg,rgba(30,41,59,.94),rgba(23,34,56,.96)); border:1px solid var(--glass-border); border-radius:22px; padding:24px; box-shadow:0 16px 35px rgba(0,0,0,.18); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.header-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.search-box { 
+    position: relative; 
+    max-width: 300px;
+}
+
+.search-box input { 
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid var(--glass-border); 
+    color: #fff; 
+    padding: 10px 15px 10px 40px; 
+    border-radius: 12px; 
+    outline: none; 
+    width: 100%;
+    font-family: inherit;
+    transition: 0.3s; 
+}
+
+.search-box input:focus { 
+    border-color: var(--primary); 
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 15px rgba(34, 211, 189, 0.2);
+}
+
+.search-box .icon { 
+    position: absolute; 
+    left: 15px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    opacity: 0.5; 
+}
+
+.language-selector { 
+    background:rgba(255,255,255,.05); 
+    border:1px solid var(--glass-border); 
+    color:var(--text); 
+    padding:10px; 
+    border-radius:12px; 
+    font-weight:600; 
+    cursor:pointer; 
+    font-size: 0.9rem;
+    outline: none;
+}
+
+main { 
+    padding: 60px 0; 
+}
+
+.blog-hero { 
+    text-align:center; 
+    margin-bottom: 60px;
+}
+
+.blog-hero h2 { 
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blog-hero p { 
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: var(--text-light);
+    font-size: 1.2rem;
+}
+
+.stats-pill { 
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: rgba(34, 211, 189, 0.1);
+    border: 1px solid rgba(34, 211, 189, 0.2);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.articles-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 30px; 
+}
+
+.post-card { 
+    background: var(--bg-soft);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
 .post-card.hidden { display: none; }
-.post-card:hover { transform:translateY(-5px); border-color:rgba(0,209,178,.55); box-shadow:0 20px 45px rgba(0,209,178,.13); }
-.post-card h3 { margin:0 0 12px; color:var(--primary); font-size:1.18rem; line-height:1.28; }
-.article-meta { color:#8ea0b8; font-size:.86rem; margin-bottom:14px; }
-.post-card p { color:var(--text-light); margin:0 0 22px; flex:1; }
-.read-more { align-self:flex-start; color:#07131f; background:linear-gradient(135deg,var(--primary),#7cf7df); text-decoration:none; font-weight:800; padding:10px 14px; border-radius:12px; }
 
-footer { border-top:1px solid var(--glass-border); background:rgba(15,23,42,.8); text-align:center; padding:34px 20px 46px; color:var(--text-light); }
-.footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:12px; }
+.post-card:hover { 
+    transform: translateY(-8px); 
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
 
-@media (max-width:768px) { 
-    header { flex-direction: column; gap: 15px; }
-    .search-box input { width: 100%; }
-    .search-box input:focus { width: 100%; }
+.post-card h3 { 
+    margin-bottom: 15px; 
+    color: var(--primary); 
+    font-size: 1.4rem; 
+    line-height: 1.3;
+}
+
+.article-meta { 
+    color: var(--text-light); 
+    font-size: 0.85rem; 
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-card p { 
+    color: var(--text-light); 
+    margin-bottom: 30px; 
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.read-more { 
+    display: inline-block;
+    background: var(--primary);
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 12px 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(34, 211, 189, 0.2);
+}
+
+footer { 
+    border-top: 1px solid var(--glass-border); 
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-bottom: 25px; 
+}
+
+.footer-links a { 
+    color: var(--text-light); 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+
+.footer-links a:hover { color: var(--primary); }
+
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 15px; }
+    .header-right { width: 100%; flex-direction: column; }
+    .search-box { max-width: 100%; width: 100%; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .blog-hero h2 { font-size: 2.5rem; }
 }
 </style>
 </head>
 <body>
+
 <header>
-    <h1>GRANA HOJE - BLOG</h1>
-    <div class="header-right">
-        <div class="search-box">
-            <span style="position: absolute; left: 12px; top: 8px;">🔍</span>
-            <input type="text" id="blogSearch" placeholder="Pesquisar artigos...">
+    <div class="container header-content">
+        <a href="/" class="logo">GRANA HOJE</a>
+        <div class="header-right">
+            <div class="search-box">
+                <span class="icon">🔍</span>
+                <input type="text" id="blogSearch" placeholder="Pesquisar artigos...">
+            </div>
+            <select class="language-selector" onchange="window.location.href='/'+this.value+'/blog.html'" aria-label="Idioma">
+                <option value="">🌐 Idioma</option>
+                <option value="pt-br" selected>🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
         </div>
-        <select class="language-selector" onchange="window.location.href='/'+this.value+'/blog.html'" aria-label="Idioma">
-            <option value="">🌐 Idioma</option>
-            <option value="pt-br" selected>🇧🇷 PT-BR</option>
-            <option value="en">🇺🇸 EN</option>
-            <option value="es">🇪🇸 ES</option>
-            <option value="fr">🇫🇷 FR</option>
-            <option value="ar">🇸🇦 AR</option>
-            <option value="zh">🇨🇳 ZH</option>
-            <option value="ru">🇷🇺 RU</option>
-            <option value="hi">🇮🇳 HI</option>
-            <option value="ja">🇯🇵 JA</option>
-            <option value="bn">🇧🇩 BN</option>
-            <option value="pt-pt">🇵🇹 PT-PT</option>
-        </select>
     </div>
 </header>
 
-<nav><a href="/">← Voltar para Home</a></nav>
+<main class="container">
+    <div class="nav-links">
+        <a href="/">← Início</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="/about.html">Sobre</a>
+    </div>
 
-<main>
-    <section class="blog-header">
+    <section class="blog-hero">
         <h2>Biblioteca Grana Hoje</h2>
-        <p>Encontre guias e ferramentas para sua liberdade financeira.</p>
+        <p>Aprenda a dominar suas finanças, investir com inteligência e descobrir novas formas de renda extra em 2026.</p>
         <div class="stats-pill" id="articleCount">Carregando artigos...</div>
     </section>
 
     <section class="articles-grid" id="articlesGrid">
-        <!-- Os artigos serão filtrados aqui -->
         <article class="post-card">
-            <h3>Cotação Hoje: Dólar e Bitcoin em 19/05/2026</h3>
             <div class="article-meta">Notícia • 19/05/2026</div>
-            <p>Confira os valores atualizados do Dólar e Bitcoin hoje.</p>
-            <a class="read-more" href="/artigos/2026-05-19-cotacao-dolar-bitcoin-hoje.html">Ler artigo →</a>
+            <h3>Cotação Hoje: Dólar e Bitcoin em 19/05/2026</h3>
+            <p>Confira os valores atualizados do Dólar e Bitcoin hoje e como proteger seu patrimônio da volatilidade.</p>
+            <a class="read-more" href="/artigos/2026-05-19-cotacao-dolar-bitcoin-hoje.html">Ler Artigo Completo</a>
         </article>
-        <!-- Outros artigos seguem o mesmo padrão... -->
+        
+        <article class="post-card">
+            <div class="article-meta">Educação • 19/05/2026</div>
+            <h3>Como Proteger seu Patrimônio da Inflação</h3>
+            <p>Estratégias práticas para manter o poder de compra do seu dinheiro em cenários de alta de preços.</p>
+            <a class="read-more" href="/artigos/2026-05-19-proteger-patrimonio-inflacao.html">Ler Artigo Completo</a>
+        </article>
+
+        <article class="post-card">
+            <div class="article-meta">Renda Extra • 2026</div>
+            <h3>7 Apps que Pagam via Pix Instantâneo</h3>
+            <p>Analisamos os aplicativos mais confiáveis que realmente colocam dinheiro no seu bolso em 2026.</p>
+            <a class="read-more" href="/artigos/7-apps-pagam-pix-instantaneo.html">Ler Artigo Completo</a>
+        </article>
+
+        <article class="post-card">
+            <div class="article-meta">Empreendedorismo • 2026</div>
+            <h3>Dropshipping Nacional: Guia Definitivo</h3>
+            <p>Como começar um negócio de vendas online sem estoque focando no mercado brasileiro.</p>
+            <a class="read-more" href="/artigos/dropshipping-nacional-2026.html">Ler Artigo Completo</a>
+        </article>
+
+        <article class="post-card">
+            <div class="article-meta">Tecnologia • 2026</div>
+            <h3>IA e o Futuro das Finanças Pessoais</h3>
+            <p>Como a inteligência artificial está automatizando investimentos e controle de gastos.</p>
+            <a class="read-more" href="/artigos/arbitragem-tarefas-ia.html">Ler Artigo Completo</a>
+        </article>
+
+        <article class="post-card">
+            <div class="article-meta">Economia • 2026</div>
+            <h3>A Morte da Poupança Tradicional</h3>
+            <p>Por que deixar dinheiro na poupança é um erro em 2026 e quais as melhores alternativas.</p>
+            <a class="read-more" href="/artigos/a-morte-da-poupanca-tradicional.html">Ler Artigo Completo</a>
+        </article>
     </section>
 </main>
 
 <footer>
-    <div class="footer-links">
-        <a href="/about.html">Sobre</a>
-        <a href="/contact.html">Contato</a>
-        <a href="/privacy-policy.html">Privacidade</a>
+    <div class="container">
+        <div class="footer-links">
+            <a href="/about.html">Sobre</a>
+            <a href="/contact.html">Contato</a>
+            <a href="/privacy-policy.html">Privacidade</a>
+            <a href="/terms-of-service.html">Termos</a>
+        </div>
+        <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
     </div>
-    <p>© 2026 Grana Hoje</p>
 </footer>
 
 <script>
@@ -130,8 +381,9 @@ footer { border-top:1px solid var(--glass-border); background:rgba(15,23,42,.8);
         articles.forEach(article => {
             const title = article.querySelector('h3').innerText.toLowerCase();
             const excerpt = article.querySelector('p').innerText.toLowerCase();
+            const meta = article.querySelector('.article-meta').innerText.toLowerCase();
             
-            if (title.includes(term) || excerpt.includes(term)) {
+            if (title.includes(term) || excerpt.includes(term) || meta.includes(term)) {
                 article.classList.remove('hidden');
                 visibleCount++;
             } else {
