@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Simulador de Alocação de Carteira - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-alocacao-carteira.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Simulador de Alocação de Carteira</h1>
+            <p class="page-subtitle">Ferramenta completa para simulador de alocação de carteira.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>محاكي تخصيص المحفظة: حسّن استثماراتك بذكاء</h3>
+  <p>الاستثمار بأمان وكفاءة هو رغبة كل مستثمر، سواء كان مبتدئًا أو ذو خبرة. يظهر <strong>محاكي تخصيص المحفظة</strong> كأداة أساسية لمن يرغب في تنظيم استثماراته بشكل استراتيجي، من خلال مواءمة الأهداف المالية، ملف المخاطر، وأفق الزمن. في هذا المقال، ستفهم أهمية هذه الأداة، تتعلم كيفية استخدامها عمليًا وتكتشف نصائح قيمة لتحقيق الحرية المالية المنشودة في عام 2026 والسنوات القادمة.</p>
+  
+  <h4>كيفية استخدام محاكي تخصيص المحفظة</h4>
+  <p>يعمل المحاكي بطريقة بديهية ويسهل الوصول إليه لأي مستثمر. أولاً، يجب عليك تحديد ملف المخاطر الخاص بك — محافظ، معتدل أو جريء — بالإضافة إلى إجمالي المبلغ المتاح للاستثمار. بعد ذلك، تقدم الأداة اقتراحات لتوزيع الاستثمارات بين فئات أصول مختلفة، مثل الدخل الثابت، الأسهم، صناديق الاستثمار العقاري والاستثمارات الخارجية.</p>
+  <p>يسمح المحاكي بضبط نسب كل فئة لرؤية تأثير هذا التخصيص على العائد المتوقع، التقلبات والمدة اللازمة لتحقيق أهدافك المالية. بالإضافة إلى ذلك، يحتوي العديد من المحاكيات على رسوم بيانية وتقارير تسهل فهم سلوك المحفظة مع مرور الوقت، مع الأخذ في الاعتبار السيناريوهات المتفائلة والمتشائمة والمعتدلة.</p>
+  
+  <h4>لماذا يعتبر محاكي تخصيص المحفظة مهمًا للحرية المالية</h4>
+  <p>امتلاك محفظة منظمة بشكل جيد أمر أساسي لتراكم الثروة بشكل مستمر وتقليل المخاطر غير الضرورية. يساعد المحاكي في موازنة الاستثمارات وفقًا لملفك وأهدافك، متجنبًا اتخاذ قرارات متهورة بناءً على الموضات أو عواطف السوق. مع تخصيص مناسب، يمكنك تعظيم الأرباح المحتملة وفي نفس الوقت حماية رأس مالك من التقلبات الحادة.</p>
+  <p>علاوة على ذلك، يتيح الاستخدام المتكرر للمحاكي متابعة تطور المحفظة، تحديد الحاجة لإعادة التوازن وتكييف الاستراتيجية مع تغيرات السوق أو الحياة الشخصية. هذا يوفر مزيدًا من الأمان لتخطيط التقاعد، شراء عقار، تعليم الأبناء أو أي حلم مالي آخر.</p>
+  
+  <h4>أمثلة عملية لاستخدام المحاكي</h4>
+  <p>تخيل مستثمرًا معتدلاً لديه 100,000 ريال برازيلي للاستثمار. عند إدخال بياناته في المحاكي، يتلقى اقتراحًا مبدئيًا مثل:</p>
+  <ul>
+    <li>40% في الدخل الثابت (شهادات الإيداع، سندات الخزانة المباشرة)</li>
+    <li>35% في صناديق الاستثمار العقاري</li>
+    <li>20% في الأسهم المتنوعة</li>
+    <li>5% في الاستثمارات الدولية</li>
+  </ul>
+  <p>يُظهر المحاكي أنه مع هذا التخصيص، تتوقع المحفظة عائدًا سنويًا متوسطًا بنسبة 10%، مع تقلبات معتدلة. إذا قام المستثمر بتعديل التخصيص لزيادة الأسهم بنسبة 10%، يعيد المحاكي حساب التأثير، مما يسمح بتقييم ما إذا كانت الزيادة في المخاطر تستحق العائد المحتمل.</p>
+  <p>مثال آخر هو المستثمر المحافظ، الذي قد يفضل محفظة ذات تركيز أكبر على الدخل الثابت وتعرض أقل للأصول المتقلبة. يساعد المحاكي في إيجاد التوازن المثالي بحيث لا يتخلى عن الأمان، ولكنه يستفيد في الوقت نفسه من فرص النمو.</p>
+  
+  <h4>أخطاء شائعة يجب تجنبها عند استخدام المحاكي</h4>
+  <p>رغم سهولة الاستخدام، يرتكب بعض المستثمرين أخطاء قد تؤثر على النتائج:</p>
+  <ul>
+    <li><strong>عدم مراعاة ملف المخاطر الحقيقي:</strong> فرض تخصيص أكثر عدوانية مما يسمح به راحة المستثمر العاطفية قد يؤدي إلى قرارات متسرعة في أوقات الأزمات.</li>
+    <li><strong>تجاهل أفق الاستثمار:</strong> الاستثمارات لأهداف قصيرة الأجل تتطلب سيولة أعلى وتقلبات أقل، بخلاف التخطيط طويل الأجل.</li>
+    <li><strong>عدم تحديث المحفظة:</strong> السوق وحياتك المالية تتغير؛ من الضروري مراجعة وإعادة توازن التخصيص بشكل دوري.</li>
+    <li><strong>التركيز فقط على العوائد السابقة:</strong> المحاكي يتوقع سيناريوهات، لكن العوائد التاريخية لا تضمن نتائج مستقبلية.</li>
+  </ul>
+  
+  <h4>نصائح لعام 2026: كيف تعزز استخدامك للمحاكي</h4>
+  <p>مع التحولات المستمرة في الاقتصاد البرازيلي والعالمي، من المهم اعتماد استراتيجيات محدثة لعام 2026:</p>
+  <ul>
+    <li><strong>أدرج الأصول المستدامة وESG:</strong> السوق يقدّر بشكل متزايد الشركات الملتزمة بالبيئة، الاجتماعية والحوكمة، والتي تميل إلى تحقيق أداء جيد على المدى الطويل.</li>
+    <li><strong>نوّع استثماراتك دوليًا:</strong> احمِ محفظتك من المخاطر المحلية واستفد من الفرص العالمية، خاصة في القطاعات الناشئة.</li>
+    <li><strong>تابع التغيرات التنظيمية:</strong> اطلع على القواعد الضريبية والسياسات الجديدة التي قد تؤثر على استثماراتك.</li>
+    <li><strong>استخدم المحاكي لتخطيط المساهمات الدورية:</strong> قم بأتمتة استثماراتك وشاهد كيف يمكن للمساهمات المنتظمة تسريع بناء الثروة.</li>
+  </ul>
+  
+  <h4>الخاتمة: الانضباط والرؤية طويلة الأجل هما مفتاح النجاح</h4>
+  <p>يُعد <strong>محاكي تخصيص المحفظة</strong> أداة قوية لمن يرغب في الاستثمار بذكاء وتحقيق الحرية المالية. ومع ذلك، لا تحل أي أداة محل الانضباط، الصبر والالتزام بأهدافك. استخدم المحاكي للتخطيط، المراجعة وتعديل محفظتك، لكن حافظ على التركيز على المدى الطويل، متجنبًا القرارات المتسرعة أمام التقلبات.</p>
+  <p>مع التخطيط الاستراتيجي، التعليم المالي ودعم أدوات مثل المحاكي، ستكون أقرب وأكثر قربًا إلى حياة مالية صحية، آمنة ومزدهرة. ابدأ اليوم واجعل عام 2026 عامًا حاسمًا لمستقبلك المالي.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

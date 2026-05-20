@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Rebalanceamento - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-rebalanceamento.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Rebalanceamento</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de rebalanceamento.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Rebalancing Calculator: The Key to a Balanced Financial Portfolio</h3>
+
+  <p>Keeping an investment portfolio aligned with your financial goals is essential for those seeking security and sustainable growth. The <strong>Rebalancing Calculator</strong> emerges as an indispensable tool for investors who want to adjust their portfolios in a practical and efficient way, ensuring that asset allocation is always in tune with their initial strategy. In this article, we will explore the importance of this tool, how to use it correctly, and its fundamental role in achieving financial freedom.</p>
+
+  <h4>How to Use the Rebalancing Calculator</h4>
+  <p>The Rebalancing Calculator is designed to simplify the portfolio adjustment process, allowing you to know exactly which assets to buy or sell to return to your desired allocation. The operation is intuitive:</p>
+  <ul>
+    <li><strong>Enter current values:</strong> input the current value of each asset that makes up your portfolio.</li>
+    <li><strong>Set the ideal allocation:</strong> specify the desired percentage for each asset class, such as fixed income, stocks, real estate funds, among others.</li>
+    <li><strong>Calculate the rebalancing:</strong> the tool will indicate the quantities and amounts that need to be adjusted so your portfolio returns to the planned balance.</li>
+  </ul>
+  <p>Additionally, many calculators offer charts and reports that facilitate the visualization of necessary changes, making the process clearer and more objective.</p>
+
+  <h4>Why Rebalancing Matters for Financial Freedom</h4>
+  <p>Regular portfolio rebalancing is essential to control risks and seize market opportunities. Over time, the appreciation of certain assets can unbalance your portfolio, increasing exposure to unwanted risks or reducing return potential.</p>
+  <p>By maintaining the planned allocation, you:</p>
+  <ul>
+    <li><strong>Minimize risks:</strong> avoid excessive concentration in a single asset or sector.</li>
+    <li><strong>Promote discipline:</strong> force the sale of appreciated assets to buy those that are underweighted, taking advantage of market fluctuations.</li>
+    <li><strong>Enhance gains:</strong> keep the portfolio aligned with your financial goals and risk profile, accelerating the journey toward financial freedom.</li>
+  </ul>
+
+  <h4>Practical Examples of Using the Rebalancing Calculator</h4>
+  <p>Imagine your initial portfolio has 50% in stocks, 30% in fixed income, and 20% in real estate funds. After six months, stocks have appreciated and now represent 60% of the total, while fixed income fell to 25% and real estate funds to 15%. Using the calculator, you will find out how much to sell in stocks and how much to invest in fixed income and real estate funds to return to the original allocation.</p>
+  <p>Another example involves monthly contributions. If you invest regularly, the calculator will help direct these resources to the underweighted assets, maintaining balance without the need for frequent sales.</p>
+
+  <h4>Common Mistakes When Using the Rebalancing Calculator</h4>
+  <p>Although simple, some mistakes can compromise rebalancing results:</p>
+  <ul>
+    <li><strong>Ignoring transaction costs:</strong> selling and buying assets generates costs that should be considered so as not to compromise gains.</li>
+    <li><strong>Rebalancing too frequently:</strong> constant adjustments can increase expenses and may not bring significant benefits.</li>
+    <li><strong>Not updating the desired allocation:</strong> changes in risk profile or goals should be reflected in the rebalancing strategy.</li>
+    <li><strong>Failing to consider income tax:</strong> realizing profits may imply taxation, impacting net returns.</li>
+  </ul>
+
+  <h4>Tips for Using the Rebalancing Calculator Efficiently in 2026</h4>
+  <p>With the financial market constantly evolving, it is important to adapt your strategy for 2026:</p>
+  <ul>
+    <li><strong>Establish fixed periods for rebalancing:</strong> semiannually or annually, to balance discipline and costs.</li>
+    <li><strong>Follow economic trends:</strong> adjust your allocation according to the macroeconomic scenario and market outlook.</li>
+    <li><strong>Use integrated tools:</strong> take advantage of calculators that connect to brokers and platforms to facilitate data updates.</li>
+    <li><strong>Consider global diversification:</strong> include international assets to improve protection against local risks.</li>
+    <li><strong>Review your goals regularly:</strong> short, medium, and long-term goals influence the rebalancing strategy.</li>
+  </ul>
+
+  <h4>Conclusion: Discipline and Long-Term Vision for Financial Success</h4>
+  <p>Using the <strong>Rebalancing Calculator</strong> is an essential practice for those who want to maintain control over their investments and move safely toward financial freedom. More than a tool, it represents discipline, planning, and the ability to make informed decisions, minimizing risks and taking advantage of market opportunities.</p>
+  <p>Remember: financial success depends not only on choosing good assets but also on maintaining balance and adjusting the strategy as life and the market evolve. Invest time to learn how to use this calculator consciously and make rebalancing a regular habit. Your financial future will thank you.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

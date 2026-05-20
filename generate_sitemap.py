@@ -31,6 +31,10 @@ def generate_sitemap():
         'calculadora-tesouro-direto.html',
         'calculadora-preco-medio.html',
         'calculadora-independencia-financeira.html',
+        'calculadora-alocacao-carteira.html',
+        'calculadora-inflacao.html',
+        'calculadora-ganho-capital.html',
+        'calculadora-rebalanceamento.html',
     ]
     
     # Coletar todos os artigos
