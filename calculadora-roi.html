@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Calculadora de ROI (Retorno sobre Investimento) - Grana Hoje</title>
-    <meta name="description" content="Calcule o ROI de seus investimentos ou negócios de forma simples. Descubra a rentabilidade real de suas aplicações.">
-    <meta name="keywords" content="ROI, retorno sobre investimento, calculadora ROI, rentabilidade, lucros, investimentos">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/calculadora-roi.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#09111f" name="theme-color"/>
+<title>Calculadora de ROI (Retorno sobre Investimento) - Grana Hoje</title>
+<meta content="Calcule o ROI de seus investimentos ou negócios de forma simples. Descubra a rentabilidade real de suas aplicações." name="description"/>
+<meta content="ROI, retorno sobre investimento, calculadora ROI, rentabilidade, lucros, investimentos" name="keywords"/>
+<meta content="Grana Hoje" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://granahoje.github.io/calculadora-roi.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --bg: #09111f;
             --bg-soft: #0f1b2d;
@@ -61,83 +62,79 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">Sobre</a>
-                <a href="/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Calculadora de ROI</h1>
-            <p class="page-subtitle">Meça a eficiência do seu investimento com facilidade</p>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>📊 Rentabilidade</h2>
-                    <form id="roiForm">
-                        <div class="form-group">
-                            <label for="invested">Valor Investido (R$)</label>
-                            <input type="number" id="invested" placeholder="1000" min="0.01" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="returned">Valor Retornado (R$)</label>
-                            <input type="number" id="returned" placeholder="1500" min="0" step="0.01" required>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="calculateROI()">Calcular ROI</button>
-                    </form>
-                    <div class="result-box" id="roiResult">
-                        <div class="result-item">
-                            <span>Lucro/Prejuízo:</span>
-                            <span class="result-value" id="resProfit">R$ 0,00</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--primary);">
-                            <span style="font-weight: 800;">ROI Final:</span>
-                            <span class="result-value" id="resROI" style="font-size: 1.2rem;">0,00%</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
-                    <h2 style="font-size: 1.2rem;">O que é ROI?</h2>
-                    <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">ROI significa **Return on Investment** (Retorno sobre o Investimento). É a métrica mais importante para qualquer investidor ou dono de negócio, pois indica a eficiência financeira de uma aplicação.</p>
-                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Fórmula Básica: <code>(Ganho - Custo) / Custo * 100</code></p>
-                    <p style="font-size: 0.85rem; color: var(--muted);">Um ROI positivo indica lucro, enquanto um ROI negativo indica que você está perdendo dinheiro no investimento analisado.</p>
-                </div>
-            </div>
+<div class="container">
+<header>
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</header>
+<main>
+<h1 class="page-title">Calculadora de ROI</h1>
+<p class="page-subtitle">Meça a eficiência do seu investimento com facilidade</p>
+<div class="calculator-grid">
+<div class="calculator-card">
+<h2>📊 Rentabilidade</h2>
+<form id="roiForm">
+<div class="form-group">
+<label for="invested">Valor Investido (R$)</label>
+<input id="invested" min="0.01" placeholder="1000" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="returned">Valor Retornado (R$)</label>
+<input id="returned" min="0" placeholder="1500" required="" step="0.01" type="number"/>
+</div>
+<button class="btn-calculate" onclick="calculateROI()" type="button">Calcular ROI</button>
+</form>
+<div class="result-box" id="roiResult">
+<div class="result-item">
+<span>Lucro/Prejuízo:</span>
+<span class="result-value" id="resProfit">R$ 0,00</span>
+</div>
+<div class="result-item" style="border-bottom: 2px solid var(--primary);">
+<span style="font-weight: 800;">ROI Final:</span>
+<span class="result-value" id="resROI" style="font-size: 1.2rem;">0,00%</span>
+</div>
+</div>
+</div>
+<div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
+<h2 style="font-size: 1.2rem;">O que é ROI?</h2>
+<p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">ROI significa **Return on Investment** (Retorno sobre o Investimento). É a métrica mais importante para qualquer investidor ou dono de negócio, pois indica a eficiência financeira de uma aplicação.</p>
+<p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Fórmula Básica: <code>(Ganho - Custo) / Custo * 100</code></p>
+<p style="font-size: 0.85rem; color: var(--muted);">Um ROI positivo indica lucro, enquanto um ROI negativo indica que você está perdendo dinheiro no investimento analisado.</p>
+</div>
+</div>
+<section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+<h2 style="color: var(--primary); margin-bottom: 20px;">Como Interpretar e Melhorar o seu ROI</h2>
+<p style="margin-bottom: 15px;">Calcular o ROI é apenas o primeiro passo. O verdadeiro valor está em entender o que esse número significa para a sua estratégia financeira. Um ROI de 20% pode ser excelente para um investimento de baixo risco, mas pode ser considerado baixo para uma operação comercial de alto risco.</p>
+<h3 style="color: var(--text); margin: 20px 0 10px;">Aplicações Práticas do ROI</h3>
+<p style="margin-bottom: 15px;">Você pode usar esta calculadora para diversas finalidades:</p>
+<ul style="margin-left: 20px; margin-bottom: 15px; color: var(--muted);">
+<li style="margin-bottom: 8px;"><strong>Marketing Digital:</strong> Avaliar se o valor gasto em anúncios trouxe o retorno em vendas esperado.</li>
+<li style="margin-bottom: 8px;"><strong>Mercado Imobiliário:</strong> Calcular o lucro na revenda de um imóvel após reformas.</li>
+<li style="margin-bottom: 8px;"><strong>Ações e Cripto:</strong> Saber a porcentagem exata de ganho sobre o capital inicialmente aportado.</li>
+<li><strong>Educação:</strong> Avaliar se um curso ou treinamento se pagou através de um aumento salarial.</li>
+</ul>
+<h3 style="color: var(--text); margin: 20px 0 10px;">Limitações do ROI</h3>
+<p style="margin-bottom: 15px;">É importante notar que o ROI simples não considera o <strong>fator tempo</strong>. Ganhar 50% em um mês é muito diferente de ganhar 50% em cinco anos. Para uma análise mais profunda, investidores costumam usar o ROI anualizado ou a Taxa Interna de Retorno (TIR).</p>
+<div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
+<h4 style="margin-bottom: 10px;">FAQ sobre Retorno de Investimento</h4>
+<ul style="list-style: none; font-size: 0.9rem;">
+<li style="margin-bottom: 15px;"><strong>O que é um "bom" ROI?</strong> Depende do setor. No mercado de ações, um ROI anual acima de 10% é considerado bom. Em negócios próprios, busca-se frequentemente ROIs mais elevados.</li>
+<li style="margin-bottom: 15px;"><strong>Como o ROI ajuda na tomada de decisão?</strong> Ele permite comparar diferentes oportunidades de investimento e escolher aquela que utiliza seu capital de forma mais eficiente.</li>
+<li><strong>O ROI considera impostos?</strong> O ROI bruto não. Para uma análise real, você deve usar o valor retornado líquido de impostos e taxas.</li>
+</ul>
+</div>
+</section>
+<div class="affiliate-cta" style="margin: 20px 0; padding: 20px; background: rgba(34, 211, 189, 0.1); border-radius: 15px; border: 1px solid #22d3bd; text-align: center;"><p style="margin-bottom: 10px; font-weight: 700;">💡 Dica do Grana Hoje:</p><p>Aproveite as melhores condições com o <strong>Itaú Renegociação de Dívidas</strong>.</p><a href="https://www.itau.com.br/" rel="nofollow" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #22d3bd; color: #09111f; text-decoration: none; border-radius: 8px; font-weight: 800;" target="_blank">Conhecer Agora →</a></div></main></div>
 
-            <section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Como Interpretar e Melhorar o seu ROI</h2>
-                <p style="margin-bottom: 15px;">Calcular o ROI é apenas o primeiro passo. O verdadeiro valor está em entender o que esse número significa para a sua estratégia financeira. Um ROI de 20% pode ser excelente para um investimento de baixo risco, mas pode ser considerado baixo para uma operação comercial de alto risco.</p>
-                
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Aplicações Práticas do ROI</h3>
-                <p style="margin-bottom: 15px;">Você pode usar esta calculadora para diversas finalidades:</p>
-                <ul style="margin-left: 20px; margin-bottom: 15px; color: var(--muted);">
-                    <li style="margin-bottom: 8px;"><strong>Marketing Digital:</strong> Avaliar se o valor gasto em anúncios trouxe o retorno em vendas esperado.</li>
-                    <li style="margin-bottom: 8px;"><strong>Mercado Imobiliário:</strong> Calcular o lucro na revenda de um imóvel após reformas.</li>
-                    <li style="margin-bottom: 8px;"><strong>Ações e Cripto:</strong> Saber a porcentagem exata de ganho sobre o capital inicialmente aportado.</li>
-                    <li><strong>Educação:</strong> Avaliar se um curso ou treinamento se pagou através de um aumento salarial.</li>
-                </ul>
+<footer>
+<p>© 2026 Grana Hoje. Analise seus ganhos.</p>
+</footer>
 
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Limitações do ROI</h3>
-                <p style="margin-bottom: 15px;">É importante notar que o ROI simples não considera o <strong>fator tempo</strong>. Ganhar 50% em um mês é muito diferente de ganhar 50% em cinco anos. Para uma análise mais profunda, investidores costumam usar o ROI anualizado ou a Taxa Interna de Retorno (TIR).</p>
-
-                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h4 style="margin-bottom: 10px;">FAQ sobre Retorno de Investimento</h4>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li style="margin-bottom: 15px;"><strong>O que é um "bom" ROI?</strong> Depende do setor. No mercado de ações, um ROI anual acima de 10% é considerado bom. Em negócios próprios, busca-se frequentemente ROIs mais elevados.</li>
-                        <li style="margin-bottom: 15px;"><strong>Como o ROI ajuda na tomada de decisão?</strong> Ele permite comparar diferentes oportunidades de investimento e escolher aquela que utiliza seu capital de forma mais eficiente.</li>
-                        <li><strong>O ROI considera impostos?</strong> O ROI bruto não. Para uma análise real, você deve usar o valor retornado líquido de impostos e taxas.</li>
-                    </ul>
-                </div>
-            </section>
-            </div>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Analise seus ganhos.</p>
-        </footer>
-    </div>
-    <script>
+<script>
         function formatCurrency(value) {
             return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
         }

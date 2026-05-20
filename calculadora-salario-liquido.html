@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Calculadora de Salário Líquido - Grana Hoje</title>
-    <meta name="description" content="Calcule seu salário líquido com precisão. Descubra quanto você realmente ganha após descontos de INSS e IR.">
-    <meta name="keywords" content="calculadora salário líquido, INSS, imposto de renda, salário bruto">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/calculadora-salario-liquido.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#09111f" name="theme-color"/>
+<title>Calculadora de Salário Líquido - Grana Hoje</title>
+<meta content="Calcule seu salário líquido com precisão. Descubra quanto você realmente ganha após descontos de INSS e IR." name="description"/>
+<meta content="calculadora salário líquido, INSS, imposto de renda, salário bruto" name="keywords"/>
+<meta content="Grana Hoje" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://granahoje.github.io/calculadora-salario-liquido.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --bg: #09111f;
             --card: rgba(15, 27, 45, 0.82);
@@ -62,97 +63,93 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">Sobre</a>
-                <a href="/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Calculadora de Salário Líquido</h1>
-            <p class="page-subtitle">Descubra quanto você realmente ganha após descontos</p>
-            
-            <!-- Seção Informativa -->
-            <section style="background: rgba(34, 211, 189, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 40px; border: 1px solid rgba(34, 211, 189, 0.1);">
-                <h2 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">O que é Salário Líquido?</h2>
-                <p style="color: var(--muted); margin-bottom: 15px;">O salário líquido é o valor que você realmente recebe na sua conta bancária após todos os descontos obrigatórios. Diferente do salário bruto, que é o valor acordado no contrato, o salário líquido leva em consideração:</p>
-                <ul style="color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
-                    <li><strong>INSS (Instituto Nacional do Seguro Social):</strong> Contribuição obrigatória para a previdência social, atualmente em 8% para a maioria dos trabalhadores.</li>
-                    <li><strong>Imposto de Renda (IR):</strong> Imposto federal progressivo que varia conforme sua faixa salarial e número de dependentes.</li>
-                    <li><strong>Dependentes:</strong> Você pode abater R$ 189,59 por dependente, reduzindo o imposto de renda.</li>
-                </ul>
-                <p style="color: var(--muted);"><strong>Exemplo:</strong> Se você ganha R$ 3.000 de salário bruto, após INSS (8%) e IR, seu salário líquido será menor. Use nossa calculadora para descobrir o valor exato!</p>
-            </section>
-            
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>💰 Salário Líquido</h2>
-                    <form id="salaryForm">
-                        <div class="form-group">
-                            <label for="grossSalary">Salário Bruto (R$)</label>
-                            <input type="number" id="grossSalary" placeholder="3000" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dependents">Número de Dependentes</label>
-                            <input type="number" id="dependents" placeholder="0" min="0" max="10" step="1" value="0">
-                        </div>
-                        <div class="form-group">
-                            <label for="state">Estado (para IR)</label>
-                            <select id="state">
-                                <option value="sp">São Paulo</option>
-                                <option value="rj">Rio de Janeiro</option>
-                                <option value="mg">Minas Gerais</option>
-                                <option value="ba">Bahia</option>
-                                <option value="other">Outro</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="calculateSalary()">Calcular</button>
-                    </form>
-                    <div class="result-box" id="salaryResult">
-                        <div class="result-item">
-                            <span>Salário Bruto:</span>
-                            <span class="result-value" id="resultGross">R$ 0,00</span>
-                        </div>
-                        <div class="result-item">
-                            <span>INSS (8%):</span>
-                            <span class="result-warning" id="resultINSS">R$ 0,00</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Imposto de Renda:</span>
-                            <span class="result-warning" id="resultIR">R$ 0,00</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--primary); padding-top: 15px;">
-                            <span style="font-weight: 800;">Salário Líquido:</span>
-                            <span class="result-value" id="resultNet" style="font-size: 1.2rem;">R$ 0,00</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Seção de Dicas -->
-            <section style="background: rgba(16, 185, 129, 0.05); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid rgba(16, 185, 129, 0.1);">
-                <h2 style="color: var(--success); margin-bottom: 15px; font-size: 1.5rem;">💡 Dicas para Aumentar seu Salário Líquido</h2>
-                <ul style="color: var(--muted); margin-left: 20px;">
-                    <li><strong>Declare Dependentes:</strong> Se você tem filhos ou dependentes, certifique-se de declará-los para reduzir o IR.</li>
-                    <li><strong>Contribuição ao INSS:</strong> Quanto maior sua contribuição, maior sua futura aposentadoria.</li>
-                    <li><strong>Deduções Permitidas:</strong> Algumas despesas como educação e saúde podem ser deduzidas na declaração de IR.</li>
-                    <li><strong>Negocie seu Salário:</strong> Quanto maior o salário bruto, maior será o líquido (mesmo com percentuais maiores de imposto).</li>
-                </ul>
-            </section>
-            
-            <!-- Aviso Legal -->
-            <section style="background: rgba(245, 158, 11, 0.05); padding: 20px; border-radius: 15px; margin-top: 30px; border: 1px solid rgba(245, 158, 11, 0.2); border-left: 4px solid var(--warning);">
-                <p style="color: var(--muted); font-size: 0.9rem;"><strong>⚠️ Aviso Importante:</strong> Esta calculadora é uma ferramenta educacional para fins informativos. Os cálculos são baseados nas alíquotas atuais de INSS e IR, mas podem variar conforme mudanças na legislação. Para informações precisas sobre seus descontos, consulte seu contracheque ou um contador.</p>
-            </section>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Ferramenta educacional de finanças pessoais.</p>
-        </footer>
-    </div>
-    <script>
+<div class="container">
+<header>
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</header>
+<main>
+<h1 class="page-title">Calculadora de Salário Líquido</h1>
+<p class="page-subtitle">Descubra quanto você realmente ganha após descontos</p>
+<!-- Seção Informativa -->
+<section style="background: rgba(34, 211, 189, 0.05); padding: 30px; border-radius: 15px; margin-bottom: 40px; border: 1px solid rgba(34, 211, 189, 0.1);">
+<h2 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">O que é Salário Líquido?</h2>
+<p style="color: var(--muted); margin-bottom: 15px;">O salário líquido é o valor que você realmente recebe na sua conta bancária após todos os descontos obrigatórios. Diferente do salário bruto, que é o valor acordado no contrato, o salário líquido leva em consideração:</p>
+<ul style="color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
+<li><strong>INSS (Instituto Nacional do Seguro Social):</strong> Contribuição obrigatória para a previdência social, atualmente em 8% para a maioria dos trabalhadores.</li>
+<li><strong>Imposto de Renda (IR):</strong> Imposto federal progressivo que varia conforme sua faixa salarial e número de dependentes.</li>
+<li><strong>Dependentes:</strong> Você pode abater R$ 189,59 por dependente, reduzindo o imposto de renda.</li>
+</ul>
+<p style="color: var(--muted);"><strong>Exemplo:</strong> Se você ganha R$ 3.000 de salário bruto, após INSS (8%) e IR, seu salário líquido será menor. Use nossa calculadora para descobrir o valor exato!</p>
+</section>
+<div class="calculator-grid">
+<div class="calculator-card">
+<h2>💰 Salário Líquido</h2>
+<form id="salaryForm">
+<div class="form-group">
+<label for="grossSalary">Salário Bruto (R$)</label>
+<input id="grossSalary" min="0" placeholder="3000" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="dependents">Número de Dependentes</label>
+<input id="dependents" max="10" min="0" placeholder="0" step="1" type="number" value="0"/>
+</div>
+<div class="form-group">
+<label for="state">Estado (para IR)</label>
+<select id="state">
+<option value="sp">São Paulo</option>
+<option value="rj">Rio de Janeiro</option>
+<option value="mg">Minas Gerais</option>
+<option value="ba">Bahia</option>
+<option value="other">Outro</option>
+</select>
+</div>
+<button class="btn-calculate" onclick="calculateSalary()" type="button">Calcular</button>
+</form>
+<div class="result-box" id="salaryResult">
+<div class="result-item">
+<span>Salário Bruto:</span>
+<span class="result-value" id="resultGross">R$ 0,00</span>
+</div>
+<div class="result-item">
+<span>INSS (8%):</span>
+<span class="result-warning" id="resultINSS">R$ 0,00</span>
+</div>
+<div class="result-item">
+<span>Imposto de Renda:</span>
+<span class="result-warning" id="resultIR">R$ 0,00</span>
+</div>
+<div class="result-item" style="border-bottom: 2px solid var(--primary); padding-top: 15px;">
+<span style="font-weight: 800;">Salário Líquido:</span>
+<span class="result-value" id="resultNet" style="font-size: 1.2rem;">R$ 0,00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Seção de Dicas -->
+<section style="background: rgba(16, 185, 129, 0.05); padding: 30px; border-radius: 15px; margin-top: 40px; border: 1px solid rgba(16, 185, 129, 0.1);">
+<h2 style="color: var(--success); margin-bottom: 15px; font-size: 1.5rem;">💡 Dicas para Aumentar seu Salário Líquido</h2>
+<ul style="color: var(--muted); margin-left: 20px;">
+<li><strong>Declare Dependentes:</strong> Se você tem filhos ou dependentes, certifique-se de declará-los para reduzir o IR.</li>
+<li><strong>Contribuição ao INSS:</strong> Quanto maior sua contribuição, maior sua futura aposentadoria.</li>
+<li><strong>Deduções Permitidas:</strong> Algumas despesas como educação e saúde podem ser deduzidas na declaração de IR.</li>
+<li><strong>Negocie seu Salário:</strong> Quanto maior o salário bruto, maior será o líquido (mesmo com percentuais maiores de imposto).</li>
+</ul>
+</section>
+<!-- Aviso Legal -->
+<section style="background: rgba(245, 158, 11, 0.05); padding: 20px; border-radius: 15px; margin-top: 30px; border: 1px solid rgba(245, 158, 11, 0.2); border-left: 4px solid var(--warning);">
+<p style="color: var(--muted); font-size: 0.9rem;"><strong>⚠️ Aviso Importante:</strong> Esta calculadora é uma ferramenta educacional para fins informativos. Os cálculos são baseados nas alíquotas atuais de INSS e IR, mas podem variar conforme mudanças na legislação. Para informações precisas sobre seus descontos, consulte seu contracheque ou um contador.</p>
+</section>
+<div class="affiliate-cta" style="margin: 25px 0; padding: 15px; border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);"><p><strong>Recomendação:</strong> Precisa de uma solução financeira? Confira o que o <strong>BomPraCrédito - Empréstimo Pessoal</strong> oferece para você.</p><a href="https://www.bompracredito.com.br/" rel="nofollow" style="color: #f59e0b; font-weight: 800; text-decoration: none;" target="_blank">Ver detalhes da oferta →</a></div></main>
+<footer>
+<p>© 2026 Grana Hoje. Ferramenta educacional de finanças pessoais.</p>
+</footer>
+</div>
+<script>
         function formatCurrency(value) {
             return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
         }

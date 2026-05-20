@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Calculadora de Investimento Mensal - Grana Hoje</title>
-    <meta name="description" content="Calcule quanto você pode acumular com investimentos mensais recorrentes. Simule seu futuro financeiro com nossa calculadora gratuita.">
-    <meta name="keywords" content="investimento mensal, aportes recorrentes, calculadora financeira, poupança, acumular patrimônio">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/calculadora-investimento-mensal.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#09111f" name="theme-color"/>
+<title>Calculadora de Investimento Mensal - Grana Hoje</title>
+<meta content="Calcule quanto você pode acumular com investimentos mensais recorrentes. Simule seu futuro financeiro com nossa calculadora gratuita." name="description"/>
+<meta content="investimento mensal, aportes recorrentes, calculadora financeira, poupança, acumular patrimônio" name="keywords"/>
+<meta content="Grana Hoje" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://granahoje.github.io/calculadora-investimento-mensal.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --bg: #09111f;
             --bg-soft: #0f1b2d;
@@ -61,96 +62,92 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">Sobre</a>
-                <a href="/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Calculadora de Investimento Mensal</h1>
-            <p class="page-subtitle">Veja como pequenos aportes mensais podem crescer ao longo do tempo</p>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>📈 Simulação</h2>
-                    <form id="investForm">
-                        <div class="form-group">
-                            <label for="initial">Investimento Inicial (R$)</label>
-                            <input type="number" id="initial" placeholder="1000" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="monthly">Aporte Mensal (R$)</label>
-                            <input type="number" id="monthly" placeholder="200" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="rate">Taxa de Juros Mensal (%)</label>
-                            <input type="number" id="rate" placeholder="1" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="months">Tempo (Meses)</label>
-                            <input type="number" id="months" placeholder="60" min="1" step="1" required>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="calculateInvest()">Calcular Patrimônio</button>
-                    </form>
-                    <div class="result-box" id="investResult">
-                        <div class="result-item">
-                            <span>Total Investido:</span>
-                            <span class="result-value" id="totalInvested">R$ 0,00</span>
-                        </div>
-                        <div class="result-item">
-                            <span>Juros Acumulados:</span>
-                            <span class="result-value" id="totalInterest">R$ 0,00</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--primary);">
-                            <span style="font-weight: 800;">Patrimônio Final:</span>
-                            <span class="result-value" id="finalBalance" style="font-size: 1.2rem;">R$ 0,00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
-                    <h2 style="font-size: 1.2rem;">Por que investir mensalmente?</h2>
-                    <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">O segredo da riqueza não é quanto você ganha, mas quanto você guarda e investe com consistência. O aporte mensal é a base da construção de patrimônio para o investidor comum.</p>
-                    <ul style="font-size: 0.85rem; color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
-                        <li>Cria o hábito da disciplina financeira, transformando a economia em uma prioridade.</li>
-                        <li>Aproveita o custo médio (DCA), reduzindo o impacto da volatilidade do mercado.</li>
-                        <li>Potencializa o efeito "bola de neve" dos juros compostos ao longo das décadas.</li>
-                        <li>Permite começar com valores baixos, democratizando o acesso aos investimentos.</li>
-                    </ul>
-                    <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 10px;">Como funciona a simulação?</h3>
-                    <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Nossa calculadora utiliza a fórmula de juros compostos aplicada a séries de pagamentos (anuidade). Ela considera que cada aporte mensal rende juros a partir do momento em que é depositado.</p>
-                    <p style="font-size: 0.85rem; color: var(--muted);">Matematicamente: <code>M = P * (1 + i)^n + PMT * [((1 + i)^n - 1) / i]</code>, onde PMT é o seu aporte mensal.</p>
-                </div>
-            </div>
+<div class="container">
+<header>
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</header>
+<main>
+<h1 class="page-title">Calculadora de Investimento Mensal</h1>
+<p class="page-subtitle">Veja como pequenos aportes mensais podem crescer ao longo do tempo</p>
+<div class="calculator-grid">
+<div class="calculator-card">
+<h2>📈 Simulação</h2>
+<form id="investForm">
+<div class="form-group">
+<label for="initial">Investimento Inicial (R$)</label>
+<input id="initial" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="monthly">Aporte Mensal (R$)</label>
+<input id="monthly" min="0" placeholder="200" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="rate">Taxa de Juros Mensal (%)</label>
+<input id="rate" min="0" placeholder="1" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label for="months">Tempo (Meses)</label>
+<input id="months" min="1" placeholder="60" required="" step="1" type="number"/>
+</div>
+<button class="btn-calculate" onclick="calculateInvest()" type="button">Calcular Patrimônio</button>
+</form>
+<div class="result-box" id="investResult">
+<div class="result-item">
+<span>Total Investido:</span>
+<span class="result-value" id="totalInvested">R$ 0,00</span>
+</div>
+<div class="result-item">
+<span>Juros Acumulados:</span>
+<span class="result-value" id="totalInterest">R$ 0,00</span>
+</div>
+<div class="result-item" style="border-bottom: 2px solid var(--primary);">
+<span style="font-weight: 800;">Patrimônio Final:</span>
+<span class="result-value" id="finalBalance" style="font-size: 1.2rem;">R$ 0,00</span>
+</div>
+</div>
+</div>
+<div class="calculator-card" style="background: rgba(34, 211, 189, 0.05);">
+<h2 style="font-size: 1.2rem;">Por que investir mensalmente?</h2>
+<p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 15px;">O segredo da riqueza não é quanto você ganha, mas quanto você guarda e investe com consistência. O aporte mensal é a base da construção de patrimônio para o investidor comum.</p>
+<ul style="font-size: 0.85rem; color: var(--muted); margin-left: 20px; margin-bottom: 20px;">
+<li>Cria o hábito da disciplina financeira, transformando a economia em uma prioridade.</li>
+<li>Aproveita o custo médio (DCA), reduzindo o impacto da volatilidade do mercado.</li>
+<li>Potencializa o efeito "bola de neve" dos juros compostos ao longo das décadas.</li>
+<li>Permite começar com valores baixos, democratizando o acesso aos investimentos.</li>
+</ul>
+<h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 10px;">Como funciona a simulação?</h3>
+<p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 10px;">Nossa calculadora utiliza a fórmula de juros compostos aplicada a séries de pagamentos (anuidade). Ela considera que cada aporte mensal rende juros a partir do momento em que é depositado.</p>
+<p style="font-size: 0.85rem; color: var(--muted);">Matematicamente: <code>M = P * (1 + i)^n + PMT * [((1 + i)^n - 1) / i]</code>, onde PMT é o seu aporte mensal.</p>
+</div>
+</div>
+<section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+<h2 style="color: var(--primary); margin-bottom: 20px;">Guia Completo: Como Acumular Patrimônio com Aportes Mensais</h2>
+<p style="margin-bottom: 15px;">Muitas pessoas acreditam que precisam de uma grande quantia de dinheiro para começar a investir. No entanto, a realidade do mercado financeiro mostra que a <strong>constância</strong> é muito mais importante do que o valor inicial. Ao realizar investimentos mensais, você utiliza o tempo a seu favor.</p>
+<h3 style="color: var(--text); margin: 20px 0 10px;">O Poder do Tempo e da Taxa de Juros</h3>
+<p style="margin-bottom: 15px;">Na nossa calculadora, você pode perceber que pequenos aumentos na taxa de juros ou no tempo de investimento geram resultados absurdamente diferentes no final. Isso acontece porque os juros compostos crescem de forma exponencial. No início, o crescimento parece lento, mas após 10 ou 20 anos, os juros ganhos mensalmente podem superar o valor do seu próprio aporte.</p>
+<h3 style="color: var(--text); margin: 20px 0 10px;">Estratégias para Manter a Constância</h3>
+<p style="margin-bottom: 15px;">Para garantir que você conseguirá investir todos os meses, recomendamos a estratégia do "pague-se primeiro". Assim que receber seu salário, separe a quantia destinada ao investimento antes mesmo de pagar as contas. Trate seu aporte mensal como uma conta obrigatória que você tem com o seu "eu do futuro".</p>
+<div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
+<h4 style="margin-bottom: 10px;">Perguntas Frequentes (FAQ)</h4>
+<ul style="list-style: none; font-size: 0.9rem;">
+<li style="margin-bottom: 15px;"><strong>Qual a melhor taxa de juros para simular?</strong> No Brasil, taxas entre 0,5% e 1,0% ao mês são comuns para investimentos de renda fixa e fundos imobiliários, mas lembre-se que rentabilidade passada não garante lucro futuro.</li>
+<li style="margin-bottom: 15px;"><strong>Devo considerar a inflação?</strong> Sim. Para saber o poder de compra real no futuro, você deve subtrair a inflação estimada da taxa de juros nominal.</li>
+<li><strong>Onde investir meus aportes mensais?</strong> Opções populares incluem Tesouro Direto, CDBs, Fundos Imobiliários (FIIs) e Ações de boas empresas.</li>
+</ul>
+</div>
+</section>
+<div class="affiliate-cta" style="margin: 20px 0; padding: 20px; background: rgba(34, 211, 189, 0.1); border-radius: 15px; border: 1px solid #22d3bd; text-align: center;"><p style="margin-bottom: 10px; font-weight: 700;">💡 Dica do Grana Hoje:</p><p>Aproveite as melhores condições com o <strong>CASATRADE - CORRETORA</strong>.</p><a href="https://casatrade.com.br/" rel="nofollow" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #22d3bd; color: #09111f; text-decoration: none; border-radius: 8px; font-weight: 800;" target="_blank">Conhecer Agora →</a></div></main></div>
 
-            <section class="info-section" style="margin-top: 40px; background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Guia Completo: Como Acumular Patrimônio com Aportes Mensais</h2>
-                <p style="margin-bottom: 15px;">Muitas pessoas acreditam que precisam de uma grande quantia de dinheiro para começar a investir. No entanto, a realidade do mercado financeiro mostra que a <strong>constância</strong> é muito mais importante do que o valor inicial. Ao realizar investimentos mensais, você utiliza o tempo a seu favor.</p>
-                
-                <h3 style="color: var(--text); margin: 20px 0 10px;">O Poder do Tempo e da Taxa de Juros</h3>
-                <p style="margin-bottom: 15px;">Na nossa calculadora, você pode perceber que pequenos aumentos na taxa de juros ou no tempo de investimento geram resultados absurdamente diferentes no final. Isso acontece porque os juros compostos crescem de forma exponencial. No início, o crescimento parece lento, mas após 10 ou 20 anos, os juros ganhos mensalmente podem superar o valor do seu próprio aporte.</p>
+<footer>
+<p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+</footer>
 
-                <h3 style="color: var(--text); margin: 20px 0 10px;">Estratégias para Manter a Constância</h3>
-                <p style="margin-bottom: 15px;">Para garantir que você conseguirá investir todos os meses, recomendamos a estratégia do "pague-se primeiro". Assim que receber seu salário, separe a quantia destinada ao investimento antes mesmo de pagar as contas. Trate seu aporte mensal como uma conta obrigatória que você tem com o seu "eu do futuro".</p>
-
-                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                    <h4 style="margin-bottom: 10px;">Perguntas Frequentes (FAQ)</h4>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        <li style="margin-bottom: 15px;"><strong>Qual a melhor taxa de juros para simular?</strong> No Brasil, taxas entre 0,5% e 1,0% ao mês são comuns para investimentos de renda fixa e fundos imobiliários, mas lembre-se que rentabilidade passada não garante lucro futuro.</li>
-                        <li style="margin-bottom: 15px;"><strong>Devo considerar a inflação?</strong> Sim. Para saber o poder de compra real no futuro, você deve subtrair a inflação estimada da taxa de juros nominal.</li>
-                        <li><strong>Onde investir meus aportes mensais?</strong> Opções populares incluem Tesouro Direto, CDBs, Fundos Imobiliários (FIIs) e Ações de boas empresas.</li>
-                    </ul>
-                </div>
-            </section>
-            </div>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
-        </footer>
-    </div>
-    <script>
+<script>
         function formatCurrency(value) {
             return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
         }

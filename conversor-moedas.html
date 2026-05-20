@@ -1,28 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+<script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-706NN8PEE7');
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09111f">
-    <title>Conversor de Moedas - Grana Hoje</title>
-    <meta name="description" content="Conversor de moedas em tempo real. Converta entre BRL, USD, EUR, GBP e outras moedas com cotações atualizadas.">
-    <meta name="keywords" content="conversor moedas, cotação dólar, euro, real, câmbio">
-    <meta name="author" content="Grana Hoje">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://granahoje.github.io/conversor-moedas.html">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#09111f" name="theme-color"/>
+<title>Conversor de Moedas - Grana Hoje</title>
+<meta content="Conversor de moedas em tempo real. Converta entre BRL, USD, EUR, GBP e outras moedas com cotações atualizadas." name="description"/>
+<meta content="conversor moedas, cotação dólar, euro, real, câmbio" name="keywords"/>
+<meta content="Grana Hoje" name="author"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://granahoje.github.io/conversor-moedas.html" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         :root {
             --bg: #09111f;
             --card: rgba(15, 27, 45, 0.82);
@@ -63,72 +64,72 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="/" class="logo">GRANA HOJE</a>
-            <nav class="nav-links">
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">Sobre</a>
-                <a href="/contact.html">Contato</a>
-            </nav>
-        </header>
-        <main>
-            <h1 class="page-title">Conversor de Moedas</h1>
-            <p class="page-subtitle">Converta entre moedas com cotações em tempo real</p>
-            <p id="rateStatus" style="color: var(--muted); font-size: 0.85rem; margin-bottom: 20px;">⏳ Carregando cotações...</p>
-            <div class="calculator-grid">
-                <div class="calculator-card">
-                    <h2>💱 Conversor</h2>
-                    <form id="currencyForm">
-                        <div class="form-group">
-                            <label for="amount">Valor</label>
-                            <input type="number" id="amount" placeholder="100" min="0" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label>De / Para</label>
-                            <div class="currency-pair">
-                                <select id="fromCurrency">
-                                    <option value="BRL">BRL - Real</option>
-                                    <option value="USD">USD - Dólar</option>
-                                    <option value="EUR">EUR - Euro</option>
-                                    <option value="GBP">GBP - Libra</option>
-                                    <option value="JPY">JPY - Iene</option>
-                                    <option value="AUD">AUD - Dólar Australiano</option>
-                                </select>
-                                <span style="color: var(--primary); font-weight: 700;">→</span>
-                                <select id="toCurrency">
-                                    <option value="USD">USD - Dólar</option>
-                                    <option value="BRL">BRL - Real</option>
-                                    <option value="EUR">EUR - Euro</option>
-                                    <option value="GBP">GBP - Libra</option>
-                                    <option value="JPY">JPY - Iene</option>
-                                    <option value="AUD">AUD - Dólar Australiano</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="button" class="btn-calculate" onclick="convertCurrency()">Converter</button>
-                    </form>
-                    <div class="result-box" id="currencyResult">
-                        <div class="result-item">
-                            <span id="fromLabel">100 BRL</span>
-                            <span class="result-value" id="resultFrom">100,00</span>
-                        </div>
-                        <div class="result-item" style="border-bottom: 2px solid var(--primary);">
-                            <span id="toLabel">USD</span>
-                            <span class="result-value" id="resultTo">20,00</span>
-                        </div>
-                        <div class="exchange-rate">
-                            <span id="exchangeRateText">Taxa: 1 BRL = 0,20 USD</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <p>© 2026 Grana Hoje. Conversor educacional de moedas.</p>
-        </footer>
-    </div>
-    <script>
+<div class="container">
+<header>
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</header>
+<main>
+<h1 class="page-title">Conversor de Moedas</h1>
+<p class="page-subtitle">Converta entre moedas com cotações em tempo real</p>
+<p id="rateStatus" style="color: var(--muted); font-size: 0.85rem; margin-bottom: 20px;">⏳ Carregando cotações...</p>
+<div class="calculator-grid">
+<div class="calculator-card">
+<h2>💱 Conversor</h2>
+<form id="currencyForm">
+<div class="form-group">
+<label for="amount">Valor</label>
+<input id="amount" min="0" placeholder="100" required="" step="0.01" type="number"/>
+</div>
+<div class="form-group">
+<label>De / Para</label>
+<div class="currency-pair">
+<select id="fromCurrency">
+<option value="BRL">BRL - Real</option>
+<option value="USD">USD - Dólar</option>
+<option value="EUR">EUR - Euro</option>
+<option value="GBP">GBP - Libra</option>
+<option value="JPY">JPY - Iene</option>
+<option value="AUD">AUD - Dólar Australiano</option>
+</select>
+<span style="color: var(--primary); font-weight: 700;">→</span>
+<select id="toCurrency">
+<option value="USD">USD - Dólar</option>
+<option value="BRL">BRL - Real</option>
+<option value="EUR">EUR - Euro</option>
+<option value="GBP">GBP - Libra</option>
+<option value="JPY">JPY - Iene</option>
+<option value="AUD">AUD - Dólar Australiano</option>
+</select>
+</div>
+</div>
+<button class="btn-calculate" onclick="convertCurrency()" type="button">Converter</button>
+</form>
+<div class="result-box" id="currencyResult">
+<div class="result-item">
+<span id="fromLabel">100 BRL</span>
+<span class="result-value" id="resultFrom">100,00</span>
+</div>
+<div class="result-item" style="border-bottom: 2px solid var(--primary);">
+<span id="toLabel">USD</span>
+<span class="result-value" id="resultTo">20,00</span>
+</div>
+<div class="exchange-rate">
+<span id="exchangeRateText">Taxa: 1 BRL = 0,20 USD</span>
+</div>
+</div>
+</div>
+</div>
+<div class="affiliate-cta" style="margin: 20px 0; padding: 20px; background: rgba(34, 211, 189, 0.1); border-radius: 15px; border: 1px solid #22d3bd; text-align: center;"><p style="margin-bottom: 10px; font-weight: 700;">💡 Dica do Grana Hoje:</p><p>Aproveite as melhores condições com o <strong>Remessa Online</strong>.</p><a href="https://www.remessaonline.com.br/" rel="nofollow" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #22d3bd; color: #09111f; text-decoration: none; border-radius: 8px; font-weight: 800;" target="_blank">Conhecer Agora →</a></div></main>
+<footer>
+<p>© 2026 Grana Hoje. Conversor educacional de moedas.</p>
+</footer>
+</div>
+<script>
         // Taxas de fallback (atualizadas manualmente)
         const fallbackRates = {
             'BRL': 1,
