@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ponto de Equilíbrio | Grana Hoje</title>
+<title>CDB vs Poupança | Grana Hoje</title>
 <style>
         :root { --primary:#22d3bd; --bg:#09111f; --bg-soft:#0f1b2d; --text:#f8fafc; --muted:#a8b3c7; }
         body { font-family:'Plus Jakarta Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; margin:0; }
@@ -29,28 +29,28 @@
 <body>
 <header style="background:rgba(9,17,31,0.8); backdrop-filter:blur(15px); border-bottom:1px solid rgba(255,255,255,0.05); padding:15px 0; position:sticky; top:0; z-index:100;">
 <div style="width:min(100%, 1200px); margin:0 auto; padding:0 20px; display:flex; justify-content:space-between; align-items:center;">
-<a href="/" style="color:var(--primary); text-decoration:none; font-weight:800; font-size:1.3rem;">GRANA HOJE</a>
+<a href="/index.html" style="color:var(--primary); text-decoration:none; font-weight:800; font-size:1.3rem;">GRANA HOJE</a>
 <a href="/blog.html" style="color:#fff; text-decoration:none; font-weight:700;">Blog</a>
 </div>
 </header>
 <main class="container">
 <div class="calc-card">
 <div class="header">
-<span style="font-size:3.5rem; display:block; margin-bottom:15px;">⚖️</span>
-<h1>Ponto de Equilíbrio</h1>
-<p>Saiba quanto sua empresa precisa vender para não ter prejuízo.</p>
+<span style="font-size:3.5rem; display:block; margin-bottom:15px;">🏦</span>
+<h1>CDB vs Poupança</h1>
+<p>Descubra qual investimento rende mais para o seu dinheiro hoje.</p>
 </div>
 <div class="input-group">
-<label>Custos Fixos Totais (R$)</label>
-<input id="fixos" placeholder="5000" type="number"/>
+<label>Valor a Investir (R$)</label>
+<input id="valor" placeholder="1000" type="number"/>
 </div>
 <div class="input-group">
-<label>Preço de Venda Unitário (R$)</label>
-<input id="preco" placeholder="100" type="number"/>
+<label>Taxa do CDB (% do CDI)</label>
+<input id="cdi_perc" placeholder="100" type="number"/>
 </div>
 <div class="input-group">
-<label>Custo Variável Unitário (R$)</label>
-<input id="variavel" placeholder="60" type="number"/>
+<label>Prazo (Meses)</label>
+<input id="meses" placeholder="12" type="number"/>
 </div>
 <button class="btn-calc" onclick="calcular()">Calcular Agora</button>
 <div class="result-box" id="resultBox">
@@ -60,60 +60,61 @@
 </div>
 <div class="explanation">
 <h2>Como funciona esta ferramenta?</h2>
-<p>O Ponto de Equilíbrio (Break-even Point) é o volume de vendas necessário para que a receita total seja igual aos custos totais. É o momento em que a empresa começa a ter lucro.</p>
+<p>Esta calculadora utiliza a taxa SELIC/CDI atual para projetar o rendimento de um CDB pós-fixado, descontando o Imposto de Renda regressivo e comparando com o rendimento fixo da poupança (0,5% ao mês + TR).</p>
 </div>
 </div>
 <div class="premium-affiliate-cta" style="
             margin: 40px 0;
-            padding: 35px;
-            background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);
-            border-left: 5px solid #22d3bd;
+            padding: 30px;
+            background: rgba(34, 211, 189, 0.05);
+            border: 2px dashed rgba(34, 211, 189, 0.3);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 30px;
+            text-align: center;
         ">
-<div style="font-size: 3rem; flex-shrink: 0;">💎</div>
-<div style="flex-grow: 1;">
-<h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
-<p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;">
-<strong style="color: #fff;">PicPay Empresas</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.
-                </p>
-<a href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" rel="nofollow" style="
-                    display: inline-block;
-                    padding: 12px 30px;
-                    background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
-                    color: #09111f;
-                    text-decoration: none;
-                    border-radius: 10px;
-                    font-weight: 900;
-                    font-size: 0.95rem;
-                    transition: all 0.3s;
-                    box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3);
-                    border: none;
-                    cursor: pointer;
-                " target="_blank">
-                    Acessar Agora →
-                </a>
-</div>
+<p style="margin: 0 0 20px; color: #22d3bd; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                ✅ Verificado e Recomendado
+            </p>
+<h4 style="margin: 0 0 15px; color: #fff; font-size: 1.4rem; font-weight: 900;">Remessa Online</h4>
+<p style="margin: 0 0 25px; color: #b6c2d2; font-size: 1rem;">
+                Confira esta oportunidade especial que nossos leitores aprovam.
+            </p>
+<a href="https://apretailer.com.br/click/6a0bab802bfa817b9272f8a2/187944/358980/subaccount" rel="nofollow" style="
+                display: inline-block;
+                padding: 14px 40px;
+                background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
+                color: #09111f;
+                text-decoration: none;
+                border-radius: 10px;
+                font-weight: 900;
+                font-size: 1rem;
+                transition: all 0.3s;
+                box-shadow: 0 10px 25px rgba(34, 211, 189, 0.3);
+                border: none;
+                cursor: pointer;
+            " target="_blank">
+                Começar Agora
+            </a>
 </div></main>
 <script>
         function calcular() {
             
-            const f = parseFloat(document.getElementById('fixos').value);
-            const p = parseFloat(document.getElementById('preco').value);
-            const v = parseFloat(document.getElementById('variavel').value);
+            const v = parseFloat(document.getElementById('valor').value);
+            const cdi = 0.1125; // CDI Atual 11.25%
+            const cdb_taxa = (parseFloat(document.getElementById('cdi_perc').value) / 100) * cdi;
+            const t = parseFloat(document.getElementById('meses').value);
             
-            const margem = p - v;
-            if(margem <= 0) {
-                alert("O preço de venda deve ser maior que o custo variável!");
-                return;
-            }
-            const pe = f / margem;
+            const rend_poup = v * (Math.pow(1 + 0.005, t) - 1);
+            const rend_cdb_bruto = v * (Math.pow(1 + (cdb_taxa/12), t) - 1);
+            let ir = 0.225;
+            if(t > 24) ir = 0.15;
+            else if(t > 12) ir = 0.175;
+            else if(t > 6) ir = 0.20;
             
-            document.getElementById('resultValue').innerText = Math.ceil(pe) + " Unidades";
-            document.getElementById('resultDetail').innerText = `Você precisa vender ${Math.ceil(pe)} unidades para cobrir seus custos fixos de R$ ${f.toFixed(2)}.`;
+            const rend_cdb_liquido = rend_cdb_bruto * (1 - ir);
+            const diff = rend_cdb_liquido - rend_poup;
+            
+            document.getElementById('resultValue').innerText = rend_cdb_liquido.toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+            document.getElementById('resultDetail').innerText = diff > 0 ? `O CDB rende R$ ${diff.toFixed(2)} a mais que a poupança.` : `Neste caso, a poupança é competitiva.`;
         
             document.getElementById('resultBox').style.display = 'block';
         }
