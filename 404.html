@@ -1,65 +1,133 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 - Página Não Encontrada | Grana Hoje</title>
-<meta content="Desculpe, a página que você está procurando não foi encontrada. Volte para a página inicial do Grana Hoje." name="description"/>
-<meta content="noindex, follow" name="robots"/>
-<!-- Google Fonts -->
-<!-- Favicon -->
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link rel="stylesheet" href="/css/style.css">
-<link href="https://granahoje.github.io/404.html" rel="canonical"/>
-<!-- Google tag (gtag.js) - Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-706NN8PEE7');
-    </script>
-<meta content="website" property="og:type"/><meta content="404 - Página Não Encontrada | Grana Hoje" property="og:title"/><meta content="Desculpe, a página que você está procurando não foi encontrada. Volte para a página inicial do Grana Hoje." property="og:description"/><meta content="https://granahoje.github.io/404.html" property="og:url"/><meta content="Grana Hoje" property="og:site_name"/><meta content="summary_large_image" property="twitter:card"/><meta content="404 - Página Não Encontrada | Grana Hoje" property="twitter:title"/><meta content="Desculpe, a página que você está procurando não foi encontrada. Volte para a página inicial do Grana Hoje." property="twitter:description"/></head>
+<meta name="description" content="Desculpe, a página que você está procurando não foi encontrada. Volte para a página inicial do Grana Hoje.">
+<meta name="robots" content="noindex, follow">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  background: #020b1f; 
+  color: #fff; 
+  font-family: Arial, sans-serif; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  padding: 20px;
+}
+.container {
+  text-align: center;
+  max-width: 600px;
+}
+.error-code {
+  font-size: 120px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #00ffd5, #00b7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  letter-spacing: 10px;
+}
+h1 {
+  font-size: 48px;
+  color: #b8fff3;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+p {
+  font-size: 18px;
+  color: #d6d6d6;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.card {
+  background: #132544;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  margin: 30px 0;
+}
+.card h3 {
+  color: #00ffd5;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.card ul {
+  list-style: none;
+  text-align: left;
+}
+.card li {
+  margin: 12px 0;
+}
+.card a {
+  color: #00ffd5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.card a:hover {
+  color: #00b7ff;
+}
+.btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #00ffd5, #00b7ff);
+  color: #001220;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 10px 10px;
+  box-shadow: 0 0 20px rgba(0,255,213,.35);
+  transition: all 0.3s;
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+footer {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: #8d8d8d;
+  font-size: 14px;
+}
+footer a {
+  color: #00ffd5;
+  text-decoration: none;
+}
+</style>
+</head>
 <body>
 
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
-<div class="error-code">404</div>
-<h1 class="error-title">Página Não Encontrada</h1>
-<p class="error-description">
-            Desculpe, a página que você está procurando não existe ou foi movida. Mas não se preocupe, estamos aqui para ajudar!
-        </p>
-<div class="error-card">
-<h3>O que você pode fazer?</h3>
-<ul>
-<li><a href="/">Voltar para a página inicial</a></li>
-<li><a href="/blog.html">Visitar nosso blog</a></li>
-<li><a href="/faq.html">Ver perguntas frequentes</a></li>
-<li><a href="/contact.html">Entrar em contato com suporte</a></li>
-<li><a href="/about.html">Conhecer mais sobre nós</a></li>
-</ul>
+<div class="container">
+  <div class="error-code">404</div>
+  
+  <h1>Página Não Encontrada</h1>
+  
+  <p>Desculpe, a página que você está procurando não existe ou foi movida. Mas não se preocupe, estamos aqui para ajudar!</p>
+  
+  <div class="card">
+    <h3>O que você pode fazer?</h3>
+    <ul>
+      <li><a href="/">→ Voltar para a página inicial</a></li>
+      <li><a href="/blog.html">→ Visitar nosso blog</a></li>
+      <li><a href="/about.html">→ Conhecer mais sobre nós</a></li>
+      <li><a href="/">→ Contatar suporte</a></li>
+    </ul>
+  </div>
+  
+  <div>
+    <a href="/" class="btn">🏠 Ir para Home</a>
+    <a href="/blog.html" class="btn">📚 Acessar Blog</a>
+  </div>
+  
+  <footer>
+    <p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
+  </footer>
 </div>
-<div class="button-group">
-<a class="btn btn-primary" href="/">Ir para Home</a>
-<a class="btn btn-secondary" href="/contact.html">Contatar Suporte</a>
-</div>
-<div class="footer-404">
-<p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
-<p style="margin-top: 10px;">
-<a href="/privacy-policy.html">Privacidade</a> • 
-                <a href="/terms-of-service.html">Termos</a> • 
-                <a href="/disclaimer.html">Aviso Legal</a>
-</p>
-</div>
-</div>
-<!-- Botão Estratégico de Retorno -->
-<a href="/" style="pointer-events: auto; display: inline-block; width: 90%; max-width: 380px; background: linear-gradient(135deg, #ff4e50, #f9d423); color: #000; text-align: center; padding: 15px 10px; border-radius: 15px; text-decoration: none; font-weight: 800; font-size: 1rem; } border: 2px solid #fff; } white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-    </a>
-</div>
-<link rel="stylesheet" href="/css/style.css">
-<a href="https://llovers.com.br/institucional?ref=T105566450B" rel="nofollow" style="display: none;">Leadlovers - Mais Vendas, Menos Esforço</a>
 
 </body>
 </html>
