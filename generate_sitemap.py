@@ -39,6 +39,19 @@ def generate_sitemap():
         'calculadora-taxa-real.html',
         'calculadora-valor-futuro.html',
         'calculadora-valor-presente.html',
+        'calculadora-financiamento.html',
+        'calculadora-desconto.html',
+        'calculadora-dividend-yield.html',
+        'calculadora-investimento-mensal.html',
+        'calculadora-juros-simples.html',
+        'calculadora-ponto-equilibrio.html',
+        'calculadora-rescisao.html',
+        'calculadora-reserva-emergencia.html',
+        'calculadora-roi.html',
+        'calculadora-salario-liquido.html',
+        'calculadora-cdb-poupanca.html',
+        'conversor-moedas.html',
+        'ferramentas.html',
     ]
     
     # Coletar todos os artigos
