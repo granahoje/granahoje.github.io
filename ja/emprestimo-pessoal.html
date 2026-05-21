@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Simulador de Empréstimo Pessoal — Descubra o Valor Real das Parcelas - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <!-- SEO and Meta Tags -->
+    <meta name="description" content="Ferramenta completa de emprestimo-pessoal para resultados instantâneos e planejamento financeiro.">
+    <meta property="og:title" content="Simulador de Empréstimo Pessoal — Descubra o Valor Real das Parcelas">
+    <meta property="og:description" content="Ferramenta completa de emprestimo-pessoal para resultados instantâneos e planejamento financeiro.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Simulador de Empréstimo Pessoal — Descubra o Valor Real das Parcelas",
+      "url": "https://granahoje.github.io/ja/emprestimo-pessoal.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/emprestimo-pessoal.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                    <option value="">🌐 Idioma</option>
+                    <option value="">🇧🇷 PT-BR</option>
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="zh">🇨🇳 ZH</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="hi">🇮🇳 HI</option>
+                    <option value="ja">🇯🇵 JA</option>
+                    <option value="bn">🇧🇩 BN</option>
+                    <option value="pt-pt">🇵🇹 PT-PT</option>
+                </select>
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Simulador de Empréstimo Pessoal — Descubra o Valor Real das Parcelas</h1>
+            <p class="page-subtitle">Visualize seus dados financeiros com precisão.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="loanForm">
+                    <div class="form-group">
+                        <label for="loanAmount">Valor do Empréstimo (R$)</label>
+                        <input id="loanAmount" min="0" placeholder="5000" required="" step="0.01" type="number"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanRate">Taxa de Juros (% a.m.)</label>
+                        <input id="loanRate" min="0" placeholder="2.5" required="" step="0.01" type="number"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanMonths">Prazo (Meses)</label>
+                        <input id="loanMonths" min="1" placeholder="12" required="" type="number"/>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateLoan()" type="button">Simular</button>
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Valor da Parcela Mensal</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                    <div id="extraResults" style="margin-top: 15px; color: #94a3b8; font-size: 0.9rem;">
+                        <p>Total a Pagar: <span id="totalToPay">R$ 0,00</span></p>
+                        <p>Custo Total de Juros: <span id="totalLoanInterest">R$ 0,00</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;">Antes de contratar um empréstimo, compare taxas e encontre opções com juros mais baixos.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa8138fd378852/183012/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Comparar Taxas →</a>
+            </div>
+        </div>
+
+        <section class="info-content">
+            <div class="info-card">
+                <h3>Guia Completo: Emprestimo Pessoal</h3><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+                function calculateLoan() {
+                    const amount = parseFloat(document.getElementById('loanAmount').value) || 0;
+                    const rate = (parseFloat(document.getElementById('loanRate').value) / 100);
+                    const months = parseInt(document.getElementById('loanMonths').value) || 0;
+                    
+                    if (amount <= 0 || rate <= 0 || months <= 0) return;
+
+                    const installment = (amount * rate) / (1 - Math.pow(1 + rate, -months));
+                    const total = installment * months;
+                    const interest = total - amount;
+
+                    document.getElementById('resultValue').textContent = installment.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                    document.getElementById('totalToPay').textContent = total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                    document.getElementById('totalLoanInterest').textContent = interest.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+                    
+                    document.getElementById('resultBox').classList.add('active');
+                }
+            
+    </script>
+</body>
+</html>

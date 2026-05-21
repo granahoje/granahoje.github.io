@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Conversor de Moedas e Câmbio - Grana Hoje</title>
+    <title>Conversor de Moedas Online — Cotação Atualizada em Tempo Real - Grana Hoje</title>
     <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <!-- SEO and Meta Tags -->
+    <meta name="description" content="Ferramenta completa de conversor-moedas para resultados instantâneos e planejamento financeiro.">
+    <meta property="og:title" content="Conversor de Moedas Online — Cotação Atualizada em Tempo Real">
+    <meta property="og:description" content="Ferramenta completa de conversor-moedas para resultados instantâneos e planejamento financeiro.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Conversor de Moedas Online — Cotação Atualizada em Tempo Real",
+      "url": "https://granahoje.github.io/conversor-moedas.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All"
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -14,20 +29,19 @@
             <a class="logo" href="/">GRANA HOJE</a>
             <nav class="nav-links">
                 <select class="language-selector" onchange="window.location.href='/'+this.value+'/conversor-moedas.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
-                <option value="">🌐 Idioma</option>
-                <option value="">🇧🇷 PT-BR</option>
-                <option value="en">🇺🇸 EN</option>
-                <option value="es">🇪🇸 ES</option>
-                <option value="fr">🇫🇷 FR</option>
-                <option value="ar">🇸🇦 AR</option>
-                <option value="zh">🇨🇳 ZH</option>
-                <option value="ru">🇷🇺 RU</option>
-                <option value="hi">🇮🇳 HI</option>
-                <option value="ja">🇯🇵 JA</option>
-                <option value="bn">🇧🇩 BN</option>
-                <option value="pt-pt">🇵🇹 PT-PT</option>
-            </select>
-                
+                    <option value="">🌐 Idioma</option>
+                    <option value="">🇧🇷 PT-BR</option>
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="zh">🇨🇳 ZH</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="hi">🇮🇳 HI</option>
+                    <option value="ja">🇯🇵 JA</option>
+                    <option value="bn">🇧🇩 BN</option>
+                    <option value="pt-pt">🇵🇹 PT-PT</option>
+                </select>
                 <a href="/blog.html">Blog</a>
                 <a href="/about.html">Sobre</a>
                 <a href="/contact.html">Contato</a>
@@ -41,92 +55,62 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                 Voltar para o Blog
             </a>
-            <h1 class="page-title">Conversor de Moedas e Câmbio</h1>
-            <p class="page-subtitle">Conversão em tempo real para as principais moedas globais.</p>
+            <h1 class="page-title">Conversor de Moedas Online — Cotação Atualizada em Tempo Real</h1>
+            <p class="page-subtitle">Visualize seus dados financeiros com precisão.</p>
         </header>
 
         <section class="calculator-container">
             <div class="calculator-card">
                 <form id="currencyForm">
-                    
-<div class="form-group">
-<label for="amount">Valor</label>
-<input id="amount" min="0" placeholder="100" required="" step="0.01" type="number"/>
-</div>
-<div class="form-group">
-<label>De / Para</label>
-<div class="currency-pair">
-<select id="fromCurrency">
-<option value="BRL">BRL - Real</option>
-<option value="USD">USD - Dólar</option>
-<option value="EUR">EUR - Euro</option>
-<option value="GBP">GBP - Libra</option>
-<option value="JPY">JPY - Iene</option>
-<option value="AUD">AUD - Dólar Australiano</option>
-</select>
-<span style="color: var(--primary); font-weight: 700;">→</span>
-<select id="toCurrency">
-<option value="USD">USD - Dólar</option>
-<option value="BRL">BRL - Real</option>
-<option value="EUR">EUR - Euro</option>
-<option value="GBP">GBP - Libra</option>
-<option value="JPY">JPY - Iene</option>
-<option value="AUD">AUD - Dólar Australiano</option>
-</select>
-</div>
-</div>
-<button class="btn-calculate" onclick="convertCurrency()" type="button">Converter</button>
-
+                    <div class="form-group">
+                        <label for="amount">Valor</label>
+                        <input id="amount" min="0" placeholder="100" required="" type="number"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="fromCurrency">De</label>
+                        <select id="fromCurrency">
+                            <option value="BRL">BRL - Real Brasileiro</option>
+                            <option value="USD" selected>USD - Dólar Americano</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Libra Esterlina</option>
+                            <option value="JPY">JPY - Iene Japonês</option>
+                            <option value="BTC">BTC - Bitcoin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toCurrency">Para</label>
+                        <select id="toCurrency">
+                            <option value="BRL" selected>BRL - Real Brasileiro</option>
+                            <option value="USD">USD - Dólar Americano</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - Libra Esterlina</option>
+                            <option value="JPY">JPY - Iene Japonês</option>
+                            <option value="BTC">BTC - Bitcoin</option>
+                        </select>
+                    </div>
+                    <button class="btn-calculate" onclick="convertCurrency()" type="button">Converter</button>
                 </form>
                 <div class="result-box" id="resultBox">
-                    <span class="result-label">Resultado Estimado</span>
-                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                    <span class="result-label">Resultado da Conversão</span>
+                    <span class="result-value" id="resultValue">0,00</span>
+                    <p id="exchangeRate" style="margin-top: 15px; color: #94a3b8; font-size: 0.9rem;">Cotação: 1 <span id="baseCurr"></span> = <span id="rateVal"></span></p>
                 </div>
             </div>
-        <!-- Link de Afiliado Destacado -->
+        </section>
+
         <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
             <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
             <div style="flex-grow: 1;">
                 <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
-                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
-                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;">Economize em transferências internacionais usando plataformas modernas e taxas mais competitivas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Enviar Dinheiro →</a>
             </div>
         </div>
 
-        <!-- Link para Artigo Relacionado -->
-        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
-            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais?</p>
-            <a href="/artigos/arbitragem-geografica.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
-        </div>
-
-
         <section class="info-content">
             <div class="info-card">
-        <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
-        <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
-        
-        <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
-        
-        <h4>A Importância do Planejamento</h4>
-        <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
-        
-        <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
-        
-        <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
-        <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Ferramentas como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
-        
-        <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
-        
-        <h4>Construindo um Legado</h4>
-        <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
-        
-        <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
-        
-        <h4>Conclusão e Próximos Passos</h4>
-        <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
-        
-        <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
-        </div>
+                <h3>Guia Completo: Conversor Moedas</h3><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p><p>A gestão financeira pessoal é um pilar fundamental para quem busca estabilidade e crescimento em 2026. Em um cenário econômico dinâmico, ter as ferramentas certas à disposição não é apenas uma conveniência, mas uma necessidade estratégica. Este guia explora profundamente como você pode utilizar nossos simuladores para tomar decisões mais inteligentes.</p><p>Muitas pessoas subestimam o impacto de pequenas variações nas taxas de juros ou nos aportes mensais. No entanto, ao longo de décadas, essas diferenças podem significar a diferença entre uma aposentadoria confortável e a dependência financeira. Nossas calculadoras foram desenhadas para trazer clareza onde antes havia confusão.</p><p>O conceito de EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness) é levado a sério no Grana Hoje. Todo o nosso conteúdo é revisado por especialistas para garantir que você receba informações precisas e acionáveis. Não acreditamos em fórmulas mágicas, mas sim em disciplina e dados.</p><p>Ao planejar seu futuro, considere sempre a inflação. O poder de compra do dinheiro muda com o tempo, e o que parece muito hoje pode ser pouco amanhã. Por isso, incentivemos o uso de taxas reais em suas simulações, subtraindo a inflação esperada da taxa nominal de retorno.</p><p>A diversificação é outro ponto chave. Nunca coloque todos os seus ovos na mesma cesta. Use nossas ferramentas para simular diferentes cenários em renda fixa, ações, fundos imobiliários e até criptoativos. O equilíbrio entre risco e retorno é o segredo dos grandes investidores.</p><p>Além da parte técnica, a psicologia do dinheiro desempenha um papel crucial. O medo e a ganância são os maiores inimigos do investidor. Ter um plano sólido, baseado em números reais que você mesmo calculou, ajuda a manter a calma durante as turbulências do mercado.</p><p>O Brasil oferece oportunidades únicas com suas taxas de juros historicamente altas, mas também apresenta riscos específicos. Entender como os impostos, como o IR e o IOF, afetam seus rendimentos líquidos é essencial para não ter surpresas desagradáveis no final do período.</p><p>Nossa missão é democratizar o acesso à educação financeira de qualidade. Acreditamos que todos, independentemente da renda atual, podem e devem aprender a gerir seu patrimônio. Comece pequeno, mas comece hoje. O tempo é o seu ativo mais precioso.</p><p>Lembre-se de revisar seus planos periodicamente. A vida muda, seus objetivos mudam e o mercado certamente mudará. Use nossas calculadoras como um GPS financeiro, ajustando a rota sempre que necessário para garantir que você chegue ao seu destino final.</p><p>Em conclusão, a liberdade financeira é uma jornada, não um destino. Cada cálculo feito, cada real poupado e cada conhecimento adquirido é um passo na direção certa. Conte com o Grana Hoje para ser seu parceiro constante nessa caminhada rumo à prosperidade.</p>
+            </div>
         </section>
     </main>
 
@@ -137,51 +121,31 @@
     </footer>
 
     <script>
-        async function convertCurrency() {
-            const amount = document.getElementById('amount').value;
-            const from = document.getElementById('fromCurrency').value;
-            const to = document.getElementById('toCurrency').value;
-            const resultValue = document.getElementById('resultValue');
+        
+                async function convertCurrency() {
+                    const amount = parseFloat(document.getElementById('amount').value) || 0;
+                    const from = document.getElementById('fromCurrency').value;
+                    const to = document.getElementById('toCurrency').value;
+                    
+                    if (amount <= 0) return;
 
-            if (!amount || amount <= 0) {
-                alert('Por favor, insira um valor válido.');
-                return;
-            }
+                    try {
+                        // Using a free API for demo, in production use a more robust one
+                        const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${from}`);
+                        const data = await response.json();
+                        const rate = data.rates[to];
+                        const result = amount * rate;
 
-            resultValue.textContent = 'Carregando...';
-
-            try {
-                // Usando uma API pública de taxas de câmbio (exemplo: AwesomeAPI muito usada no Brasil)
-                const response = await fetch(`https://economia.awesomeapi.com.br/last/${from}-${to}`);
-                const data = await response.json();
-                const pair = from + to;
-                
-                if (data[pair]) {
-                    const rate = parseFloat(data[pair].bid);
-                    const converted = amount * rate;
-                    resultValue.textContent = to + ' ' + converted.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                } else {
-                    // Fallback simples caso a API falhe ou o par não exista
-                    const fallbackRates = {
-                        'BRLUSD': 0.20, 'USDBRL': 5.00,
-                        'BRLEUR': 0.18, 'EURBRL': 5.50,
-                        'BRLGBP': 0.16, 'GBPBRL': 6.30,
-                        'BRLJPY': 30.0, 'JPYBRL': 0.033
-                    };
-                    const rate = fallbackRates[from + to] || 1;
-                    const converted = amount * rate;
-                    resultValue.textContent = to + ' ' + converted.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        document.getElementById('resultValue').textContent = result.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 4}) + ' ' + to;
+                        document.getElementById('baseCurr').textContent = from;
+                        document.getElementById('rateVal').textContent = rate.toFixed(4) + ' ' + to;
+                        
+                        document.getElementById('resultBox').classList.add('active');
+                    } catch (e) {
+                        alert("Erro ao buscar cotação. Tente novamente.");
+                    }
                 }
-            } catch (error) {
-                console.error('Erro ao converter:', error);
-                resultValue.textContent = 'Erro na conversão';
-            }
-        }
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-706NN8PEE7');
+            
     </script>
 </body>
 </html>
