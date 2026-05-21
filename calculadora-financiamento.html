@@ -3,175 +3,674 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Simulador de Financiamento Imobiliário e Veicular - Grana Hoje</title>
+    <title id="meta-title">Simulador de Financiamento Imobiliário e Veicular - Grana Hoje</title>
+    <meta name="description" id="meta-desc" content="Calcule mensalidades de imóveis, veículos e outros financiamentos. Simulador gratuito com tabelas SAC e Price."/>
     <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
     <style>
-        /* Ajustes específicos para esta página */
-        main {
-            padding-top: 20px;
+        :root {
+            --primary: #22d3bd;
+            --bg: #09111f;
+            --card: #0f1e35;
+            --border: rgba(255,255,255,0.07);
+            --muted: #8899b0;
+            --radius-md: 16px;
         }
 
-        .page-header {
-            padding: 30px 0 20px;
-            margin-bottom: 0;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: #f0f4f8;
+            min-height: 100vh;
         }
+
+        header {
+            background: rgba(9,17,31,0.95);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 16px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        .language-selector {
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.08);
+            color: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        main { padding: 30px 20px 60px; max-width: 1100px; margin: 0 auto; }
+
+        .page-header { padding: 30px 0 20px; }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--primary); }
 
         .page-title {
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
-            margin-bottom: 12px;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .page-subtitle {
+            color: var(--muted);
             font-size: 1rem;
-            margin-bottom: 0;
+            line-height: 1.6;
         }
 
-        .calculator-container {
-            margin-top: 30px;
-            margin-bottom: 40px;
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin: 30px 0 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0;
+        }
+
+        .tab-btn {
+            padding: 10px 24px;
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+            transition: all 0.2s;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background: rgba(34,211,189,0.05);
+        }
+
+        /* CALCULATOR CARD */
+        .calculator-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-bottom: 24px;
         }
 
         .form-group-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
+            margin-bottom: 16px;
         }
 
-        @media (max-width: 600px) {
-            .form-group-row {
-                grid-template-columns: 1fr;
-            }
+        .form-group { display: flex; flex-direction: column; gap: 8px; }
 
-            .page-header {
-                padding: 20px 0 15px;
-            }
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-            .page-title {
-                font-size: 1.5rem;
-            }
+        .form-group input, .form-group select {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
 
-            .page-subtitle {
-                font-size: 0.95rem;
-            }
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary);
+        }
+
+        .form-group select option { background: #0f1e35; }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
+            color: #09111f;
+            border: none;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34,211,189,0.35);
+        }
+
+        /* RESULTS */
+        .result-box {
+            background: linear-gradient(135deg, rgba(34,211,189,0.08) 0%, rgba(16,185,129,0.04) 100%);
+            border: 1px solid rgba(34,211,189,0.25);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .result-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            display: block;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .result-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .result-detail-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .result-detail-item .label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .result-detail-item .value {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* AMORTIZATION TABLE */
+        .amort-table-wrapper {
+            overflow-x: auto;
+            margin-top: 24px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .amort-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .amort-table th {
+            background: rgba(34,211,189,0.08);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 16px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .amort-table th:first-child { text-align: center; }
+
+        .amort-table td {
+            padding: 11px 16px;
+            text-align: right;
+            border-top: 1px solid var(--border);
+            color: #e0e8f0;
+            font-weight: 500;
+        }
+
+        .amort-table td:first-child { text-align: center; color: var(--muted); }
+
+        .amort-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+        .table-note {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.82rem;
+            padding: 12px;
+            background: var(--card);
+            border-top: 1px solid var(--border);
+        }
+
+        /* AFFILIATES */
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .affiliate-card {
+            padding: 28px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .affiliate-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .affiliate-card.bv {
+            background: linear-gradient(135deg, rgba(0,90,200,0.15) 0%, rgba(0,50,120,0.08) 100%);
+            border-color: rgba(0,120,255,0.25);
+        }
+
+        .affiliate-card.bv:hover {
+            box-shadow: 0 12px 35px rgba(0,90,200,0.25);
+            border-color: rgba(0,120,255,0.5);
+        }
+
+        .affiliate-card.juros {
+            background: linear-gradient(135deg, rgba(34,211,189,0.12) 0%, rgba(16,185,129,0.06) 100%);
+            border-color: rgba(34,211,189,0.2);
+        }
+
+        .affiliate-card.juros:hover {
+            box-shadow: 0 12px 35px rgba(34,211,189,0.2);
+            border-color: rgba(34,211,189,0.45);
+        }
+
+        .affiliate-icon { font-size: 2.2rem; }
+
+        .affiliate-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(34,211,189,0.15);
+            color: var(--primary);
+            width: fit-content;
+        }
+
+        .affiliate-card h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .affiliate-card p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .affiliate-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            transition: gap 0.2s;
+        }
+
+        .affiliate-card:hover .affiliate-cta { gap: 12px; }
+
+        /* INFO CONTENT */
+        .info-content {
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 40px;
+        }
+
+        .info-card h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .info-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 28px 0 12px;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        .info-card ul li {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .info-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-q {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            user-select: none;
+        }
+
+        .faq-q span { color: var(--primary); font-size: 1.2rem; transition: transform 0.3s; }
+        .faq-item.open .faq-q span { transform: rotate(45deg); }
+
+        .faq-a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s;
+        }
+
+        .faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
+
+        footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            .form-group-row { grid-template-columns: 1fr; }
+            .result-details { grid-template-columns: 1fr 1fr; }
+            .affiliate-grid { grid-template-columns: 1fr; }
+            .calculator-card { padding: 20px; }
+            .info-card { padding: 24px; }
+            .tabs { overflow-x: auto; padding-bottom: 4px; }
+            .tab-btn { white-space: nowrap; padding: 10px 16px; font-size: 0.85rem; }
+        }
+
+        @media (max-width: 400px) {
+            .result-details { grid-template-columns: 1fr; }
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="container header-inner">
+        <div class="header-inner">
             <a class="logo" href="/">GRANA HOJE</a>
             <nav class="nav-links">
-                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-financiamento.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
-                <option value="">🌐 Idioma</option>
-                <option value="">🇧🇷 PT-BR</option>
-                <option value="en">🇺🇸 EN</option>
-                <option value="es">🇪🇸 ES</option>
-                <option value="fr">🇫🇷 FR</option>
-                <option value="ar">🇸🇦 AR</option>
-                <option value="zh">🇨🇳 ZH</option>
-                <option value="ru">🇷🇺 RU</option>
-                <option value="hi">🇮🇳 HI</option>
-                <option value="ja">🇯🇵 JA</option>
-                <option value="bn">🇧🇩 BN</option>
-                <option value="pt-pt">🇵🇹 PT-PT</option>
-            </select>
-                
-                <a href="/blog.html">Blog</a>
-                <a href="/about.html">Sobre</a>
-                <a href="/contact.html">Contato</a>
+                <select class="language-selector" onchange="changeLanguage(this.value)" aria-label="Idioma">
+                    <option value="pt-BR">🇧🇷 PT-BR</option>
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="ar">🇸🇦 AR</option>
+                    <option value="zh">🇨🇳 ZH</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="hi">🇮🇳 HI</option>
+                    <option value="ja">🇯🇵 JA</option>
+                    <option value="bn">🇧🇩 BN</option>
+                    <option value="pt-PT">🇵🇹 PT-PT</option>
+                </select>
+                <a href="/blog.html" id="nav-blog">Blog</a>
+                <a href="/about.html" id="nav-about">Sobre</a>
+                <a href="/contact.html" id="nav-contact">Contato</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <header class="page-header">
-            <a href="/blog.html" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Voltar para o Blog
+    <main>
+        <div class="page-header">
+            <a href="/ferramentas.html" class="back-link" id="back-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <span id="back-text">Ferramentas</span>
             </a>
-            <h1 class="page-title">Simulador de Financiamento</h1>
-            <p class="page-subtitle">Calcule mensalidades de imóveis, veículos e outros financiamentos.</p>
-        </header>
+            <h1 class="page-title" id="page-title">Simulador de Financiamento</h1>
+            <p class="page-subtitle" id="page-subtitle">Calcule mensalidades de imóveis, veículos e outros financiamentos com tabelas SAC e Price.</p>
+        </div>
 
-        <section class="calculator-container">
-            <div class="calculator-card">
-                <form id="financingForm">
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="valor">Valor do Imóvel/Veículo (R$)</label>
-                            <input id="valor" min="0" placeholder="300000" required="" step="0.01" type="number" value="300000"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="entrada">Entrada (R$)</label>
-                            <input id="entrada" min="0" placeholder="60000" required="" step="0.01" type="number" value="60000"/>
-                        </div>
-                    </div>
+        <!-- TABS -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="setTab('price')" id="tab-price">Tabela Price</button>
+            <button class="tab-btn" onclick="setTab('sac')" id="tab-sac">Tabela SAC</button>
+        </div>
 
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <label for="taxa">Taxa de Juros Anual (%)</label>
-                            <input id="taxa" min="0" placeholder="8.5" required="" step="0.01" type="number" value="8.5"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="anos">Período (Anos)</label>
-                            <input id="anos" min="1" max="40" placeholder="30" required="" step="1" type="number" value="30"/>
-                        </div>
-                    </div>
-
-                    <button class="btn-calculate" onclick="calcularFinanciamento()" type="button">Calcular Mensalidade</button>
-                </form>
-
-                <div class="result-box" id="resultBox">
-                    <span class="result-label">Mensalidade Estimada</span>
-                    <span class="result-value" id="resultValue">R$ 1.520,06</span>
-                    <div id="detalhesResultado" style="margin-top: 16px; text-align: left; font-size: 0.9rem; color: var(--muted);"></div>
+        <!-- CALCULATOR -->
+        <div class="calculator-card">
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label id="label-valor">Valor do Bem (R$)</label>
+                    <input id="valor" type="number" min="0" step="0.01" value="300000" placeholder="300000"/>
+                </div>
+                <div class="form-group">
+                    <label id="label-entrada">Entrada (R$)</label>
+                    <input id="entrada" type="number" min="0" step="0.01" value="60000" placeholder="60000"/>
                 </div>
             </div>
-        <!-- Link de Afiliado Destacado -->
-        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
-            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
-            <div style="flex-grow: 1;">
-                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
-                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
-                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label id="label-taxa">Taxa de Juros Anual (%)</label>
+                    <input id="taxa" type="number" min="0" step="0.01" value="8.5" placeholder="8.5"/>
+                </div>
+                <div class="form-group">
+                    <label id="label-anos">Prazo (Anos)</label>
+                    <input id="anos" type="number" min="1" max="40" step="1" value="30" placeholder="30"/>
+                </div>
+            </div>
+            <button class="btn-calculate" onclick="calcular()" id="btn-calc">Calcular Mensalidade</button>
+
+            <div class="result-box" id="result-box" style="display:none;">
+                <span class="result-label" id="result-label">Parcela Mensal</span>
+                <span class="result-value" id="result-value">R$ 0,00</span>
+                <div class="result-details" id="result-details"></div>
             </div>
         </div>
 
-        <!-- Link para Artigo Relacionado -->
-        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
-            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais?</p>
-            <a href="/artigos/economizar-casa-propria-baixa-renda-2025.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        <!-- AMORTIZATION TABLE -->
+        <div id="amort-section" style="display:none;">
+            <div class="amort-table-wrapper">
+                <table class="amort-table" id="amort-table"></table>
+                <div class="table-note" id="table-note">Exibindo primeiros 24 meses</div>
+            </div>
         </div>
 
+        <!-- AFFILIATES -->
+        <div class="affiliate-grid" style="margin-top: 44px;">
+            <a href="https://apretailer.com.br/click/6a0bab802bfa817b7f1a79b2/188286/358980/subaccount" rel="nofollow" target="_blank" class="affiliate-card bv">
+                <div class="affiliate-icon">🚗</div>
+                <span class="affiliate-badge" id="aff-badge1">Parceiro Recomendado</span>
+                <h4 id="aff-title1">Banco BV — Crédito com Garantia Veicular</h4>
+                <p id="aff-desc1">Use seu veículo como garantia e consiga taxas menores para quitar dívidas ou realizar projetos. Simulação rápida, sem burocracia.</p>
+                <span class="affiliate-cta" id="aff-cta1">Simular agora →</span>
+            </a>
+            <a href="https://apretailer.com.br/click/6a0bab802bfa8138fd378852/183012/358980/subaccount" rel="nofollow" target="_blank" class="affiliate-card juros">
+                <div class="affiliate-icon">💸</div>
+                <span class="affiliate-badge" id="aff-badge2">Taxa Competitiva</span>
+                <h4 id="aff-title2">Juros Baixos — Compare e Economize</h4>
+                <p id="aff-desc2">Encontre as melhores taxas de empréstimo do mercado em um só lugar. Compare ofertas e escolha a que mais cabe no seu bolso.</p>
+                <span class="affiliate-cta" id="aff-cta2">Comparar taxas →</span>
+            </a>
+        </div>
 
+        <!-- INFO CONTENT -->
         <section class="info-content">
             <div class="info-card">
-                <h3>Dominando Suas Finanças: Um Guia Humano para 2026</h3>
-                <p>Vivemos em uma era de excesso de informação, mas falta de clareza. Quando o assunto é dinheiro, parece que todo mundo tem uma fórmula mágica para o sucesso rápido. Mas a verdade é que a saúde financeira não se constrói com truques, mas com hábitos sólidos e ferramentas certas. No Grana Hoje, acreditamos que qualquer pessoa, independentemente de quanto ganha, pode melhorar sua relação com o dinheiro se tiver acesso a informações honestas e ferramentas fáceis de usar.</p>
-                
-                <p>Esta ferramenta que você está usando foi desenhada para ser sua aliada. Ela remove a complexidade dos cálculos e te entrega a realidade nua e crua. Mas os números por si só não mudam vidas; o que muda vidas é o que você faz com esses números. Entender seu fluxo de caixa, o impacto de uma dívida ou o potencial de um investimento é o primeiro passo para sair do modo de sobrevivência e entrar no modo de construção.</p>
-                
-                <h4>A Importância do Planejamento</h4>
-                <p>Planejar não é sobre restringir sua vida, é sobre dar liberdade para o seu futuro. Quando você sabe exatamente para onde seu dinheiro está indo, você para de se perguntar para onde ele foi. No cenário econômico de 2026, com novas formas de pagamento, moedas digitais e inteligência artificial influenciando o mercado, estar no controle nunca foi tão vital. O planejamento financeiro permite que você durma tranquilo, sabendo que tem uma reserva para emergências e um plano para seus sonhos.</p>
-                
-                <p>Muitas pessoas sentem medo de olhar para suas finanças. Elas evitam abrir o extrato bancário ou somar as faturas do cartão. Mas o medo é alimentado pela incerteza. Assim que você coloca tudo no papel (ou em uma ferramenta digital), o problema deixa de ser um monstro gigante e se torna um desafio gerenciável. Você começa a ver que pode cortar aqui, otimizar ali e, aos poucos, retomar as rédeas da sua vida.</p>
-                
-                <h4>O Papel da Tecnologia nas Finanças Pessoais</h4>
-                <p>A tecnologia deve trabalhar para você, e não o contrário. Hoje temos aplicativos que fazem quase tudo sozinhos, mas eles não substituem a sua tomada de decisão. Use a tecnologia para automatizar o que for chato, como o pagamento de contas ou a transferência para a poupança, mas mantenha-se presente nas decisões estratégicas. Ferramentas como esta calculadora são pontes entre a sua situação atual e o seu objetivo final.</p>
-                
-                <p>No Grana Hoje, buscamos sempre o equilíbrio entre o moderno e o humano. Não queremos ser apenas mais um site de finanças com textos frios e robóticos. Queremos conversar com você, entender suas dores e oferecer soluções que façam sentido na sua realidade brasileira. O Brasil é um país de oportunidades, mas também de muitas armadilhas financeiras. Estar bem informado é a sua melhor defesa.</p>
-                
-                <h4>Construindo um Legado</h4>
-                <p>Finanças pessoais não são apenas sobre você. É sobre a segurança da sua família, a educação dos seus filhos e o legado que você quer deixar. Quando você cuida bem do seu dinheiro, você está cuidando das pessoas que ama. Você se torna capaz de ajudar em momentos difíceis e de proporcionar experiências memoráveis. O dinheiro bem gerido é um facilitador de sonhos.</p>
-                
-                <p>Portanto, não encare o uso desta ferramenta como uma tarefa chata. Encare como um investimento de tempo no seu bem-estar. Cada simulação que você faz, cada artigo que você lê aqui no blog, te deixa um passo mais perto da tranquilidade que você merece. O caminho pode ter obstáculos, mas com persistência e as ferramentas certas, o sucesso é inevitável.</p>
-                
-                <h4>Conclusão e Próximos Passos</h4>
-                <p>Agora que você já tem os resultados desta ferramenta, o que vai fazer com eles? Nossa sugestão é: comece pequeno, mas comece. Se o resultado mostrou que você precisa poupar mais, tente economizar R$ 50,00 na próxima semana. Se mostrou que uma dívida está muito cara, ligue para o banco e tente renegociar. O movimento gera resultado.</p>
-                
-                <p>Continue explorando o Grana Hoje. Temos guias detalhados, análises de aplicativos e estratégias de renda extra que podem complementar o que você aprendeu aqui hoje. Lembre-se: nós não usamos links de afiliados ou recomendações compradas. Nosso compromisso é com você, o leitor. Sua confiança é o nosso maior patrimônio. Vamos construir um 2026 financeiramente brilhante!</p>
+                <h2 id="info-h2">Financiamento em 2026: o que ninguém te conta antes de assinar</h2>
+                <p id="info-p1">Todo mundo sonha com a casa própria ou com um carro novo. Mas a maioria das pessoas assina um contrato de financiamento sem entender o que está comprando de verdade. A parcela cabe no bolso, parece razoável, e pronto — o compromisso está feito. O problema é que, ao longo de 20 ou 30 anos, o total pago pode ser duas, três vezes o valor original do bem. E isso muda tudo na sua estratégia financeira.</p>
+
+                <h3 id="info-h3a">Price ou SAC: qual escolher?</h3>
+                <p id="info-p2">A Tabela Price oferece parcelas fixas do início ao fim — previsibilidade total para o orçamento. Já a Tabela SAC começa com parcelas maiores, mas elas diminuem com o tempo, e o total de juros pago ao final é menor. Se você tem renda estável e pretende quitar o financiamento no prazo completo, o SAC costuma ser mais vantajoso. Se precisa de previsibilidade agora, a Price faz mais sentido.</p>
+
+                <h3 id="info-h3b">A entrada muda tudo</h3>
+                <p id="info-p3">Quanto maior a entrada, menor o saldo devedor — e menor a montanha de juros que você vai pagar ao longo dos anos. Uma entrada de 30% ao invés de 20% pode economizar dezenas de milhares de reais no longo prazo. Use esta calculadora para simular cenários: mude a entrada, veja o impacto na parcela e no total pago. Esse exercício vale muito antes de fechar qualquer negócio.</p>
+
+                <h3 id="info-h3c">Juros no financiamento vs. outros investimentos</h3>
+                <p id="info-p4">Antes de financiar, compare a taxa de juros com o rendimento de um investimento conservador como o Tesouro Selic ou CDB. Se a taxa do financiamento for maior que o que você consegue render investindo, pode ser mais inteligente juntar mais antes de comprar. Se for menor, financiar e manter os recursos investidos pode ser a jogada certa. Não existe resposta única — existe a sua situação.</p>
+
+                <h3 id="info-h3d">Amortização antecipada: seu maior aliado</h3>
+                <p id="info-p5">Todo extra que você joga no financiamento vai direto na dívida, reduzindo os juros futuros. Uma amortização de R$ 5.000 feita no segundo ano de um financiamento de 30 anos pode economizar mais de R$ 20.000 em juros. Programe-se: sempre que tiver um dinheiro extra — décimo terceiro, bônus, restituição do IR — considere amortizar parte do financiamento antes de qualquer outra coisa.</p>
+
+                <!-- FAQ -->
+                <h3 id="info-h3e" style="margin-top: 36px;">Perguntas Frequentes</h3>
+
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" id="faq-q1">
+                        <span id="faq-q1-text">Qual a diferença entre Price e SAC?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a" id="faq-a1">Na Tabela Price as parcelas são iguais do início ao fim. Na SAC, a amortização é constante, mas os juros caem a cada mês — as primeiras parcelas são maiores, porém o total pago é menor. Para financiamentos longos, o SAC costuma ser mais econômico.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" id="faq-q2">
+                        <span id="faq-q2-text">Posso usar esta calculadora para financiamento de veículos?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a" id="faq-a2">Sim. A lógica matemática é a mesma para imóveis e veículos. Basta inserir o valor do veículo, a entrada que você tem, a taxa negociada com a financeira e o prazo em anos. O simulador calcula a parcela tanto pela Tabela Price quanto pela SAC.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" id="faq-q3">
+                        <span id="faq-q3-text">Como calcular o total de juros pago?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a" id="faq-a3">Na Tabela Price: multiplique a parcela pelo número de meses e subtraia o valor financiado (valor do bem menos a entrada). Nesta calculadora, os detalhes do resultado já mostram essa informação automaticamente ao calcular.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" onclick="toggleFaq(this)" id="faq-q4">
+                        <span id="faq-q4-text">Vale a pena dar mais entrada para reduzir as parcelas?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-a" id="faq-a4">Quase sempre vale. Uma entrada maior reduz o saldo devedor, as parcelas e o total de juros pago. A exceção é quando o dinheiro investido rende mais do que os juros do financiamento — nesse caso, pode ser vantajoso manter o capital aplicado e dar menos entrada.</div>
+                </div>
             </div>
         </section>
     </main>
@@ -183,69 +682,671 @@
     </footer>
 
     <script>
-        function formatarMoeda(valor) {
-            return new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            }).format(valor);
+    // ========================
+    // TRANSLATIONS
+    // ========================
+    const T = {
+        "pt-BR": {
+            metaTitle: "Simulador de Financiamento Imobiliário e Veicular - Grana Hoje",
+            metaDesc: "Calcule mensalidades de imóveis, veículos e outros financiamentos com tabelas SAC e Price. Simulador gratuito.",
+            pageTitle: "Simulador de Financiamento",
+            pageSubtitle: "Calcule mensalidades de imóveis, veículos e outros financiamentos com tabelas SAC e Price.",
+            backText: "Ferramentas",
+            tabPrice: "Tabela Price",
+            tabSac: "Tabela SAC",
+            labelValor: "Valor do Bem (R$)",
+            labelEntrada: "Entrada (R$)",
+            labelTaxa: "Taxa de Juros Anual (%)",
+            labelAnos: "Prazo (Anos)",
+            btnCalc: "Calcular Mensalidade",
+            resultLabel: "Parcela Mensal",
+            navBlog: "Blog", navAbout: "Sobre", navContact: "Contato",
+            detailFinanciado: "Valor Financiado", detailJuros: "Total em Juros", detailTotal: "Total Pago",
+            tableMonth: "Mês", tableParcela: "Parcela", tableAmort: "Amortização", tableJuros: "Juros", tableSaldo: "Saldo Devedor",
+            tableNote: "Exibindo primeiros 24 meses",
+            affBadge1: "Parceiro Recomendado", affTitle1: "Banco BV — Crédito com Garantia Veicular",
+            affDesc1: "Use seu veículo como garantia e consiga taxas menores para quitar dívidas ou realizar projetos. Simulação rápida, sem burocracia.",
+            affCta1: "Simular agora →",
+            affBadge2: "Taxa Competitiva", affTitle2: "Juros Baixos — Compare e Economize",
+            affDesc2: "Encontre as melhores taxas de empréstimo do mercado em um só lugar. Compare ofertas e escolha a que mais cabe no seu bolso.",
+            affCta2: "Comparar taxas →",
+            infoH2: "Financiamento em 2026: o que ninguém te conta antes de assinar",
+            infoP1: "Todo mundo sonha com a casa própria ou com um carro novo. Mas a maioria das pessoas assina um contrato de financiamento sem entender o que está comprando de verdade. A parcela cabe no bolso, parece razoável, e pronto — o compromisso está feito. O problema é que, ao longo de 20 ou 30 anos, o total pago pode ser duas, três vezes o valor original do bem.",
+            infoH3a: "Price ou SAC: qual escolher?",
+            infoP2: "A Tabela Price oferece parcelas fixas do início ao fim — previsibilidade total para o orçamento. Já a Tabela SAC começa com parcelas maiores, mas elas diminuem com o tempo, e o total de juros pago ao final é menor. Se você tem renda estável e pretende quitar o financiamento no prazo completo, o SAC costuma ser mais vantajoso.",
+            infoH3b: "A entrada muda tudo",
+            infoP3: "Quanto maior a entrada, menor o saldo devedor — e menor a montanha de juros que você vai pagar ao longo dos anos. Uma entrada de 30% ao invés de 20% pode economizar dezenas de milhares de reais no longo prazo. Use esta calculadora para simular cenários diferentes.",
+            infoH3c: "Juros do financiamento vs. investimentos",
+            infoP4: "Antes de financiar, compare a taxa de juros com o rendimento de um investimento conservador como o Tesouro Selic ou CDB. Se a taxa do financiamento for maior que o que você consegue render investindo, pode ser mais inteligente juntar mais antes de comprar.",
+            infoH3d: "Amortização antecipada: seu maior aliado",
+            infoP5: "Todo extra que você joga no financiamento vai direto na dívida, reduzindo os juros futuros. Uma amortização de R$ 5.000 feita no segundo ano de um financiamento de 30 anos pode economizar mais de R$ 20.000 em juros totais.",
+            infoH3e: "Perguntas Frequentes",
+            faqQ1: "Qual a diferença entre Price e SAC?",
+            faqA1: "Na Tabela Price as parcelas são iguais do início ao fim. Na SAC, a amortização é constante, mas os juros caem a cada mês — as primeiras parcelas são maiores, porém o total pago é menor.",
+            faqQ2: "Posso usar para financiamento de veículos?",
+            faqA2: "Sim. A lógica matemática é a mesma. Basta inserir o valor do veículo, a entrada, a taxa e o prazo. O simulador calcula tanto pela Price quanto pela SAC.",
+            faqQ3: "Como calcular o total de juros pago?",
+            faqA3: "Na Price: multiplique a parcela pelo número de meses e subtraia o valor financiado. Nesta calculadora os detalhes do resultado já mostram essa informação automaticamente.",
+            faqQ4: "Vale a pena dar mais entrada?",
+            faqA4: "Quase sempre vale. Uma entrada maior reduz o saldo devedor e o total de juros. A exceção é quando o dinheiro investido rende mais do que os juros do financiamento."
+        },
+        "pt-PT": {
+            metaTitle: "Simulador de Financiamento Imobiliário e Automóvel - Grana Hoje",
+            metaDesc: "Calcule prestações de imóveis, automóveis e outros financiamentos com tabelas SAC e Price.",
+            pageTitle: "Simulador de Financiamento",
+            pageSubtitle: "Calcule prestações de imóveis, automóveis e outros financiamentos com tabelas SAC e Price.",
+            backText: "Ferramentas",
+            tabPrice: "Tabela Price",
+            tabSac: "Tabela SAC",
+            labelValor: "Valor do Bem (€)",
+            labelEntrada: "Entrada (€)",
+            labelTaxa: "Taxa de Juro Anual (%)",
+            labelAnos: "Prazo (Anos)",
+            btnCalc: "Calcular Prestação",
+            resultLabel: "Prestação Mensal",
+            navBlog: "Blog", navAbout: "Sobre", navContact: "Contacto",
+            detailFinanciado: "Valor Financiado", detailJuros: "Total em Juros", detailTotal: "Total Pago",
+            tableMonth: "Mês", tableParcela: "Prestação", tableAmort: "Amortização", tableJuros: "Juros", tableSaldo: "Saldo Devedor",
+            tableNote: "A mostrar primeiros 24 meses",
+            affBadge1: "Parceiro Recomendado", affTitle1: "Banco BV — Crédito com Garantia Automóvel",
+            affDesc1: "Use o seu automóvel como garantia e obtenha taxas mais baixas. Simulação rápida, sem burocracia.",
+            affCta1: "Simular agora →",
+            affBadge2: "Taxa Competitiva", affTitle2: "Juros Baixos — Compare e Poupe",
+            affDesc2: "Encontre as melhores taxas de empréstimo do mercado num único lugar. Compare e escolha a melhor oferta.",
+            affCta2: "Comparar taxas →",
+            infoH2: "Financiamento em 2026: o que ninguém lhe conta antes de assinar",
+            infoP1: "Toda a gente sonha com casa própria ou carro novo. Mas a maioria das pessoas assina um contrato de financiamento sem perceber realmente o que está a comprar. A prestação cabe no orçamento — mas ao longo de 20 ou 30 anos, o total pago pode ser duas ou três vezes o valor original do bem.",
+            infoH3a: "Price ou SAC: qual escolher?",
+            infoP2: "A Tabela Price oferece prestações fixas do início ao fim. A Tabela SAC começa com prestações maiores que diminuem ao longo do tempo, com menos juros totais. Para financiamentos longos, o SAC é geralmente mais económico.",
+            infoH3b: "A entrada muda tudo",
+            infoP3: "Quanto maior a entrada, menor o saldo em dívida e menos juros pagará ao longo dos anos. Use este simulador para explorar diferentes cenários antes de fechar qualquer negócio.",
+            infoH3c: "Juros do financiamento vs. investimentos",
+            infoP4: "Compare a taxa do financiamento com o rendimento de um produto de poupança. Se a taxa for superior ao que consegue render, pode ser mais vantajoso poupar mais antes de comprar.",
+            infoH3d: "Amortização antecipada: o seu maior aliado",
+            infoP5: "Cada montante extra que abonar vai diretamente à dívida, reduzindo os juros futuros. Uma amortização antecipada pode poupar vários milhares de euros ao longo do prazo.",
+            infoH3e: "Perguntas Frequentes",
+            faqQ1: "Qual a diferença entre Price e SAC?",
+            faqA1: "Na Price as prestações são iguais do início ao fim. Na SAC, a amortização é constante e os juros caem cada mês — as primeiras prestações são maiores, mas o total pago é menor.",
+            faqQ2: "Posso usar para financiamento de automóvel?",
+            faqA2: "Sim. A lógica é a mesma. Insira o valor do automóvel, a entrada, a taxa e o prazo.",
+            faqQ3: "Como calcular o total de juros?",
+            faqA3: "Na Price: multiplique a prestação pelo número de meses e subtraia o valor financiado. Este simulador mostra esses detalhes automaticamente.",
+            faqQ4: "Vale a pena dar mais entrada?",
+            faqA4: "Quase sempre. Reduz o saldo devedor e os juros totais. A exceção é quando o retorno dos seus investimentos supera a taxa do financiamento."
+        },
+        "en": {
+            metaTitle: "Mortgage & Car Loan Calculator - Grana Hoje",
+            metaDesc: "Calculate monthly payments for home mortgages, car loans and other financing. Free simulator with SAC and Price tables.",
+            pageTitle: "Loan & Mortgage Calculator",
+            pageSubtitle: "Calculate monthly payments for home mortgages, car loans and other financing with SAC and Price amortization.",
+            backText: "Tools",
+            tabPrice: "Price Table",
+            tabSac: "SAC Table",
+            labelValor: "Property/Vehicle Value ($)",
+            labelEntrada: "Down Payment ($)",
+            labelTaxa: "Annual Interest Rate (%)",
+            labelAnos: "Term (Years)",
+            btnCalc: "Calculate Payment",
+            resultLabel: "Monthly Payment",
+            navBlog: "Blog", navAbout: "About", navContact: "Contact",
+            detailFinanciado: "Loan Amount", detailJuros: "Total Interest", detailTotal: "Total Paid",
+            tableMonth: "Month", tableParcela: "Payment", tableAmort: "Principal", tableJuros: "Interest", tableSaldo: "Balance",
+            tableNote: "Showing first 24 months",
+            affBadge1: "Recommended Partner", affTitle1: "Banco BV — Vehicle-Secured Credit",
+            affDesc1: "Use your vehicle as collateral and get lower rates to pay off debt or fund projects. Quick simulation, no bureaucracy.",
+            affCta1: "Simulate now →",
+            affBadge2: "Competitive Rate", affTitle2: "Juros Baixos — Compare & Save",
+            affDesc2: "Find the best loan rates in the market in one place. Compare offers and choose the one that fits your budget.",
+            affCta2: "Compare rates →",
+            infoH2: "Financing in 2026: What Nobody Tells You Before You Sign",
+            infoP1: "Everyone dreams of owning a home or a new car. But most people sign a financing contract without truly understanding what they're buying. The monthly payment fits the budget — but over 20 or 30 years, the total paid can be two or three times the original value of the asset.",
+            infoH3a: "Price or SAC: Which to Choose?",
+            infoP2: "The Price Table offers fixed installments from start to finish — total predictability for your budget. The SAC Table starts with higher payments that decrease over time, with less total interest. For long-term financing, SAC is usually more economical.",
+            infoH3b: "The Down Payment Changes Everything",
+            infoP3: "The larger the down payment, the smaller the loan balance — and the less interest you'll pay over the years. Use this calculator to simulate different scenarios before closing any deal.",
+            infoH3c: "Loan Interest vs. Investments",
+            infoP4: "Before financing, compare the interest rate with the return on a conservative investment. If the financing rate is higher than what you can earn investing, it may be smarter to save more before buying.",
+            infoH3d: "Early Amortization: Your Greatest Ally",
+            infoP5: "Every extra payment goes directly to the principal, reducing future interest. An early payment of $5,000 in the second year of a 30-year mortgage can save over $20,000 in total interest.",
+            infoH3e: "Frequently Asked Questions",
+            faqQ1: "What's the difference between Price and SAC tables?",
+            faqA1: "In the Price Table, payments are equal from start to finish. In SAC, amortization is constant but interest decreases monthly — early payments are higher, but total paid is lower.",
+            faqQ2: "Can I use this for car loans?",
+            faqA2: "Yes. The math is the same. Just enter the vehicle value, down payment, interest rate and term. The simulator calculates both Price and SAC.",
+            faqQ3: "How do I calculate total interest paid?",
+            faqA3: "For Price: multiply the payment by the number of months and subtract the loan amount. This calculator shows those details automatically.",
+            faqQ4: "Is it worth giving a larger down payment?",
+            faqA4: "Almost always. It reduces the loan balance and total interest. The exception is when your invested capital earns more than the financing rate."
+        },
+        "es": {
+            metaTitle: "Calculadora de Préstamo Hipotecario y Vehículo - Grana Hoje",
+            metaDesc: "Calcula cuotas mensuales para hipotecas, préstamos vehiculares y otros financiamientos. Simulador gratuito.",
+            pageTitle: "Simulador de Financiamiento",
+            pageSubtitle: "Calcula cuotas mensuales para hipotecas, préstamos vehiculares y otros financiamientos.",
+            backText: "Herramientas",
+            tabPrice: "Sistema Francés",
+            tabSac: "Sistema Alemán",
+            labelValor: "Valor del Bien ($)",
+            labelEntrada: "Pago Inicial ($)",
+            labelTaxa: "Tasa de Interés Anual (%)",
+            labelAnos: "Plazo (Años)",
+            btnCalc: "Calcular Cuota",
+            resultLabel: "Cuota Mensual",
+            navBlog: "Blog", navAbout: "Sobre", navContact: "Contacto",
+            detailFinanciado: "Monto Financiado", detailJuros: "Total en Intereses", detailTotal: "Total Pagado",
+            tableMonth: "Mes", tableParcela: "Cuota", tableAmort: "Amortización", tableJuros: "Intereses", tableSaldo: "Saldo",
+            tableNote: "Mostrando primeros 24 meses",
+            affBadge1: "Socio Recomendado", affTitle1: "Banco BV — Crédito con Garantía Vehicular",
+            affDesc1: "Usa tu vehículo como garantía y obtén tasas más bajas para saldar deudas o realizar proyectos.",
+            affCta1: "Simular ahora →",
+            affBadge2: "Tasa Competitiva", affTitle2: "Juros Baixos — Compara y Ahorra",
+            affDesc2: "Encuentra las mejores tasas de préstamo del mercado en un solo lugar. Compara y elige la mejor opción.",
+            affCta2: "Comparar tasas →",
+            infoH2: "Financiamiento en 2026: Lo Que Nadie Te Dice Antes de Firmar",
+            infoP1: "Todo el mundo sueña con casa propia o un auto nuevo. Pero la mayoría firma un contrato de financiamiento sin entender realmente lo que está comprando. La cuota cabe en el presupuesto — pero en 20 o 30 años, el total pagado puede ser dos o tres veces el valor original del bien.",
+            infoH3a: "¿Sistema Francés o Alemán?",
+            infoP2: "El Sistema Francés ofrece cuotas fijas de principio a fin. El Sistema Alemán empieza con cuotas mayores que disminuyen con el tiempo, pagando menos intereses en total. Para financiamientos largos, el alemán suele ser más económico.",
+            infoH3b: "El pago inicial lo cambia todo",
+            infoP3: "Cuanto mayor sea el pago inicial, menor será el saldo deudor y menos intereses pagarás. Usa esta calculadora para simular distintos escenarios antes de cerrar cualquier trato.",
+            infoH3c: "Intereses del préstamo vs. inversiones",
+            infoP4: "Antes de financiar, compara la tasa de interés con el rendimiento de una inversión conservadora. Si la tasa es mayor, puede ser más inteligente ahorrar más antes de comprar.",
+            infoH3d: "Amortización anticipada: tu mayor aliado",
+            infoP5: "Cada pago extra va directo al capital, reduciendo los intereses futuros. Una amortización anticipada puede ahorrar decenas de miles en intereses totales.",
+            infoH3e: "Preguntas Frecuentes",
+            faqQ1: "¿Cuál es la diferencia entre sistema francés y alemán?",
+            faqA1: "En el francés las cuotas son iguales. En el alemán la amortización es constante y los intereses disminuyen — las primeras cuotas son mayores pero el total pagado es menor.",
+            faqQ2: "¿Puedo usarla para préstamos de autos?",
+            faqA2: "Sí. La lógica matemática es la misma para inmuebles y vehículos.",
+            faqQ3: "¿Cómo calculo el total de intereses?",
+            faqA3: "En el sistema francés: multiplica la cuota por el número de meses y resta el monto financiado.",
+            faqQ4: "¿Vale la pena dar más pago inicial?",
+            faqA4: "Casi siempre. Reduce el saldo deudor y los intereses. La excepción es cuando tu inversión rinde más que la tasa del préstamo."
+        },
+        "fr": {
+            metaTitle: "Calculateur de Prêt Immobilier et Auto - Grana Hoje",
+            metaDesc: "Calculez vos mensualités pour un crédit immobilier, auto ou autre financement. Simulateur gratuit.",
+            pageTitle: "Simulateur de Financement",
+            pageSubtitle: "Calculez vos mensualités pour un crédit immobilier, automobile ou autre financement.",
+            backText: "Outils",
+            tabPrice: "Taux Fixe",
+            tabSac: "Amortissement Constant",
+            labelValor: "Valeur du Bien (€)",
+            labelEntrada: "Apport Initial (€)",
+            labelTaxa: "Taux d'Intérêt Annuel (%)",
+            labelAnos: "Durée (Années)",
+            btnCalc: "Calculer la Mensualité",
+            resultLabel: "Mensualité",
+            navBlog: "Blog", navAbout: "À Propos", navContact: "Contact",
+            detailFinanciado: "Montant Financé", detailJuros: "Total Intérêts", detailTotal: "Total Remboursé",
+            tableMonth: "Mois", tableParcela: "Mensualité", tableAmort: "Capital", tableJuros: "Intérêts", tableSaldo: "Capital Restant",
+            tableNote: "24 premiers mois affichés",
+            affBadge1: "Partenaire Recommandé", affTitle1: "Banco BV — Crédit Garanti par Véhicule",
+            affDesc1: "Utilisez votre véhicule comme garantie pour obtenir des taux plus bas et financer vos projets.",
+            affCta1: "Simuler maintenant →",
+            affBadge2: "Taux Compétitif", affTitle2: "Juros Baixos — Comparez et Économisez",
+            affDesc2: "Trouvez les meilleurs taux de crédit du marché en un seul endroit. Comparez et choisissez l'offre idéale.",
+            affCta2: "Comparer les taux →",
+            infoH2: "Financement en 2026 : Ce Que Personne Ne Vous Dit Avant de Signer",
+            infoP1: "Tout le monde rêve d'un bien immobilier ou d'une voiture neuve. Mais la plupart signent un contrat de financement sans vraiment comprendre ce qu'ils achètent. La mensualité rentre dans le budget — mais sur 20 ou 30 ans, le total payé peut être deux ou trois fois la valeur initiale du bien.",
+            infoH3a: "Taux fixe ou amortissement constant ?",
+            infoP2: "Le taux fixe offre des mensualités identiques du début à la fin. L'amortissement constant commence avec des mensualités plus élevées qui diminuent dans le temps — avec moins d'intérêts au total. Pour les longues durées, l'amortissement constant est souvent plus avantageux.",
+            infoH3b: "L'apport initial change tout",
+            infoP3: "Plus l'apport est élevé, moins le capital emprunté est important — et moins vous payez d'intérêts. Simulez différents scénarios avant de signer quoi que ce soit.",
+            infoH3c: "Taux du crédit vs. placements",
+            infoP4: "Comparez le taux du crédit avec le rendement d'un placement sûr. Si le taux du crédit est supérieur, il peut être plus judicieux d'épargner davantage avant d'acheter.",
+            infoH3d: "Le remboursement anticipé : votre meilleur allié",
+            infoP5: "Chaque remboursement anticipé réduit le capital restant et les intérêts futurs. Un versement supplémentaire en début de prêt peut économiser des milliers d'euros.",
+            infoH3e: "Questions Fréquentes",
+            faqQ1: "Quelle est la différence entre taux fixe et amortissement constant ?",
+            faqA1: "À taux fixe, les mensualités sont identiques. À amortissement constant, le capital amorti est fixe mais les intérêts baissent chaque mois — les premières mensualités sont plus élevées mais le coût total est moindre.",
+            faqQ2: "Puis-je l'utiliser pour un crédit auto ?",
+            faqA2: "Oui. La logique mathématique est identique pour l'immobilier et l'automobile.",
+            faqQ3: "Comment calculer le total des intérêts ?",
+            faqA3: "À taux fixe : multipliez la mensualité par le nombre de mois et soustrayez le montant emprunté.",
+            faqQ4: "Vaut-il mieux faire un plus grand apport ?",
+            faqA4: "Presque toujours. Cela réduit le capital emprunté et les intérêts totaux. L'exception : quand votre placement rapporte plus que le taux du crédit."
+        },
+        "ar": {
+            metaTitle: "حاسبة القرض العقاري والسيارة - Grana Hoje",
+            metaDesc: "احسب الأقساط الشهرية للعقارات والسيارات وغيرها من التمويلات. محاكي مجاني.",
+            pageTitle: "محاكي التمويل",
+            pageSubtitle: "احسب الأقساط الشهرية للعقارات والسيارات وأي تمويل آخر.",
+            backText: "الأدوات",
+            tabPrice: "جدول بريس",
+            tabSac: "جدول SAC",
+            labelValor: "قيمة العقار/السيارة",
+            labelEntrada: "الدفعة الأولى",
+            labelTaxa: "معدل الفائدة السنوي (%)",
+            labelAnos: "المدة (سنوات)",
+            btnCalc: "احسب القسط",
+            resultLabel: "القسط الشهري",
+            navBlog: "المدونة", navAbout: "عن الموقع", navContact: "اتصل بنا",
+            detailFinanciado: "مبلغ القرض", detailJuros: "إجمالي الفوائد", detailTotal: "الإجمالي المدفوع",
+            tableMonth: "الشهر", tableParcela: "القسط", tableAmort: "الأصل", tableJuros: "الفائدة", tableSaldo: "الرصيد",
+            tableNote: "عرض أول 24 شهراً",
+            affBadge1: "شريك موصى به", affTitle1: "Banco BV — ائتمان بضمان السيارة",
+            affDesc1: "استخدم سيارتك ضماناً للحصول على معدلات فائدة أقل لسداد الديون أو تحقيق مشاريعك.",
+            affCta1: "احسب الآن ←",
+            affBadge2: "معدل تنافسي", affTitle2: "Juros Baixos — قارن ووفر",
+            affDesc2: "ابحث عن أفضل معدلات القروض في مكان واحد. قارن العروض واختر الأنسب لميزانيتك.",
+            affCta2: "مقارنة المعدلات ←",
+            infoH2: "التمويل في 2026: ما لا يخبرك به أحد قبل التوقيع",
+            infoP1: "يحلم الجميع بامتلاك منزل أو سيارة جديدة. لكن معظم الناس يوقعون على عقد تمويل دون فهم حقيقي لما يشترونه. القسط يبدو معقولاً — لكن على مدى 20 أو 30 عاماً، قد يبلغ الإجمالي المدفوع ضعفين أو ثلاثة أضعاف القيمة الأصلية.",
+            infoH3a: "بريس أم SAC: أيهما تختار؟",
+            infoP2: "جدول بريس يوفر أقساطاً ثابتة من البداية إلى النهاية. جدول SAC يبدأ بأقساط أعلى تتناقص مع الوقت مع فوائد إجمالية أقل. للتمويلات الطويلة، SAC أوفر في الغالب.",
+            infoH3b: "الدفعة الأولى تغير كل شيء",
+            infoP3: "كلما زادت الدفعة الأولى، قل رصيد القرض وانخفضت الفوائد على مدار السنين. استخدم هذه الحاسبة لمحاكاة سيناريوهات مختلفة.",
+            infoH3c: "فائدة القرض مقابل الاستثمارات",
+            infoP4: "قبل التمويل، قارن معدل الفائدة بعائد استثمار آمن. إذا كانت الفائدة أعلى مما تربحه بالاستثمار، قد يكون الادخار أكثر أولاً هو الخيار الأذكى.",
+            infoH3d: "السداد المبكر: أقوى أسلحتك",
+            infoP5: "كل مبلغ إضافي تدفعه يذهب مباشرة لخفض الأصل وبالتالي الفوائد المستقبلية. السداد المبكر يمكن أن يوفر عشرات الآلاف على المدى البعيد.",
+            infoH3e: "الأسئلة الشائعة",
+            faqQ1: "ما الفرق بين جدول بريس وSAC؟",
+            faqA1: "في بريس الأقساط متساوية طوال المدة. في SAC الاستهلاك ثابت لكن الفائدة تنخفض شهرياً — الأقساط الأولى أعلى لكن الإجمالي أقل.",
+            faqQ2: "هل يمكن استخدامها لقروض السيارات؟",
+            faqA2: "نعم. المنطق الرياضي هو نفسه للعقارات والسيارات.",
+            faqQ3: "كيف أحسب إجمالي الفوائد؟",
+            faqA3: "في بريس: اضرب القسط في عدد الأشهر واطرح مبلغ القرض.",
+            faqQ4: "هل يستحق تقديم دفعة أولى أكبر؟",
+            faqA4: "في الغالب نعم. تقلل الرصيد والفوائد. الاستثناء عندما يكون عائد استثمارك أعلى من معدل الفائدة."
+        },
+        "zh": {
+            metaTitle: "房贷与汽车贷款计算器 - Grana Hoje",
+            metaDesc: "免费计算房产、汽车及其他融资的月供。SAC和等额还款方式均支持。",
+            pageTitle: "贷款模拟器",
+            pageSubtitle: "计算房产、汽车及其他融资的月供，支持等额还款和等额本金两种方式。",
+            backText: "工具",
+            tabPrice: "等额还款",
+            tabSac: "等额本金",
+            labelValor: "资产价值 (¥)",
+            labelEntrada: "首付 (¥)",
+            labelTaxa: "年利率 (%)",
+            labelAnos: "期限（年）",
+            btnCalc: "计算月供",
+            resultLabel: "月供金额",
+            navBlog: "博客", navAbout: "关于", navContact: "联系我们",
+            detailFinanciado: "贷款金额", detailJuros: "总利息", detailTotal: "总还款额",
+            tableMonth: "月份", tableParcela: "月供", tableAmort: "本金", tableJuros: "利息", tableSaldo: "剩余本金",
+            tableNote: "显示前24个月",
+            affBadge1: "推荐合作伙伴", affTitle1: "Banco BV — 汽车担保贷款",
+            affDesc1: "以您的车辆作担保，获得更低利率偿还债务或实现项目。快速模拟，无繁琐手续。",
+            affCta1: "立即模拟 →",
+            affBadge2: "竞争性利率", affTitle2: "Juros Baixos — 比较并节省",
+            affDesc2: "在一处找到市场上最优惠的贷款利率。比较报价，选择最适合您的方案。",
+            affCta2: "比较利率 →",
+            infoH2: "2026年贷款：签约前没人告诉你的事",
+            infoP1: "每个人都梦想拥有自己的房子或新车。但大多数人在不真正了解所购内容的情况下签署了融资合同。月供看起来合理——但20年或30年后，总还款额可能是资产原始价值的两到三倍。",
+            infoH3a: "等额还款还是等额本金？",
+            infoP2: "等额还款从始至终月供固定，预算规划方便。等额本金初期还款较高但逐月递减，总利息较少。长期贷款通常等额本金更经济。",
+            infoH3b: "首付改变一切",
+            infoP3: "首付越高，贷款余额越小，多年来支付的利息越少。在签署任何协议之前，使用此计算器模拟不同场景。",
+            infoH3c: "贷款利率与投资收益",
+            infoP4: "在贷款前，将利率与保守型投资的收益率进行比较。如果贷款利率高于您的投资收益，先多攒钱可能更明智。",
+            infoH3d: "提前还款：您最大的盟友",
+            infoP5: "每笔额外还款直接减少本金，从而减少未来利息。在30年贷款的第二年提前还款5000元，可以节省超过20000元的总利息。",
+            infoH3e: "常见问题",
+            faqQ1: "等额还款和等额本金有什么区别？",
+            faqA1: "等额还款每月金额相同。等额本金每月本金固定但利息递减——前期还款较高，但总还款额较少。",
+            faqQ2: "可以用于汽车贷款吗？",
+            faqA2: "可以。数学逻辑对房产和汽车是相同的。只需输入车辆价值、首付、利率和期限。",
+            faqQ3: "如何计算总利息？",
+            faqA3: "等额还款：月供乘以期数，减去贷款金额即为总利息。本计算器自动显示此信息。",
+            faqQ4: "多付首付值得吗？",
+            faqA4: "几乎总是值得的。首付越高，本金和利息越少。例外是当您的投资收益率高于贷款利率时。"
+        },
+        "ru": {
+            metaTitle: "Ипотечный калькулятор и кредит на автомобиль - Grana Hoje",
+            metaDesc: "Рассчитайте ежемесячные платежи по ипотеке, автокредиту и другим займам. Бесплатный симулятор.",
+            pageTitle: "Кредитный Симулятор",
+            pageSubtitle: "Рассчитайте ежемесячные платежи по ипотеке, автокредиту и другим займам.",
+            backText: "Инструменты",
+            tabPrice: "Аннуитетный",
+            tabSac: "Дифференцированный",
+            labelValor: "Стоимость имущества (₽)",
+            labelEntrada: "Первоначальный взнос (₽)",
+            labelTaxa: "Годовая процентная ставка (%)",
+            labelAnos: "Срок (Лет)",
+            btnCalc: "Рассчитать платёж",
+            resultLabel: "Ежемесячный платёж",
+            navBlog: "Блог", navAbout: "О нас", navContact: "Контакты",
+            detailFinanciado: "Сумма кредита", detailJuros: "Всего процентов", detailTotal: "Итого выплат",
+            tableMonth: "Мес.", tableParcela: "Платёж", tableAmort: "Основной долг", tableJuros: "Проценты", tableSaldo: "Остаток долга",
+            tableNote: "Показаны первые 24 месяца",
+            affBadge1: "Рекомендуемый партнёр", affTitle1: "Banco BV — Кредит под залог авто",
+            affDesc1: "Используйте автомобиль как залог и получите более низкие ставки. Быстрый расчёт, без лишней бюрократии.",
+            affCta1: "Рассчитать сейчас →",
+            affBadge2: "Конкурентная ставка", affTitle2: "Juros Baixos — Сравните и сэкономьте",
+            affDesc2: "Найдите лучшие ставки по кредитам в одном месте. Сравните предложения и выберите наиболее выгодное.",
+            affCta2: "Сравнить ставки →",
+            infoH2: "Кредит в 2026: то, о чём вам не скажут до подписания",
+            infoP1: "Все мечтают о собственном жилье или новом автомобиле. Но большинство подписывают кредитный договор, не понимая в полной мере, что покупают. Ежемесячный платёж кажется разумным — однако за 20–30 лет общая сумма выплат может в два-три раза превысить стоимость актива.",
+            infoH3a: "Аннуитет или дифференцированный?",
+            infoP2: "При аннуитете платежи одинаковы от начала до конца — полная предсказуемость. При дифференцированном первые платежи выше, но снижаются со временем, а общая переплата меньше. Для длинных сроков дифференцированный обычно выгоднее.",
+            infoH3b: "Первоначальный взнос меняет всё",
+            infoP3: "Чем больше взнос, тем меньше сумма долга и проценты. Используйте калькулятор для моделирования разных сценариев перед заключением сделки.",
+            infoH3c: "Ставка кредита vs. инвестиции",
+            infoP4: "Перед кредитом сравните ставку с доходностью консервативного вложения. Если ставка выше доходности — возможно, лучше сначала накопить больше.",
+            infoH3d: "Досрочное погашение — ваш главный союзник",
+            infoP5: "Каждый дополнительный платёж уменьшает основной долг и будущие проценты. Досрочное погашение на раннем этапе может сэкономить десятки тысяч рублей.",
+            infoH3e: "Часто задаваемые вопросы",
+            faqQ1: "В чём разница между аннуитетным и дифференцированным?",
+            faqA1: "При аннуитете платежи одинаковые. При дифференцированном — основной долг фиксирован, но проценты снижаются: первые платежи выше, зато общая переплата меньше.",
+            faqQ2: "Можно использовать для автокредита?",
+            faqA2: "Да. Математическая логика одинакова для недвижимости и автомобилей.",
+            faqQ3: "Как рассчитать общую сумму процентов?",
+            faqA3: "Для аннуитета: умножьте платёж на количество месяцев и вычтите сумму кредита.",
+            faqQ4: "Стоит ли давать больший первоначальный взнос?",
+            faqA4: "Почти всегда да. Уменьшает долг и переплату. Исключение: когда инвестиции приносят больше, чем ставка по кредиту."
+        },
+        "hi": {
+            metaTitle: "होम लोन और कार लोन कैलकुलेटर - Grana Hoje",
+            metaDesc: "घर, कार और अन्य ऋणों की मासिक किस्त मुफ्त में कैलकुलेट करें।",
+            pageTitle: "लोन सिमुलेटर",
+            pageSubtitle: "घर, कार और अन्य ऋणों की मासिक किस्त की गणना करें।",
+            backText: "टूल्स",
+            tabPrice: "फिक्स्ड EMI",
+            tabSac: "घटती किस्त",
+            labelValor: "संपत्ति/वाहन का मूल्य (₹)",
+            labelEntrada: "डाउन पेमेंट (₹)",
+            labelTaxa: "वार्षिक ब्याज दर (%)",
+            labelAnos: "अवधि (वर्ष)",
+            btnCalc: "EMI कैलकुलेट करें",
+            resultLabel: "मासिक EMI",
+            navBlog: "ब्लॉग", navAbout: "हमारे बारे में", navContact: "संपर्क",
+            detailFinanciado: "ऋण राशि", detailJuros: "कुल ब्याज", detailTotal: "कुल भुगतान",
+            tableMonth: "माह", tableParcela: "EMI", tableAmort: "मूलधन", tableJuros: "ब्याज", tableSaldo: "शेष राशि",
+            tableNote: "पहले 24 महीने दिखाए जा रहे हैं",
+            affBadge1: "अनुशंसित साझेदार", affTitle1: "Banco BV — वाहन-गारंटी ऋण",
+            affDesc1: "अपने वाहन को गारंटी के रूप में उपयोग करें और कम ब्याज दर पर लोन पाएं। त्वरित सिमुलेशन।",
+            affCta1: "अभी सिमुलेट करें →",
+            affBadge2: "प्रतिस्पर्धी दर", affTitle2: "Juros Baixos — तुलना करें और बचाएं",
+            affDesc2: "एक ही जगह पर बाजार की सर्वोत्तम ऋण दरें खोजें। ऑफर की तुलना करें और सबसे अच्छा चुनें।",
+            affCta2: "दरें तुलना करें →",
+            infoH2: "2026 में लोन: साइन करने से पहले जो कोई नहीं बताता",
+            infoP1: "हर कोई घर या नई कार का सपना देखता है। लेकिन अधिकांश लोग बिना समझे लोन अनुबंध पर हस्ताक्षर कर देते हैं। किस्त बजट में फिट लगती है — लेकिन 20-30 साल में कुल भुगतान संपत्ति के मूल मूल्य से दो-तीन गुना हो सकता है।",
+            infoH3a: "फिक्स्ड EMI या घटती किस्त?",
+            infoP2: "फिक्स्ड EMI में शुरू से अंत तक बराबर किस्तें होती हैं। घटती किस्त में शुरुआत में अधिक लेकिन समय के साथ कम होती हैं, कुल ब्याज कम होता है।",
+            infoH3b: "डाउन पेमेंट सब कुछ बदल देता है",
+            infoP3: "जितना अधिक डाउन पेमेंट, उतना कम लोन बैलेंस और उतना कम ब्याज। कोई भी डील करने से पहले अलग-अलग परिदृश्यों की सिमुलेशन करें।",
+            infoH3c: "लोन ब्याज बनाम निवेश",
+            infoP4: "लोन लेने से पहले ब्याज दर की तुलना एक सुरक्षित निवेश के रिटर्न से करें। यदि ब्याज दर अधिक है, तो पहले अधिक बचत करना समझदारी हो सकती है।",
+            infoH3d: "पूर्व भुगतान: आपका सबसे बड़ा सहयोगी",
+            infoP5: "हर अतिरिक्त भुगतान सीधे मूलधन को कम करता है, भविष्य के ब्याज को घटाता है। 30 साल के लोन के दूसरे साल में एकमुश्त भुगतान से हजारों की बचत हो सकती है।",
+            infoH3e: "अक्सर पूछे जाने वाले प्रश्न",
+            faqQ1: "फिक्स्ड EMI और घटती किस्त में क्या अंतर है?",
+            faqA1: "फिक्स्ड EMI में हर महीने समान किस्त। घटती किस्त में मूलधन समान लेकिन ब्याज घटता है — शुरुआती किस्तें अधिक लेकिन कुल भुगतान कम।",
+            faqQ2: "क्या इसे कार लोन के लिए उपयोग कर सकते हैं?",
+            faqA2: "हां। गणितीय तर्क संपत्ति और वाहन दोनों के लिए समान है।",
+            faqQ3: "कुल ब्याज की गणना कैसे करें?",
+            faqA3: "फिक्स्ड EMI में: किस्त को महीनों से गुणा करें और लोन राशि घटाएं।",
+            faqQ4: "क्या अधिक डाउन पेमेंट देना उचित है?",
+            faqA4: "लगभग हमेशा। लोन बैलेंस और ब्याज दोनों कम होते हैं। अपवाद: जब आपका निवेश लोन की ब्याज दर से अधिक रिटर्न दे।"
+        },
+        "ja": {
+            metaTitle: "住宅ローン・自動車ローン計算機 - Grana Hoje",
+            metaDesc: "住宅・車・その他ローンの月々の返済額を無料で計算。元利均等・元金均等に対応。",
+            pageTitle: "ローンシミュレーター",
+            pageSubtitle: "住宅・自動車・その他のローンの月々の返済額を、元利均等と元金均等で計算します。",
+            backText: "ツール",
+            tabPrice: "元利均等",
+            tabSac: "元金均等",
+            labelValor: "物件・車両の価格 (¥)",
+            labelEntrada: "頭金 (¥)",
+            labelTaxa: "年利率 (%)",
+            labelAnos: "返済期間（年）",
+            btnCalc: "返済額を計算する",
+            resultLabel: "毎月の返済額",
+            navBlog: "ブログ", navAbout: "サイトについて", navContact: "お問い合わせ",
+            detailFinanciado: "借入額", detailJuros: "総利息", detailTotal: "総返済額",
+            tableMonth: "月", tableParcela: "返済額", tableAmort: "元金", tableJuros: "利息", tableSaldo: "残高",
+            tableNote: "最初の24ヶ月を表示",
+            affBadge1: "おすすめパートナー", affTitle1: "Banco BV — 自動車担保ローン",
+            affDesc1: "お持ちの車を担保に低金利でご利用いただけます。素早いシミュレーション、面倒な手続きなし。",
+            affCta1: "今すぐシミュレート →",
+            affBadge2: "競争力ある金利", affTitle2: "Juros Baixos — 比較して節約",
+            affDesc2: "市場で最も有利なローン金利を一か所で比較できます。あなたの予算に合った最適なプランを見つけましょう。",
+            affCta2: "金利を比較する →",
+            infoH2: "2026年のローン：署名前に誰も教えてくれないこと",
+            infoP1: "誰もがマイホームや新車を夢見ています。しかしほとんどの人は、本当に何を買っているのかを理解せずにローン契約書に署名します。月々の返済額は手頃に見えますが、20〜30年の間に総支払額は資産の元の価値の2〜3倍になることがあります。",
+            infoH3a: "元利均等vs元金均等：どちらを選ぶ？",
+            infoP2: "元利均等は最初から最後まで月々の返済額が固定で、家計管理がしやすいです。元金均等は最初の返済額が高めですが徐々に下がり、総利息が少なくなります。長期ローンでは元金均等の方が経済的です。",
+            infoH3b: "頭金がすべてを変える",
+            infoP3: "頭金が多いほど借入残高が少なくなり、長年にわたって支払う利息も減ります。契約前にこの計算機でさまざまなシナリオをシミュレートしてください。",
+            infoH3c: "ローン金利vs投資利回り",
+            infoP4: "ローンを組む前に、金利と保守的な投資の利回りを比較してください。金利が利回りを上回る場合は、先に多く貯蓄する方が賢明かもしれません。",
+            infoH3d: "繰り上げ返済：最大の味方",
+            infoP5: "追加支払いはすべて元金に直接充当され、将来の利息を減らします。30年ローンの2年目に行う繰り上げ返済は、総利息を数十万円削減できる可能性があります。",
+            infoH3e: "よくある質問",
+            faqQ1: "元利均等と元金均等の違いは？",
+            faqA1: "元利均等は返済額が一定。元金均等は毎月の元金が固定で利息が減っていく — 最初は高めですが総返済額が少なくなります。",
+            faqQ2: "自動車ローンにも使えますか？",
+            faqA2: "はい。数学的な仕組みは不動産も自動車も同じです。",
+            faqQ3: "総利息の計算方法は？",
+            faqA3: "元利均等：月々の返済額×返済回数から借入額を引いた金額が総利息です。",
+            faqQ4: "頭金を多くする価値はありますか？",
+            faqA4: "ほぼ常にあります。借入残高と利息が減ります。例外は投資利回りがローン金利を上回る場合です。"
+        },
+        "bn": {
+            metaTitle: "হোম লোন ও গাড়ির লোন ক্যালকুলেটর - Grana Hoje",
+            metaDesc: "বাড়ি, গাড়ি ও অন্যান্য ঋণের মাসিক কিস্তি বিনামূল্যে হিসাব করুন।",
+            pageTitle: "লোন সিমুলেটর",
+            pageSubtitle: "বাড়ি, গাড়ি ও অন্যান্য ঋণের মাসিক কিস্তি হিসাব করুন।",
+            backText: "টুলস",
+            tabPrice: "নির্দিষ্ট কিস্তি",
+            tabSac: "হ্রাসমান কিস্তি",
+            labelValor: "সম্পত্তি/যানবাহনের মূল্য (৳)",
+            labelEntrada: "অগ্রিম অর্থপ্রদান (৳)",
+            labelTaxa: "বার্ষিক সুদের হার (%)",
+            labelAnos: "মেয়াদ (বছর)",
+            btnCalc: "কিস্তি হিসাব করুন",
+            resultLabel: "মাসিক কিস্তি",
+            navBlog: "ব্লগ", navAbout: "আমাদের সম্পর্কে", navContact: "যোগাযোগ",
+            detailFinanciado: "ঋণের পরিমাণ", detailJuros: "মোট সুদ", detailTotal: "মোট পরিশোধ",
+            tableMonth: "মাস", tableParcela: "কিস্তি", tableAmort: "মূলধন", tableJuros: "সুদ", tableSaldo: "বকেয়া ব্যালেন্স",
+            tableNote: "প্রথম ২৪ মাস দেখানো হচ্ছে",
+            affBadge1: "প্রস্তাবিত অংশীদার", affTitle1: "Banco BV — যানবাহন জামানত ঋণ",
+            affDesc1: "আপনার গাড়িকে জামানত হিসেবে ব্যবহার করুন এবং কম সুদে ঋণ পান।",
+            affCta1: "এখনই হিসাব করুন →",
+            affBadge2: "প্রতিযোগিতামূলক সুদ", affTitle2: "Juros Baixos — তুলনা করুন ও সাশ্রয় করুন",
+            affDesc2: "একটি জায়গায় বাজারের সেরা ঋণের সুদের হার খুঁজুন। অফার তুলনা করুন এবং সেরাটি বেছে নিন।",
+            affCta2: "সুদের হার তুলনা করুন →",
+            infoH2: "২০২৬ সালে ঋণ: স্বাক্ষরের আগে কেউ যা বলে না",
+            infoP1: "সবাই নিজের বাড়ি বা নতুন গাড়ির স্বপ্ন দেখে। কিন্তু বেশিরভাগ মানুষ সত্যিকার অর্থে না বুঝেই ঋণ চুক্তিতে স্বাক্ষর করে। মাসিক কিস্তি বাজেটে মনে হয় — কিন্তু ২০-৩০ বছরে মোট পরিশোধ সম্পদের মূল মূল্যের দুই থেকে তিনগুণ হতে পারে।",
+            infoH3a: "নির্দিষ্ট কিস্তি না হ্রাসমান কিস্তি?",
+            infoP2: "নির্দিষ্ট কিস্তিতে শুরু থেকে শেষ পর্যন্ত সমান পরিমাণ। হ্রাসমান কিস্তিতে শুরুতে বেশি কিন্তু সময়ের সাথে কমে, মোট সুদ কম হয়।",
+            infoH3b: "অগ্রিম অর্থপ্রদান সবকিছু বদলে দেয়",
+            infoP3: "যত বেশি অগ্রিম, তত কম ঋণের ব্যালেন্স এবং তত কম সুদ। চুক্তি করার আগে বিভিন্ন পরিস্থিতি সিমুলেট করুন।",
+            infoH3c: "ঋণের সুদ বনাম বিনিয়োগ",
+            infoP4: "ঋণ নেওয়ার আগে সুদের হারকে একটি রক্ষণশীল বিনিয়োগের রিটার্নের সাথে তুলনা করুন।",
+            infoH3d: "আগাম পরিশোধ: আপনার সবচেয়ে বড় মিত্র",
+            infoP5: "প্রতিটি অতিরিক্ত পরিশোধ সরাসরি মূলধন কমায়, ভবিষ্যতের সুদ হ্রাস করে।",
+            infoH3e: "প্রায়শই জিজ্ঞাসিত প্রশ্ন",
+            faqQ1: "নির্দিষ্ট ও হ্রাসমান কিস্তির পার্থক্য কী?",
+            faqA1: "নির্দিষ্টে প্রতি মাসে সমান কিস্তি। হ্রাসমানে মূলধন স্থির কিন্তু সুদ কমে — প্রথম কিস্তি বেশি কিন্তু মোট পরিশোধ কম।",
+            faqQ2: "গাড়ির ঋণের জন্য ব্যবহার করা যাবে?",
+            faqA2: "হ্যাঁ। গাণিতিক যুক্তি সম্পত্তি ও যানবাহন উভয়ের জন্য একই।",
+            faqQ3: "মোট সুদ কীভাবে হিসাব করব?",
+            faqA3: "নির্দিষ্টে: কিস্তি × মাসের সংখ্যা থেকে ঋণের পরিমাণ বিয়োগ করুন।",
+            faqQ4: "বেশি অগ্রিম দেওয়া কি মূল্যবান?",
+            faqA4: "প্রায় সবসময়। ব্যালেন্স ও সুদ উভয়ই কমে। ব্যতিক্রম: যখন বিনিয়োগের রিটার্ন ঋণের সুদের হারের চেয়ে বেশি।"
+        }
+    };
+
+    let currentLang = "pt-BR";
+    let currentTab = "price";
+
+    function changeLanguage(lang) {
+        if (!T[lang]) return;
+        currentLang = lang;
+        applyTranslations();
+        // RTL for Arabic
+        document.body.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
+        calcular();
+    }
+
+    function applyTranslations() {
+        const t = T[currentLang];
+        if (!t) return;
+        document.getElementById('meta-title').textContent = t.metaTitle;
+        document.getElementById('meta-desc').setAttribute('content', t.metaDesc);
+        document.getElementById('page-title').textContent = t.pageTitle;
+        document.getElementById('page-subtitle').textContent = t.pageSubtitle;
+        document.getElementById('back-text').textContent = t.backText;
+        document.getElementById('tab-price').textContent = t.tabPrice;
+        document.getElementById('tab-sac').textContent = t.tabSac;
+        document.getElementById('label-valor').textContent = t.labelValor;
+        document.getElementById('label-entrada').textContent = t.labelEntrada;
+        document.getElementById('label-taxa').textContent = t.labelTaxa;
+        document.getElementById('label-anos').textContent = t.labelAnos;
+        document.getElementById('btn-calc').textContent = t.btnCalc;
+        document.getElementById('result-label').textContent = t.resultLabel;
+        document.getElementById('nav-blog').textContent = t.navBlog;
+        document.getElementById('nav-about').textContent = t.navAbout;
+        document.getElementById('nav-contact').textContent = t.navContact;
+        document.getElementById('aff-badge1').textContent = t.affBadge1;
+        document.getElementById('aff-title1').textContent = t.affTitle1;
+        document.getElementById('aff-desc1').textContent = t.affDesc1;
+        document.getElementById('aff-cta1').textContent = t.affCta1;
+        document.getElementById('aff-badge2').textContent = t.affBadge2;
+        document.getElementById('aff-title2').textContent = t.affTitle2;
+        document.getElementById('aff-desc2').textContent = t.affDesc2;
+        document.getElementById('aff-cta2').textContent = t.affCta2;
+        document.getElementById('info-h2').textContent = t.infoH2;
+        document.getElementById('info-p1').textContent = t.infoP1;
+        document.getElementById('info-h3a').textContent = t.infoH3a;
+        document.getElementById('info-p2').textContent = t.infoP2;
+        document.getElementById('info-h3b').textContent = t.infoH3b;
+        document.getElementById('info-p3').textContent = t.infoP3;
+        document.getElementById('info-h3c').textContent = t.infoH3c;
+        document.getElementById('info-p4').textContent = t.infoP4;
+        document.getElementById('info-h3d').textContent = t.infoH3d;
+        document.getElementById('info-p5').textContent = t.infoP5;
+        document.getElementById('info-h3e').textContent = t.infoH3e;
+        document.getElementById('faq-q1-text').textContent = t.faqQ1;
+        document.getElementById('faq-a1').textContent = t.faqA1;
+        document.getElementById('faq-q2-text').textContent = t.faqQ2;
+        document.getElementById('faq-a2').textContent = t.faqA2;
+        document.getElementById('faq-q3-text').textContent = t.faqQ3;
+        document.getElementById('faq-a3').textContent = t.faqA3;
+        document.getElementById('faq-q4-text').textContent = t.faqQ4;
+        document.getElementById('faq-a4').textContent = t.faqA4;
+        document.getElementById('table-note').textContent = t.tableNote;
+    }
+
+    function setTab(tab) {
+        currentTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tab).classList.add('active');
+        calcular();
+    }
+
+    function fmt(n) {
+        return n.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
+
+    function calcular() {
+        const valor = parseFloat(document.getElementById('valor').value) || 0;
+        const entrada = parseFloat(document.getElementById('entrada').value) || 0;
+        const taxaAnual = parseFloat(document.getElementById('taxa').value) || 0;
+        const anos = parseInt(document.getElementById('anos').value) || 0;
+
+        if (valor <= 0 || anos <= 0 || taxaAnual <= 0) return;
+
+        const financiado = valor - entrada;
+        if (financiado <= 0) return;
+
+        const n = anos * 12;
+        const i = taxaAnual / 100 / 12;
+        const t = T[currentLang];
+
+        let parcela, totalPago, totalJuros;
+        let schedule = [];
+
+        if (currentTab === 'price') {
+            // Tabela Price (PMT)
+            parcela = financiado * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+            totalPago = parcela * n;
+            totalJuros = totalPago - financiado;
+
+            let saldo = financiado;
+            for (let m = 1; m <= Math.min(n, 24); m++) {
+                const juros = saldo * i;
+                const amort = parcela - juros;
+                saldo -= amort;
+                schedule.push({m, parcela, amort, juros, saldo: Math.max(0, saldo)});
+            }
+        } else {
+            // Tabela SAC
+            const amortConst = financiado / n;
+            let saldo = financiado;
+            let primeiraParcela = amortConst + saldo * i;
+            totalPago = 0;
+            totalJuros = 0;
+
+            for (let m = 1; m <= n; m++) {
+                const juros = saldo * i;
+                const p = amortConst + juros;
+                totalPago += p;
+                totalJuros += juros;
+                saldo -= amortConst;
+                if (m <= 24) schedule.push({m, parcela: p, amort: amortConst, juros, saldo: Math.max(0, saldo)});
+            }
+            parcela = primeiraParcela; // Show first installment for SAC
         }
 
-        function calcularFinanciamento() {
-            const valorImovel = parseFloat(document.getElementById('valor').value) || 0;
-            const entrada = parseFloat(document.getElementById('entrada').value) || 0;
-            const taxaAnual = parseFloat(document.getElementById('taxa').value) || 0;
-            const anos = parseFloat(document.getElementById('anos').value) || 1;
+        // Update result
+        document.getElementById('result-value').textContent = 'R$ ' + fmt(parcela) + (currentTab === 'sac' ? '*' : '');
+        document.getElementById('result-details').innerHTML = `
+            <div class="result-detail-item">
+                <span class="label">${t.detailFinanciado}</span>
+                <span class="value">R$ ${fmt(financiado)}</span>
+            </div>
+            <div class="result-detail-item">
+                <span class="label">${t.detailJuros}</span>
+                <span class="value" style="color:#f87171;">R$ ${fmt(totalJuros)}</span>
+            </div>
+            <div class="result-detail-item">
+                <span class="label">${t.detailTotal}</span>
+                <span class="value" style="color:var(--primary);">R$ ${fmt(totalPago)}</span>
+            </div>
+        `;
+        document.getElementById('result-box').style.display = 'block';
 
-            // Validações
-            if (valorImovel <= 0 || entrada < 0 || entrada >= valorImovel) {
-                alert('Valores inválidos. A entrada deve ser menor que o valor do imóvel.');
-                return;
-            }
+        // Build amortization table
+        const tbl = document.getElementById('amort-table');
+        tbl.innerHTML = `
+            <thead>
+                <tr>
+                    <th>${t.tableMonth}</th>
+                    <th>${t.tableParcela}</th>
+                    <th>${t.tableAmort}</th>
+                    <th>${t.tableJuros}</th>
+                    <th>${t.tableSaldo}</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${schedule.map(r => `
+                    <tr>
+                        <td>${r.m}</td>
+                        <td>R$ ${fmt(r.parcela)}</td>
+                        <td>R$ ${fmt(r.amort)}</td>
+                        <td>R$ ${fmt(r.juros)}</td>
+                        <td>R$ ${fmt(r.saldo)}</td>
+                    </tr>
+                `).join('')}
+            </tbody>
+        `;
+        document.getElementById('amort-section').style.display = 'block';
+        document.getElementById('table-note').textContent = t.tableNote + (currentTab === 'sac' ? ' · *1ª parcela' : '');
+    }
 
-            // Cálculo da mensalidade (Tabela Price)
-            const taxaMensal = taxaAnual / 100 / 12;
-            const meses = anos * 12;
-            const valorFinanciado = valorImovel - entrada;
+    function toggleFaq(el) {
+        const item = el.parentElement;
+        item.classList.toggle('open');
+    }
 
-            let mensalidade = 0;
-            if (taxaMensal === 0) {
-                mensalidade = valorFinanciado / meses;
-            } else {
-                mensalidade = (valorFinanciado * taxaMensal) / (1 - Math.pow(1 + taxaMensal, -meses));
-            }
-
-            const totalPago = mensalidade * meses;
-            const totalJuros = totalPago - valorFinanciado;
-
-            // Animar resultado
-            const resultBox = document.getElementById('resultBox');
-            resultBox.classList.add('active');
-            setTimeout(() => resultBox.classList.remove('active'), 500);
-
-            // Atualizar valor
-            document.getElementById('resultValue').textContent = formatarMoeda(mensalidade);
-
-            // Mostrar detalhes
-            const detalhes = document.getElementById('detalhesResultado');
-            let html = '<div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">';
-            html += `<p><strong>Valor Financiado:</strong> ${formatarMoeda(valorFinanciado)}</p>`;
-            html += `<p><strong>Total a Pagar:</strong> ${formatarMoeda(totalPago)}</p>`;
-            html += `<p style="color: var(--accent);"><strong>Total de Juros:</strong> ${formatarMoeda(totalJuros)}</p>`;
-            html += `<p style="color: var(--primary); font-weight: 700; margin-top: 8px;"><strong>Período:</strong> ${meses} meses (${anos} anos)</p>`;
-            html += '</div>';
-            detalhes.innerHTML = html;
-        }
-
-        // Calcular ao carregar a página
-        window.addEventListener('load', () => {
-            calcularFinanciamento();
-        });
-
-        // Recalcular quando mudar valores
-        document.getElementById('valor').addEventListener('input', calcularFinanciamento);
-        document.getElementById('entrada').addEventListener('input', calcularFinanciamento);
-        document.getElementById('taxa').addEventListener('input', calcularFinanciamento);
-        document.getElementById('anos').addEventListener('input', calcularFinanciamento);
+    // Init
+    calcular();
     </script>
 </body>
 </html>
