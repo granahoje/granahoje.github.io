@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculadora de Seguro de Vida - Grana Hoje</title>
+<meta name="description" content="Calcule a cobertura ideal de seguro de vida para proteger sua família financeiramente."/>
+<link rel="stylesheet" href="/css/ferramentas.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+main{padding-top:20px;}
+.page-header{padding:30px 0 20px;margin-bottom:0;}
+.page-title{font-size:clamp(1.8rem,6vw,2.5rem);margin-bottom:12px;}
+.page-subtitle{font-size:1rem;margin-bottom:0;}
+.calculator-container{margin-top:30px;margin-bottom:40px;}
+.form-group-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.form-group-row{grid-template-columns:1fr;}.page-title{font-size:1.5rem;}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-seguro-vida.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size:0.9rem; outline:none;">
+<option value="">🌐 Idioma</option>
+<option value="">🇧🇷 PT-BR</option>
+<option value="en">🇺🇸 EN</option>
+<option value="es">🇪🇸 ES</option>
+<option value="fr">🇫🇷 FR</option>
+<option value="ar">🇸🇦 AR</option>
+<option value="zh">🇨🇳 ZH</option>
+<option value="ru">🇷🇺 RU</option>
+<option value="hi">🇮🇳 HI</option>
+<option value="ja">🇯🇵 JA</option>
+<option value="bn">🇧🇩 BN</option>
+<option value="pt-pt">🇵🇹 PT-PT</option>
+</select>
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<header class="page-header">
+<a href="/blog.html" class="back-link">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+Voltar para o Blog
+</a>
+<h1 class="page-title">Calculadora de Seguro de Vida</h1>
+<p class="page-subtitle">Descubra qual cobertura de seguro de vida é ideal para proteger sua família.</p>
+</header>
+<section class="calculator-container">
+<div class="calculator-card">
+
+<div class="form-group-row">
+<div class="form-group">
+<label for="renda-seguro">Renda Mensal Familiar (R$)</label>
+<input id="renda-seguro" type="number" min="0" step="0.01" placeholder="5000" value="5000"/>
+</div>
+<div class="form-group">
+<label for="dependentes">Número de Dependentes</label>
+<input id="dependentes" type="number" min="0" max="10" step="1" placeholder="2" value="2"/>
+</div>
+</div>
+<div class="form-group-row">
+<div class="form-group">
+<label for="dividas">Total de Dívidas (R$)</label>
+<input id="dividas" type="number" min="0" step="0.01" placeholder="50000" value="50000"/>
+</div>
+<div class="form-group">
+<label for="anos-cobertura">Anos de Cobertura Desejados</label>
+<input id="anos-cobertura" type="number" min="1" max="30" step="1" placeholder="10" value="10"/>
+</div>
+</div>
+<button class="btn-calculate" onclick="calcSeguro()" type="button">Calcular Cobertura Ideal</button>
+<div class="result-box" id="result-seguro">
+<span class="result-label">Cobertura Recomendada</span>
+<span class="result-value" id="value-seguro">R$ 0,00</span>
+<div id="det-seguro" style="margin-top:16px;text-align:left;font-size:0.9rem;color:var(--muted);"></div>
+</div>
+</div>
+<div class="premium-affiliate-cta" style="margin:40px 0;padding:30px;background:linear-gradient(90deg,rgba(34,211,189,0.08) 0%,rgba(16,185,129,0.05) 100%);border-left:5px solid #22d3bd;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2);display:flex;align-items:center;gap:30px;">
+<div style="font-size:3rem;flex-shrink:0;">🛡️</div>
+<div style="flex-grow:1;">
+<h4 style="margin:0 0 10px;color:#22d3bd;font-size:1.3rem;font-weight:900;">Parceiro Recomendado</h4>
+<p style="margin:0 0 15px;color:#b6c2d2;font-size:1rem;line-height:1.6;"><strong style="color:#fff;">Minuto Seguros</strong> compara planos de seguro de vida de diversas seguradoras para você encontrar a melhor proteção pelo menor preço.</p>
+<a href="https://apretailer.com.br/click/6a0bab802bfa8144cc0ad9b2/183524/358980/subaccount" rel="nofollow" target="_blank" style="display:inline-block;padding:12px 30px;background:linear-gradient(135deg,#22d3bd 0%,#10b981 100%);color:#09111f;text-decoration:none;border-radius:10px;font-weight:900;font-size:0.95rem;box-shadow:0 8px 20px rgba(34,211,189,0.3);">Comparar Planos →</a>
+</div>
+</div>
+<div style="margin:30px 0;padding:25px;background:rgba(34,211,189,0.05);border:1px solid rgba(34,211,189,0.2);border-radius:15px;text-align:center;">
+<p style="color:var(--muted);margin-bottom:15px;font-size:0.95rem;">📚 Quer aprender mais?</p>
+<a href="/blog.html" style="display:inline-block;padding:12px 30px;background:var(--primary);color:var(--bg);text-decoration:none;border-radius:10px;font-weight:900;box-shadow:0 4px 12px rgba(34,211,189,0.3);">Ler Artigo Completo →</a>
+</div>
+<section class="info-content">
+<div class="info-card">
+<h3>Seguro de Vida: O Investimento que Protege Quem Você Ama</h3>
+<p>Falar sobre seguro de vida é falar sobre algo que a maioria das pessoas prefere evitar: a própria mortalidade. Mas ignorar essa realidade pode deixar as pessoas que você mais ama em uma situação financeira devastadora. O seguro de vida não é um gasto; é uma declaração de amor e responsabilidade. É garantir que, mesmo na sua ausência, sua família terá condições de manter o padrão de vida, quitar dívidas e construir o futuro que vocês planejaram juntos.</p>
+<p>No Brasil, a penetração do seguro de vida ainda é baixa comparada a países desenvolvidos. Muitos brasileiros acreditam que é caro, complicado ou desnecessário. Mas a realidade é que os planos básicos de seguro de vida têm preços acessíveis, especialmente para pessoas mais jovens, e podem oferecer coberturas de centenas de milhares de reais por valores mensais modestos.</p>
+<h4>Quanto de Cobertura Você Realmente Precisa?</h4>
+<p>A nossa calculadora usa uma metodologia amplamente adotada por planejadores financeiros: soma a renda que você precisaria repor pelos anos que seus dependentes precisariam de suporte, mais as dívidas existentes, ajustada pelo número de dependentes. É uma estimativa conservadora, mas realista, que garante que sua família não passará aperto financeiro em um momento já tão difícil emocionalmente.</p>
+<p>Uma regra prática usada por muitos especialistas é ter uma cobertura equivalente a 10 vezes a renda anual bruta. Se você ganha R$ 5.000,00 por mês, sua cobertura ideal seria em torno de R$ 600.000,00. Pode parecer um número alto, mas quando você divide o prêmio mensal correspondente pela proteção oferecida, o custo-benefício é extraordinário.</p>
+<h4>Tipos de Seguro de Vida no Brasil</h4>
+<p>O mercado brasileiro oferece basicamente dois tipos principais: o seguro de vida temporário e o seguro de vida inteiro. O temporário é contratado por um período específico, geralmente de 10 a 30 anos, e é mais barato. É ideal para quem tem filhos pequenos ou dívidas de longo prazo como financiamento imobiliário. O seguro de vida inteiro tem cobertura vitalícia e geralmente inclui uma componente de acúmulo de valor, mas é significativamente mais caro.</p>
+<p>Além da cobertura por morte, muitos seguros oferecem coberturas adicionais como invalidez permanente, doenças graves e diária por internação hospitalar. Essas coberturas complementares podem fazer uma enorme diferença em situações de doença grave, onde você ainda está vivo mas incapacitado de trabalhar. Avalie quais coberturas fazem sentido para o seu perfil e momento de vida.</p>
+<h4>Como Escolher a Seguradora Certa</h4>
+<p>Não escolha um seguro de vida apenas pelo preço. A solidez financeira da seguradora é fundamental, pois você quer ter certeza de que ela estará lá para pagar quando necessário. Verifique a classificação da empresa nos órgãos reguladores, leia as condições gerais do contrato com atenção e compare pelo menos três cotações antes de decidir. Nosso parceiro recomendado nesta página oferece cotações personalizadas com atendimento especializado.</p>
+<h4>Conclusão</h4>
+<p>O seguro de vida é um dos pilares de uma estratégia financeira sólida, especialmente para quem tem dependentes. Use nossa calculadora para entender qual cobertura faz sentido para você, compare opções no mercado e tome uma decisão informada. Proteger sua família é proteger tudo que você construiu. Não deixe para amanhã uma decisão que pode mudar o futuro de quem você ama.</p>
+</div>
+</section>
+</section>
+</main>
+<footer><div class="container"><p>© 2026 Grana Hoje. Educação financeira para todos.</p></div></footer>
+<script>
+function fmt(v){return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v);}
+
+function calcSeguro(){
+  const renda = parseFloat(document.getElementById('renda-seguro').value)||0;
+  const dep = parseInt(document.getElementById('dependentes').value)||0;
+  const dividas = parseFloat(document.getElementById('dividas').value)||0;
+  const anos = parseInt(document.getElementById('anos-cobertura').value)||10;
+  if(renda<=0){alert('Informe a renda familiar.');return;}
+  const rendaAnual = renda*12;
+  const coberturaRenda = rendaAnual*anos;
+  const fatorDep = 1+(dep*0.1);
+  const coberturaNecessaria = (coberturaRenda*fatorDep)+dividas;
+  const estimMensal = coberturaNecessaria*0.0003;
+  document.getElementById('value-seguro').textContent = fmt(coberturaNecessaria);
+  document.getElementById('result-seguro').classList.add('active');
+  let h='<div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;">';
+  h+=`<p><strong>Cobertura de Renda (${anos} anos):</strong> ${fmt(coberturaRenda)}</p>`;
+  h+=`<p><strong>Cobertura para Dívidas:</strong> ${fmt(dividas)}</p>`;
+  h+=`<p><strong>Fator Dependentes (${dep}):</strong> +${(dep*10)}%</p>`;
+  h+=`<p style="color:var(--primary);font-weight:700;margin-top:8px;"><strong>Cobertura Total Recomendada:</strong> ${fmt(coberturaNecessaria)}</p>`;
+  h+=`<p style="color:var(--accent);"><strong>Prêmio Estimado/Mês:</strong> ${fmt(estimMensal)}</p>`;
+  h+='</div>';
+  document.getElementById('det-seguro').innerHTML=h;
+}
+window.addEventListener('load',calcSeguro);
+</script>
+</body>
+</html>

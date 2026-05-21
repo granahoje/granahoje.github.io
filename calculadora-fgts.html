@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculadora de FGTS - Grana Hoje</title>
+<meta name="description" content="Calcule seu saldo do FGTS, simule rendimentos e saiba quanto você tem direito a receber."/>
+<link rel="stylesheet" href="/css/ferramentas.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+main{padding-top:20px;}
+.page-header{padding:30px 0 20px;margin-bottom:0;}
+.page-title{font-size:clamp(1.8rem,6vw,2.5rem);margin-bottom:12px;}
+.page-subtitle{font-size:1rem;margin-bottom:0;}
+.calculator-container{margin-top:30px;margin-bottom:40px;}
+.form-group-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.form-group-row{grid-template-columns:1fr;}.page-title{font-size:1.5rem;}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+<div class="container header-inner">
+<a class="logo" href="/">GRANA HOJE</a>
+<nav class="nav-links">
+<select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-fgts.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size:0.9rem; outline:none;">
+<option value="">🌐 Idioma</option>
+<option value="">🇧🇷 PT-BR</option>
+<option value="en">🇺🇸 EN</option>
+<option value="es">🇪🇸 ES</option>
+<option value="fr">🇫🇷 FR</option>
+<option value="ar">🇸🇦 AR</option>
+<option value="zh">🇨🇳 ZH</option>
+<option value="ru">🇷🇺 RU</option>
+<option value="hi">🇮🇳 HI</option>
+<option value="ja">🇯🇵 JA</option>
+<option value="bn">🇧🇩 BN</option>
+<option value="pt-pt">🇵🇹 PT-PT</option>
+</select>
+<a href="/blog.html">Blog</a>
+<a href="/about.html">Sobre</a>
+<a href="/contact.html">Contato</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<header class="page-header">
+<a href="/blog.html" class="back-link">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+Voltar para o Blog
+</a>
+<h1 class="page-title">Calculadora de FGTS</h1>
+<p class="page-subtitle">Simule seu saldo, rendimentos e descubra quando e como usar seu FGTS.</p>
+</header>
+<section class="calculator-container">
+<div class="calculator-card">
+
+<div class="form-group-row">
+<div class="form-group">
+<label for="salario">Salário Bruto (R$)</label>
+<input id="salario" type="number" min="0" step="0.01" placeholder="3000" value="3000"/>
+</div>
+<div class="form-group">
+<label for="anos-fgts">Anos Trabalhados</label>
+<input id="anos-fgts" type="number" min="0" step="1" placeholder="5" value="5"/>
+</div>
+</div>
+<div class="form-group-row">
+<div class="form-group">
+<label for="meses-fgts">Meses Adicionais</label>
+<input id="meses-fgts" type="number" min="0" max="11" step="1" placeholder="3" value="3"/>
+</div>
+<div class="form-group">
+<label for="rendimento">Rendimento Médio FGTS (% ao ano)</label>
+<input id="rendimento" type="number" min="0" step="0.01" placeholder="3" value="3"/>
+</div>
+</div>
+<button class="btn-calculate" onclick="calcFGTS()" type="button">Calcular Saldo FGTS</button>
+<div class="result-box" id="result-fgts">
+<span class="result-label">Saldo Estimado do FGTS</span>
+<span class="result-value" id="value-fgts">R$ 0,00</span>
+<div id="det-fgts" style="margin-top:16px;text-align:left;font-size:0.9rem;color:var(--muted);"></div>
+</div>
+</div>
+<div class="premium-affiliate-cta" style="margin:40px 0;padding:30px;background:linear-gradient(90deg,rgba(34,211,189,0.08) 0%,rgba(16,185,129,0.05) 100%);border-left:5px solid #22d3bd;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2);display:flex;align-items:center;gap:30px;">
+<div style="font-size:3rem;flex-shrink:0;">🏦</div>
+<div style="flex-grow:1;">
+<h4 style="margin:0 0 10px;color:#22d3bd;font-size:1.3rem;font-weight:900;">Parceiro Recomendado</h4>
+<p style="margin:0 0 15px;color:#b6c2d2;font-size:1rem;line-height:1.6;"><strong style="color:#fff;">Credspot</strong> é especialista em antecipação de FGTS com taxas competitivas. Simule gratuitamente e receba seu dinheiro rapidamente.</p>
+<a href="https://apretailer.com.br/click/6a0bab802bfa817b98549fd2/187799/358980/subaccount" rel="nofollow" target="_blank" style="display:inline-block;padding:12px 30px;background:linear-gradient(135deg,#22d3bd 0%,#10b981 100%);color:#09111f;text-decoration:none;border-radius:10px;font-weight:900;font-size:0.95rem;box-shadow:0 8px 20px rgba(34,211,189,0.3);">Simular Antecipação →</a>
+</div>
+</div>
+<div style="margin:30px 0;padding:25px;background:rgba(34,211,189,0.05);border:1px solid rgba(34,211,189,0.2);border-radius:15px;text-align:center;">
+<p style="color:var(--muted);margin-bottom:15px;font-size:0.95rem;">📚 Quer aprender mais?</p>
+<a href="/blog.html" style="display:inline-block;padding:12px 30px;background:var(--primary);color:var(--bg);text-decoration:none;border-radius:10px;font-weight:900;box-shadow:0 4px 12px rgba(34,211,189,0.3);">Ler Artigo Completo →</a>
+</div>
+<section class="info-content">
+<div class="info-card">
+<h3>FGTS: O Que É e Como Funciona na Prática</h3>
+<p>O Fundo de Garantia do Tempo de Serviço, o famoso FGTS, é um dos direitos trabalhistas mais importantes do Brasil e, ao mesmo tempo, um dos menos compreendidos. Todo trabalhador com carteira assinada tem 8% do seu salário bruto depositado mensalmente pelo empregador em uma conta vinculada na Caixa Econômica Federal. Esse dinheiro é seu, mas com acesso restrito a situações específicas previstas em lei.</p>
+<p>A grande questão que muitos trabalhadores se fazem é: quanto tenho guardado e quando posso usar? A resposta depende do tempo de serviço, do seu salário e dos rendimentos acumulados. Nossa calculadora te dá uma estimativa realista baseada nesses fatores, ajudando você a planejar o uso futuro do seu fundo.</p>
+<h4>Quando Você Pode Sacar o FGTS?</h4>
+<p>O saque do FGTS é permitido em diversas situações: demissão sem justa causa, aposentadoria, compra da casa própria, doenças graves como câncer e HIV, desastres naturais, e o chamado saque-aniversário. Cada modalidade tem suas regras e limitações. A demissão sem justa causa é o caso mais comum, e nela você tem direito ao saldo total mais a multa de 40% sobre o valor do fundo.</p>
+<p>O saque-aniversário, criado em 2020, permite retirar uma parte do saldo todo ano no mês do seu aniversário. É uma opção interessante para quem precisa de liquidez, mas tem um custo: ao aderir, você abre mão da multa de 40% em caso de demissão sem justa causa. Analise bem antes de optar por essa modalidade.</p>
+<h4>FGTS como Estratégia Financeira</h4>
+<p>Muitos brasileiros encaram o FGTS apenas como uma reserva para emergências trabalhistas. Mas ele pode ser muito mais do que isso. O fundo pode ser usado como entrada na compra de um imóvel pelo programa Casa Verde e Amarela, reduzindo significativamente o valor financiado e, consequentemente, os juros pagos ao longo dos anos. Essa é uma das formas mais inteligentes de utilizar o benefício.</p>
+<p>Outra estratégia é usar o FGTS para amortizar o saldo devedor de um financiamento imobiliário já existente. Dependendo das condições do seu contrato, isso pode reduzir o prazo ou o valor das parcelas, gerando uma economia expressiva em juros. Consulte seu banco ou a Caixa para entender as opções disponíveis no seu caso específico.</p>
+<h4>Antecipação do FGTS: Vale a Pena?</h4>
+<p>O mercado financeiro oferece produtos de antecipação do FGTS, especialmente do saque-aniversário. Bancos e fintechs permitem que você receba antecipadamente os valores futuros do seu fundo, cobrando juros sobre o montante. As taxas geralmente são menores que as do crédito pessoal tradicional, tornando essa uma opção razoável para quem precisa de crédito de emergência.</p>
+<p>No entanto, ao antecipar o FGTS, você compromete uma renda futura garantida. Se surgir uma oportunidade melhor de uso do fundo, como a compra de um imóvel, você poderá estar com o saldo já comprometido. Pense bem antes de tomar essa decisão e use nossa calculadora para entender o impacto no seu planejamento de longo prazo.</p>
+<h4>Conclusão</h4>
+<p>O FGTS é uma reserva valiosa que todo trabalhador brasileiro acumula ao longo da carreira. Entendê-lo é o primeiro passo para usá-lo estrategicamente. Seja para a compra da casa própria, para uma reserva de emergência em caso de demissão, ou para amortização de dívidas, o fundo pode ser um aliado poderoso na sua jornada financeira. Use nossa ferramenta regularmente para acompanhar a evolução do seu saldo estimado e planejar o futuro com mais segurança.</p>
+</div>
+</section>
+</section>
+</main>
+<footer><div class="container"><p>© 2026 Grana Hoje. Educação financeira para todos.</p></div></footer>
+<script>
+function fmt(v){return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v);}
+
+function calcFGTS(){
+  const sal = parseFloat(document.getElementById('salario').value)||0;
+  const anos = parseInt(document.getElementById('anos-fgts').value)||0;
+  const meses = parseInt(document.getElementById('meses-fgts').value)||0;
+  const rend = parseFloat(document.getElementById('rendimento').value)/100||0.03;
+  if(sal<=0){alert('Informe um salário válido.');return;}
+  const totalMeses = anos*12 + meses;
+  const deposMensal = sal*0.08;
+  let saldo = 0;
+  const taxaMensal = Math.pow(1+rend,1/12)-1;
+  for(let i=0;i<totalMeses;i++){saldo=(saldo+deposMensal)*(1+taxaMensal);}
+  document.getElementById('value-fgts').textContent = fmt(saldo);
+  document.getElementById('result-fgts').classList.add('active');
+  let h='<div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:12px;">';
+  h+=`<p><strong>Depósito Mensal (8%):</strong> ${fmt(deposMensal)}</p>`;
+  h+=`<p><strong>Total Depositado:</strong> ${fmt(deposMensal*totalMeses)}</p>`;
+  h+=`<p style="color:var(--primary);font-weight:700;"><strong>Saldo com Rendimento:</strong> ${fmt(saldo)}</p>`;
+  h+=`<p style="color:var(--accent);"><strong>Rendimento Total:</strong> ${fmt(saldo-deposMensal*totalMeses)}</p>`;
+  h+='</div>';
+  document.getElementById('det-fgts').innerHTML=h;
+}
+window.addEventListener('load',calcFGTS);
+</script>
+</body>
+</html>
