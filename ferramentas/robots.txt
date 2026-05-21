@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://granahoje.github.io/ferramentas/sitemap-ferramentas.xml

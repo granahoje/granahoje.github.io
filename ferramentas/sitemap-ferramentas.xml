@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>https://granahoje.github.io/ferramentas/calculadora-financiamento.html</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://granahoje.github.io/ferramentas/calculadora-emprestimo.html</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://granahoje.github.io/ferramentas/calculadora-fgts.html</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+<url>
+<loc>https://granahoje.github.io/ferramentas/calculadora-dividas.html</loc>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+
+</urlset>
