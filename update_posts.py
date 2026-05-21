@@ -15,8 +15,8 @@ def upload(path, sha, content):
     urllib.request.urlopen(req)
     print(f"OK: {path}")
 
-html1 = open("novos_posts/mineracao-dados-mobile-etica.html").read()
-html2 = open("novos_posts/venda-digital-assets-ia.html").read()
+html1 = open("artigos/mineracao-dados-mobile-etica.html").read()
+html2 = open("artigos/venda-digital-assets-ia.html").read()
 
-upload("novos_posts/mineracao-dados-mobile-etica.html", sha1, html1)
-upload("novos_posts/venda-digital-assets-ia.html", sha2, html2)
+upload("artigos/mineracao-dados-mobile-etica.html", sha1, html1)
+upload("artigos/venda-digital-assets-ia.html", sha2, html2)

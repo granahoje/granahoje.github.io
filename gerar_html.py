@@ -6,7 +6,7 @@ html1 = """<!DOCTYPE html>
 <title>Mineracao de Dados Mobile: Etica e Privacidade 2026 - Grana Hoje</title>
 <meta name="description" content="Entenda como a mineracao de dados mobile funciona e como proteger sua privacidade financeira em 2026.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://granahoje.github.io/novos_posts/mineracao-dados-mobile-etica.html">
+<link rel="canonical" href="https://granahoje.github.io/artigos/mineracao-dados-mobile-etica.html">
 <style>
 body{font-family:sans-serif;background:#09111f;color:#e2e8f0;max-width:780px;margin:0 auto;padding:2rem 1.5rem;line-height:1.7}
 a{color:#3b82f6}
@@ -69,7 +69,7 @@ html2 = """<!DOCTYPE html>
 <title>Venda de Digital Assets com IA: Guia Completo 2026 - Grana Hoje</title>
 <meta name="description" content="Aprenda como criar e vender ativos digitais usando inteligencia artificial em 2026 e gerar renda passiva.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://granahoje.github.io/novos_posts/venda-digital-assets-ia.html">
+<link rel="canonical" href="https://granahoje.github.io/artigos/venda-digital-assets-ia.html">
 <style>
 body{font-family:sans-serif;background:#09111f;color:#e2e8f0;max-width:780px;margin:0 auto;padding:2rem 1.5rem;line-height:1.7}
 a{color:#3b82f6}
@@ -122,8 +122,8 @@ footer a{color:#94a3b8;margin:0 .5rem}
 <footer><div><a href="https://granahoje.github.io/about.html">Sobre</a><a href="https://granahoje.github.io/blog.html">Blog</a><a href="https://granahoje.github.io/privacy-policy.html">Privacidade</a></div><p>© 2026 Grana Hoje. Todos os direitos reservados.</p></footer>
 </body></html>"""
 
-with open("novos_posts/mineracao-dados-mobile-etica.html","w") as f:
+with open("artigos/mineracao-dados-mobile-etica.html","w") as f:
     f.write(html1)
-with open("novos_posts/venda-digital-assets-ia.html","w") as f:
+with open("artigos/venda-digital-assets-ia.html","w") as f:
     f.write(html2)
 print("Arquivos criados!")

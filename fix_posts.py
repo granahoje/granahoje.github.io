@@ -19,6 +19,6 @@ def upload(path, content):
     urllib.request.urlopen(req)
     print(f"OK: {path}")
 
-h = open("/data/data/com.termux/files/home/granahoje.github.io/novos_posts/mineracao-dados-mobile-etica.html").read()
-upload("novos_posts/mineracao-dados-mobile-etica.html", h)
-upload("novos_posts/venda-digital-assets-ia.html", h)
+h = open("/data/data/com.termux/files/home/granahoje.github.io/artigos/mineracao-dados-mobile-etica.html").read()
+upload("artigos/mineracao-dados-mobile-etica.html", h)
+upload("artigos/venda-digital-assets-ia.html", h)

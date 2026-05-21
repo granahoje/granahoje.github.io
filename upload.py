@@ -15,5 +15,5 @@ def upload(path, content):
     except Exception as e:
         print(f"ERRO: {e}")
 
-upload("novos_posts/mineracao-dados-mobile-etica.html", "<h1>teste</h1>")
-upload("novos_posts/venda-digital-assets-ia.html", "<h1>teste</h1>")
+upload("artigos/mineracao-dados-mobile-etica.html", "<h1>teste</h1>")
+upload("artigos/venda-digital-assets-ia.html", "<h1>teste</h1>")
