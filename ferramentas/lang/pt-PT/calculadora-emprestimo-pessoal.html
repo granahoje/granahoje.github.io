@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulador de Empréstimo Pessoal | Grana Hoje</title>
+
+<meta name="description" content="Compare parcelas, juros e descubra qual empréstimo pessoal cabe no seu bolso com nosso simulador premium.">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:#fff;
+line-height:1.6;
+}
+
+header{
+padding:20px;
+background:#111827;
+border-bottom:1px solid #1e293b;
+}
+
+header h1{
+font-size:24px;
+color:#38bdf8;
+}
+
+.hero{
+padding:60px 20px;
+text-align:center;
+}
+
+.hero h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+}
+
+.calculadora{
+max-width:700px;
+margin:40px auto;
+background:#111827;
+padding:30px;
+border-radius:20px;
+}
+
+.calculadora input{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+background:#1e293b;
+color:#fff;
+}
+
+.calculadora button{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:12px;
+background:#38bdf8;
+color:#000;
+font-weight:bold;
+cursor:pointer;
+}
+
+.resultado{
+margin-top:20px;
+padding:20px;
+background:#0f172a;
+border-radius:12px;
+}
+
+.conteudo{
+max-width:900px;
+margin:60px auto;
+padding:20px;
+}
+
+.conteudo h2{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#111827;
+margin-top:60px;
+color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>GRANA HOJE</h1>
+</header>
+
+<section class="hero">
+<h2>Simulador de Empréstimo Pessoal</h2>
+
+<p>
+Compare ofertas reais e veja qual empréstimo cabe no seu bolso.
+</p>
+</section>
+
+<section class="calculadora">
+
+<h3>Calcule sua parcela</h3>
+
+<input type="number" id="valor" placeholder="Valor desejado">
+
+<input type="number" id="juros" placeholder="Taxa de juros mensal">
+
+<input type="number" id="meses" placeholder="Quantidade de parcelas">
+
+<button onclick="calcular()">
+Calcular Agora
+</button>
+
+<div class="resultado" id="resultado">
+Resultado aparecerá aqui
+</div>
+
+</section>
+
+<section class="conteudo">
+
+<h2>Como funciona um empréstimo pessoal?</h2>
+
+<p>
+O empréstimo pessoal é uma das formas mais rápidas de conseguir crédito online atualmente. Muitas pessoas utilizam essa modalidade para organizar dívidas, realizar projetos pessoais, reformar a casa ou até mesmo investir em oportunidades importantes.
+</p>
+
+<p>
+Antes de contratar qualquer crédito, é essencial entender como funcionam os juros, parcelas e o custo efetivo total. Um simulador ajuda exatamente nisso: visualizar o impacto do empréstimo no orçamento antes de contratar.
+</p>
+
+<p>
+Hoje existem plataformas digitais que facilitam a comparação entre diferentes bancos e financeiras. Isso permite encontrar condições mais vantajosas e taxas mais competitivas.
+</p>
+
+<p>
+Além disso, fazer simulações evita decisões impulsivas. Muitas vezes uma pequena diferença na taxa mensal pode representar centenas ou milhares de reais ao longo do contrato.
+</p>
+
+<p>
+Outro ponto importante é manter as parcelas dentro da realidade financeira mensal. Especialistas recomendam evitar comprometer grande parte da renda com crédito.
+</p>
+
+<p>
+Com planejamento, o empréstimo pessoal pode ser uma ferramenta útil para reorganização financeira e realização de objetivos importantes.
+</p>
+
+</section>
+
+<footer>
+© 2026 Grana Hoje — Conteúdo educativo financeiro.
+</footer>
+
+<script>
+function calcular(){
+
+let valor = parseFloat(document.getElementById('valor').value);
+
+let juros = parseFloat(document.getElementById('juros').value)/100;
+
+let meses = parseFloat(document.getElementById('meses').value);
+
+let parcela = (valor * juros) / (1 - Math.pow(1 + juros, -meses));
+
+document.getElementById('resultado').innerHTML =
+`
+<h3>Resultado da Simulação</h3>
+<p>Parcela estimada: R$ ${parcela.toFixed(2)}</p>
+<p>Total pago: R$ ${(parcela*meses).toFixed(2)}</p>
+`;
+
+}
+</script>
+
+</body>
+</html>
