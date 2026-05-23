@@ -1,59 +1,347 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salary Split Calculator | Grana Hoje</title>
-    <meta name="description" content="Ferramenta financeira premium para salary split calculator">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/ferramentas/css/premium-tool.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Divisão de Salário (50/30/20) - Grana Hoje</title>
+    <meta name="description" content="Divida seu salário de forma estratégica usando a regra 50/30/20. Ferramenta gratuita para organizar necessidades, desejos e investimentos."/>
+    <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #22d3bd;
+            --bg: #09111f;
+            --card: #0f1e35;
+            --border: rgba(255,255,255,0.07);
+            --muted: #8899b0;
+            --radius-md: 16px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: #f0f4f8;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(9,17,31,0.95);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #fff; }
+        main { padding: 30px 20px 60px; max-width: 1100px; margin: 0 auto; }
+        .page-header { padding: 30px 0 20px; }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: var(--primary); }
+        .page-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .page-subtitle {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .calculator-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin: 20px 0;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .form-group input {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .btn-calculate {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%);
+            color: #09111f;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34,211,189,0.35);
+        }
+        .result-box {
+            background: linear-gradient(135deg, rgba(34,211,189,0.08) 0%, rgba(16,185,129,0.04) 100%);
+            border: 1px solid rgba(34,211,189,0.25);
+            border-radius: 14px;
+            padding: 28px;
+            margin-top: 24px;
+            display: none;
+        }
+        .result-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 12px 0;
+        }
+        .result-item h4 {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .result-item .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+        }
+        .result-item .desc {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+        .info-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .info-card h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .info-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 28px 0 12px;
+        }
+        .info-card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-q {
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q span { color: var(--primary); font-size: 1.2rem; }
+        .faq-a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+        }
+        .faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
+        footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 640px) {
+            .calculator-card { padding: 20px; }
+            .info-card { padding: 24px; }
+        }
+    </style>
 </head>
-<body class="premium-tool">
+<body>
     <header>
-        <div class="logo">GRANA HOJE</div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/sobre.html">Sobre</a>
-        </nav>
+        <div class="header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/ferramentas.html">Ferramentas</a>
+                <a href="/blog.html">Blog</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="container">
-        <section class="hero-premium">
-            <div class="glow"></div>
-            <h1>Salary Split Calculator</h1>
-            <p class="subtitle">Ferramenta financeira premium para salary split calculator</p>
-        </section>
+    <main>
+        <div class="page-header">
+            <a href="/ferramentas.html" class="back-link">← Ferramentas</a>
+            <h1 class="page-title">Calculadora de Divisão de Salário</h1>
+            <p class="page-subtitle">Organize suas finanças usando a regra 50/30/20 - necessidades, desejos e investimentos.</p>
+        </div>
 
-        <section class="tool-interface card-glass">
-            <div id="salary-split-calculator-app">
-                <!-- A ferramenta será injetada aqui via JS -->
-                <div class="loading">Carregando ferramenta premium...</div>
+        <div class="calculator-card">
+            <div class="form-group">
+                <label>Seu Salário Mensal Líquido (R$)</label>
+                <input type="number" id="salario" placeholder="3000" min="0" step="0.01">
             </div>
-        </section>
-
-        <section class="content-eeat">
-            <div class="article-content">
-                <h2>O que é Salary Split Calculator?</h2>
-                <p>Conteúdo detalhado sobre a ferramenta para SEO e EEAT...</p>
-                <!-- Mais conteúdo será adicionado via script de expansão -->
+            <button class="btn-calculate" onclick="calcular()">Calcular Divisão Ideal</button>
+            
+            <div class="result-box" id="resultado">
+                <div class="result-item">
+                    <h4>🏠 Necessidades (50%)</h4>
+                    <div class="value" id="necessidades">R$ 0,00</div>
+                    <div class="desc">Aluguel, contas, alimentação, transporte básico</div>
+                </div>
+                <div class="result-item">
+                    <h4>🎯 Desejos (30%)</h4>
+                    <div class="value" id="desejos">R$ 0,00</div>
+                    <div class="desc">Lazer, hobbies, restaurantes, streaming</div>
+                </div>
+                <div class="result-item">
+                    <h4>💎 Investimentos (20%)</h4>
+                    <div class="value" id="investimentos">R$ 0,00</div>
+                    <div class="desc">Poupança, investimentos, reserva de emergência</div>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section class="cta-premium card-glass">
-            <h3>Maximize seus Resultados Financeiros</h3>
-            <p>Conheça as melhores plataformas para gerenciar seu patrimônio com inteligência.</p>
-            <a href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" class="btn-premium">Explorar Agora</a>
+        <section class="info-card">
+            <h2>A Regra 50/30/20: Por Que Funciona Quando Outras Falham</h2>
+            <p>Você já tentou controlar suas finanças com planilhas complicadas que duraram uma semana? Ou aplicativos cheios de categorias que você nunca conseguiu preencher direito? O problema não é você — é o método. A maioria das estratégias de orçamento pessoal falha porque exige um nível de detalhamento que simplesmente não cabe na rotina de quem trabalha, estuda e tem uma vida real acontecendo. É aí que a regra 50/30/20 se destaca: ela é simples o suficiente para funcionar, mas poderosa o suficiente para transformar sua relação com dinheiro.</p>
+
+            <h3>Os 50% das Necessidades: Onde o Mês Não Pode Falhar</h3>
+            <p>Metade do seu salário vai para o que realmente importa — moradia, alimentação, transporte, saúde. Esses são os gastos não negociáveis, aqueles que, se você não pagar, sua vida para. O segredo aqui não é cortar ao máximo, mas sim otimizar. Se seus 50% estão virando 60% ou 70%, você tem duas opções: aumentar a renda ou renegociar os fixos. Um aluguel que consome 40% do salário sozinho deixa pouco espaço para respirar. Antes de assinar qualquer contrato, rode os números nesta calculadora e veja se o compromisso cabe na sua realidade.</p>
+
+            <h3>Os 30% dos Desejos: Viver Não É Só Sobreviver</h3>
+            <p>Aqui está a diferença entre um orçamento que você abandona na segunda semana e um que dura anos: você precisa de espaço para viver. Cinema, happy hour, aquele curso online, a academia — tudo isso importa. A regra 50/30/20 reconhece que qualidade de vida não é luxo, é combustível. Quando você se proíbe de gastar com o que traz prazer, eventualmente quebra tudo e gasta o dobro por impulso. Com 30% reservados conscientemente para desejos, você pode aproveitar sem culpa e sem comprometer o futuro. O truque é saber a diferença entre "eu quero isso" e "eu preciso disso agora" — e a calculadora te ajuda a enxergar essa linha.</p>
+
+            <h3>Os 20% dos Investimentos: Seu Eu do Futuro Agradece</h3>
+            <p>Vinte por cento do salário pode parecer muito no começo, especialmente se você nunca guardou nada. Mas pense assim: se você ganha R$ 3.000, são R$ 600 por mês. Em um ano, R$ 7.200 — sem contar rendimento. Em cinco anos, mais de R$ 36.000. Isso não é apenas uma reserva de emergência, é liberdade. É poder dizer não para um emprego tóxico, é trocar de carro sem financiamento, é ter segurança quando o inesperado acontece. E sempre acontece. A diferença entre quem constrói patrimônio e quem vive no vermelho não está no salário — está na disciplina de separar esses 20% antes de qualquer outra coisa.</p>
+
+            <h3>Ajustando a Regra para Sua Realidade</h3>
+            <p>A regra 50/30/20 é um ponto de partida, não uma camisa de força. Se você mora com os pais e tem poucas despesas fixas, pode inverter: 30% necessidades, 30% desejos, 40% investimentos. Se está pagando dívidas, talvez precise de 60% para necessidades temporariamente até se livrar dos juros. O importante é ter uma estrutura consciente. Muita gente gasta sem pensar e no fim do mês se pergunta: "onde foi meu dinheiro?". Com essa divisão clara, você sabe exatamente onde cada real está indo — e, mais importante, para onde ele deveria ir.</p>
+
+            <h3>Perguntas Frequentes</h3>
+            
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>O que fazer se meus gastos essenciais ultrapassam 50%?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-a">Primeiro, revise o que você classifica como "essencial". Muitas vezes, gastos com streaming ou delivery entram nessa categoria por hábito. Se realmente são essenciais, busque formas de reduzir: trocar de moradia, renegociar plano de celular, usar transporte público. Caso não seja possível reduzir, ajuste temporariamente para 60/25/15 até aumentar sua renda.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Posso usar os 30% de desejos para viagens?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-a">Sim! Viagens são desejos, não necessidades. Se você quer viajar, pode acumular parte dos 30% ao longo de alguns meses para fazer uma viagem maior. O segredo é planejar dentro desse orçamento, sem comprometer os 20% de investimentos nem os 50% de necessidades.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>20% de investimento é muito para quem está começando?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-a">Se você nunca guardou nada, comece com 10% e vá aumentando gradualmente. O importante é criar o hábito. Mas lembre-se: quanto antes você começar a investir 20%, mais cedo terá uma reserva robusta. Ajuste suas despesas aos poucos para caber nessa meta.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Como aplicar a regra se minha renda varia todo mês?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-a">Use a média dos últimos 3 a 6 meses como base. Nos meses de renda maior, aumente proporcionalmente os investimentos. Nos meses de renda menor, mantenha as necessidades e reduza os desejos. A ideia é ter flexibilidade sem perder a estrutura.</div>
+            </div>
         </section>
     </main>
 
-    <footer class="standard-footer">
-        <p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
+    <footer>
+        <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
     </footer>
 
-    <script src="/ferramentas/js/premium-core.js"></script>
-    <script src="/ferramentas/js/salary-split-calculator.js"></script>
+    <script>
+        function calcular() {
+            const salario = parseFloat(document.getElementById('salario').value);
+            if (!salario || salario <= 0) {
+                alert('Por favor, insira um salário válido');
+                return;
+            }
+            
+            const necessidades = salario * 0.50;
+            const desejos = salario * 0.30;
+            const investimentos = salario * 0.20;
+            
+            document.getElementById('necessidades').textContent = 
+                'R$ ' + necessidades.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+            document.getElementById('desejos').textContent = 
+                'R$ ' + desejos.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+            document.getElementById('investimentos').textContent = 
+                'R$ ' + investimentos.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+            
+            document.getElementById('resultado').style.display = 'block';
+        }
+
+        function toggleFaq(el) {
+            el.parentElement.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
