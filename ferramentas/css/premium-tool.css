@@ -72,3 +72,305 @@
     color: var(--text-muted);
     font-style: italic;
 }
+
+/* ========== Calculator UI ========== */
+.calculator-form {
+    color: var(--text-main);
+}
+
+.calculator-form h3,
+.calculator-form h4,
+.calculator-form h5 {
+    color: var(--primary);
+    margin: 0 0 16px;
+    font-weight: 700;
+}
+
+.calculator-form h3 { font-size: 1.5rem; }
+.calculator-form h4 { font-size: 1.15rem; margin-top: 20px; }
+.calculator-form h5 { font-size: 1rem; margin-top: 16px; }
+
+.calculator-form p {
+    color: var(--text-main);
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(9, 17, 31, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.input-group select option {
+    background: var(--bg-dark);
+    color: var(--text-main);
+}
+
+/* Buttons */
+.btn-calculate,
+.btn-secondary,
+.btn-danger {
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin: 8px 8px 8px 0;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.btn-calculate {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: rgba(34, 211, 189, 0.1);
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.25);
+}
+
+/* Result boxes */
+.result-box {
+    margin-top: 24px;
+    padding: 24px;
+    background: rgba(34, 211, 189, 0.08);
+    border: 1px solid rgba(34, 211, 189, 0.25);
+    border-radius: 14px;
+    color: var(--text-main);
+}
+
+.result-box h4,
+.result-box h5 {
+    color: var(--primary);
+    margin-top: 0;
+}
+
+.result-box p {
+    margin: 6px 0;
+    color: var(--text-main);
+}
+
+.result-box strong {
+    color: var(--primary);
+}
+
+/* Expense / list items */
+.expense-item,
+.split-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    margin: 6px 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: var(--text-main);
+}
+
+.expense-item button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #f87171;
+}
+
+.total-split {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Alerts and status */
+.alert,
+.success {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+.alert {
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.success {
+    background: rgba(34, 211, 189, 0.12);
+    border: 1px solid rgba(34, 211, 189, 0.3);
+    color: var(--primary);
+}
+
+/* Strategy / comparison */
+.strategy-box {
+    padding: 16px;
+    margin: 12px 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text-main);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    color: var(--text-main);
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table th {
+    background: rgba(34, 211, 189, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Progress bars */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 8px 0 16px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), #4ade80);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* Content / EEAT sections */
+.content-eeat {
+    margin-top: 40px;
+}
+
+.content-eeat .article-content h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.content-eeat .article-content p {
+    color: var(--text-main);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.cta-premium {
+    text-align: center;
+}
+
+.cta-premium h3 {
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin: 0 0 12px;
+}
+
+.cta-premium p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Header / nav */
+.premium-tool > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.premium-tool .logo {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary);
+}
+
+.premium-tool nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.premium-tool nav a:hover {
+    color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .hero-premium h1 { font-size: 2.2rem; }
+    .card-glass { padding: 24px; border-radius: 16px; }
+    .premium-tool > header { flex-direction: column; gap: 12px; padding: 16px; }
+    .premium-tool nav a { margin: 0 12px; }
+    .btn-calculate, .btn-secondary, .btn-danger { width: 100%; margin: 6px 0; }
+    .expense-item, .split-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
