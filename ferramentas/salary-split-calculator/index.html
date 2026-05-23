@@ -1,248 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-706NN8PEE7');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Split Calculator | Grana Hoje</title>
+    <meta name="description" content="Ferramenta financeira premium para salary split calculator">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/ferramentas/css/premium-tool.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Calculadora de Divisão de Salário | Grana Hoje</title>
-    <meta name="description" content="Organize seu salário de forma inteligente com nossa calculadora de orçamento 50/30/20.">
-    <style>
-        .calculator-box {
-            background: rgba(15, 27, 45, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .calculator-box label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #22d3bd;
-        }
-        .calculator-box input {
-            width: 100%;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .calculator-box input:focus {
-            border-color: #22d3bd;
-        }
-        .calculator-box button {
-            width: 100%;
-            padding: 18px;
-            border-radius: 12px;
-            border: none;
-            background: #22d3bd;
-            color: #09111f;
-            font-weight: 800;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .calculator-box button:hover {
-            background: #00d1b2;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(34, 211, 189, 0.4);
-        }
-        .result-box {
-            margin-top: 30px;
-            display: none;
-            padding: 25px;
-            background: rgba(34, 211, 189, 0.08);
-            border-radius: 15px;
-            border: 1px solid rgba(34, 211, 189, 0.3);
-        }
-        .result-box h3 {
-            margin-bottom: 20px;
-            color: #22d3bd;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-        .result-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .result-item:last-child {
-            border-bottom: none;
-        }
-        .result-item span {
-            color: #a8b3c7;
-        }
-        .result-item strong {
-            color: #fff;
-            font-size: 1.3rem;
-        }
-        .cta-box {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-            border: 1px solid rgba(34, 211, 189, 0.2);
-        }
-        .cta-button {
-            display: inline-block;
-            background: #22d3bd;
-            color: #09111f;
-            padding: 18px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 800;
-            margin-top: 25px;
-            transition: all 0.3s;
-        }
-        .cta-button:hover {
-            background: #00d1b2;
-            transform: scale(1.05);
-        }
-    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
 </head>
-<body>
-<header>
-    <div class="logo">GRANA HOJE</div>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/blog.html">Blog</a>
-        <a href="/sobre.html">Sobre</a>
-        <a href="/contato.html">Contato</a>
-    </nav>
-</header>
-<div class="container">
-    <a href="/blog.html" class="back-link">← Voltar para o Blog</a>
-    
-    <h1 style="font-size: 2.5rem; color: #22d3bd; margin-bottom: 20px;">Calculadora de Divisão de Salário</h1>
-    <p style="font-size: 1.2rem; color: #a8b3c7; margin-bottom: 40px;">Organize seu salário de forma inteligente com o método 50/30/20: a estratégia ideal para equilibrar contas, lazer e investimentos.</p>
+<body class="premium-tool">
+    <header>
+        <div class="logo">GRANA HOJE</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/sobre.html">Sobre</a>
+        </nav>
+    </header>
 
-    <div class="calculator-box">
-        <label for="salary">Seu Salário Mensal Líquido (R$)</label>
-        <input type="number" id="salary" placeholder="Ex: 5000" step="0.01">
-        <button onclick="calculateSalary()">Calcular Divisão</button>
+    <main class="container">
+        <section class="hero-premium">
+            <div class="glow"></div>
+            <h1>Salary Split Calculator</h1>
+            <p class="subtitle">Ferramenta financeira premium para salary split calculator</p>
+        </section>
 
-        <div class="result-box" id="result">
-            <h3>Sua Estratégia Financeira</h3>
-            <div class="result-item">
-                <span>Necessidades (50%):</span>
-                <strong>R$ <span id="essentials">0,00</span></strong>
+        <section class="tool-interface card-glass">
+            <div id="salary-split-calculator-app">
+                <!-- A ferramenta será injetada aqui via JS -->
+                <div class="loading">Carregando ferramenta premium...</div>
             </div>
-            <div class="result-item">
-                <span>Desejos Pessoais (30%):</span>
-                <strong>R$ <span id="personal">0,00</span></strong>
+        </section>
+
+        <section class="content-eeat">
+            <div class="article-content">
+                <h2>O que é Salary Split Calculator?</h2>
+                <p>Conteúdo detalhado sobre a ferramenta para SEO e EEAT...</p>
+                <!-- Mais conteúdo será adicionado via script de expansão -->
             </div>
-            <div class="result-item">
-                <span>Investimentos/Dívidas (20%):</span>
-                <strong>R$ <span id="savings">0,00</span></strong>
-            </div>
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #a8b3c7; text-align: center;">
-                * Sugestão baseada na regra 50/30/20.
-            </p>
-        </div>
-    </div>
+        </section>
 
-    <div class="content-section">
-        <h3>Como funciona a Regra 50/30/20?</h3>
-        <p>Este é um dos métodos mais eficazes de planejamento financeiro. Ele divide sua renda em três categorias principais:</p>
-        <ul>
-            <li><strong>50% para Necessidades:</strong> Aluguel, alimentação, contas de luz, água e transporte.</li>
-            <li><strong>30% para Desejos Pessoais:</strong> Lazer, jantares fora, assinaturas de streaming e hobbies.</li>
-            <li><strong>20% para o seu Futuro:</strong> Pagamento de dívidas, reserva de emergência e investimentos.</li>
-        </ul>
-        
-        <h3>Por que usar esta calculadora?</h3>
-        <p>Ter uma visão clara de para onde seu dinheiro está indo é o primeiro passo para a liberdade financeira. Sem um plano, é fácil gastar demais em desejos momentâneos e esquecer do seu futuro.</p>
-    </div>
+        <section class="cta-premium card-glass">
+            <h3>Maximize seus Resultados Financeiros</h3>
+            <p>Conheça as melhores plataformas para gerenciar seu patrimônio com inteligência.</p>
+            <a href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" class="btn-premium">Explorar Agora</a>
+        </section>
+    </main>
 
-    <div class="cta-box">
-        <h3>Quer acelerar sua Independência Financeira?</h3>
-        <p>Conheça as melhores ferramentas e plataformas para gerenciar seu dinheiro e começar a investir hoje mesmo com segurança.</p>
-        <a class="cta-button" href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" target="_blank" rel="nofollow sponsored">
-            Acessar Plataforma Premium
-        </a>
-    </div>
-</div>
+    <footer class="standard-footer">
+        <p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
+    </footer>
 
-<footer class="standard-footer">
-<div class="footer-container">
-<div class="footer-content">
-<div class="footer-section">
-<h3>Navegação</h3>
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/blog.html">Blog</a></li>
-<li><a href="/sobre.html">Sobre Nós</a></li>
-<li><a href="/faq.html">FAQ</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Informações</h3>
-<ul>
-<li><a href="/contact.html">Contato</a></li>
-<li><a href="/privacy-policy.html">Política de Privacidade</a></li>
-<li><a href="/terms-of-service.html">Termos de Serviço</a></li>
-<li><a href="/disclaimer.html">Isenção de Responsabilidade</a></li>
-</ul>
-</div>
-<div class="footer-section">
-<h3>Contato</h3>
-<p>Email: <a href="mailto:support@granahoje.com">support@granahoje.com</a></p>
-<p>Suporte: <a href="mailto:privacy@granahoje.com">privacy@granahoje.com</a></p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
-<p>Desenvolvido com ❤️ para sua independência financeira</p>
-</div>
-</div>
-</footer>
-
-<script>
-function calculateSalary(){
-    const salaryInput = document.getElementById("salary");
-    const salary = parseFloat(salaryInput.value);
-    
-    if(isNaN(salary) || salary <= 0){
-        alert("Por favor, insira um valor de salário válido para calcular.");
-        return;
-    }
-
-    const essentials = (salary * 0.50).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-    const personal = (salary * 0.30).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-    const savings = (salary * 0.20).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
-    
-    document.getElementById("essentials").innerText = essentials;
-    document.getElementById("personal").innerText = personal;
-    document.getElementById("savings").innerText = savings;
-    
-    const resultBox = document.getElementById("result");
-    resultBox.style.display = "block";
-    
-    // Rolar suavemente para o resultado
-    resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-</script>
+    <script src="/ferramentas/js/premium-core.js"></script>
+    <script src="/ferramentas/js/salary-split-calculator.js"></script>
 </body>
 </html>
