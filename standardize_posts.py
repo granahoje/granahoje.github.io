@@ -1,61 +1,114 @@
 import os
-from pathlib import Path
-from bs4 import BeautifulSoup
+import re
 
-root = Path('/home/ubuntu/granahoje.github.io')
+# Configurações
+BASE_DIR = "."
+ARTIGOS_DIR = "artigos"
+CSS_FILE = "css/style.css"
+FOOTER_FILE = "footer-standard.html"
 
-# Cabeçalho padrão para artigos
-HEADER_HTML = """
-<header style="background: rgba(15,23,42,.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.11); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;">
-    <a href="/" style="text-decoration: none; font-size: 1.2rem; font-weight: 800; color: #00d1b2;">GRANA HOJE</a>
-    <nav style="display: flex; gap: 20px;">
-        <a href="/blog.html" style="color: #fff; text-decoration: none; font-weight: 700;">Blog</a>
-        <a href="/about.html" style="color: #fff; text-decoration: none; font-weight: 700;">Sobre</a>
+# Carregar o footer padrão
+with open(FOOTER_FILE, 'r', encoding='utf-8') as f:
+    FOOTER_CONTENT = f.read()
+
+# Estilo CSS padrão (baseado no que vimos)
+STANDARD_HEAD = """<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-706NN8PEE7');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+"""
+
+STANDARD_HEADER = """
+<header>
+    <div class="logo">GRANA HOJE</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/sobre.html">Sobre</a>
+        <a href="/contato.html">Contato</a>
     </nav>
 </header>
 """
 
-FOOTER_HTML = """
-<footer style="border-top: 1px solid rgba(255,255,255,.11); background: rgba(15,23,42,.8); text-align: center; padding: 40px 20px; color: #b6c2d2; margin-top: 50px;">
-    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <a href="/about.html" style="color: #00d1b2; text-decoration: none;">Sobre</a>
-        <a href="/blog.html" style="color: #00d1b2; text-decoration: none;">Blog</a>
-        <a href="/privacy-policy.html" style="color: #00d1b2; text-decoration: none;">Privacidade</a>
-    </div>
-    <p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
-</footer>
-"""
+def standardize_html(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-def standardize_file(p):
-    try:
-        html = p.read_text(encoding='utf-8')
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        # Remover headers e footers antigos se existirem
-        for old in soup.find_all(['header', 'footer']):
-            old.decompose()
-            
-        # Inserir novo header no início do body
-        if soup.body:
-            soup.body.insert(0, BeautifulSoup(HEADER_HTML, 'html.parser'))
-            soup.body.append(BeautifulSoup(FOOTER_HTML, 'html.parser'))
-            
-            # Garantir fonte e estilo básico se faltar
-            if not soup.find('style'):
-                style = soup.new_tag('style')
-                style.string = "body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: #f8fafc; margin: 0; line-height: 1.6; } .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }"
-                soup.head.append(style)
-                
-            p.write_text(str(soup), encoding='utf-8')
-            return True
-    except Exception as e:
-        print(f"Erro em {p}: {e}")
-    return False
+    # Extrair título e descrição
+    title_match = re.search(r'<title>(.*?)</title>', content)
+    desc_match = re.search(r'<meta name="description" content="(.*?)">', content)
+    
+    title = title_match.group(1) if title_match else "Grana Hoje"
+    description = desc_match.group(1) if desc_match else ""
 
-# Aplicar aos artigos de todos os idiomas
-count = 0
-for p in root.glob('**/artigos/*.html'):
-    if standardize_file(p):
-        count += 1
+    # Extrair o conteúdo principal (dentro de .container ou body)
+    # Tenta pegar o que está dentro da div container se existir
+    container_match = re.search(r'<div class="container">(.*?)</div>\s*<footer>', content, re.DOTALL)
+    if not container_match:
+        container_match = re.search(r'<body>(.*?)<footer>', content, re.DOTALL)
+    
+    main_content = container_match.group(1) if container_match else ""
+    
+    # Limpar o conteúdo principal de headers e links de volta antigos
+    main_content = re.sub(r'<header>.*?</header>', '', main_content, flags=re.DOTALL)
+    main_content = re.sub(r'<a class="back".*?</a>', '', main_content)
+    
+    # Montar o novo HTML
+    new_html = f"""<!DOCTYPE html>
+<html lang="pt-BR">
+{STANDARD_HEAD}
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+    <link rel="canonical" href="https://granahoje.github.io/{file_path}">
+</head>
+<body>
+{STANDARD_HEADER}
+<div class="container">
+    <a href="/blog.html" class="back-link">← Voltar para o Blog</a>
+    {main_content}
+</div>
+{FOOTER_CONTENT}
+</body>
+</html>"""
+    
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(new_html)
+    print(f"Padronizado: {file_path}")
 
-print(f"Padronização concluída em {count} arquivos.")
+# Lista das 10 postagens (baseado nos arquivos mais recentes e no contexto)
+posts_to_fix = [
+    "artigos/pix-infinito-app-50-reais-cadastro.html",
+    "artigos/profissao-gestor-trafego.html",
+    "artigos/psicologia-do-dinheiro-mentalidade-riqueza.html",
+    "artigos/renda-extra-online.html",
+    "artigos/renda-passiva-com-aluguel-de-equipamentos.html",
+    "artigos/segredo-milionarios-pix-apps-pouco-conhecidos.html",
+    "artigos/seguranca-automacao-residencial-voz.html",
+    "artigos/social-fi-renda-extra.html",
+    "artigos/social-media-estrategico.html",
+    "artigos/testador-sites-apps-guia.html",
+    "artigos/trabalho-remoto-assistente-virtual-2026.html",
+    "artigos/trabalho-remoto-empresas-estrangeiras.html",
+    "artigos/venda-cursos-online-guia.html",
+    "artigos/venda-digital-assets-ia.html",
+    "artigos/venda-fotos-online-guia.html"
+]
+
+for post in posts_to_fix:
+    if os.path.exists(post):
+        standardize_html(post)
+
+# Padronizar a calculadora também
+calc_path = "ferramentas/salary-split-calculator/index.html"
+if os.path.exists(calc_path):
+    standardize_html(calc_path)
+
