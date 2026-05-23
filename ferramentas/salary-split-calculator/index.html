@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,69 +8,9 @@
 
 <title>Salary Split Calculator | GranaHoje</title>
 
-<meta name="description" content="Organize your salary with a modern financial calculator for budgeting, savings and investments.">
+<meta name="description" content="Modern salary split calculator for budgeting, savings and investments.">
 
-<link rel="stylesheet" href="../css/style.css">
-
-<style>
-body{
-background:#0f172a;
-color:white;
-font-family:Arial,sans-serif;
-margin:0;
-padding:0;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:#111827;
-padding:30px;
-border-radius:16px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
-
-h1{
-font-size:36px;
-margin-bottom:20px;
-}
-
-h2{
-margin-top:35px;
-color:#38bdf8;
-}
-
-p{
-line-height:1.8;
-font-size:18px;
-color:#cbd5e1;
-}
-
-ul{
-line-height:1.8;
-color:#cbd5e1;
-}
-
-.button{
-display:inline-block;
-margin-top:20px;
-background:#38bdf8;
-color:#000;
-padding:14px 24px;
-border-radius:10px;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s;
-}
-
-.button:hover{
-opacity:0.8;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -77,44 +18,77 @@ opacity:0.8;
 
 <div class="container">
 
-<div class="card">
+<div class="hero">
 
 <h1>Salary Split Calculator</h1>
 
-<p>
-Organizing your salary properly is one of the most important habits for long-term financial stability.
+<p class="subtitle">
+Organize your salary intelligently with a modern budgeting system designed for savings, bills and investments.
 </p>
 
-<p>
-This tool helps divide your income into savings, investments, bills and personal spending categories.
-</p>
+<div class="calculator">
+
+<label>Monthly Salary</label>
+
+<input type="number" id="salary" placeholder="Enter your monthly salary">
+
+<button onclick="calculateSalary()">
+Calculate My Budget
+</button>
+
+<div class="result" id="result">
+
+<h2>Budget Breakdown</h2>
+
+<p>Essentials (50%): $<span id="essentials"></span></p>
+
+<p>Personal Spending (30%): $<span id="personal"></span></p>
+
+<p>Savings & Investments (20%): $<span id="savings"></span></p>
+
+</div>
+
+</div>
+
+<div class="content">
 
 <h2>Why Budget Planning Matters</h2>
 
 <p>
-Many people struggle financially because they spend money without a clear structure. A proper budget improves control and reduces unnecessary debt.
+Financial organization helps reduce stress, improve savings habits and create long-term financial stability.
 </p>
-
-<ul>
-<li>Track monthly expenses</li>
-<li>Build emergency savings</li>
-<li>Reduce overspending</li>
-<li>Create long-term stability</li>
-</ul>
-
-<h2>Modern Financial Solutions</h2>
 
 <p>
-Some users prefer modern digital financial platforms to simplify budgeting, payments and money management routines.
+Many people spend money emotionally without a proper structure. Creating clear categories for spending improves financial awareness significantly.
 </p>
 
-<a class="button" href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" target="_blank" rel="nofollow sponsored">
+<h2>Modern Financial Organization</h2>
+
+<p>
+Modern financial platforms simplify budgeting, payments and money management while helping users maintain better control over their finances.
+</p>
+
+</div>
+
+<div class="cta">
+
+<h2>Explore Smarter Financial Solutions</h2>
+
+<p>
+Some users prefer modern digital platforms to simplify budgeting, online payments and financial organization routines.
+</p>
+
+<a class="cta-button" href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" target="_blank" rel="nofollow sponsored">
 Explore Financial Platform
 </a>
 
 </div>
 
 </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
