@@ -1,59 +1,123 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Fund Tracker | Grana Hoje</title>
-    <meta name="description" content="Ferramenta financeira premium para emergency fund tracker">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/ferramentas/css/premium-tool.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Rastreador de Reserva de Emergência - Grana Hoje</title>
+    <meta name="description" content="Acompanhe sua reserva de emergência e saiba quanto falta para atingir sua meta de segurança financeira."/>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <style>
+        :root { --primary: #22d3bd; --bg: #09111f; --card: #0f1e35; --border: rgba(255,255,255,0.07); --muted: #8899b0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: #f0f4f8; min-height: 100vh; }
+        header { background: rgba(9,17,31,0.95); border-bottom: 1px solid var(--border); padding: 0 20px; position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+        main { padding: 30px 20px 60px; max-width: 1100px; margin: 0 auto; }
+        .page-title { font-size: 2.5rem; font-weight: 800; color: #fff; margin: 30px 0 10px; }
+        .calculator-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin: 20px 0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; }
+        .form-group input, select { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; color: #fff; font-size: 1rem; }
+        .btn-calculate { width: 100%; padding: 16px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; border: none; border-radius: 12px; font-size: 1rem; font-weight: 900; cursor: pointer; }
+        .result-box { background: linear-gradient(135deg, rgba(34,211,189,0.08) 0%, rgba(16,185,129,0.04) 100%); border: 1px solid rgba(34,211,189,0.25); border-radius: 14px; padding: 28px; margin-top: 24px; display: none; }
+        .progress-bar { background: rgba(255,255,255,0.1); height: 20px; border-radius: 10px; overflow: hidden; margin: 20px 0; }
+        .progress-fill { background: linear-gradient(90deg, #22d3bd, #10b981); height: 100%; transition: width 0.5s; }
+        .info-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin: 40px 0; }
+        .info-card h2 { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 20px; }
+        .info-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin: 28px 0 12px; }
+        .info-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+        .faq-q { font-weight: 700; color: #fff; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-a { color: var(--muted); font-size: 0.9rem; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+        .faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
+        footer { background: var(--card); border-top: 1px solid var(--border); padding: 30px 20px; text-align: center; color: var(--muted); }
+    </style>
 </head>
-<body class="premium-tool">
+<body>
     <header>
-        <div class="logo">GRANA HOJE</div>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/blog.html">Blog</a>
-            <a href="/sobre.html">Sobre</a>
-        </nav>
+        <div class="header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links"><a href="/ferramentas.html">Ferramentas</a><a href="/blog.html">Blog</a></nav>
+        </div>
     </header>
-
-    <main class="container">
-        <section class="hero-premium">
-            <div class="glow"></div>
-            <h1>Emergency Fund Tracker</h1>
-            <p class="subtitle">Ferramenta financeira premium para emergency fund tracker</p>
-        </section>
-
-        <section class="tool-interface card-glass">
-            <div id="emergency-fund-tracker-app">
-                <!-- A ferramenta será injetada aqui via JS -->
-                <div class="loading">Carregando ferramenta premium...</div>
+    <main>
+        <h1 class="page-title">Rastreador de Reserva de Emergência</h1>
+        <div class="calculator-card">
+            <div class="form-group">
+                <label>Gastos Mensais (R$)</label>
+                <input type="number" id="gastos" placeholder="2500" min="0">
             </div>
-        </section>
-
-        <section class="content-eeat">
-            <div class="article-content">
-                <h2>O que é Emergency Fund Tracker?</h2>
-                <p>Conteúdo detalhado sobre a ferramenta para SEO e EEAT...</p>
-                <!-- Mais conteúdo será adicionado via script de expansão -->
+            <div class="form-group">
+                <label>Reserva Atual (R$)</label>
+                <input type="number" id="reserva" placeholder="5000" min="0">
             </div>
-        </section>
-
-        <section class="cta-premium card-glass">
-            <h3>Maximize seus Resultados Financeiros</h3>
-            <p>Conheça as melhores plataformas para gerenciar seu patrimônio com inteligência.</p>
-            <a href="https://apretailer.com.br/click/6a0bab802bfa817b650fa492/188415/358980/subaccount" class="btn-premium">Explorar Agora</a>
+            <div class="form-group">
+                <label>Meta de Meses</label>
+                <select id="meses">
+                    <option value="3">3 meses (mínimo)</option>
+                    <option value="6" selected>6 meses (recomendado)</option>
+                    <option value="12">12 meses (ideal)</option>
+                </select>
+            </div>
+            <button class="btn-calculate" onclick="calcular()">Analisar Reserva</button>
+            <div class="result-box" id="resultado">
+                <div class="progress-bar"><div class="progress-fill" id="progresso"></div></div>
+                <div id="detalhes"></div>
+            </div>
+        </div>
+        <section class="info-card">
+            <h2>Reserva de Emergência: O Seguro Que Você Mesmo Cria</h2>
+            <p>Todo mundo sabe que imprevistos acontecem. O carro quebra na pior hora, o computador pifa antes de uma entrega importante, ou pior — você perde o emprego do nada. Mas mesmo sabendo disso, a maioria das pessoas não tem uma reserva de emergência. Pesquisas mostram que mais de 60% dos brasileiros não conseguiriam cobrir uma despesa inesperada de R$ 1.000 sem recorrer a empréstimos ou cartão de crédito. Isso não é falta de conhecimento — é falta de planejamento. A reserva de emergência não é um luxo, é a diferença entre enfrentar uma crise com dignidade ou entrar em desespero financeiro.</p>
+            <h3>Quanto Você Realmente Precisa Guardar?</h3>
+            <p>A resposta clássica é "de 3 a 6 meses de despesas". Mas isso varia muito. Se você é CLT em uma empresa estável, 3 meses pode ser suficiente. Se você é autônomo ou trabalha em um setor volátil, 12 meses é mais prudente. A regra de ouro: quanto mais imprevisível sua renda, maior deve ser sua reserva. Use esta calculadora para simular diferentes cenários. Veja quanto você já tem, quanto falta, e em quanto tempo pode alcançar a meta guardando um valor mensal específico. Esse exercício visual é poderoso — transforma uma ideia abstrata em um objetivo concreto.</p>
+            <h3>Onde Guardar Esse Dinheiro?</h3>
+            <p>A reserva de emergência deve ser líquida e de baixo risco. Nada de ações, criptomoedas ou CDBs com carência. O ideal são investimentos de liquidez diária como Tesouro Selic, CDBs de liquidez diária de bancos grandes, ou até a poupança (apesar do rendimento baixo). O importante é que você consiga resgatar o dinheiro imediatamente se precisar. Muita gente erra ao colocar a reserva em investimentos arriscados tentando "ganhar mais" — e acaba perdendo justamente quando mais precisa.</p>
+            <h3>Como Começar do Zero</h3>
+            <p>Se você não tem nada guardado, comece pequeno. Separe R$ 100 por mês. Parece pouco, mas em um ano são R$ 1.200 — suficiente para cobrir pequenos imprevistos. Depois aumente para R$ 200, R$ 300, até chegar aos 20% do salário recomendados pela regra 50/30/20. A chave é automatizar: configure uma transferência automática no dia que seu salário cai, antes de gastar com qualquer outra coisa. Trate sua reserva como uma conta obrigatória, não como "o que sobrar no fim do mês" — porque nunca sobra.</p>
+            <h3>Perguntas Frequentes</h3>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span>Posso usar a reserva para oportunidades de investimento?</span><span>+</span></div>
+                <div class="faq-a">Não. A reserva de emergência existe para emergências — perda de emprego, doença, conserto urgente. Se você usar para "oportunidades", ela deixa de existir quando você realmente precisar. Para investimentos, crie uma poupança separada.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span>E se eu tiver dívidas, devo priorizar a reserva ou quitá-las?</span><span>+</span></div>
+                <div class="faq-a">Depende do tipo de dívida. Se são juros altos (cartão de crédito, cheque especial), priorize quitar. Se são juros baixos (financiamento imobiliário), equilibre: quite parte da dívida e construa a reserva ao mesmo tempo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span>Quanto tempo leva para construir uma reserva de 6 meses?</span><span>+</span></div>
+                <div class="faq-a">Se você guardar 20% do salário, leva cerca de 2,5 anos. Se guardar 10%, leva 5 anos. Por isso é importante começar o quanto antes, mesmo com valores pequenos.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)"><span>Preciso recompor a reserva depois de usar?</span><span>+</span></div>
+                <div class="faq-a">Sim. Sempre que usar a reserva, volte a poupar até recompor o valor original. Caso contrário, você ficará desprotegido para a próxima emergência.</div>
+            </div>
         </section>
     </main>
-
-    <footer class="standard-footer">
-        <p>© 2026 Grana Hoje. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="/ferramentas/js/premium-core.js"></script>
-    <script src="/ferramentas/js/emergency-fund-tracker.js"></script>
+    <footer><p>© 2026 Grana Hoje. Educação financeira para todos.</p></footer>
+    <script>
+        function calcular() {
+            const gastos = parseFloat(document.getElementById('gastos').value);
+            const reserva = parseFloat(document.getElementById('reserva').value) || 0;
+            const meses = parseInt(document.getElementById('meses').value);
+            if (!gastos || gastos <= 0) { alert('Insira seus gastos mensais'); return; }
+            const meta = gastos * meses;
+            const falta = Math.max(0, meta - reserva);
+            const progresso = Math.min((reserva / meta) * 100, 100);
+            const mesesCobertos = reserva / gastos;
+            document.getElementById('progresso').style.width = progresso + '%';
+            document.getElementById('detalhes').innerHTML = `
+                <p style="font-size:1.1rem;color:#fff;margin:10px 0"><strong>Progresso:</strong> ${progresso.toFixed(1)}%</p>
+                <p><strong>Meta:</strong> R$ ${meta.toLocaleString('pt-BR', {minimumFractionDigits:2})} (${meses} meses)</p>
+                <p><strong>Reserva Atual:</strong> R$ ${reserva.toLocaleString('pt-BR', {minimumFractionDigits:2})}</p>
+                <p><strong>Meses Cobertos:</strong> ${mesesCobertos.toFixed(1)} meses</p>
+                ${falta > 0 ? `<p style="color:#f87171"><strong>Falta:</strong> R$ ${falta.toLocaleString('pt-BR', {minimumFractionDigits:2})}</p>` : '<p style="color:#22d3bd">✅ Meta alcançada!</p>'}
+            `;
+            document.getElementById('resultado').style.display = 'block';
+        }
+        function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+    </script>
 </body>
 </html>
