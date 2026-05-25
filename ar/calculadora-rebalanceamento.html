@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/ar/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-rebalanceamento.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-rebalanceamento.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>حاسبة إعادة التوازن - جرنا اليوم</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">جرنا اليوم</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/ar/calculadora-rebalanceamento.html'" aria-label="اللغة" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 اللغة</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/ar/blog.html">المدونة</a>
+                <a href="/ar/about.html">حول</a>
+                <a href="/ar/contact.html">اتصال</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/ar/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                العودة إلى المدونة
+            </a>
+            <h1 class="page-title">حاسبة إعادة التوازن</h1>
+            <p class="page-subtitle">أداة متكاملة لحاسبة إعادة التوازن.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">رأس المال الابتدائي (ر.س)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">معدل الفائدة (% سنويًا)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">الفترة (سنوات)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">احسب</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">النتيجة المقدرة</span>
+                    <span class="result-value" id="resultValue">ر.س 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">الشريك الموصى به</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> هي واحدة من أفضل الخيارات في السوق. تم اختبارها واعتمادها من قبل خبرائنا.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">ادخل الآن →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 هل ترغب في تعلم المزيد عن الحرية المالية؟</p>
+            <a href="/ar/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">اقرأ المقال الكامل →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>حاسبة إعادة التوازن: المفتاح لمحفظة مالية متوازنة</h3>
+
+  <p>الحفاظ على محفظة استثمارية متوافقة مع أهدافك المالية أمر ضروري لمن يسعى إلى الأمان والنمو المستدام. تظهر <strong>حاسبة إعادة التوازن</strong> كأداة لا غنى عنها للمستثمرين الذين يرغبون في تعديل محافظهم بطريقة عملية وفعالة، مما يضمن أن توزيع الأصول يتماشى دائمًا مع استراتيجيتهم الأولية. في هذا المقال، سنستعرض أهمية هذه الأداة، كيفية استخدامها بشكل صحيح ودورها الأساسي في تحقيق الحرية المالية.</p>
+
+  <h4>كيفية استخدام حاسبة إعادة التوازن</h4>
+  <p>تم تصميم حاسبة إعادة التوازن لتبسيط عملية تعديل المحفظة، مما يتيح لك معرفة الأصول التي يجب شراؤها أو بيعها للعودة إلى التوزيع المرغوب. طريقة العمل بديهية:</p>
+  <ul>
+    <li><strong>أدخل القيم الحالية:</strong> أدخل القيمة الحالية لكل أصل يشكل محفظتك.</li>
+    <li><strong>حدد التوزيع المثالي:</strong> حدد النسبة المئوية المرغوبة لكل فئة من الأصول، مثل الدخل الثابت، الأسهم، الصناديق العقارية، وغيرها.</li>
+    <li><strong>احسب إعادة التوازن:</strong> ستشير الأداة إلى الكميات والقيم التي يجب تعديلها لكي تعود محفظتك إلى التوازن المخطط.</li>
+  </ul>
+  <p>بالإضافة إلى ذلك، تقدم العديد من الحاسبات رسومًا بيانية وتقارير تسهل رؤية التغييرات المطلوبة، مما يجعل العملية أكثر وضوحًا وموضوعية.</p>
+
+  <h4>لماذا تعتبر إعادة التوازن مهمة للحرية المالية</h4>
+  <p>إعادة التوازن المنتظمة للمحفظة ضرورية للتحكم في المخاطر واستغلال فرص السوق. مع مرور الوقت، قد تؤدي زيادة قيمة بعض الأصول إلى اختلال توازن محفظتك، مما يزيد من التعرض لمخاطر غير مرغوب فيها أو يقلل من إمكانات العائد.</p>
+  <p>من خلال الحفاظ على التوزيع المخطط، أنت:</p>
+  <ul>
+    <li><strong>تقلل المخاطر:</strong> تتجنب التركيز المفرط على أصل أو قطاع واحد.</li>
+    <li><strong>تعزز الانضباط:</strong> تجبر على بيع الأصول التي ارتفعت قيمتها لشراء تلك التي تقل عن الوزن، مستفيدًا من تقلبات السوق.</li>
+    <li><strong>تعزز الأرباح:</strong> تحافظ على المحفظة متوافقة مع أهدافك المالية وملف المخاطر الخاص بك، مما يسرع رحلتك نحو الحرية المالية.</li>
+  </ul>
+
+  <h4>أمثلة عملية لاستخدام حاسبة إعادة التوازن</h4>
+  <p>تخيل أن محفظتك الأولية تحتوي على 50% في الأسهم، 30% في الدخل الثابت و20% في الصناديق العقارية. بعد ستة أشهر، ارتفعت قيمة الأسهم وأصبحت تمثل 60% من الإجمالي، بينما انخفض الدخل الثابت إلى 25% والصناديق العقارية إلى 15%. باستخدام الحاسبة، ستعرف كم يجب أن تبيع من الأسهم وكم تستثمر في الدخل الثابت والصناديق العقارية للعودة إلى التوزيع الأصلي.</p>
+  <p>مثال آخر يشمل الإيداعات الشهرية. إذا كنت تستثمر بانتظام، ستساعدك الحاسبة على توجيه هذه الموارد نحو الأصول التي تقل عن الوزن، مع الحفاظ على التوازن دون الحاجة إلى مبيعات متكررة.</p>
+
+  <h4>أخطاء شائعة عند استخدام حاسبة إعادة التوازن</h4>
+  <p>على الرغم من بساطتها، قد تؤثر بعض الأخطاء على نتائج إعادة التوازن:</p>
+  <ul>
+    <li><strong>تجاهل تكاليف المعاملات:</strong> البيع والشراء يولد تكاليف يجب أخذها في الاعتبار حتى لا تؤثر على الأرباح.</li>
+    <li><strong>إعادة التوازن بشكل مفرط:</strong> التعديلات المتكررة قد تزيد النفقات ولا تحقق فوائد كبيرة.</li>
+    <li><strong>عدم تحديث التوزيع المرغوب:</strong> يجب أن تنعكس التغييرات في ملف المخاطر أو الأهداف في استراتيجية إعادة التوازن.</li>
+    <li><strong>عدم مراعاة ضريبة الدخل:</strong> تحقيق الأرباح قد يؤدي إلى فرض ضرائب تؤثر على العائد الصافي.</li>
+  </ul>
+
+  <h4>نصائح لاستخدام حاسبة إعادة التوازن بكفاءة في 2026</h4>
+  <p>مع تطور السوق المالي المستمر، من المهم تعديل استراتيجيتك لعام 2026:</p>
+  <ul>
+    <li><strong>حدد فترات ثابتة لإعادة التوازن:</strong> نصف سنوية أو سنوية، لتحقيق توازن بين الانضباط والتكاليف.</li>
+    <li><strong>تابع الاتجاهات الاقتصادية:</strong> عدل التوزيع وفقًا للظروف الاقتصادية العامة وتوقعات السوق.</li>
+    <li><strong>استخدم أدوات متكاملة:</strong> استفد من الحاسبات التي تتصل بالوسطاء والمنصات لتسهيل تحديث البيانات.</li>
+    <li><strong>فكر في التنويع العالمي:</strong> أدرج الأصول الدولية لتحسين الحماية من المخاطر المحلية.</li>
+    <li><strong>راجع أهدافك بانتظام:</strong> تؤثر الأهداف قصيرة ومتوسطة وطويلة الأجل على استراتيجية إعادة التوازن.</li>
+  </ul>
+
+  <h4>الخلاصة: الانضباط والرؤية طويلة الأجل للنجاح المالي</h4>
+  <p>استخدام <strong>حاسبة إعادة التوازن</strong> هو ممارسة أساسية لمن يرغب في الحفاظ على السيطرة على استثماراته والمضي بأمان نحو الحرية المالية. أكثر من مجرد أداة، تمثل الانضباط والتخطيط والقدرة على اتخاذ قرارات مستنيرة، مما يقلل المخاطر ويستفيد من الفرص التي يقدمها السوق.</p>
+  <p>تذكر: النجاح المالي لا يعتمد فقط على اختيار أصول جيدة، بل أيضًا على الحفاظ على التوازن وتعديل الاستراتيجية مع تطور الحياة والسوق. استثمر الوقت لتعلم استخدام هذه الحاسبة بوعي واجعل إعادة التوازن عادة منتظمة. سيشكرك مستقبلك المالي.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 جرنا اليوم. التعليم المالي للجميع.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

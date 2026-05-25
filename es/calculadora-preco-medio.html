@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/es/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Calculadora de Preço Médio (Ações/FIIs) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-preco-medio.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Preço Médio (Ações/FIIs)</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de preço médio (ações/fiis).</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Calculadora de Precio Promedio (Acciones/FIIs): Tu Aliado para Invertir con Inteligencia</h3>
+
+  <p>Invertir en el mercado financiero exige más que solo elegir buenos activos; es fundamental entender el costo promedio de tus compras para tomar decisiones conscientes y estratégicas. La <strong>Calculadora de Precio Promedio (Acciones/FIIs)</strong> es una herramienta esencial para cualquier inversor que desee monitorear sus inversiones, optimizar sus operaciones y, principalmente, trabajar para alcanzar la tan soñada libertad financiera.</p>
+
+  <h4>Cómo usar la Calculadora de Precio Promedio</h4>
+  <p>Utilizar la calculadora es simple e intuitivo. Básicamente, permite que ingreses el valor y la cantidad de cada compra realizada de un activo, ya sea una acción o un Fondo Inmobiliario (FII). A partir de esta información, la herramienta calcula el precio promedio ponderado de tu inversión, considerando todas las adquisiciones hechas a lo largo del tiempo.</p>
+  <p>Para comenzar, sigue estos pasos:</p>
+  <ol>
+    <li>Informa la cantidad de acciones o cuotas compradas en tu primera operación y el respectivo precio pagado.</li>
+    <li>Agrega la información de compras adicionales, incluyendo cantidad y precio de cada una.</li>
+    <li>Ingresa los costos operativos, como comisiones de corretaje y aranceles, si la calculadora lo permite, para un resultado más preciso.</li>
+    <li>Observa el precio promedio actualizado, que servirá como referencia para evaluar ganancia o pérdida en ventas futuras.</li>
+  </ol>
+  <p>Este proceso ayuda al inversor a tener una visión clara del costo real de su portafolio, facilitando decisiones de compra, venta o aporte adicional.</p>
+
+  <h4>Por qué el precio promedio importa para tu libertad financiera</h4>
+  <p>El cálculo del precio promedio no es solo una cuestión técnica, sino un paso fundamental hacia la libertad financiera. Entender cuánto realmente pagaste por un activo evita decisiones impulsivas basadas en variaciones momentáneas del mercado.</p>
+  <p>Con el precio promedio en mano, puedes:</p>
+  <ul>
+    <li>Evaluar si vale la pena comprar más para reducir el costo y mejorar la rentabilidad futura.</li>
+    <li>Decidir el momento ideal para vender, evitando pérdidas innecesarias.</li>
+    <li>Controlar mejor tu riesgo y aumentar la precisión de tus inversiones.</li>
+  </ul>
+  <p>Esta estrategia contribuye a un crecimiento constante del patrimonio, esencial para construir una fuente de ingresos pasivos sólida y sostenible.</p>
+
+  <h4>Ejemplos prácticos de uso de la Calculadora de Precio Promedio</h4>
+  <p>Imagina que compraste 100 acciones de una empresa a R$ 20,00 cada una. Después de algunos meses, el precio cayó a R$ 15,00, y decidiste comprar 50 acciones a ese valor. Usando la calculadora, el precio promedio se calcula de la siguiente manera:</p>
+  <ul>
+    <li>Primera compra: 100 acciones x R$ 20,00 = R$ 2.000,00</li>
+    <li>Segunda compra: 50 acciones x R$ 15,00 = R$ 750,00</li>
+    <li>Total invertido: R$ 2.750,00</li>
+    <li>Total de acciones: 150</li>
+    <li><strong>Precio promedio = R$ 2.750,00 ÷ 150 = R$ 18,33</strong></li>
+  </ul>
+  <p>Así, el precio promedio bajó de R$ 20,00 a R$ 18,33, reduciendo el costo por acción y mejorando tus posibilidades de ganancia en el futuro.</p>
+  <p>En el caso de los FIIs, el procedimiento es el mismo, permitiendo seguir de forma clara la evolución del costo y facilitando la gestión de tus fondos inmobiliarios.</p>
+
+  <h4>Errores comunes al usar la Calculadora de Precio Promedio y cómo evitarlos</h4>
+  <p>A pesar de la simplicidad de la herramienta, algunos errores pueden comprometer el análisis:</p>
+  <ul>
+    <li><strong>No considerar costos operativos:</strong> Las comisiones e impuestos impactan directamente el costo total de la inversión y deben incluirse para un cálculo más realista.</li>
+    <li><strong>Actualizar el precio promedio solo después de muchas operaciones:</strong> Lo ideal es hacer el cálculo en cada compra para mantener un control financiero riguroso.</li>
+    <li><strong>Confundir precio promedio con precio de mercado:</strong> El precio promedio es una referencia de tu costo, mientras que el precio de mercado es el valor actual del activo. Entender esta diferencia ayuda a tomar decisiones más acertadas.</li>
+    <li><strong>Usar el precio promedio para justificar compras impulsivas:</strong> Comprar más solo para “bajar el precio promedio” sin análisis del activo puede aumentar riesgos.</li>
+  </ul>
+  <p>Evitar estos errores es crucial para que la calculadora sea un instrumento eficaz en tu camino como inversor.</p>
+
+  <h4>Consejos para optimizar el uso de la Calculadora de Precio Promedio en 2026</h4>
+  <p>Con el avance de las plataformas digitales y mayor disponibilidad de datos, 2026 promete ser un año de oportunidades para inversores que utilizan herramientas inteligentes. Algunos consejos para aprovechar mejor la calculadora incluyen:</p>
+  <ul>
+    <li><strong>Integración con corredoras:</strong> Busca versiones de la calculadora que se conecten automáticamente a tus operaciones, facilitando la entrada de datos.</li>
+    <li><strong>Seguimiento en tiempo real:</strong> Utiliza recursos que actualicen el precio promedio conforme se realizan nuevas compras y ventas.</li>
+    <li><strong>Planificación fiscal:</strong> Aprovecha la herramienta para calcular ganancias y pérdidas, ayudando en la declaración de impuestos.</li>
+    <li><strong>Educación continua:</strong> Combina el uso de la calculadora con estudios sobre análisis técnico y fundamental para decisiones más fundamentadas.</li>
+    <li><strong>Disciplina y revisión periódica:</strong> Reserva momentos en el mes para revisar tu precio promedio y ajustar tu estrategia de inversiones.</li>
+  </ul>
+
+  <h4>Conclusión: disciplina y visión a largo plazo son esenciales</h4>
+  <p>El uso de la <strong>Calculadora de Precio Promedio (Acciones/FIIs)</strong> es un paso decisivo para quien desea invertir de forma consciente y estratégica. Más que un simple número, el precio promedio representa el compromiso con el control financiero y la gestión inteligente de tu patrimonio.</p>
+  <p>Recuerda: alcanzar la libertad financiera no es resultado de suerte, sino de disciplina, paciencia y planificación continua. Utiliza la calculadora para monitorear tus inversiones, evita decisiones impulsivas y mantén el foco en tus objetivos a largo plazo. Así, estarás en el camino correcto para construir una cartera sólida y rentable, capaz de proporcionar tranquilidad e independencia financiera.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

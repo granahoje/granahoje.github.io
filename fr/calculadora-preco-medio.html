@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/fr/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Calculadora de Preço Médio (Ações/FIIs) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-preco-medio.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Preço Médio (Ações/FIIs)</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de preço médio (ações/fiis).</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Calculatrice de Prix Moyen (Actions/FIIs) : Votre alliée pour investir intelligemment</h3>
+
+  <p>Investir sur le marché financier exige plus que simplement choisir de bons actifs ; il est essentiel de comprendre le coût moyen de vos achats pour prendre des décisions conscientes et stratégiques. La <strong>Calculatrice de Prix Moyen (Actions/FIIs)</strong> est un outil indispensable pour tout investisseur souhaitant suivre ses investissements, optimiser ses opérations et, surtout, travailler à atteindre la tant convoitée liberté financière.</p>
+
+  <h4>Comment utiliser la Calculatrice de Prix Moyen</h4>
+  <p>Utiliser la calculatrice est simple et intuitif. En gros, elle vous permet d’entrer la valeur et la quantité de chaque achat effectué d’un actif, qu’il s’agisse d’une action ou d’un Fonds Immobilier (FII). À partir de ces informations, l’outil calcule le prix moyen pondéré de votre investissement, en tenant compte de toutes les acquisitions réalisées au fil du temps.</p>
+  <p>Pour commencer, suivez ces étapes :</p>
+  <ol>
+    <li>Indiquez la quantité d’actions ou de parts achetées lors de votre première opération ainsi que le prix payé correspondant.</li>
+    <li>Ajoutez les informations des achats supplémentaires, y compris la quantité et le prix de chacun.</li>
+    <li>Insérez les coûts opérationnels, tels que les frais de courtage et les émoluments, si la calculatrice le permet, pour un résultat plus précis.</li>
+    <li>Visualisez le prix moyen mis à jour, qui servira de référence pour évaluer les gains ou pertes lors des ventes futures.</li>
+  </ol>
+  <p>Ce processus aide l’investisseur à avoir une vision claire du coût réel de son portefeuille, facilitant ainsi les décisions d’achat, de vente ou d’apport supplémentaire.</p>
+
+  <h4>Pourquoi le prix moyen est important pour votre liberté financière</h4>
+  <p>Le calcul du prix moyen n’est pas seulement une question technique, mais une étape fondamentale vers la liberté financière. Comprendre combien vous avez réellement payé pour un actif évite les décisions impulsives basées sur des variations momentanées du marché.</p>
+  <p>Avec le prix moyen en main, vous pouvez :</p>
+  <ul>
+    <li>Évaluer s’il vaut la peine d’acheter davantage pour réduire le coût et améliorer la rentabilité future.</li>
+    <li>Décider du moment idéal pour vendre, évitant ainsi des pertes inutiles.</li>
+    <li>Mieux contrôler votre risque et augmenter la précision de vos investissements.</li>
+  </ul>
+  <p>Cette stratégie contribue à une croissance constante du patrimoine, essentielle pour construire une source de revenu passif solide et durable.</p>
+
+  <h4>Exemples pratiques d’utilisation de la Calculatrice de Prix Moyen</h4>
+  <p>Imaginez que vous avez acheté 100 actions d’une entreprise à 20,00 R$ chacune. Après quelques mois, le prix est tombé à 15,00 R$, et vous avez décidé d’acheter 50 actions supplémentaires à ce prix. En utilisant la calculatrice, le prix moyen est calculé comme suit :</p>
+  <ul>
+    <li>Premier achat : 100 actions x 20,00 R$ = 2 000,00 R$</li>
+    <li>Deuxième achat : 50 actions x 15,00 R$ = 750,00 R$</li>
+    <li>Total investi : 2 750,00 R$</li>
+    <li>Total d’actions : 150</li>
+    <li><strong>Prix moyen = 2 750,00 R$ ÷ 150 = 18,33 R$</strong></li>
+  </ul>
+  <p>Ainsi, le prix moyen est passé de 20,00 R$ à 18,33 R$, réduisant le coût par action et améliorant vos chances de profit à l’avenir.</p>
+  <p>Dans le cas des FIIs, la procédure est la même, permettant de suivre clairement l’évolution du coût et facilitant la gestion de vos fonds immobiliers.</p>
+
+  <h4>Erreurs courantes lors de l’utilisation de la Calculatrice de Prix Moyen et comment les éviter</h4>
+  <p>Malgré la simplicité de l’outil, certaines erreurs peuvent compromettre l’analyse :</p>
+  <ul>
+    <li><strong>Ne pas prendre en compte les coûts opérationnels :</strong> Les frais et impôts impactent directement le coût total de l’investissement et doivent être inclus pour un calcul plus réaliste.</li>
+    <li><strong>Mettre à jour le prix moyen seulement après de nombreuses opérations :</strong> L’idéal est de faire le calcul à chaque achat pour maintenir un contrôle financier rigoureux.</li>
+    <li><strong>Confondre prix moyen et prix du marché :</strong> Le prix moyen est une référence de votre coût, tandis que le prix du marché est la valeur actuelle de l’actif. Comprendre cette différence aide à prendre des décisions plus éclairées.</li>
+    <li><strong>Utiliser le prix moyen pour justifier des achats impulsifs :</strong> Acheter davantage uniquement pour « baisser le prix moyen » sans analyse de l’actif peut augmenter les risques.</li>
+  </ul>
+  <p>Éviter ces erreurs est crucial pour que la calculatrice soit un instrument efficace dans votre parcours d’investisseur.</p>
+
+  <h4>Conseils pour optimiser l’utilisation de la Calculatrice de Prix Moyen en 2026</h4>
+  <p>Avec l’avancée des plateformes numériques et une plus grande disponibilité des données, 2026 promet d’être une année d’opportunités pour les investisseurs utilisant des outils intelligents. Voici quelques conseils pour mieux profiter de la calculatrice :</p>
+  <ul>
+    <li><strong>Intégration avec les courtiers :</strong> Recherchez des versions de la calculatrice qui se connectent automatiquement à vos opérations, facilitant la saisie des données.</li>
+    <li><strong>Suivi en temps réel :</strong> Utilisez des fonctionnalités qui mettent à jour le prix moyen au fur et à mesure des nouveaux achats et ventes.</li>
+    <li><strong>Planification fiscale :</strong> Profitez de l’outil pour calculer les gains et pertes, aidant à la déclaration d’impôt sur le revenu.</li>
+    <li><strong>Éducation continue :</strong> Combinez l’utilisation de la calculatrice avec des études sur l’analyse technique et fondamentale pour des décisions mieux fondées.</li>
+    <li><strong>Discipline et révision périodique :</strong> Réservez des moments dans le mois pour revoir votre prix moyen et ajuster votre stratégie d’investissement.</li>
+  </ul>
+
+  <h4>Conclusion : discipline et vision à long terme sont essentielles</h4>
+  <p>L’utilisation de la <strong>Calculatrice de Prix Moyen (Actions/FIIs)</strong> est une étape décisive pour ceux qui souhaitent investir de manière consciente et stratégique. Plus qu’un simple chiffre, le prix moyen représente l’engagement envers le contrôle financier et la gestion intelligente de votre patrimoine.</p>
+  <p>Rappelez-vous : atteindre la liberté financière n’est pas une question de chance, mais de discipline, de patience et de planification continue. Utilisez la calculatrice pour surveiller vos investissements, évitez les décisions impulsives et gardez le cap sur vos objectifs à long terme. Ainsi, vous serez sur la bonne voie pour construire un portefeuille solide et rentable, capable d’offrir tranquillité et indépendance financière.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

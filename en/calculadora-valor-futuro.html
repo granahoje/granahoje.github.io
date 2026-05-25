@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/en/calculadora-valor-futuro.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-valor-futuro.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-valor-futuro.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-valor-futuro.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-valor-futuro.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Calculadora de Valor Futuro - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-valor-futuro.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Valor Futuro</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de valor futuro.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Future Value Calculator: Plan Your Wealth with Precision</h3>
+  <p>In a world where financial planning is essential to ensure peace of mind and security, the <strong>Future Value Calculator</strong> emerges as an indispensable tool for investors and savers. It allows you to project how much your money could be worth in a few years, considering compound interest, regular contributions, and varying terms. Understanding the future value of your investments is the first step to making informed financial decisions and achieving goals such as retirement, buying a property, or funding your children’s education.</p>
+
+  <h4>How to Use the Future Value Calculator</h4>
+  <p>Using the Future Value Calculator is simple but requires attention to the data entered to ensure realistic projections. Typically, you will need to input:</p>
+  <ul>
+    <li><strong>Initial Amount:</strong> the sum you currently have available to invest.</li>
+    <li><strong>Periodic Contributions:</strong> amounts that will be added regularly, such as monthly or annual deposits.</li>
+    <li><strong>Interest Rate:</strong> the expected return on the investment, expressed as a percentage per year or per month.</li>
+    <li><strong>Investment Period:</strong> the length of time the money will be invested, usually in years or months.</li>
+  </ul>
+  <p>After entering this data, the calculator shows the accumulated amount at the end of the period, considering compound interest — that is, interest calculated on the initial capital plus the interest previously accumulated. This feature is what enhances the growth of your wealth.</p>
+
+  <h4>Why the Future Value Calculator Is Essential for Financial Freedom</h4>
+  <p>Planning your financial future requires more than just saving money. It is necessary to understand the impact of compound interest and time on wealth multiplication. The Future Value Calculator helps visualize realistic scenarios, showing how much you need to invest and for how long to reach your goals. This allows you to:</p>
+  <ul>
+    <li><strong>Set clear objectives:</strong> knowing the desired future value, you can define how much to invest monthly.</li>
+    <li><strong>Motivate saving:</strong> seeing the growth of money encouraged by the calculator fosters financial discipline.</li>
+    <li><strong>Adjust strategies:</strong> if the result is far from the goal, you can modify contributions or terms to fit your needs.</li>
+  </ul>
+  <p>In summary, the tool is a practical guide for those seeking financial autonomy, helping to turn dreams into concrete results.</p>
+
+  <h4>Practical Examples of Using the Future Value Calculator</h4>
+  <p>Imagine you want to accumulate R$ 500,000 in 20 years for retirement. Suppose an initial investment of R$ 20,000, with monthly contributions of R$ 500 and an average annual return rate of 7%. Using the calculator, you can verify that by the end of the period, your wealth will be close to this target.</p>
+  <p>Another example: if you plan to buy a property in 10 years and want to save R$ 300,000, you can simulate different monthly contributions and interest rates to find the ideal plan. Perhaps increasing contributions or seeking investments with higher returns are alternatives to reach the goal.</p>
+  <p>These examples show how the calculator offers customized projections, facilitating planning and informed decision-making.</p>
+
+  <h4>Common Mistakes When Using the Future Value Calculator</h4>
+  <p>Although simple, some errors when using the calculator can compromise the accuracy of projections:</p>
+  <ul>
+    <li><strong>Unrealistic interest rate:</strong> using a rate that is too high or too low can distort results and create false expectations.</li>
+    <li><strong>Ignoring inflation:</strong> the nominal future value may seem high, but purchasing power can be lower if inflation is not considered.</li>
+    <li><strong>Not including regular contributions:</strong> forgetting to account for periodic contributions can make the final result appear smaller than it actually is.</li>
+    <li><strong>Changing parameters without criteria:</strong> arbitrarily changing rates or terms without market basis or goals can confuse planning.</li>
+  </ul>
+  <p>Avoiding these mistakes is essential to make the most of the tool and ensure realistic and useful projections.</p>
+
+  <h4>Tips to Make the Most of the Future Value Calculator in 2026</h4>
+  <p>The economic scenario is constantly changing, and 2026 promises challenges and opportunities for investors. To use the Future Value Calculator efficiently this year, consider:</p>
+  <ul>
+    <li><strong>Updating the interest rate:</strong> follow trends in the Selic rate and other benchmarks to enter an appropriate rate.</li>
+    <li><strong>Including expected inflation:</strong> make adjustments to measure the real value of your investments.</li>
+    <li><strong>Planning increasing contributions:</strong> if possible, schedule periodic increases in contributions to keep up with inflation and grow your wealth.</li>
+    <li><strong>Simulating different scenarios:</strong> use the tool to compare results with various rates, terms, and contributions, preparing for unforeseen events.</li>
+    <li><strong>Consulting a specialist:</strong> combine the use of the calculator with professional advice for even more effective planning.</li>
+  </ul>
+  <p>These practices help keep your planning aligned with the economic reality and maximize results.</p>
+
+  <h4>Conclusion: Discipline and Long-Term Vision Are the Key to Success</h4>
+  <p>The Future Value Calculator is a powerful ally for those who want to build solid wealth and achieve financial freedom. However, success depends not only on the tool but also on the discipline to invest regularly and the patience to allow compound interest to work over time. Planning ahead, adjusting goals as needed, and maintaining focus on long-term results make all the difference.</p>
+  <p>Invest time to understand how the calculator works, use it as a guide for your decisions, and stay committed to your financial goals. This way, 2026 could be the year you turn your goals into real achievements.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

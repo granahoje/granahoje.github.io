@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Custo Efetivo Total (CET) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        main { padding-top: 20px; }
+        .page-header { padding: 30px 0 20px; }
+        .calculator-container { margin-top: 30px; margin-bottom: 40px; }
+    </style>
+    <meta name="description" content="Calcule o CET real de empréstimos e financiamentos, incluindo todas as taxas e encargos.">
+    <link rel="canonical" href="https://granahoje.github.io/pt-pt/calculadora-cet.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-cet.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-cet.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-cet.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-cet.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-cet.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-cet.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-cet.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-cet.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-cet.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-cet.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-cet.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-cet.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/ferramentas.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Ferramentas
+            </a>
+            <h1 class="page-title">Calculadora de Custo Efetivo Total (CET)</h1>
+            <p class="page-subtitle">Compare o custo real de empréstimos e financiamentos, incluindo todas as taxas e encargos.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="cetForm">
+                    <div class="form-group">
+                        <label for="loanAmount">Valor do Empréstimo/Financiamento (R$)</label>
+                        <input id="loanAmount" min="0" placeholder="10000" required="" step="0.01" type="number" value="10000"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="installments">Número de Parcelas</label>
+                        <input id="installments" min="1" placeholder="12" required="" type="number" value="12"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthlyPayment">Valor da Parcela Mensal (R$)</label>
+                        <input id="monthlyPayment" min="0" placeholder="950" required="" step="0.01" type="number" value="950"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="initialFees">Taxas Iniciais (R$)</label>
+                        <input id="initialFees" min="0" placeholder="100" required="" step="0.01" type="number" value="100"/>
+                        <small style="color: var(--muted);">Ex: Taxa de abertura de crédito, IOF.</small>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateCET()" type="button">Calcular CET</button>
+                </form>
+
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Custo Efetivo Total (CET)</span>
+                    <span class="result-value" id="resultValue">0.00% a.m.</span>
+                    <div id="detalhesResultado" style="margin-top: 16px; text-align: left; font-size: 0.9rem; color: var(--muted);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+
+        <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre o custo real de empréstimos?</p>
+            <a href="/artigos/financas-descomplicadas-jovens.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+            <div class="info-card">
+                <h3>Custo Efetivo Total (CET): O Verdadeiro Preço do seu Dinheiro</h3>
+                <p>Ao contratar um empréstimo ou financiamento, é comum focar apenas na taxa de juros. No entanto, essa é apenas uma parte da história. O verdadeiro custo de uma operação de crédito é revelado pelo Custo Efetivo Total (CET), um indicador obrigatório por lei no Brasil que engloba não apenas os juros, mas todas as taxas, impostos, seguros e demais encargos envolvidos. A Calculadora de CET do Grana Hoje é uma ferramenta essencial para comparar propostas de crédito de forma transparente e tomar decisões financeiras mais inteligentes.</p>
+
+                <h4>O que Compõe o CET?</h4>
+                <p>O CET é a soma de todos os custos que o consumidor terá ao contratar um crédito. Ele inclui:
+                <ul>
+                    <li>**Taxa de Juros:** A remuneração do capital emprestado.</li>
+                    <li>**Tarifas:** Como a Taxa de Abertura de Crédito (TAC) ou outras tarifas administrativas.</li>
+                    <li>**Impostos:** Principalmente o Imposto sobre Operações Financeiras (IOF).</li>
+                    <li>**Seguros:** Seguros obrigatórios, como o seguro de proteção financeira.</li>
+                    <li>**Outros Encargos:** Quaisquer outras despesas que o cliente tenha que pagar para obter o crédito.</li>
+                </ul>
+                É a taxa anual que realmente reflete o valor total que você pagará pelo dinheiro emprestado. Por isso, ao comparar ofertas, o CET é o indicador mais importante.</p>
+
+                <h4>Por que o CET é Mais Importante que a Taxa de Juros?</h4>
+                <p>Imagine duas propostas de empréstimo: uma com taxa de juros de 2% ao mês e outra com 1.8% ao mês. À primeira vista, a segunda parece mais vantajosa. No entanto, se a primeira não tiver taxas adicionais e a segunda tiver um seguro obrigatório e uma alta taxa de abertura de crédito, o CET da segunda proposta pode ser significativamente maior. A taxa de juros isolada pode ser enganosa; o CET oferece uma visão holística do custo real, permitindo uma comparação justa entre diferentes instituições financeiras e produtos de crédito.</p>
+
+                <h4>Como a Calculadora de CET Ajuda Você?</h4>
+                <p>Nossa calculadora simplifica o processo de encontrar o CET. Ao inserir o valor do empréstimo, o número e valor das parcelas, e as taxas iniciais, a ferramenta estima a taxa mensal e anual do CET. Isso te permite:
+                <ul>
+                    <li>**Comparar Propostas:** Avaliar qual oferta de crédito é realmente a mais barata.</li>
+                    <li>**Negociar Melhor:** Ter em mãos o CET te dá poder de barganha com as instituições financeiras.</li>
+                    <li>**Evitar Surpresas:** Entender todos os custos envolvidos antes de assinar o contrato.</li>
+                </ul>
+                A transparência é a chave para uma boa saúde financeira, e o CET é seu melhor amigo nesse quesito.</p>
+
+                <h4>A Importância da Informação no Crédito</h4>
+                <p>O Banco Central do Brasil exige que todas as instituições financeiras informem o CET de forma clara e visível em suas propostas de crédito. Essa medida visa proteger o consumidor e garantir que ele tenha todas as informações necessárias para tomar uma decisão consciente. No entanto, muitos consumidores ainda não sabem como interpretar ou utilizar essa informação. A Calculadora de CET do Grana Hoje preenche essa lacuna, transformando dados complexos em informações compreensíveis e acionáveis.</p>
+
+                <h4>Dicas para Reduzir seu CET</h4>
+                <p>Embora o CET seja um valor fixo em uma proposta, você pode buscar formas de reduzi-lo:
+                <ul>
+                    <li>**Pesquise e Compare:** Não aceite a primeira oferta. Use nossa calculadora para comparar diversas opções.</li>
+                    <li>**Negocie Taxas e Seguros:** Pergunte se é possível reduzir ou eliminar algumas taxas e se o seguro é realmente obrigatório.</li>
+                    <li>**Melhore seu Score de Crédito:** Um bom histórico de crédito pode te dar acesso a taxas de juros mais baixas.</li>
+                    <li>**Ofereça Garantias:** Empréstimos com garantia (como imóvel ou veículo) geralmente têm um CET menor.</li>
+                </ul>
+                Lembre-se que cada ponto percentual no CET pode significar uma economia de milhares de reais ao longo do tempo. Use a Calculadora de CET como sua aliada para garantir que você esteja sempre pagando o preço justo pelo seu dinheiro.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        function formatarMoeda(valor) {
+            return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(valor);
+        }
+
+        function calculateCET() {
+            const loanAmount = parseFloat(document.getElementById("loanAmount").value) || 0;
+            const installments = parseInt(document.getElementById("installments").value) || 0;
+            const monthlyPayment = parseFloat(document.getElementById("monthlyPayment").value) || 0;
+            const initialFees = parseFloat(document.getElementById("initialFees").value) || 0;
+
+            if (loanAmount <= 0 || installments <= 0 || monthlyPayment <= 0) {
+                document.getElementById("resultValue").textContent = "0.00% a.m.";
+                document.getElementById("detalhesResultado").innerHTML = 
+                    "<p style=\"color: #ff4d4d;\">Preencha todos os campos corretamente.</p>";
+                return;
+            }
+
+            // Valor presente líquido inicial (considerando taxas iniciais)
+            const pv = loanAmount - initialFees;
+
+            // Função para calcular o VPL (Valor Presente Líquido)
+            function npv(rate, cashFlows) {
+                let sum = 0;
+                for (let i = 0; i < cashFlows.length; i++) {
+                    sum += cashFlows[i] / Math.pow(1 + rate, i);
+                }
+                return sum;
+            }
+
+            // Função para encontrar a TIR (Taxa Interna de Retorno) - que é o CET mensal
+            function irr(cashFlows, guess) {
+                // Implementação simplificada do método de Newton-Raphson para encontrar a TIR
+                guess = (guess === undefined) ? 0.1 : guess;
+                let irrResult = guess;
+                let financial = {};
+
+                for (let i = 0; i < 100; i++) {
+                    let npvValue = npv(irrResult, cashFlows);
+                    let derivative = 0;
+                    for (let j = 0; j < cashFlows.length; j++) {
+                        derivative += cashFlows[j] * (-j) * Math.pow(1 + irrResult, -j - 1);
+                    }
+                    irrResult = irrResult - npvValue / derivative;
+                    if (Math.abs(npv(irrResult, cashFlows)) < 0.000001) break;
+                }
+                return irrResult;
+            }
+
+            // Fluxo de caixa: primeiro é o valor líquido recebido, depois as parcelas pagas
+            const cashFlows = [-pv]; // Saída de caixa inicial (valor do empréstimo - taxas)
+            for (let i = 0; i < installments; i++) {
+                cashFlows.push(monthlyPayment); // Entradas de caixa (pagamento das parcelas)
+            }
+
+            const cetMonthly = irr(cashFlows, 0.01); // Chute inicial de 1% ao mês
+            const cetAnnual = Math.pow(1 + cetMonthly, 12) - 1;
+
+            if (isNaN(cetMonthly) || cetMonthly <= -1) {
+                document.getElementById("resultValue").textContent = "0.00% a.m.";
+                document.getElementById("detalhesResultado").innerHTML = 
+                    "<p style=\"color: #ff4d4d;\">Não foi possível calcular o CET. Verifique os valores.</p>";
+                return;
+            }
+
+            const resultBox = document.getElementById("resultBox");
+            resultBox.classList.add("active");
+            setTimeout(() => resultBox.classList.remove("active"), 500);
+
+            document.getElementById("resultValue").textContent = (cetMonthly * 100).toFixed(2) + "% a.m.";
+
+            const detalhes = document.getElementById("detalhesResultado");
+            detalhes.innerHTML = `
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
+                    <p><strong>Valor Líquido Recebido:</strong> ${formatarMoeda(pv)}</p>
+                    <p><strong>Parcela Mensal:</strong> ${formatarMoeda(monthlyPayment)}</p>
+                    <p><strong>Número de Parcelas:</strong> ${installments}</p>
+                    <p style="color: var(--primary); font-weight: 700; margin-top: 8px;"><strong>CET Anual:</strong> ${(cetAnnual * 100).toFixed(2)}% a.a.</p>
+                </div>
+            `;
+        }
+
+        window.addEventListener("load", calculateCET);
+        document.getElementById("loanAmount").addEventListener("input", calculateCET);
+        document.getElementById("installments").addEventListener("input", calculateCET);
+        document.getElementById("monthlyPayment").addEventListener("input", calculateCET);
+        document.getElementById("initialFees").addEventListener("input", calculateCET);
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/fr/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-tesouro-direto.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Simulador de Tesouro Direto - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-tesouro-direto.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Simulador de Tesouro Direto</h1>
+            <p class="page-subtitle">Ferramenta completa para simulador de tesouro direto.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>Simulateur du Trésor Direct : Votre Guide Pratique pour Investir en Toute Sécurité</h3>
+
+  <p>Investir dans le Trésor Direct est l'une des façons les plus sûres et accessibles de constituer un patrimoine au Brésil. Cependant, pour maximiser les résultats et prendre des décisions financières éclairées, il est essentiel d'utiliser des outils qui facilitent la planification des investissements. Le <strong>Simulateur du Trésor Direct</strong> est exactement cela : une ressource indispensable qui aide les investisseurs à projeter leurs rendements, comprendre les délais et les taux, et ajuster leurs stratégies en fonction de leurs objectifs personnels. Dans cet article, vous découvrirez comment utiliser cet outil de manière efficace et pourquoi il est essentiel pour ceux qui recherchent la liberté financière.</p>
+
+  <h4>Comment Utiliser le Simulateur du Trésor Direct</h4>
+  <p>Le Simulateur du Trésor Direct est généralement disponible sur le site officiel du Trésor National et sur diverses plateformes financières. Pour l'utiliser, suivez ces étapes de base :</p>
+  <ul>
+    <li><strong>Choisissez le titre souhaité :</strong> le Trésor Direct propose différents types de titres, tels que le Trésor Selic, le Trésor IPCA+ et le Trésor Préfixé.</li>
+    <li><strong>Indiquez le montant à investir :</strong> définissez combien vous souhaitez investir initialement et si vous souhaitez investir mensuellement.</li>
+    <li><strong>Déterminez la durée de remboursement :</strong> sélectionnez la date à laquelle vous prévoyez de retirer l'argent, en tenant compte de vos objectifs financiers.</li>
+    <li><strong>Analysez les résultats :</strong> le simulateur affichera des projections de rendement net, déduites des frais et impôts, ainsi que la valeur finale attendue.</li>
+    <li><strong>Faites des ajustements :</strong> essayez différents montants, durées et titres pour comprendre comment chaque variable impacte votre investissement.</li>
+  </ul>
+  <p>Cette simulation ne garantit pas un rendement futur, mais offre une base réaliste pour la planification et la prise de décision.</p>
+
+  <h4>Pourquoi le Simulateur est Fondamental pour la Liberté Financière</h4>
+  <p>Avoir la liberté financière signifie avoir le contrôle de ses finances, pouvoir vivre sans dépendre exclusivement d'une source de revenu active. Le Simulateur du Trésor Direct est un outil stratégique pour atteindre cet objectif, car il :</p>
+  <ul>
+    <li><strong>Favorise la planification :</strong> permet de visualiser l'impact des investissements à long terme, encourageant la discipline et des objectifs clairs.</li>
+    <li><strong>Facilite la compréhension du rapport coût-bénéfice :</strong> aide à comparer différents titres et durées, évitant les surprises liées aux frais et impôts.</li>
+    <li><strong>Stimule l'éducation financière :</strong> en utilisant le simulateur, l'investisseur apprend sur les intérêts composés, l'inflation et les risques.</li>
+    <li><strong>Réduit l'anxiété :</strong> en ayant une prévision concrète, l'investisseur se sent plus en sécurité pour maintenir le cap, même en période de volatilité.</li>
+  </ul>
+  <p>Par conséquent, le simulateur n'est pas seulement un outil technique, mais un allié dans la construction d'une vie financière plus stable et autonome.</p>
+
+  <h4>Exemples Pratiques d'Utilisation du Simulateur</h4>
+  <p>Imaginez que vous souhaitez investir 5 000 R$ dans le Trésor IPCA+ avec échéance en 2035, visant à protéger votre patrimoine de l'inflation et garantir une retraite paisible. En utilisant le simulateur, vous pouvez saisir ce montant et la durée, et recevoir une projection de ce que vous aurez accumulé à la fin, en tenant compte du rendement historique et des impôts.</p>
+  <p>Un autre exemple : si vous prévoyez d'investir mensuellement 500 R$ dans le Trésor Selic pour constituer une réserve d'urgence en moins de 2 ans, le simulateur montrera la croissance attendue, aidant à confirmer si ce montant mensuel est suffisant pour atteindre l'objectif.</p>
+  <p>Ces simulations permettent d'adapter le plan financier, que ce soit en augmentant les apports, en choisissant des titres différents ou en prolongeant les durées, afin que vos objectifs soient atteints avec plus de sécurité.</p>
+
+  <h4>Erreurs Courantes lors de l'Utilisation du Simulateur et Comment les Éviter</h4>
+  <p>Bien qu'il s'agisse d'un outil simple, certains investisseurs commettent des erreurs qui peuvent compromettre l'efficacité des simulations :</p>
+  <ul>
+    <li><strong>Ignorer les frais et impôts :</strong> vérifiez toujours si le simulateur prend en compte les frais de garde et l'impôt sur le revenu, car ces coûts impactent directement le rendement net.</li>
+    <li><strong>Utiliser des durées inappropriées :</strong> investir dans des titres à échéance très longue pour des objectifs à court terme peut entraîner une vente anticipée, avec une possible perte de rendement.</li>
+    <li><strong>Ne pas mettre à jour les scénarios :</strong> les conditions économiques changent ; il est donc important de refaire les simulations périodiquement et d'ajuster le plan en fonction des indicateurs et des objectifs personnels.</li>
+    <li><strong>Ignorer la diversification :</strong> parier sur un seul titre sans évaluer d'autres options peut augmenter les risques et limiter les gains.</li>
+  </ul>
+  <p>Pour éviter ces erreurs, restez informé, utilisez des simulateurs officiels et complétez vos analyses avec l'aide d'experts financiers.</p>
+
+  <h4>Conseils pour Tirer Parti du Simulateur en 2026</h4>
+  <p>Avec un contexte économique en constante évolution, quelques conseils peuvent vous aider à tirer le meilleur parti du Simulateur du Trésor Direct en 2026 :</p>
+  <ul>
+    <li><strong>Suivez les mises à jour du Trésor National :</strong> soyez attentif aux changements de taux et aux nouvelles modalités de titres qui pourraient apparaître.</li>
+    <li><strong>Considérez les scénarios inflationnistes :</strong> utilisez des simulations incluant des projections d'inflation pour protéger votre pouvoir d'achat.</li>
+    <li><strong>Planifiez des apports périodiques :</strong> simulez des investissements réguliers pour maximiser l'effet des intérêts composés.</li>
+    <li><strong>Combinez le Trésor Direct avec d'autres modalités :</strong> réalisez des simulations intégrées pour un portefeuille diversifié et équilibré.</li>
+    <li><strong>Utilisez des applications et plateformes digitales :</strong> explorez des ressources permettant des simulations rapides et à jour, facilitant le suivi de votre planification.</li>
+  </ul>
+  <p>En suivant ces recommandations, vous serez prêt à prendre des décisions plus éclairées et à atteindre vos objectifs financiers en toute sérénité.</p>
+
+  <h4>Conclusion : Discipline et Vision à Long Terme sont la Clé</h4>
+  <p>Le Simulateur du Trésor Direct est un outil puissant, mais sa vraie valeur apparaît lorsqu'il est combiné avec discipline et planification à long terme. Investir avec concentration, patience et connaissance augmente la probabilité de succès financier et la réalisation de rêves, de la retraite confortable à l'indépendance financière.</p>
+  <p>Par conséquent, utilisez le simulateur comme un guide constant, révisez vos objectifs, ajustez vos stratégies et maintenez votre engagement envers votre avenir financier. La liberté financière est un voyage — et le Simulateur du Trésor Direct peut être votre meilleure carte pour y parvenir.</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

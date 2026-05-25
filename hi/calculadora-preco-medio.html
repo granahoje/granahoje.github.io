@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/hi/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-preco-medio.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-preco-medio.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Calculadora de Preço Médio (Ações/FIIs) - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-preco-medio.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Calculadora de Preço Médio (Ações/FIIs)</h1>
+            <p class="page-subtitle">Ferramenta completa para calculadora de preço médio (ações/fiis).</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>औसत मूल्य कैलकुलेटर (शेयर/FIIs): बुद्धिमानी से निवेश करने के लिए आपका साथी</h3>
+
+  <p>वित्तीय बाजार में निवेश करना केवल अच्छे एसेट चुनने से अधिक मांगता है; यह आवश्यक है कि आप अपनी खरीद का औसत लागत समझें ताकि आप जागरूक और रणनीतिक निर्णय ले सकें। <strong>औसत मूल्य कैलकुलेटर (शेयर/FIIs)</strong> किसी भी निवेशक के लिए एक आवश्यक उपकरण है जो अपने निवेशों को ट्रैक करना चाहता है, अपने ऑपरेशनों को अनुकूलित करना चाहता है, और सबसे महत्वपूर्ण बात, वित्तीय स्वतंत्रता प्राप्त करने के लिए काम करना चाहता है।</p>
+
+  <h4>औसत मूल्य कैलकुलेटर का उपयोग कैसे करें</h4>
+  <p>कैलकुलेटर का उपयोग सरल और सहज है। मूल रूप से, यह आपको किसी एसेट की प्रत्येक खरीद की मात्रा और मूल्य दर्ज करने की अनुमति देता है, चाहे वह शेयर हो या रियल एस्टेट फंड (FII)। इन जानकारियों के आधार पर, उपकरण आपके निवेश का भारित औसत मूल्य निकालता है, जिसमें समय के साथ की गई सभी खरीद शामिल होती हैं।</p>
+  <p>शुरू करने के लिए, इन चरणों का पालन करें:</p>
+  <ol>
+    <li>अपनी पहली खरीद में खरीदे गए शेयरों या कोट्स की मात्रा और भुगतान की गई कीमत दर्ज करें।</li>
+    <li>अतिरिक्त खरीद की जानकारी जोड़ें, जिसमें प्रत्येक की मात्रा और कीमत शामिल हो।</li>
+    <li>यदि कैलकुलेटर अनुमति देता है, तो ब्रोकरेज शुल्क और अन्य शुल्क जैसे परिचालन लागत दर्ज करें, ताकि परिणाम अधिक सटीक हो।</li>
+    <li>अपडेटेड औसत मूल्य देखें, जो भविष्य की बिक्री में लाभ या हानि का मूल्यांकन करने के लिए संदर्भ के रूप में काम करेगा।</li>
+  </ol>
+  <p>यह प्रक्रिया निवेशक को उसके पोर्टफोलियो की वास्तविक लागत की स्पष्ट समझ प्रदान करती है, जिससे खरीद, बिक्री या अतिरिक्त निवेश के निर्णय आसान हो जाते हैं।</p>
+
+  <h4>आपकी वित्तीय स्वतंत्रता के लिए औसत मूल्य क्यों महत्वपूर्ण है</h4>
+  <p>औसत मूल्य की गणना केवल तकनीकी मामला नहीं है, बल्कि वित्तीय स्वतंत्रता की दिशा में एक महत्वपूर्ण कदम है। यह समझना कि आपने वास्तव में किसी एसेट के लिए कितना भुगतान किया है, बाजार की अस्थायी उतार-चढ़ाव पर आधारित आवेगी निर्णयों से बचाता है।</p>
+  <p>औसत मूल्य के साथ, आप कर सकते हैं:</p>
+  <ul>
+    <li>यह मूल्यांकन करना कि लागत कम करने और भविष्य की लाभप्रदता बढ़ाने के लिए और खरीद करना फायदेमंद है या नहीं।</li>
+    <li>बेचने का सही समय तय करना, अनावश्यक नुकसान से बचते हुए।</li>
+    <li>अपने जोखिम को बेहतर नियंत्रित करना और अपने निवेश की सटीकता बढ़ाना।</li>
+  </ul>
+  <p>यह रणनीति संपत्ति के निरंतर विकास में योगदान देती है, जो एक मजबूत और स्थायी निष्क्रिय आय स्रोत बनाने के लिए आवश्यक है।</p>
+
+  <h4>औसत मूल्य कैलकुलेटर के व्यावहारिक उपयोग के उदाहरण</h4>
+  <p>कल्पना करें कि आपने किसी कंपनी के 100 शेयर प्रति R$ 20.00 खरीदे। कुछ महीनों बाद, कीमत गिरकर R$ 15.00 हो गई, और आपने उस मूल्य पर 50 और शेयर खरीदने का फैसला किया। कैलकुलेटर का उपयोग करते हुए, औसत मूल्य इस प्रकार निकाला जाता है:</p>
+  <ul>
+    <li>पहली खरीद: 100 शेयर x R$ 20.00 = R$ 2,000.00</li>
+    <li>दूसरी खरीद: 50 शेयर x R$ 15.00 = R$ 750.00</li>
+    <li>कुल निवेश: R$ 2,750.00</li>
+    <li>कुल शेयर: 150</li>
+    <li><strong>औसत मूल्य = R$ 2,750.00 ÷ 150 = R$ 18.33</strong></li>
+  </ul>
+  <p>इस प्रकार, औसत मूल्य R$ 20.00 से घटकर R$ 18.33 हो गया, जिससे प्रति शेयर लागत कम हुई और भविष्य में लाभ की संभावनाएं बेहतर हुईं।</p>
+  <p>FIIs के मामले में भी प्रक्रिया समान है, जो लागत के विकास को स्पष्ट रूप से ट्रैक करने और आपके रियल एस्टेट फंड्स के प्रबंधन को आसान बनाती है।</p>
+
+  <h4>औसत मूल्य कैलकुलेटर का उपयोग करते समय सामान्य गलतियां और उन्हें कैसे बचें</h4>
+  <p>उपकरण की सरलता के बावजूद, कुछ गलतियां विश्लेषण को प्रभावित कर सकती हैं:</p>
+  <ul>
+    <li><strong>परिचालन लागतों को न शामिल करना:</strong> शुल्क और कर सीधे निवेश की कुल लागत को प्रभावित करते हैं और अधिक यथार्थवादी गणना के लिए शामिल किए जाने चाहिए।</li>
+    <li><strong>कई ऑपरेशनों के बाद ही औसत मूल्य अपडेट करना:</strong> हर खरीद के बाद गणना करना आदर्श है ताकि वित्तीय नियंत्रण सख्त रहे।</li>
+    <li><strong>औसत मूल्य को बाजार मूल्य से भ्रमित करना:</strong> औसत मूल्य आपकी लागत का संदर्भ है, जबकि बाजार मूल्य एसेट का वर्तमान मूल्य है। इस अंतर को समझना बेहतर निर्णय लेने में मदद करता है।</li>
+    <li><strong>आवेगपूर्ण खरीद को औसत मूल्य कम करने के लिए सही ठहराना:</strong> बिना एसेट के विश्लेषण के केवल "औसत मूल्य कम करने" के लिए अधिक खरीद जोखिम बढ़ा सकती है।</li>
+  </ul>
+  <p>इन गलतियों से बचना आवश्यक है ताकि कैलकुलेटर आपके निवेशक सफर में एक प्रभावी उपकरण साबित हो।</p>
+
+  <h4>2026 में औसत मूल्य कैलकुलेटर के उपयोग को बेहतर बनाने के सुझाव</h4>
+  <p>डिजिटल प्लेटफार्मों की प्रगति और डेटा की बढ़ती उपलब्धता के साथ, 2026 उन निवेशकों के लिए अवसरों का वर्ष साबित होगा जो बुद्धिमान उपकरणों का उपयोग करते हैं। कैलकुलेटर का बेहतर उपयोग करने के लिए कुछ सुझाव:</p>
+  <ul>
+    <li><strong>ब्रोकरेज के साथ एकीकरण:</strong> ऐसे कैलकुलेटर संस्करण खोजें जो आपके ऑपरेशनों से स्वचालित रूप से जुड़ सकें, जिससे डेटा इनपुट आसान हो।</li>
+    <li><strong>रीयल-टाइम ट्रैकिंग:</strong> ऐसे फीचर्स का उपयोग करें जो नई खरीद और बिक्री के अनुसार औसत मूल्य को अपडेट करें।</li>
+    <li><strong>कर योजना:</strong> लाभ और हानि की गणना के लिए उपकरण का उपयोग करें, जो आयकर विवरण में मदद करता है।</li>
+    <li><strong>निरंतर शिक्षा:</strong> तकनीकी और मौलिक विश्लेषण के अध्ययन के साथ कैलकुलेटर का संयोजन करें ताकि निर्णय अधिक ठोस हों।</li>
+    <li><strong>अनुशासन और नियमित समीक्षा:</strong> महीने में समय निकालकर अपने औसत मूल्य की समीक्षा करें और अपनी निवेश रणनीति समायोजित करें।</li>
+  </ul>
+
+  <h4>निष्कर्ष: अनुशासन और दीर्घकालिक दृष्टिकोण आवश्यक हैं</h4>
+  <p><strong>औसत मूल्य कैलकुलेटर (शेयर/FIIs)</strong> का उपयोग उन लोगों के लिए एक निर्णायक कदम है जो जागरूक और रणनीतिक रूप से निवेश करना चाहते हैं। यह केवल एक संख्या नहीं है, बल्कि आपके वित्तीय नियंत्रण और संपत्ति के बुद्धिमान प्रबंधन के प्रति आपकी प्रतिबद्धता का प्रतिनिधित्व करता है।</p>
+  <p>याद रखें: वित्तीय स्वतंत्रता भाग्य का परिणाम नहीं है, बल्कि अनुशासन, धैर्य और निरंतर योजना का परिणाम है। अपने निवेशों की निगरानी के लिए कैलकुलेटर का उपयोग करें, आवेगपूर्ण निर्णयों से बचें और अपने दीर्घकालिक लक्ष्यों पर ध्यान केंद्रित रखें। इस प्रकार, आप एक मजबूत और लाभकारी पोर्टफोलियो बनाने के सही मार्ग पर होंगे, जो आपको शांति और वित्तीय स्वतंत्रता प्रदान करेगा।</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) - Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-706NN8PEE7");
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#09111f">
+
+    <title>Grana Hoje - Your Portal for Finance and Financial Education</title>
+    <meta name="description" content="Grana Hoje is your portal for financial education, investments, and home economics tips. Learn to manage your finances intelligently.">
+    <meta name="keywords" content="personal finance, financial education, investments, home economics, financial planning">
+    <meta name="author" content="Grana Hoje">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="language" content="en">
+
+    <link rel="canonical" href="https://granahoje.github.io/en/index.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/index.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/index.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/index.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/index.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/index.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/index.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/index.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/index.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/index.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/index.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/index.html">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #09111f;
+            --bg-soft: #0f1b2d;
+            --card: rgba(15, 27, 45, 0.82);
+            --text: #f8fafc;
+            --muted: #a8b3c7;
+            --primary: #22d3bd;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --radius-lg: 30px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { 
+            width: min(100%, 1200px); 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 17, 31, 0.8);
+            backdrop-filter: blur(15px);
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: '💰';
+            font-size: 1.8rem;
+        }
+
+        nav { 
+            display: flex; 
+            gap: 30px; 
+            align-items: center; 
+        }
+        
+        nav a { 
+            color: var(--text); 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: color 0.2s; 
+        }
+        
+        nav a:hover { color: var(--primary); }
+
+        /* Search */
+        .search-container {
+            position: relative;
+            max-width: 300px;
+            width: 100%;
+            margin: 0 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text);
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 15px rgba(34, 211, 189, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            pointer-events: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .hero h1 { 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); 
+            font-weight: 900; 
+            margin-bottom: 25px; 
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p { 
+            font-size: 1.3rem; 
+            color: var(--muted); 
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons { 
+            display: flex; 
+            gap: 20px; 
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 15px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary { 
+            background: var(--primary); 
+            color: var(--bg); 
+        }
+
+        .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(34, 211, 189, 0.3); 
+        }
+
+        .btn-outline { 
+            border: 2px solid var(--primary); 
+            color: var(--primary); 
+            background: transparent;
+        }
+
+        .btn-outline:hover { 
+            background: rgba(34, 211, 189, 0.1); 
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            background: var(--bg-soft);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        .stat-item { }
+        .stat-value { 
+            font-size: 2.5rem; 
+            font-weight: 900; 
+            color: var(--primary); 
+            display: block;
+            margin-bottom: 10px;
+        }
+        .stat-label { 
+            color: var(--muted); 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+
+        /* Section Headers */
+        .section-header { 
+            text-align: center; 
+            margin-bottom: 60px; 
+        }
+
+        .section-header h2 { 
+            font-size: clamp(2rem, 4vw, 3.5rem); 
+            font-weight: 900; 
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p { 
+            color: var(--muted); 
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Calculators Grid */
+        .calculators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .calc-card {
+            background: var(--bg-soft);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--primary);
+            background: rgba(34, 211, 189, 0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .calc-icon { 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            display: block; 
+        }
+
+        .calc-card h3 { 
+            font-size: 1.4rem; 
+            margin-bottom: 15px; 
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .calc-card p { 
+            color: var(--muted); 
+            margin-bottom: 25px; 
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .calc-link { 
+            font-weight: 800; 
+            color: var(--primary); 
+            display: inline-flex;
+            align-items: center; 
+            gap: 8px;
+            transition: 0.2s;
+        }
+
+        .calc-card:hover .calc-link {
+            gap: 12px;
+        }
+
+        /* Articles Section */
+        .articles-section { 
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--bg-soft);
+            padding: 35px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover { 
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .article-card h3 { 
+            margin-bottom: 15px; 
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .article-card p { 
+            color: var(--muted); 
+            font-size: 0.95rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 100px;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        .footer-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a { 
+            color: var(--muted); 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        footer p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            header { flex-direction: column; gap: 20px; }
+            .search-container { max-width: 100%; margin: 0; }
+            nav { justify-content: center; }
+            .hero-buttons { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 0; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding: 50px 0; margin-bottom: 50px; }
+            .stats-bar { margin-bottom: 60px; }
+            .calculators-grid { grid-template-columns: 1fr; margin-bottom: 40px; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .section-header { margin-bottom: 40px; }
+            .section-header h2 { font-size: 2rem; }
+            .btn { padding: 14px 30px; font-size: 0.95rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 15px; }
+            header { margin-bottom: 20px; }
+            .logo { font-size: 1.2rem; }
+            nav { gap: 15px; font-size: 0.9rem; }
+            .hero h1 { font-size: 1.8rem; margin-bottom: 15px; }
+            .hero p { font-size: 1rem; margin-bottom: 25px; }
+            .hero-buttons { gap: 10px; }
+            .btn { padding: 12px 20px; font-size: 0.85rem; }
+            .calc-card { padding: 25px; }
+            .article-card { padding: 20px; }
+            .section-header h2 { font-size: 1.5rem; }
+            .section-header p { font-size: 0.95rem; }
+        }
+    </style>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/en/" class="logo">GRANA HOJE</a>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Search tools or articles..." id="searchInput">
+            </div>
+
+            <nav>
+                <a href="/en/blog.html">Blog</a>
+                <a href="/en/about.html">About</a>
+                <a href="/en/contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Your Journey to Financial Freedom</h1>
+                <p>Smart tools, practical guides, and real strategies for you to master your money in 2026.</p>
+                <div class="hero-buttons">
+                    <a href="/en/#tools" class="btn btn-primary">Explore Tools</a>
+                    <a href="/en/blog.html" class="btn btn-outline">Read the Blog</a>
+                </div>
+            </section>
+
+            <!-- Stats Bar -->
+            <section class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-value">Free</span>
+                    <span class="stat-label">Lifetime Access</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">No Invasive Ads</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">Expert</span>
+                    <span class="stat-label">Curated Content</span>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section id="tools">
+                <div class="section-header">
+                    <h2>🧮 Free Tools</h2>
+                    <p>Make data-driven decisions with our financial calculators.</p>
+                </div>
+
+                <div class="calculators-grid">
+                    <a href="/en/guia-qualidade-eeat.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>E-E-A-T Quality</h3>
+                        <p>Complete tool for E-E-A-T with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-desconto.html" class="calc-card">
+                        <span class="calc-icon">🏷️</span>
+                        <h3>Discount Calculator</h3>
+                        <p>Complete tool for discounts with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-dividend-yield.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>Dividend Yield</h3>
+                        <p>Complete tool for dividend yield with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-financiamento.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>Financing Simulator</h3>
+                        <p>Complete tool for financing with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-investimento-mensal.html" class="calc-card">
+                        <span class="calc-icon">📈</span>
+                        <h3>Monthly Investment</h3>
+                        <p>Complete tool for monthly investment with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-juros-compostos.html" class="calc-card">
+                        <span class="calc-icon">📉</span>
+                        <h3>Compound Interest</h3>
+                        <p>Complete tool for compound interest with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-juros-simples.html" class="calc-card">
+                        <span class="calc-icon">📉</span>
+                        <h3>Simple Interest</h3>
+                        <p>Complete tool for simple interest with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-ponto-equilibrio.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>Break-even Point</h3>
+                        <p>Complete tool for break-even point with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-rescisao.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>CLT Severance</h3>
+                        <p>Complete tool for severance with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-reserva-emergencia.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>Emergency Reserve</h3>
+                        <p>Complete tool for emergency reserve with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-roi.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>ROI Calculator</h3>
+                        <p>Complete tool for ROI with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-salario-liquido.html" class="calc-card">
+                        <span class="calc-icon">💰</span>
+                        <h3>Net Salary 2026</h3>
+                        <p>Complete tool for net salary with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/calculadora-cdb-poupanca.html" class="calc-card">
+                        <span class="calc-icon">📊</span>
+                        <h3>CDB vs Savings</h3>
+                        <p>Complete tool for CDB vs savings with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                    <a href="/en/conversor-moedas.html" class="calc-card">
+                        <span class="calc-icon">💱</span>
+                        <h3>Currency Converter</h3>
+                        <p>Complete tool for currencies with instant results.</p>
+                        <span class="calc-link">Calculate Now →</span>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="/en/tools.html" class="btn btn-outline">View All Tools →</a>
+                </div>
+            </section>
+
+            <!-- Articles Section -->
+            <section class="articles-section">
+                <div class="section-header">
+                    <h2>📚 Blog Highlights</h2>
+                    <p>Selected articles for your financial education.</p>
+                </div>
+                <div class="articles-grid">
+                    <a href="/en/articles/best-finance-apps-2026.html" class="article-card">
+                        <h3>Best Finance Apps in 2026</h3>
+                        <p>We analyze the tools that help you control your spending and invest better.</p>
+                    </a>
+                    <a href="/en/articles/ai-impact-on-finance-2026.html" class="article-card">
+                        <h3>The Impact of AI on Finance</h3>
+                        <p>How artificial intelligence is changing the way we manage our finances.</p>
+                    </a>
+                    <a href="/en/articles/digital-entrepreneurship-2026.html" class="calc-card">
+                        <h3>Digital Entrepreneurship</h3>
+                        <p>Complete guide for those who want to start their own business with financial security.</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="/en/blog.html" class="btn btn-outline">Explore All Articles →</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/en/about.html">About Us</a>
+                <a href="/en/blog.html">Blog</a>
+                <a href="/en/contact.html">Contact</a>
+                <a href="/en/privacy-policy.html">Privacy</a>
+                <a href="/en/terms-of-service.html">Terms</a>
+            </div>
+            <p>© 2026 Grana Hoje. Financial education for everyone.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple search logic (redirects to blog with search parameter)
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = e.target.value.trim();
+                if (query) {
+                    window.location.href = '/en/blog.html?q=' + encodeURIComponent(query);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="canonical" href="https://granahoje.github.io/bn/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-tesouro-direto.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-tesouro-direto.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <title>Simulador de Tesouro Direto - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <select class="language-selector" onchange="window.location.href='/'+this.value+'/calculadora-tesouro-direto.html'" aria-label="Idioma" style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:#f8fafc; padding:10px; border-radius:12px; font-weight:600; cursor:pointer; font-size: 0.9rem; outline: none;">
+                <option value="">🌐 Idioma</option>
+                <option value="">🇧🇷 PT-BR</option>
+                <option value="en">🇺🇸 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="ar">🇸🇦 AR</option>
+                <option value="zh">🇨🇳 ZH</option>
+                <option value="ru">🇷🇺 RU</option>
+                <option value="hi">🇮🇳 HI</option>
+                <option value="ja">🇯🇵 JA</option>
+                <option value="bn">🇧🇩 BN</option>
+                <option value="pt-pt">🇵🇹 PT-PT</option>
+            </select>
+                
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para o Blog
+            </a>
+            <h1 class="page-title">Simulador de Tesouro Direto</h1>
+            <p class="page-subtitle">Ferramenta completa para simulador de tesouro direto.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="compoundForm">
+                    
+                <div class="form-group">
+                    <label for="principal">Capital Inicial (R$)</label>
+                    <input id="principal" min="0" placeholder="1000" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Taxa de Juros (% a.a.)</label>
+                    <input id="rate" min="0" placeholder="10" required="" step="0.01" type="number"/>
+                </div>
+                <div class="form-group">
+                    <label for="time">Período (Anos)</label>
+                    <input id="time" min="0" placeholder="5" required="" step="0.5" type="number"/>
+                </div>
+                <button class="btn-calculate" onclick="calculateCompound()" type="button">Calcular</button>
+            
+                </form>
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Resultado Estimado</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">🏦</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">BTG Pactual Investimentos</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b517e54d2/188400/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+    <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre liberdade financeira?</p>
+            <a href="/artigos/liberdade-financeira-alem-do-obvio.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+<div class="info-card">
+<section class="info-content">
+  <h3>সিমুলাডর দে তেসাউরো দিরেতো: নিরাপদে বিনিয়োগের জন্য আপনার ব্যবহারিক গাইড</h3>
+
+  <p>তেসাউরো দিরেতো-তে বিনিয়োগ করা ব্রাজিলে সম্পদ গঠনের সবচেয়ে নিরাপদ এবং সহজলভ্য উপায়গুলোর একটি। তবে, ফলাফল সর্বাধিক করার জন্য এবং সচেতন আর্থিক সিদ্ধান্ত নেওয়ার জন্য, এমন টুলস ব্যবহার করা জরুরি যা বিনিয়োগ পরিকল্পনাকে সহজ করে তোলে। <strong>সিমুলাডর দে তেসাউরো দিরেতো</strong> ঠিক সেটাই: একটি অপরিহার্য রিসোর্স যা বিনিয়োগকারীদের তাদের রিটার্ন অনুমান করতে, মেয়াদ এবং হার বুঝতে, এবং ব্যক্তিগত লক্ষ্য অনুযায়ী কৌশল সামঞ্জস্য করতে সাহায্য করে। এই নিবন্ধে, আপনি শিখবেন কীভাবে এই টুলটি কার্যকরভাবে ব্যবহার করবেন এবং কেন এটি আর্থিক স্বাধীনতা খোঁজার জন্য অপরিহার্য।</p>
+
+  <h4>কিভাবে সিমুলাডর দে তেসাউরো দিরেতো ব্যবহার করবেন</h4>
+  <p>সিমুলাডর দে তেসাউরো দিরেতো সাধারণত তেসাউরো নাসিওনালের অফিসিয়াল ওয়েবসাইট এবং বিভিন্ন আর্থিক প্ল্যাটফর্মে পাওয়া যায়। এটি ব্যবহারের জন্য, নিচের মৌলিক ধাপগুলো অনুসরণ করুন:</p>
+  <ul>
+    <li><strong>আপনার পছন্দের শিরোনাম নির্বাচন করুন:</strong> তেসাউরো দিরেতো বিভিন্ন ধরনের শিরোনাম প্রদান করে, যেমন তেসাউরো সেলিক, তেসাউরো আইপিসিএ+ এবং তেসাউরো প্রিফিক্সাডো।</li>
+    <li><strong>বিনিয়োগের পরিমাণ জানান:</strong> আপনি প্রথমে কত টাকা বিনিয়োগ করতে চান এবং মাসিক বিনিয়োগ করতে চান কিনা তা নির্ধারণ করুন।</li>
+    <li><strong>উদ্ধারের মেয়াদ নির্ধারণ করুন:</strong> আপনার আর্থিক লক্ষ্য বিবেচনা করে টাকা উত্তোলনের তারিখ নির্বাচন করুন।</li>
+    <li><strong>ফলাফল বিশ্লেষণ করুন:</strong> সিমুলাডর নেট রিটার্নের প্রক্ষেপণ দেখাবে, যেখানে ফি এবং কর বাদ দেওয়া হয়েছে, এবং প্রত্যাশিত চূড়ান্ত মূল্যও নির্দেশ করবে।</li>
+    <li><strong>সংশোধন করুন:</strong> বিভিন্ন পরিমাণ, মেয়াদ এবং শিরোনাম পরীক্ষা করে দেখুন কিভাবে প্রতিটি পরিবর্তন আপনার বিনিয়োগকে প্রভাবিত করে।</li>
+  </ul>
+  <p>এই সিমুলেশন ভবিষ্যতের রিটার্নের নিশ্চয়তা দেয় না, তবে পরিকল্পনা এবং সিদ্ধান্ত গ্রহণের জন্য বাস্তবসম্মত ভিত্তি প্রদান করে।</p>
+
+  <h4>কেন সিমুলাডর আর্থিক স্বাধীনতার জন্য অপরিহার্য</h4>
+  <p>আর্থিক স্বাধীনতা মানে আপনার অর্থের উপর নিয়ন্ত্রণ থাকা, যেখানে আপনি সক্রিয় আয়ের একটি উৎসের উপর সম্পূর্ণ নির্ভরশীল না হয়ে জীবনযাপন করতে পারেন। সিমুলাডর দে তেসাউরো দিরেতো একটি কৌশলগত টুল যা এই লক্ষ্য অর্জনে সাহায্য করে, কারণ:</p>
+  <ul>
+    <li><strong>পরিকল্পনাকে উৎসাহিত করে:</strong> দীর্ঘমেয়াদী বিনিয়োগের প্রভাব দেখতে দেয়, শৃঙ্খলা এবং স্পষ্ট লক্ষ্য নির্ধারণে সহায়তা করে।</li>
+    <li><strong>খরচ-উপকারিতা বোঝা সহজ করে:</strong> বিভিন্ন শিরোনাম এবং মেয়াদ তুলনা করতে সাহায্য করে, ফি এবং করের অপ্রত্যাশিত ঝামেলা এড়াতে।</li>
+    <li><strong>আর্থিক শিক্ষা বাড়ায়:</strong> সিমুলাডর ব্যবহার করে বিনিয়োগকারী যৌগিক সুদ, মুদ্রাস্ফীতি এবং ঝুঁকি সম্পর্কে শিখে।</li>
+    <li><strong>উদ্বেগ কমায়:</strong> একটি স্পষ্ট পূর্বাভাস থাকার কারণে, বিনিয়োগকারী অস্থির সময়েও নিরাপদ বোধ করে এবং পরিকল্পনা বজায় রাখে।</li>
+  </ul>
+  <p>সুতরাং, সিমুলাডর শুধুমাত্র একটি প্রযুক্তিগত টুল নয়, এটি একটি সহায়ক যা একটি স্থিতিশীল এবং স্বনির্ভর আর্থিক জীবন গঠনে সাহায্য করে।</p>
+
+  <h4>সিমুলাডর ব্যবহারের ব্যবহারিক উদাহরণ</h4>
+  <p>ধরা যাক আপনি ২০৩৫ সালে মেয়াদ উত্তীর্ণ তেসাউরো আইপিসিএ+ তে R$ ৫,০০০ বিনিয়োগ করতে চান, মুদ্রাস্ফীতির বিরুদ্ধে আপনার সম্পদ রক্ষা এবং শান্তিপূর্ণ অবসর নিশ্চিত করার জন্য। সিমুলাডর ব্যবহার করে, আপনি এই পরিমাণ এবং মেয়াদ ইনপুট দিলে, এটি ঐতিহাসিক রিটার্ন এবং কর বিবেচনায় নিয়ে কত টাকা জমা হবে তার একটি প্রক্ষেপণ দেবে।</p>
+  <p>আরেকটি উদাহরণ: আপনি যদি তেসাউরো সেলিক-এ মাসে R$ ৫০০ করে বিনিয়োগ করে ২ বছরের মধ্যে জরুরি তহবিল গড়ে তুলতে চান, সিমুলাডর প্রত্যাশিত বৃদ্ধির তথ্য দেখাবে, যা নিশ্চিত করবে মাসিক এই পরিমাণ লক্ষ্য অর্জনের জন্য যথেষ্ট কিনা।</p>
+  <p>এই সিমুলেশনগুলো আর্থিক পরিকল্পনা সামঞ্জস্য করতে সাহায্য করে, যেমন বিনিয়োগ বাড়ানো, বিভিন্ন শিরোনাম নির্বাচন বা মেয়াদ বাড়ানো, যাতে আপনার লক্ষ্য নিরাপদে অর্জিত হয়।</p>
+
+  <h4>সিমুলাডর ব্যবহারে সাধারণ ভুল এবং সেগুলো এড়ানোর উপায়</h4>
+  <p>যদিও এটি একটি সহজ টুল, কিছু বিনিয়োগকারী এমন ভুল করেন যা সিমুলেশনের কার্যকারিতা ক্ষুণ্ন করতে পারে:</p>
+  <ul>
+    <li><strong>ফি এবং কর উপেক্ষা করা:</strong> নিশ্চিত করুন সিমুলাডর কাস্টডি ফি এবং আয়কর বিবেচনা করে, কারণ এই খরচগুলো নেট রিটার্নে সরাসরি প্রভাব ফেলে।</li>
+    <li><strong>অযথা দীর্ঘ মেয়াদ ব্যবহার করা:</strong> স্বল্পমেয়াদি লক্ষ্য জন্য দীর্ঘ মেয়াদের শিরোনামে বিনিয়োগ করলে আগাম বিক্রির প্রয়োজন হতে পারে, যা রিটার্ন কমিয়ে দিতে পারে।</li>
+    <li><strong>পরিস্থিতি আপডেট না করা:</strong> অর্থনৈতিক অবস্থা পরিবর্তিত হয়; তাই নিয়মিত সিমুলেশন পুনরায় করা এবং ব্যক্তিগত লক্ষ্য ও সূচকের সাথে পরিকল্পনা সামঞ্জস্য করা জরুরি।</li>
+    <li><strong>বৈচিত্র্য উপেক্ষা করা:</strong> একক শিরোনামে বিনিয়োগ ঝুঁকি বাড়ায় এবং লাভ সীমাবদ্ধ করতে পারে।</li>
+  </ul>
+  <p>এই ভুল এড়াতে, তথ্যসমৃদ্ধ থাকুন, অফিসিয়াল সিমুলাডর ব্যবহার করুন এবং আর্থিক বিশেষজ্ঞদের সাহায্য নিন।</p>
+
+  <h4>২০২৬ সালে সিমুলাডর থেকে সর্বোচ্চ সুবিধা নেওয়ার টিপস</h4>
+  <p>অর্থনৈতিক পরিস্থিতি ক্রমাগত পরিবর্তনের মধ্যে, ২০২৬ সালে সিমুলাডর দে তেসাউরো দিরেতো থেকে সর্বোচ্চ সুবিধা নিতে কিছু টিপস:</p>
+  <ul>
+    <li><strong>তেসাউরো নাসিওনালের আপডেট অনুসরণ করুন:</strong> হার পরিবর্তন এবং নতুন শিরোনামের আগমন সম্পর্কে সচেতন থাকুন।</li>
+    <li><strong>মুদ্রাস্ফীতির প্রক্ষেপণ বিবেচনা করুন:</strong> এমন সিমুলেশন ব্যবহার করুন যা মুদ্রাস্ফীতির প্রভাব অন্তর্ভুক্ত করে, আপনার ক্রয়ক্ষমতা রক্ষা করতে।</li>
+    <li><strong>নিয়মিত বিনিয়োগ পরিকল্পনা করুন:</strong> যৌগিক সুদের প্রভাব বাড়াতে নিয়মিত বিনিয়োগ সিমুলেট করুন।</li>
+    <li><strong>তেসাউরো দিরেতোকে অন্যান্য বিনিয়োগের সাথে মিলিয়ে দেখুন:</strong> বৈচিত্র্যময় এবং সুষম পোর্টফোলিওর জন্য সমন্বিত সিমুলেশন করুন।</li>
+    <li><strong>অ্যাপ এবং ডিজিটাল প্ল্যাটফর্ম ব্যবহার করুন:</strong> দ্রুত এবং আপডেটেড সিমুলেশন করার জন্য রিসোর্সগুলো ব্যবহার করুন, যা আপনার পরিকল্পনা অনুসরণ সহজ করে।</li>
+  </ul>
+  <p>এই নির্দেশনা অনুসরণ করলে, আপনি আরও সঠিক সিদ্ধান্ত নিতে পারবেন এবং শান্তিপূর্ণভাবে আপনার আর্থিক লক্ষ্য অর্জন করতে পারবেন।</p>
+
+  <h4>উপসংহার: শৃঙ্খলা এবং দীর্ঘমেয়াদী দৃষ্টিভঙ্গি হল চাবিকাঠি</h4>
+  <p>সিমুলাডর দে তেসাউরো দিরেতো একটি শক্তিশালী টুল, তবে এর প্রকৃত মূল্য তখনই প্রকাশ পায় যখন এটি শৃঙ্খলা এবং দীর্ঘমেয়াদী পরিকল্পনার সাথে মিলিত হয়। ফোকাস, ধৈর্য এবং জ্ঞানের সাথে বিনিয়োগ করলে আর্থিক সাফল্যের সম্ভাবনা এবং স্বপ্ন পূরণের সম্ভাবনা বেড়ে যায়, আর সেটা হোক আরামদায়ক অবসর অথবা আর্থিক স্বাধীনতা।</p>
+  <p>সুতরাং, সিমুলাডরকে একটি নিয়মিত গাইড হিসেবে ব্যবহার করুন, আপনার লক্ষ্য পুনর্মূল্যায়ন করুন, কৌশল সামঞ্জস্য করুন এবং আপনার আর্থিক ভবিষ্যতের প্রতি প্রতিশ্রুতিবদ্ধ থাকুন। আর্থিক স্বাধীনতা একটি যাত্রা — এবং সিমুলাডর দে তেসাউরো দিরেতো হতে পারে আপনার সেরা মানচিত্র সেখানে পৌঁছানোর জন্য।</p>
+</section>
+</div>
+</section>
+</main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+    function calculateCompound() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const r = parseFloat(document.getElementById('rate').value) / 100;
+        const t = parseFloat(document.getElementById('time').value);
+        if (!p || !r || !t) return alert('Preencha os campos');
+        const amount = p * Math.pow(1 + r, t);
+        document.getElementById('resultValue').textContent = 'R$ ' + amount.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        document.getElementById('compoundResult').style.display = 'block';
+    }
+    
+        
+        // Adicionar efeito visual ao calcular
+        const originalCalculate = window[Object.keys(window).find(k => k.startsWith('calculate'))];
+        if (originalCalculate) {
+            const btn = document.querySelector('.btn-calculate');
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const resultBox = document.getElementById('resultBox');
+                    resultBox.classList.add('active');
+                    setTimeout(() => resultBox.classList.remove('active'), 500);
+                });
+            }
+        }
+    </script>
+</body>
+</html>

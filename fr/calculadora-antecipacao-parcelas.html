@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Calculadora de Antecipação de Parcelas - Grana Hoje</title>
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        main { padding-top: 20px; }
+        .page-header { padding: 30px 0 20px; }
+        .calculator-container { margin-top: 30px; margin-bottom: 40px; }
+    </style>
+    <meta name="description" content="Veja quanto você economiza em juros ao antecipar o pagamento de parcelas de empréstimos.">
+    <link rel="canonical" href="https://granahoje.github.io/fr/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="ar" href="https://granahoje.github.io/ar/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="bn" href="https://granahoje.github.io/bn/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="en" href="https://granahoje.github.io/en/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="es" href="https://granahoje.github.io/es/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="fr" href="https://granahoje.github.io/fr/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="hi" href="https://granahoje.github.io/hi/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="ja" href="https://granahoje.github.io/ja/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="pt-pt" href="https://granahoje.github.io/pt-pt/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/calculadora-antecipacao-parcelas.html">
+    <link rel="alternate" hreflang="x-default" href="https://granahoje.github.io/calculadora-antecipacao-parcelas.html">
+    <meta name="robots" content="noindex, follow">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="logo" href="/">GRANA HOJE</a>
+            <nav class="nav-links">
+                <a href="/blog.html">Blog</a>
+                <a href="/about.html">Sobre</a>
+                <a href="/contact.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="page-header">
+            <a href="/ferramentas.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Voltar para Ferramentas
+            </a>
+            <h1 class="page-title">Calculadora de Antecipação de Parcelas</h1>
+            <p class="page-subtitle">Descubra quanto você pode economizar antecipando parcelas de empréstimos ou financiamentos.</p>
+        </header>
+
+        <section class="calculator-container">
+            <div class="calculator-card">
+                <form id="anticipationForm">
+                    <div class="form-group">
+                        <label for="totalValue">Valor Total do Empréstimo/Financiamento (R$)</label>
+                        <input id="totalValue" min="0" placeholder="10000" required="" step="0.01" type="number" value="10000"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthlyPayment">Valor da Parcela Mensal (R$)</label>
+                        <input id="monthlyPayment" min="0" placeholder="500" required="" step="0.01" type="number" value="500"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalInstallments">Número Total de Parcelas</label>
+                        <input id="totalInstallments" min="1" placeholder="24" required="" type="number" value="24"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="installmentsToAnticipate">Parcelas a Antecipar (do final para o início)</label>
+                        <input id="installmentsToAnticipate" min="1" placeholder="5" required="" type="number" value="5"/>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateAnticipation()" type="button">Calcular Economia</button>
+                </form>
+
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Economia Total</span>
+                    <span class="result-value" id="resultValue">R$ 0,00</span>
+                    <div id="detalhesResultado" style="margin-top: 16px; text-align: left; font-size: 0.9rem; color: var(--muted);"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Link de Afiliado Destacado -->
+        <div class="premium-affiliate-cta" style="margin: 40px 0; padding: 30px; background: linear-gradient(90deg, rgba(34, 211, 189, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%); border-left: 5px solid #22d3bd; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 30px;">
+            <div style="font-size: 3rem; flex-shrink: 0;">💎</div>
+            <div style="flex-grow: 1;">
+                <h4 style="margin: 0 0 10px; color: #22d3bd; font-size: 1.3rem; font-weight: 900;">Parceiro Recomendado</h4>
+                <p style="margin: 0 0 15px; color: #b6c2d2; font-size: 1rem; line-height: 1.6;"><strong style="color: #fff;">Bybit Cripto</strong> é uma das melhores opções do mercado. Testado e aprovado por nossos especialistas.</p>
+                <a href="https://apretailer.com.br/click/6a0bab802bfa817b8555f8d2/188136/358980/subaccount" rel="nofollow" target="_blank" style="display: inline-block; padding: 12px 30px; background: linear-gradient(135deg, #22d3bd 0%, #10b981 100%); color: #09111f; text-decoration: none; border-radius: 10px; font-weight: 900; font-size: 0.95rem; transition: all 0.3s; box-shadow: 0 8px 20px rgba(34, 211, 189, 0.3); border: none; cursor: pointer;">Acessar Agora →</a>
+            </div>
+        </div>
+
+        <!-- Link para Artigo Relacionado -->
+        <div style="margin: 30px 0; padding: 25px; background: rgba(34, 211, 189, 0.05); border: 1px solid rgba(34, 211, 189, 0.2); border-radius: 15px; text-align: center;">
+            <p style="color: var(--muted); margin-bottom: 15px; font-size: 0.95rem;">📚 Quer aprender mais sobre como economizar em financiamentos?</p>
+            <a href="/artigos/economizar-casa-propria-baixa-renda-2025.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: var(--bg); text-decoration: none; border-radius: 10px; font-weight: 900; transition: all 0.3s; box-shadow: 0 4px 12px rgba(34, 211, 189, 0.3);">Ler Artigo Completo →</a>
+        </div>
+
+        <section class="info-content">
+            <div class="info-card">
+                <h3>Antecipação de Parcelas: A Estratégia Inteligente para Economizar Juros</h3>
+                <p>Pagar um empréstimo ou financiamento antes do prazo pode parecer uma tarefa difícil, mas a verdade é que a antecipação de parcelas é uma das estratégias financeiras mais eficazes para economizar uma quantia significativa em juros. A Calculadora de Antecipação de Parcelas do Grana Hoje foi criada para te mostrar exatamente o impacto dessa decisão no seu bolso, revelando o quanto você pode poupar ao quitar suas dívidas mais rapidamente.</p>
+
+                <h4>Como Funciona a Antecipação de Parcelas?</h4>
+                <p>Quando você antecipa o pagamento de uma parcela, você está essencialmente pagando o capital principal da dívida antes do previsto. Como os juros são calculados sobre o saldo devedor, ao reduzir esse saldo, você diminui a base de cálculo dos juros futuros. A legislação brasileira (Código de Defesa do Consumidor) garante o direito do consumidor de quitar antecipadamente suas dívidas, com a devida redução proporcional dos juros. Isso significa que, ao invés de pagar a parcela cheia, você paga apenas o valor principal daquela parcela, economizando todos os juros que seriam cobrados até o vencimento original.</p>
+
+                <h4>Tipos de Antecipação: De Trás para Frente ou de Frente para Trás?</h4>
+                <p>Existem duas formas principais de antecipar parcelas:
+                <ul>
+                    <li>**De Trás para Frente (Quitação das Últimas Parcelas):** Esta é a forma mais vantajosa e a que nossa calculadora simula. Ao quitar as últimas parcelas, você elimina aquelas que teriam o maior acúmulo de juros ao longo do tempo, maximizando sua economia.</li>
+                    <li>**De Frente para Trás (Redução do Valor das Próximas Parcelas):** Nesta modalidade, você mantém o número de parcelas, mas o valor de cada uma é reduzido. Embora ainda haja economia de juros, ela é menor do que na quitação das últimas parcelas.</li>
+                </ul>
+                Sempre que possível, priorize a quitação das últimas parcelas para otimizar sua economia.</p>
+
+                <h4>O Impacto dos Juros no seu Financiamento</h4>
+                <p>Muitas pessoas subestimam o poder dos juros, especialmente em financiamentos de longo prazo, como imóveis ou veículos. Uma pequena taxa de juros, multiplicada por dezenas ou centenas de meses, pode dobrar ou até triplicar o valor original do bem. A antecipação de parcelas é uma ferramenta poderosa para reverter essa situação, transformando os juros de inimigos em aliados, pois o dinheiro que você economiza pode ser reinvestido e trabalhar a seu favor.</p>
+
+                <h4>Estratégias para Antecipar Parcelas</h4>
+                <p>Para conseguir antecipar parcelas, é fundamental ter um bom planejamento financeiro:
+                <ul>
+                    <li>**Organize suas Finanças:** Tenha um orçamento claro para identificar onde você pode cortar gastos e gerar uma sobra de dinheiro.</li>
+                    <li>**Renda Extra:** Busque formas de complementar sua renda, seja com um trabalho freelancer, vendendo itens que não usa mais ou investindo em habilidades que gerem valor.</li>
+                    <li>**Use o 13º Salário e Bônus:** Esses valores extras são excelentes oportunidades para abater dívidas e economizar juros.</li>
+                    <li>**Priorize Dívidas com Juros Mais Altos:** Se você tem múltiplas dívidas, foque primeiro naquelas com as maiores taxas de juros, pois são as que mais corroem seu capital.</li>
+                </ul>
+                Lembre-se que cada real economizado em juros é um real que fica no seu bolso e pode ser usado para construir seu patrimônio.</p>
+
+                <h4>Comece a Economizar Hoje</h4>
+                <p>Não espere o último momento para pensar em antecipar suas dívidas. Quanto antes você começar, maior será sua economia. Use a Calculadora de Antecipação de Parcelas do Grana Hoje para simular diferentes cenários e ver o potencial de economia. Com planejamento e disciplina, você pode se livrar das dívidas mais rápido e direcionar seus recursos para a construção de um futuro financeiro mais sólido e tranquilo. O Grana Hoje está aqui para te dar as ferramentas e o conhecimento necessários para você tomar as melhores decisões financeiras.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Grana Hoje. Educação financeira para todos.</p>
+        </div>
+    </footer>
+
+    <script>
+        function formatarMoeda(valor) {
+            return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(valor);
+        }
+
+        function calculateAnticipation() {
+            const totalValue = parseFloat(document.getElementById("totalValue").value) || 0;
+            const monthlyPayment = parseFloat(document.getElementById("monthlyPayment").value) || 0;
+            const totalInstallments = parseInt(document.getElementById("totalInstallments").value) || 0;
+            const installmentsToAnticipate = parseInt(document.getElementById("installmentsToAnticipate").value) || 0;
+
+            if (totalValue <= 0 || monthlyPayment <= 0 || totalInstallments <= 0 || installmentsToAnticipate <= 0 || installmentsToAnticipate > totalInstallments) {
+                document.getElementById("resultValue").textContent = "R$ 0,00";
+                document.getElementById("detalhesResultado").innerHTML = 
+                    "<p style=\"color: #ff4d4d;\">Preencha todos os campos corretamente e garanta que as parcelas a antecipar não excedam o total.</p>";
+                return;
+            }
+
+            // Estimativa da taxa de juros mensal (simplificada, pode não ser exata para todos os casos)
+            // Usa método de Newton-Raphson para encontrar a taxa
+            let rate = 0.01; // Chute inicial
+            let iterations = 100;
+            let pv = totalValue;
+            let pmt = monthlyPayment;
+            let n = totalInstallments;
+
+            for (let i = 0; i < iterations; i++) {
+                let f = pmt * (1 - Math.pow(1 + rate, -n)) / rate - pv;
+                let df = pmt * (n * Math.pow(1 + rate, -n - 1) / rate - (1 - Math.pow(1 + rate, -n)) / (rate * rate));
+                rate = rate - f / df;
+                if (Math.abs(f) < 0.01) break; // Convergência
+            }
+
+            if (isNaN(rate) || rate <= 0) {
+                document.getElementById("resultValue").textContent = "R$ 0,00";
+                document.getElementById("detalhesResultado").innerHTML = 
+                    "<p style=\"color: #ff4d4d;\">Não foi possível estimar a taxa de juros. Verifique os valores.</p>";
+                return;
+            }
+
+            let totalInterestSaved = 0;
+            let currentPrincipal = totalValue;
+            let remainingInstallments = totalInstallments;
+
+            // Simular pagamento das parcelas de trás para frente
+            for (let i = 0; i < installmentsToAnticipate; i++) {
+                // Valor presente da última parcela
+                let pvLastInstallment = monthlyPayment / Math.pow(1 + rate, remainingInstallments);
+                totalInterestSaved += (monthlyPayment - pvLastInstallment);
+                remainingInstallments--;
+            }
+
+            const resultBox = document.getElementById("resultBox");
+            resultBox.classList.add("active");
+            setTimeout(() => resultBox.classList.remove("active"), 500);
+
+            document.getElementById("resultValue").textContent = formatarMoeda(totalInterestSaved);
+
+            const detalhes = document.getElementById("detalhesResultado");
+            detalhes.innerHTML = `
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
+                    <p><strong>Valor do Empréstimo:</strong> ${formatarMoeda(totalValue)}</p>
+                    <p><strong>Parcela Mensal:</strong> ${formatarMoeda(monthlyPayment)}</p>
+                    <p><strong>Total de Parcelas:</strong> ${totalInstallments}</p>
+                    <p><strong>Parcelas Antecipadas:</strong> ${installmentsToAnticipate}</p>
+                    <p style="color: var(--primary); font-weight: 700; margin-top: 8px;"><strong>Economia Estimada:</strong> ${formatarMoeda(totalInterestSaved)}</p>
+                </div>
+            `;
+        }
+
+        window.addEventListener("load", calculateAnticipation);
+        document.getElementById("totalValue").addEventListener("input", calculateAnticipation);
+        document.getElementById("monthlyPayment").addEventListener("input", calculateAnticipation);
+        document.getElementById("totalInstallments").addEventListener("input", calculateAnticipation);
+        document.getElementById("installmentsToAnticipate").addEventListener("input", calculateAnticipation);
+    </script>
+</body>
+</html>
