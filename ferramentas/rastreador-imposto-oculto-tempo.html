@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-706NN8PEE7");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Imposto Oculto do Tempo (RIOT) - Grana Hoje</title>
+    <meta name="description" content="Calcule seu Salário Real por Hora de Vida com o RIOT, a ferramenta que expõe os custos invisíveis do seu trabalho.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SEO Avançado -->
+    <link rel="canonical" href="https://granahoje.github.io/ferramentas/rastreador-imposto-oculto-tempo.html">
+    <meta property="og:title" content="Rastreador de Imposto Oculto do Tempo (RIOT)">
+    <meta property="og:description" content="Descubra quanto você realmente ganha por hora de vida.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://granahoje.github.io/ferramentas/rastreador-imposto-oculto-tempo.html">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Rastreador de Imposto Oculto do Tempo (RIOT)",
+      "operatingSystem": "Web",
+      "applicationCategory": "FinanceApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      }
+    }
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">GRANA HOJE</a></div>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/ferramentas.html">Ferramentas</a>
+        <a href="/about.html">Sobre</a>
+    </nav>
+</header>
+
+<main class="container">
+    <header class="page-header">
+        <h1 class="page-title">Rastreador de Imposto Oculto do Tempo (RIOT)</h1>
+        <p class="page-subtitle">Descubra seu Salário Real por Hora de Vida descontando os custos invisíveis do trabalho.</p>
+    </header>
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-group">
+                <label for="salarioLiquido">Salário Líquido Mensal (R$):</label>
+                <input type="number" id="salarioLiquido" value="5000">
+            </div>
+            <div class="input-group">
+                <label for="horasTrabalhadas">Horas de Expediente Mensais:</label>
+                <input type="number" id="horasTrabalhadas" value="160">
+            </div>
+            <div class="input-group">
+                <label for="tempoDeslocamento">Horas de Deslocamento Mensais:</label>
+                <input type="number" id="tempoDeslocamento" value="40">
+            </div>
+            <div class="input-group">
+                <label for="gastosTrabalho">Gastos Diretos com Trabalho (R$):</label>
+                <input type="number" id="gastosTrabalho" value="800" title="Transporte, Roupas, Alimentação Extra, etc.">
+            </div>
+            <button id="calcularRIOT" class="btn btn-primary">Calcular Salário Real</button>
+        </div>
+
+        <div class="results-container">
+            <h2>Seu Resultado RIOT:</h2>
+            <p>Seu Salário Nominal por Hora: R$ <span id="salarioNominalHora">0.00</span></p>
+            <p style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">Seu Salário Real por Hora de Vida: R$ <span id="salarioRealHora">0.00</span></p>
+            <p>O "Imposto Oculto" consome <span id="porcentagemImposto">0</span>% do seu ganho por hora.</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3>O que é o Salário Real por Hora de Vida?</h3>
+        <p>É a métrica que subtrai os gastos necessários para trabalhar (transporte, alimentação extra, vestuário) e divide pelo tempo total dedicado ao trabalho (incluindo deslocamento e preparação). É a forma mais honesta de medir sua remuneração.</p>
+    </div>
+</main>
+
+<footer class="standard-footer">
+    <!-- Footer content -->
+</footer>
+
+<script>
+    document.getElementById('calcularRIOT').addEventListener('click', function() {
+        const salarioLiquido = parseFloat(document.getElementById('salarioLiquido').value);
+        const horasTrabalhadas = parseFloat(document.getElementById('horasTrabalhadas').value);
+        const tempoDeslocamento = parseFloat(document.getElementById('tempoDeslocamento').value);
+        const gastosTrabalho = parseFloat(document.getElementById('gastosTrabalho').value);
+
+        if (isNaN(salarioLiquido) || isNaN(horasTrabalhadas) || isNaN(tempoDeslocamento) || isNaN(gastosTrabalho)) {
+            alert('Por favor, insira valores válidos.');
+            return;
+        }
+
+        const salarioNominalHora = salarioLiquido / horasTrabalhadas;
+        const rendaAjustada = salarioLiquido - gastosTrabalho;
+        const tempoTotal = horasTrabalhadas + tempoDeslocamento;
+        const salarioRealHora = rendaAjustada / tempoTotal;
+        const porcentagemImposto = ((salarioNominalHora - salarioRealHora) / salarioNominalHora) * 100;
+
+        document.getElementById('salarioNominalHora').textContent = salarioNominalHora.toFixed(2);
+        document.getElementById('salarioRealHora').textContent = salarioRealHora.toFixed(2);
+        document.getElementById('porcentagemImposto').textContent = porcentagemImposto.toFixed(1);
+    });
+</script>
+
+</body>
+</html>
