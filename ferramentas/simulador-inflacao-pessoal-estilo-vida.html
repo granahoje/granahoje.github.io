@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-706NN8PEE7");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Inflação Pessoal de Estilo de Vida (SIPEV) - Grana Hoje</title>
+    <meta name="description" content="Calcule sua inflação real com base nos seus hábitos de consumo específicos com o SIPEV.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SEO Avançado -->
+    <link rel="canonical" href="https://granahoje.github.io/ferramentas/simulador-inflacao-pessoal-estilo-vida.html">
+    <meta property="og:title" content="Simulador de Inflação Pessoal de Estilo de Vida (SIPEV)">
+    <meta property="og:description" content="Descubra como seus hábitos de consumo corroem seu poder de compra real.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://granahoje.github.io/ferramentas/simulador-inflacao-pessoal-estilo-vida.html">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">GRANA HOJE</a></div>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/ferramentas.html">Ferramentas</a>
+        <a href="/about.html">Sobre</a>
+    </nav>
+</header>
+
+<main class="container">
+    <header class="page-header">
+        <h1 class="page-title">Simulador de Inflação Pessoal (SIPEV)</h1>
+        <p class="page-subtitle">Descubra a taxa de inflação real baseada nos seus hábitos específicos de consumo.</p>
+    </header>
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-group">
+                <label for="gastoStreaming">Gastos Mensais com Streaming (R$):</label>
+                <input type="number" id="gastoStreaming" value="150">
+            </div>
+            <div class="input-group">
+                <label for="gastoDelivery">Gastos Mensais com Delivery (R$):</label>
+                <input type="number" id="gastoDelivery" value="600">
+            </div>
+            <div class="input-group">
+                <label for="gastoCombustivel">Gastos Mensais com Combustível/Apps (R$):</label>
+                <input type="number" id="gastoCombustivel" value="400">
+            </div>
+            <div class="input-group">
+                <label for="gastoPets">Gastos Mensais com Pets/Lazer (R$):</label>
+                <input type="number" id="gastoPets" value="300">
+            </div>
+            <button id="calcularSIPEV" class="btn btn-primary">Calcular Inflação Pessoal</button>
+        </div>
+
+        <div class="results-container">
+            <h2>Sua Inflação Pessoal Estimada:</h2>
+            <p style="font-size: 2rem; font-weight: 800; color: var(--primary);"><span id="inflacaoPessoal">0.0</span>% ao ano</p>
+            <p>A inflação oficial (IPCA) é de aprox. 4.5% ao ano.</p>
+            <p id="mensagemImpacto">Seu estilo de vida tem uma inflação maior que a média nacional.</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3>Como funciona o SIPEV?</h3>
+        <p>O SIPEV cruza os pesos dos seus gastos com as taxas de variação de preços específicas de cada setor (tecnologia, serviços, alimentação fora, etc.) em 2026. Isso gera um índice muito mais fiel à sua realidade do que a média nacional.</p>
+    </div>
+</main>
+
+<footer class="standard-footer">
+    <!-- Footer content -->
+</footer>
+
+<script>
+    document.getElementById('calcularSIPEV').addEventListener('click', function() {
+        const streaming = parseFloat(document.getElementById('gastoStreaming').value) || 0;
+        const delivery = parseFloat(document.getElementById('gastoDelivery').value) || 0;
+        const combustivel = parseFloat(document.getElementById('gastoCombustivel').value) || 0;
+        const pets = parseFloat(document.getElementById('gastoPets').value) || 0;
+
+        // Taxas estimadas de inflação por setor para 2026 (exemplo)
+        const taxaStreaming = 0.12; // 12%
+        const taxaDelivery = 0.09;  // 9%
+        const taxaCombustivel = 0.06; // 6%
+        const taxaPets = 0.08;      // 8%
+        const inflacaoBase = 0.045; // 4.5%
+
+        const totalGasto = streaming + delivery + combustivel + pets;
+        if (totalGasto === 0) {
+            document.getElementById('inflacaoPessoal').textContent = (inflacaoBase * 100).toFixed(1);
+            return;
+        }
+
+        const inflacaoPonderada = (
+            (streaming * taxaStreaming) +
+            (delivery * taxaDelivery) +
+            (combustivel * taxaCombustivel) +
+            (pets * taxaPets)
+        ) / totalGasto;
+
+        const inflacaoFinal = (inflacaoPonderada * 0.7) + (inflacaoBase * 0.3); // Mix entre pessoal e base
+
+        document.getElementById('inflacaoPessoal').textContent = (inflacaoFinal * 100).toFixed(1);
+        
+        const msg = document.getElementById('mensagemImpacto');
+        if (inflacaoFinal > inflacaoBase) {
+            msg.textContent = "Seu estilo de vida sofre uma inflação significativamente maior que a média nacional.";
+            msg.style.color = "#ff6b6b";
+        } else {
+            msg.textContent = "Parabéns! Seus hábitos de consumo estão protegidos contra as maiores altas de preços.";
+            msg.style.color = "#51cf66";
+        }
+    });
+</script>
+
+</body>
+</html>
