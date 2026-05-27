@@ -17,6 +17,7 @@ class RadarOrchestrator:
             ('fetch_currencies.py', 'Moedas'),
             ('fetch_rss.py', 'Notícias'),
             ('calculate_scores.py', 'Scores'),
+            ('generate_content.py', 'Conteúdo 800+ palavras'),
             ('generate_rss.py', 'RSS Feed'),
             ('generate_sitemap.py', 'Sitemap'),
         ]
