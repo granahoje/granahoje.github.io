@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel Admin - Radar Financeiro</title>
+  <link rel="stylesheet" href="/radar/styles.css">
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .admin-section {
+      background: var(--bg-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(16, 185, 129, 0.1);
+    }
+
+    .admin-section h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(16, 185, 129, 0.2);
+      padding-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      background: rgba(16, 185, 129, 0.05);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .table thead {
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .table th,
+    .table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+    }
+
+    .table th {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .table tbody tr:hover {
+      background: rgba(16, 185, 129, 0.05);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .btn-danger {
+      background: var(--error);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #DC2626;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid var(--success);
+      color: var(--primary-light);
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid var(--error);
+      color: #FECACA;
+    }
+
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    }
+
+    .login-box {
+      background: var(--bg-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid rgba(16, 185, 129, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(30, 58, 138, 0.1) 100%);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGIN SECTION -->
+  <div id="login-section" class="login-container">
+    <div class="login-box">
+      <h1>🔐 Painel Admin</h1>
+      <form id="login-form" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="password">Senha de Acesso</label>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-input" 
+            placeholder="Digite a senha" 
+            required
+          >
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Acessar Painel
+        </button>
+      </form>
+      <p style="text-align: center; margin-top: 1rem; color: var(--text-tertiary); font-size: 0.875rem;">
+        Painel exclusivo para administradores
+      </p>
+    </div>
+  </div>
+
+  <!-- ADMIN SECTION -->
+  <div id="admin-section" class="hidden">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">📊 Radar Financeiro - Admin</div>
+          <button class="btn btn-outline" onclick="logout()">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin-container">
+      <!-- DASHBOARD -->
+      <div class="admin-section">
+        <h2>📊 Dashboard</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="total-products">0</div>
+            <div class="stat-label">Total de Produtos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="total-categories">0</div>
+            <div class="stat-label">Categorias</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="avg-rating">0</div>
+            <div class="stat-label">Avaliação Média</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="last-update">--</div>
+            <div class="stat-label">Última Atualização</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GERENCIAR PRODUTOS -->
+      <div class="admin-section">
+        <h2>📦 Gerenciar Produtos</h2>
+        
+        <div id="alert-container"></div>
+
+        <form id="product-form" onsubmit="handleAddProduct(event)">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Nome do Produto</label>
+              <input type="text" id="product-name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Categoria</label>
+              <select id="product-category" class="form-select" required>
+                <option value="">Selecione uma categoria</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo</label>
+              <input type="text" id="product-type" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Link de Afiliado</label>
+              <input type="url" id="product-link" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Pontuação (0-100)</label>
+              <input type="number" id="product-score" class="form-input" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Avaliação (0-5)</label>
+              <input type="number" id="product-rating" class="form-input" min="0" max="5" step="0.1" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Descrição</label>
+            <textarea id="product-description" class="form-textarea" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            ➕ Adicionar Produto
+          </button>
+        </form>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Produtos Cadastrados</h3>
+        <div style="overflow-x: auto;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Pontuação</th>
+                <th>Link</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="products-table">
+              <!-- Carregado via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ATUALIZAÇÃO AUTOMÁTICA -->
+      <div class="admin-section">
+        <h2>🤖 Atualização Automática de Conteúdo</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          Gere automaticamente descrições e análises de produtos usando IA.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          <button class="btn btn-primary" onclick="generateAllDescriptions()">
+            🧠 Gerar Todas as Descrições
+          </button>
+          <button class="btn btn-secondary" onclick="updateRankings()">
+            📊 Atualizar Rankings
+          </button>
+          <button class="btn btn-secondary" onclick="generateImages()">
+            🖼️ Gerar Imagens (IA)
+          </button>
+        </div>
+      </div>
+
+      <!-- CONFIGURAÇÕES -->
+      <div class="admin-section">
+        <h2>⚙️ Configurações</h2>
+        <div class="form-group">
+          <label class="form-label">Chave de API OpenAI</label>
+          <input type="password" id="openai-key" class="form-input" placeholder="sk-...">
+          <button class="btn btn-secondary" style="margin-top: 0.5rem;" onclick="saveOpenAIKey()">
+            Salvar Chave
+          </button>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Frequência de Atualização (horas)</label>
+          <input type="number" id="update-frequency" class="form-input" value="24" min="1">
+          <button class="btn btn-secondary" style="margin-top: 0.5rem;" onclick="saveUpdateFrequency()">
+            Salvar Frequência
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/radar/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+{
+  "products": [
+    {
+      "id": "picpay-pj",
+      "name": "PicPay - Abertura de Conta PJ",
+      "category": "contas-pj",
+      "type": "Conta Bancária",
+      "description": "Abertura de conta PJ rápida e sem burocracia",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81783858cd52/188415/359067/subaccount",
+      "rating": 4.5,
+      "score": 92,
+      "badges": ["Recomendado"],
+      "pros": [
+        "Abertura 100% digital",
+        "Sem consulta ao SPC",
+        "Cartão de débito incluído"
+      ],
+      "cons": [
+        "Limite inicial baixo",
+        "Taxa de manutenção após período"
+      ],
+      "features": ["sem-consulta-spc", "digital"],
+      "image": "picpay-pj.png"
+    },
+    {
+      "id": "santander",
+      "name": "Santander",
+      "category": "contas-pj",
+      "type": "Conta Bancária",
+      "description": "Conta corrente PJ com serviços completos",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178566a06a2/188413/359067/subaccount",
+      "rating": 4.3,
+      "score": 88,
+      "badges": ["Melhor Taxa"],
+      "pros": [
+        "Banco tradicional confiável",
+        "Múltiplos serviços financeiros",
+        "Atendimento 24/7"
+      ],
+      "cons": [
+        "Taxas mais altas",
+        "Burocracia na abertura"
+      ],
+      "features": ["banco-tradicional"],
+      "image": "santander.png"
+    },
+    {
+      "id": "btg-pactual",
+      "name": "BTG Pactual",
+      "category": "investimentos",
+      "type": "Plataforma de Investimentos",
+      "description": "Plataforma de investimentos com baixas taxas",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81793e50f472/188400/359067/subaccount",
+      "rating": 4.7,
+      "score": 95,
+      "badges": ["Mais Popular", "Recomendado"],
+      "pros": [
+        "Taxas competitivas",
+        "Ativos diversificados",
+        "Interface intuitiva"
+      ],
+      "cons": [
+        "Depósito mínimo inicial",
+        "Menos produtos de crédito"
+      ],
+      "features": ["investimentos"],
+      "image": "btg-pactual.png"
+    },
+    {
+      "id": "pagbank-maquininha",
+      "name": "PagBank Maquininha",
+      "category": "maquinetas",
+      "type": "Máquina de Cartão",
+      "description": "Máquina de cartão com menor taxa do mercado",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81782b6be242/186226/359067/subaccount",
+      "rating": 4.4,
+      "score": 90,
+      "badges": ["Melhor Taxa"],
+      "pros": [
+        "Taxa a partir de 1.99%",
+        "Sem aluguel",
+        "Saque em 1 dia"
+      ],
+      "cons": [
+        "Compatibilidade limitada",
+        "Suporte básico"
+      ],
+      "features": ["maquineta"],
+      "image": "pagbank.png"
+    },
+    {
+      "id": "banco-bv",
+      "name": "Banco BV - Empréstimo com Garantia Veicular",
+      "category": "emprestimos",
+      "type": "Empréstimo",
+      "description": "Empréstimo com garantia de veículo com taxas reduzidas",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817b7f1a79b2/188286/358980/subaccount",
+      "rating": 4.2,
+      "score": 85,
+      "badges": [],
+      "pros": [
+        "Taxas reduzidas",
+        "Aprovação rápida",
+        "Sem restrições de uso"
+      ],
+      "cons": [
+        "Exige garantia do veículo",
+        "Documentação extensa"
+      ],
+      "features": ["emprestimo-veicular"],
+      "image": "banco-bv.png"
+    },
+    {
+      "id": "velotax",
+      "name": "Velotax",
+      "category": "impostos",
+      "type": "Consultoria Fiscal",
+      "description": "Plataforma de consultoria fiscal e imposto de renda",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817b783708b2/188130/358980/subaccount",
+      "rating": 4.6,
+      "score": 93,
+      "badges": ["Recomendado"],
+      "pros": [
+        "Consultoria especializada",
+        "Preços acessíveis",
+        "Suporte completo"
+      ],
+      "cons": [
+        "Agendamento necessário",
+        "Tempo de resposta"
+      ],
+      "features": ["consultoria-fiscal"],
+      "image": "velotax.png"
+    },
+    {
+      "id": "bybit",
+      "name": "Bybit",
+      "category": "criptomoedas",
+      "type": "Exchange de Criptomoedas",
+      "description": "Exchange de criptomoedas com segurança e liquidez",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178f62a16f2/188136/359067/subaccount",
+      "rating": 4.5,
+      "score": 91,
+      "badges": ["Mais Popular"],
+      "pros": [
+        "Interface amigável",
+        "Taxas competitivas",
+        "Segurança robusta"
+      ],
+      "cons": [
+        "Regulação em evolução",
+        "Volatilidade do mercado"
+      ],
+      "features": ["criptomoedas"],
+      "image": "bybit.png"
+    },
+    {
+      "id": "hiper-cash",
+      "name": "HIPER CASH",
+      "category": "emprestimos",
+      "type": "Empréstimo Rápido",
+      "description": "Empréstimo rápido sem consulta ao SPC",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178cb6134b2/182687/359067/subaccount",
+      "rating": 3.8,
+      "score": 78,
+      "badges": [],
+      "pros": [
+        "Sem consulta SPC",
+        "Aprovação em minutos",
+        "Sem documentação complexa"
+      ],
+      "cons": [
+        "Taxas altas",
+        "Valores limitados"
+      ],
+      "features": ["sem-consulta-spc", "emprestimo-rapido"],
+      "image": "hiper-cash.png"
+    },
+    {
+      "id": "remessa-online",
+      "name": "Remessa Online",
+      "category": "transferencias",
+      "type": "Remessa Internacional",
+      "description": "Transferência internacional com as melhores taxas",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa8178cb6134b3/187944/359067/subaccount",
+      "rating": 4.6,
+      "score": 94,
+      "badges": ["Recomendado"],
+      "pros": [
+        "Taxas competitivas",
+        "Transferência rápida",
+        "Suporte em português"
+      ],
+      "cons": [
+        "Limite inicial",
+        "Verificação de identidade"
+      ],
+      "features": ["transferencia-internacional"],
+      "image": "remessa-online.png"
+    },
+    {
+      "id": "juca-fgts",
+      "name": "Juca - Antecipação de FGTS",
+      "category": "emprestimos",
+      "type": "Antecipação de FGTS",
+      "description": "Antecipação de FGTS com aprovação rápida",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81789e2c3462/187799/359067/subaccount",
+      "rating": 4.4,
+      "score": 89,
+      "badges": ["Recomendado"],
+      "pros": [
+        "Aprovação rápida",
+        "Sem consulta SPC",
+        "Taxas reduzidas"
+      ],
+      "cons": [
+        "Requer FGTS ativo",
+        "Documentação necessária"
+      ],
+      "features": ["com-fgts", "sem-consulta-spc"],
+      "image": "juca.png"
+    },
+    {
+      "id": "cartao-carrefour",
+      "name": "Cartão Carrefour",
+      "category": "cartoes",
+      "type": "Cartão de Crédito",
+      "description": "Cartão de crédito com cashback e benefícios",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178d8192fa2/188544/359067/subaccount",
+      "rating": 4.3,
+      "score": 87,
+      "badges": [],
+      "pros": [
+        "Cashback em compras",
+        "Sem anuidade",
+        "Limite inicial bom"
+      ],
+      "cons": [
+        "Taxa de juros alta",
+        "Benefícios limitados"
+      ],
+      "features": ["cartao-credito", "cashback"],
+      "image": "carrefour.png"
+    },
+    {
+      "id": "cartao-atacadao",
+      "name": "Cartão Atacadão",
+      "category": "cartoes",
+      "type": "Cartão de Crédito",
+      "description": "Cartão com descontos exclusivos no Atacadão",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa817868268623/188543/359067/subaccount",
+      "rating": 4.1,
+      "score": 84,
+      "badges": [],
+      "pros": [
+        "Descontos exclusivos",
+        "Sem anuidade",
+        "Programa de pontos"
+      ],
+      "cons": [
+        "Uso limitado ao Atacadão",
+        "Taxa de juros padrão"
+      ],
+      "features": ["cartao-credito"],
+      "image": "atacadao.png"
+    },
+    {
+      "id": "crypto-com",
+      "name": "Crypto.com",
+      "category": "criptomoedas",
+      "type": "Exchange de Criptomoedas",
+      "description": "Plataforma de criptomoedas com cartão de débito",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8179143c12b2/187745/359067/subaccount",
+      "rating": 4.4,
+      "score": 88,
+      "badges": ["Mais Popular"],
+      "pros": [
+        "Cartão de débito incluído",
+        "Múltiplas criptomoedas",
+        "Cashback em transações"
+      ],
+      "cons": [
+        "Taxas podem ser altas",
+        "Suporte em inglês"
+      ],
+      "features": ["criptomoedas", "cartao-debito"],
+      "image": "crypto-com.png"
+    },
+    {
+      "id": "quita-boletos",
+      "name": "Quita Boletos",
+      "category": "servicos",
+      "type": "Pagamento de Boletos",
+      "description": "Plataforma para pagar boletos com desconto",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817908298d82/188352/359067/subaccount",
+      "rating": 4.2,
+      "score": 86,
+      "badges": [],
+      "pros": [
+        "Descontos em boletos",
+        "Pagamento rápido",
+        "Interface simples"
+      ],
+      "cons": [
+        "Cobertura limitada",
+        "Descontos variáveis"
+      ],
+      "features": ["pagamento-boletos"],
+      "image": "quita-boletos.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": "contas-pj",
+      "name": "Contas PJ",
+      "description": "Contas bancárias especializadas para pessoas jurídicas",
+      "icon": "🏢"
+    },
+    {
+      "id": "emprestimos",
+      "name": "Empréstimos",
+      "description": "Opções de empréstimo com diferentes características",
+      "icon": "💰"
+    },
+    {
+      "id": "cartoes",
+      "name": "Cartões de Crédito",
+      "description": "Cartões com benefícios e cashback",
+      "icon": "💳"
+    },
+    {
+      "id": "criptomoedas",
+      "name": "Criptomoedas",
+      "description": "Plataformas de negociação de criptomoedas",
+      "icon": "₿"
+    },
+    {
+      "id": "investimentos",
+      "name": "Investimentos",
+      "description": "Plataformas para investir e fazer crescer seu dinheiro",
+      "icon": "📈"
+    },
+    {
+      "id": "maquinetas",
+      "name": "Máquinas de Cartão",
+      "description": "Soluções de pagamento para seu negócio",
+      "icon": "🔧"
+    },
+    {
+      "id": "transferencias",
+      "name": "Transferências",
+      "description": "Serviços de remessa e transferência de valores",
+      "icon": "🌍"
+    },
+    {
+      "id": "impostos",
+      "name": "Impostos",
+      "description": "Consultoria e serviços fiscais",
+      "icon": "📋"
+    },
+    {
+      "id": "servicos",
+      "name": "Serviços Financeiros",
+      "description": "Outros serviços financeiros úteis",
+      "icon": "⚙️"
+    }
+  ]
+}

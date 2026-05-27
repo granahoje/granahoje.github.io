@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comparação de produtos financeiros - Radar Financeiro">
+  <title>Comparar Produtos - Radar Financeiro</title>
+  <link rel="stylesheet" href="/radar/styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">📊 Radar Financeiro</div>
+        <nav>
+          <a href="/radar/">Catálogo</a>
+          <a href="/radar/comparacao/" class="active">Comparar</a>
+          <a href="/radar/admin/">Admin</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Comparar Produtos</h1>
+      <p>Selecione uma categoria e compare lado a lado os melhores produtos financeiros.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY SELECTOR -->
+  <section style="padding: 2rem 0;">
+    <div class="container">
+      <div class="filters">
+        <div class="filter-group">
+          <label class="filter-label">Selecione uma Categoria</label>
+          <div class="filter-options" id="category-buttons">
+            <!-- Carregado via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section style="padding: 4rem 0;">
+    <div class="container">
+      <div style="overflow-x: auto;">
+        <table class="comparison-table" id="comparison-table">
+          <thead>
+            <tr id="comparison-header">
+              <!-- Carregado via JavaScript -->
+            </tr>
+          </thead>
+          <tbody id="comparison-body">
+            <!-- Carregado via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sobre</h3>
+          <p>Radar Financeiro é uma plataforma de comparação e análise de produtos financeiros.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li><a href="/radar/">Catálogo</a></li>
+            <li><a href="/radar/comparacao/">Comparar</a></li>
+            <li><a href="/radar/admin/">Painel Admin</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Informações</h3>
+          <ul>
+            <li><a href="/politica-de-privacidade.html">Política de Privacidade</a></li>
+            <li><a href="/terms-of-service.html">Termos de Serviço</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Radar Financeiro. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/radar/app.js"></script>
+  <script src="/radar/comparacao.js"></script>
+</body>
+</html>

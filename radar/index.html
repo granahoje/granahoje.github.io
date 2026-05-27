@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Radar Financeiro - Catálogo completo de produtos financeiros com comparações, rankings e análises automáticas.">
+  <meta name="keywords" content="empréstimos, cartões, investimentos, criptomoedas, contas PJ, comparação financeira">
+  <meta name="author" content="Grana Hoje">
+  <meta property="og:title" content="Radar Financeiro - Comparação de Produtos Financeiros">
+  <meta property="og:description" content="Descubra os melhores produtos financeiros com análises automáticas e rankings atualizados.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://granahoje.github.io/radar/">
+  
+  <title>Radar Financeiro - Comparação de Produtos Financeiros</title>
+  <link rel="stylesheet" href="/radar/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2310B981'>📊</text></svg>">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">📊 Radar Financeiro</div>
+        <nav>
+          <a href="/radar/">Catálogo</a>
+          <a href="/radar/comparacao/">Comparar</a>
+          <a href="/radar/admin/">Admin</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Radar Financeiro</h1>
+      <p>Descubra os melhores produtos financeiros com análises automáticas, rankings atualizados e comparações detalhadas.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="document.getElementById('products-section').scrollIntoView({behavior: 'smooth'})">
+          Explorar Catálogo
+        </button>
+        <a href="/radar/comparacao/" class="btn btn-outline">
+          Comparar Produtos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES SECTION -->
+  <section style="padding: 4rem 0; background: rgba(16, 185, 129, 0.02);">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 3rem;">Categorias de Produtos</h2>
+      <div class="grid grid-3" id="categories-container">
+        <!-- Carregado via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS SECTION -->
+  <section style="padding: 2rem 0;">
+    <div class="container">
+      <div class="filters">
+        <div class="filter-group">
+          <label class="filter-label" for="search">🔍 Buscar Produto</label>
+          <input 
+            type="text" 
+            id="search" 
+            placeholder="Digite o nome do produto..." 
+            style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05); color: var(--text-primary);"
+          >
+        </div>
+        <div class="filter-group">
+          <label class="filter-label" for="sort">📊 Ordenar Por</label>
+          <select id="sort" style="padding: 0.75rem; border-radius: 0.5rem; border: 1px solid rgba(16, 185, 129, 0.2); background: rgba(16, 185, 129, 0.05); color: var(--text-primary);">
+            <option value="score">Melhor Pontuação</option>
+            <option value="rating">Melhor Avaliação</option>
+            <option value="name">Nome (A-Z)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section id="products-section" style="padding: 4rem 0;">
+    <div class="container">
+      <h2 style="margin-bottom: 2rem;">Catálogo de Produtos</h2>
+      <div class="grid grid-3" id="products-container">
+        <!-- Carregado via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Sobre</h3>
+          <p>Radar Financeiro é uma plataforma de comparação e análise de produtos financeiros com conteúdo gerado automaticamente por IA.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li><a href="/radar/">Catálogo</a></li>
+            <li><a href="/radar/comparacao/">Comparar</a></li>
+            <li><a href="/radar/admin/">Painel Admin</a></li>
+            <li><a href="/">Voltar para Grana Hoje</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Informações</h3>
+          <ul>
+            <li><a href="/politica-de-privacidade.html">Política de Privacidade</a></li>
+            <li><a href="/terms-of-service.html">Termos de Serviço</a></li>
+            <li><a href="mailto:contato@granahoje.com">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Radar Financeiro. Todos os direitos reservados.</p>
+        <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+          ⚠️ Aviso: Os produtos e links apresentados são afiliados. Sempre consulte um especialista financeiro antes de tomar decisões.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/radar/app.js"></script>
+</body>
+</html>
