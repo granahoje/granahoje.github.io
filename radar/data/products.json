@@ -5,14 +5,27 @@
       "name": "PicPay - Abertura de Conta PJ",
       "category": "contas-pj",
       "type": "Conta Bancária",
-      "description": "Abertura de conta PJ rápida e sem burocracia",
+      "description": "Conta com serviços financeiros integrados",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81783858cd52/188415/359067/subaccount",
-      "rating": 4.5,
-      "score": 92,
-      "badges": ["Recomendado"],
-      "pros": ["Abertura 100% digital", "Sem consulta ao SPC", "Cartão de débito incluído"],
-      "cons": ["Limite inicial baixo", "Taxa de manutenção após período"],
-      "features": ["sem-consulta-spc", "digital"],
+      "rating": 4.8,
+      "score": 90,
+      "badges": [
+        "Melhor Avaliação",
+        "Recomendado"
+      ],
+      "pros": [
+        "Abertura 100% digital",
+        "Sem consulta ao SPC",
+        "Cartão de débito incluído"
+      ],
+      "cons": [
+        "Limite inicial baixo",
+        "Taxa de manutenção após período"
+      ],
+      "features": [
+        "sem-consulta-spc",
+        "digital"
+      ],
       "image": null
     },
     {
@@ -20,14 +33,25 @@
       "name": "Santander",
       "category": "contas-pj",
       "type": "Conta Bancária",
-      "description": "Conta corrente PJ com serviços completos",
+      "description": "Solução bancária completa para seu negócio",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178566a06a2/188413/359067/subaccount",
-      "rating": 4.3,
-      "score": 88,
-      "badges": ["Melhor Taxa"],
-      "pros": ["Banco tradicional confiável", "Múltiplos serviços financeiros", "Atendimento 24/7"],
-      "cons": ["Taxas mais altas", "Burocracia na abertura"],
-      "features": ["banco-tradicional"],
+      "rating": 4.5,
+      "score": 86,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Banco tradicional confiável",
+        "Múltiplos serviços financeiros",
+        "Atendimento 24/7"
+      ],
+      "cons": [
+        "Taxas mais altas",
+        "Burocracia na abertura"
+      ],
+      "features": [
+        "banco-tradicional"
+      ],
       "image": null
     },
     {
@@ -35,14 +59,26 @@
       "name": "BTG Pactual",
       "category": "investimentos",
       "type": "Plataforma de Investimentos",
-      "description": "Plataforma de investimentos com baixas taxas",
+      "description": "Diversifique seus investimentos com segurança",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81793e50f472/188400/359067/subaccount",
-      "rating": 4.7,
-      "score": 95,
-      "badges": ["Mais Popular", "Recomendado"],
-      "pros": ["Taxas competitivas", "Ativos diversificados", "Interface intuitiva"],
-      "cons": ["Depósito mínimo inicial", "Menos produtos de crédito"],
-      "features": ["investimentos"],
+      "rating": 4.4,
+      "score": 100,
+      "badges": [
+        "Melhor Pontuação",
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas competitivas",
+        "Ativos diversificados",
+        "Interface intuitiva"
+      ],
+      "cons": [
+        "Depósito mínimo inicial",
+        "Menos produtos de crédito"
+      ],
+      "features": [
+        "investimentos"
+      ],
       "image": null
     },
     {
@@ -52,12 +88,23 @@
       "type": "Máquina de Cartão",
       "description": "Máquina de cartão com menor taxa do mercado",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81782b6be242/186226/359067/subaccount",
-      "rating": 4.4,
+      "rating": 4.1,
       "score": 90,
-      "badges": ["Melhor Taxa"],
-      "pros": ["Taxa a partir de 1.99%", "Sem aluguel", "Saque em 1 dia"],
-      "cons": ["Compatibilidade limitada", "Suporte básico"],
-      "features": ["maquineta"],
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxa a partir de 1.99%",
+        "Sem aluguel",
+        "Saque em 1 dia"
+      ],
+      "cons": [
+        "Compatibilidade limitada",
+        "Suporte básico"
+      ],
+      "features": [
+        "maquineta"
+      ],
       "image": null
     },
     {
@@ -65,14 +112,25 @@
       "name": "Banco BV - Empréstimo com Garantia Veicular",
       "category": "emprestimos",
       "type": "Empréstimo",
-      "description": "Empréstimo com garantia de veículo com taxas reduzidas",
+      "description": "Empréstimo flexível e acessível",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817b7f1a79b2/188286/358980/subaccount",
       "rating": 4.2,
       "score": 85,
-      "badges": [],
-      "pros": ["Taxas reduzidas", "Aprovação rápida", "Sem restrições de uso"],
-      "cons": ["Exige garantia do veículo", "Documentação extensa"],
-      "features": ["emprestimo-veicular"],
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas reduzidas",
+        "Aprovação rápida",
+        "Sem restrições de uso"
+      ],
+      "cons": [
+        "Exige garantia do veículo",
+        "Documentação extensa"
+      ],
+      "features": [
+        "emprestimo-veicular"
+      ],
       "image": null
     },
     {
@@ -82,12 +140,23 @@
       "type": "Consultoria Fiscal",
       "description": "Plataforma de consultoria fiscal e imposto de renda",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817b783708b2/188130/358980/subaccount",
-      "rating": 4.6,
-      "score": 93,
-      "badges": ["Recomendado"],
-      "pros": ["Consultoria especializada", "Preços acessíveis", "Suporte completo"],
-      "cons": ["Agendamento necessário", "Tempo de resposta"],
-      "features": ["consultoria-fiscal"],
+      "rating": 4.7,
+      "score": 94,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Consultoria especializada",
+        "Preços acessíveis",
+        "Suporte completo"
+      ],
+      "cons": [
+        "Agendamento necessário",
+        "Tempo de resposta"
+      ],
+      "features": [
+        "consultoria-fiscal"
+      ],
       "image": null
     },
     {
@@ -95,14 +164,25 @@
       "name": "Bybit",
       "category": "criptomoedas",
       "type": "Exchange de Criptomoedas",
-      "description": "Exchange de criptomoedas com segurança e liquidez",
+      "description": "Exchange com múltiplos ativos digitais",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178f62a16f2/188136/359067/subaccount",
-      "rating": 4.5,
-      "score": 91,
-      "badges": ["Mais Popular"],
-      "pros": ["Interface amigável", "Taxas competitivas", "Segurança robusta"],
-      "cons": ["Regulação em evolução", "Volatilidade do mercado"],
-      "features": ["criptomoedas"],
+      "rating": 4.6,
+      "score": 88,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Interface amigável",
+        "Taxas competitivas",
+        "Segurança robusta"
+      ],
+      "cons": [
+        "Regulação em evolução",
+        "Volatilidade do mercado"
+      ],
+      "features": [
+        "criptomoedas"
+      ],
       "image": null
     },
     {
@@ -110,14 +190,24 @@
       "name": "HIPER CASH",
       "category": "emprestimos",
       "type": "Empréstimo Rápido",
-      "description": "Empréstimo rápido sem consulta ao SPC",
+      "description": "Empréstimo rápido com aprovação em minutos",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178cb6134b2/182687/359067/subaccount",
-      "rating": 3.8,
-      "score": 78,
+      "rating": 3.9,
+      "score": 83,
       "badges": [],
-      "pros": ["Sem consulta SPC", "Aprovação em minutos", "Sem documentação complexa"],
-      "cons": ["Taxas altas", "Valores limitados"],
-      "features": ["sem-consulta-spc", "emprestimo-rapido"],
+      "pros": [
+        "Sem consulta SPC",
+        "Aprovação em minutos",
+        "Sem documentação complexa"
+      ],
+      "cons": [
+        "Taxas altas",
+        "Valores limitados"
+      ],
+      "features": [
+        "sem-consulta-spc",
+        "emprestimo-rapido"
+      ],
       "image": null
     },
     {
@@ -128,11 +218,22 @@
       "description": "Transferência internacional com as melhores taxas",
       "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa8178cb6134b3/187944/359067/subaccount",
       "rating": 4.6,
-      "score": 94,
-      "badges": ["Recomendado"],
-      "pros": ["Taxas competitivas", "Transferência rápida", "Suporte em português"],
-      "cons": ["Limite inicial", "Verificação de identidade"],
-      "features": ["transferencia-internacional"],
+      "score": 91,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas competitivas",
+        "Transferência rápida",
+        "Suporte em português"
+      ],
+      "cons": [
+        "Limite inicial",
+        "Verificação de identidade"
+      ],
+      "features": [
+        "transferencia-internacional"
+      ],
       "image": null
     },
     {
@@ -142,12 +243,24 @@
       "type": "Antecipação de FGTS",
       "description": "Antecipação de FGTS com aprovação rápida",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81789e2c3462/187799/359067/subaccount",
-      "rating": 4.4,
-      "score": 89,
-      "badges": ["Recomendado"],
-      "pros": ["Aprovação rápida", "Sem consulta SPC", "Taxas reduzidas"],
-      "cons": ["Requer FGTS ativo", "Documentação necessária"],
-      "features": ["com-fgts", "sem-consulta-spc"],
+      "rating": 4.2,
+      "score": 85,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Aprovação rápida",
+        "Sem consulta SPC",
+        "Taxas reduzidas"
+      ],
+      "cons": [
+        "Requer FGTS ativo",
+        "Documentação necessária"
+      ],
+      "features": [
+        "com-fgts",
+        "sem-consulta-spc"
+      ],
       "image": null
     },
     {
@@ -155,14 +268,25 @@
       "name": "Santander PJ - Abertura de conta",
       "category": "contas-pj",
       "type": "Conta Bancária PJ",
-      "description": "Conta PJ com benefícios exclusivos do Santander",
+      "description": "Conta com serviços financeiros integrados",
       "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa81789e2c3464/187773/359067/subaccount",
-      "rating": 4.2,
-      "score": 86,
-      "badges": [],
-      "pros": ["Banco confiável", "Serviços completos", "Atendimento especializado"],
-      "cons": ["Taxas elevadas", "Documentação exigida"],
-      "features": ["banco-tradicional"],
+      "rating": 4.3,
+      "score": 90,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Banco confiável",
+        "Serviços completos",
+        "Atendimento especializado"
+      ],
+      "cons": [
+        "Taxas elevadas",
+        "Documentação exigida"
+      ],
+      "features": [
+        "banco-tradicional"
+      ],
       "image": null
     },
     {
@@ -170,14 +294,26 @@
       "name": "Cartão Carrefour",
       "category": "cartoes",
       "type": "Cartão de Crédito",
-      "description": "Cartão de crédito com cashback e benefícios",
+      "description": "Cartão com cashback e benefícios exclusivos",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178d8192fa2/188544/359067/subaccount",
-      "rating": 4.3,
-      "score": 87,
-      "badges": [],
-      "pros": ["Cashback em compras", "Sem anuidade", "Limite inicial bom"],
-      "cons": ["Taxa de juros alta", "Benefícios limitados"],
-      "features": ["cartao-credito", "cashback"],
+      "rating": 4.4,
+      "score": 88,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Cashback em compras",
+        "Sem anuidade",
+        "Limite inicial bom"
+      ],
+      "cons": [
+        "Taxa de juros alta",
+        "Benefícios limitados"
+      ],
+      "features": [
+        "cartao-credito",
+        "cashback"
+      ],
       "image": null
     },
     {
@@ -185,14 +321,23 @@
       "name": "Cartão Atacadão",
       "category": "cartoes",
       "type": "Cartão de Crédito",
-      "description": "Cartão com descontos exclusivos no Atacadão",
+      "description": "Cartão com cashback e benefícios exclusivos",
       "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa817868268623/188543/359067/subaccount",
-      "rating": 4.1,
+      "rating": 4.3,
       "score": 84,
       "badges": [],
-      "pros": ["Descontos exclusivos", "Sem anuidade", "Programa de pontos"],
-      "cons": ["Uso limitado ao Atacadão", "Taxa de juros padrão"],
-      "features": ["cartao-credito"],
+      "pros": [
+        "Descontos exclusivos",
+        "Sem anuidade",
+        "Programa de pontos"
+      ],
+      "cons": [
+        "Uso limitado ao Atacadão",
+        "Taxa de juros padrão"
+      ],
+      "features": [
+        "cartao-credito"
+      ],
       "image": null
     },
     {
@@ -200,14 +345,26 @@
       "name": "Crypto.com",
       "category": "criptomoedas",
       "type": "Exchange de Criptomoedas",
-      "description": "Plataforma de criptomoedas com cartão de débito",
+      "description": "Plataforma segura para negociar criptomoedas",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8179143c12b2/187745/359067/subaccount",
-      "rating": 4.4,
-      "score": 88,
-      "badges": ["Mais Popular"],
-      "pros": ["Cartão de débito incluído", "Múltiplas criptomoedas", "Cashback em transações"],
-      "cons": ["Taxas podem ser altas", "Suporte em inglês"],
-      "features": ["criptomoedas", "cartao-debito"],
+      "rating": 4.6,
+      "score": 86,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Cartão de débito incluído",
+        "Múltiplas criptomoedas",
+        "Cashback em transações"
+      ],
+      "cons": [
+        "Taxas podem ser altas",
+        "Suporte em inglês"
+      ],
+      "features": [
+        "criptomoedas",
+        "cartao-debito"
+      ],
       "image": null
     },
     {
@@ -217,12 +374,21 @@
       "type": "Pagamento de Boletos",
       "description": "Plataforma para pagar boletos com desconto",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817908298d82/188352/359067/subaccount",
-      "rating": 4.2,
-      "score": 86,
+      "rating": 4.1,
+      "score": 82,
       "badges": [],
-      "pros": ["Descontos em boletos", "Pagamento rápido", "Interface simples"],
-      "cons": ["Cobertura limitada", "Descontos variáveis"],
-      "features": ["pagamento-boletos"],
+      "pros": [
+        "Descontos em boletos",
+        "Pagamento rápido",
+        "Interface simples"
+      ],
+      "cons": [
+        "Cobertura limitada",
+        "Descontos variáveis"
+      ],
+      "features": [
+        "pagamento-boletos"
+      ],
       "image": null
     },
     {
@@ -233,11 +399,20 @@
       "description": "Negociação de dívidas com o Santander",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817868268622/187700/359067/subaccount",
       "rating": 4.0,
-      "score": 82,
+      "score": 79,
       "badges": [],
-      "pros": ["Banco tradicional", "Negociação facilitada", "Suporte completo"],
-      "cons": ["Processo lento", "Documentação exigida"],
-      "features": ["negociacao-dividas"],
+      "pros": [
+        "Banco tradicional",
+        "Negociação facilitada",
+        "Suporte completo"
+      ],
+      "cons": [
+        "Processo lento",
+        "Documentação exigida"
+      ],
+      "features": [
+        "negociacao-dividas"
+      ],
       "image": null
     },
     {
@@ -248,11 +423,22 @@
       "description": "Plataforma especializada em negociação de dívidas",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817115280f72/187558/359067/subaccount",
       "rating": 4.3,
-      "score": 87,
-      "badges": ["Recomendado"],
-      "pros": ["Especializada em negociação", "Redução de débitos", "Atendimento dedicado"],
-      "cons": ["Taxa de serviço", "Tempo de negociação"],
-      "features": ["negociacao-dividas"],
+      "score": 92,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Especializada em negociação",
+        "Redução de débitos",
+        "Atendimento dedicado"
+      ],
+      "cons": [
+        "Taxa de serviço",
+        "Tempo de negociação"
+      ],
+      "features": [
+        "negociacao-dividas"
+      ],
       "image": null
     },
     {
@@ -262,12 +448,21 @@
       "type": "Plataforma de Trading",
       "description": "Plataforma de trading com análises em tempo real",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount",
-      "rating": 4.2,
-      "score": 85,
+      "rating": 4.4,
+      "score": 83,
       "badges": [],
-      "pros": ["Análises profissionais", "Ferramentas avançadas", "Suporte especializado"],
-      "cons": ["Requer experiência", "Taxas operacionais"],
-      "features": ["trading"],
+      "pros": [
+        "Análises profissionais",
+        "Ferramentas avançadas",
+        "Suporte especializado"
+      ],
+      "cons": [
+        "Requer experiência",
+        "Taxas operacionais"
+      ],
+      "features": [
+        "trading"
+      ],
       "image": null
     },
     {
@@ -277,12 +472,23 @@
       "type": "Antecipação de FGTS",
       "description": "Antecipação de FGTS com aprovação online",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bbc03aef2/186580/358980/subaccount",
-      "rating": 4.3,
-      "score": 88,
-      "badges": [],
-      "pros": ["Aprovação online", "Rápido e seguro", "Sem burocracia"],
-      "cons": ["Requer FGTS", "Documentação necessária"],
-      "features": ["com-fgts"],
+      "rating": 4.2,
+      "score": 89,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Aprovação online",
+        "Rápido e seguro",
+        "Sem burocracia"
+      ],
+      "cons": [
+        "Requer FGTS",
+        "Documentação necessária"
+      ],
+      "features": [
+        "com-fgts"
+      ],
       "image": null
     },
     {
@@ -290,14 +496,25 @@
       "name": "Consigmais - SIAPE",
       "category": "emprestimos",
       "type": "Empréstimo Consignado",
-      "description": "Empréstimo consignado para servidores públicos",
+      "description": "Crédito com as melhores taxas do mercado",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bce432822/186657/358980/subaccount",
-      "rating": 4.4,
-      "score": 89,
-      "badges": [],
-      "pros": ["Taxas reduzidas", "Servidor público", "Aprovação rápida"],
-      "cons": ["Requer vínculo público", "Desconto em folha"],
-      "features": ["consignado"],
+      "rating": 4.1,
+      "score": 93,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas reduzidas",
+        "Servidor público",
+        "Aprovação rápida"
+      ],
+      "cons": [
+        "Requer vínculo público",
+        "Desconto em folha"
+      ],
+      "features": [
+        "consignado"
+      ],
       "image": null
     },
     {
@@ -307,12 +524,22 @@
       "type": "Trading de Criptomoedas",
       "description": "Plataforma de trading de Bitcoin e criptomoedas",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bd42023d4/178147/358980/subaccount",
-      "rating": 3.9,
+      "rating": 4.0,
       "score": 80,
       "badges": [],
-      "pros": ["Múltiplos ativos", "Interface intuitiva", "Bônus iniciais"],
-      "cons": ["Risco de perda", "Volatilidade alta"],
-      "features": ["criptomoedas", "trading"],
+      "pros": [
+        "Múltiplos ativos",
+        "Interface intuitiva",
+        "Bônus iniciais"
+      ],
+      "cons": [
+        "Risco de perda",
+        "Volatilidade alta"
+      ],
+      "features": [
+        "criptomoedas",
+        "trading"
+      ],
       "image": null
     },
     {
@@ -320,14 +547,26 @@
       "name": "PicPay - Abertura de contas",
       "category": "contas-pj",
       "type": "Conta Bancária",
-      "description": "Abertura de contas bancárias simplificada",
+      "description": "Conta com abertura 100% digital e sem burocracia",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139b3579842/186179/358980/subaccount",
-      "rating": 4.5,
-      "score": 91,
-      "badges": ["Recomendado"],
-      "pros": ["100% digital", "Rápido", "Sem taxas iniciais"],
-      "cons": ["Limite inicial", "Taxas futuras"],
-      "features": ["digital"],
+      "rating": 4.3,
+      "score": 93,
+      "badges": [
+        "Mais Popular",
+        "Recomendado"
+      ],
+      "pros": [
+        "100% digital",
+        "Rápido",
+        "Sem taxas iniciais"
+      ],
+      "cons": [
+        "Limite inicial",
+        "Taxas futuras"
+      ],
+      "features": [
+        "digital"
+      ],
       "image": null
     },
     {
@@ -337,12 +576,23 @@
       "type": "Seguros Diversos",
       "description": "Plataforma de seguros com cotações online",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8144cc0ad9b2/183524/358980/subaccount",
-      "rating": 4.2,
-      "score": 85,
-      "badges": [],
-      "pros": ["Cotações rápidas", "Múltiplas seguradoras", "Preços competitivos"],
-      "cons": ["Documentação exigida", "Análise de risco"],
-      "features": ["seguros"],
+      "rating": 4.4,
+      "score": 89,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Cotações rápidas",
+        "Múltiplas seguradoras",
+        "Preços competitivos"
+      ],
+      "cons": [
+        "Documentação exigida",
+        "Análise de risco"
+      ],
+      "features": [
+        "seguros"
+      ],
       "image": null
     },
     {
@@ -350,14 +600,25 @@
       "name": "Ourocard",
       "category": "cartoes",
       "type": "Cartão de Crédito",
-      "description": "Cartão de crédito com programa de pontos",
+      "description": "Cartão sem anuidade com limite bom",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81391c4d5ee2/185834/358980/subaccount",
       "rating": 4.1,
-      "score": 83,
-      "badges": [],
-      "pros": ["Programa de pontos", "Sem anuidade", "Aprovação rápida"],
-      "cons": ["Taxa de juros média", "Benefícios limitados"],
-      "features": ["cartao-credito"],
+      "score": 86,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Programa de pontos",
+        "Sem anuidade",
+        "Aprovação rápida"
+      ],
+      "cons": [
+        "Taxa de juros média",
+        "Benefícios limitados"
+      ],
+      "features": [
+        "cartao-credito"
+      ],
       "image": null
     },
     {
@@ -367,12 +628,23 @@
       "type": "Antecipação de FGTS",
       "description": "Antecipação de FGTS com taxas reduzidas",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817be02f00a2/184986/358980/subaccount",
-      "rating": 4.4,
+      "rating": 4.1,
       "score": 89,
-      "badges": [],
-      "pros": ["Taxas reduzidas", "Aprovação rápida", "Sem consulta SPC"],
-      "cons": ["Requer FGTS", "Documentação"],
-      "features": ["com-fgts"],
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas reduzidas",
+        "Aprovação rápida",
+        "Sem consulta SPC"
+      ],
+      "cons": [
+        "Requer FGTS",
+        "Documentação"
+      ],
+      "features": [
+        "com-fgts"
+      ],
       "image": null
     },
     {
@@ -380,14 +652,25 @@
       "name": "Consigmais - INSS",
       "category": "emprestimos",
       "type": "Empréstimo Consignado",
-      "description": "Empréstimo consignado para aposentados e pensionistas",
+      "description": "Empréstimo rápido com aprovação em minutos",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81788059e072/184987/359067/subaccount",
-      "rating": 4.5,
-      "score": 90,
-      "badges": ["Recomendado"],
-      "pros": ["Taxas muito reduzidas", "Aprovação garantida", "Desconto em folha"],
-      "cons": ["Requer INSS", "Limite baseado em renda"],
-      "features": ["consignado"],
+      "rating": 4.6,
+      "score": 85,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Taxas muito reduzidas",
+        "Aprovação garantida",
+        "Desconto em folha"
+      ],
+      "cons": [
+        "Requer INSS",
+        "Limite baseado em renda"
+      ],
+      "features": [
+        "consignado"
+      ],
       "image": null
     },
     {
@@ -397,12 +680,23 @@
       "type": "Negociação de Dívidas",
       "description": "Especializada em negociação e renegociação de dívidas",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81398f1142c2/182268/358980/subaccount",
-      "rating": 4.2,
-      "score": 86,
-      "badges": [],
-      "pros": ["Especializada", "Redução de débitos", "Suporte completo"],
-      "cons": ["Taxa de serviço", "Tempo de negociação"],
-      "features": ["negociacao-dividas"],
+      "rating": 4.4,
+      "score": 90,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Especializada",
+        "Redução de débitos",
+        "Suporte completo"
+      ],
+      "cons": [
+        "Taxa de serviço",
+        "Tempo de negociação"
+      ],
+      "features": [
+        "negociacao-dividas"
+      ],
       "image": null
     },
     {
@@ -410,14 +704,23 @@
       "name": "BomPraCrédito - Empréstimo Pessoal",
       "category": "emprestimos",
       "type": "Empréstimo Pessoal",
-      "description": "Empréstimo pessoal com aprovação rápida",
+      "description": "Empréstimo rápido com aprovação em minutos",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178b15f7aa6/185636/359067/subaccount",
-      "rating": 4.3,
-      "score": 87,
+      "rating": 4.5,
+      "score": 84,
       "badges": [],
-      "pros": ["Aprovação rápida", "Sem consulta SPC", "Valores altos"],
-      "cons": ["Taxas variáveis", "Documentação"],
-      "features": ["emprestimo-pessoal"],
+      "pros": [
+        "Aprovação rápida",
+        "Sem consulta SPC",
+        "Valores altos"
+      ],
+      "cons": [
+        "Taxas variáveis",
+        "Documentação"
+      ],
+      "features": [
+        "emprestimo-pessoal"
+      ],
       "image": null
     },
     {
@@ -425,14 +728,25 @@
       "name": "Nexo - Plataforma de ativos digitais",
       "category": "investimentos",
       "type": "Plataforma de Investimentos",
-      "description": "Plataforma para investimento em ativos digitais",
+      "description": "Invista em múltiplos ativos com baixas taxas",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81394d4c4542/184515/358980/subaccount",
       "rating": 4.2,
-      "score": 85,
-      "badges": [],
-      "pros": ["Ativos digitais", "Interface moderna", "Segurança"],
-      "cons": ["Requer experiência", "Volatilidade"],
-      "features": ["investimentos"],
+      "score": 80,
+      "badges": [
+        "Mais Popular"
+      ],
+      "pros": [
+        "Ativos digitais",
+        "Interface moderna",
+        "Segurança"
+      ],
+      "cons": [
+        "Requer experiência",
+        "Volatilidade"
+      ],
+      "features": [
+        "investimentos"
+      ],
       "image": null
     },
     {
@@ -440,14 +754,25 @@
       "name": "Juros Baixos - Empréstimos",
       "category": "emprestimos",
       "type": "Empréstimo Pessoal",
-      "description": "Empréstimo com as menores taxas do mercado",
+      "description": "Crédito com as melhores taxas do mercado",
       "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178622cf8c2/183012/359067/subaccount",
-      "rating": 4.4,
-      "score": 89,
-      "badges": ["Melhor Taxa"],
-      "pros": ["Menores taxas", "Aprovação rápida", "Sem burocracia"],
-      "cons": ["Documentação", "Limite inicial"],
-      "features": ["emprestimo-pessoal"],
+      "rating": 4.6,
+      "score": 94,
+      "badges": [
+        "Recomendado"
+      ],
+      "pros": [
+        "Menores taxas",
+        "Aprovação rápida",
+        "Sem burocracia"
+      ],
+      "cons": [
+        "Documentação",
+        "Limite inicial"
+      ],
+      "features": [
+        "emprestimo-pessoal"
+      ],
       "image": null
     },
     {
@@ -455,14 +780,25 @@
       "name": "Juros Baixos - Empréstimo pessoal",
       "category": "emprestimos",
       "type": "Empréstimo Pessoal",
-      "description": "Empréstimo pessoal com taxas competitivas",
+      "description": "Empréstimo flexível e acessível",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81394742c132/179945/358980/subaccount",
-      "rating": 4.3,
-      "score": 87,
-      "badges": [],
-      "pros": ["Taxas baixas", "Rápido", "Sem consulta SPC"],
-      "cons": ["Documentação", "Limite"],
-      "features": ["emprestimo-pessoal"],
+      "rating": 4.1,
+      "score": 84,
+      "badges": [
+        "Mais Popular"
+      ],
+      "pros": [
+        "Taxas baixas",
+        "Rápido",
+        "Sem consulta SPC"
+      ],
+      "cons": [
+        "Documentação",
+        "Limite"
+      ],
+      "features": [
+        "emprestimo-pessoal"
+      ],
       "image": null
     },
     {
@@ -470,14 +806,23 @@
       "name": "SuperSim - Empréstimo Pessoal",
       "category": "emprestimos",
       "type": "Empréstimo Pessoal",
-      "description": "Empréstimo pessoal com aprovação em minutos",
+      "description": "Crédito com as melhores taxas do mercado",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139047c0492/177702/358980/subaccount",
       "rating": 4.2,
-      "score": 85,
+      "score": 82,
       "badges": [],
-      "pros": ["Aprovação em minutos", "Sem consulta", "Rápido"],
-      "cons": ["Taxas altas", "Limite baixo"],
-      "features": ["emprestimo-pessoal"],
+      "pros": [
+        "Aprovação em minutos",
+        "Sem consulta",
+        "Rápido"
+      ],
+      "cons": [
+        "Taxas altas",
+        "Limite baixo"
+      ],
+      "features": [
+        "emprestimo-pessoal"
+      ],
       "image": null
     },
     {
@@ -485,14 +830,23 @@
       "name": "UP.P Empréstimos",
       "category": "emprestimos",
       "type": "Empréstimo Pessoal",
-      "description": "Empréstimo pessoal com condições flexíveis",
+      "description": "Crédito com as melhores taxas do mercado",
       "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139352802e2/179925/358980/subaccount",
       "rating": 4.1,
-      "score": 84,
+      "score": 79,
       "badges": [],
-      "pros": ["Condições flexíveis", "Aprovação rápida", "Sem burocracia"],
-      "cons": ["Taxas variáveis", "Documentação"],
-      "features": ["emprestimo-pessoal"],
+      "pros": [
+        "Condições flexíveis",
+        "Aprovação rápida",
+        "Sem burocracia"
+      ],
+      "cons": [
+        "Taxas variáveis",
+        "Documentação"
+      ],
+      "features": [
+        "emprestimo-pessoal"
+      ],
       "image": null
     }
   ],
