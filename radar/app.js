@@ -52,11 +52,23 @@ class RadarFinanceiro {
 
     // Filtros de categoria
     document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('category-filter')) {
-        const categoryId = e.target.dataset.category;
+      const filterBtn = e.target.closest('.category-filter');
+      if (filterBtn) {
+        const categoryId = filterBtn.dataset.category;
+        
+        // Se clicar na mesma categoria, limpa o filtro. Se for outra, aplica.
         this.currentCategory = this.currentCategory === categoryId ? null : categoryId;
+        
+        // Feedback visual e scroll para os produtos
         this.updateCategoryButtons();
         this.applyFilters();
+        this.renderProducts();
+        
+        // Scroll suave para a seção de produtos para mostrar o resultado
+        const productsSection = document.getElementById('products-section');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
   }
@@ -65,18 +77,21 @@ class RadarFinanceiro {
     const container = document.getElementById('categories-container');
     if (!container) return;
 
-    container.innerHTML = this.categories.map(cat => `
-      <div class="category-card card">
-        <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">
-          ${cat.icon}
+    container.innerHTML = this.categories.map(cat => {
+      const isActive = this.currentCategory === cat.id;
+      return `
+        <div class="category-card card ${isActive ? 'active' : ''}" style="cursor: pointer;" onclick="document.querySelector('.category-filter[data-category=\'${cat.id}\']').click()">
+          <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">
+            ${cat.icon}
+          </div>
+          <h3 class="category-name">${cat.name}</h3>
+          <p class="category-desc">${cat.description}</p>
+          <button class="btn ${isActive ? 'btn-primary' : 'btn-outline'} category-filter" data-category="${cat.id}">
+            ${isActive ? 'Selecionado' : 'Ver Produtos'}
+          </button>
         </div>
-        <h3 class="category-name">${cat.name}</h3>
-        <p class="category-desc">${cat.description}</p>
-        <button class="btn btn-primary category-filter" data-category="${cat.id}">
-          Ver Produtos
-        </button>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   renderCatalog() {
