@@ -10,17 +10,10 @@
       "rating": 4.5,
       "score": 92,
       "badges": ["Recomendado"],
-      "pros": [
-        "Abertura 100% digital",
-        "Sem consulta ao SPC",
-        "Cartão de débito incluído"
-      ],
-      "cons": [
-        "Limite inicial baixo",
-        "Taxa de manutenção após período"
-      ],
+      "pros": ["Abertura 100% digital", "Sem consulta ao SPC", "Cartão de débito incluído"],
+      "cons": ["Limite inicial baixo", "Taxa de manutenção após período"],
       "features": ["sem-consulta-spc", "digital"],
-      "image": "picpay-pj.png"
+      "image": null
     },
     {
       "id": "santander",
@@ -32,17 +25,10 @@
       "rating": 4.3,
       "score": 88,
       "badges": ["Melhor Taxa"],
-      "pros": [
-        "Banco tradicional confiável",
-        "Múltiplos serviços financeiros",
-        "Atendimento 24/7"
-      ],
-      "cons": [
-        "Taxas mais altas",
-        "Burocracia na abertura"
-      ],
+      "pros": ["Banco tradicional confiável", "Múltiplos serviços financeiros", "Atendimento 24/7"],
+      "cons": ["Taxas mais altas", "Burocracia na abertura"],
       "features": ["banco-tradicional"],
-      "image": "santander.png"
+      "image": null
     },
     {
       "id": "btg-pactual",
@@ -54,17 +40,10 @@
       "rating": 4.7,
       "score": 95,
       "badges": ["Mais Popular", "Recomendado"],
-      "pros": [
-        "Taxas competitivas",
-        "Ativos diversificados",
-        "Interface intuitiva"
-      ],
-      "cons": [
-        "Depósito mínimo inicial",
-        "Menos produtos de crédito"
-      ],
+      "pros": ["Taxas competitivas", "Ativos diversificados", "Interface intuitiva"],
+      "cons": ["Depósito mínimo inicial", "Menos produtos de crédito"],
       "features": ["investimentos"],
-      "image": "btg-pactual.png"
+      "image": null
     },
     {
       "id": "pagbank-maquininha",
@@ -76,17 +55,10 @@
       "rating": 4.4,
       "score": 90,
       "badges": ["Melhor Taxa"],
-      "pros": [
-        "Taxa a partir de 1.99%",
-        "Sem aluguel",
-        "Saque em 1 dia"
-      ],
-      "cons": [
-        "Compatibilidade limitada",
-        "Suporte básico"
-      ],
+      "pros": ["Taxa a partir de 1.99%", "Sem aluguel", "Saque em 1 dia"],
+      "cons": ["Compatibilidade limitada", "Suporte básico"],
       "features": ["maquineta"],
-      "image": "pagbank.png"
+      "image": null
     },
     {
       "id": "banco-bv",
@@ -98,17 +70,10 @@
       "rating": 4.2,
       "score": 85,
       "badges": [],
-      "pros": [
-        "Taxas reduzidas",
-        "Aprovação rápida",
-        "Sem restrições de uso"
-      ],
-      "cons": [
-        "Exige garantia do veículo",
-        "Documentação extensa"
-      ],
+      "pros": ["Taxas reduzidas", "Aprovação rápida", "Sem restrições de uso"],
+      "cons": ["Exige garantia do veículo", "Documentação extensa"],
       "features": ["emprestimo-veicular"],
-      "image": "banco-bv.png"
+      "image": null
     },
     {
       "id": "velotax",
@@ -120,17 +85,10 @@
       "rating": 4.6,
       "score": 93,
       "badges": ["Recomendado"],
-      "pros": [
-        "Consultoria especializada",
-        "Preços acessíveis",
-        "Suporte completo"
-      ],
-      "cons": [
-        "Agendamento necessário",
-        "Tempo de resposta"
-      ],
+      "pros": ["Consultoria especializada", "Preços acessíveis", "Suporte completo"],
+      "cons": ["Agendamento necessário", "Tempo de resposta"],
       "features": ["consultoria-fiscal"],
-      "image": "velotax.png"
+      "image": null
     },
     {
       "id": "bybit",
@@ -142,17 +100,10 @@
       "rating": 4.5,
       "score": 91,
       "badges": ["Mais Popular"],
-      "pros": [
-        "Interface amigável",
-        "Taxas competitivas",
-        "Segurança robusta"
-      ],
-      "cons": [
-        "Regulação em evolução",
-        "Volatilidade do mercado"
-      ],
+      "pros": ["Interface amigável", "Taxas competitivas", "Segurança robusta"],
+      "cons": ["Regulação em evolução", "Volatilidade do mercado"],
       "features": ["criptomoedas"],
-      "image": "bybit.png"
+      "image": null
     },
     {
       "id": "hiper-cash",
@@ -164,17 +115,10 @@
       "rating": 3.8,
       "score": 78,
       "badges": [],
-      "pros": [
-        "Sem consulta SPC",
-        "Aprovação em minutos",
-        "Sem documentação complexa"
-      ],
-      "cons": [
-        "Taxas altas",
-        "Valores limitados"
-      ],
+      "pros": ["Sem consulta SPC", "Aprovação em minutos", "Sem documentação complexa"],
+      "cons": ["Taxas altas", "Valores limitados"],
       "features": ["sem-consulta-spc", "emprestimo-rapido"],
-      "image": "hiper-cash.png"
+      "image": null
     },
     {
       "id": "remessa-online",
@@ -186,17 +130,10 @@
       "rating": 4.6,
       "score": 94,
       "badges": ["Recomendado"],
-      "pros": [
-        "Taxas competitivas",
-        "Transferência rápida",
-        "Suporte em português"
-      ],
-      "cons": [
-        "Limite inicial",
-        "Verificação de identidade"
-      ],
+      "pros": ["Taxas competitivas", "Transferência rápida", "Suporte em português"],
+      "cons": ["Limite inicial", "Verificação de identidade"],
       "features": ["transferencia-internacional"],
-      "image": "remessa-online.png"
+      "image": null
     },
     {
       "id": "juca-fgts",
@@ -208,17 +145,25 @@
       "rating": 4.4,
       "score": 89,
       "badges": ["Recomendado"],
-      "pros": [
-        "Aprovação rápida",
-        "Sem consulta SPC",
-        "Taxas reduzidas"
-      ],
-      "cons": [
-        "Requer FGTS ativo",
-        "Documentação necessária"
-      ],
+      "pros": ["Aprovação rápida", "Sem consulta SPC", "Taxas reduzidas"],
+      "cons": ["Requer FGTS ativo", "Documentação necessária"],
       "features": ["com-fgts", "sem-consulta-spc"],
-      "image": "juca.png"
+      "image": null
+    },
+    {
+      "id": "santander-pj",
+      "name": "Santander PJ - Abertura de conta",
+      "category": "contas-pj",
+      "type": "Conta Bancária PJ",
+      "description": "Conta PJ com benefícios exclusivos do Santander",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869b2bfa81789e2c3464/187773/359067/subaccount",
+      "rating": 4.2,
+      "score": 86,
+      "badges": [],
+      "pros": ["Banco confiável", "Serviços completos", "Atendimento especializado"],
+      "cons": ["Taxas elevadas", "Documentação exigida"],
+      "features": ["banco-tradicional"],
+      "image": null
     },
     {
       "id": "cartao-carrefour",
@@ -230,17 +175,10 @@
       "rating": 4.3,
       "score": 87,
       "badges": [],
-      "pros": [
-        "Cashback em compras",
-        "Sem anuidade",
-        "Limite inicial bom"
-      ],
-      "cons": [
-        "Taxa de juros alta",
-        "Benefícios limitados"
-      ],
+      "pros": ["Cashback em compras", "Sem anuidade", "Limite inicial bom"],
+      "cons": ["Taxa de juros alta", "Benefícios limitados"],
       "features": ["cartao-credito", "cashback"],
-      "image": "carrefour.png"
+      "image": null
     },
     {
       "id": "cartao-atacadao",
@@ -252,17 +190,10 @@
       "rating": 4.1,
       "score": 84,
       "badges": [],
-      "pros": [
-        "Descontos exclusivos",
-        "Sem anuidade",
-        "Programa de pontos"
-      ],
-      "cons": [
-        "Uso limitado ao Atacadão",
-        "Taxa de juros padrão"
-      ],
+      "pros": ["Descontos exclusivos", "Sem anuidade", "Programa de pontos"],
+      "cons": ["Uso limitado ao Atacadão", "Taxa de juros padrão"],
       "features": ["cartao-credito"],
-      "image": "atacadao.png"
+      "image": null
     },
     {
       "id": "crypto-com",
@@ -274,17 +205,10 @@
       "rating": 4.4,
       "score": 88,
       "badges": ["Mais Popular"],
-      "pros": [
-        "Cartão de débito incluído",
-        "Múltiplas criptomoedas",
-        "Cashback em transações"
-      ],
-      "cons": [
-        "Taxas podem ser altas",
-        "Suporte em inglês"
-      ],
+      "pros": ["Cartão de débito incluído", "Múltiplas criptomoedas", "Cashback em transações"],
+      "cons": ["Taxas podem ser altas", "Suporte em inglês"],
       "features": ["criptomoedas", "cartao-debito"],
-      "image": "crypto-com.png"
+      "image": null
     },
     {
       "id": "quita-boletos",
@@ -296,17 +220,280 @@
       "rating": 4.2,
       "score": 86,
       "badges": [],
-      "pros": [
-        "Descontos em boletos",
-        "Pagamento rápido",
-        "Interface simples"
-      ],
-      "cons": [
-        "Cobertura limitada",
-        "Descontos variáveis"
-      ],
+      "pros": ["Descontos em boletos", "Pagamento rápido", "Interface simples"],
+      "cons": ["Cobertura limitada", "Descontos variáveis"],
       "features": ["pagamento-boletos"],
-      "image": "quita-boletos.png"
+      "image": null
+    },
+    {
+      "id": "santander-acordos",
+      "name": "Santander Acordos",
+      "category": "emprestimos",
+      "type": "Negociação de Dívidas",
+      "description": "Negociação de dívidas com o Santander",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817868268622/187700/359067/subaccount",
+      "rating": 4.0,
+      "score": 82,
+      "badges": [],
+      "pros": ["Banco tradicional", "Negociação facilitada", "Suporte completo"],
+      "cons": ["Processo lento", "Documentação exigida"],
+      "features": ["negociacao-dividas"],
+      "image": null
+    },
+    {
+      "id": "acordo-certo",
+      "name": "Acordo Certo",
+      "category": "emprestimos",
+      "type": "Negociação de Dívidas",
+      "description": "Plataforma especializada em negociação de dívidas",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa817115280f72/187558/359067/subaccount",
+      "rating": 4.3,
+      "score": 87,
+      "badges": ["Recomendado"],
+      "pros": ["Especializada em negociação", "Redução de débitos", "Atendimento dedicado"],
+      "cons": ["Taxa de serviço", "Tempo de negociação"],
+      "features": ["negociacao-dividas"],
+      "image": null
+    },
+    {
+      "id": "casatrade",
+      "name": "CASATRADE",
+      "category": "investimentos",
+      "type": "Plataforma de Trading",
+      "description": "Plataforma de trading com análises em tempo real",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount",
+      "rating": 4.2,
+      "score": 85,
+      "badges": [],
+      "pros": ["Análises profissionais", "Ferramentas avançadas", "Suporte especializado"],
+      "cons": ["Requer experiência", "Taxas operacionais"],
+      "features": ["trading"],
+      "image": null
+    },
+    {
+      "id": "credspot-fgts",
+      "name": "Credspot - FGTS",
+      "category": "emprestimos",
+      "type": "Antecipação de FGTS",
+      "description": "Antecipação de FGTS com aprovação online",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bbc03aef2/186580/358980/subaccount",
+      "rating": 4.3,
+      "score": 88,
+      "badges": [],
+      "pros": ["Aprovação online", "Rápido e seguro", "Sem burocracia"],
+      "cons": ["Requer FGTS", "Documentação necessária"],
+      "features": ["com-fgts"],
+      "image": null
+    },
+    {
+      "id": "consigmais-siape",
+      "name": "Consigmais - SIAPE",
+      "category": "emprestimos",
+      "type": "Empréstimo Consignado",
+      "description": "Empréstimo consignado para servidores públicos",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bce432822/186657/358980/subaccount",
+      "rating": 4.4,
+      "score": 89,
+      "badges": [],
+      "pros": ["Taxas reduzidas", "Servidor público", "Aprovação rápida"],
+      "cons": ["Requer vínculo público", "Desconto em folha"],
+      "features": ["consignado"],
+      "image": null
+    },
+    {
+      "id": "olymp-trade",
+      "name": "Olymp Trade FTD Bitcoin",
+      "category": "criptomoedas",
+      "type": "Trading de Criptomoedas",
+      "description": "Plataforma de trading de Bitcoin e criptomoedas",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817bd42023d4/178147/358980/subaccount",
+      "rating": 3.9,
+      "score": 80,
+      "badges": [],
+      "pros": ["Múltiplos ativos", "Interface intuitiva", "Bônus iniciais"],
+      "cons": ["Risco de perda", "Volatilidade alta"],
+      "features": ["criptomoedas", "trading"],
+      "image": null
+    },
+    {
+      "id": "picpay-contas",
+      "name": "PicPay - Abertura de contas",
+      "category": "contas-pj",
+      "type": "Conta Bancária",
+      "description": "Abertura de contas bancárias simplificada",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139b3579842/186179/358980/subaccount",
+      "rating": 4.5,
+      "score": 91,
+      "badges": ["Recomendado"],
+      "pros": ["100% digital", "Rápido", "Sem taxas iniciais"],
+      "cons": ["Limite inicial", "Taxas futuras"],
+      "features": ["digital"],
+      "image": null
+    },
+    {
+      "id": "minuto-seguros",
+      "name": "MINUTO SEGUROS",
+      "category": "seguros",
+      "type": "Seguros Diversos",
+      "description": "Plataforma de seguros com cotações online",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8144cc0ad9b2/183524/358980/subaccount",
+      "rating": 4.2,
+      "score": 85,
+      "badges": [],
+      "pros": ["Cotações rápidas", "Múltiplas seguradoras", "Preços competitivos"],
+      "cons": ["Documentação exigida", "Análise de risco"],
+      "features": ["seguros"],
+      "image": null
+    },
+    {
+      "id": "ourocard",
+      "name": "Ourocard",
+      "category": "cartoes",
+      "type": "Cartão de Crédito",
+      "description": "Cartão de crédito com programa de pontos",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81391c4d5ee2/185834/358980/subaccount",
+      "rating": 4.1,
+      "score": 83,
+      "badges": [],
+      "pros": ["Programa de pontos", "Sem anuidade", "Aprovação rápida"],
+      "cons": ["Taxa de juros média", "Benefícios limitados"],
+      "features": ["cartao-credito"],
+      "image": null
+    },
+    {
+      "id": "consigmais-fgts",
+      "name": "Consigmais - FGTS",
+      "category": "emprestimos",
+      "type": "Antecipação de FGTS",
+      "description": "Antecipação de FGTS com taxas reduzidas",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa817be02f00a2/184986/358980/subaccount",
+      "rating": 4.4,
+      "score": 89,
+      "badges": [],
+      "pros": ["Taxas reduzidas", "Aprovação rápida", "Sem consulta SPC"],
+      "cons": ["Requer FGTS", "Documentação"],
+      "features": ["com-fgts"],
+      "image": null
+    },
+    {
+      "id": "consigmais-inss",
+      "name": "Consigmais - INSS",
+      "category": "emprestimos",
+      "type": "Empréstimo Consignado",
+      "description": "Empréstimo consignado para aposentados e pensionistas",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa81788059e072/184987/359067/subaccount",
+      "rating": 4.5,
+      "score": 90,
+      "badges": ["Recomendado"],
+      "pros": ["Taxas muito reduzidas", "Aprovação garantida", "Desconto em folha"],
+      "cons": ["Requer INSS", "Limite baseado em renda"],
+      "features": ["consignado"],
+      "image": null
+    },
+    {
+      "id": "acordo-certo-dividas",
+      "name": "Acordo Certo - Negociação de Dívidas",
+      "category": "emprestimos",
+      "type": "Negociação de Dívidas",
+      "description": "Especializada em negociação e renegociação de dívidas",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81398f1142c2/182268/358980/subaccount",
+      "rating": 4.2,
+      "score": 86,
+      "badges": [],
+      "pros": ["Especializada", "Redução de débitos", "Suporte completo"],
+      "cons": ["Taxa de serviço", "Tempo de negociação"],
+      "features": ["negociacao-dividas"],
+      "image": null
+    },
+    {
+      "id": "bompraccredito",
+      "name": "BomPraCrédito - Empréstimo Pessoal",
+      "category": "emprestimos",
+      "type": "Empréstimo Pessoal",
+      "description": "Empréstimo pessoal com aprovação rápida",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178b15f7aa6/185636/359067/subaccount",
+      "rating": 4.3,
+      "score": 87,
+      "badges": [],
+      "pros": ["Aprovação rápida", "Sem consulta SPC", "Valores altos"],
+      "cons": ["Taxas variáveis", "Documentação"],
+      "features": ["emprestimo-pessoal"],
+      "image": null
+    },
+    {
+      "id": "nexo-ativos",
+      "name": "Nexo - Plataforma de ativos digitais",
+      "category": "investimentos",
+      "type": "Plataforma de Investimentos",
+      "description": "Plataforma para investimento em ativos digitais",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81394d4c4542/184515/358980/subaccount",
+      "rating": 4.2,
+      "score": 85,
+      "badges": [],
+      "pros": ["Ativos digitais", "Interface moderna", "Segurança"],
+      "cons": ["Requer experiência", "Volatilidade"],
+      "features": ["investimentos"],
+      "image": null
+    },
+    {
+      "id": "juros-baixos-emprestimos",
+      "name": "Juros Baixos - Empréstimos",
+      "category": "emprestimos",
+      "type": "Empréstimo Pessoal",
+      "description": "Empréstimo com as menores taxas do mercado",
+      "affiliateLink": "https://apretailer.com.br/click/6a16869a2bfa8178622cf8c2/183012/359067/subaccount",
+      "rating": 4.4,
+      "score": 89,
+      "badges": ["Melhor Taxa"],
+      "pros": ["Menores taxas", "Aprovação rápida", "Sem burocracia"],
+      "cons": ["Documentação", "Limite inicial"],
+      "features": ["emprestimo-pessoal"],
+      "image": null
+    },
+    {
+      "id": "juros-baixos-pessoal",
+      "name": "Juros Baixos - Empréstimo pessoal",
+      "category": "emprestimos",
+      "type": "Empréstimo Pessoal",
+      "description": "Empréstimo pessoal com taxas competitivas",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa81394742c132/179945/358980/subaccount",
+      "rating": 4.3,
+      "score": 87,
+      "badges": [],
+      "pros": ["Taxas baixas", "Rápido", "Sem consulta SPC"],
+      "cons": ["Documentação", "Limite"],
+      "features": ["emprestimo-pessoal"],
+      "image": null
+    },
+    {
+      "id": "supersim-emprestimo",
+      "name": "SuperSim - Empréstimo Pessoal",
+      "category": "emprestimos",
+      "type": "Empréstimo Pessoal",
+      "description": "Empréstimo pessoal com aprovação em minutos",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139047c0492/177702/358980/subaccount",
+      "rating": 4.2,
+      "score": 85,
+      "badges": [],
+      "pros": ["Aprovação em minutos", "Sem consulta", "Rápido"],
+      "cons": ["Taxas altas", "Limite baixo"],
+      "features": ["emprestimo-pessoal"],
+      "image": null
+    },
+    {
+      "id": "upp-emprestimos",
+      "name": "UP.P Empréstimos",
+      "category": "emprestimos",
+      "type": "Empréstimo Pessoal",
+      "description": "Empréstimo pessoal com condições flexíveis",
+      "affiliateLink": "https://apretailer.com.br/click/6a0bab802bfa8139352802e2/179925/358980/subaccount",
+      "rating": 4.1,
+      "score": 84,
+      "badges": [],
+      "pros": ["Condições flexíveis", "Aprovação rápida", "Sem burocracia"],
+      "cons": ["Taxas variáveis", "Documentação"],
+      "features": ["emprestimo-pessoal"],
+      "image": null
     }
   ],
   "categories": [
@@ -363,6 +550,12 @@
       "name": "Serviços Financeiros",
       "description": "Outros serviços financeiros úteis",
       "icon": "⚙️"
+    },
+    {
+      "id": "seguros",
+      "name": "Seguros",
+      "description": "Seguros e proteção financeira",
+      "icon": "🛡️"
     }
   ]
 }
