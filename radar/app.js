@@ -52,19 +52,30 @@ class RadarFinanceiro {
 
     // Filtros de categoria
     document.addEventListener('click', (e) => {
+      // Tentar encontrar o botão ou o card de categoria
+      const categoryCard = e.target.closest('.category-card');
       const filterBtn = e.target.closest('.category-filter');
-      if (filterBtn) {
-        const categoryId = filterBtn.dataset.category;
+      
+      if (categoryCard || filterBtn) {
+        const target = categoryCard || filterBtn;
+        const categoryId = target.dataset.category || (filterBtn ? filterBtn.dataset.category : null);
+        
+        if (!categoryId) return;
+
+        // Prevenir comportamento padrão se for botão
+        if (e.target.tagName === 'BUTTON') e.preventDefault();
         
         // Se clicar na mesma categoria, limpa o filtro. Se for outra, aplica.
         this.currentCategory = this.currentCategory === categoryId ? null : categoryId;
         
-        // Feedback visual e scroll para os produtos
-        this.updateCategoryButtons();
+        console.log('Categoria selecionada:', this.currentCategory);
+
+        // Atualizar interface
+        this.renderCategories(); // Regerar para atualizar classes 'active'
         this.applyFilters();
         this.renderProducts();
         
-        // Scroll suave para a seção de produtos para mostrar o resultado
+        // Scroll suave para a seção de produtos
         const productsSection = document.getElementById('products-section');
         if (productsSection) {
           productsSection.scrollIntoView({ behavior: 'smooth' });
@@ -80,14 +91,14 @@ class RadarFinanceiro {
     container.innerHTML = this.categories.map(cat => {
       const isActive = this.currentCategory === cat.id;
       return `
-        <div class="category-card card ${isActive ? 'active' : ''}" style="cursor: pointer;" onclick="document.querySelector('.category-filter[data-category=\'${cat.id}\']').click()">
-          <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">
+        <div class="category-card card ${isActive ? 'active' : ''}" style="cursor: pointer;" data-category="${cat.id}">
+          <div class="category-icon" style="font-size: 2.5rem; margin-bottom: 1rem; pointer-events: none;">
             ${cat.icon}
           </div>
-          <h3 class="category-name">${cat.name}</h3>
-          <p class="category-desc">${cat.description}</p>
-          <button class="btn ${isActive ? 'btn-primary' : 'btn-outline'} category-filter" data-category="${cat.id}">
-            ${isActive ? 'Selecionado' : 'Ver Produtos'}
+          <h3 class="category-name" style="pointer-events: none;">${cat.name}</h3>
+          <p class="category-desc" style="pointer-events: none;">${cat.description}</p>
+          <button class="btn ${isActive ? 'btn-primary' : 'btn-outline'} category-filter" data-category="${cat.id}" style="pointer-events: none;">
+            ${isActive ? '✓ Selecionado' : 'Ver Produtos'}
           </button>
         </div>
       `;
