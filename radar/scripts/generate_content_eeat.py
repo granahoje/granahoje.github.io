@@ -360,7 +360,7 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
                 <div class="article-meta">
                     <span class="category">{product.get('category', 'Geral')}</span>
                     <span class="rating">⭐ {product['rating']} ({product['score']}%)</span>
-                    <span class="date">{datetime.now().strftime('%d de %B de %Y')}</span>
+                    <span class="date">{self._get_pt_date()}</span>
                 </div>
             </div>
 
@@ -470,6 +470,16 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
             
         return '\n'.join(html_lines)
     
+    def _get_pt_date(self):
+        """Obter data atual formatada em português"""
+        now = datetime.now()
+        months = {
+            1: 'Janeiro', 2: 'Fevereiro', 3: 'Março', 4: 'Abril',
+            5: 'Maio', 6: 'Junho', 7: 'Julho', 8: 'Agosto',
+            9: 'Setembro', 10: 'Outubro', 11: 'Novembro', 12: 'Dezembro'
+        }
+        return f"{now.day} de {months[now.month]} de {now.year}"
+
     def generate_all_articles(self):
         """Gerar artigos para todos os produtos"""
         print("📝 Gerando artigos únicos com 1200+ palavras e foco em EEAT...")
