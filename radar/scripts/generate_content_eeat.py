@@ -114,10 +114,12 @@ As principais características de {product['name']} foram desenvolvidas com base
         
         if product.get('features'):
             for i, feature in enumerate(product['features'][:6], 1):
+                # Limpar slug técnico
+                display_feature = feature.replace('-', ' ').title()
                 variations = [
-                    f"**{i}. {feature}** - Esta funcionalidade foi implementada em resposta às necessidades identificadas no mercado.",
-                    f"**{feature}** - Desenvolvida com base em melhores práticas da indústria financeira.",
-                    f"**{feature}** - Uma característica que diferencia {product['name']} de seus concorrentes.",
+                    f"**{i}. {display_feature}** - Esta funcionalidade foi implementada em resposta às necessidades identificadas no mercado.",
+                    f"**{display_feature}** - Desenvolvida com base em melhores práticas da indústria financeira.",
+                    f"**{display_feature}** - Uma característica que diferencia {product['name']} de seus concorrentes.",
                 ]
                 features_text += random.choice(variations) + "\n"
         
@@ -407,47 +409,66 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
         return html
     
     def _markdown_to_html(self, markdown_text):
-        """Converter markdown simples para HTML"""
-        html = markdown_text
+        """Converter markdown simples para HTML de forma robusta"""
+        import re
         
-        # Títulos
-        html = html.replace('## ', '<h2>')
-        html = html.replace('# ', '<h1>')
-        
-        # Negrito
-        html = html.replace('**', '<strong>')
-        
-        # Listas
-        lines = html.split('\n')
-        new_lines = []
+        # Substituir meses para português
+        months = {
+            'January': 'Janeiro', 'February': 'Fevereiro', 'March': 'Março',
+            'April': 'Abril', 'May': 'Maio', 'June': 'Junho',
+            'July': 'Julho', 'August': 'Agosto', 'September': 'Setembro',
+            'October': 'Outubro', 'November': 'Novembro', 'December': 'Dezembro'
+        }
+        for eng, pt in months.items():
+            markdown_text = markdown_text.replace(eng, pt)
+            
+        lines = markdown_text.split('\n')
+        html_lines = []
         in_list = False
+        
         for line in lines:
-            if line.startswith('- '):
-                if not in_list:
-                    new_lines.append('<ul>')
-                    in_list = True
-                new_lines.append(f'<li>{line[2:]}</li>')
-            elif line.startswith('✓ ') or line.startswith('⚠ '):
-                if not in_list:
-                    new_lines.append('<ul>')
-                    in_list = True
-                new_lines.append(f'<li>{line[2:]}</li>')
-            else:
-                if in_list and line.strip():
-                    new_lines.append('</ul>')
+            line = line.strip()
+            if not line:
+                if in_list:
+                    html_lines.append('</ul>')
                     in_list = False
-                new_lines.append(line)
+                continue
+            
+            # Títulos
+            if line.startswith('## '):
+                if in_list:
+                    html_lines.append('</ul>')
+                    in_list = False
+                html_lines.append(f'<h2>{line[3:]}</h2>')
+            elif line.startswith('# '):
+                if in_list:
+                    html_lines.append('</ul>')
+                    in_list = False
+                html_lines.append(f'<h1>{line[2:]}</h1>')
+            
+            # Listas
+            elif line.startswith('- ') or line.startswith('✓ ') or line.startswith('⚠ ') or line.startswith('* '):
+                if not in_list:
+                    html_lines.append('<ul>')
+                    in_list = True
+                content = line[2:]
+                # Negrito dentro da lista
+                content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', content)
+                html_lines.append(f'<li>{content}</li>')
+            
+            # Parágrafos normais
+            else:
+                if in_list:
+                    html_lines.append('</ul>')
+                    in_list = False
+                # Negrito no parágrafo
+                content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', line)
+                html_lines.append(f'<p>{content}</p>')
         
         if in_list:
-            new_lines.append('</ul>')
-        
-        html = '\n'.join(new_lines)
-        
-        # Parágrafos
-        html = f'<p>{html}</p>'
-        html = html.replace('</p>\n<p>', '</p>\n<p>')
-        
-        return html
+            html_lines.append('</ul>')
+            
+        return '\n'.join(html_lines)
     
     def generate_all_articles(self):
         """Gerar artigos para todos os produtos"""

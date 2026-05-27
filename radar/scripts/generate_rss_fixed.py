@@ -51,7 +51,8 @@ def generate_rss():
     
     # Adicionar cada produto como item
     for product in products:
-        product_url = urljoin(base_url, f"/produto/{product['id']}/")
+        # Garantir que a URL do produto inclua /radar/ no caminho para o GitHub Pages
+        product_url = f"{base_url}/produto/{product['id']}/"
         
         # Criar descrição resumida
         description = f"""<h3>{escape_xml(product['name'])}</h3>
