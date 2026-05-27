@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- SEO Avançado -->
     <link rel="canonical" href="https://granahoje.github.io/ferramentas/rastreador-imposto-oculto-tempo.html">
@@ -38,6 +39,228 @@
       }
     }
     </script>
+
+    <style>
+        .calculator-container {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(79, 172, 254, 0.2);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            grid-column: 1 / -1;
+            padding: 14px 30px;
+            background: #22d3bd;
+            color: #09111f;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(34, 211, 189, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 211, 189, 0.4);
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-container h2 {
+            color: #09111f;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .result-box {
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #4facfe;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #4facfe;
+        }
+
+        .result-value-small {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4facfe;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card {
+            background: #e1f5fe;
+            border-left: 4px solid #0288d1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-card h3 {
+            color: #01579b;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #0277bd;
+            line-height: 1.6;
+        }
+
+        .affiliate-cta {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(34, 211, 189, 0.1);
+            border-radius: 15px;
+            border: 1px solid #22d3bd;
+            text-align: center;
+        }
+
+        .affiliate-cta p {
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .affiliate-cta a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #22d3bd;
+            color: #09111f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .affiliate-cta a:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #4facfe;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .imposto-visual {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff3e0;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .imposto-visual p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-value {
+                font-size: 1.5rem;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -60,35 +283,93 @@
     <div class="calculator-container">
         <div class="calculator-grid">
             <div class="input-group">
-                <label for="salarioLiquido">Salário Líquido Mensal (R$):</label>
-                <input type="number" id="salarioLiquido" value="5000">
+                <label for="salarioLiquido">💰 Salário Líquido Mensal (R$)</label>
+                <input type="number" id="salarioLiquido" value="5000" min="0" step="100">
             </div>
             <div class="input-group">
-                <label for="horasTrabalhadas">Horas de Expediente Mensais:</label>
-                <input type="number" id="horasTrabalhadas" value="160">
+                <label for="horasTrabalhadas">⏰ Horas de Expediente Mensais</label>
+                <input type="number" id="horasTrabalhadas" value="160" min="0" step="1">
             </div>
             <div class="input-group">
-                <label for="tempoDeslocamento">Horas de Deslocamento Mensais:</label>
-                <input type="number" id="tempoDeslocamento" value="40">
+                <label for="tempoDeslocamento">🚗 Horas de Deslocamento Mensais</label>
+                <input type="number" id="tempoDeslocamento" value="40" min="0" step="1">
             </div>
             <div class="input-group">
-                <label for="gastosTrabalho">Gastos Diretos com Trabalho (R$):</label>
-                <input type="number" id="gastosTrabalho" value="800" title="Transporte, Roupas, Alimentação Extra, etc.">
+                <label for="gastosTrabalho">💸 Gastos Diretos com Trabalho (R$)</label>
+                <input type="number" id="gastosTrabalho" value="800" min="0" step="50" title="Transporte, Roupas, Alimentação Extra, etc.">
             </div>
-            <button id="calcularRIOT" class="btn btn-primary">Calcular Salário Real</button>
+            <button id="calcularRIOT" class="btn-primary">🚀 Calcular Salário Real</button>
         </div>
 
-        <div class="results-container">
-            <h2>Seu Resultado RIOT:</h2>
-            <p>Seu Salário Nominal por Hora: R$ <span id="salarioNominalHora">0.00</span></p>
-            <p style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">Seu Salário Real por Hora de Vida: R$ <span id="salarioRealHora">0.00</span></p>
-            <p>O "Imposto Oculto" consome <span id="porcentagemImposto">0</span>% do seu ganho por hora.</p>
+        <div class="results-container" id="resultados" style="display: none;">
+            <h2>📊 Seu Resultado RIOT</h2>
+            
+            <div class="result-box">
+                <p class="result-label">Salário Nominal por Hora</p>
+                <p class="result-value-small">R$ <span id="salarioNominalHora">0.00</span></p>
+            </div>
+
+            <div class="result-box" style="border-left-color: #4caf50; background: #e8f5e9;">
+                <p class="result-label">Salário Real por Hora de Vida</p>
+                <p class="result-value">R$ <span id="salarioRealHora">0.00</span></p>
+            </div>
+
+            <div class="imposto-visual">
+                <p><strong>⚠️ Imposto Oculto do Tempo:</strong></p>
+                <p>Seu ganho por hora é reduzido em <span id="porcentagemImposto">0</span>% pelos custos invisíveis do trabalho.</p>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="impostoChart"></canvas>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Métrica</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Salário Líquido Mensal</td>
+                        <td>R$ <span id="metricaSalario">0.00</span></td>
+                    </tr>
+                    <tr>
+                        <td>Horas de Expediente</td>
+                        <td><span id="metricaExpediente">0</span> horas</td>
+                    </tr>
+                    <tr>
+                        <td>Horas de Deslocamento</td>
+                        <td><span id="metricaDeslocamento">0</span> horas</td>
+                    </tr>
+                    <tr>
+                        <td>Tempo Total Dedicado</td>
+                        <td><span id="metricaTempo">0</span> horas</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos com Trabalho</td>
+                        <td>R$ <span id="metricaGastos">0.00</span></td>
+                    </tr>
+                    <tr>
+                        <td>Renda Ajustada</td>
+                        <td>R$ <span id="metricaRenda">0.00</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
     <div class="info-card">
-        <h3>O que é o Salário Real por Hora de Vida?</h3>
-        <p>É a métrica que subtrai os gastos necessários para trabalhar (transporte, alimentação extra, vestuário) e divide pelo tempo total dedicado ao trabalho (incluindo deslocamento e preparação). É a forma mais honesta de medir sua remuneração.</p>
+        <h3>💡 O que é o Salário Real por Hora de Vida?</h3>
+        <p>É a métrica que subtrai os gastos necessários para trabalhar (transporte, alimentação extra, vestuário) e divide pelo tempo total dedicado ao trabalho (incluindo deslocamento e preparação). É a forma mais honesta de medir sua remuneração e entender o verdadeiro valor do seu tempo.</p>
+    </div>
+
+    <div class="affiliate-cta">
+        <p>💡 Dica do Grana Hoje:</p>
+        <p>Para otimizar seus ganhos e gerenciar melhor suas finanças, explore as melhores opções de crédito e investimento:</p>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount" target="_blank" rel="nofollow">Casa Trade →</a>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa8139414ad4b6/185636/358980/subaccount" target="_blank" rel="nofollow">Bom pra Crédito →</a>
     </div>
 </main>
 
@@ -97,6 +378,8 @@
 </footer>
 
 <script>
+    let impostoChart = null;
+
     document.getElementById('calcularRIOT').addEventListener('click', function() {
         const salarioLiquido = parseFloat(document.getElementById('salarioLiquido').value);
         const horasTrabalhadas = parseFloat(document.getElementById('horasTrabalhadas').value);
@@ -108,16 +391,83 @@
             return;
         }
 
+        if (horasTrabalhadas === 0) {
+            alert('As horas de expediente devem ser maiores que zero.');
+            return;
+        }
+
         const salarioNominalHora = salarioLiquido / horasTrabalhadas;
         const rendaAjustada = salarioLiquido - gastosTrabalho;
         const tempoTotal = horasTrabalhadas + tempoDeslocamento;
         const salarioRealHora = rendaAjustada / tempoTotal;
         const porcentagemImposto = ((salarioNominalHora - salarioRealHora) / salarioNominalHora) * 100;
 
+        // Atualizar valores
         document.getElementById('salarioNominalHora').textContent = salarioNominalHora.toFixed(2);
         document.getElementById('salarioRealHora').textContent = salarioRealHora.toFixed(2);
         document.getElementById('porcentagemImposto').textContent = porcentagemImposto.toFixed(1);
+
+        // Atualizar tabela
+        document.getElementById('metricaSalario').textContent = salarioLiquido.toFixed(2);
+        document.getElementById('metricaExpediente').textContent = horasTrabalhadas.toFixed(0);
+        document.getElementById('metricaDeslocamento').textContent = tempoDeslocamento.toFixed(0);
+        document.getElementById('metricaTempo').textContent = tempoTotal.toFixed(0);
+        document.getElementById('metricaGastos').textContent = gastosTrabalho.toFixed(2);
+        document.getElementById('metricaRenda').textContent = rendaAjustada.toFixed(2);
+
+        // Mostrar resultados
+        document.getElementById('resultados').style.display = 'block';
+
+        // Atualizar gráfico
+        atualizarGrafico(salarioNominalHora, salarioRealHora, porcentagemImposto);
+
+        // Scroll para resultados
+        document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
     });
+
+    function atualizarGrafico(nominal, real, percentual) {
+        const ctx = document.getElementById('impostoChart').getContext('2d');
+        
+        if (impostoChart) {
+            impostoChart.destroy();
+        }
+
+        impostoChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Salário Nominal por Hora', 'Salário Real por Hora de Vida'],
+                datasets: [{
+                    label: 'Valor (R$)',
+                    data: [nominal, real],
+                    backgroundColor: ['#ff9800', '#4caf50'],
+                    borderColor: ['#ff9800', '#4caf50'],
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return 'R$ ' + context.parsed.y.toFixed(2);
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
 </script>
 
 </body>

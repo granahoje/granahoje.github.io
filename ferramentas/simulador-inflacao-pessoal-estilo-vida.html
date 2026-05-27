@@ -12,10 +12,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Inflação Pessoal de Estilo de Vida (SIPEV) - Grana Hoje</title>
-    <meta name="description" content="Calcule sua inflação real com base nos seus hábitos de consumo específicos com o SIPEV.">
+    <meta name="description" content="Calcule sua inflação real com base nos seus hábitos de consumo específicos com o SIPEV. Ferramenta profissional e intuitiva.">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/ferramentas.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- SEO Avançado -->
     <link rel="canonical" href="https://granahoje.github.io/ferramentas/simulador-inflacao-pessoal-estilo-vida.html">
@@ -23,6 +24,212 @@
     <meta property="og:description" content="Descubra como seus hábitos de consumo corroem seu poder de compra real.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://granahoje.github.io/ferramentas/simulador-inflacao-pessoal-estilo-vida.html">
+
+    <style>
+        .calculator-container {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(245, 87, 108, 0.2);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            grid-column: 1 / -1;
+            padding: 14px 30px;
+            background: #22d3bd;
+            color: #09111f;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(34, 211, 189, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 211, 189, 0.4);
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .results-container h2 {
+            color: #09111f;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f5576c;
+            margin: 20px 0;
+        }
+
+        .result-label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .mensagem-impacto {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f0f4ff;
+            border-left: 4px solid #f5576c;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-card h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #bf360c;
+            line-height: 1.6;
+        }
+
+        .affiliate-cta {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(34, 211, 189, 0.1);
+            border-radius: 15px;
+            border: 1px solid #22d3bd;
+            text-align: center;
+        }
+
+        .affiliate-cta p {
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .affiliate-cta a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #22d3bd;
+            color: #09111f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .affiliate-cta a:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #f5576c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-value {
+                font-size: 1.8rem;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -45,35 +252,86 @@
     <div class="calculator-container">
         <div class="calculator-grid">
             <div class="input-group">
-                <label for="gastoStreaming">Gastos Mensais com Streaming (R$):</label>
-                <input type="number" id="gastoStreaming" value="150">
+                <label for="gastoStreaming">📺 Gastos Mensais com Streaming (R$)</label>
+                <input type="number" id="gastoStreaming" value="150" min="0" step="10">
             </div>
             <div class="input-group">
-                <label for="gastoDelivery">Gastos Mensais com Delivery (R$):</label>
-                <input type="number" id="gastoDelivery" value="600">
+                <label for="gastoDelivery">🍕 Gastos Mensais com Delivery (R$)</label>
+                <input type="number" id="gastoDelivery" value="600" min="0" step="10">
             </div>
             <div class="input-group">
-                <label for="gastoCombustivel">Gastos Mensais com Combustível/Apps (R$):</label>
-                <input type="number" id="gastoCombustivel" value="400">
+                <label for="gastoCombustivel">🚗 Gastos Mensais com Combustível/Apps (R$)</label>
+                <input type="number" id="gastoCombustivel" value="400" min="0" step="10">
             </div>
             <div class="input-group">
-                <label for="gastoPets">Gastos Mensais com Pets/Lazer (R$):</label>
-                <input type="number" id="gastoPets" value="300">
+                <label for="gastoPets">🐾 Gastos Mensais com Pets/Lazer (R$)</label>
+                <input type="number" id="gastoPets" value="300" min="0" step="10">
             </div>
-            <button id="calcularSIPEV" class="btn btn-primary">Calcular Inflação Pessoal</button>
+            <button id="calcularSIPEV" class="btn-primary">🚀 Calcular Inflação Pessoal</button>
         </div>
 
-        <div class="results-container">
-            <h2>Sua Inflação Pessoal Estimada:</h2>
-            <p style="font-size: 2rem; font-weight: 800; color: var(--primary);"><span id="inflacaoPessoal">0.0</span>% ao ano</p>
-            <p>A inflação oficial (IPCA) é de aprox. 4.5% ao ano.</p>
-            <p id="mensagemImpacto">Seu estilo de vida tem uma inflação maior que a média nacional.</p>
+        <div class="results-container" id="resultados" style="display: none;">
+            <h2>📊 Sua Inflação Pessoal Estimada</h2>
+            
+            <div>
+                <p class="result-label">Taxa de Inflação Anual</p>
+                <p class="result-value"><span id="inflacaoPessoal">0.0</span>%</p>
+            </div>
+
+            <p style="font-size: 1rem; color: #666; margin: 15px 0;">
+                <strong>IPCA Oficial (2026):</strong> ~4.5% ao ano
+            </p>
+
+            <div class="mensagem-impacto" id="mensagemImpacto"></div>
+
+            <div class="chart-container">
+                <canvas id="inflacaoChart"></canvas>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Categoria de Gasto</th>
+                        <th>Seu Gasto Mensal</th>
+                        <th>Inflação Estimada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Streaming</td>
+                        <td>R$ <span id="tblStreaming">0.00</span></td>
+                        <td>~12% a.a.</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery</td>
+                        <td>R$ <span id="tblDelivery">0.00</span></td>
+                        <td>~9% a.a.</td>
+                    </tr>
+                    <tr>
+                        <td>Combustível/Apps</td>
+                        <td>R$ <span id="tblCombustivel">0.00</span></td>
+                        <td>~6% a.a.</td>
+                    </tr>
+                    <tr>
+                        <td>Pets/Lazer</td>
+                        <td>R$ <span id="tblPets">0.00</span></td>
+                        <td>~8% a.a.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
     <div class="info-card">
-        <h3>Como funciona o SIPEV?</h3>
-        <p>O SIPEV cruza os pesos dos seus gastos com as taxas de variação de preços específicas de cada setor (tecnologia, serviços, alimentação fora, etc.) em 2026. Isso gera um índice muito mais fiel à sua realidade do que a média nacional.</p>
+        <h3>💡 Como funciona o SIPEV?</h3>
+        <p>O SIPEV cruza os pesos dos seus gastos com as taxas de variação de preços específicas de cada setor (tecnologia, serviços, alimentação fora, etc.) em 2026. Isso gera um índice muito mais fiel à sua realidade do que a média nacional. Quanto maior sua inflação pessoal, mais seu poder de compra está sendo afetado pelos aumentos de preços nos setores que você mais consome.</p>
+    </div>
+
+    <div class="affiliate-cta">
+        <p>💡 Dica do Grana Hoje:</p>
+        <p>Para proteger seu patrimônio da inflação e buscar as melhores oportunidades de investimento e crédito, conte com parceiros confiáveis:</p>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount" target="_blank" rel="nofollow">Casa Trade →</a>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa8139414ad4b6/185636/358980/subaccount" target="_blank" rel="nofollow">Bom pra Crédito →</a>
     </div>
 </main>
 
@@ -82,13 +340,15 @@
 </footer>
 
 <script>
+    let inflacaoChart = null;
+
     document.getElementById('calcularSIPEV').addEventListener('click', function() {
         const streaming = parseFloat(document.getElementById('gastoStreaming').value) || 0;
         const delivery = parseFloat(document.getElementById('gastoDelivery').value) || 0;
         const combustivel = parseFloat(document.getElementById('gastoCombustivel').value) || 0;
         const pets = parseFloat(document.getElementById('gastoPets').value) || 0;
 
-        // Taxas estimadas de inflação por setor para 2026 (exemplo)
+        // Taxas estimadas de inflação por setor para 2026
         const taxaStreaming = 0.12; // 12%
         const taxaDelivery = 0.09;  // 9%
         const taxaCombustivel = 0.06; // 6%
@@ -96,31 +356,97 @@
         const inflacaoBase = 0.045; // 4.5%
 
         const totalGasto = streaming + delivery + combustivel + pets;
-        if (totalGasto === 0) {
-            document.getElementById('inflacaoPessoal').textContent = (inflacaoBase * 100).toFixed(1);
-            return;
+        
+        // Atualizar tabela
+        document.getElementById('tblStreaming').textContent = streaming.toFixed(2);
+        document.getElementById('tblDelivery').textContent = delivery.toFixed(2);
+        document.getElementById('tblCombustivel').textContent = combustivel.toFixed(2);
+        document.getElementById('tblPets').textContent = pets.toFixed(2);
+
+        let inflacaoFinal = inflacaoBase;
+
+        if (totalGasto > 0) {
+            const inflacaoPonderada = (
+                (streaming * taxaStreaming) +
+                (delivery * taxaDelivery) +
+                (combustivel * taxaCombustivel) +
+                (pets * taxaPets)
+            ) / totalGasto;
+
+            inflacaoFinal = (inflacaoPonderada * 0.7) + (inflacaoBase * 0.3);
         }
-
-        const inflacaoPonderada = (
-            (streaming * taxaStreaming) +
-            (delivery * taxaDelivery) +
-            (combustivel * taxaCombustivel) +
-            (pets * taxaPets)
-        ) / totalGasto;
-
-        const inflacaoFinal = (inflacaoPonderada * 0.7) + (inflacaoBase * 0.3); // Mix entre pessoal e base
 
         document.getElementById('inflacaoPessoal').textContent = (inflacaoFinal * 100).toFixed(1);
         
         const msg = document.getElementById('mensagemImpacto');
         if (inflacaoFinal > inflacaoBase) {
-            msg.textContent = "Seu estilo de vida sofre uma inflação significativamente maior que a média nacional.";
-            msg.style.color = "#ff6b6b";
+            const diferenca = ((inflacaoFinal - inflacaoBase) * 100).toFixed(1);
+            msg.textContent = `⚠️ Seu estilo de vida sofre uma inflação ${diferenca}% MAIOR que a média nacional. Seu poder de compra está sendo corroído mais rapidamente!`;
+            msg.style.borderLeftColor = '#f5576c';
+            msg.style.backgroundColor = '#ffebee';
+            msg.style.color = '#c62828';
         } else {
-            msg.textContent = "Parabéns! Seus hábitos de consumo estão protegidos contra as maiores altas de preços.";
-            msg.style.color = "#51cf66";
+            msg.textContent = `✅ Parabéns! Seus hábitos de consumo estão protegidos contra as maiores altas de preços. Sua inflação pessoal é menor que a média!`;
+            msg.style.borderLeftColor = '#4caf50';
+            msg.style.backgroundColor = '#e8f5e9';
+            msg.style.color = '#1b5e20';
         }
+
+        // Mostrar resultados
+        document.getElementById('resultados').style.display = 'block';
+
+        // Atualizar gráfico
+        atualizarGrafico(inflacaoFinal, inflacaoBase);
+
+        // Scroll para resultados
+        document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
     });
+
+    function atualizarGrafico(inflacaoPessoal, inflacaoBase) {
+        const ctx = document.getElementById('inflacaoChart').getContext('2d');
+        
+        if (inflacaoChart) {
+            inflacaoChart.destroy();
+        }
+
+        inflacaoChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Sua Inflação Pessoal', 'IPCA Oficial'],
+                datasets: [{
+                    label: 'Taxa de Inflação Anual (%)',
+                    data: [(inflacaoPessoal * 100).toFixed(1), (inflacaoBase * 100).toFixed(1)],
+                    backgroundColor: ['#f5576c', '#4caf50'],
+                    borderColor: ['#f5576c', '#4caf50'],
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.x.toFixed(1) + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 15
+                    }
+                }
+            }
+        });
+    }
 </script>
 
 </body>
