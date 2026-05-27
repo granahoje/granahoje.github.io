@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-05-27T19:30:41.343828",
+  "dolar": {
+    "moeda": "USD",
+    "nome": "Dólar Americano",
+    "valor": 5.0417,
+    "variacao": 0.63273,
+    "timestamp": "1779803852",
+    "data": "2026-05-27T19:30:47.524950"
+  },
+  "euro": {
+    "moeda": "EUR",
+    "nome": "Euro",
+    "valor": 5.85823,
+    "variacao": 0.585857,
+    "timestamp": "1779825903",
+    "data": "2026-05-27T19:30:49.034687"
+  },
+  "bitcoin": {
+    "moeda": "BTC",
+    "nome": "Bitcoin",
+    "valor": 379499.0,
+    "variacao": -0.647,
+    "timestamp": "1779909934",
+    "data": "2026-05-27T19:30:51.403762"
+  },
+  "todas": {}
+}

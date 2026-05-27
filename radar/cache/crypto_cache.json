@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-05-27T19:30:23.108717",
+  "bitcoin": {
+    "nome": "Bitcoin",
+    "simbolo": "BTC",
+    "preco": 380045,
+    "market_cap": 7614539200256,
+    "volume_24h": 179307296906,
+    "variacao_24h": -1.17175,
+    "ath": 685780,
+    "atl": 149.66,
+    "data": "2026-05-27T19:30:30.190149"
+  },
+  "ethereum": {
+    "nome": "Ethereum",
+    "simbolo": "ETH",
+    "preco": 10424.02,
+    "market_cap": 1257979166373,
+    "volume_24h": 62321514644,
+    "variacao_24h": -0.69355,
+    "ath": 26931,
+    "atl": 1.69,
+    "data": "2026-05-27T19:30:32.247323"
+  },
+  "top_10": [
+    {
+      "nome": "Bitcoin",
+      "simbolo": "BTC",
+      "preco": 380034,
+      "market_cap": 7614539200256,
+      "variacao_24h": -0.65331,
+      "volume_24h": 179184008149,
+      "data": "2026-05-27T19:30:33.896415"
+    },
+    {
+      "nome": "Ethereum",
+      "simbolo": "ETH",
+      "preco": 10423.77,
+      "market_cap": 1257979166373,
+      "variacao_24h": -0.14288,
+      "volume_24h": 62251454302,
+      "data": "2026-05-27T19:30:33.896427"
+    },
+    {
+      "nome": "Tether",
+      "simbolo": "USDT",
+      "preco": 5.06,
+      "market_cap": 960041042619,
+      "variacao_24h": 0.56533,
+      "volume_24h": 299229162421,
+      "data": "2026-05-27T19:30:33.896429"
+    },
+    {
+      "nome": "BNB",
+      "simbolo": "BNB",
+      "preco": 3311.19,
+      "market_cap": 446311162313,
+      "variacao_24h": 0.13337,
+      "volume_24h": 3949967861,
+      "data": "2026-05-27T19:30:33.896430"
+    },
+    {
+      "nome": "XRP",
+      "simbolo": "XRP",
+      "preco": 6.75,
+      "market_cap": 417454631716,
+      "variacao_24h": 0.7581,
+      "volume_24h": 7904391435,
+      "data": "2026-05-27T19:30:33.896431"
+    },
+    {
+      "nome": "USDC",
+      "simbolo": "USDC",
+      "preco": 5.07,
+      "market_cap": 387874187567,
+      "variacao_24h": 0.59011,
+      "volume_24h": 79055039158,
+      "data": "2026-05-27T19:30:33.896432"
+    },
+    {
+      "nome": "Solana",
+      "simbolo": "SOL",
+      "preco": 425.47,
+      "market_cap": 246116004393,
+      "variacao_24h": 1.1795,
+      "volume_24h": 11655197662,
+      "data": "2026-05-27T19:30:33.896433"
+    },
+    {
+      "nome": "TRON",
+      "simbolo": "TRX",
+      "preco": 1.87,
+      "market_cap": 177663057824,
+      "variacao_24h": -0.56695,
+      "volume_24h": 2714594248,
+      "data": "2026-05-27T19:30:33.896436"
+    },
+    {
+      "nome": "Figure Heloc",
+      "simbolo": "FIGR_HELOC",
+      "preco": 5.2,
+      "market_cap": 94304184521,
+      "variacao_24h": -0.20624,
+      "volume_24h": 351988283,
+      "data": "2026-05-27T19:30:33.896438"
+    },
+    {
+      "nome": "Dogecoin",
+      "simbolo": "DOGE",
+      "preco": 0.517118,
+      "market_cap": 79827182410,
+      "variacao_24h": 1.99814,
+      "volume_24h": 3320374678,
+      "data": "2026-05-27T19:30:33.896439"
+    }
+  ]
+}
