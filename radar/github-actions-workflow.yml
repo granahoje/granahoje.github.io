@@ -2,8 +2,8 @@ name: 🤖 Radar Financeiro - Atualização Automática
 
 on:
   schedule:
-    # A cada 6 horas - APIs e RSS
-    - cron: '0 */6 * * *'
+    # A cada 3 horas - 8 postagens por dia
+    - cron: '0 */3 * * *'
   workflow_dispatch:  # Permitir execução manual
 
 jobs:
