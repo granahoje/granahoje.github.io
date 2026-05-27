@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-706NN8PEE7");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Correlação de Ativos Extremos (RCAE) - Grana Hoje</title>
+    <meta name="description" content="Mede a 'fuga para a segurança' entre Bitcoin, Dólar e Metais Preciosos. Ferramenta inédita para análise de correlação de ativos em crises.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="canonical" href="https://granahoje.github.io/ferramentas/rastreador-correlacao-ativos-extremos.html">
+    <meta property="og:title" content="Rastreador de Correlação de Ativos Extremos (RCAE)">
+    <meta property="og:description" content="Descubra como Bitcoin, Dólar e Metais se correlacionam em cenários de crise.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://granahoje.github.io/ferramentas/rastreador-correlacao-ativos-extremos.html">
+
+    <style>
+        .calculator-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input, .input-group select {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            grid-column: 1 / -1;
+            padding: 14px 30px;
+            background: #22d3bd;
+            color: #09111f;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(34, 211, 189, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .correlation-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .correlation-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #667eea;
+            margin: 10px 0;
+        }
+
+        .correlation-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .correlation-meter {
+            width: 100%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .correlation-meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #ff9800 50%, #f44336 100%);
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .info-card {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .affiliate-cta {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(34, 211, 189, 0.1);
+            border-radius: 15px;
+            border: 1px solid #22d3bd;
+            text-align: center;
+        }
+
+        .affiliate-cta a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #22d3bd;
+            color: #09111f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .affiliate-cta a:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">GRANA HOJE</a></div>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/ferramentas.html">Ferramentas</a>
+        <a href="/about.html">Sobre</a>
+    </nav>
+</header>
+
+<main class="container">
+    <header class="page-header">
+        <h1 class="page-title">Rastreador de Correlação de Ativos Extremos (RCAE)</h1>
+        <p class="page-subtitle">Mede a "fuga para a segurança" entre Bitcoin, Dólar e Metais Preciosos em cenários de crise.</p>
+    </header>
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-group">
+                <label for="volatilidade">📊 Nível de Volatilidade do Mercado</label>
+                <select id="volatilidade">
+                    <option value="1">Baixa (VIX < 15)</option>
+                    <option value="2">Moderada (VIX 15-25)</option>
+                    <option value="3">Alta (VIX 25-40)</option>
+                    <option value="4">Extrema (VIX > 40)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="cenario">🌍 Cenário Econômico</label>
+                <select id="cenario">
+                    <option value="1">Crescimento Normal</option>
+                    <option value="2">Recessão Moderada</option>
+                    <option value="3">Crise Financeira</option>
+                    <option value="4">Colapso Sistêmico</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="periodo">⏳ Período de Análise</label>
+                <select id="periodo">
+                    <option value="1">Curto Prazo (1-3 meses)</option>
+                    <option value="2">Médio Prazo (3-12 meses)</option>
+                    <option value="3">Longo Prazo (1-3 anos)</option>
+                    <option value="4">Muito Longo Prazo (3+ anos)</option>
+                </select>
+            </div>
+            <button id="calcularRCAE" class="btn-primary">🚀 Analisar Correlações Extremas</button>
+        </div>
+
+        <div class="results-container" id="resultados" style="display: none;">
+            <h2>🔗 Análise de Correlação de Ativos Extremos</h2>
+            
+            <div class="correlation-card">
+                <p class="correlation-label">Correlação BTC ↔ Dólar</p>
+                <p class="correlation-value"><span id="corrBTCDolar">0.00</span></p>
+                <div class="correlation-meter">
+                    <div class="correlation-meter-fill" id="meterBTCDolar" style="width: 50%;"></div>
+                </div>
+                <p style="font-size: 0.9rem; color: #666;" id="interpretBTCDolar"></p>
+            </div>
+
+            <div class="correlation-card">
+                <p class="correlation-label">Correlação Ouro ↔ Dólar</p>
+                <p class="correlation-value"><span id="corrOuroDolar">0.00</span></p>
+                <div class="correlation-meter">
+                    <div class="correlation-meter-fill" id="meterOuroDolar" style="width: 50%;"></div>
+                </div>
+                <p style="font-size: 0.9rem; color: #666;" id="interpretOuroDolar"></p>
+            </div>
+
+            <div class="correlation-card">
+                <p class="correlation-label">Correlação BTC ↔ Ouro</p>
+                <p class="correlation-value"><span id="corrBTCOuro">0.00</span></p>
+                <div class="correlation-meter">
+                    <div class="correlation-meter-fill" id="meterBTCOuro" style="width: 50%;"></div>
+                </div>
+                <p style="font-size: 0.9rem; color: #666;" id="interpretBTCOuro"></p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Ativo</th>
+                        <th>Índice de Fuga para Segurança</th>
+                        <th>Confiabilidade em Crise</th>
+                        <th>Recomendação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🪙 Bitcoin</strong></td>
+                        <td><span id="tblBTCFuga">0.00</span></td>
+                        <td><span id="tblBTCConf">0%</span></td>
+                        <td id="tblBTCRec">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💵 Dólar</strong></td>
+                        <td><span id="tblDolarFuga">0.00</span></td>
+                        <td><span id="tblDolarConf">0%</span></td>
+                        <td id="tblDolarRec">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏆 Ouro</strong></td>
+                        <td><span id="tblOuroFuga">0.00</span></td>
+                        <td><span id="tblOuroConf">0%</span></td>
+                        <td id="tblOuroRec">-</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <canvas id="rcaeChart"></canvas>
+            </div>
+
+            <div class="correlation-card" style="border-left-color: #4caf50; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                <p><strong>💡 Estratégia de Proteção Recomendada:</strong></p>
+                <p id="estrategia" style="margin-top: 10px; font-size: 1rem; color: #1b5e20;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3>💡 O que é Correlação de Ativos Extremos?</h3>
+        <p>É a medida de como diferentes ativos se movem juntos em cenários de crise. O RCAE analisa a "fuga para a segurança" - quando investidores abandonam ativos de risco em favor de ativos seguros. Compreender essas correlações é essencial para construir uma carteira verdadeiramente diversificada.</p>
+    </div>
+
+    <div class="affiliate-cta">
+        <p>💡 Dica do Grana Hoje:</p>
+        <p>Para implementar uma estratégia de proteção de ativos extrema, conheça as melhores opções de investimento e crédito:</p>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount" target="_blank" rel="nofollow">Casa Trade →</a>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa8139414ad4b6/185636/358980/subaccount" target="_blank" rel="nofollow">Bom pra Crédito →</a>
+    </div>
+</main>
+
+<footer class="standard-footer"></footer>
+
+<script>
+    let rcaeChart = null;
+
+    document.getElementById('calcularRCAE').addEventListener('click', function() {
+        const volatilidade = parseInt(document.getElementById('volatilidade').value);
+        const cenario = parseInt(document.getElementById('cenario').value);
+        const periodo = parseInt(document.getElementById('periodo').value);
+
+        // Cálculo de correlações baseado em cenários
+        let corrBTCDolar = -0.3 + (volatilidade * 0.15) - (cenario * 0.1);
+        let corrOuroDolar = -0.6 - (volatilidade * 0.05) + (cenario * 0.08);
+        let corrBTCOuro = 0.1 + (volatilidade * 0.08) - (cenario * 0.05);
+
+        // Normalizar entre -1 e 1
+        corrBTCDolar = Math.max(-1, Math.min(1, corrBTCDolar));
+        corrOuroDolar = Math.max(-1, Math.min(1, corrOuroDolar));
+        corrBTCOuro = Math.max(-1, Math.min(1, corrBTCOuro));
+
+        // Índice de fuga para segurança
+        const fugaBTC = Math.abs(corrBTCDolar) * 100;
+        const fugaDolar = 100 - (Math.abs(corrOuroDolar) * 50);
+        const fugaOuro = Math.abs(corrOuroDolar) * 100;
+
+        // Confiabilidade em crise
+        const confBTC = Math.max(20, 100 - (cenario * 15) - (volatilidade * 10));
+        const confDolar = Math.max(30, 100 - (cenario * 20));
+        const confOuro = Math.max(70, 100 - (cenario * 5));
+
+        // Atualizar correlações
+        document.getElementById('corrBTCDolar').textContent = corrBTCDolar.toFixed(2);
+        document.getElementById('corrOuroDolar').textContent = corrOuroDolar.toFixed(2);
+        document.getElementById('corrBTCOuro').textContent = corrBTCOuro.toFixed(2);
+
+        // Atualizar metros
+        document.getElementById('meterBTCDolar').style.width = ((corrBTCDolar + 1) * 50) + '%';
+        document.getElementById('meterOuroDolar').style.width = ((corrOuroDolar + 1) * 50) + '%';
+        document.getElementById('meterBTCOuro').style.width = ((corrBTCOuro + 1) * 50) + '%';
+
+        // Interpretações
+        document.getElementById('interpretBTCDolar').textContent = corrBTCDolar < -0.5 ? '✅ Baixa correlação (boa diversificação)' : corrBTCDolar > 0.5 ? '⚠️ Alta correlação (risco)' : '⚖️ Correlação moderada';
+        document.getElementById('interpretOuroDolar').textContent = corrOuroDolar < -0.5 ? '✅ Baixa correlação (boa diversificação)' : corrOuroDolar > 0.5 ? '⚠️ Alta correlação (risco)' : '⚖️ Correlação moderada';
+        document.getElementById('interpretBTCOuro').textContent = corrBTCOuro < -0.5 ? '✅ Baixa correlação (boa diversificação)' : corrBTCOuro > 0.5 ? '⚠️ Alta correlação (risco)' : '⚖️ Correlação moderada';
+
+        // Tabela
+        document.getElementById('tblBTCFuga').textContent = fugaBTC.toFixed(2);
+        document.getElementById('tblBTCConf').textContent = confBTC.toFixed(0);
+        document.getElementById('tblBTCRec').textContent = confBTC > 60 ? '✅ Recomendado' : '⚠️ Cuidado';
+
+        document.getElementById('tblDolarFuga').textContent = fugaDolar.toFixed(2);
+        document.getElementById('tblDolarConf').textContent = confDolar.toFixed(0);
+        document.getElementById('tblDolarRec').textContent = confDolar > 60 ? '✅ Recomendado' : '⚠️ Cuidado';
+
+        document.getElementById('tblOuroFuga').textContent = fugaOuro.toFixed(2);
+        document.getElementById('tblOuroConf').textContent = confOuro.toFixed(0);
+        document.getElementById('tblOuroRec').textContent = confOuro > 60 ? '✅ Recomendado' : '⚠️ Cuidado';
+
+        // Estratégia
+        let estrategia = 'Em cenário de ' + document.getElementById('cenario').options[cenario - 1].text.toLowerCase() + ': ';
+        if (confOuro > confBTC && confOuro > confDolar) {
+            estrategia += 'Priorize Ouro como âncora de proteção. Bitcoin oferece diversificação, mas com maior risco.';
+        } else if (confBTC > confDolar) {
+            estrategia += 'Bitcoin pode oferecer proteção contra desvalorização do Dólar. Mantenha Ouro como seguro adicional.';
+        } else {
+            estrategia += 'Dólar mantém força. Considere uma alocação defensiva com Ouro como proteção contra inflação.';
+        }
+        document.getElementById('estrategia').textContent = estrategia;
+
+        document.getElementById('resultados').style.display = 'block';
+        atualizarGrafico(corrBTCDolar, corrOuroDolar, corrBTCOuro);
+        document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function atualizarGrafico(btcDolar, ouroDolar, btcOuro) {
+        const ctx = document.getElementById('rcaeChart').getContext('2d');
+        
+        if (rcaeChart) {
+            rcaeChart.destroy();
+        }
+
+        rcaeChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['BTC-Dólar', 'Ouro-Dólar', 'BTC-Ouro'],
+                datasets: [{
+                    label: 'Correlação',
+                    data: [Math.abs(btcDolar), Math.abs(ouroDolar), Math.abs(btcOuro)],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#667eea',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 1
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

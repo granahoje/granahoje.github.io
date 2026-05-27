@@ -14986,4 +14986,40 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://granahoje.github.io/ru/terms-of-service.html" />
     <xhtml:link rel="alternate" hreflang="zh" href="https://granahoje.github.io/zh/terms-of-service.html" />
   </url>
+  <url>
+    <loc>https://granahoje.github.io/ferramentas/simulador-lastro-sobrevivencia.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/ferramentas/simulador-lastro-sobrevivencia.html" />
+  </url>
+  <url>
+    <loc>https://granahoje.github.io/artigos/simulador-lastro-sobrevivencia.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/artigos/simulador-lastro-sobrevivencia.html" />
+  </url>
+  <url>
+    <loc>https://granahoje.github.io/ferramentas/calculadora-arbitragem-luxo.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/ferramentas/calculadora-arbitragem-luxo.html" />
+  </url>
+  <url>
+    <loc>https://granahoje.github.io/artigos/calculadora-arbitragem-luxo.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/artigos/calculadora-arbitragem-luxo.html" />
+  </url>
+  <url>
+    <loc>https://granahoje.github.io/ferramentas/rastreador-correlacao-ativos-extremos.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/ferramentas/rastreador-correlacao-ativos-extremos.html" />
+  </url>
+  <url>
+    <loc>https://granahoje.github.io/artigos/rastreador-correlacao-ativos-extremos.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-br" href="https://granahoje.github.io/artigos/rastreador-correlacao-ativos-extremos.html" />
+  </url>
 </urlset>

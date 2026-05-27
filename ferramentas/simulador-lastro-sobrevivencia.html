@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4896859041377751" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-706NN8PEE7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-706NN8PEE7");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Lastro de Sobrevivência (SLS) - Grana Hoje</title>
+    <meta name="description" content="Compare o poder de compra de Bitcoin, Ouro e Diamante em cenários de colapso do Dólar. Ferramenta inédita para proteção patrimonial extrema.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/ferramentas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="canonical" href="https://granahoje.github.io/ferramentas/simulador-lastro-sobrevivencia.html">
+    <meta property="og:title" content="Simulador de Lastro de Sobrevivência (SLS)">
+    <meta property="og:description" content="Descubra qual ativo oferece melhor proteção em cenários de volatilidade extrema do Dólar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://granahoje.github.io/ferramentas/simulador-lastro-sobrevivencia.html">
+
+    <style>
+        .calculator-container {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(45, 52, 54, 0.3);
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .input-group input, .input-group select {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            grid-column: 1 / -1;
+            padding: 14px 30px;
+            background: #ffd700;
+            color: #2d3436;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        .results-container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd700;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2d3436;
+            margin: 10px 0;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 30px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-table th {
+            background: #2d3436;
+            color: #ffd700;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .info-card {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .affiliate-cta {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(34, 211, 189, 0.1);
+            border-radius: 15px;
+            border: 1px solid #22d3bd;
+            text-align: center;
+        }
+
+        .affiliate-cta a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #22d3bd;
+            color: #09111f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .affiliate-cta a:hover {
+            background: #1fb5a0;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">GRANA HOJE</a></div>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/ferramentas.html">Ferramentas</a>
+        <a href="/about.html">Sobre</a>
+    </nav>
+</header>
+
+<main class="container">
+    <header class="page-header">
+        <h1 class="page-title">Simulador de Lastro de Sobrevivência (SLS)</h1>
+        <p class="page-subtitle">Compare o poder de compra de Bitcoin, Ouro e Diamante em cenários de volatilidade extrema do Dólar.</p>
+    </header>
+
+    <div class="calculator-container">
+        <div class="calculator-grid">
+            <div class="input-group">
+                <label for="investimentoInicial">💰 Investimento Inicial (R$)</label>
+                <input type="number" id="investimentoInicial" value="100000" min="0" step="1000">
+            </div>
+            <div class="input-group">
+                <label for="cenarioVolatilidade">📊 Cenário de Volatilidade do Dólar</label>
+                <select id="cenarioVolatilidade">
+                    <option value="1">Estável (0-5% de desvalorização)</option>
+                    <option value="2">Moderado (5-15% de desvalorização)</option>
+                    <option value="3">Severo (15-30% de desvalorização)</option>
+                    <option value="4">Crítico (30%+ de desvalorização)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="periodoAnos">⏳ Período de Análise (anos)</label>
+                <input type="number" id="periodoAnos" value="5" min="1" max="20" step="1">
+            </div>
+            <div class="input-group">
+                <label for="aversaoRisco">⚡ Seu Perfil de Risco</label>
+                <select id="aversaoRisco">
+                    <option value="conservador">Conservador (Prioriza Segurança)</option>
+                    <option value="moderado">Moderado (Equilíbrio)</option>
+                    <option value="agressivo">Agressivo (Prioriza Retorno)</option>
+                </select>
+            </div>
+            <button id="calcularSLS" class="btn-primary">🚀 Simular Lastro de Sobrevivência</button>
+        </div>
+
+        <div class="results-container" id="resultados" style="display: none;">
+            <h2>📈 Análise de Lastro de Sobrevivência</h2>
+            
+            <div class="result-card">
+                <p><strong>Investimento Inicial:</strong> R$ <span id="resultInvestimento">0.00</span></p>
+                <p><strong>Cenário:</strong> <span id="resultCenario"></span></p>
+                <p><strong>Período:</strong> <span id="resultPeriodo"></span> anos</p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Ativo</th>
+                        <th>Valor Projetado</th>
+                        <th>Ganho/Perda</th>
+                        <th>Poder de Compra em Colapso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🪙 Bitcoin</strong></td>
+                        <td>R$ <span id="valBTC">0.00</span></td>
+                        <td><span id="ganBTC">0.00</span>%</td>
+                        <td><span id="poderBTC">0.00</span>%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏆 Ouro</strong></td>
+                        <td>R$ <span id="valOuro">0.00</span></td>
+                        <td><span id="ganOuro">0.00</span>%</td>
+                        <td><span id="poderOuro">0.00</span>%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💎 Diamante</strong></td>
+                        <td>R$ <span id="valDiamante">0.00</span></td>
+                        <td><span id="ganDiamante">0.00</span>%</td>
+                        <td><span id="poderDiamante">0.00</span>%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="chart-container">
+                <canvas id="slsChart"></canvas>
+            </div>
+
+            <div class="result-card" style="border-left-color: #4caf50; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                <p><strong>💡 Recomendação Personalizada:</strong></p>
+                <p id="recomendacao" style="margin-top: 10px; font-size: 1rem; color: #1b5e20;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h3>💡 O que é o Lastro de Sobrevivência?</h3>
+        <p>É uma métrica que mede o poder de compra de um ativo em cenários de colapso ou desvalorização extrema da moeda fiduciária (Dólar/Real). O SLS compara Bitcoin, Ouro e Diamante para ajudá-lo a escolher o melhor "seguro" contra crises econômicas.</p>
+    </div>
+
+    <div class="affiliate-cta">
+        <p>💡 Dica do Grana Hoje:</p>
+        <p>Para proteger seu patrimônio com estratégias avançadas de investimento e crédito, conheça nossos parceiros:</p>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount" target="_blank" rel="nofollow">Casa Trade →</a>
+        <a href="https://apretailer.com.br/click/6a0bab802bfa8139414ad4b6/185636/358980/subaccount" target="_blank" rel="nofollow">Bom pra Crédito →</a>
+    </div>
+</main>
+
+<footer class="standard-footer"></footer>
+
+<script>
+    let slsChart = null;
+
+    document.getElementById('calcularSLS').addEventListener('click', function() {
+        const investimento = parseFloat(document.getElementById('investimentoInicial').value);
+        const cenario = parseInt(document.getElementById('cenarioVolatilidade').value);
+        const periodo = parseInt(document.getElementById('periodoAnos').value);
+        const risco = document.getElementById('aversaoRisco').value;
+
+        if (isNaN(investimento) || investimento <= 0) {
+            alert('Por favor, insira um investimento válido.');
+            return;
+        }
+
+        // Taxas de apreciação por cenário (anualizadas)
+        const taxasBTC = [0.08, 0.15, 0.25, 0.35];
+        const taxasOuro = [0.04, 0.08, 0.12, 0.18];
+        const taxasDiamante = [0.03, 0.06, 0.10, 0.15];
+
+        const taxaBTC = taxasBTC[cenario - 1];
+        const taxaOuro = taxasOuro[cenario - 1];
+        const taxaDiamante = taxasDiamante[cenario - 1];
+
+        // Cálculo com juros compostos
+        const valBTC = investimento * Math.pow(1 + taxaBTC, periodo);
+        const valOuro = investimento * Math.pow(1 + taxaOuro, periodo);
+        const valDiamante = investimento * Math.pow(1 + taxaDiamante, periodo);
+
+        // Poder de compra em colapso (quanto mantém de valor)
+        const poderBTC = 85 + (cenario * 5);
+        const poderOuro = 90 + (cenario * 3);
+        const poderDiamante = 88 + (cenario * 4);
+
+        // Atualizar tabela
+        document.getElementById('resultInvestimento').textContent = investimento.toFixed(2);
+        document.getElementById('resultCenario').textContent = document.getElementById('cenarioVolatilidade').options[cenario - 1].text;
+        document.getElementById('resultPeriodo').textContent = periodo;
+
+        document.getElementById('valBTC').textContent = valBTC.toFixed(2);
+        document.getElementById('ganBTC').textContent = (((valBTC - investimento) / investimento) * 100).toFixed(1);
+        document.getElementById('poderBTC').textContent = poderBTC.toFixed(1);
+
+        document.getElementById('valOuro').textContent = valOuro.toFixed(2);
+        document.getElementById('ganOuro').textContent = (((valOuro - investimento) / investimento) * 100).toFixed(1);
+        document.getElementById('poderOuro').textContent = poderOuro.toFixed(1);
+
+        document.getElementById('valDiamante').textContent = valDiamante.toFixed(2);
+        document.getElementById('ganDiamante').textContent = (((valDiamante - investimento) / investimento) * 100).toFixed(1);
+        document.getElementById('poderDiamante').textContent = poderDiamante.toFixed(1);
+
+        // Recomendação personalizada
+        let recomendacao = '';
+        if (risco === 'conservador') {
+            recomendacao = '🛡️ Seu perfil conservador se beneficia de uma alocação de 60% Ouro, 30% Diamante e 10% Bitcoin. Ouro oferece estabilidade histórica.';
+        } else if (risco === 'moderado') {
+            recomendacao = '⚖️ Para equilíbrio, considere 40% Bitcoin, 40% Ouro e 20% Diamante. Essa combinação oferece crescimento com proteção.';
+        } else {
+            recomendacao = '🚀 Seu perfil agressivo pode alocar 50% Bitcoin, 35% Ouro e 15% Diamante. Bitcoin oferece maior potencial de retorno em cenários de crise.';
+        }
+        document.getElementById('recomendacao').textContent = recomendacao;
+
+        // Mostrar resultados
+        document.getElementById('resultados').style.display = 'block';
+
+        // Atualizar gráfico
+        atualizarGrafico(valBTC, valOuro, valDiamante);
+
+        document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    function atualizarGrafico(btc, ouro, diamante) {
+        const ctx = document.getElementById('slsChart').getContext('2d');
+        
+        if (slsChart) {
+            slsChart.destroy();
+        }
+
+        slsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Bitcoin', 'Ouro', 'Diamante'],
+                datasets: [{
+                    label: 'Valor Projetado (R$)',
+                    data: [btc, ouro, diamante],
+                    backgroundColor: ['#f7931a', '#ffd700', '#e91e63'],
+                    borderColor: ['#f7931a', '#ffd700', '#e91e63'],
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
