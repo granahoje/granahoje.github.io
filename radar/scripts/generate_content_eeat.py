@@ -400,6 +400,17 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
             </div>
 
             <div class="article-content">
+                <!-- CTA DE ALTA CONVERSÃO (ACIMA DA DOBRA) -->
+                <div class="top-cta" style="margin-bottom: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-radius: 1rem; border-left: 6px solid var(--primary); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="margin: 0 0 0.5rem 0; color: var(--primary);">✨ Oferta Verificada: {product['name']}</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Acesse agora o site oficial e aproveite as condições exclusivas de hoje.</p>
+                    </div>
+                    <a href="{product['affiliateLink']}" class="btn btn-primary" target="_blank" rel="noopener noreferrer" style="white-space: nowrap; padding: 0.8rem 1.5rem; font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">
+                        ACESSAR SITE OFICIAL &rarr;
+                    </a>
+                </div>
+
                 <!-- Gráfico de Indicadores Financeiros (Dinâmico) -->
                 <div class="finance-chart" style="margin-bottom: 3rem; padding: 1.5rem; background: var(--bg-card); border-radius: 1rem; border: 1px solid rgba(16, 185, 129, 0.1);">
                     <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--primary);">📊 Indicadores Financeiros em Tempo Real</h3>

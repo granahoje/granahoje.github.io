@@ -1,7 +1,15 @@
 {
-  "timestamp": "2026-05-28T13:10:48.641826",
+  "timestamp": "2026-05-28T13:12:41.701720",
   "feeds": {
     "infomoney": [
+      {
+        "titulo": "Paciente com suspeita de Ebola é isolado na Áustria; caso gera alerta na Europa",
+        "link": "https://www.infomoney.com.br/saude/paciente-com-suspeita-de-ebola-e-isolado-na-austria-caso-gera-alerta-na-europa/",
+        "data": "Thu, 28 May 2026 13:10:52 +0000",
+        "descricao": "<p><img width=\"300\" height=\"218\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/05/cdc-7CQFCHoFL-o-unsplash.jpg?fit=300%2C218&amp;quality=70&amp;strip=all\" class=\"attachment-medium size-med",
+        "fonte": "infomoney",
+        "categoria": "geral"
+      },
       {
         "titulo": "Penúltimo dia para declarar o IR 2026: 6,8 milhões ainda não entregaram a declaração",
         "link": "https://www.infomoney.com.br/minhas-financas/penultimo-dia-para-entregar-a-declaracao-do-imposto-de-renda-2026-68-milhoes-ainda-nao-entregaram/",
@@ -73,14 +81,6 @@
         "descricao": "<p><img width=\"300\" height=\"186\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/03/Ibovespa-ao-vivo-bolsa-de-valores-29.png?fit=300%2C186&amp;quality=70&amp;strip=all\" class=\"attachment-med",
         "fonte": "infomoney",
         "categoria": "bolsa"
-      },
-      {
-        "titulo": "Forças Armadas israelenses afirmam ter realizado ataque em Beirute",
-        "link": "https://www.infomoney.com.br/mundo/forcas-armadas-israelenses-afirmam-ter-realizado-ataque-em-beirute/",
-        "data": "Thu, 28 May 2026 12:33:00 +0000",
-        "descricao": "<p><img width=\"300\" height=\"200\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/04/2026-04-10T162850Z_75777263_RC29MKAOV2LT_RTRMADP_3_IRAN-CRISIS-LEBANON-ISRAEL-DISPLACEMENT.jpg?fit=300%2C2",
-        "fonte": "infomoney",
-        "categoria": "geral"
       }
     ],
     "exame": [
