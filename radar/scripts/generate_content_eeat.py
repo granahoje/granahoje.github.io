@@ -215,10 +215,8 @@ Não hesite em explorar todas as opções antes de tomar sua decisão final, mas
         ]
         title = random.choice(title_variations)
         
-        # Montar artigo com foco em EEAT
-        article = f"""# {title}
-
-**Última atualização**: {datetime.now().strftime('%d de %B de %Y')}
+        # Montar artigo com foco em EEAT (Removido o # {title} para evitar duplicação no HTML)
+        article = f"""**Última atualização**: {datetime.now().strftime('%d de %B de %Y')}
 
 ## Introdução
 
@@ -447,7 +445,8 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
                 if in_list:
                     html_lines.append('</ul>')
                     in_list = False
-                html_lines.append(f'<h1>{line[2:]}</h1>')
+                # Ignorar H1 no corpo do artigo para evitar duplicação com o H1 do header da página
+                continue
             
             # Listas
             elif line.startswith('- ') or line.startswith('✓ ') or line.startswith('⚠ ') or line.startswith('* '):
