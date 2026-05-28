@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T12:49:51.810067",
+  "timestamp": "2026-05-28T12:52:08.026962",
   "feeds": {
     "infomoney": [
       {
@@ -85,6 +85,30 @@
     ],
     "exame": [
       {
+        "titulo": "Como ficou o Grupo C na classificação da Libertadores",
+        "link": "https://exame.com/esporte/como-ficou-o-grupo-c-na-classificacao-da-libertadores/",
+        "data": "2026-05-28T09:50:55",
+        "descricao": "\n                             Argentino Independiente Rivadavia repetiu o desempenho do Flamengo\n \n                        ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
+      {
+        "titulo": "CBF já conhecia lesão de Neymar e corre contra o tempo para estreia na Copa",
+        "link": "https://exame.com/esporte/cbf-ja-conhecia-lesao-de-neymar-e-corre-contra-o-tempo-para-estreia-na-copa/",
+        "data": "2026-05-28T09:49:58",
+        "descricao": "\n                             Plano da seleção prevê recuperação gradual do atacante, enquanto comissão avalia risco de corte antes do Mundial\n \n                        ",
+        "fonte": "exame",
+        "categoria": "geral"
+      },
+      {
+        "titulo": "Investidor que previu crise de 2008 está apostando contra a Nvidia: os 3 alertas de Michael Burry",
+        "link": "https://exame.com/inteligencia-artificial/investidor-que-previu-crise-de-2008-esta-apostando-contra-a-nvidia-os-3-alertas-de-michael-burry/",
+        "data": "2026-05-28T09:47:03",
+        "descricao": "\n                             Nesta semana, com a ação em máxima histórica e o mercado em euforia, Michael Burry dobrou a aposta com dois posts detalhados que foram amplamente reproduzidos pela impren",
+        "fonte": "exame",
+        "categoria": "geral"
+      },
+      {
         "titulo": "O erro da Ferrari elétrica é mais comum do que parece",
         "link": "https://exame.com/marketing/o-erro-da-ferrari-eletrica-e-mais-comum-do-que-parece/",
         "data": "2026-05-28T09:26:02",
@@ -139,30 +163,6 @@
         "descricao": "\n                             Número 1 do mundo enfrenta a francesa Elsa Jacquemot nesta quinta-feira, 28, em busca de vaga na terceira rodada do Grand Slam de Paris\n \n                        ",
         "fonte": "exame",
         "categoria": "geral"
-      },
-      {
-        "titulo": "Como ficou o Grupo A na classificação da Libertadores",
-        "link": "https://exame.com/esporte/como-ficou-o-grupo-a-na-classificacao-da-libertadores/",
-        "data": "2026-05-28T08:54:00",
-        "descricao": "\n                             Flamengo terminou a classificação para as oitavas de final em primeiro da chave \n \n                        ",
-        "fonte": "exame",
-        "categoria": "bolsa"
-      },
-      {
-        "titulo": "Irã pede à Fifa vistos múltiplos para jogadores durante Copa do Mundo",
-        "link": "https://exame.com/mundo/ira-pede-a-fifa-vistos-multiplos-para-jogadores-durante-copa-do-mundo/",
-        "data": "2026-05-28T08:43:30",
-        "descricao": "\n                             Seleção terá jogos nos EUA, mas se prepara no México após mudanças logísticas aprovadas pela Fifa\n \n                        ",
-        "fonte": "exame",
-        "categoria": "geral"
-      },
-      {
-        "titulo": "MPSP faz operação contra esquema bilionário do PCC no setor de combustíveis",
-        "link": "https://exame.com/brasil/mpsp-faz-operacao-contra-esquema-bilionario-do-pcc-no-setor-de-combustiveis/",
-        "data": "2026-05-28T08:17:29",
-        "descricao": "\n                             Ação apura uso de fintechs e fundos de investimento em esquema de sonegação e lavagem de dinheiro\n \n                        ",
-        "fonte": "exame",
-        "categoria": "bolsa"
       }
     ],
     "valor": []
