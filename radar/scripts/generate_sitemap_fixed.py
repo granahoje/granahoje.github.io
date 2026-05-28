@@ -79,6 +79,26 @@ def generate_sitemap():
   </url>
 '''
     
+    # URLs de Duelos (Comparações)
+    by_cat = {}
+    for p in products:
+        cat = p['category']
+        if cat not in by_cat: by_cat[cat] = []
+        by_cat[cat].append(p)
+        
+    for cat, items in by_cat.items():
+        if len(items) >= 2:
+            p1, p2 = items[0], items[1]
+            url = urljoin(base_url, f"/comparacao/{p1['id']}-vs-{p2['id']}/")
+            lastmod = datetime.now().strftime('%Y-%m-%d')
+            xml += f'''  <url>
+    <loc>{url}</loc>
+    <lastmod>{lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+'''
+    
     # Fechar XML
     xml += '</urlset>'
     

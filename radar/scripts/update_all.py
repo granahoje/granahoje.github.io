@@ -19,6 +19,7 @@ class RadarOrchestrator:
             ('calculate_scores.py', 'Scores'),
             ('generate_content_eeat.py', 'Conteúdo EEAT 1200+ palavras'),
             ('generate_posts_index.py', 'Índice de Postagens'),
+            ('generate_comparisons.py', 'Duelos X vs Y'),
             ('generate_rss_fixed.py', 'RSS Feed'),
             ('generate_sitemap_fixed.py', 'Sitemap'),
         ]

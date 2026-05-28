@@ -1,7 +1,15 @@
 {
-  "timestamp": "2026-05-28T12:58:23.423408",
+  "timestamp": "2026-05-28T13:09:44.343084",
   "feeds": {
     "infomoney": [
+      {
+        "titulo": "Penúltimo dia para declarar o IR 2026: 6,8 milhões ainda não entregaram a declaração",
+        "link": "https://www.infomoney.com.br/minhas-financas/penultimo-dia-para-entregar-a-declaracao-do-imposto-de-renda-2026-68-milhoes-ainda-nao-entregaram/",
+        "data": "Thu, 28 May 2026 13:09:14 +0000",
+        "descricao": "<p><img width=\"300\" height=\"223\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/02/Imposto-de-Renda.jpg?fit=300%2C223&amp;quality=70&amp;strip=all\" class=\"attachment-medium size-medium wp-p",
+        "fonte": "infomoney",
+        "categoria": "bolsa"
+      },
       {
         "titulo": "Magazine Luiza (MGLU3) ou Casas Bahia (BHIA3): qual ação está mais pressionada?",
         "link": "https://www.infomoney.com.br/mercados/magazine-luiza-mglu3-ou-casas-bahia-bhia3-qual-acao-esta-mais-pressionada/",
@@ -73,17 +81,33 @@
         "descricao": "<p><img width=\"300\" height=\"200\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/04/2026-04-10T162850Z_75777263_RC29MKAOV2LT_RTRMADP_3_IRAN-CRISIS-LEBANON-ISRAEL-DISPLACEMENT.jpg?fit=300%2C2",
         "fonte": "infomoney",
         "categoria": "geral"
-      },
-      {
-        "titulo": "Inflação nos EUA: núcleo do PCE sobe 0,2% em abril, levemente abaixo do esperado",
-        "link": "https://www.infomoney.com.br/economia/inflacao-nos-eua-nucleo-do-pce-sobe-02-em-abril-levemente-abaixo-do-esperado/",
-        "data": "Thu, 28 May 2026 12:31:11 +0000",
-        "descricao": "<p><img width=\"300\" height=\"200\" src=\"https://www.infomoney.com.br/wp-content/uploads/2025/06/2025-06-17T125122Z_1_LYNXMPEL5G0MW_RTROPTP_4_MACRO-EUA-VAREJO.jpg?fit=300%2C200&amp;quality=70&amp;strip=a",
-        "fonte": "infomoney",
-        "categoria": "bolsa"
       }
     ],
     "exame": [
+      {
+        "titulo": "Como ficou o Grupo E na classificação da Libertadores",
+        "link": "https://exame.com/esporte/como-ficou-o-grupo-e-na-classificacao-da-libertadores/",
+        "data": "2026-05-28T10:02:48",
+        "descricao": "\n                             Corinthians liderou o grupo com 11 pontos\n \n                        ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
+      {
+        "titulo": "Dia do Hambúrguer: redação da EXAME elenca os favoritos de São Paulo",
+        "link": "https://exame.com/casual/dia-do-hamburguer-redacao-da-exame-elenca-os-favoritos-de-sao-paulo/",
+        "data": "2026-05-28T10:01:25",
+        "descricao": "\n                             Para celebrar a data, nossos jornalistas e repórteres abriram seus cadernos de cabeceira gastronômica e selecionaram as lanchonetes e blends que realmente valem a visita ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
+      {
+        "titulo": "Por que a alta de 84% nos conflitos societários ameaça empresas brasileiras",
+        "link": "https://exame.com/bussola/conflitos-societarios-crescem-84-e-empresas-familiares-podem-pagar-caro/",
+        "data": "2026-05-28T10:00:25",
+        "descricao": "\n                             Levantamento do CNJ mostra alta em disputas judiciais; especialistas apontam a governança preventiva como caminho para reduzir custos e perdas\n \n                        ",
+        "fonte": "exame",
+        "categoria": "geral"
+      },
       {
         "titulo": "Ossos achados na Etiópia podem revelar cremação humana mais antiga",
         "link": "https://exame.com/ciencia/ossos-achados-na-etiopia-podem-revelar-cremacao-humana-mais-antiga/",
@@ -137,30 +161,6 @@
         "link": "https://exame.com/esporte/muito-alem-do-amistoso-como-o-road-to-26-virou-peca-da-preparacao-para-a-copa-de-2026/",
         "data": "2026-05-28T09:20:27",
         "descricao": "\n                             Criado a partir da evolução da Florida Cup, projeto combina preparação de seleções, grandes eventos e retorno econômico para cidades americanas\n \n                        ",
-        "fonte": "exame",
-        "categoria": "bolsa"
-      },
-      {
-        "titulo": "Taxa de desemprego sobe para 5,8% em abril, diz IBGE",
-        "link": "https://exame.com/economia/taxa-de-desemprego-sobe-para-58-em-abril-diz-ibge/",
-        "data": "2026-05-28T09:19:38",
-        "descricao": "\n                             Dados da PNAD mostram alta trimestral do desemprego e queda na comparação anual\n \n                        ",
-        "fonte": "exame",
-        "categoria": "taxas"
-      },
-      {
-        "titulo": "Queda do petróleo: mercado aposta em alívio, mas analistas veem risco subestimado",
-        "link": "https://exame.com/invest/mercados/queda-do-petroleo-mercado-aposta-em-alivio-mas-analistas-veem-risco-subestimado/",
-        "data": "2026-05-28T09:14:25",
-        "descricao": "\n                             Analistas da Investec, Hargreaves Lansdown e OCBC alertam que resolução rápida do conflito é improvável\n \n                        ",
-        "fonte": "exame",
-        "categoria": "geral"
-      },
-      {
-        "titulo": "Google Cloud: ‘Open Finance será um dos principais mecanismos de transformação dos bancos’",
-        "link": "https://exame.com/future-of-money/google-cloud-open-finance-sera-um-dos-principais-mecanismos-de-transformacao-dos-bancos/",
-        "data": "2026-05-28T09:00:30",
-        "descricao": "\n                             Executivos do Google Cloud apontam que Open Finance pode ter nova fase com o apoio da Inteligência Artificial\n \n                        ",
         "fonte": "exame",
         "categoria": "bolsa"
       }
