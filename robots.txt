@@ -23,6 +23,7 @@ Disallow: /node_modules/
 
 # Sitemap
 Sitemap: https://granahoje.github.io/sitemap.xml
+Sitemap: https://granahoje.github.io/radar/sitemap.xml
 
 # Crawl-delay removido para acelerar indexação do Google
 # Prefer-non-www e Request-rate removidos (não são padrão do robots.txt)
