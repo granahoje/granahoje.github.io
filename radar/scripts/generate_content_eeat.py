@@ -501,15 +501,17 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(article)
             
-            # Adicionar link de afiliado no meio do conteúdo (após a seção de vantagens)
-            affiliate_cta = f'\n\n<div class="inline-cta" style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-card); border-left: 5px solid var(--primary); border-radius: 0.5rem;">\n<h4 style="color: var(--primary); margin-bottom: 0.5rem;">🔥 Destaque: {product["name"]}</h4>\n<p style="margin-bottom: 1rem;">{product["description"]}</p>\n<a href="{product["affiliateLink"]}" target="_blank" rel="noopener noreferrer" style="font-weight: bold; text-decoration: underline;">Clique aqui para acessar o site oficial e conferir os detalhes &rarr;</a>\n</div>\n\n'
+            # Adicionar link de afiliado no meio do conteúdo (após a seção "O Que é")
+            affiliate_cta = f'\n\n<div class="inline-cta" style="margin: 2rem 0; padding: 1.5rem; background: rgba(16, 185, 129, 0.05); border-left: 5px solid var(--primary); border-radius: 0.5rem; border: 1px solid rgba(16, 185, 129, 0.1);">\n<h4 style="color: var(--primary); margin: 0 0 0.5rem 0;">🔥 Destaque: {product["name"]}</h4>\n<p style="margin: 0 0 1rem 0; font-size: 0.95rem;">{product["description"]}</p>\n<a href="{product["affiliateLink"]}" target="_blank" rel="noopener noreferrer" style="display: inline-block; font-weight: bold; color: var(--primary); text-decoration: none; border-bottom: 2px solid var(--primary);">Clique aqui para acessar o site oficial e conferir os detalhes &rarr;</a>\n</div>\n\n'
             
-            # Tentar inserir após a seção de vantagens
-            if "## Vantagens" in article:
-                parts = article.split("## Vantagens", 1)
-                article_with_cta = parts[0] + "## Vantagens" + affiliate_cta + parts[1]
+            # Inserir após a descrição do produto para melhor fluxo de leitura
+            search_term = f"## O Que é {product['name']}?"
+            if search_term in article:
+                parts = article.split(search_term, 1)
+                # Tentar inserir após o primeiro parágrafo da descrição
+                article_with_cta = parts[0] + search_term + parts[1].replace("\n\n", "\n\n" + affiliate_cta, 1)
             else:
-                article_with_cta = article
+                article_with_cta = article + affiliate_cta
 
             # Gerar página HTML estática
             html = self.generate_html_page(product, title, article_with_cta)

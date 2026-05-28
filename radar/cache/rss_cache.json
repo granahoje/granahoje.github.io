@@ -1,7 +1,15 @@
 {
-  "timestamp": "2026-05-28T12:56:52.801378",
+  "timestamp": "2026-05-28T12:58:23.423408",
   "feeds": {
     "infomoney": [
+      {
+        "titulo": "Magazine Luiza (MGLU3) ou Casas Bahia (BHIA3): qual ação está mais pressionada?",
+        "link": "https://www.infomoney.com.br/mercados/magazine-luiza-mglu3-ou-casas-bahia-bhia3-qual-acao-esta-mais-pressionada/",
+        "data": "Thu, 28 May 2026 12:58:08 +0000",
+        "descricao": "<p><img width=\"300\" height=\"169\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/05/MAGALU-MGLU3-X-CASAS-BAHIA-BHIA3.jpg?fit=300%2C169&amp;quality=70&amp;strip=all\" class=\"attachment-medium ",
+        "fonte": "infomoney",
+        "categoria": "bolsa"
+      },
       {
         "titulo": "Preços ao produtor no Brasil têm em abril maior alta em 4 anos com Oriente Médio",
         "link": "https://www.infomoney.com.br/economia/precos-ao-produtor-no-brasil-tem-em-abril-maior-alta-em-4-anos-com-oriente-medio/",
@@ -73,17 +81,25 @@
         "descricao": "<p><img width=\"300\" height=\"200\" src=\"https://www.infomoney.com.br/wp-content/uploads/2025/06/2025-06-17T125122Z_1_LYNXMPEL5G0MW_RTROPTP_4_MACRO-EUA-VAREJO.jpg?fit=300%2C200&amp;quality=70&amp;strip=a",
         "fonte": "infomoney",
         "categoria": "bolsa"
-      },
-      {
-        "titulo": "Vamos elege Christian Hahn como novo presidente-executivo",
-        "link": "https://www.infomoney.com.br/mercados/vamos-elege-christian-hahn-como-novo-presidente-executivo/",
-        "data": "Thu, 28 May 2026 12:28:54 +0000",
-        "descricao": "<p><img width=\"300\" height=\"171\" src=\"https://www.infomoney.com.br/wp-content/uploads/2021/01/Vamos-Seminovos.jpg?fit=300%2C171&amp;quality=70&amp;strip=all\" class=\"attachment-medium size-medium wp-po",
-        "fonte": "infomoney",
-        "categoria": "geral"
       }
     ],
     "exame": [
+      {
+        "titulo": "Ossos achados na Etiópia podem revelar cremação humana mais antiga",
+        "link": "https://exame.com/ciencia/ossos-achados-na-etiopia-podem-revelar-cremacao-humana-mais-antiga/",
+        "data": "2026-05-28T09:56:49",
+        "descricao": "\n                             Pesquisadores encontraram ossos carbonizados no Vale do Rift de Afar, região ligada aos primeiros Homo sapiens\n \n                        ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
+      {
+        "titulo": "Como ficou o Grupo D na classificação da Libertadores",
+        "link": "https://exame.com/esporte/como-ficou-o-grupo-d-na-classificacao-da-libertadores/",
+        "data": "2026-05-28T09:56:20",
+        "descricao": "\n                             Universidad Católica terminou em primeiro com 10 pontos em cinco jogos\n \n                        ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
       {
         "titulo": "Como ficou o Grupo C na classificação da Libertadores",
         "link": "https://exame.com/esporte/como-ficou-o-grupo-c-na-classificacao-da-libertadores/",
@@ -147,22 +163,6 @@
         "descricao": "\n                             Executivos do Google Cloud apontam que Open Finance pode ter nova fase com o apoio da Inteligência Artificial\n \n                        ",
         "fonte": "exame",
         "categoria": "bolsa"
-      },
-      {
-        "titulo": "Como ficou o Grupo B na classificação da Libertadores",
-        "link": "https://exame.com/esporte/como-ficou-o-grupo-b-na-classificacao-da-libertadores/",
-        "data": "2026-05-28T08:57:15",
-        "descricao": "\n                             Coquimbo Unido garantiu a primeira colocação com 10 pontos\n \n                        ",
-        "fonte": "exame",
-        "categoria": "bolsa"
-      },
-      {
-        "titulo": "Sabalenka x Jacquemot: veja horário e onde assistir ao jogo em Roland Garros",
-        "link": "https://exame.com/esporte/sabalenka-x-jacquemot-veja-horario-e-onde-assistir-ao-jogo-em-roland-garros/",
-        "data": "2026-05-28T08:56:06",
-        "descricao": "\n                             Número 1 do mundo enfrenta a francesa Elsa Jacquemot nesta quinta-feira, 28, em busca de vaga na terceira rodada do Grand Slam de Paris\n \n                        ",
-        "fonte": "exame",
-        "categoria": "geral"
       }
     ],
     "valor": []
