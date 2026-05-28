@@ -29,19 +29,27 @@ class RadarOrchestrator:
         print(f"▶️  {description}")
         print(f"{'='*60}")
         
-        try:
-            script_path = os.path.join('radar/scripts', script_name)
-            result = subprocess.run([sys.executable, script_path], capture_output=False)
+        max_retries = 3
+        for attempt in range(1, max_retries + 1):
+            try:
+                print(f"   (Tentativa {attempt}/{max_retries})")
+                script_path = os.path.join('radar/scripts', script_name)
+                result = subprocess.run([sys.executable, script_path], capture_output=False)
+                
+                if result.returncode == 0:
+                    print(f"✅ {description} concluído")
+                    return True
+                else:
+                    print(f"⚠️ Erro em {description} (Retorno: {result.returncode})")
+            except Exception as e:
+                print(f"⚠️ Erro ao executar {description}: {e}")
             
-            if result.returncode == 0:
-                print(f"✅ {description} concluído")
-                return True
-            else:
-                print(f"❌ Erro em {description}")
-                return False
-        except Exception as e:
-            print(f"❌ Erro ao executar {description}: {e}")
-            return False
+            if attempt < max_retries:
+                import time
+                time.sleep(5) # Esperar antes de tentar novamente
+        
+        print(f"❌ {description} falhou após {max_retries} tentativas. Continuando com o próximo...")
+        return False
     
     def run_all(self):
         """Executar todos os scripts"""
