@@ -17,9 +17,10 @@ class RadarOrchestrator:
             ('fetch_currencies.py', 'Moedas'),
             ('fetch_rss.py', 'Notícias'),
             ('calculate_scores.py', 'Scores'),
-            ('generate_content.py', 'Conteúdo 800+ palavras'),
-            ('generate_rss.py', 'RSS Feed'),
-            ('generate_sitemap.py', 'Sitemap'),
+            ('generate_content_eeat.py', 'Conteúdo EEAT 1200+ palavras'),
+            ('generate_posts_index.py', 'Índice de Postagens'),
+            ('generate_rss_fixed.py', 'RSS Feed'),
+            ('generate_sitemap_fixed.py', 'Sitemap'),
         ]
         
     def run_script(self, script_name, description):

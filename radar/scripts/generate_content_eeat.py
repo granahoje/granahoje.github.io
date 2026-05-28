@@ -346,7 +346,7 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
                 <nav>
                     <a href="/radar/">Catálogo</a>
                     <a href="/radar/comparacao/">Comparar</a>
-                    <a href="/radar/admin/">Admin</a>
+                    <a href="/radar/postagens.html">Postagens</a>
                 </nav>
             </div>
         </div>
@@ -368,10 +368,13 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
                 {self._markdown_to_html(article)}
             </div>
 
-            <div class="article-cta">
-                <a href="{product['affiliateLink']}" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
-                    Acessar {product['name']}
+            <div class="article-cta" style="margin: 3rem 0; padding: 2rem; background: rgba(16, 185, 129, 0.1); border-radius: 1rem; border: 2px dashed var(--primary); text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🚀 Pronto para começar com {product['name']}?</h3>
+                <p style="margin-bottom: 1.5rem;">Aproveite as condições especiais que encontramos para você através do nosso link oficial.</p>
+                <a href="{product['affiliateLink']}" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer" style="font-size: 1.25rem; padding: 1rem 2.5rem; animation: pulse 2s infinite;">
+                    👉 ACESSAR SITE OFICIAL AGORA
                 </a>
+                <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-tertiary);">* Você será redirecionado para a página oficial do produto em segurança.</p>
             </div>
 
             <div class="article-footer">
@@ -393,7 +396,7 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
                     <ul>
                         <li><a href="/radar/">Catálogo</a></li>
                         <li><a href="/radar/comparacao/">Comparar</a></li>
-                        <li><a href="/radar/admin/">Painel Admin</a></li>
+                        <li><a href="/radar/postagens.html">Postagens</a></li>
                     </ul>
                 </div>
             </div>
@@ -499,8 +502,18 @@ Lembre-se de que a melhor escolha é aquela que se alinha perfeitamente com suas
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(article)
             
+            # Adicionar link de afiliado no meio do conteúdo (após a seção de vantagens)
+            affiliate_cta = f'\n\n<div class="inline-cta" style="margin: 2rem 0; padding: 1.5rem; background: var(--bg-card); border-left: 5px solid var(--primary); border-radius: 0.5rem;">\n<h4 style="color: var(--primary); margin-bottom: 0.5rem;">🔥 Destaque: {product["name"]}</h4>\n<p style="margin-bottom: 1rem;">{product["description"]}</p>\n<a href="{product["affiliateLink"]}" target="_blank" rel="noopener noreferrer" style="font-weight: bold; text-decoration: underline;">Clique aqui para acessar o site oficial e conferir os detalhes &rarr;</a>\n</div>\n\n'
+            
+            # Tentar inserir após a seção de vantagens
+            if "## Vantagens" in article:
+                parts = article.split("## Vantagens", 1)
+                article_with_cta = parts[0] + "## Vantagens" + affiliate_cta + parts[1]
+            else:
+                article_with_cta = article
+
             # Gerar página HTML estática
-            html = self.generate_html_page(product, title, article)
+            html = self.generate_html_page(product, title, article_with_cta)
             html_filepath = os.path.join(self.produto_dir, product['id'], 'index.html')
             os.makedirs(os.path.dirname(html_filepath), exist_ok=True)
             

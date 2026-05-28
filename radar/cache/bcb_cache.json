@@ -1,11 +1,7 @@
 {
-  "timestamp": "2026-05-27T19:30:02.067927",
+  "timestamp": "2026-05-28T12:49:17.816318",
   "selic": null,
-  "cdi": {
-    "taxa": 0.0534,
-    "data": "26/05/2026",
-    "fonte": "Banco Central"
-  },
+  "cdi": null,
   "inflacao": {
     "taxa": 0.67,
     "data": "01/04/2026",
