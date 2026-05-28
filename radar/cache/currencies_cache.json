@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-05-28T13:12:34.049977",
+  "timestamp": "2026-05-28T13:15:01.309616",
   "dolar": {
     "moeda": "USD",
     "nome": "Dólar Americano",
-    "valor": 5.069,
-    "variacao": -0.076876,
-    "timestamp": "1779973613",
-    "data": "2026-05-28T13:12:37.330949"
+    "valor": 5.0304,
+    "variacao": -0.27951,
+    "timestamp": "1779876089",
+    "data": "2026-05-28T13:15:03.428468"
   },
   "euro": {
     "moeda": "EUR",
     "nome": "Euro",
     "valor": 5.89275,
     "variacao": 0.117776,
-    "timestamp": "1779973768",
-    "data": "2026-05-28T13:12:38.480856"
+    "timestamp": "1779974001",
+    "data": "2026-05-28T13:15:05.512783"
   },
   "bitcoin": {
     "moeda": "BTC",
     "nome": "Bitcoin",
-    "valor": 371280.0,
-    "variacao": -2.76,
-    "timestamp": "1779973581",
-    "data": "2026-05-28T13:12:39.874669"
+    "valor": 370781.0,
+    "variacao": -2.78,
+    "timestamp": "1779973898",
+    "data": "2026-05-28T13:15:07.471973"
   },
   "todas": {}
 }

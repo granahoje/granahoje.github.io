@@ -1,99 +1,99 @@
 {
-  "timestamp": "2026-05-28T13:12:28.016541",
+  "timestamp": "2026-05-28T13:14:54.237911",
   "bitcoin": {
     "nome": "Bitcoin",
     "simbolo": "BTC",
-    "preco": 371401,
+    "preco": 371327,
     "market_cap": 7443408596381,
-    "volume_24h": 218678213948,
-    "variacao_24h": -2.79279,
+    "volume_24h": 218541763093,
+    "variacao_24h": -2.81226,
     "ath": 685780,
     "atl": 149.66,
-    "data": "2026-05-28T13:12:30.131213"
+    "data": "2026-05-28T13:14:56.703183"
   },
   "ethereum": {
     "nome": "Ethereum",
     "simbolo": "ETH",
-    "preco": 10061.2,
+    "preco": 10058.65,
     "market_cap": 1214453691264,
-    "volume_24h": 84765351192,
-    "variacao_24h": -4.21004,
+    "volume_24h": 85079523399,
+    "variacao_24h": -4.23436,
     "ath": 26931,
     "atl": 1.69,
-    "data": "2026-05-28T13:12:32.252335"
+    "data": "2026-05-28T13:14:59.010237"
   },
   "top_10": [
     {
       "nome": "Bitcoin",
       "simbolo": "BTC",
-      "preco": 371399,
+      "preco": 371337,
       "market_cap": 7443408596381,
-      "variacao_24h": -2.71474,
-      "volume_24h": 218677825921,
-      "data": "2026-05-28T13:12:33.817825"
+      "variacao_24h": -2.73108,
+      "volume_24h": 218390010378,
+      "data": "2026-05-28T13:15:01.047032"
     },
     {
       "nome": "Ethereum",
       "simbolo": "ETH",
-      "preco": 10061.45,
+      "preco": 10059.81,
       "market_cap": 1214453691264,
-      "variacao_24h": -4.13012,
-      "volume_24h": 85032807964,
-      "data": "2026-05-28T13:12:33.817841"
+      "variacao_24h": -4.14582,
+      "volume_24h": 85124597095,
+      "data": "2026-05-28T13:15:01.047046"
     },
     {
       "nome": "Tether",
       "simbolo": "USDT",
       "preco": 5.06,
       "market_cap": 959239681644,
-      "variacao_24h": 0.05794,
-      "volume_24h": 355161110816,
-      "data": "2026-05-28T13:12:33.817843"
+      "variacao_24h": 0.05335,
+      "volume_24h": 354942795294,
+      "data": "2026-05-28T13:15:01.047048"
     },
     {
       "nome": "BNB",
       "simbolo": "BNB",
-      "preco": 3202.17,
+      "preco": 3202.59,
       "market_cap": 431569042497,
-      "variacao_24h": -3.19928,
-      "volume_24h": 4205570338,
-      "data": "2026-05-28T13:12:33.817845"
+      "variacao_24h": -3.18654,
+      "volume_24h": 4222685906,
+      "data": "2026-05-28T13:15:01.047050"
     },
     {
       "nome": "XRP",
       "simbolo": "XRP",
       "preco": 6.56,
       "market_cap": 406296412857,
-      "variacao_24h": -2.34485,
-      "volume_24h": 10901240633,
-      "data": "2026-05-28T13:12:33.817847"
+      "variacao_24h": -2.3659,
+      "volume_24h": 10943398343,
+      "data": "2026-05-28T13:15:01.047052"
     },
     {
       "nome": "USDC",
       "simbolo": "USDC",
       "preco": 5.07,
       "market_cap": 385927773068,
-      "variacao_24h": 0.06489,
-      "volume_24h": 80750257578,
-      "data": "2026-05-28T13:12:33.817849"
+      "variacao_24h": 0.05435,
+      "volume_24h": 80593069934,
+      "data": "2026-05-28T13:15:01.047055"
     },
     {
       "nome": "Solana",
       "simbolo": "SOL",
-      "preco": 410.25,
+      "preco": 409.81,
       "market_cap": 237317411501,
-      "variacao_24h": -3.13607,
-      "volume_24h": 16007081900,
-      "data": "2026-05-28T13:12:33.817851"
+      "variacao_24h": -3.23784,
+      "volume_24h": 15945928609,
+      "data": "2026-05-28T13:15:01.047057"
     },
     {
       "nome": "TRON",
       "simbolo": "TRX",
       "preco": 1.77,
       "market_cap": 167563916610,
-      "variacao_24h": -6.44872,
-      "volume_24h": 4662892874,
-      "data": "2026-05-28T13:12:33.817856"
+      "variacao_24h": -6.48779,
+      "volume_24h": 4625243522,
+      "data": "2026-05-28T13:15:01.047061"
     },
     {
       "nome": "Figure Heloc",
@@ -102,16 +102,16 @@
       "market_cap": 95145461657,
       "variacao_24h": 0.92894,
       "volume_24h": 401525208,
-      "data": "2026-05-28T13:12:33.817858"
+      "data": "2026-05-28T13:15:01.047064"
     },
     {
       "nome": "Dogecoin",
       "simbolo": "DOGE",
-      "preco": 0.496404,
+      "preco": 0.495951,
       "market_cap": 76752786962,
-      "variacao_24h": -3.59329,
-      "volume_24h": 4584604423,
-      "data": "2026-05-28T13:12:33.817860"
+      "variacao_24h": -3.6813,
+      "volume_24h": 4551749903,
+      "data": "2026-05-28T13:15:01.047066"
     }
   ]
 }

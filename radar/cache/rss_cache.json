@@ -1,7 +1,15 @@
 {
-  "timestamp": "2026-05-28T13:12:41.701720",
+  "timestamp": "2026-05-28T13:15:09.708708",
   "feeds": {
     "infomoney": [
+      {
+        "titulo": "Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta quinta",
+        "link": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-28052026/",
+        "data": "Thu, 28 May 2026 13:15:03 +0000",
+        "descricao": "<p><img width=\"300\" height=\"200\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/05/Ibovespa-ao-vivo-20-1.jpg?fit=300%2C200&amp;quality=70&amp;strip=all\" class=\"attachment-medium size-medium",
+        "fonte": "infomoney",
+        "categoria": "bolsa"
+      },
       {
         "titulo": "Paciente com suspeita de Ebola é isolado na Áustria; caso gera alerta na Europa",
         "link": "https://www.infomoney.com.br/saude/paciente-com-suspeita-de-ebola-e-isolado-na-austria-caso-gera-alerta-na-europa/",
@@ -73,17 +81,17 @@
         "descricao": "<p><img width=\"300\" height=\"225\" src=\"https://www.infomoney.com.br/wp-content/uploads/2024/10/Eleicoes-dos-EUA-impactam-o-Brasil-e1729603699722.jpg?fit=300%2C225&amp;quality=70&amp;strip=all\" class=\"a",
         "fonte": "infomoney",
         "categoria": "geral"
-      },
-      {
-        "titulo": "Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta quinta",
-        "link": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-28052026/",
-        "data": "Thu, 28 May 2026 12:33:41 +0000",
-        "descricao": "<p><img width=\"300\" height=\"186\" src=\"https://www.infomoney.com.br/wp-content/uploads/2026/03/Ibovespa-ao-vivo-bolsa-de-valores-29.png?fit=300%2C186&amp;quality=70&amp;strip=all\" class=\"attachment-med",
-        "fonte": "infomoney",
-        "categoria": "bolsa"
       }
     ],
     "exame": [
+      {
+        "titulo": "Como ficou o Grupo F na classificação da Libertadores",
+        "link": "https://exame.com/esporte/como-ficou-o-grupo-f-na-classificacao-da-libertadores/",
+        "data": "2026-05-28T10:10:05",
+        "descricao": "\n                             Cerro Porteño terminou na liderança com 10 pontos\n \n                        ",
+        "fonte": "exame",
+        "categoria": "bolsa"
+      },
       {
         "titulo": "Como ficou o Grupo E na classificação da Libertadores",
         "link": "https://exame.com/esporte/como-ficou-o-grupo-e-na-classificacao-da-libertadores/",
@@ -155,14 +163,6 @@
         "descricao": "\n                             Marcas precisam evoluir. Mas, quando tratam elementos centrais da sua identidade como simples variáveis de contexto, correm o risco de destruir parte do valor que levaram",
         "fonte": "exame",
         "categoria": "geral"
-      },
-      {
-        "titulo": "Muito além do amistoso: como o Road to 26 virou peça da preparação para a Copa de 2026",
-        "link": "https://exame.com/esporte/muito-alem-do-amistoso-como-o-road-to-26-virou-peca-da-preparacao-para-a-copa-de-2026/",
-        "data": "2026-05-28T09:20:27",
-        "descricao": "\n                             Criado a partir da evolução da Florida Cup, projeto combina preparação de seleções, grandes eventos e retorno econômico para cidades americanas\n \n                        ",
-        "fonte": "exame",
-        "categoria": "bolsa"
       }
     ],
     "valor": []
