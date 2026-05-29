@@ -156,6 +156,9 @@ def main():
     if os.path.exists("update_index_news.py"):
         print("🏠 Atualizando página inicial...") 
         os.system("python3 update_index_news.py")
+    if os.path.exists("generate_main_sitemap.py"):
+        print("🗺️ Atualizando sitemap...") 
+        os.system("python3 generate_main_sitemap.py")
 
 if __name__ == "__main__":
     main()
