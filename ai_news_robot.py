@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import re
+import random
 from datetime import datetime
 from xml.etree import ElementTree as ET
 from openai import OpenAI
@@ -15,9 +16,42 @@ NEWS_FEEDS = [
     "https://exame.com/feed/"
 ]
 
-# Links de Afiliado (Serão preenchidos quando o usuário enviar)
-AFFILIATE_TOP = "" 
-AFFILIATE_MIDDLE = ""
+# Lista de Afiliados
+AFFILIATES = [
+    {"name": "Picpay-Abertura de Conta PJ", "url": "https://apretailer.com.br/click/6a16869a2bfa81783858cd52/188415/359067/subaccount"},
+    {"name": "Santander", "url": "https://apretailer.com.br/click/6a16869a2bfa8178566a06a2/188413/359067/subaccount"},
+    {"name": "BTG Pactual", "url": "https://apretailer.com.br/click/6a16869a2bfa81793e50f472/188400/359067/subaccount"},
+    {"name": "Pagbank Maquininha", "url": "https://apretailer.com.br/click/6a16869a2bfa81782b6be242/186226/359067/subaccount"},
+    {"name": "Banco BV – Empréstimo com Garantia Veicular", "url": "https://apretailer.com.br/click/6a0bab802bfa817b7f1a79b2/188286/358980/subaccount"},
+    {"name": "Velotax", "url": "https://apretailer.com.br/click/6a0bab802bfa817b783708b2/188130/358980/subaccount"},
+    {"name": "Bybit", "url": "https://apretailer.com.br/click/6a16869a2bfa8178f62a16f2/188136/359067/subaccount"},
+    {"name": "HIPER CASH", "url": "https://apretailer.com.br/click/6a16869a2bfa8178cb6134b2/182687/359067/subaccount"},
+    {"name": "Remessa Online", "url": "https://apretailer.com.br/click/6a16869b2bfa8178cb6134b3/187944/359067/subaccount"},
+    {"name": "Juca - Antecipação de FGTS", "url": "https://apretailer.com.br/click/6a16869a2bfa81789e2c3462/187799/359067/subaccount"},
+    {"name": "Santander PJ - Abertura de conta", "url": "https://apretailer.com.br/click/6a16869b2bfa81789e2c3464/187773/359067/subaccount"},
+    {"name": "Cartão Carrefour", "url": "https://apretailer.com.br/click/6a16869a2bfa8178d8192fa2/188544/359067/subaccount"},
+    {"name": "Cartão Atacadão", "url": "https://apretailer.com.br/click/6a16869b2bfa817868268623/188543/359067/subaccount"},
+    {"name": "Crypto.com", "url": "https://apretailer.com.br/click/6a16869a2bfa8179143c12b2/187745/359067/subaccount"},
+    {"name": "Quita Boletos", "url": "https://apretailer.com.br/click/6a16869a2bfa817908298d82/188352/359067/subaccount"},
+    {"name": "Santander Acordos", "url": "https://apretailer.com.br/click/6a16869a2bfa817868268622/187700/359067/subaccount"},
+    {"name": "Acordo Certo", "url": "https://apretailer.com.br/click/6a16869a2bfa817115280f72/187558/359067/subaccount"},
+    {"name": "CASATRADE", "url": "https://apretailer.com.br/click/6a0bab802bfa817bc269d5c2/186975/358980/subaccount"},
+    {"name": "Credspot - FGTS", "url": "https://apretailer.com.br/click/6a0bab802bfa817bbc03aef2/186580/358980/subaccount"},
+    {"name": "Consigmais - SIAPE", "url": "https://apretailer.com.br/click/6a0bab802bfa817bce432822/186657/358980/subaccount"},
+    {"name": "Olymp Trade FTD Bitcoin", "url": "https://apretailer.com.br/click/6a0bab802bfa817bd42023d4/178147/358980/subaccount"},
+    {"name": "PicPay - Abertura de contas", "url": "https://apretailer.com.br/click/6a0bab802bfa8139b3579842/186179/358980/subaccount"},
+    {"name": "MINUTO SEGUROS", "url": "https://apretailer.com.br/click/6a0bab802bfa8144cc0ad9b2/183524/358980/subaccount"},
+    {"name": "Ourocard", "url": "https://apretailer.com.br/click/6a0bab802bfa81391c4d5ee2/185834/358980/subaccount"},
+    {"name": "Consigmais - FGTS", "url": "https://apretailer.com.br/click/6a0bab802bfa817be02f00a2/184986/358980/subaccount"},
+    {"name": "Consigmais - INSS", "url": "https://apretailer.com.br/click/6a16869a2bfa81788059e072/184987/359067/subaccount"},
+    {"name": "Acordo Certo - Negociação de Dívidas", "url": "https://apretailer.com.br/click/6a0bab802bfa81398f1142c2/182268/358980/subaccount"},
+    {"name": "BomPraCrédito - Empréstimo Pessoal", "url": "https://apretailer.com.br/click/6a16869a2bfa8178b15f7aa6/185636/359067/subaccount"},
+    {"name": "Nexo - Plataforma de ativos digitais", "url": "https://apretailer.com.br/click/6a0bab802bfa81394d4c4542/184515/358980/subaccount"},
+    {"name": "Juros Baixos - Empréstimos", "url": "https://apretailer.com.br/click/6a16869a2bfa8178622cf8c2/183012/359067/subaccount"},
+    {"name": "Juros Baixos - Empréstimo pessoal", "url": "https://apretailer.com.br/click/6a0bab802bfa81394742c132/179945/358980/subaccount"},
+    {"name": "SuperSim - Empréstimo Pessoal", "url": "https://apretailer.com.br/click/6a0bab802bfa8139047c0492/177702/358980/subaccount"},
+    {"name": "UP.P Empréstimos", "url": "https://apretailer.com.br/click/6a0bab802bfa8139352802e2/179925/358980/subaccount"}
+]
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -40,7 +74,6 @@ def fetch_latest_news():
 def generate_article(news_context):
     print("🤖 Gerando artigo com IA (EEAT, 800+ palavras)...")
     
-    # Inserir placeholders para afiliados no prompt
     prompt = f"""
     Você é um especialista em finanças e SEO. Crie um artigo de blog em Português do Brasil baseado nesta notícia recente: "{news_context['title']}".
     
@@ -73,9 +106,12 @@ def generate_article(news_context):
     )
     content = response.choices[0].message.content
     
-    # Substituir placeholders pelos links reais (se existirem)
-    top_html = f'<div class="cta-top" style="margin:20px 0;padding:20px;background:#f0fff4;border-radius:10px;border:1px solid #22c55e;text-align:center;"><a href="{AFFILIATE_TOP}" style="font-weight:bold;color:#15803d;text-decoration:none;">🚀 Dica de Hoje: Aproveite esta oportunidade de Renda Extra &rarr;</a></div>' if AFFILIATE_TOP else ""
-    mid_html = f'<div class="cta-mid" style="margin:20px 0;padding:20px;background:#fffbeb;border-radius:10px;border:1px solid #f59e0b;text-align:center;"><a href="{AFFILIATE_MIDDLE}" style="font-weight:bold;color:#b45309;text-decoration:none;">💡 Recomendação Especial: Comece a investir com segurança &rarr;</a></div>' if AFFILIATE_MIDDLE else ""
+    # Selecionar 2 afiliados aleatórios para este post
+    af1, af2 = random.sample(AFFILIATES, 2)
+    
+    top_html = f'<div class="cta-top" style="margin:20px 0;padding:25px;background:linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);border-radius:15px;border:2px solid #22c55e;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);"><h4 style="margin:0 0 10px;color:#15803d;">🚀 Oportunidade Selecionada</h4><p style="margin:0 0 15px;color:#166534;">{af1["name"]}: Uma das melhores opções para o seu perfil financeiro hoje.</p><a href="{af1["url"]}" target="_blank" style="display:inline-block;padding:12px 25px;background:#22c55e;color:white;font-weight:900;text-decoration:none;border-radius:8px;transition:all 0.3s;">ACESSAR AGORA &rarr;</a></div>'
+    
+    mid_html = f'<div class="cta-mid" style="margin:30px 0;padding:25px;background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);border-radius:15px;border:2px solid #f59e0b;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);"><h4 style="margin:0 0 10px;color:#b45309;">💡 Recomendação do Especialista</h4><p style="margin:0 0 15px;color:#92400e;">{af2["name"]}: Potencialize seus resultados com esta ferramenta testada.</p><a href="{af2["url"]}" target="_blank" style="display:inline-block;padding:12px 25px;background:#f59e0b;color:white;font-weight:900;text-decoration:none;border-radius:8px;transition:all 0.3s;">CONFERIR DETALHES &rarr;</a></div>'
     
     content = content.replace("[AFFILIATE_TOP]", top_html)
     content = content.replace("[AFFILIATE_MIDDLE]", mid_html)
@@ -105,7 +141,6 @@ def main():
         print("❌ Nenhuma notícia encontrada.")
         return
         
-    import random
     selected = random.choice(news)
     
     article_content = generate_article(selected)
