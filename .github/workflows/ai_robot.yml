@@ -1,0 +1,37 @@
+name: AI News Robot
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Roda a cada 3 horas
+  workflow_dispatch:      # Permite rodar manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests openai markdown beautifulsoup4
+
+      - name: Run AI Robot
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python ai_news_robot.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "Grana Hoje AI Robot"
+          git config --global user.email "robot@granahoje.com"
+          git add .
+          git commit -m "🤖 Auto-post: Novo artigo gerado por IA" || echo "Sem mudanças para commitar"
+          git push
