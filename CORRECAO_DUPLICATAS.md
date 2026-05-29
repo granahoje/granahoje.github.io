@@ -61,7 +61,7 @@ O site tinha **297 páginas de calculadoras**, sendo:
 **Implementado:**
 - Versões em en, es, fr, ar, zh, ru, hi, ja, bn, pt-pt receberam:
   ```html
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
   ```
 - Versão pt-BR (raiz) **não tem** noindex (pode ser indexada)
 
@@ -189,7 +189,7 @@ View Source → procurar por:
 **3. Testar Noindex (apenas traduções):**
 ```
 View Source em /en/calculadora-juros-compostos.html → procurar por:
-<meta name="robots" content="noindex, follow">
+<meta name="robots" content="index, follow">
 ```
 
 **4. Google Rich Results Test:**

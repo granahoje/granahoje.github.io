@@ -1,10 +1,8 @@
 # Robots.txt - Grana Hoje Multilingual
 # Otimizado para SEO e indexação de múltiplos idiomas
-
 # Permitir todos os bots
 User-agent: *
 Allow: /
-Allow: /pt-br/
 Allow: /pt-pt/
 Allow: /es/
 Allow: /en/
@@ -15,35 +13,27 @@ Allow: /ar/
 Allow: /bn/
 Allow: /ru/
 Allow: /ja/
-
 # Desabilitar acesso a diretórios específicos (se houver)
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
-
 # Sitemap
 Sitemap: https://granahoje.github.io/sitemap.xml
 Sitemap: https://granahoje.github.io/radar/sitemap.xml
-
 # Crawl-delay removido para acelerar indexação do Google
 # Prefer-non-www e Request-rate removidos (não são padrão do robots.txt)
-
 # Permitir Google AdSense crawling
 User-agent: Googlebot-Image
 Allow: /
-
 # Permitir Bing
 User-agent: Bingbot
 Allow: /
-
 # Permitir Facebook
 User-agent: facebookexternalhit
 Allow: /
-
 # Permitir Twitter
 User-agent: Twitterbot
 Allow: /
-
 # Permitir LinkedIn
 User-agent: LinkedInBot
 Allow: /

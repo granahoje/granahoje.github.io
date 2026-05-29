@@ -81,7 +81,7 @@ def add_canonical_and_hreflang(file_path, calc_name, lang_code):
     if '<meta name="robots"' not in content:
         # Para versões não-pt-BR, adicionar noindex
         if lang_code != '' and lang_code != 'pt-BR':
-            robots_tag = '    <meta name="robots" content="noindex, follow">'
+            robots_tag = '    <meta name="robots" content="index, follow">'
             content = re.sub(
                 r'(<link rel="canonical"[^>]*>)',
                 r'\1\n' + robots_tag,
