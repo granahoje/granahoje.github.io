@@ -153,6 +153,9 @@ def main():
     if os.path.exists("rebuild_blog.py"):
         print("📊 Atualizando blog.html...")
         os.system("python3 rebuild_blog.py")
+    if os.path.exists("update_index_news.py"):
+        print("🏠 Atualizando página inicial...") 
+        os.system("python3 update_index_news.py")
 
 if __name__ == "__main__":
     main()
