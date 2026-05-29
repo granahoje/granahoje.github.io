@@ -2,7 +2,7 @@ name: AI News Robot
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Roda a cada 3 horas
+    - cron: '49 * * * *'  # Roda a cada 3 horas
   workflow_dispatch:      # Permite rodar manualmente
 
 jobs:
