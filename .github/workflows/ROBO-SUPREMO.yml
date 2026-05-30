@@ -1,0 +1,86 @@
+name: 🤖 ROBÔ SUPREMO (GRANA HOJE)
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: robo-supremo-grana
+  cancel-in-progress: true
+
+jobs:
+  automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 📥 Checkout Código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 📦 Instalar Dependências
+        run: |
+          pip install requests openai markdown beautifulsoup4 2>/dev/null || echo "Deps Python preparadas"
+
+      - name: 🤖 Execução do Robô de Notícias
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Iniciando geração de conteúdo..."
+          if [ -f "ai_news_robot.py" ]; then
+            python3 ai_news_robot.py
+          fi
+        continue-on-error: true
+
+      - name: 🚀 Publicação Automática (Git Push)
+        run: |
+          git config --global user.email "bot@granahoje.com"
+          git config --global user.name "RoboSupremo-GranaBot"
+          
+          if [[ -n $(git status -s) ]]; then
+            echo "✨ Mudanças detectadas! Iniciando push..."
+            git add -A
+            git commit -m "🤖 [ROBÔ SUPREMO] Atualização Automática $(date +'%d/%m/%Y %H:%M')"
+            
+            git push origin main || {
+              echo "⚠️ Push falhou com GITHUB_TOKEN, tentando com PAT..."
+              if [ -n "${{ secrets.MY_GITHUB_PAT }}" ]; then
+                git remote set-url origin https://x-access-token:${{ secrets.MY_GITHUB_PAT }}@github.com/${{ github.repository }}.git
+                git push origin main
+              else
+                echo "❌ Erro: PAT não disponível."
+                exit 1
+              fi
+            }
+            echo "✅ SUCESSO: Mudanças enviadas!"
+          else
+            echo "⚠️ Nenhuma mudança detectada."
+          fi
+
+      - name: 📂 Preparar Artifact para Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: 🚀 Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
