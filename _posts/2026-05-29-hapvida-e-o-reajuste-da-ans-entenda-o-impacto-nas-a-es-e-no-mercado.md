@@ -10,7 +10,7 @@ description: "A decisão da ANS sobre o reajuste dos planos da Hapvida gerou for
 
 O anúncio recente da Agência Nacional de Saúde Suplementar (ANS) sobre o reajuste dos planos de saúde da Hapvida surpreendeu investidores e analistas, provocando uma forte queda no preço das ações da empresa. A decisão, que ficou aquém do esperado pelo mercado, gerou uma sensação de desânimo e levantou dúvidas sobre o cenário financeiro da companhia no curto e médio prazo.
 
-<div class="cta-top" style="margin:20px 0;padding:25px;background:linear-gradient(135deg, #f0fff4 0%, #dcfce7 100%);border-radius:15px;border:2px solid #22c55e;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);"><h4 style="margin:0 0 10px;color:#15803d;">🚀 Oportunidade Selecionada</h4><p style="margin:0 0 15px;color:#166534;">Bybit: Uma das melhores opções para o seu perfil financeiro hoje.</p><a href="https://apretailer.com.br/click/6a16869a2bfa8178f62a16f2/188136/359067/subaccount" target="_blank" style="display:inline-block;padding:12px 25px;background:#22c55e;color:white;font-weight:900;text-decoration:none;border-radius:8px;transition:all 0.3s;">ACESSAR AGORA &rarr;</a></div>
+
 
 Neste artigo, vamos dissecar o que motivou essa reação, explicar os efeitos da decisão da ANS sobre a Hapvida e oferecer dicas práticas para investidores que têm ações da empresa ou pretendem entrar nesse mercado. Também vamos analisar como o reajuste das mensalidades impacta o setor de saúde suplementar de uma maneira mais ampla.
 
@@ -40,7 +40,7 @@ A Hapvida, com grande base de clientes e forte presença em regiões estratégic
 
 ## O que investidores precisam saber sobre a queda das ações da Hapvida
 
-<div class="cta-mid" style="margin:30px 0;padding:25px;background:linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);border-radius:15px;border:2px solid #f59e0b;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.05);"><h4 style="margin:0 0 10px;color:#b45309;">💡 Recomendação do Especialista</h4><p style="margin:0 0 15px;color:#92400e;">Acordo Certo: Potencialize seus resultados com esta ferramenta testada.</p><a href="https://apretailer.com.br/click/6a16869a2bfa817115280f72/187558/359067/subaccount" target="_blank" style="display:inline-block;padding:12px 25px;background:#f59e0b;color:white;font-weight:900;text-decoration:none;border-radius:8px;transition:all 0.3s;">CONFERIR DETALHES &rarr;</a></div>
+
 
 Após o anúncio da ANS, a ação da Hapvida sofreu uma retração significativa. É fundamental que investidores compreendam o motivo dessa volatilidade e qual postura adotar para proteger ou potencializar seus investimentos.
 
