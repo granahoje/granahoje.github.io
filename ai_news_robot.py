@@ -19,6 +19,19 @@ NEWS_FEEDS = [
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
+
+BLACKLIST_KEYWORDS = [
+    "tiroteio", "morte", "crime", "assalto", "preso", "polícia", "tragédia", 
+    "guerra", "conflito", "violência", "feridos", "vítimas", "ataque"
+]
+
+def is_safe(title):
+    title_lower = title.lower()
+    for word in BLACKLIST_KEYWORDS:
+        if word in title_lower:
+            return False
+    return True
+
 def fetch_latest_news():
     print("🔍 Buscando notícias online...")
     news_items = []
@@ -33,7 +46,7 @@ def fetch_latest_news():
                     if title_el is not None and link_el is not None:
                         title = title_el.text
                         link = link_el.text
-                        if title and link:
+                        if title and link and is_safe(title):
                             news_items.append({"title": title, "link": link})
         except Exception as e:
             print(f"Erro ao buscar {url}: {e}")
